@@ -16,9 +16,6 @@ namespace Interfaz
         private int MouseDownX;
         private int MouseDownY;
 
-
-
-
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -62,6 +59,19 @@ namespace Interfaz
         {
             lblhora.Text = DateTime.Now.ToLongTimeString();
             lblfecha.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void btnregistrar_compra_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnarticulos_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
