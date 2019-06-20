@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.txtboxContrasena = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtboxUsuario = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,8 +52,6 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.txtboxContrasena);
-            this.panel1.Controls.Add(this.txtboxUsuario);
             this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(449, 355);
@@ -75,50 +71,6 @@
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // txtboxContrasena
-            // 
-            this.txtboxContrasena.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtboxContrasena.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtboxContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtboxContrasena.HintForeColor = System.Drawing.Color.Empty;
-            this.txtboxContrasena.HintText = "";
-            this.txtboxContrasena.isPassword = true;
-            this.txtboxContrasena.LineFocusedColor = System.Drawing.SystemColors.HotTrack;
-            this.txtboxContrasena.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtboxContrasena.LineMouseHoverColor = System.Drawing.SystemColors.HotTrack;
-            this.txtboxContrasena.LineThickness = 3;
-            this.txtboxContrasena.Location = new System.Drawing.Point(43, 238);
-            this.txtboxContrasena.Margin = new System.Windows.Forms.Padding(4);
-            this.txtboxContrasena.Name = "txtboxContrasena";
-            this.txtboxContrasena.Size = new System.Drawing.Size(370, 44);
-            this.txtboxContrasena.TabIndex = 2;
-            this.txtboxContrasena.Text = "Contrasena";
-            this.txtboxContrasena.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtboxContrasena.Enter += new System.EventHandler(this.txtPassEnter);
-            this.txtboxContrasena.Leave += new System.EventHandler(this.txtPassLeave);
-            // 
-            // txtboxUsuario
-            // 
-            this.txtboxUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtboxUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtboxUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtboxUsuario.HintForeColor = System.Drawing.Color.Empty;
-            this.txtboxUsuario.HintText = "";
-            this.txtboxUsuario.isPassword = false;
-            this.txtboxUsuario.LineFocusedColor = System.Drawing.SystemColors.HotTrack;
-            this.txtboxUsuario.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtboxUsuario.LineMouseHoverColor = System.Drawing.SystemColors.HotTrack;
-            this.txtboxUsuario.LineThickness = 3;
-            this.txtboxUsuario.Location = new System.Drawing.Point(43, 177);
-            this.txtboxUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtboxUsuario.Name = "txtboxUsuario";
-            this.txtboxUsuario.Size = new System.Drawing.Size(370, 44);
-            this.txtboxUsuario.TabIndex = 1;
-            this.txtboxUsuario.Text = "Nombre de usuario";
-            this.txtboxUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtboxUsuario.Enter += new System.EventHandler(this.txtUserEnter);
-            this.txtboxUsuario.Leave += new System.EventHandler(this.txtUserLeave);
             // 
             // panel2
             // 
@@ -223,8 +175,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogin;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtboxContrasena;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtboxUsuario;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
