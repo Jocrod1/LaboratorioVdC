@@ -63,7 +63,6 @@
             this.txtcontraseña.Font = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcontraseña.Location = new System.Drawing.Point(26, 242);
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.PasswordChar = '*';
             this.txtcontraseña.Size = new System.Drawing.Size(395, 32);
             this.txtcontraseña.TabIndex = 10;
             this.txtcontraseña.Enter += new System.EventHandler(this.txtPassEnter);
