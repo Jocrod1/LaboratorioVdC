@@ -15,6 +15,10 @@ namespace Interfaz
         public Login()
         {
             InitializeComponent();
+
+            txtusuario.Text = @"Nombre de Usuario";
+            txtcontraseña.Text = "Contraseña";
+            txtcontraseña.UseSystemPasswordChar = false;
         }
 
 
@@ -23,33 +27,36 @@ namespace Interfaz
         // weas para que se vea bonito, para que se coloque la descripcion en el txtbox si no se ha rellenado
         private void txtUserEnter(object sender, EventArgs e)
         {
-            if(txtboxUsuario.Text.Equals(@"Nombre de usuario"))
+            if(txtusuario.Text.Equals(@"Nombre de Usuario"))
             {
-                txtboxUsuario.Text = "";
+                txtusuario.Text = "";
             }
         }
 
         private void txtUserLeave(object sender, EventArgs e)
         {
-            if (txtboxUsuario.Text.Equals(""))
+            if (txtusuario.Text.Equals(""))
             {
-                txtboxUsuario.Text = @"Nombre de usuario";
+                txtusuario.Text = @"Nombre de Usuario";
             }
         }
 
         private void txtPassEnter(object sender, EventArgs e)
         {
-            if (txtboxContrasena.Text.Equals("Contrasena"))
+            if (txtcontraseña.Text.Equals("Contraseña"))
             {
-                txtboxContrasena.Text = "";
+                txtcontraseña.Text = "";
+                txtcontraseña.UseSystemPasswordChar = true;
             }
         }
 
         private void txtPassLeave(object sender, EventArgs e)
         {
-            if (txtboxContrasena.Text.Equals(""))
+            if (txtcontraseña.Text.Equals(""))
             {
-                txtboxContrasena.Text = "Contrasena";
+
+                txtcontraseña.Text = "Contraseña";
+                txtcontraseña.UseSystemPasswordChar = false;
             }
         }
 
@@ -57,9 +64,6 @@ namespace Interfaz
         {
 
         }
-
-
-
 
     }
 }
