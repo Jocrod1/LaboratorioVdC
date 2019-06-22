@@ -177,5 +177,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Metodos\Metodos.csproj">
+      <Project>{8353f44c-0bec-4fb1-9e54-1e9544ab7402}</Project>
+      <Name>Metodos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

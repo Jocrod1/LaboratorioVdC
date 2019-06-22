@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    class DTrabajador
+    public class DTrabajador:Conexion
     {
         private string _Cedula;
         private string _Nombre;
@@ -18,7 +18,7 @@ namespace Datos
         private string _Telefono;
         private string _Correo;
         private int _Acceso;
-        private string _TextoBuscar;
+        //private string _TextoBuscar;
 
         public string Cedula { get => _Cedula; set => _Cedula = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
@@ -27,7 +27,7 @@ namespace Datos
         public string Telefono { get => _Telefono; set => _Telefono = value; }
         public string Correo { get => _Correo; set => _Correo = value; }
         public int Acceso { get => _Acceso; set => _Acceso = value; }
-        public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
+        //public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
 
         public DTrabajador()
         {
@@ -43,7 +43,7 @@ namespace Datos
             this.Telefono = Telefono;
             this.Correo = Correo;
             this.Acceso = Acceso;
-            this.TextoBuscar = TextoBuscar;
+            //this.TextoBuscar = TextoBuscar;
         }
 
         //Metodos
@@ -291,61 +291,99 @@ namespace Datos
         }
 
         //Mostrar
-        public DataTable Mostrar()
+        public List<DTrabajador> Mostrar(string TextoBuscar)
         {
             DataTable DtResultado = new DataTable("Trabajador");
             SqlConnection SqlConectar = new SqlConnection();
+            List<DTrabajador> ListaGenerica = new List<DTrabajador>();
 
             try
             {
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
                 SqlComando.CommandText = "Mostrar_Trabajador";
                 SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
 
-                SqlDataAdapter SqlData = new SqlDataAdapter(SqlComando);
-                SqlData.Fill(DtResultado);
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DTrabajador
+                    {
+                        Cedula = LeerFilas.GetString(0),
+                        Nombre = LeerFilas.GetString(1),
+                        Contraseña=LeerFilas.GetString(2),
+                        Direccion = LeerFilas.GetString(3),
+                        Telefono = LeerFilas.GetString(4),
+                        Correo=LeerFilas.GetString(5),
+                        Acceso=LeerFilas.GetInt32(6),
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
             }
             catch (Exception ex)
             {
-                DtResultado = null;
+                ListaGenerica = null;
             }
-            return DtResultado;
+
+            return ListaGenerica;
 
         }
 
+        /*
         //Buscar
-        public DataTable Buscar_Cedula(DTrabajador Trabajador)
+        public List<DTrabajador> Buscar_Cedula()
         {
             DataTable DtResultado = new DataTable("Trabajador");
             SqlConnection SqlConectar = new SqlConnection();
+            List<DTrabajador> ListaGenerica = new List<DTrabajador>();
 
             try
             {
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
                 SqlComando.CommandText = "Buscar_Trabajador_Cedula";
                 SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
 
-                //parametro buscar cedula
-                SqlParameter Parametro_Texto_Buscar = new SqlParameter();
-                Parametro_Texto_Buscar.ParameterName = "@TextoBuscar";
-                Parametro_Texto_Buscar.SqlDbType = SqlDbType.VarChar;
-                Parametro_Texto_Buscar.Size = 50;
-                Parametro_Texto_Buscar.Value = Trabajador.TextoBuscar;
-                SqlComando.Parameters.Add(Parametro_Texto_Buscar);
+                SqlConectar.Open();
 
-                SqlDataAdapter SqlData = new SqlDataAdapter(SqlComando);
-                SqlData.Fill(DtResultado);
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DTrabajador
+                    {
+                        Cedula = LeerFilas.GetString(0),
+                        Nombre = LeerFilas.GetString(1),
+                        Contraseña = LeerFilas.GetString(2),
+                        Direccion = LeerFilas.GetString(3),
+                        Telefono = LeerFilas.GetString(4),
+                        Correo = LeerFilas.GetString(5),
+                        Acceso = LeerFilas.GetInt32(6),
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
             }
             catch (Exception ex)
             {
-                DtResultado = null;
+                ListaGenerica = null;
             }
-            return DtResultado;
+
+            return ListaGenerica;
 
         }
+        */
     }
 }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaz", "Interfaz\Interf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{B505CD3A-E212-49F2-A5D0-3E7AF8395452}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metodos", "Metodos\Metodos.csproj", "{8353F44C-0BEC-4FB1-9E54-1E9544AB7402}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B505CD3A-E212-49F2-A5D0-3E7AF8395452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B505CD3A-E212-49F2-A5D0-3E7AF8395452}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B505CD3A-E212-49F2-A5D0-3E7AF8395452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8353F44C-0BEC-4FB1-9E54-1E9544AB7402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8353F44C-0BEC-4FB1-9E54-1E9544AB7402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8353F44C-0BEC-4FB1-9E54-1E9544AB7402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8353F44C-0BEC-4FB1-9E54-1E9544AB7402}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9D7AFA35-59EF-4338-B211-5E4CF6DB9B30} = {D13B3D4C-F18E-49C0-B1A0-E045A61F3DC8}
 		{B505CD3A-E212-49F2-A5D0-3E7AF8395452} = {C6F86C73-1B98-43C5-AEAD-7BA7C4E82BC8}
+		{8353F44C-0BEC-4FB1-9E54-1E9544AB7402} = {26A55108-5E3F-45C7-BAA3-AA115283D0F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD81125D-F382-4E3E-82F1-5EAEDEC7F296}

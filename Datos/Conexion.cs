@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class Conexion
+    public class Conexion
     {
-        public static string CadenaConexion = "Data Source= DESKTOP-8BRANNO\\SQLEXPRESS; Initial Catalog= ProyectoFarmacia; Integrated Security= true";
+        protected static string CadenaConexion = "Data Source= DESKTOP-8BRANNO\\SQLEXPRESS; Initial Catalog= ProyectoFarmacia; Integrated Security= true";
     }
 }
