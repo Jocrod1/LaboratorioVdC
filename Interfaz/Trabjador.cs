@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Interfaz
 {
-    public partial class Trabjador : Form
+    public partial class Trabajador : Form
     {
-        public Trabjador()
+        public Trabajador()
         {
             InitializeComponent();
         }

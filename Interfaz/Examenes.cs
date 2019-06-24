@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Interfaz
 {
-    public partial class Examanes : Form
+    public partial class Examenes : Form
     {
-        public Examanes()
+        public Examenes()
         {
             InitializeComponent();
+        }
+
+        private void Examenes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
