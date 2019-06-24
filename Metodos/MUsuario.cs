@@ -8,11 +8,11 @@ using Datos;
 
 namespace Metodos
 {
-    public class MTrabajador : DTrabajador
+    public class MUsuario : DUsuario
     {
         public static string Insertar(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, int Acceso)
         {
-            DTrabajador Objeto = new DTrabajador();
+            DUsuario Objeto = new DUsuario();
             Objeto.Cedula = Cedula;
             Objeto.Nombre = Nombre;
             Objeto.Contraseña = Contraseña;
@@ -26,7 +26,7 @@ namespace Metodos
 
         public static string Editar(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, int Acceso)
         {
-            DTrabajador Objeto = new DTrabajador();
+            DUsuario Objeto = new DUsuario();
             Objeto.Cedula = Cedula;
             Objeto.Nombre = Nombre;
             Objeto.Contraseña = Contraseña;
@@ -39,15 +39,15 @@ namespace Metodos
 
         public static string Eliminar(string Cedula)
         {
-            DTrabajador Objeto = new DTrabajador();
+            DUsuario Objeto = new DUsuario();
             Objeto.Cedula = Cedula;
             return Objeto.Eliminar(Objeto);
         }
 
         //probar esta nueva version, NUEVA VERSION
-        public new static List<DTrabajador> Mostrar(string TextoBuscar)
+        public new static List<DUsuario> Mostrar(string TextoBuscar)
         {
-            DTrabajador Objeto = new DTrabajador();
+            DUsuario Objeto = new DUsuario();
             return Objeto.Mostrar(TextoBuscar);
         }
 

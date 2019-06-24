@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    public class DTrabajador:Conexion
+    public class DUsuario:Conexion
     {
         private string _Cedula;
         private string _Nombre;
@@ -29,12 +29,12 @@ namespace Datos
         public int Acceso { get => _Acceso; set => _Acceso = value; }
         //public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
 
-        public DTrabajador()
+        public DUsuario()
         {
 
         }
 
-        public DTrabajador(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, int Acceso, string TextoBuscar)
+        public DUsuario(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, int Acceso, string TextoBuscar)
         {
             this.Cedula = Cedula;
             this.Nombre = Nombre;
@@ -49,7 +49,7 @@ namespace Datos
         //Metodos
 
         //insertar
-        public string Insertar(DTrabajador Trabajador)
+        public string Insertar(DUsuario Trabajador)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -145,7 +145,7 @@ namespace Datos
         }
 
         //editar
-        public string Editar(DTrabajador Trabajador)
+        public string Editar(DUsuario Trabajador)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -242,7 +242,7 @@ namespace Datos
 
 
         //Eliminar
-        public string Eliminar(DTrabajador Trabajador)
+        public string Eliminar(DUsuario Trabajador)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -291,11 +291,11 @@ namespace Datos
         }
 
         //Mostrar
-        public List<DTrabajador> Mostrar(string TextoBuscar)
+        public List<DUsuario> Mostrar(string TextoBuscar)
         {
             DataTable DtResultado = new DataTable("Trabajador");
             SqlConnection SqlConectar = new SqlConnection();
-            List<DTrabajador> ListaGenerica = new List<DTrabajador>();
+            List<DUsuario> ListaGenerica = new List<DUsuario>();
 
             try
             {
@@ -314,7 +314,7 @@ namespace Datos
 
                 while (LeerFilas.Read())
                 {
-                    ListaGenerica.Add(new DTrabajador
+                    ListaGenerica.Add(new DUsuario
                     {
                         Cedula = LeerFilas.GetString(0),
                         Nombre = LeerFilas.GetString(1),
