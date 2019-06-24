@@ -12,22 +12,55 @@ namespace Datos
     public class DUsuario:Conexion
     {
         private string _Cedula;
-        private string _Nombre;
-        private string _Contraseña;
-        private string _Direccion;
-        private string _Telefono;
-        private string _Correo;
-        private int _Acceso;
-        //private string _TextoBuscar;
 
-        public string Cedula { get => _Cedula; set => _Cedula = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public string Contraseña { get => _Contraseña; set => _Contraseña = value; }
-        public string Direccion { get => _Direccion; set => _Direccion = value; }
-        public string Telefono { get => _Telefono; set => _Telefono = value; }
-        public string Correo { get => _Correo; set => _Correo = value; }
-        public int Acceso { get => _Acceso; set => _Acceso = value; }
-        //public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
+        public string Cedula
+        {
+            get { return _Cedula; }
+            set { _Cedula = value; }
+        }
+        private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
+        private string _Contraseña;
+
+        public string Contraseña
+        {
+            get { return _Contraseña; }
+            set { _Contraseña = value; }
+        }
+        private string _Direccion;
+
+        public string Direccion
+        {
+            get { return _Direccion; }
+            set { _Direccion = value; }
+        }
+        private string _Telefono;
+
+        public string Telefono
+        {
+            get { return _Telefono; }
+            set { _Telefono = value; }
+        }
+        private string _Correo;
+
+        public string Correo
+        {
+            get { return _Correo; }
+            set { _Correo = value; }
+        }
+        private int _Acceso;
+
+        public int Acceso
+        {
+            get { return _Acceso; }
+            set { _Acceso = value; }
+        }
+
 
         public DUsuario()
         {

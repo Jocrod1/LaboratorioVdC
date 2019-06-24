@@ -12,24 +12,70 @@ namespace Datos
     public class DPaciente:Conexion
     {
         private int _IdPaciente;
+
+        public int IdPaciente
+        {
+            get { return _IdPaciente; }
+            set { _IdPaciente = value; }
+        }
         private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
         private int _Edad;
+
+        public int Edad
+        {
+            get { return _Edad; }
+            set { _Edad = value; }
+        }
         private string _Sexo;
+
+        public string Sexo
+        {
+            get { return _Sexo; }
+            set { _Sexo = value; }
+        }
         private string _Cedula;
+
+        public string Cedula
+        {
+            get { return _Cedula; }
+            set { _Cedula = value; }
+        }
         private string _Telefono;
+
+        public string Telefono
+        {
+            get { return _Telefono; }
+            set { _Telefono = value; }
+        }
         private DateTime _FUR;
+
+        public DateTime FUR
+        {
+            get { return _FUR; }
+            set { _FUR = value; }
+        }
         private string _NumeroHabitacion;
+
+        public string NumeroHabitacion
+        {
+            get { return _NumeroHabitacion; }
+            set { _NumeroHabitacion = value; }
+        }
         private int _IdMedico;
 
-        public int IdPaciente { get => _IdPaciente; set => _IdPaciente = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public int Edad { get => _Edad; set => _Edad = value; }
-        public string Sexo { get => _Sexo; set => _Sexo = value; }
-        public string Cedula { get => _Cedula; set => _Cedula = value; }
-        public string Telefono { get => _Telefono; set => _Telefono = value; }
-        public DateTime FUR { get => _FUR; set => _FUR = value; }
-        public string NumeroHabitacion { get => _NumeroHabitacion; set => _NumeroHabitacion = value; }
-        public int IdMedico { get => _IdMedico; set => _IdMedico = value; }
+        public int IdMedico
+        {
+            get { return _IdMedico; }
+            set { _IdMedico = value; }
+        }
+
+
 
 
         //constructor vacio
