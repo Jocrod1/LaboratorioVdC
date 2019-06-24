@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    class DPaciente:Conexion
+    public class DPaciente:Conexion
     {
         private int _IdPaciente;
         private string _Nombre;
@@ -20,7 +20,6 @@ namespace Datos
         private DateTime _FUR;
         private string _NumeroHabitacion;
         private int _IdMedico;
-        private string _TextoBuscar;
 
         public int IdPaciente { get => _IdPaciente; set => _IdPaciente = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
@@ -29,7 +28,6 @@ namespace Datos
         public string Cedula { get => _Cedula; set => _Cedula = value; }
         public string Telefono { get => _Telefono; set => _Telefono = value; }
         public DateTime FUR { get => _FUR; set => _FUR = value; }
-        public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
         public string NumeroHabitacion { get => _NumeroHabitacion; set => _NumeroHabitacion = value; }
         public int IdMedico { get => _IdMedico; set => _IdMedico = value; }
 
@@ -51,7 +49,6 @@ namespace Datos
             this.FUR = FUR;
             this.NumeroHabitacion = NumeroHabitacion;
             this.IdMedico = IdMedico;
-            this.TextoBuscar = TextoBuscar;
         }
 
 
@@ -72,21 +69,21 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Insertar_Paciente";
+                SqlComando.CommandText = "insertar_paciente";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
 
                 //parametro id
                 SqlParameter Parametro_Id_Paciente = new SqlParameter();
-                Parametro_Id_Paciente.ParameterName = "@ID";
+                Parametro_Id_Paciente.ParameterName = "@IDPaciente";
                 Parametro_Id_Paciente.SqlDbType = SqlDbType.Int;
                 Parametro_Id_Paciente.Direction = ParameterDirection.Output;
                 SqlComando.Parameters.Add(Parametro_Id_Paciente);
 
                 //parametro nombre
                 SqlParameter Parametro_Nombre_Paciente = new SqlParameter();
-                Parametro_Nombre_Paciente.ParameterName = "@Nombre";
+                Parametro_Nombre_Paciente.ParameterName = "@nombre";
                 Parametro_Nombre_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre_Paciente.Size = 30;
                 Parametro_Nombre_Paciente.Value = Paciente.Nombre;
@@ -94,14 +91,14 @@ namespace Datos
 
                 //parametro edad
                 SqlParameter Parametro_Edad_Paciente = new SqlParameter();
-                Parametro_Edad_Paciente.ParameterName = "@Edad";
+                Parametro_Edad_Paciente.ParameterName = "@edad";
                 Parametro_Edad_Paciente.SqlDbType = SqlDbType.Int;
                 Parametro_Edad_Paciente.Value = Paciente.Edad;
                 SqlComando.Parameters.Add(Parametro_Edad_Paciente);
 
                 //parametro sexo
                 SqlParameter Parametro_Sexo_Paciente = new SqlParameter();
-                Parametro_Sexo_Paciente.ParameterName = "@Sexo";
+                Parametro_Sexo_Paciente.ParameterName = "@sexo";
                 Parametro_Sexo_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Sexo_Paciente.Size = 10;
                 Parametro_Sexo_Paciente.Value = Paciente.Sexo;
@@ -109,7 +106,7 @@ namespace Datos
 
                 //parametro cedula
                 SqlParameter Parametro_Cedula_Paciente = new SqlParameter();
-                Parametro_Cedula_Paciente.ParameterName = "@Cedula";
+                Parametro_Cedula_Paciente.ParameterName = "@cedula";
                 Parametro_Cedula_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Cedula_Paciente.Size = 10;
                 Parametro_Cedula_Paciente.Value = Paciente.Cedula;
@@ -117,7 +114,7 @@ namespace Datos
 
                 //parametro telefono
                 SqlParameter Parametro_Telefono_Paciente = new SqlParameter();
-                Parametro_Telefono_Paciente.ParameterName = "@Telefono";
+                Parametro_Telefono_Paciente.ParameterName = "@telefono";
                 Parametro_Telefono_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Telefono_Paciente.Size = 10;
                 Parametro_Telefono_Paciente.Value = Paciente.Telefono;
@@ -132,7 +129,7 @@ namespace Datos
 
                 //parametro numero habitacion
                 SqlParameter Parametro_NHabitacion_Paciente = new SqlParameter();
-                Parametro_NHabitacion_Paciente.ParameterName = "@NroHabitacion";
+                Parametro_NHabitacion_Paciente.ParameterName = "@NumeroHabitacion";
                 Parametro_NHabitacion_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_NHabitacion_Paciente.Size = 10;
                 Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
@@ -140,7 +137,7 @@ namespace Datos
 
                 //parametro id medico
                 SqlParameter Parametro_IdMedico_Paciente = new SqlParameter();
-                Parametro_IdMedico_Paciente.ParameterName = "@IdMedico";
+                Parametro_IdMedico_Paciente.ParameterName = "@IDMedico";
                 Parametro_IdMedico_Paciente.SqlDbType = SqlDbType.Int;
                 Parametro_IdMedico_Paciente.Value = Paciente.IdMedico;
                 SqlComando.Parameters.Add(Parametro_IdMedico_Paciente);
@@ -183,21 +180,21 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Editar_Paciente";
+                SqlComando.CommandText = "editar_paciente";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //PARAMETROS
 
                 //parametro id
                 SqlParameter Parametro_Id_Paciente = new SqlParameter();
-                Parametro_Id_Paciente.ParameterName = "@ID";
+                Parametro_Id_Paciente.ParameterName = "@IDPaciente";
                 Parametro_Id_Paciente.SqlDbType = SqlDbType.Int;
                 Parametro_Id_Paciente.Direction = ParameterDirection.Output;
                 SqlComando.Parameters.Add(Parametro_Id_Paciente);
 
                 //parametro nombre
                 SqlParameter Parametro_Nombre_Paciente = new SqlParameter();
-                Parametro_Nombre_Paciente.ParameterName = "@Nombre";
+                Parametro_Nombre_Paciente.ParameterName = "@nombre";
                 Parametro_Nombre_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre_Paciente.Size = 30;
                 Parametro_Nombre_Paciente.Value = Paciente.Nombre;
@@ -205,14 +202,14 @@ namespace Datos
 
                 //parametro edad
                 SqlParameter Parametro_Edad_Paciente = new SqlParameter();
-                Parametro_Edad_Paciente.ParameterName = "@Edad";
+                Parametro_Edad_Paciente.ParameterName = "@edad";
                 Parametro_Edad_Paciente.SqlDbType = SqlDbType.Int;
                 Parametro_Edad_Paciente.Value = Paciente.Edad;
                 SqlComando.Parameters.Add(Parametro_Edad_Paciente);
 
                 //parametro sexo
                 SqlParameter Parametro_Sexo_Paciente = new SqlParameter();
-                Parametro_Sexo_Paciente.ParameterName = "@Sexo";
+                Parametro_Sexo_Paciente.ParameterName = "@sexo";
                 Parametro_Sexo_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Sexo_Paciente.Size = 10;
                 Parametro_Sexo_Paciente.Value = Paciente.Sexo;
@@ -220,7 +217,7 @@ namespace Datos
 
                 //parametro cedula
                 SqlParameter Parametro_Cedula_Paciente = new SqlParameter();
-                Parametro_Cedula_Paciente.ParameterName = "@Cedula";
+                Parametro_Cedula_Paciente.ParameterName = "@cedula";
                 Parametro_Cedula_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Cedula_Paciente.Size = 10;
                 Parametro_Cedula_Paciente.Value = Paciente.Cedula;
@@ -228,7 +225,7 @@ namespace Datos
 
                 //parametro telefono
                 SqlParameter Parametro_Telefono_Paciente = new SqlParameter();
-                Parametro_Telefono_Paciente.ParameterName = "@Telefono";
+                Parametro_Telefono_Paciente.ParameterName = "@telefono";
                 Parametro_Telefono_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Telefono_Paciente.Size = 10;
                 Parametro_Telefono_Paciente.Value = Paciente.Telefono;
@@ -243,7 +240,7 @@ namespace Datos
 
                 //parametro numero habitacion
                 SqlParameter Parametro_NHabitacion_Paciente = new SqlParameter();
-                Parametro_NHabitacion_Paciente.ParameterName = "@NroHabitacion";
+                Parametro_NHabitacion_Paciente.ParameterName = "@NumeroHabitacion";
                 Parametro_NHabitacion_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_NHabitacion_Paciente.Size = 10;
                 Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
@@ -251,11 +248,10 @@ namespace Datos
 
                 //parametro id medico
                 SqlParameter Parametro_IdMedico_Paciente = new SqlParameter();
-                Parametro_IdMedico_Paciente.ParameterName = "@IdMedico";
+                Parametro_IdMedico_Paciente.ParameterName = "@IDMedico";
                 Parametro_IdMedico_Paciente.SqlDbType = SqlDbType.Int;
                 Parametro_IdMedico_Paciente.Value = Paciente.IdMedico;
                 SqlComando.Parameters.Add(Parametro_IdMedico_Paciente);
-
 
 
                 //ejecuta y lo envia en comentario
@@ -293,14 +289,14 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Eliminar_Paciente";
+                SqlComando.CommandText = "eliminar_paciente";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
 
                 //parametro id
                 SqlParameter Parametro_Id_Paciente = new SqlParameter();
-                Parametro_Id_Paciente.ParameterName = "@ID";
+                Parametro_Id_Paciente.ParameterName = "@IDPaciente";
                 Parametro_Id_Paciente.SqlDbType = SqlDbType.Int;
                 Parametro_Id_Paciente.Value = Paciente.IdPaciente;
                 SqlComando.Parameters.Add(Parametro_Id_Paciente);
@@ -327,7 +323,7 @@ namespace Datos
         }
 
         //mostrar
-        public List<DPaciente> Mostrar()
+        public List<DPaciente> Mostrar(string TextoBuscar)
         {
             DataTable DtResultado = new DataTable("Paciente");
             SqlConnection SqlConectar = new SqlConnection();
@@ -339,7 +335,7 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Mostrar_Paciente";
+                SqlComando.CommandText = "mostrar_paciente";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
                 SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
