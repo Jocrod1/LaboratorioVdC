@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Metodos;
+
 namespace Interfaz
 {
     public partial class Trabajador : Form
@@ -15,6 +17,11 @@ namespace Interfaz
         public Trabajador()
         {
             InitializeComponent();
+        }
+
+        private void Trabajador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

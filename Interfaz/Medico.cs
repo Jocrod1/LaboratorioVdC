@@ -16,5 +16,6 @@ namespace Interfaz
         {
             InitializeComponent();
         }
+
     }
 }

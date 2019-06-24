@@ -43,7 +43,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbAcceso = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCiTrabajador = new System.Windows.Forms.TextBox();
+            this.txtCiMedico = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -228,7 +228,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbAcceso);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label9);
@@ -242,7 +242,7 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCiTrabajador);
+            this.groupBox1.Controls.Add(this.txtCiMedico);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.label4);
@@ -256,18 +256,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medico";
             // 
-            // comboBox1
+            // cbAcceso
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbAcceso.FormattingEnabled = true;
+            this.cbAcceso.Items.AddRange(new object[] {
             "Administrador",
             "Area de Bacteriologia",
             "Area de Examenes",
             "Area de Bacteriologia/Examenes"});
-            this.comboBox1.Location = new System.Drawing.Point(182, 339);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(267, 21);
-            this.comboBox1.TabIndex = 67;
+            this.cbAcceso.Location = new System.Drawing.Point(182, 339);
+            this.cbAcceso.Name = "cbAcceso";
+            this.cbAcceso.Size = new System.Drawing.Size(267, 21);
+            this.cbAcceso.TabIndex = 67;
             // 
             // label7
             // 
@@ -405,13 +405,13 @@
             this.label3.TabIndex = 39;
             this.label3.Text = "Registrar Médico";
             // 
-            // txtCiTrabajador
+            // txtCiMedico
             // 
-            this.txtCiTrabajador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCiTrabajador.Location = new System.Drawing.Point(182, 81);
-            this.txtCiTrabajador.Name = "txtCiTrabajador";
-            this.txtCiTrabajador.Size = new System.Drawing.Size(267, 20);
-            this.txtCiTrabajador.TabIndex = 30;
+            this.txtCiMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCiMedico.Location = new System.Drawing.Point(182, 81);
+            this.txtCiMedico.Name = "txtCiMedico";
+            this.txtCiMedico.Size = new System.Drawing.Size(267, 20);
+            this.txtCiMedico.TabIndex = 30;
             // 
             // btnCancelar
             // 
@@ -507,7 +507,7 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAcceso;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label9;
@@ -521,7 +521,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCiTrabajador;
+        private System.Windows.Forms.TextBox txtCiMedico;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label4;
