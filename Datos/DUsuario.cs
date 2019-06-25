@@ -76,13 +76,12 @@ namespace Datos
             this.Telefono = Telefono;
             this.Correo = Correo;
             this.Acceso = Acceso;
-            //this.TextoBuscar = TextoBuscar;
         }
 
         //Metodos
 
         //insertar
-        public string Insertar(DUsuario Trabajador)
+        public string Insertar(DUsuario Usuario)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -96,64 +95,64 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Insertar_Trabajador";
+                SqlComando.CommandText = "insertar_usuario";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
 
                 //parametro cedula
                 SqlParameter Parametro_Id_Trabajador = new SqlParameter();
-                Parametro_Id_Trabajador.ParameterName = "@Cedula";
+                Parametro_Id_Trabajador.ParameterName = "@cedula";
                 Parametro_Id_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Id_Trabajador.Size = 10;
-                Parametro_Id_Trabajador.Value=Trabajador.Cedula;
+                Parametro_Id_Trabajador.Value= Usuario.Cedula;
                 SqlComando.Parameters.Add(Parametro_Id_Trabajador);
 
                 //parametro nombre
                 SqlParameter Parametro_Nombre_Trabajador = new SqlParameter();
-                Parametro_Nombre_Trabajador.ParameterName = "@Nombre";
+                Parametro_Nombre_Trabajador.ParameterName = "@nombre";
                 Parametro_Nombre_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre_Trabajador.Size = 50;
-                Parametro_Nombre_Trabajador.Value = Trabajador.Nombre;
+                Parametro_Nombre_Trabajador.Value = Usuario.Nombre;
                 SqlComando.Parameters.Add(Parametro_Nombre_Trabajador);
 
                 //parametro contraseña
                 SqlParameter Parametro_Contraseña_Trabajador = new SqlParameter();
-                Parametro_Contraseña_Trabajador.ParameterName = "@Password";
+                Parametro_Contraseña_Trabajador.ParameterName = "@password";
                 Parametro_Contraseña_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Contraseña_Trabajador.Size = 30;
-                Parametro_Contraseña_Trabajador.Value = Trabajador.Contraseña;
+                Parametro_Contraseña_Trabajador.Value = Usuario.Contraseña;
                 SqlComando.Parameters.Add(Parametro_Contraseña_Trabajador);
 
                 //parametro direccion
                 SqlParameter Parametro_Direccion_Trabajador = new SqlParameter();
-                Parametro_Direccion_Trabajador.ParameterName = "@Direccion";
+                Parametro_Direccion_Trabajador.ParameterName = "@direccion";
                 Parametro_Direccion_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Direccion_Trabajador.Size = 50;
-                Parametro_Direccion_Trabajador.Value = Trabajador.Direccion;
+                Parametro_Direccion_Trabajador.Value = Usuario.Direccion;
                 SqlComando.Parameters.Add(Parametro_Direccion_Trabajador);
 
                 //parametro telefono
                 SqlParameter Parametro_Telefono_Trabajador = new SqlParameter();
-                Parametro_Telefono_Trabajador.ParameterName = "@Telefono";
+                Parametro_Telefono_Trabajador.ParameterName = "@telefono";
                 Parametro_Telefono_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Telefono_Trabajador.Size = 13;
-                Parametro_Telefono_Trabajador.Value = Trabajador.Telefono;
+                Parametro_Telefono_Trabajador.Value = Usuario.Telefono;
                 SqlComando.Parameters.Add(Parametro_Telefono_Trabajador);
 
                 //parametro correo
                 SqlParameter Parametro_Correo_Trabajador = new SqlParameter();
-                Parametro_Correo_Trabajador.ParameterName = "@Correo";
+                Parametro_Correo_Trabajador.ParameterName = "@correo";
                 Parametro_Correo_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Correo_Trabajador.Size = 60;
-                Parametro_Correo_Trabajador.Value = Trabajador.Correo;
+                Parametro_Correo_Trabajador.Value = Usuario.Correo;
                 SqlComando.Parameters.Add(Parametro_Correo_Trabajador);
 
                 //parametro acceso
                 SqlParameter Parametro_Acceso_Trabajador = new SqlParameter();
-                Parametro_Acceso_Trabajador.ParameterName = "@Acceso";
+                Parametro_Acceso_Trabajador.ParameterName = "@acceso";
                 Parametro_Acceso_Trabajador.SqlDbType = SqlDbType.Int;
-                Parametro_Acceso_Trabajador.Value = Trabajador.Acceso;
+                Parametro_Acceso_Trabajador.Value = Usuario.Acceso;
                 SqlComando.Parameters.Add(Parametro_Acceso_Trabajador);
 
                 //ejecuta y lo envia en comentario
@@ -178,7 +177,7 @@ namespace Datos
         }
 
         //editar
-        public string Editar(DUsuario Trabajador)
+        public string Editar(DUsuario Usuario)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -192,64 +191,65 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Editar_Trabajador";
+                SqlComando.CommandText = "editar_usuario";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
 
+
                 //parametro cedula
                 SqlParameter Parametro_Id_Trabajador = new SqlParameter();
-                Parametro_Id_Trabajador.ParameterName = "@Cedula";
+                Parametro_Id_Trabajador.ParameterName = "@cedula";
                 Parametro_Id_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Id_Trabajador.Size = 10;
-                Parametro_Id_Trabajador.Value = Trabajador.Cedula;
+                Parametro_Id_Trabajador.Value = Usuario.Cedula;
                 SqlComando.Parameters.Add(Parametro_Id_Trabajador);
 
                 //parametro nombre
                 SqlParameter Parametro_Nombre_Trabajador = new SqlParameter();
-                Parametro_Nombre_Trabajador.ParameterName = "@Nombre";
+                Parametro_Nombre_Trabajador.ParameterName = "@nombre";
                 Parametro_Nombre_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre_Trabajador.Size = 50;
-                Parametro_Nombre_Trabajador.Value = Trabajador.Nombre;
+                Parametro_Nombre_Trabajador.Value = Usuario.Nombre;
                 SqlComando.Parameters.Add(Parametro_Nombre_Trabajador);
 
                 //parametro contraseña
                 SqlParameter Parametro_Contraseña_Trabajador = new SqlParameter();
-                Parametro_Contraseña_Trabajador.ParameterName = "@Password";
+                Parametro_Contraseña_Trabajador.ParameterName = "@password";
                 Parametro_Contraseña_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Contraseña_Trabajador.Size = 30;
-                Parametro_Contraseña_Trabajador.Value = Trabajador.Contraseña;
+                Parametro_Contraseña_Trabajador.Value = Usuario.Contraseña;
                 SqlComando.Parameters.Add(Parametro_Contraseña_Trabajador);
 
                 //parametro direccion
                 SqlParameter Parametro_Direccion_Trabajador = new SqlParameter();
-                Parametro_Direccion_Trabajador.ParameterName = "@Direccion";
+                Parametro_Direccion_Trabajador.ParameterName = "@direccion";
                 Parametro_Direccion_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Direccion_Trabajador.Size = 50;
-                Parametro_Direccion_Trabajador.Value = Trabajador.Direccion;
+                Parametro_Direccion_Trabajador.Value = Usuario.Direccion;
                 SqlComando.Parameters.Add(Parametro_Direccion_Trabajador);
 
                 //parametro telefono
                 SqlParameter Parametro_Telefono_Trabajador = new SqlParameter();
-                Parametro_Telefono_Trabajador.ParameterName = "@Telefono";
+                Parametro_Telefono_Trabajador.ParameterName = "@telefono";
                 Parametro_Telefono_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Telefono_Trabajador.Size = 13;
-                Parametro_Telefono_Trabajador.Value = Trabajador.Telefono;
+                Parametro_Telefono_Trabajador.Value = Usuario.Telefono;
                 SqlComando.Parameters.Add(Parametro_Telefono_Trabajador);
 
                 //parametro correo
                 SqlParameter Parametro_Correo_Trabajador = new SqlParameter();
-                Parametro_Correo_Trabajador.ParameterName = "@Correo";
+                Parametro_Correo_Trabajador.ParameterName = "@correo";
                 Parametro_Correo_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Correo_Trabajador.Size = 60;
-                Parametro_Correo_Trabajador.Value = Trabajador.Correo;
+                Parametro_Correo_Trabajador.Value = Usuario.Correo;
                 SqlComando.Parameters.Add(Parametro_Correo_Trabajador);
 
                 //parametro acceso
                 SqlParameter Parametro_Acceso_Trabajador = new SqlParameter();
-                Parametro_Acceso_Trabajador.ParameterName = "@Acceso";
+                Parametro_Acceso_Trabajador.ParameterName = "@acceso";
                 Parametro_Acceso_Trabajador.SqlDbType = SqlDbType.Int;
-                Parametro_Acceso_Trabajador.Value = Trabajador.Acceso;
+                Parametro_Acceso_Trabajador.Value = Usuario.Acceso;
                 SqlComando.Parameters.Add(Parametro_Acceso_Trabajador);
 
                 //ejecuta y lo envia en comentario
@@ -289,21 +289,21 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Eliminar_Trabajador";
+                SqlComando.CommandText = "eliminar_usuario";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
 
                 //parametro id
                 SqlParameter Parametro_Id_Trabajador = new SqlParameter();
-                Parametro_Id_Trabajador.ParameterName = "@Cedula";
+                Parametro_Id_Trabajador.ParameterName = "@cedula";
                 Parametro_Id_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Id_Trabajador.Size = 10;
                 Parametro_Id_Trabajador.Value = Trabajador.Cedula;
                 SqlComando.Parameters.Add(Parametro_Id_Trabajador);
 
                 //ejecuta y lo envia en comentario
-                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se elimino el Registro del trabajador";
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se elimino el usuario";
 
             }
             catch (Exception excepcion)
@@ -326,7 +326,7 @@ namespace Datos
         //Mostrar
         public List<DUsuario> Mostrar(string TextoBuscar)
         {
-            DataTable DtResultado = new DataTable("Trabajador");
+            DataTable DtResultado = new DataTable("Usuarios");
             SqlConnection SqlConectar = new SqlConnection();
             List<DUsuario> ListaGenerica = new List<DUsuario>();
 
@@ -336,10 +336,10 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Mostrar_Trabajador";
+                SqlComando.CommandText = "mostrar_usuario";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
-                SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
 
                 SqlConectar.Open();
 

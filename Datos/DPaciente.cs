@@ -84,7 +84,7 @@ namespace Datos
 
         }
 
-        public DPaciente(int IdCliente, string Nombre, int Edad, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion,int IdMedico, string TextoBuscar)
+        public DPaciente(int IdPaciente, string Nombre, int Edad, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion,int IdMedico, string TextoBuscar)
         {
             this.IdPaciente = IdPaciente;
             this.Nombre = Nombre;
@@ -368,7 +368,7 @@ namespace Datos
 
         }
 
-        //mostrar
+        //mostrar y buscar
         public List<DPaciente> Mostrar(string TextoBuscar)
         {
             DataTable DtResultado = new DataTable("Paciente");
@@ -384,7 +384,7 @@ namespace Datos
                 SqlComando.CommandText = "mostrar_paciente";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
-                SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
 
                 SqlConectar.Open();
 

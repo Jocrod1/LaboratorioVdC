@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MMedico.cs" />
     <Compile Include="MPaciente.cs" />
     <Compile Include="MUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
