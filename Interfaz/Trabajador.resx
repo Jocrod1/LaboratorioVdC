@@ -121,7 +121,7 @@
   <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAVISURBVFhH1Zb5T1RXFMfHEqRYKLXERKw2YnABVBysQGhY
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAVISURBVFhH1Zb5T1RXFMfHEqRYKLXERKw2YnABVBysQGhY
         RSmLZSdQlo4s0pHWBUWhVYuIliqm7Q+amrT9tT80TfpD/4FWaSHIJovKVKjVsowK4jzggcu399z33sx7
         MAME9Yee5JubMI/z+Z5z7r3v6f6X0V2ai6YYPRrDfdEYtREdxemQf3o50bU3Aw3Bb+HPTUtwbccq9GT5
         oc+wBbeLt7I1AD2ZvuiMXYlGvTv+0Hvi2oeJL8ZQW0Y0Gja7MeBGmI9GQzifjMkL6Xj8bSaekC6m48mF
@@ -147,6 +147,9 @@
         SYQ0/iLcyAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -467,4 +470,7 @@
         Aoi0BLSfHyAtBxBspSDR3iDpSkecK8qJyOnZveMdfyOR+AP4ge72+VgvagAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="errorIcono.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
