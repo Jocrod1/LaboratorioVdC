@@ -158,16 +158,22 @@ namespace Interfaz
 
                 if (Opcion == DialogResult.OK)
                 {
-                    string ID;
                     string Rpta = "";
 
-                    foreach (DataGridViewRow row in dataListado.Rows)
-                    {
-                        if (Convert.ToBoolean(row.Cells[0].Value))
-                        {
-                            ID = Convert.ToString(row.Cells[1].Value);
-                            Rpta = MUsuario.Eliminar(ID); 
 
+
+                            //for (int i = 0; i <= dataListado.Rows.Count + 1;i++ )
+                            //{
+                            //    if (dataListado.SelectedRows[i].Selected==true)
+                            //    {
+                            //        Rpta = MUsuario.Eliminar(Convert.ToString(dataListado.Rows[i].Cells[1]));
+                            //    }
+                            //}
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MUsuario.Eliminar(Convert.ToString(dataListado.Rows[item].Cells[0]));
+                    }
                             if (Rpta.Equals("OK"))
                             {
                                 this.MensajeOK("Se Eliminó Correctamente el registro");
@@ -177,8 +183,7 @@ namespace Interfaz
                                 this.MensajeError(Rpta);
                             }
 
-                        }
-                    }
+
                     this.Mostrar();
                 }
             }
