@@ -172,7 +172,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MUsuario.Eliminar(Convert.ToString(dataListado.Rows[item].Cells[0]));
+                        Rpta = MUsuario.Eliminar(Convert.ToString(this.dataListado.CurrentRow.Cells["cedula"].Value));
                     }
                             if (Rpta.Equals("OK"))
                             {

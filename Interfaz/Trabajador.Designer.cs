@@ -36,7 +36,6 @@
             this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.chkEliminar = new System.Windows.Forms.CheckBox();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAnular = new System.Windows.Forms.Button();
@@ -91,7 +90,6 @@
             this.tabPage1.Controls.Add(this.cbBuscar);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.lblTotal);
-            this.tabPage1.Controls.Add(this.chkEliminar);
             this.tabPage1.Controls.Add(this.dataListado);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.btnAnular);
@@ -148,17 +146,6 @@
             this.lblTotal.TabIndex = 38;
             this.lblTotal.Text = "label5";
             // 
-            // chkEliminar
-            // 
-            this.chkEliminar.AutoSize = true;
-            this.chkEliminar.Location = new System.Drawing.Point(34, 84);
-            this.chkEliminar.Name = "chkEliminar";
-            this.chkEliminar.Size = new System.Drawing.Size(62, 17);
-            this.chkEliminar.TabIndex = 37;
-            this.chkEliminar.Text = "Eliminar";
-            this.chkEliminar.UseVisualStyleBackColor = true;
-            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
-            // 
             // dataListado
             // 
             this.dataListado.AllowUserToAddRows = false;
@@ -166,6 +153,7 @@
             this.dataListado.AllowUserToOrderColumns = true;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Location = new System.Drawing.Point(34, 116);
+            this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -276,7 +264,7 @@
             this.cbAcceso.Location = new System.Drawing.Point(182, 339);
             this.cbAcceso.Name = "cbAcceso";
             this.cbAcceso.Size = new System.Drawing.Size(267, 21);
-            this.cbAcceso.TabIndex = 67;
+            this.cbAcceso.TabIndex = 7;
             // 
             // label7
             // 
@@ -295,7 +283,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(182, 210);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(267, 20);
-            this.txtDireccion.TabIndex = 65;
+            this.txtDireccion.TabIndex = 4;
             // 
             // label9
             // 
@@ -314,7 +302,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(182, 296);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(267, 20);
-            this.txtCorreo.TabIndex = 64;
+            this.txtCorreo.TabIndex = 6;
             // 
             // label10
             // 
@@ -333,7 +321,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(182, 253);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(267, 20);
-            this.txtTelefono.TabIndex = 59;
+            this.txtTelefono.TabIndex = 5;
             // 
             // label1
             // 
@@ -352,7 +340,7 @@
             this.txtContrasena.Location = new System.Drawing.Point(182, 167);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(267, 20);
-            this.txtContrasena.TabIndex = 57;
+            this.txtContrasena.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -422,7 +410,7 @@
             this.txtCiTrabajador.Location = new System.Drawing.Point(182, 81);
             this.txtCiTrabajador.Name = "txtCiTrabajador";
             this.txtCiTrabajador.Size = new System.Drawing.Size(267, 20);
-            this.txtCiTrabajador.TabIndex = 30;
+            this.txtCiTrabajador.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -471,7 +459,7 @@
             this.txtNombre.Location = new System.Drawing.Point(182, 124);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(267, 20);
-            this.txtNombre.TabIndex = 33;
+            this.txtNombre.TabIndex = 2;
             // 
             // label5
             // 
@@ -516,7 +504,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.CheckBox chkEliminar;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnAnular;
