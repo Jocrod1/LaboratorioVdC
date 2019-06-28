@@ -129,10 +129,7 @@ namespace Interfaz
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
-
-          
-            
-               if (cbBuscar.SelectedIndex == 0)
+            if (cbBuscar.SelectedIndex == 0)
             {
 
                 this.Mostrar();
@@ -153,36 +150,45 @@ namespace Interfaz
 
             try
             {
+                int NumeroSeleccionado=0;
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente Desea Eliminar los Registros", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar los " + NumeroSeleccionado + " Registros de Trabajadores?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar el Registro del Trabajador?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
 
                 if (Opcion == DialogResult.OK)
                 {
                     string Rpta = "";
 
-
-
-                            //for (int i = 0; i <= dataListado.Rows.Count + 1;i++ )
-                            //{
-                            //    if (dataListado.SelectedRows[i].Selected==true)
-                            //    {
-                            //        Rpta = MUsuario.Eliminar(Convert.ToString(dataListado.Rows[i].Cells[1]));
-                            //    }
-                            //}
-
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
                         Rpta = MUsuario.Eliminar(Convert.ToString(item.Cells["cedula"].Value));
                     }
-                            if (Rpta.Equals("OK"))
-                            {
-                                this.MensajeOK("Se Eliminó Correctamente el registro");
-                            }
-                            else
-                            {
-                                this.MensajeError(Rpta);
-                            }
 
+                    if (Rpta.Equals("OK"))
+                    {
+                        if(NumeroSeleccionado>1)
+                        {
+                            this.MensajeOK("Se Eliminaron Correctamente los Registros de Trabajadores");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Eliminó Correctamente el Registro del Trabajador");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
 
                     this.Mostrar();
                 }
@@ -197,12 +203,6 @@ namespace Interfaz
         private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
-            {
-                DataGridViewCheckBoxCell ChkEliminar =
-                    (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
-                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
-            }
         }
 
 
