@@ -172,7 +172,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MUsuario.Eliminar(Convert.ToString(this.dataListado.CurrentRow.Cells["cedula"].Value));
+                        Rpta = MUsuario.Eliminar(Convert.ToString(item.Cells["cedula"].Value));
                     }
                             if (Rpta.Equals("OK"))
                             {
@@ -190,18 +190,6 @@ namespace Interfaz
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
-        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkEliminar.Checked)
-            {
-                this.dataListado.Columns[0].Visible = true;
-            }
-            else
-            {
-                this.dataListado.Columns[0].Visible = false;
             }
         }
 
