@@ -119,30 +119,32 @@ namespace Interfaz
 
         private void Mostrar()
         {
-            MUsuario.Mostrar(txtBuscar.Text);
+            //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MUsuario.Mostrar(txtBuscar.Text);
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
+        private void Buscar_Nombre()
+        {
+            //MUsuario.Buscar_Nombre(txtBuscar.Text);
+
+            dataListado.DataSource = MUsuario.Buscar_Nombre(txtBuscar.Text);
+            // this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
             if (cbBuscar.SelectedIndex == 0)
             {
-
                 this.Mostrar();
-
             }
             else if (cbBuscar.SelectedIndex == 1)
             {
-                // this.BuscarNombre();
+                this.Buscar_Nombre();
             }
-             
-
-
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

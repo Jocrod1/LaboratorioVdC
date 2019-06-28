@@ -370,13 +370,11 @@ namespace Datos
 
         }
 
-        /*
-        //Buscar
-        public List<DTrabajador> Buscar_Cedula()
+        public List<DUsuario> Buscar_Nombre(string TextoBuscar)
         {
-            DataTable DtResultado = new DataTable("Trabajador");
+            DataTable DtResultado = new DataTable("Usuarios");
             SqlConnection SqlConectar = new SqlConnection();
-            List<DTrabajador> ListaGenerica = new List<DTrabajador>();
+            List<DUsuario> ListaGenerica = new List<DUsuario>();
 
             try
             {
@@ -384,10 +382,10 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Buscar_Trabajador_Cedula";
+                SqlComando.CommandText = "buscar_usuario_nombre";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
-                SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
 
                 SqlConectar.Open();
 
@@ -395,7 +393,7 @@ namespace Datos
 
                 while (LeerFilas.Read())
                 {
-                    ListaGenerica.Add(new DTrabajador
+                    ListaGenerica.Add(new DUsuario
                     {
                         Cedula = LeerFilas.GetString(0),
                         Nombre = LeerFilas.GetString(1),
@@ -417,6 +415,45 @@ namespace Datos
             return ListaGenerica;
 
         }
-        */
+
+
+        public DataTable Login(DUsuario Usuario)
+        {
+            DataTable DtResultado = new DataTable("Usuarios");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon.ConnectionString = Conexion.CadenaConexion;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "acceso";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                //parametro usuario
+                SqlParameter Parametro_Usuario = new SqlParameter();
+                Parametro_Usuario.ParameterName = "@cedula";
+                Parametro_Usuario.SqlDbType = SqlDbType.VarChar;
+                Parametro_Usuario.Size = 10;
+                Parametro_Usuario.Value = Usuario.Cedula;
+                SqlCmd.Parameters.Add(Parametro_Usuario);
+
+                //parametro clave
+                SqlParameter Parametro_Contraseña = new SqlParameter();
+                Parametro_Contraseña.ParameterName = "@contraseña";
+                Parametro_Contraseña.SqlDbType = SqlDbType.VarChar;
+                Parametro_Contraseña.Size = 30;
+                Parametro_Contraseña.Value = Usuario.Contraseña;
+                SqlCmd.Parameters.Add(Parametro_Contraseña);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+            }
+            catch (Exception)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
     }
 }

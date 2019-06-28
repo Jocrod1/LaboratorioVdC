@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using System.Data;
 
 namespace Metodos
 {
@@ -50,6 +51,18 @@ namespace Metodos
             return Objeto.Mostrar(TextoBuscar);
         }
 
+        public new static List<DUsuario> Buscar_Nombre(string TextoBuscar)
+        {
+            DUsuario Objeto = new DUsuario();
+            return Objeto.Buscar_Nombre(TextoBuscar);
+        }
 
+        public static DataTable Login(string usuario, string contraseña)
+        {
+            DUsuario Obj = new DUsuario();
+            Obj.Cedula = usuario;
+            Obj.Contraseña = contraseña;
+            return Obj.Login(Obj);
+        }
     }
 }
