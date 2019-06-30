@@ -53,9 +53,9 @@ namespace Datos
             get { return _Correo; }
             set { _Correo = value; }
         }
-        private int _Acceso;
+        private string _Acceso;
 
-        public int Acceso
+        public string Acceso
         {
             get { return _Acceso; }
             set { _Acceso = value; }
@@ -67,7 +67,7 @@ namespace Datos
 
         }
 
-        public DUsuario(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, int Acceso, string TextoBuscar)
+        public DUsuario(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, string Acceso, string TextoBuscar)
         {
             this.Cedula = Cedula;
             this.Nombre = Nombre;
@@ -151,7 +151,7 @@ namespace Datos
                 //parametro acceso
                 SqlParameter Parametro_Acceso_Trabajador = new SqlParameter();
                 Parametro_Acceso_Trabajador.ParameterName = "@acceso";
-                Parametro_Acceso_Trabajador.SqlDbType = SqlDbType.Int;
+                Parametro_Acceso_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Acceso_Trabajador.Value = Usuario.Acceso;
                 SqlComando.Parameters.Add(Parametro_Acceso_Trabajador);
 
@@ -355,7 +355,7 @@ namespace Datos
                         Direccion = LeerFilas.GetString(3),
                         Telefono = LeerFilas.GetString(4),
                         Correo=LeerFilas.GetString(5),
-                        Acceso=LeerFilas.GetInt32(6),
+                        Acceso=LeerFilas.GetString(6),
                     });
                 }
                 LeerFilas.Close();
@@ -401,7 +401,7 @@ namespace Datos
                         Direccion = LeerFilas.GetString(3),
                         Telefono = LeerFilas.GetString(4),
                         Correo = LeerFilas.GetString(5),
-                        Acceso = LeerFilas.GetInt32(6),
+                        Acceso = LeerFilas.GetString(6),
                     });
                 }
                 LeerFilas.Close();

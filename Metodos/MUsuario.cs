@@ -10,7 +10,7 @@ namespace Metodos
 {
     public class MUsuario : DUsuario
     {
-        public static string Insertar(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, int Acceso)
+        public static string Insertar(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, string Acceso)
         {
             DUsuario Objeto = new DUsuario();
             Objeto.Cedula = Cedula;
@@ -24,7 +24,7 @@ namespace Metodos
         }
 
 
-        public static string Editar(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, int Acceso)
+        public static string Editar(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, string Acceso)
         {
             DUsuario Objeto = new DUsuario();
             Objeto.Cedula = Cedula;

@@ -147,12 +147,11 @@ namespace Interfaz
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
+        void EliminarItems() {
 
             try
             {
-                int NumeroSeleccionado=0;
+                int NumeroSeleccionado = 0;
                 DialogResult Opcion;
                 foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                 {
@@ -178,7 +177,7 @@ namespace Interfaz
 
                     if (Rpta.Equals("OK"))
                     {
-                        if(NumeroSeleccionado>1)
+                        if (NumeroSeleccionado > 1)
                         {
                             this.MensajeOK("Se Eliminaron Correctamente los Registros de Trabajadores");
                         }
@@ -199,6 +198,11 @@ namespace Interfaz
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarItems();
         }
 
 
@@ -242,13 +246,13 @@ namespace Interfaz
                     {
                         //Vamos a insertar un Trabajador 
 
-                        Rpta = MUsuario.Insertar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedIndex );
+                        Rpta = MUsuario.Insertar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
 
                     }
                     else
                     {
                         //Vamos a modificar un Trabajador
-                        Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedIndex);
+                        Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
                     }
                     //Si la respuesta fue OK, fue porque se modifico 
                     //o inserto el Trabajador
@@ -310,6 +314,11 @@ namespace Interfaz
             this.txtCiTrabajador.Text = string.Empty;
         }
 
-
+        private void DataListado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) {
+                EliminarItems();
+            }
+        }
     }
 }
