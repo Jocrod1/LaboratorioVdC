@@ -48,16 +48,17 @@ namespace Interfaz
             if (txtcontraseña.Text.Equals("Contraseña"))
             {
                 txtcontraseña.Text = "";
-                txtcontraseña.UseSystemPasswordChar = true;
             }
+            txtcontraseña.UseSystemPasswordChar = true;
+
         }
 
         private void txtPassLeave(object sender, EventArgs e)
         {
             if (txtcontraseña.Text.Equals(""))
             {
-                txtcontraseña.Text = "Contraseña";
                 txtcontraseña.UseSystemPasswordChar = false;
+                txtcontraseña.Text = "Contraseña";
             }
         }
 
