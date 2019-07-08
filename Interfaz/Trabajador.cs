@@ -51,13 +51,57 @@ namespace Interfaz
             this.txtNombre.Focus();
         }
 
-
-
+        //Validar datos al ingresar
+        private bool validar()
+        {
+            bool error = true;
+            if (txtCiTrabajador.Text == "")
+            {
+                error = false;
+                Provider1.SetError(txtCiTrabajador, "Agrega el CI del trabajador");
+            }
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                Provider2.SetError(txtNombre, "Inserta un nombre");
+            }
+            if (txtContrasena.Text == "")
+            {
+                error = false;
+                Provider3.SetError(txtContrasena, "¡Crea una contraseña!");
+            }
+            if (richDireccion.Text == "")
+            {
+                error = false;
+                Provider4.SetError(richDireccion, "Agrega la dirección del trabajdor");
+            }
+            if (txtTelefono.Text == "")
+            {
+                error = false;
+                Provider5.SetError(txtTelefono, "Inserta un número telefónico");
+            }
+            if (txtCorreo.Text == "")
+            {
+                error = false;
+                Provider6.SetError(txtCorreo, "No olvides el correo electrónico");
+            }
+            return error;
+        }
+        //Cuando se llenen, se retira el error
+        private void SinErrores()
+        {
+            Provider1.SetError(txtCiTrabajador, "");
+            Provider2.SetError(txtNombre, "");
+            Provider3.SetError(txtContrasena,"");
+            Provider4.SetError(richDireccion,"");
+            Provider5.SetError(txtTelefono,"");
+            Provider6.SetError(txtCorreo,"");
+        }
         private void Limpiar()
         {
             this.txtCiTrabajador.Text = string.Empty;
             this.txtNombre.Text = string.Empty;
-            this.txtDireccion.Text = string.Empty;
+            this.richDireccion.Text = string.Empty;
             this.txtContrasena.Text = string.Empty;
             this.txtTelefono.Text = string.Empty;
             this.txtCorreo.Text = string.Empty;
@@ -68,7 +112,7 @@ namespace Interfaz
         {
             this.txtCiTrabajador.ReadOnly = !Valor;
             this.txtNombre.ReadOnly = !Valor;
-            this.txtDireccion.ReadOnly = !Valor;
+            this.richDireccion.ReadOnly = !Valor;
             this.txtContrasena.ReadOnly = !Valor;
             this.txtTelefono.ReadOnly = !Valor;
             this.cbAcceso.Enabled = Valor;
@@ -217,7 +261,7 @@ namespace Interfaz
         {
             this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
+            this.richDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
             this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
             this.txtContrasena.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contraseña"].Value);
             this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
@@ -231,8 +275,8 @@ namespace Interfaz
             try
             {
 
-                //La variable que almacena si se inserto 
-                //o se modifico la tabla
+                //La variable que almacena si se insertó
+                //o se modificó la tabla
                 string Rpta = "";
                 if (this.txtNombre.Text == string.Empty || txtContrasena.Text == string.Empty)
                 {
@@ -254,8 +298,8 @@ namespace Interfaz
                         //Vamos a modificar un Trabajador
                         Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
                     }
-                    //Si la respuesta fue OK, fue porque se modifico 
-                    //o inserto el Trabajador
+                    //Si la respuesta fue OK, fue porque se modificó
+                    //o insertó el Trabajador
                     //de forma correcta
                     if (Rpta.Equals("OK"))
                     {
@@ -319,6 +363,11 @@ namespace Interfaz
             if (e.KeyCode == Keys.Delete) {
                 EliminarItems();
             }
+        }
+
+        private void cbAcceso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medico));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -43,9 +44,9 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richDireccion = new System.Windows.Forms.RichTextBox();
             this.cbAcceso = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,12 +64,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.err1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.err2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.err3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.err4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.err5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.err6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.err7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err7)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -228,9 +243,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox1.Controls.Add(this.richDireccion);
             this.groupBox1.Controls.Add(this.cbAcceso);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.label10);
@@ -256,6 +271,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medico";
             // 
+            // richDireccion
+            // 
+            this.richDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.richDireccion.Location = new System.Drawing.Point(182, 209);
+            this.richDireccion.MaxLength = 1000;
+            this.richDireccion.Name = "richDireccion";
+            this.richDireccion.Size = new System.Drawing.Size(267, 33);
+            this.richDireccion.TabIndex = 68;
+            this.richDireccion.Text = "";
+            // 
             // cbAcceso
             // 
             this.cbAcceso.FormattingEnabled = true;
@@ -280,20 +305,12 @@
             this.label7.TabIndex = 66;
             this.label7.Text = "Acceso:";
             // 
-            // txtDireccion
-            // 
-            this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDireccion.Location = new System.Drawing.Point(182, 210);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(267, 20);
-            this.txtDireccion.TabIndex = 65;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(99, 292);
+            this.label9.Location = new System.Drawing.Point(99, 297);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 23);
             this.label9.TabIndex = 63;
@@ -302,7 +319,8 @@
             // txtCorreo
             // 
             this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCorreo.Location = new System.Drawing.Point(182, 296);
+            this.txtCorreo.Location = new System.Drawing.Point(182, 301);
+            this.txtCorreo.MaxLength = 100;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(267, 20);
             this.txtCorreo.TabIndex = 64;
@@ -312,7 +330,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Teal;
-            this.label10.Location = new System.Drawing.Point(83, 210);
+            this.label10.Location = new System.Drawing.Point(83, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 23);
             this.label10.TabIndex = 62;
@@ -321,7 +339,8 @@
             // txtTelefono
             // 
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTelefono.Location = new System.Drawing.Point(182, 253);
+            this.txtTelefono.Location = new System.Drawing.Point(182, 264);
+            this.txtTelefono.MaxLength = 13;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(267, 20);
             this.txtTelefono.TabIndex = 59;
@@ -331,7 +350,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(88, 250);
+            this.label1.Location = new System.Drawing.Point(88, 261);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 58;
@@ -341,6 +360,7 @@
             // 
             this.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtContrasena.Location = new System.Drawing.Point(182, 167);
+            this.txtContrasena.MaxLength = 100;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(267, 20);
             this.txtContrasena.TabIndex = 57;
@@ -409,6 +429,7 @@
             // 
             this.txtCiMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCiMedico.Location = new System.Drawing.Point(182, 81);
+            this.txtCiMedico.MaxLength = 9;
             this.txtCiMedico.Name = "txtCiMedico";
             this.txtCiMedico.Size = new System.Drawing.Size(267, 20);
             this.txtCiMedico.TabIndex = 30;
@@ -440,6 +461,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label4
             // 
@@ -456,6 +478,7 @@
             // 
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(182, 124);
+            this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(267, 20);
             this.txtNombre.TabIndex = 33;
@@ -470,6 +493,41 @@
             this.label5.Size = new System.Drawing.Size(89, 23);
             this.label5.TabIndex = 34;
             this.label5.Text = "Contraseña:";
+            // 
+            // err1
+            // 
+            this.err1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.err1.ContainerControl = this;
+            // 
+            // err2
+            // 
+            this.err2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.err2.ContainerControl = this;
+            // 
+            // err3
+            // 
+            this.err3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.err3.ContainerControl = this;
+            // 
+            // err4
+            // 
+            this.err4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.err4.ContainerControl = this;
+            // 
+            // err5
+            // 
+            this.err5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.err5.ContainerControl = this;
+            // 
+            // err6
+            // 
+            this.err6.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.err6.ContainerControl = this;
+            // 
+            // err7
+            // 
+            this.err7.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.err7.ContainerControl = this;
             // 
             // Medico
             // 
@@ -487,6 +545,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,7 +574,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbAcceso;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label10;
@@ -527,5 +591,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox richDireccion;
+        private System.Windows.Forms.ErrorProvider err1;
+        private System.Windows.Forms.ErrorProvider err2;
+        private System.Windows.Forms.ErrorProvider err3;
+        private System.Windows.Forms.ErrorProvider err4;
+        private System.Windows.Forms.ErrorProvider err5;
+        private System.Windows.Forms.ErrorProvider err6;
+        private System.Windows.Forms.ErrorProvider err7;
     }
 }

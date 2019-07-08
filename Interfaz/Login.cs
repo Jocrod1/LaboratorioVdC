@@ -22,10 +22,6 @@ namespace Interfaz
             txtcontraseña.Text = "Contraseña";
             txtcontraseña.UseSystemPasswordChar = false;
         }
-
-
-
-
         // weas para que se vea bonito, para que se coloque la descripcion en el txtbox si no se ha rellenado
         private void txtUserEnter(object sender, EventArgs e)
         {
@@ -62,9 +58,35 @@ namespace Interfaz
             }
         }
 
-
+        //Validación de campos del login 
+        private bool valid()
+        {
+            bool error = true;
+            if (txtusuario.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtusuario, "Agrega tu nombre de usuario");
+            }
+            if (txtcontraseña.Text == "")
+            {
+                error = false;
+                errorProvider2.SetError(txtcontraseña, "¡Escribe tu contraseña!");
+            }
+            return error;
+        }
+        //Eliminación de los errores 
+        private void SinErrores()
+        {
+            errorProvider1.SetError(txtcontraseña, "");
+            errorProvider2.SetError(txtusuario, "");
+        } 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            SinErrores();
+            if (valid())
+            {
+                MessageBox.Show("¡Ingresando al sistema!", "Accediendo...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            } 
             Acceso();
         }
 
@@ -74,7 +96,7 @@ namespace Interfaz
 
             if (Datos.Rows.Count == 0)
             {
-                MessageBox.Show("Datos Incorrectos o la Cuenta No Existe", "Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Datos incorrectos o la cuenta no existe", "Laboratorio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtcontraseña.Clear();
             }
             else

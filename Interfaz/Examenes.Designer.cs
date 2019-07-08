@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Examenes));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -43,6 +44,11 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtPrecioRef = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtPlazoEntrega = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,7 +57,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtValNorMujeres = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtPrecio2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,18 +73,37 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUnidades = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtPlazoEntrega = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtPrecioRef = new System.Windows.Forms.TextBox();
+            this.richObservaciones = new System.Windows.Forms.RichTextBox();
+            this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error7 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error8 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error9 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error10 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error11 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error12 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error12)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -106,7 +131,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(772, 518);
+            this.tabPage1.Size = new System.Drawing.Size(785, 579);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             // 
@@ -238,10 +263,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox1.Controls.Add(this.richObservaciones);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtPrecioRef);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.txtObservaciones);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtPlazoEntrega);
             this.groupBox1.Controls.Add(this.label8);
@@ -252,7 +277,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtValNorMujeres);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtCorreo);
+            this.groupBox1.Controls.Add(this.txtPrecio2);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtPrecio1);
             this.groupBox1.Controls.Add(this.label1);
@@ -275,13 +300,65 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajador";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Teal;
+            this.label14.Location = new System.Drawing.Point(50, 482);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(130, 23);
+            this.label14.TabIndex = 76;
+            this.label14.Text = "Precio Referencia:";
+            // 
+            // txtPrecioRef
+            // 
+            this.txtPrecioRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPrecioRef.Location = new System.Drawing.Point(186, 486);
+            this.txtPrecioRef.MaxLength = 999999999;
+            this.txtPrecioRef.Name = "txtPrecioRef";
+            this.txtPrecioRef.Size = new System.Drawing.Size(267, 20);
+            this.txtPrecioRef.TabIndex = 77;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Teal;
+            this.label13.Location = new System.Drawing.Point(70, 324);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(111, 23);
+            this.label13.TabIndex = 74;
+            this.label13.Text = "Observaciones:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Teal;
+            this.label12.Location = new System.Drawing.Point(78, 286);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(102, 23);
+            this.label12.TabIndex = 72;
+            this.label12.Text = "Plazo Entrega:";
+            // 
+            // txtPlazoEntrega
+            // 
+            this.txtPlazoEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPlazoEntrega.Location = new System.Drawing.Point(187, 289);
+            this.txtPlazoEntrega.MaxLength = 200;
+            this.txtPlazoEntrega.Name = "txtPlazoEntrega";
+            this.txtPlazoEntrega.Size = new System.Drawing.Size(267, 20);
+            this.txtPlazoEntrega.TabIndex = 73;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(126, 400);
+            this.label8.Location = new System.Drawing.Point(125, 412);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 23);
             this.label8.TabIndex = 68;
@@ -290,7 +367,8 @@
             // txtTitulo
             // 
             this.txtTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTitulo.Location = new System.Drawing.Point(187, 404);
+            this.txtTitulo.Location = new System.Drawing.Point(186, 416);
+            this.txtTitulo.MaxLength = 30;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(267, 20);
             this.txtTitulo.TabIndex = 69;
@@ -300,7 +378,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Teal;
-            this.label11.Location = new System.Drawing.Point(14, 438);
+            this.label11.Location = new System.Drawing.Point(14, 444);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(166, 23);
             this.label11.TabIndex = 70;
@@ -309,7 +387,8 @@
             // txtLabRef
             // 
             this.txtLabRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLabRef.Location = new System.Drawing.Point(187, 442);
+            this.txtLabRef.Location = new System.Drawing.Point(187, 448);
+            this.txtLabRef.MaxLength = 100;
             this.txtLabRef.Name = "txtLabRef";
             this.txtLabRef.Size = new System.Drawing.Size(267, 20);
             this.txtLabRef.TabIndex = 71;
@@ -322,7 +401,7 @@
             "Area de Bacteriologia",
             "Area de Examenes",
             "Area de Bacteriologia/Examenes"});
-            this.cbIDGrupoExamen.Location = new System.Drawing.Point(187, 365);
+            this.cbIDGrupoExamen.Location = new System.Drawing.Point(186, 377);
             this.cbIDGrupoExamen.Name = "cbIDGrupoExamen";
             this.cbIDGrupoExamen.Size = new System.Drawing.Size(267, 21);
             this.cbIDGrupoExamen.TabIndex = 67;
@@ -332,7 +411,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(29, 362);
+            this.label7.Location = new System.Drawing.Point(28, 374);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 23);
             this.label7.TabIndex = 66;
@@ -342,6 +421,7 @@
             // 
             this.txtValNorMujeres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtValNorMujeres.Location = new System.Drawing.Point(187, 175);
+            this.txtValNorMujeres.MaxLength = 1000;
             this.txtValNorMujeres.Name = "txtValNorMujeres";
             this.txtValNorMujeres.Size = new System.Drawing.Size(267, 20);
             this.txtValNorMujeres.TabIndex = 65;
@@ -357,13 +437,14 @@
             this.label9.TabIndex = 63;
             this.label9.Text = "Precio 2:";
             // 
-            // txtCorreo
+            // txtPrecio2
             // 
-            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCorreo.Location = new System.Drawing.Point(187, 251);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(267, 20);
-            this.txtCorreo.TabIndex = 64;
+            this.txtPrecio2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPrecio2.Location = new System.Drawing.Point(187, 251);
+            this.txtPrecio2.MaxLength = 999999999;
+            this.txtPrecio2.Name = "txtPrecio2";
+            this.txtPrecio2.Size = new System.Drawing.Size(267, 20);
+            this.txtPrecio2.TabIndex = 64;
             // 
             // label10
             // 
@@ -380,6 +461,7 @@
             // 
             this.txtPrecio1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPrecio1.Location = new System.Drawing.Point(187, 213);
+            this.txtPrecio1.MaxLength = 999999999;
             this.txtPrecio1.Name = "txtPrecio1";
             this.txtPrecio1.Size = new System.Drawing.Size(267, 20);
             this.txtPrecio1.TabIndex = 59;
@@ -399,6 +481,7 @@
             // 
             this.txtValNorHombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtValNorHombres.Location = new System.Drawing.Point(187, 137);
+            this.txtValNorHombres.MaxLength = 1000;
             this.txtValNorHombres.Name = "txtValNorHombres";
             this.txtValNorHombres.Size = new System.Drawing.Size(267, 20);
             this.txtValNorHombres.TabIndex = 57;
@@ -419,7 +502,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(187, 521);
+            this.btnNuevo.Location = new System.Drawing.Point(187, 527);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(93, 40);
             this.btnNuevo.TabIndex = 41;
@@ -433,7 +516,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(385, 521);
+            this.btnEditar.Location = new System.Drawing.Point(385, 527);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(93, 40);
             this.btnEditar.TabIndex = 40;
@@ -467,6 +550,7 @@
             // 
             this.txtEquivalencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEquivalencia.Location = new System.Drawing.Point(187, 61);
+            this.txtEquivalencia.MaxLength = 50;
             this.txtEquivalencia.Name = "txtEquivalencia";
             this.txtEquivalencia.Size = new System.Drawing.Size(267, 20);
             this.txtEquivalencia.TabIndex = 30;
@@ -477,7 +561,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(484, 521);
+            this.btnCancelar.Location = new System.Drawing.Point(484, 527);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(93, 40);
             this.btnCancelar.TabIndex = 38;
@@ -491,13 +575,14 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(286, 521);
+            this.btnGuardar.Location = new System.Drawing.Point(286, 527);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(93, 40);
             this.btnGuardar.TabIndex = 31;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label4
             // 
@@ -514,6 +599,7 @@
             // 
             this.txtUnidades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUnidades.Location = new System.Drawing.Point(186, 99);
+            this.txtUnidades.MaxLength = 99999;
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Size = new System.Drawing.Size(267, 20);
             this.txtUnidades.TabIndex = 33;
@@ -529,62 +615,75 @@
             this.label5.TabIndex = 34;
             this.label5.Text = "Valores Normales H:";
             // 
-            // label12
+            // richObservaciones
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Teal;
-            this.label12.Location = new System.Drawing.Point(78, 286);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 23);
-            this.label12.TabIndex = 72;
-            this.label12.Text = "Plazo Entrega:";
+            this.richObservaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.richObservaciones.Location = new System.Drawing.Point(187, 328);
+            this.richObservaciones.MaxLength = 1000;
+            this.richObservaciones.Name = "richObservaciones";
+            this.richObservaciones.Size = new System.Drawing.Size(266, 33);
+            this.richObservaciones.TabIndex = 78;
+            this.richObservaciones.Text = "";
             // 
-            // txtPlazoEntrega
+            // error1
             // 
-            this.txtPlazoEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPlazoEntrega.Location = new System.Drawing.Point(187, 289);
-            this.txtPlazoEntrega.Name = "txtPlazoEntrega";
-            this.txtPlazoEntrega.Size = new System.Drawing.Size(267, 20);
-            this.txtPlazoEntrega.TabIndex = 73;
+            this.error1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error1.ContainerControl = this;
             // 
-            // label13
+            // error2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Teal;
-            this.label13.Location = new System.Drawing.Point(70, 324);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(111, 23);
-            this.label13.TabIndex = 74;
-            this.label13.Text = "Observaciones:";
+            this.error2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error2.ContainerControl = this;
             // 
-            // txtObservaciones
+            // error3
             // 
-            this.txtObservaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtObservaciones.Location = new System.Drawing.Point(187, 327);
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(267, 20);
-            this.txtObservaciones.TabIndex = 75;
+            this.error3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error3.ContainerControl = this;
             // 
-            // label14
+            // error4
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Teal;
-            this.label14.Location = new System.Drawing.Point(50, 476);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 23);
-            this.label14.TabIndex = 76;
-            this.label14.Text = "Precio Referencia:";
+            this.error4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error4.ContainerControl = this;
             // 
-            // txtPrecioRef
+            // error5
             // 
-            this.txtPrecioRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrecioRef.Location = new System.Drawing.Point(186, 480);
-            this.txtPrecioRef.Name = "txtPrecioRef";
-            this.txtPrecioRef.Size = new System.Drawing.Size(267, 20);
-            this.txtPrecioRef.TabIndex = 77;
+            this.error5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error5.ContainerControl = this;
+            // 
+            // error6
+            // 
+            this.error6.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error6.ContainerControl = this;
+            // 
+            // error7
+            // 
+            this.error7.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error7.ContainerControl = this;
+            // 
+            // error8
+            // 
+            this.error8.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error8.ContainerControl = this;
+            // 
+            // error9
+            // 
+            this.error9.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error9.ContainerControl = this;
+            // 
+            // error10
+            // 
+            this.error10.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error10.ContainerControl = this;
+            // 
+            // error11
+            // 
+            this.error11.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error11.ContainerControl = this;
+            // 
+            // error12
+            // 
+            this.error12.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error12.ContainerControl = this;
             // 
             // Examenes
             // 
@@ -603,6 +702,18 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,7 +738,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtValNorMujeres;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtPrecio2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPrecio1;
         private System.Windows.Forms.Label label1;
@@ -648,10 +759,22 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtLabRef;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtPlazoEntrega;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtPrecioRef;
+        private System.Windows.Forms.RichTextBox richObservaciones;
+        private System.Windows.Forms.ErrorProvider error1;
+        private System.Windows.Forms.ErrorProvider error2;
+        private System.Windows.Forms.ErrorProvider error3;
+        private System.Windows.Forms.ErrorProvider error4;
+        private System.Windows.Forms.ErrorProvider error5;
+        private System.Windows.Forms.ErrorProvider error6;
+        private System.Windows.Forms.ErrorProvider error7;
+        private System.Windows.Forms.ErrorProvider error8;
+        private System.Windows.Forms.ErrorProvider error9;
+        private System.Windows.Forms.ErrorProvider error10;
+        private System.Windows.Forms.ErrorProvider error11;
+        private System.Windows.Forms.ErrorProvider error12;
     }
 }

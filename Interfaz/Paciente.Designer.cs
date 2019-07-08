@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paciente));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -43,6 +44,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSexo = new System.Windows.Forms.ComboBox();
             this.txtIdMedico = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNroHab = new System.Windows.Forms.TextBox();
@@ -54,7 +56,6 @@
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSexo = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,12 +66,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error7 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error8)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -230,6 +247,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox1.Controls.Add(this.txtSexo);
             this.groupBox1.Controls.Add(this.txtIdMedico);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtNroHab);
@@ -241,7 +259,6 @@
             this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtSexo);
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.label2);
@@ -259,11 +276,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Paciente";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtSexo
+            // 
+            this.txtSexo.FormattingEnabled = true;
+            this.txtSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.txtSexo.Location = new System.Drawing.Point(158, 151);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.Size = new System.Drawing.Size(267, 21);
+            this.txtSexo.TabIndex = 66;
             // 
             // txtIdMedico
             // 
             this.txtIdMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtIdMedico.Location = new System.Drawing.Point(158, 369);
+            this.txtIdMedico.MaxLength = 10000;
             this.txtIdMedico.Name = "txtIdMedico";
             this.txtIdMedico.Size = new System.Drawing.Size(267, 20);
             this.txtIdMedico.TabIndex = 65;
@@ -283,6 +313,7 @@
             // 
             this.txtNroHab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNroHab.Location = new System.Drawing.Point(158, 326);
+            this.txtNroHab.MaxLength = 1000;
             this.txtNroHab.Name = "txtNroHab";
             this.txtNroHab.Size = new System.Drawing.Size(267, 20);
             this.txtNroHab.TabIndex = 64;
@@ -320,6 +351,7 @@
             // 
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTelefono.Location = new System.Drawing.Point(158, 240);
+            this.txtTelefono.MaxLength = 13;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(267, 20);
             this.txtTelefono.TabIndex = 59;
@@ -339,6 +371,7 @@
             // 
             this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEdad.Location = new System.Drawing.Point(158, 197);
+            this.txtEdad.MaxLength = 3;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(267, 20);
             this.txtEdad.TabIndex = 57;
@@ -363,14 +396,6 @@
             this.label8.Size = new System.Drawing.Size(46, 23);
             this.label8.TabIndex = 54;
             this.label8.Text = "Sexo:";
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSexo.Location = new System.Drawing.Point(158, 154);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(267, 20);
-            this.txtSexo.TabIndex = 55;
             // 
             // btnNuevo
             // 
@@ -426,6 +451,7 @@
             // 
             this.txtCiPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCiPaciente.Location = new System.Drawing.Point(158, 71);
+            this.txtCiPaciente.MaxLength = 9;
             this.txtCiPaciente.Name = "txtCiPaciente";
             this.txtCiPaciente.Size = new System.Drawing.Size(267, 20);
             this.txtCiPaciente.TabIndex = 30;
@@ -457,6 +483,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label4
             // 
@@ -473,6 +500,7 @@
             // 
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(158, 111);
+            this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(267, 20);
             this.txtNombre.TabIndex = 33;
@@ -487,6 +515,46 @@
             this.label5.Size = new System.Drawing.Size(45, 23);
             this.label5.TabIndex = 34;
             this.label5.Text = "Edad:";
+            // 
+            // error1
+            // 
+            this.error1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error1.ContainerControl = this;
+            // 
+            // error2
+            // 
+            this.error2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error2.ContainerControl = this;
+            // 
+            // error3
+            // 
+            this.error3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error3.ContainerControl = this;
+            // 
+            // error4
+            // 
+            this.error4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error4.ContainerControl = this;
+            // 
+            // error5
+            // 
+            this.error5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error5.ContainerControl = this;
+            // 
+            // error6
+            // 
+            this.error6.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error6.ContainerControl = this;
+            // 
+            // error7
+            // 
+            this.error7.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error7.ContainerControl = this;
+            // 
+            // error8
+            // 
+            this.error8.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.error8.ContainerControl = this;
             // 
             // Paciente
             // 
@@ -504,6 +572,14 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,7 +605,6 @@
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label2;
@@ -546,5 +621,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNroHab;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox txtSexo;
+        private System.Windows.Forms.ErrorProvider error1;
+        private System.Windows.Forms.ErrorProvider error2;
+        private System.Windows.Forms.ErrorProvider error3;
+        private System.Windows.Forms.ErrorProvider error4;
+        private System.Windows.Forms.ErrorProvider error5;
+        private System.Windows.Forms.ErrorProvider error6;
+        private System.Windows.Forms.ErrorProvider error7;
+        private System.Windows.Forms.ErrorProvider error8;
     }
 }

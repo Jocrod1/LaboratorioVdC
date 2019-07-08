@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.txtusuario = new System.Windows.Forms.TextBox();
@@ -41,12 +43,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +72,15 @@
             this.panel1.Size = new System.Drawing.Size(451, 361);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(54, 234);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -82,8 +96,9 @@
             this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcontraseña.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcontraseña.Location = new System.Drawing.Point(101, 238);
+            this.txtcontraseña.MaxLength = 50;
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(253, 26);
+            this.txtcontraseña.Size = new System.Drawing.Size(253, 23);
             this.txtcontraseña.TabIndex = 10;
             this.txtcontraseña.Enter += new System.EventHandler(this.txtPassEnter);
             this.txtcontraseña.Leave += new System.EventHandler(this.txtPassLeave);
@@ -94,8 +109,9 @@
             this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtusuario.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Location = new System.Drawing.Point(99, 191);
+            this.txtusuario.MaxLength = 50;
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(255, 26);
+            this.txtusuario.Size = new System.Drawing.Size(255, 23);
             this.txtusuario.TabIndex = 9;
             this.txtusuario.Enter += new System.EventHandler(this.txtUserEnter);
             this.txtusuario.Leave += new System.EventHandler(this.txtUserLeave);
@@ -108,7 +124,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(102, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 34);
+            this.label3.Size = new System.Drawing.Size(232, 31);
             this.label3.TabIndex = 8;
             this.label3.Text = "Ingreso al Sistema";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,7 +148,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(389, 49);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Laboratorio Clinico Especializado";
+            this.label2.Text = "Laboratorio Clínico Especializado";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -169,7 +185,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(96, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(265, 25);
+            this.label5.Size = new System.Drawing.Size(240, 22);
             this.label5.TabIndex = 12;
             this.label5.Text = "_______________________";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,7 +198,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(95, 241);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(265, 25);
+            this.label6.Size = new System.Drawing.Size(240, 22);
             this.label6.TabIndex = 13;
             this.label6.Text = "_______________________";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,14 +213,15 @@
             this.panel2.Size = new System.Drawing.Size(451, 361);
             this.panel2.TabIndex = 0;
             // 
-            // pictureBox2
+            // errorProvider1
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(54, 234);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider2.ContainerControl = this;
             // 
             // Login
             // 
@@ -218,10 +235,12 @@
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +260,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
