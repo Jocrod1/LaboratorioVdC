@@ -13,7 +13,7 @@ namespace Datos
         //Direccion Raimon DESKTOP-8BRANNO\\SQLEXPRESS
         //Direccion Mirla MIRLU-PC\\SQLEXPRESS
         //Direccion Arturo DESKTOP-KOFID31\\SQLEXPRESS
-        //Direccion Diana
+        //Direccion Diana DESKTOP-KA2T7KU\SQLEXPRESS 
 
     }
 }
