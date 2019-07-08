@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.txtusuario = new System.Windows.Forms.TextBox();
@@ -41,12 +42,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +67,15 @@
             this.panel1.Size = new System.Drawing.Size(451, 361);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(54, 234);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -79,11 +88,11 @@
             // txtcontraseña
             // 
             this.txtcontraseña.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcontraseña.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcontraseña.Location = new System.Drawing.Point(101, 238);
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(253, 26);
+            this.txtcontraseña.Size = new System.Drawing.Size(253, 33);
             this.txtcontraseña.TabIndex = 10;
             this.txtcontraseña.Enter += new System.EventHandler(this.txtPassEnter);
             this.txtcontraseña.Leave += new System.EventHandler(this.txtPassLeave);
@@ -91,11 +100,11 @@
             // txtusuario
             // 
             this.txtusuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtusuario.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Location = new System.Drawing.Point(99, 191);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(255, 26);
+            this.txtusuario.Size = new System.Drawing.Size(255, 33);
             this.txtusuario.TabIndex = 9;
             this.txtusuario.Enter += new System.EventHandler(this.txtUserEnter);
             this.txtusuario.Leave += new System.EventHandler(this.txtUserLeave);
@@ -197,15 +206,6 @@
             this.panel2.Size = new System.Drawing.Size(451, 361);
             this.panel2.TabIndex = 0;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(54, 234);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,10 +218,10 @@
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

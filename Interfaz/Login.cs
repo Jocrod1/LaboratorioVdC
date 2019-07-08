@@ -18,7 +18,7 @@ namespace Interfaz
         {
             InitializeComponent();
 
-            txtusuario.Text = @"Nombre de Usuario";
+            txtusuario.Text = @"Numero de Cedula";
             txtcontraseña.Text = "Contraseña";
             txtcontraseña.UseSystemPasswordChar = false;
         }
@@ -29,7 +29,7 @@ namespace Interfaz
         // weas para que se vea bonito, para que se coloque la descripcion en el txtbox si no se ha rellenado
         private void txtUserEnter(object sender, EventArgs e)
         {
-            if(txtusuario.Text.Equals(@"Nombre de Usuario"))
+            if(txtusuario.Text.Equals(@"Numero de Cedula"))
             {
                 txtusuario.Text = "";
             }
@@ -39,7 +39,7 @@ namespace Interfaz
         {
             if (txtusuario.Text.Equals(""))
             {
-                txtusuario.Text = @"Nombre de Usuario";
+                txtusuario.Text = @"Numero de Cedula";
             }
         }
 
