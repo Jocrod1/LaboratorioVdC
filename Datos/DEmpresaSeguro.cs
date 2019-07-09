@@ -1,0 +1,370 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Data;
+using System.Data.SqlClient;
+
+namespace Datos
+{
+    public class DEmpresaSeguro : Conexion
+    {
+        private int _ID;
+        private string _Nombre;
+        private double _Porcentaje;
+        private int _TipoPrecio;
+        private string _Emision;
+        private string _Direccion;
+        private string _RIF;
+        private string _NIT;
+        private string _Contacto;
+
+        public int ID { get => _ID; set => _ID = value; }
+        public string Nombre { get => _Nombre; set => _Nombre = value; }
+        public double Porcentaje { get => _Porcentaje; set => _Porcentaje = value; }
+        public int TipoPrecio { get => _TipoPrecio; set => _TipoPrecio = value; }
+        public string Emision { get => _Emision; set => _Emision = value; }
+        public string Direccion { get => _Direccion; set => _Direccion = value; }
+        public string RIF { get => _RIF; set => _RIF = value; }
+        public string NIT { get => _NIT; set => _NIT = value; }
+        public string Contacto { get => _Contacto; set => _Contacto = value; }
+
+        public DEmpresaSeguro()
+        {
+
+        }
+
+        public DEmpresaSeguro(int iD, string nombre, double porcentaje, int tipoPrecio, string emision, string direccion, string rIF, string nIT, string contacto)
+        {
+            ID = iD;
+            Nombre = nombre;
+            Porcentaje = porcentaje;
+            TipoPrecio = tipoPrecio;
+            Emision = emision;
+            Direccion = direccion;
+            RIF = rIF;
+            NIT = nIT;
+            Contacto = contacto;
+        }
+
+        //Metodos
+
+        //insertar
+        public string Insertar(DEmpresaSeguro EmpresaSeguro)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "insertar_empresa_seguro";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id_Empresa = new SqlParameter();
+                Parametro_Id_Empresa.ParameterName = "@ID";
+                Parametro_Id_Empresa.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Empresa.Direction = ParameterDirection.Output;
+                SqlComando.Parameters.Add(Parametro_Id_Empresa);
+
+                //parametro nombre
+                SqlParameter Parametro_Nombre = new SqlParameter();
+                Parametro_Nombre.ParameterName = "@nombre_empresa";
+                Parametro_Nombre.SqlDbType = SqlDbType.VarChar;
+                Parametro_Nombre.Size = 50;
+                Parametro_Nombre.Value = EmpresaSeguro.Nombre;
+                SqlComando.Parameters.Add(Parametro_Nombre);
+
+                //parametro porcentaje
+                SqlParameter Parametro_Porcentaje = new SqlParameter();
+                Parametro_Porcentaje.ParameterName = "@porcentaje";
+                Parametro_Porcentaje.SqlDbType = SqlDbType.Float;
+                Parametro_Porcentaje.Value = EmpresaSeguro.Porcentaje;
+                SqlComando.Parameters.Add(Parametro_Porcentaje);
+
+                //parametro tipo precio
+                SqlParameter Parametro_Tipo_Precio = new SqlParameter();
+                Parametro_Tipo_Precio.ParameterName = "@tipo_precio";
+                Parametro_Tipo_Precio.SqlDbType = SqlDbType.Int;
+                Parametro_Tipo_Precio.Value = EmpresaSeguro.TipoPrecio;
+                SqlComando.Parameters.Add(Parametro_Tipo_Precio);
+
+                //parametro emision
+                SqlParameter Parametro_Emision = new SqlParameter();
+                Parametro_Emision.ParameterName = "@emision";
+                Parametro_Emision.SqlDbType = SqlDbType.VarChar;
+                Parametro_Emision.Size = 10;
+                Parametro_Emision.Value = EmpresaSeguro.Emision;
+                SqlComando.Parameters.Add(Parametro_Emision);
+
+                //parametro direccion
+                SqlParameter Parametro_Direccion = new SqlParameter();
+                Parametro_Direccion.ParameterName = "@direccion";
+                Parametro_Direccion.SqlDbType = SqlDbType.VarChar;
+                Parametro_Direccion.Size = 300;
+                Parametro_Direccion.Value = EmpresaSeguro.Direccion;
+                SqlComando.Parameters.Add(Parametro_Direccion);
+
+                //parametro rif
+                SqlParameter Parametro_RIF = new SqlParameter();
+                Parametro_RIF.ParameterName = "@rif";
+                Parametro_RIF.SqlDbType = SqlDbType.VarChar;
+                Parametro_RIF.Size = 20;
+                Parametro_RIF.Value = EmpresaSeguro.RIF;
+                SqlComando.Parameters.Add(Parametro_RIF);
+
+                //parametro nit
+                SqlParameter Parametro_NIT = new SqlParameter();
+                Parametro_NIT.ParameterName = "@nit";
+                Parametro_NIT.SqlDbType = SqlDbType.VarChar;
+                Parametro_NIT.Size = 10;
+                Parametro_NIT.Value = EmpresaSeguro.NIT;
+                SqlComando.Parameters.Add(Parametro_NIT);
+
+                //parametro contacto
+                SqlParameter Parametro_Contacto = new SqlParameter();
+                Parametro_Contacto.ParameterName = "@contacto";
+                Parametro_Contacto.SqlDbType = SqlDbType.VarChar;
+                Parametro_Contacto.Size = 50;
+                Parametro_Contacto.Value = EmpresaSeguro.Contacto;
+                SqlComando.Parameters.Add(Parametro_Contacto);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro de la empresa/seguro";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+        }
+
+        //editar
+        public string Editar(DEmpresaSeguro EmpresaSeguro)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "editar_empresa_seguro";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id_Empresa = new SqlParameter();
+                Parametro_Id_Empresa.ParameterName = "@ID";
+                Parametro_Id_Empresa.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Empresa.Value= EmpresaSeguro.ID;
+                SqlComando.Parameters.Add(Parametro_Id_Empresa);
+
+                //parametro nombre
+                SqlParameter Parametro_Nombre = new SqlParameter();
+                Parametro_Nombre.ParameterName = "@nombre_empresa";
+                Parametro_Nombre.SqlDbType = SqlDbType.VarChar;
+                Parametro_Nombre.Size = 50;
+                Parametro_Nombre.Value = EmpresaSeguro.Nombre;
+                SqlComando.Parameters.Add(Parametro_Nombre);
+
+                //parametro porcentaje
+                SqlParameter Parametro_Porcentaje = new SqlParameter();
+                Parametro_Porcentaje.ParameterName = "@porcentaje";
+                Parametro_Porcentaje.SqlDbType = SqlDbType.Float;
+                Parametro_Porcentaje.Value = EmpresaSeguro.Porcentaje;
+                SqlComando.Parameters.Add(Parametro_Porcentaje);
+
+                //parametro tipo precio
+                SqlParameter Parametro_Tipo_Precio = new SqlParameter();
+                Parametro_Tipo_Precio.ParameterName = "@tipo_precio";
+                Parametro_Tipo_Precio.SqlDbType = SqlDbType.Int;
+                Parametro_Tipo_Precio.Value = EmpresaSeguro.TipoPrecio;
+                SqlComando.Parameters.Add(Parametro_Tipo_Precio);
+
+                //parametro emision
+                SqlParameter Parametro_Emision = new SqlParameter();
+                Parametro_Emision.ParameterName = "@emision";
+                Parametro_Emision.SqlDbType = SqlDbType.VarChar;
+                Parametro_Emision.Size = 10;
+                Parametro_Emision.Value = EmpresaSeguro.Emision;
+                SqlComando.Parameters.Add(Parametro_Emision);
+
+                //parametro direccion
+                SqlParameter Parametro_Direccion = new SqlParameter();
+                Parametro_Direccion.ParameterName = "@direccion";
+                Parametro_Direccion.SqlDbType = SqlDbType.VarChar;
+                Parametro_Direccion.Size = 300;
+                Parametro_Direccion.Value = EmpresaSeguro.Direccion;
+                SqlComando.Parameters.Add(Parametro_Direccion);
+
+                //parametro rif
+                SqlParameter Parametro_RIF = new SqlParameter();
+                Parametro_RIF.ParameterName = "@rif";
+                Parametro_RIF.SqlDbType = SqlDbType.VarChar;
+                Parametro_RIF.Size = 20;
+                Parametro_RIF.Value = EmpresaSeguro.RIF;
+                SqlComando.Parameters.Add(Parametro_RIF);
+
+                //parametro nit
+                SqlParameter Parametro_NIT = new SqlParameter();
+                Parametro_NIT.ParameterName = "@nit";
+                Parametro_NIT.SqlDbType = SqlDbType.VarChar;
+                Parametro_NIT.Size = 10;
+                Parametro_NIT.Value = EmpresaSeguro.NIT;
+                SqlComando.Parameters.Add(Parametro_NIT);
+
+                //parametro contacto
+                SqlParameter Parametro_Contacto = new SqlParameter();
+                Parametro_Contacto.ParameterName = "@contacto";
+                Parametro_Contacto.SqlDbType = SqlDbType.VarChar;
+                Parametro_Contacto.Size = 50;
+                Parametro_Contacto.Value = EmpresaSeguro.Contacto;
+                SqlComando.Parameters.Add(Parametro_Contacto);
+
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el Registro de la empresa/seguro";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+        }
+
+        //Eliminar
+        public string Eliminar(DEmpresaSeguro EmpresaSeguro)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "eliminar_empresa_seguro";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_ID = new SqlParameter();
+                Parametro_ID.ParameterName = "@ID";
+                Parametro_ID.SqlDbType = SqlDbType.Int;
+                Parametro_ID.Value = EmpresaSeguro.ID;
+                SqlComando.Parameters.Add(Parametro_ID);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se elimino el Registro de la empresa/seguro";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+
+        }
+
+        //mostrar y buscar
+        public List<DEmpresaSeguro> Mostrar(string TextoBuscar)
+        {
+            DataTable DtResultado = new DataTable("Bioanalista");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DEmpresaSeguro> ListaGenerica = new List<DEmpresaSeguro>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "mostrar_empresa_seguro";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DEmpresaSeguro
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Nombre= LeerFilas.GetString(1),
+                        Porcentaje=LeerFilas.GetFloat(2),
+                        TipoPrecio=LeerFilas.GetInt32(3),
+                        Emision=LeerFilas.GetString(4),
+                        Direccion=LeerFilas.GetString(5),
+                        RIF=LeerFilas.GetString(6),
+                        NIT=LeerFilas.GetString(7),
+                        Contacto=LeerFilas.GetString(8),
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception ex)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
+    }
+}

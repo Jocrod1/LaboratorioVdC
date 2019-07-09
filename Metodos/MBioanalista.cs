@@ -45,7 +45,5 @@ namespace Metodos
             DBioanalista Objeto = new DBioanalista();
             return Objeto.Mostrar(TextoBuscar);
         }
-
-
     }
 }

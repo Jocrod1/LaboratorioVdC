@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBioanalista.cs" />
+    <Compile Include="DEmpresaSeguro.cs" />
     <Compile Include="DExamen.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DGrupoExamen.cs" />
