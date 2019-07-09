@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBioanalista.cs" />
+    <Compile Include="DExamen.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DGrupoExamen.cs" />
     <Compile Include="DMedico.cs" />
     <Compile Include="DPaciente.cs" />
     <Compile Include="DUsuario.cs" />
