@@ -14,6 +14,8 @@ namespace Interfaz
 {
     public partial class Login : Form
     {
+
+        private bool ojos = true;
         public Login()
         {
             InitializeComponent();
@@ -44,8 +46,9 @@ namespace Interfaz
             if (txtcontraseña.Text.Equals("Contraseña"))
             {
                 txtcontraseña.Text = "";
+                txtcontraseña.UseSystemPasswordChar = true;
             }
-            txtcontraseña.UseSystemPasswordChar = true;
+            mostrar_contraseña.Visible = true;
 
         }
 
@@ -55,7 +58,11 @@ namespace Interfaz
             {
                 txtcontraseña.UseSystemPasswordChar = false;
                 txtcontraseña.Text = "Contraseña";
+
             }
+            ojos = false;
+            mostrar_contraseña.Visible = false;
+
         }
 
         //Validación de campos del login 
@@ -108,7 +115,30 @@ namespace Interfaz
 
                 MessageBox.Show("Bienvenido/a " + Nombre, "Laboratorio", MessageBoxButtons.OK);
 
+                MenuInicio Menu = new MenuInicio();
+                Menu.Show();
+                this.Hide();
+
             }
+        }
+
+        private void mostrar_contraseña_Click(object sender, EventArgs e)
+        {
+
+
+            if(ojos==true)
+            {
+                mostrar_contraseña.BackgroundImage = Properties.Resources.substract;
+                txtcontraseña.UseSystemPasswordChar = false;
+                ojos = false;
+            }
+            else
+            {
+                mostrar_contraseña.BackgroundImage = Properties.Resources.view;
+                txtcontraseña.UseSystemPasswordChar = true;
+                ojos = true;
+            }
+
         }
 
     }
