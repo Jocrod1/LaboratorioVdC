@@ -100,7 +100,7 @@ namespace Datos
 
                 //parametro clinica o hospital
                 SqlParameter Parametro_Clinica_Medico = new SqlParameter();
-                Parametro_Clinica_Medico.ParameterName = "@ClinicaOHhospital";
+                Parametro_Clinica_Medico.ParameterName = "@ClinicaOHospital";
                 Parametro_Clinica_Medico.SqlDbType = SqlDbType.VarChar;
                 Parametro_Clinica_Medico.Size = 70;
                 Parametro_Clinica_Medico.Value = Medico.ClinicaOHospital;
@@ -149,14 +149,14 @@ namespace Datos
 
                 //parametro id
                 SqlParameter Parametro_Id_Medico = new SqlParameter();
-                Parametro_Id_Medico.ParameterName = "@IDMedico";
+                Parametro_Id_Medico.ParameterName = "@ID";
                 Parametro_Id_Medico.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Medico.Direction = ParameterDirection.Output;
+                Parametro_Id_Medico.Value= Medico.IdMedico;
                 SqlComando.Parameters.Add(Parametro_Id_Medico);
 
                 //parametro cedula
                 SqlParameter Parametro_Cedula_Medico = new SqlParameter();
-                Parametro_Cedula_Medico.ParameterName = "@cedula";
+                Parametro_Cedula_Medico.ParameterName = "@Cedula";
                 Parametro_Cedula_Medico.SqlDbType = SqlDbType.VarChar;
                 Parametro_Cedula_Medico.Size = 10;
                 Parametro_Cedula_Medico.Value = Medico.Cedula;
@@ -172,7 +172,7 @@ namespace Datos
 
                 //parametro clinica o hospital
                 SqlParameter Parametro_Clinica_Medico = new SqlParameter();
-                Parametro_Clinica_Medico.ParameterName = "@ClinicaOHhospital";
+                Parametro_Clinica_Medico.ParameterName = "@ClinicaOHospital";
                 Parametro_Clinica_Medico.SqlDbType = SqlDbType.VarChar;
                 Parametro_Clinica_Medico.Size = 70;
                 Parametro_Clinica_Medico.Value = Medico.ClinicaOHospital;
@@ -223,7 +223,7 @@ namespace Datos
 
                 //parametro id
                 SqlParameter Parametro_Id_Medico = new SqlParameter();
-                Parametro_Id_Medico.ParameterName = "@IDPaciente";
+                Parametro_Id_Medico.ParameterName = "@ID";
                 Parametro_Id_Medico.SqlDbType = SqlDbType.Int;
                 Parametro_Id_Medico.Value = Medico.IdMedico;
                 SqlComando.Parameters.Add(Parametro_Id_Medico);

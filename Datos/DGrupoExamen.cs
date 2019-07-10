@@ -56,7 +56,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "insertar_grupo_examen";
+                SqlComando.CommandText = "insertar_grupoexamen";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -111,7 +111,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "editar_grupo_examen";
+                SqlComando.CommandText = "editar_grupoexamen";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -167,7 +167,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "eliminar_grupo_examen";
+                SqlComando.CommandText = "eliminar_grupoexamen";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -213,7 +213,7 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "mostrar_grupo_examen";
+                SqlComando.CommandText = "mostrar_grupoexamen";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
                 SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);

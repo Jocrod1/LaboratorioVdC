@@ -235,7 +235,7 @@ namespace Datos
                 SqlParameter Parametro_Id_Paciente = new SqlParameter();
                 Parametro_Id_Paciente.ParameterName = "@IDPaciente";
                 Parametro_Id_Paciente.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Paciente.Direction = ParameterDirection.Output;
+                Parametro_Id_Paciente.Value= Paciente.IdPaciente;
                 SqlComando.Parameters.Add(Parametro_Id_Paciente);
 
                 //parametro nombre

@@ -112,7 +112,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "insertar_empresa_seguro";
+                SqlComando.CommandText = "insertar_empresasyseg";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -126,7 +126,7 @@ namespace Datos
 
                 //parametro nombre
                 SqlParameter Parametro_Nombre = new SqlParameter();
-                Parametro_Nombre.ParameterName = "@nombre_empresa";
+                Parametro_Nombre.ParameterName = "@NombreEmpresa";
                 Parametro_Nombre.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre.Size = 50;
                 Parametro_Nombre.Value = EmpresaSeguro.Nombre;
@@ -134,21 +134,21 @@ namespace Datos
 
                 //parametro porcentaje
                 SqlParameter Parametro_Porcentaje = new SqlParameter();
-                Parametro_Porcentaje.ParameterName = "@porcentaje";
+                Parametro_Porcentaje.ParameterName = "@Porcentaje";
                 Parametro_Porcentaje.SqlDbType = SqlDbType.Float;
                 Parametro_Porcentaje.Value = EmpresaSeguro.Porcentaje;
                 SqlComando.Parameters.Add(Parametro_Porcentaje);
 
                 //parametro tipo precio
                 SqlParameter Parametro_Tipo_Precio = new SqlParameter();
-                Parametro_Tipo_Precio.ParameterName = "@tipo_precio";
+                Parametro_Tipo_Precio.ParameterName = "@TipoPrecio";
                 Parametro_Tipo_Precio.SqlDbType = SqlDbType.Int;
                 Parametro_Tipo_Precio.Value = EmpresaSeguro.TipoPrecio;
                 SqlComando.Parameters.Add(Parametro_Tipo_Precio);
 
                 //parametro emision
                 SqlParameter Parametro_Emision = new SqlParameter();
-                Parametro_Emision.ParameterName = "@emision";
+                Parametro_Emision.ParameterName = "@EmisionRel";
                 Parametro_Emision.SqlDbType = SqlDbType.VarChar;
                 Parametro_Emision.Size = 10;
                 Parametro_Emision.Value = EmpresaSeguro.Emision;
@@ -156,7 +156,7 @@ namespace Datos
 
                 //parametro direccion
                 SqlParameter Parametro_Direccion = new SqlParameter();
-                Parametro_Direccion.ParameterName = "@direccion";
+                Parametro_Direccion.ParameterName = "@Direccion";
                 Parametro_Direccion.SqlDbType = SqlDbType.VarChar;
                 Parametro_Direccion.Size = 300;
                 Parametro_Direccion.Value = EmpresaSeguro.Direccion;
@@ -164,7 +164,7 @@ namespace Datos
 
                 //parametro rif
                 SqlParameter Parametro_RIF = new SqlParameter();
-                Parametro_RIF.ParameterName = "@rif";
+                Parametro_RIF.ParameterName = "@Rif";
                 Parametro_RIF.SqlDbType = SqlDbType.VarChar;
                 Parametro_RIF.Size = 20;
                 Parametro_RIF.Value = EmpresaSeguro.RIF;
@@ -172,7 +172,7 @@ namespace Datos
 
                 //parametro nit
                 SqlParameter Parametro_NIT = new SqlParameter();
-                Parametro_NIT.ParameterName = "@nit";
+                Parametro_NIT.ParameterName = "@NIT";
                 Parametro_NIT.SqlDbType = SqlDbType.VarChar;
                 Parametro_NIT.Size = 10;
                 Parametro_NIT.Value = EmpresaSeguro.NIT;
@@ -180,7 +180,7 @@ namespace Datos
 
                 //parametro contacto
                 SqlParameter Parametro_Contacto = new SqlParameter();
-                Parametro_Contacto.ParameterName = "@contacto";
+                Parametro_Contacto.ParameterName = "@Contacto";
                 Parametro_Contacto.SqlDbType = SqlDbType.VarChar;
                 Parametro_Contacto.Size = 50;
                 Parametro_Contacto.Value = EmpresaSeguro.Contacto;
@@ -221,7 +221,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "editar_empresa_seguro";
+                SqlComando.CommandText = "editar_empresasyseg";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -235,7 +235,7 @@ namespace Datos
 
                 //parametro nombre
                 SqlParameter Parametro_Nombre = new SqlParameter();
-                Parametro_Nombre.ParameterName = "@nombre_empresa";
+                Parametro_Nombre.ParameterName = "@NombreEmpresa";
                 Parametro_Nombre.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre.Size = 50;
                 Parametro_Nombre.Value = EmpresaSeguro.Nombre;
@@ -243,21 +243,21 @@ namespace Datos
 
                 //parametro porcentaje
                 SqlParameter Parametro_Porcentaje = new SqlParameter();
-                Parametro_Porcentaje.ParameterName = "@porcentaje";
+                Parametro_Porcentaje.ParameterName = "@Porcentaje";
                 Parametro_Porcentaje.SqlDbType = SqlDbType.Float;
                 Parametro_Porcentaje.Value = EmpresaSeguro.Porcentaje;
                 SqlComando.Parameters.Add(Parametro_Porcentaje);
 
                 //parametro tipo precio
                 SqlParameter Parametro_Tipo_Precio = new SqlParameter();
-                Parametro_Tipo_Precio.ParameterName = "@tipo_precio";
+                Parametro_Tipo_Precio.ParameterName = "@TipoPrecio";
                 Parametro_Tipo_Precio.SqlDbType = SqlDbType.Int;
                 Parametro_Tipo_Precio.Value = EmpresaSeguro.TipoPrecio;
                 SqlComando.Parameters.Add(Parametro_Tipo_Precio);
 
                 //parametro emision
                 SqlParameter Parametro_Emision = new SqlParameter();
-                Parametro_Emision.ParameterName = "@emision";
+                Parametro_Emision.ParameterName = "@EmisionRel";
                 Parametro_Emision.SqlDbType = SqlDbType.VarChar;
                 Parametro_Emision.Size = 10;
                 Parametro_Emision.Value = EmpresaSeguro.Emision;
@@ -265,7 +265,7 @@ namespace Datos
 
                 //parametro direccion
                 SqlParameter Parametro_Direccion = new SqlParameter();
-                Parametro_Direccion.ParameterName = "@direccion";
+                Parametro_Direccion.ParameterName = "@Direccion";
                 Parametro_Direccion.SqlDbType = SqlDbType.VarChar;
                 Parametro_Direccion.Size = 300;
                 Parametro_Direccion.Value = EmpresaSeguro.Direccion;
@@ -273,7 +273,7 @@ namespace Datos
 
                 //parametro rif
                 SqlParameter Parametro_RIF = new SqlParameter();
-                Parametro_RIF.ParameterName = "@rif";
+                Parametro_RIF.ParameterName = "@Rif";
                 Parametro_RIF.SqlDbType = SqlDbType.VarChar;
                 Parametro_RIF.Size = 20;
                 Parametro_RIF.Value = EmpresaSeguro.RIF;
@@ -281,7 +281,7 @@ namespace Datos
 
                 //parametro nit
                 SqlParameter Parametro_NIT = new SqlParameter();
-                Parametro_NIT.ParameterName = "@nit";
+                Parametro_NIT.ParameterName = "@NIT";
                 Parametro_NIT.SqlDbType = SqlDbType.VarChar;
                 Parametro_NIT.Size = 10;
                 Parametro_NIT.Value = EmpresaSeguro.NIT;
@@ -289,7 +289,7 @@ namespace Datos
 
                 //parametro contacto
                 SqlParameter Parametro_Contacto = new SqlParameter();
-                Parametro_Contacto.ParameterName = "@contacto";
+                Parametro_Contacto.ParameterName = "@Contacto";
                 Parametro_Contacto.SqlDbType = SqlDbType.VarChar;
                 Parametro_Contacto.Size = 50;
                 Parametro_Contacto.Value = EmpresaSeguro.Contacto;
@@ -331,7 +331,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "eliminar_empresa_seguro";
+                SqlComando.CommandText = "eliminar_empresasyseg";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -377,7 +377,7 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "mostrar_empresa_seguro";
+                SqlComando.CommandText = "mostrar_empresasyseg_Rif";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
                 SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);

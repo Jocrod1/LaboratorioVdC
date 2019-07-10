@@ -166,7 +166,7 @@ namespace Datos
 
                 //parametro unidades
                 SqlParameter Parametro_Unidad_Examen = new SqlParameter();
-                Parametro_Unidad_Examen.ParameterName = "@unidades";
+                Parametro_Unidad_Examen.ParameterName = "@Unidades";
                 Parametro_Unidad_Examen.SqlDbType = SqlDbType.VarChar;
                 Parametro_Unidad_Examen.Size = 20;
                 Parametro_Unidad_Examen.Value = Examen.Unidades;
@@ -174,35 +174,35 @@ namespace Datos
 
                 //parametro valor normal hombre
                 SqlParameter Parametro_Valor_Hombre = new SqlParameter();
-                Parametro_Valor_Hombre.ParameterName = "@valornormalhombre";
+                Parametro_Valor_Hombre.ParameterName = "@ValNorHombres";
                 Parametro_Valor_Hombre.SqlDbType = SqlDbType.Float;
                 Parametro_Valor_Hombre.Value = Examen.Valor_Hombre;
                 SqlComando.Parameters.Add(Parametro_Valor_Hombre);
 
                 //parametro valor normal mujer
                 SqlParameter Parametro_Valor_Mujer = new SqlParameter();
-                Parametro_Valor_Mujer.ParameterName = "@valornormalmujer";
+                Parametro_Valor_Mujer.ParameterName = "@ValNorMujeres";
                 Parametro_Valor_Mujer.SqlDbType = SqlDbType.Float;
                 Parametro_Valor_Mujer.Value = Examen.Valor_Mujer;
                 SqlComando.Parameters.Add(Parametro_Valor_Mujer);
 
                 //parametro precio 1
                 SqlParameter Parametro_Precio_1 = new SqlParameter();
-                Parametro_Precio_1.ParameterName = "@precio1";
+                Parametro_Precio_1.ParameterName = "@Precio1";
                 Parametro_Precio_1.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_1.Value = Examen.Precio1;
                 SqlComando.Parameters.Add(Parametro_Precio_1);
 
                 //parametro precio 2
                 SqlParameter Parametro_Precio_2 = new SqlParameter();
-                Parametro_Precio_2.ParameterName = "@precio2";
+                Parametro_Precio_2.ParameterName = "@Precio2";
                 Parametro_Precio_2.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_2.Value = Examen.Precio2;
                 SqlComando.Parameters.Add(Parametro_Precio_2);
 
                 //parametro plazo de entrega
                 SqlParameter Parametro_Plazo_Entrega = new SqlParameter();
-                Parametro_Plazo_Entrega.ParameterName = "@plazoentrega";
+                Parametro_Plazo_Entrega.ParameterName = "@PlazoEntrega";
                 Parametro_Plazo_Entrega.SqlDbType = SqlDbType.VarChar;
                 Parametro_Plazo_Entrega.Size = 10;
                 Parametro_Plazo_Entrega.Value = Examen.Plazo_Entrega;
@@ -210,7 +210,7 @@ namespace Datos
 
                 //parametro Observacion
                 SqlParameter Parametro_Observacion = new SqlParameter();
-                Parametro_Observacion.ParameterName = "@observacion";
+                Parametro_Observacion.ParameterName = "@Observaciones";
                 Parametro_Observacion.SqlDbType = SqlDbType.VarChar;
                 Parametro_Observacion.Size = 150;
                 Parametro_Observacion.Value = Examen.Observacion;
@@ -218,28 +218,28 @@ namespace Datos
 
                 //parametro ID grupo examen
                 SqlParameter Parametro_ID_Grupo_Examen = new SqlParameter();
-                Parametro_ID_Grupo_Examen.ParameterName = "@IDgrupoexamen";
+                Parametro_ID_Grupo_Examen.ParameterName = "@IDGrupoExamen";
                 Parametro_ID_Grupo_Examen.SqlDbType = SqlDbType.Int;
                 Parametro_ID_Grupo_Examen.Value = Examen.ID_Grupo_Examen;
                 SqlComando.Parameters.Add(Parametro_ID_Grupo_Examen);
 
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
-                Parametro_Titulo.ParameterName = "@titulo";
+                Parametro_Titulo.ParameterName = "@Titulo";
                 Parametro_Titulo.SqlDbType = SqlDbType.Int;
                 Parametro_Titulo.Value = Examen.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 
                 //parametro lab referencia
                 SqlParameter Parametro_Lab_Referencia = new SqlParameter();
-                Parametro_Lab_Referencia.ParameterName = "@lab_referencia";
+                Parametro_Lab_Referencia.ParameterName = "@LabRef";
                 Parametro_Lab_Referencia.SqlDbType = SqlDbType.Int;
                 Parametro_Lab_Referencia.Value = Examen.Lab_Referencia;
                 SqlComando.Parameters.Add(Parametro_Lab_Referencia);
 
                 //parametro precio referencia
                 SqlParameter Parametro_Precio_Referencia = new SqlParameter();
-                Parametro_Precio_Referencia.ParameterName = "@precio_referencia";
+                Parametro_Precio_Referencia.ParameterName = "@PrecioRef";
                 Parametro_Precio_Referencia.SqlDbType = SqlDbType.Int;
                 Parametro_Precio_Referencia.Value = Examen.Precio_Referencia;
                 SqlComando.Parameters.Add(Parametro_Precio_Referencia);
@@ -288,7 +288,7 @@ namespace Datos
                 SqlParameter Parametro_Id_Examen = new SqlParameter();
                 Parametro_Id_Examen.ParameterName = "@ID";
                 Parametro_Id_Examen.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Examen.Direction = ParameterDirection.Output;
+                Parametro_Id_Examen.Value= Examen.ID;
                 SqlComando.Parameters.Add(Parametro_Id_Examen);
 
                 //parametro nombre
@@ -301,7 +301,7 @@ namespace Datos
 
                 //parametro unidades
                 SqlParameter Parametro_Unidad_Examen = new SqlParameter();
-                Parametro_Unidad_Examen.ParameterName = "@unidades";
+                Parametro_Unidad_Examen.ParameterName = "@Unidades";
                 Parametro_Unidad_Examen.SqlDbType = SqlDbType.VarChar;
                 Parametro_Unidad_Examen.Size = 20;
                 Parametro_Unidad_Examen.Value = Examen.Unidades;
@@ -309,35 +309,35 @@ namespace Datos
 
                 //parametro valor normal hombre
                 SqlParameter Parametro_Valor_Hombre = new SqlParameter();
-                Parametro_Valor_Hombre.ParameterName = "@valornormalhombre";
+                Parametro_Valor_Hombre.ParameterName = "@ValNorHombres";
                 Parametro_Valor_Hombre.SqlDbType = SqlDbType.Float;
                 Parametro_Valor_Hombre.Value = Examen.Valor_Hombre;
                 SqlComando.Parameters.Add(Parametro_Valor_Hombre);
 
                 //parametro valor normal mujer
                 SqlParameter Parametro_Valor_Mujer = new SqlParameter();
-                Parametro_Valor_Mujer.ParameterName = "@valornormalmujer";
+                Parametro_Valor_Mujer.ParameterName = "@ValNorMujeres";
                 Parametro_Valor_Mujer.SqlDbType = SqlDbType.Float;
                 Parametro_Valor_Mujer.Value = Examen.Valor_Mujer;
                 SqlComando.Parameters.Add(Parametro_Valor_Mujer);
 
                 //parametro precio 1
                 SqlParameter Parametro_Precio_1 = new SqlParameter();
-                Parametro_Precio_1.ParameterName = "@precio1";
+                Parametro_Precio_1.ParameterName = "@Precio1";
                 Parametro_Precio_1.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_1.Value = Examen.Precio1;
                 SqlComando.Parameters.Add(Parametro_Precio_1);
 
                 //parametro precio 2
                 SqlParameter Parametro_Precio_2 = new SqlParameter();
-                Parametro_Precio_2.ParameterName = "@precio2";
+                Parametro_Precio_2.ParameterName = "@Precio2";
                 Parametro_Precio_2.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_2.Value = Examen.Precio2;
                 SqlComando.Parameters.Add(Parametro_Precio_2);
 
                 //parametro plazo de entrega
                 SqlParameter Parametro_Plazo_Entrega = new SqlParameter();
-                Parametro_Plazo_Entrega.ParameterName = "@plazoentrega";
+                Parametro_Plazo_Entrega.ParameterName = "@PlazoEntrega";
                 Parametro_Plazo_Entrega.SqlDbType = SqlDbType.VarChar;
                 Parametro_Plazo_Entrega.Size = 10;
                 Parametro_Plazo_Entrega.Value = Examen.Plazo_Entrega;
@@ -345,7 +345,7 @@ namespace Datos
 
                 //parametro Observacion
                 SqlParameter Parametro_Observacion = new SqlParameter();
-                Parametro_Observacion.ParameterName = "@observacion";
+                Parametro_Observacion.ParameterName = "@Observaciones";
                 Parametro_Observacion.SqlDbType = SqlDbType.VarChar;
                 Parametro_Observacion.Size = 150;
                 Parametro_Observacion.Value = Examen.Observacion;
@@ -353,28 +353,28 @@ namespace Datos
 
                 //parametro ID grupo examen
                 SqlParameter Parametro_ID_Grupo_Examen = new SqlParameter();
-                Parametro_ID_Grupo_Examen.ParameterName = "@IDgrupoexamen";
+                Parametro_ID_Grupo_Examen.ParameterName = "@IDGrupoExamen";
                 Parametro_ID_Grupo_Examen.SqlDbType = SqlDbType.Int;
                 Parametro_ID_Grupo_Examen.Value = Examen.ID_Grupo_Examen;
                 SqlComando.Parameters.Add(Parametro_ID_Grupo_Examen);
 
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
-                Parametro_Titulo.ParameterName = "@titulo";
+                Parametro_Titulo.ParameterName = "@Titulo";
                 Parametro_Titulo.SqlDbType = SqlDbType.Int;
                 Parametro_Titulo.Value = Examen.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 
                 //parametro lab referencia
                 SqlParameter Parametro_Lab_Referencia = new SqlParameter();
-                Parametro_Lab_Referencia.ParameterName = "@lab_referencia";
+                Parametro_Lab_Referencia.ParameterName = "@LabRef";
                 Parametro_Lab_Referencia.SqlDbType = SqlDbType.Int;
                 Parametro_Lab_Referencia.Value = Examen.Lab_Referencia;
                 SqlComando.Parameters.Add(Parametro_Lab_Referencia);
 
                 //parametro precio referencia
                 SqlParameter Parametro_Precio_Referencia = new SqlParameter();
-                Parametro_Precio_Referencia.ParameterName = "@precio_referencia";
+                Parametro_Precio_Referencia.ParameterName = "@PrecioRef";
                 Parametro_Precio_Referencia.SqlDbType = SqlDbType.Int;
                 Parametro_Precio_Referencia.Value = Examen.Precio_Referencia;
                 SqlComando.Parameters.Add(Parametro_Precio_Referencia);
@@ -491,7 +491,7 @@ namespace Datos
                 LeerFilas.Close();
                 SqlConectar.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ListaGenerica = null;
             }

@@ -93,7 +93,7 @@ namespace Datos
 
                 //parametro cedula
                 SqlParameter Parametro_Cedula = new SqlParameter();
-                Parametro_Cedula.ParameterName = "@cedula";
+                Parametro_Cedula.ParameterName = "@Cedula";
                 Parametro_Cedula.SqlDbType = SqlDbType.VarChar;
                 Parametro_Cedula.Size = 10;
                 Parametro_Cedula.Value = Bioanalista.Cedula;
@@ -109,7 +109,7 @@ namespace Datos
 
                 //parametro colegio bioanalista
                 SqlParameter Parametro_Colegio_Bioanalista = new SqlParameter();
-                Parametro_Colegio_Bioanalista.ParameterName = "@colegio_bioanalista";
+                Parametro_Colegio_Bioanalista.ParameterName = "@ColegioBio";
                 Parametro_Colegio_Bioanalista.SqlDbType = SqlDbType.VarChar;
                 Parametro_Colegio_Bioanalista.Size = 150;
                 Parametro_Colegio_Bioanalista.Value = Bioanalista.Colegio_Bioanalista;
@@ -117,7 +117,7 @@ namespace Datos
 
                 //parametro colegio bioanalista codigo
                 SqlParameter Parametro_Colegio_Bioanalista_Codigo = new SqlParameter();
-                Parametro_Colegio_Bioanalista_Codigo.ParameterName = "@colegio_bioanalista_codigo";
+                Parametro_Colegio_Bioanalista_Codigo.ParameterName = "@CodigoCol";
                 Parametro_Colegio_Bioanalista_Codigo.SqlDbType = SqlDbType.VarChar;
                 Parametro_Colegio_Bioanalista_Codigo.Size = 30;
                 Parametro_Colegio_Bioanalista_Codigo.Value = Bioanalista.Colegio_Codigo;
@@ -158,7 +158,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "editar_bioanalista";
+                SqlComando.CommandText = "editar_Bioanalista";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -172,7 +172,7 @@ namespace Datos
 
                 //parametro cedula
                 SqlParameter Parametro_Cedula = new SqlParameter();
-                Parametro_Cedula.ParameterName = "@cedula";
+                Parametro_Cedula.ParameterName = "@Cedula";
                 Parametro_Cedula.SqlDbType = SqlDbType.VarChar;
                 Parametro_Cedula.Size = 10;
                 Parametro_Cedula.Value = Bioanalista.Cedula;
@@ -188,7 +188,7 @@ namespace Datos
 
                 //parametro colegio bioanalista
                 SqlParameter Parametro_Colegio_Bioanalista = new SqlParameter();
-                Parametro_Colegio_Bioanalista.ParameterName = "@colegio_bioanalista";
+                Parametro_Colegio_Bioanalista.ParameterName = "@ColegioBio";
                 Parametro_Colegio_Bioanalista.SqlDbType = SqlDbType.VarChar;
                 Parametro_Colegio_Bioanalista.Size = 150;
                 Parametro_Colegio_Bioanalista.Value = Bioanalista.Colegio_Bioanalista;
@@ -196,7 +196,7 @@ namespace Datos
 
                 //parametro colegio bioanalista codigo
                 SqlParameter Parametro_Colegio_Bioanalista_Codigo = new SqlParameter();
-                Parametro_Colegio_Bioanalista_Codigo.ParameterName = "@colegio_bioanalista_codigo";
+                Parametro_Colegio_Bioanalista_Codigo.ParameterName = "@CodigoCol";
                 Parametro_Colegio_Bioanalista_Codigo.SqlDbType = SqlDbType.VarChar;
                 Parametro_Colegio_Bioanalista_Codigo.Size = 30;
                 Parametro_Colegio_Bioanalista_Codigo.Value = Bioanalista.Colegio_Codigo;
@@ -238,7 +238,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "eliminar_bioanalista";
+                SqlComando.CommandText = "eliminar_bioanailista";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
