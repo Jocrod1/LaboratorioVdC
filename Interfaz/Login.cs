@@ -50,6 +50,8 @@ namespace Interfaz
             }
             mostrar_contraseña.Visible = true;
 
+
+
         }
 
         private void txtPassLeave(object sender, EventArgs e)
@@ -89,16 +91,17 @@ namespace Interfaz
         } 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SinErrores();
-            if (valid())
-            {
-                MessageBox.Show("¡Ingresando al sistema!", "Accediendo...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            } 
             Acceso();
         }
 
         private void Acceso()
         {
+            SinErrores();
+            if (valid())
+            {
+                MessageBox.Show("¡Ingresando al sistema!", "Accediendo...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            } 
+
             DataTable Datos = MUsuario.Login(this.txtusuario.Text, this.txtcontraseña.Text);
 
             if (Datos.Rows.Count == 0)
@@ -109,11 +112,11 @@ namespace Interfaz
             else
             {
 
-                string Cedula = Datos.Rows[0][0].ToString();
-                string Nombre = Datos.Rows[0][1].ToString();
-                string Acceso = Datos.Rows[0][2].ToString();
+                MenuInicio.cedula = Datos.Rows[0][0].ToString();
+                MenuInicio.nombre = Datos.Rows[0][1].ToString();
+                MenuInicio.acceso = Datos.Rows[0][2].ToString();
 
-                MessageBox.Show("Bienvenido/a " + Nombre, "Laboratorio", MessageBoxButtons.OK);
+                MessageBox.Show("Bienvenido/a " + Datos.Rows[0][1].ToString(), "Laboratorio", MessageBoxButtons.OK);
 
                 MenuInicio Menu = new MenuInicio();
                 Menu.Show();
@@ -139,6 +142,22 @@ namespace Interfaz
                 ojos = true;
             }
 
+        }
+
+        private void txtcontraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                Acceso();
+            }
+        }
+
+        private void txtusuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtcontraseña.Focus();
+            }
         }
 
     }

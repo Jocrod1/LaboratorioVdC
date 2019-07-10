@@ -14,9 +14,18 @@ namespace Interfaz
     {
         private int childFormNumber = 0;
 
+        public static string cedula, nombre, acceso;
+
         public MenuInicio()
         {
             InitializeComponent();
+        }
+
+        private void MenuInicio_Load(object sender, EventArgs e)
+        {
+            label_cedula.Text=cedula;
+            label_nombre.Text=nombre;
+            label_acceso.Text = acceso;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -103,6 +112,15 @@ namespace Interfaz
                 childForm.Close();
             }
         }
+
+        private void trabajadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Trabajador frmtrabajador = new Trabajador();
+            frmtrabajador.Show();
+
+        }
+
+
 
     }
 }

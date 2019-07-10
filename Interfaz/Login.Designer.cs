@@ -84,6 +84,7 @@
             this.txtcontraseña.Size = new System.Drawing.Size(255, 30);
             this.txtcontraseña.TabIndex = 2;
             this.txtcontraseña.Enter += new System.EventHandler(this.txtPassEnter);
+            this.txtcontraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcontraseña_KeyDown);
             this.txtcontraseña.Leave += new System.EventHandler(this.txtPassLeave);
             // 
             // txtusuario
@@ -97,6 +98,7 @@
             this.txtusuario.Size = new System.Drawing.Size(255, 30);
             this.txtusuario.TabIndex = 1;
             this.txtusuario.Enter += new System.EventHandler(this.txtUserEnter);
+            this.txtusuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtusuario_KeyDown);
             this.txtusuario.Leave += new System.EventHandler(this.txtUserLeave);
             // 
             // label3
