@@ -12,24 +12,70 @@ namespace Datos
     public class DEmpresaSeguro : Conexion
     {
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
         private double _Porcentaje;
+
+        public double Porcentaje
+        {
+            get { return _Porcentaje; }
+            set { _Porcentaje = value; }
+        }
         private int _TipoPrecio;
+
+        public int TipoPrecio
+        {
+            get { return _TipoPrecio; }
+            set { _TipoPrecio = value; }
+        }
         private string _Emision;
+
+        public string Emision
+        {
+            get { return _Emision; }
+            set { _Emision = value; }
+        }
         private string _Direccion;
+
+        public string Direccion
+        {
+            get { return _Direccion; }
+            set { _Direccion = value; }
+        }
         private string _RIF;
+
+        public string RIF
+        {
+            get { return _RIF; }
+            set { _RIF = value; }
+        }
         private string _NIT;
+
+        public string NIT
+        {
+            get { return _NIT; }
+            set { _NIT = value; }
+        }
         private string _Contacto;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public double Porcentaje { get => _Porcentaje; set => _Porcentaje = value; }
-        public int TipoPrecio { get => _TipoPrecio; set => _TipoPrecio = value; }
-        public string Emision { get => _Emision; set => _Emision = value; }
-        public string Direccion { get => _Direccion; set => _Direccion = value; }
-        public string RIF { get => _RIF; set => _RIF = value; }
-        public string NIT { get => _NIT; set => _NIT = value; }
-        public string Contacto { get => _Contacto; set => _Contacto = value; }
+        public string Contacto
+        {
+            get { return _Contacto; }
+            set { _Contacto = value; }
+        }
+
+
 
         public DEmpresaSeguro()
         {

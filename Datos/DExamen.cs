@@ -12,32 +12,98 @@ namespace Datos
     public class DExamen : Conexion
     {
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
         private string _Unidades;
+
+        public string Unidades
+        {
+            get { return _Unidades; }
+            set { _Unidades = value; }
+        }
         private double _Valor_Hombre;
+
+        public double Valor_Hombre
+        {
+            get { return _Valor_Hombre; }
+            set { _Valor_Hombre = value; }
+        }
         private double _Valor_Mujer;
+
+        public double Valor_Mujer
+        {
+            get { return _Valor_Mujer; }
+            set { _Valor_Mujer = value; }
+        }
         private double _Precio1;
+
+        public double Precio1
+        {
+            get { return _Precio1; }
+            set { _Precio1 = value; }
+        }
         private double _Precio2;
+
+        public double Precio2
+        {
+            get { return _Precio2; }
+            set { _Precio2 = value; }
+        }
         private string _Plazo_Entrega;
+
+        public string Plazo_Entrega
+        {
+            get { return _Plazo_Entrega; }
+            set { _Plazo_Entrega = value; }
+        }
         private string _Observacion;
+
+        public string Observacion
+        {
+            get { return _Observacion; }
+            set { _Observacion = value; }
+        }
         private int _ID_Grupo_Examen;
+
+        public int ID_Grupo_Examen
+        {
+            get { return _ID_Grupo_Examen; }
+            set { _ID_Grupo_Examen = value; }
+        }
         private int _Titulo;
+
+        public int Titulo
+        {
+            get { return _Titulo; }
+            set { _Titulo = value; }
+        }
         private int _Lab_Referencia;
+
+        public int Lab_Referencia
+        {
+            get { return _Lab_Referencia; }
+            set { _Lab_Referencia = value; }
+        }
         private int _Precio_Referencia;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public string Unidades { get => _Unidades; set => _Unidades = value; }
-        public double Valor_Hombre { get => _Valor_Hombre; set => _Valor_Hombre = value; }
-        public double Valor_Mujer { get => _Valor_Mujer; set => _Valor_Mujer = value; }
-        public double Precio1 { get => _Precio1; set => _Precio1 = value; }
-        public double Precio2 { get => _Precio2; set => _Precio2 = value; }
-        public string Plazo_Entrega { get => _Plazo_Entrega; set => _Plazo_Entrega = value; }
-        public string Observacion { get => _Observacion; set => _Observacion = value; }
-        public int ID_Grupo_Examen { get => _ID_Grupo_Examen; set => _ID_Grupo_Examen = value; }
-        public int Titulo { get => _Titulo; set => _Titulo = value; }
-        public int Lab_Referencia { get => _Lab_Referencia; set => _Lab_Referencia = value; }
-        public int Precio_Referencia { get => _Precio_Referencia; set => _Precio_Referencia = value; }
+        public int Precio_Referencia
+        {
+            get { return _Precio_Referencia; }
+            set { _Precio_Referencia = value; }
+        }
+
+
 
         public DExamen()
         {

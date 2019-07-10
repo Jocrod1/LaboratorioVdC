@@ -12,16 +12,40 @@ namespace Datos
     public class DBioanalista : Conexion
     {
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private string _Cedula;
+
+        public string Cedula
+        {
+            get { return _Cedula; }
+            set { _Cedula = value; }
+        }
         private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
         private string _Colegio_Bioanalista;
+
+        public string Colegio_Bioanalista
+        {
+            get { return _Colegio_Bioanalista; }
+            set { _Colegio_Bioanalista = value; }
+        }
         private string _Colegio_Codigo;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Cedula { get => _Cedula; set => _Cedula = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public string Colegio_Bioanalista { get => _Colegio_Bioanalista; set => _Colegio_Bioanalista = value; }
-        public string Colegio_Codigo { get => _Colegio_Codigo; set => _Colegio_Codigo = value; }
+        public string Colegio_Codigo
+        {
+            get { return _Colegio_Codigo; }
+            set { _Colegio_Codigo = value; }
+        }
 
         public DBioanalista()
         {
