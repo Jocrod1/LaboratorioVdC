@@ -43,15 +43,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+=======
+>>>>>>> master
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+=======
+>>>>>>> master
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +81,11 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+<<<<<<< HEAD
             this.pictureBox2.Location = new System.Drawing.Point(54, 234);
+=======
+            this.pictureBox2.Location = new System.Drawing.Point(54, 239);
+>>>>>>> master
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.TabIndex = 15;
@@ -84,7 +94,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 184);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 191);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 14;
@@ -93,12 +103,16 @@
             // txtcontraseña
             // 
             this.txtcontraseña.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtcontraseña.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcontraseña.Location = new System.Drawing.Point(101, 238);
             this.txtcontraseña.MaxLength = 50;
             this.txtcontraseña.Name = "txtcontraseña";
+<<<<<<< HEAD
             this.txtcontraseña.Size = new System.Drawing.Size(253, 23);
+=======
+            this.txtcontraseña.Size = new System.Drawing.Size(253, 33);
+>>>>>>> master
             this.txtcontraseña.TabIndex = 10;
             this.txtcontraseña.Enter += new System.EventHandler(this.txtPassEnter);
             this.txtcontraseña.Leave += new System.EventHandler(this.txtPassLeave);
@@ -106,12 +120,16 @@
             // txtusuario
             // 
             this.txtusuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtusuario.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.Location = new System.Drawing.Point(99, 191);
             this.txtusuario.MaxLength = 50;
             this.txtusuario.Name = "txtusuario";
+<<<<<<< HEAD
             this.txtusuario.Size = new System.Drawing.Size(255, 23);
+=======
+            this.txtusuario.Size = new System.Drawing.Size(255, 33);
+>>>>>>> master
             this.txtusuario.TabIndex = 9;
             this.txtusuario.Enter += new System.EventHandler(this.txtUserEnter);
             this.txtusuario.Leave += new System.EventHandler(this.txtUserLeave);
@@ -213,6 +231,7 @@
             this.panel2.Size = new System.Drawing.Size(451, 361);
             this.panel2.TabIndex = 0;
             // 
+<<<<<<< HEAD
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -223,6 +242,8 @@
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider2.ContainerControl = this;
             // 
+=======
+>>>>>>> master
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,8 +260,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+=======
+>>>>>>> master
             this.ResumeLayout(false);
 
         }
