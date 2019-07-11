@@ -47,11 +47,6 @@
             this.btncompras = new System.Windows.Forms.Button();
             this.btnventas = new System.Windows.Forms.Button();
             this.btnarticulos = new System.Windows.Forms.Button();
-            this.panel_compras = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_reporte_compra = new System.Windows.Forms.Button();
-            this.btn_listado_compra = new System.Windows.Forms.Button();
-            this.btnregistrar_compra = new System.Windows.Forms.Button();
             this.tiempo_continuo = new System.Windows.Forms.Timer(this.components);
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +55,6 @@
             this.Menu_Vertical.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.panel_compras.SuspendLayout();
             this.SuspendLayout();
             // 
             // Barra
@@ -138,7 +132,6 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel3.Controls.Add(this.Menu_Vertical);
-            this.panel3.Controls.Add(this.panel_compras);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
@@ -269,74 +262,6 @@
             this.btnarticulos.UseVisualStyleBackColor = true;
             this.btnarticulos.Click += new System.EventHandler(this.btnarticulos_Click);
             // 
-            // panel_compras
-            // 
-            this.panel_compras.Controls.Add(this.panel5);
-            this.panel_compras.Controls.Add(this.btn_reporte_compra);
-            this.panel_compras.Controls.Add(this.btn_listado_compra);
-            this.panel_compras.Controls.Add(this.btnregistrar_compra);
-            this.panel_compras.Location = new System.Drawing.Point(650, 201);
-            this.panel_compras.Name = "panel_compras";
-            this.panel_compras.Size = new System.Drawing.Size(358, 140);
-            this.panel_compras.TabIndex = 17;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(162)))));
-            this.panel5.Location = new System.Drawing.Point(0, -1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 144);
-            this.panel5.TabIndex = 15;
-            // 
-            // btn_reporte_compra
-            // 
-            this.btn_reporte_compra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            this.btn_reporte_compra.FlatAppearance.BorderSize = 0;
-            this.btn_reporte_compra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(162)))));
-            this.btn_reporte_compra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reporte_compra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reporte_compra.ForeColor = System.Drawing.Color.White;
-            this.btn_reporte_compra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reporte_compra.Location = new System.Drawing.Point(6, 95);
-            this.btn_reporte_compra.Name = "btn_reporte_compra";
-            this.btn_reporte_compra.Size = new System.Drawing.Size(352, 48);
-            this.btn_reporte_compra.TabIndex = 14;
-            this.btn_reporte_compra.Text = "Reporte";
-            this.btn_reporte_compra.UseVisualStyleBackColor = false;
-            // 
-            // btn_listado_compra
-            // 
-            this.btn_listado_compra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            this.btn_listado_compra.FlatAppearance.BorderSize = 0;
-            this.btn_listado_compra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(162)))));
-            this.btn_listado_compra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_listado_compra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_listado_compra.ForeColor = System.Drawing.Color.White;
-            this.btn_listado_compra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_listado_compra.Location = new System.Drawing.Point(6, 47);
-            this.btn_listado_compra.Name = "btn_listado_compra";
-            this.btn_listado_compra.Size = new System.Drawing.Size(352, 48);
-            this.btn_listado_compra.TabIndex = 12;
-            this.btn_listado_compra.Text = "Listado";
-            this.btn_listado_compra.UseVisualStyleBackColor = false;
-            // 
-            // btnregistrar_compra
-            // 
-            this.btnregistrar_compra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            this.btnregistrar_compra.FlatAppearance.BorderSize = 0;
-            this.btnregistrar_compra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(162)))));
-            this.btnregistrar_compra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregistrar_compra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistrar_compra.ForeColor = System.Drawing.Color.White;
-            this.btnregistrar_compra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnregistrar_compra.Location = new System.Drawing.Point(6, -1);
-            this.btnregistrar_compra.Name = "btnregistrar_compra";
-            this.btnregistrar_compra.Size = new System.Drawing.Size(352, 48);
-            this.btnregistrar_compra.TabIndex = 10;
-            this.btnregistrar_compra.Text = "Registrar";
-            this.btnregistrar_compra.UseVisualStyleBackColor = false;
-            this.btnregistrar_compra.Click += new System.EventHandler(this.btnregistrar_compra_Click);
-            // 
             // tiempo_continuo
             // 
             this.tiempo_continuo.Enabled = true;
@@ -365,7 +290,6 @@
             this.Menu_Vertical.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
-            this.panel_compras.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -380,11 +304,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel Menu_Vertical;
-        private System.Windows.Forms.Panel panel_compras;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btn_reporte_compra;
-        private System.Windows.Forms.Button btn_listado_compra;
-        private System.Windows.Forms.Button btnregistrar_compra;
         private System.Windows.Forms.Panel panel_final;
         private System.Windows.Forms.Button btncompras;
         private System.Windows.Forms.Button btnventas;
