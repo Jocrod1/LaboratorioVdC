@@ -31,7 +31,7 @@ namespace Interfaz
                     e.Handled = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }
@@ -57,7 +57,7 @@ namespace Interfaz
                     e.Handled = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }

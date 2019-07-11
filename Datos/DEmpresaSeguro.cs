@@ -404,7 +404,7 @@ namespace Datos
                 LeerFilas.Close();
                 SqlConectar.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ListaGenerica = null;
             }
