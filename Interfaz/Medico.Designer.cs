@@ -214,6 +214,7 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnImprimir
             // 
@@ -344,6 +345,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(267, 20);
             this.txtTelefono.TabIndex = 59;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // label1
             // 
@@ -354,7 +356,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 58;
-            this.label1.Text = "Telefono:";
+            this.label1.Text = "Teléfono:";
             // 
             // txtContrasena
             // 
@@ -388,6 +390,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -410,9 +413,9 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(49, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 23);
+            this.label2.Size = new System.Drawing.Size(112, 23);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Cedula Médico:";
+            this.label2.Text = "Cédula médico:";
             // 
             // label3
             // 
@@ -433,6 +436,8 @@
             this.txtCiMedico.Name = "txtCiMedico";
             this.txtCiMedico.Size = new System.Drawing.Size(267, 20);
             this.txtCiMedico.TabIndex = 30;
+            this.txtCiMedico.TextChanged += new System.EventHandler(this.txtCiMedico_TextChanged);
+            this.txtCiMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiMedico_KeyPress);
             // 
             // btnCancelar
             // 
@@ -482,6 +487,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(267, 20);
             this.txtNombre.TabIndex = 33;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label5
             // 

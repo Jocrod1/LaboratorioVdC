@@ -14,7 +14,7 @@ namespace Interfaz
 {
     public partial class Trabajador : Form
     {
-
+        LimitantesDeIngreso valid = new LimitantesDeIngreso();
         //Variable que nos indica si vamos a insertar un nuevo trabajador
         private bool IsNuevo = false;
         //Variable que nos indica si vamos a modificar un trabajador
@@ -368,6 +368,19 @@ namespace Interfaz
         private void cbAcceso_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        //Entrada
+        private void txtCiTrabajador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
+        }
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloLetras(e);
+        }
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
         }
     }
 }

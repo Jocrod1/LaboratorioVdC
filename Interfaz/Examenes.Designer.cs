@@ -44,6 +44,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richObservaciones = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPrecioRef = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUnidades = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.richObservaciones = new System.Windows.Forms.RichTextBox();
             this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error3 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -302,6 +302,16 @@
             this.groupBox1.Text = "Trabajador";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // richObservaciones
+            // 
+            this.richObservaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.richObservaciones.Location = new System.Drawing.Point(187, 328);
+            this.richObservaciones.MaxLength = 1000;
+            this.richObservaciones.Name = "richObservaciones";
+            this.richObservaciones.Size = new System.Drawing.Size(266, 33);
+            this.richObservaciones.TabIndex = 78;
+            this.richObservaciones.Text = "";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -309,9 +319,9 @@
             this.label14.ForeColor = System.Drawing.Color.Teal;
             this.label14.Location = new System.Drawing.Point(50, 482);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 23);
+            this.label14.Size = new System.Drawing.Size(126, 23);
             this.label14.TabIndex = 76;
-            this.label14.Text = "Precio Referencia:";
+            this.label14.Text = "Precio referencia:";
             // 
             // txtPrecioRef
             // 
@@ -321,6 +331,7 @@
             this.txtPrecioRef.Name = "txtPrecioRef";
             this.txtPrecioRef.Size = new System.Drawing.Size(267, 20);
             this.txtPrecioRef.TabIndex = 77;
+            this.txtPrecioRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioRef_KeyPress);
             // 
             // label13
             // 
@@ -342,7 +353,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(102, 23);
             this.label12.TabIndex = 72;
-            this.label12.Text = "Plazo Entrega:";
+            this.label12.Text = "Plazo entrega:";
             // 
             // txtPlazoEntrega
             // 
@@ -362,7 +373,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 23);
             this.label8.TabIndex = 68;
-            this.label8.Text = "Titulo:";
+            this.label8.Text = "Título:";
             // 
             // txtTitulo
             // 
@@ -372,6 +383,7 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(267, 20);
             this.txtTitulo.TabIndex = 69;
+            this.txtTitulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTitulo_KeyPress);
             // 
             // label11
             // 
@@ -380,9 +392,9 @@
             this.label11.ForeColor = System.Drawing.Color.Teal;
             this.label11.Location = new System.Drawing.Point(14, 444);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(166, 23);
+            this.label11.Size = new System.Drawing.Size(162, 23);
             this.label11.TabIndex = 70;
-            this.label11.Text = "Laboratorio Referencia:";
+            this.label11.Text = "Laboratorio referencia:";
             // 
             // txtLabRef
             // 
@@ -392,6 +404,7 @@
             this.txtLabRef.Name = "txtLabRef";
             this.txtLabRef.Size = new System.Drawing.Size(267, 20);
             this.txtLabRef.TabIndex = 71;
+            this.txtLabRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLabRef_KeyPress);
             // 
             // cbIDGrupoExamen
             // 
@@ -425,6 +438,7 @@
             this.txtValNorMujeres.Name = "txtValNorMujeres";
             this.txtValNorMujeres.Size = new System.Drawing.Size(267, 20);
             this.txtValNorMujeres.TabIndex = 65;
+            this.txtValNorMujeres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValNorMujeres_KeyPress);
             // 
             // label9
             // 
@@ -445,6 +459,7 @@
             this.txtPrecio2.Name = "txtPrecio2";
             this.txtPrecio2.Size = new System.Drawing.Size(267, 20);
             this.txtPrecio2.TabIndex = 64;
+            this.txtPrecio2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio2_KeyPress);
             // 
             // label10
             // 
@@ -465,6 +480,7 @@
             this.txtPrecio1.Name = "txtPrecio1";
             this.txtPrecio1.Size = new System.Drawing.Size(267, 20);
             this.txtPrecio1.TabIndex = 59;
+            this.txtPrecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio1_KeyPress);
             // 
             // label1
             // 
@@ -485,6 +501,7 @@
             this.txtValNorHombres.Name = "txtValNorHombres";
             this.txtValNorHombres.Size = new System.Drawing.Size(267, 20);
             this.txtValNorHombres.TabIndex = 57;
+            this.txtValNorHombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValNorHombres_KeyPress);
             // 
             // pictureBox1
             // 
@@ -614,16 +631,6 @@
             this.label5.Size = new System.Drawing.Size(149, 23);
             this.label5.TabIndex = 34;
             this.label5.Text = "Valores Normales H:";
-            // 
-            // richObservaciones
-            // 
-            this.richObservaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.richObservaciones.Location = new System.Drawing.Point(187, 328);
-            this.richObservaciones.MaxLength = 1000;
-            this.richObservaciones.Name = "richObservaciones";
-            this.richObservaciones.Size = new System.Drawing.Size(266, 33);
-            this.richObservaciones.TabIndex = 78;
-            this.richObservaciones.Text = "";
             // 
             // error1
             // 

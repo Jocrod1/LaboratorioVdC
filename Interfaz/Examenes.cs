@@ -12,6 +12,7 @@ namespace Interfaz
 {
     public partial class Examenes : Form
     {
+        LimitantesDeIngreso valid = new LimitantesDeIngreso();
         public Examenes()
         {
             InitializeComponent();
@@ -115,6 +116,38 @@ namespace Interfaz
             {
                 MessageBox.Show("¡Guardado satisfactoriamente!", "Almacenando...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); 
             } 
+        }
+
+        private void txtValNorHombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
+        }
+
+        private void txtValNorMujeres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
+        }
+
+        private void txtPrecio1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
+        }
+
+        private void txtPrecio2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
+        }
+        private void txtTitulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloLetras(e);
+        }
+        private void txtLabRef_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloLetras(e);
+        }
+        private void txtPrecioRef_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloLetras(e);
         }
     }
 }

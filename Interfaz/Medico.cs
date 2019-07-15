@@ -12,6 +12,7 @@ namespace Interfaz
 {
     public partial class Medico : Form
     {
+        LimitantesDeIngreso valid = new LimitantesDeIngreso();
         public Medico()
         {
             InitializeComponent();
@@ -77,5 +78,34 @@ namespace Interfaz
             } 
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+        }
+
+        //Epa, limitación del campo de texto
+        private void txtCiMedico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
+        }
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloLetras(e);
+        }
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            valid.soloNumeros(e);
+        }
+
+        private void txtCiMedico_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

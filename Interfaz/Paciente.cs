@@ -14,7 +14,7 @@ namespace Interfaz
 {
     public partial class Paciente : Form
     {
-
+        LimitantesDeIngreso vali = new LimitantesDeIngreso();
         //Variable que nos indica si vamos a insertar un nuevo trabajador
         private bool IsNuevo = false;
         //Variable que nos indica si vamos a modificar un trabajador
@@ -289,6 +289,35 @@ namespace Interfaz
             error6.SetError(dateTimePickerFUR,"");
             error7.SetError(txtNroHab,"");
             error8.SetError(txtIdMedico,"");
+        }
+
+        private void txtCiPaciente_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCiPaciente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            vali.soloNumeros(e);
+        }
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            vali.soloLetras(e);
+        }
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            vali.soloNumeros(e);
+        }
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            vali.soloNumeros(e);
+        }
+        private void txtIdMedico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            vali.soloNumeros(e);
+        }
+        private void txtNroHab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            vali.soloNumeros(e);
         }
 
 

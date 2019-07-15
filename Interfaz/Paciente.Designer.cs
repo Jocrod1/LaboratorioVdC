@@ -312,6 +312,7 @@
             this.txtIdMedico.Name = "txtIdMedico";
             this.txtIdMedico.Size = new System.Drawing.Size(267, 20);
             this.txtIdMedico.TabIndex = 8;
+            this.txtIdMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdMedico_KeyPress);
             // 
             // label9
             // 
@@ -332,6 +333,7 @@
             this.txtNroHab.Name = "txtNroHab";
             this.txtNroHab.Size = new System.Drawing.Size(267, 20);
             this.txtNroHab.TabIndex = 7;
+            this.txtNroHab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroHab_KeyPress);
             // 
             // label10
             // 
@@ -370,6 +372,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(267, 20);
             this.txtTelefono.TabIndex = 5;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label1
             // 
@@ -390,6 +393,7 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(267, 20);
             this.txtEdad.TabIndex = 4;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // pictureBox1
             // 
@@ -450,7 +454,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 23);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Cedula Paciente:";
+            this.label2.Text = "Cédula paciente:";
             // 
             // label3
             // 
@@ -471,6 +475,8 @@
             this.txtCiPaciente.Name = "txtCiPaciente";
             this.txtCiPaciente.Size = new System.Drawing.Size(267, 20);
             this.txtCiPaciente.TabIndex = 1;
+            this.txtCiPaciente.TextChanged += new System.EventHandler(this.txtCiPaciente_TextChanged);
+            this.txtCiPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiPaciente_KeyPress);
             // 
             // btnCancelar
             // 
@@ -520,6 +526,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(267, 20);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label5
             // 
