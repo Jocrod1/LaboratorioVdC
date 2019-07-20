@@ -248,7 +248,8 @@ namespace Datos
                 //parametro acceso
                 SqlParameter Parametro_Acceso_Trabajador = new SqlParameter();
                 Parametro_Acceso_Trabajador.ParameterName = "@acceso";
-                Parametro_Acceso_Trabajador.SqlDbType = SqlDbType.Int;
+                Parametro_Acceso_Trabajador.SqlDbType = SqlDbType.VarChar;
+                Parametro_Correo_Trabajador.Size = 15;
                 Parametro_Acceso_Trabajador.Value = Usuario.Acceso;
                 SqlComando.Parameters.Add(Parametro_Acceso_Trabajador);
 
