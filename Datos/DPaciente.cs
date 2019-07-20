@@ -67,13 +67,7 @@ namespace Datos
             get { return _NumeroHabitacion; }
             set { _NumeroHabitacion = value; }
         }
-        private int _IdMedico;
 
-        public int IdMedico
-        {
-            get { return _IdMedico; }
-            set { _IdMedico = value; }
-        }
 
 
 
@@ -84,7 +78,7 @@ namespace Datos
 
         }
 
-        public DPaciente(int IdPaciente, string Nombre, int Edad, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion,int IdMedico, string TextoBuscar)
+        public DPaciente(int IdPaciente, string Nombre, int Edad, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion, string TextoBuscar)
         {
             this.IdPaciente = IdPaciente;
             this.Nombre = Nombre;
@@ -94,7 +88,6 @@ namespace Datos
             this.Telefono = Telefono;
             this.FUR = FUR;
             this.NumeroHabitacion = NumeroHabitacion;
-            this.IdMedico = IdMedico;
         }
 
 
@@ -180,13 +173,6 @@ namespace Datos
                 Parametro_NHabitacion_Paciente.Size = 10;
                 Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
                 SqlComando.Parameters.Add(Parametro_NHabitacion_Paciente);
-
-                //parametro id medico
-                SqlParameter Parametro_IdMedico_Paciente = new SqlParameter();
-                Parametro_IdMedico_Paciente.ParameterName = "@IDMedico";
-                Parametro_IdMedico_Paciente.SqlDbType = SqlDbType.Int;
-                Parametro_IdMedico_Paciente.Value = Paciente.IdMedico;
-                SqlComando.Parameters.Add(Parametro_IdMedico_Paciente);
 
 
 
@@ -292,13 +278,6 @@ namespace Datos
                 Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
                 SqlComando.Parameters.Add(Parametro_NHabitacion_Paciente);
 
-                //parametro id medico
-                SqlParameter Parametro_IdMedico_Paciente = new SqlParameter();
-                Parametro_IdMedico_Paciente.ParameterName = "@IDMedico";
-                Parametro_IdMedico_Paciente.SqlDbType = SqlDbType.Int;
-                Parametro_IdMedico_Paciente.Value = Paciente.IdMedico;
-                SqlComando.Parameters.Add(Parametro_IdMedico_Paciente);
-
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el registro del paciente";
@@ -402,7 +381,6 @@ namespace Datos
                         Telefono = LeerFilas.GetString(5),
                         FUR = LeerFilas.GetDateTime(6),
                         NumeroHabitacion = LeerFilas.GetString(7),
-                        IdMedico = LeerFilas.GetInt32(8),
                     });
                 }
                 LeerFilas.Close();

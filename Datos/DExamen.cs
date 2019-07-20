@@ -88,12 +88,12 @@ namespace Datos
             get { return _Titulo; }
             set { _Titulo = value; }
         }
-        private int _Lab_Referencia;
+        private int _ID_Lab_Referencia;
 
-        public int Lab_Referencia
+        public int ID_Lab_Referencia
         {
-            get { return _Lab_Referencia; }
-            set { _Lab_Referencia = value; }
+            get { return _ID_Lab_Referencia; }
+            set { _ID_Lab_Referencia = value; }
         }
         private int _Precio_Referencia;
 
@@ -123,7 +123,7 @@ namespace Datos
             Observacion = observacion;
             ID_Grupo_Examen = iD_Grupo_Examen;
             Titulo = titulo;
-            Lab_Referencia = lab_Referencia;
+            ID_Lab_Referencia = lab_Referencia;
             Precio_Referencia = precio_Referencia;
         }
 
@@ -234,7 +234,7 @@ namespace Datos
                 SqlParameter Parametro_Lab_Referencia = new SqlParameter();
                 Parametro_Lab_Referencia.ParameterName = "@LabRef";
                 Parametro_Lab_Referencia.SqlDbType = SqlDbType.Int;
-                Parametro_Lab_Referencia.Value = Examen.Lab_Referencia;
+                Parametro_Lab_Referencia.Value = Examen.ID_Lab_Referencia;
                 SqlComando.Parameters.Add(Parametro_Lab_Referencia);
 
                 //parametro precio referencia
@@ -369,7 +369,7 @@ namespace Datos
                 SqlParameter Parametro_Lab_Referencia = new SqlParameter();
                 Parametro_Lab_Referencia.ParameterName = "@LabRef";
                 Parametro_Lab_Referencia.SqlDbType = SqlDbType.Int;
-                Parametro_Lab_Referencia.Value = Examen.Lab_Referencia;
+                Parametro_Lab_Referencia.Value = Examen.ID_Lab_Referencia;
                 SqlComando.Parameters.Add(Parametro_Lab_Referencia);
 
                 //parametro precio referencia
@@ -484,7 +484,7 @@ namespace Datos
                         Observacion = LeerFilas.GetString(8),
                         ID_Grupo_Examen = LeerFilas.GetInt32(9),
                         Titulo = LeerFilas.GetInt32(10),
-                        Lab_Referencia = LeerFilas.GetInt32(11),
+                        ID_Lab_Referencia = LeerFilas.GetInt32(11),
                         Precio_Referencia = LeerFilas.GetInt32(12),
                     });
                 }

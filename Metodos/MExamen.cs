@@ -23,7 +23,7 @@ namespace Metodos
             Objeto.Observacion = observacion;
             Objeto.ID_Grupo_Examen = iD_Grupo_Examen;
             Objeto.Titulo = titulo;
-            Objeto.Lab_Referencia = lab_Referencia;
+            Objeto.ID_Lab_Referencia = lab_Referencia;
             Objeto.Precio_Referencia = precio_Referencia;
             return Objeto.Insertar(Objeto);
         }
@@ -43,7 +43,7 @@ namespace Metodos
             Objeto.Observacion = observacion;
             Objeto.ID_Grupo_Examen = iD_Grupo_Examen;
             Objeto.Titulo = titulo;
-            Objeto.Lab_Referencia = lab_Referencia;
+            Objeto.ID_Lab_Referencia = lab_Referencia;
             Objeto.Precio_Referencia = precio_Referencia;
             return Objeto.Editar(Objeto);
         }

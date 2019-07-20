@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Datos;
+
+namespace Metodos
+{
+    public class MBanco: DBanco
+    {
+
+        public static string Insertar(int ID, string nombre)
+        {
+            DBanco Objeto = new DBanco();
+            Objeto.ID = ID;
+            Objeto.Nombre = nombre;
+            return Objeto.Insertar(Objeto);
+        }
+
+
+        public static string Editar(int ID, string nombre)
+        {
+            DBanco Objeto = new DBanco();
+            Objeto.ID = ID;
+            Objeto.Nombre = nombre;
+            return Objeto.Insertar(Objeto);
+        }
+
+        public static string Eliminar(int ID)
+        {
+            DBanco Objeto = new DBanco();
+            Objeto.ID = ID;
+            return Objeto.Eliminar(Objeto);
+        }
+
+        //probar esta nueva version, NUEVA VERSION
+        public new static List<DBanco> Mostrar(string TextoBuscar)
+        {
+            DBanco Objeto = new DBanco();
+            return Objeto.Mostrar(TextoBuscar);
+        }
+    }
+}

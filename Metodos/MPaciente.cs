@@ -9,7 +9,7 @@ namespace Metodos
 {
     public class MPaciente:DPaciente
     {
-        public static string Insertar(int ID, string Nombre, int Edad, string Cedula, string Telefono, DateTime FUR,string NumeroHabitacion, int IdMedico)
+        public static string Insertar(int ID, string Nombre, int Edad, string Cedula, string Telefono, DateTime FUR,string NumeroHabitacion)
         {
             DPaciente Objeto = new DPaciente();
             Objeto.IdPaciente=ID;
@@ -19,12 +19,11 @@ namespace Metodos
             Objeto.Telefono = Telefono;
             Objeto.FUR=FUR;
             Objeto.NumeroHabitacion=NumeroHabitacion;
-            Objeto.IdMedico = IdMedico;
             return Objeto.Insertar(Objeto);
         }
 
 
-        public static string Editar(int ID, string Nombre, int Edad, string Cedula, string Telefono, DateTime FUR, string NumeroHabitacion, int IdMedico)
+        public static string Editar(int ID, string Nombre, int Edad, string Cedula, string Telefono, DateTime FUR, string NumeroHabitacion)
         {
             DPaciente Objeto = new DPaciente();
             Objeto.IdPaciente = ID;
@@ -34,7 +33,6 @@ namespace Metodos
             Objeto.Telefono = Telefono;
             Objeto.FUR = FUR;
             Objeto.NumeroHabitacion = NumeroHabitacion;
-            Objeto.IdMedico = IdMedico;
             return Objeto.Insertar(Objeto);
         }
 

@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBanco.cs" />
     <Compile Include="DBioanalista.cs" />
+    <Compile Include="DEgresos.cs" />
     <Compile Include="DEmpresaSeguro.cs" />
     <Compile Include="DExamen.cs" />
     <Compile Include="Conexion.cs" />

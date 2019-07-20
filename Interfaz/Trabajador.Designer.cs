@@ -172,6 +172,7 @@
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(698, 308);
             this.dataListado.TabIndex = 36;
+            this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             this.dataListado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataListado_KeyDown);
             // 
             // txtBuscar
