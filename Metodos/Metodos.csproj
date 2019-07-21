@@ -44,11 +44,15 @@
   <ItemGroup>
     <Compile Include="MBanco.cs" />
     <Compile Include="MBioanalista.cs" />
+    <Compile Include="MEgresos.cs" />
     <Compile Include="MEmpresaSeguro.cs" />
     <Compile Include="MExamen.cs" />
     <Compile Include="MGrupoExamen.cs" />
+    <Compile Include="MLabRef.cs" />
     <Compile Include="MMedico.cs" />
     <Compile Include="MPaciente.cs" />
+    <Compile Include="MTipoPaciente.cs" />
+    <Compile Include="MTurno.cs" />
     <Compile Include="MUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

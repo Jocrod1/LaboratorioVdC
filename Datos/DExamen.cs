@@ -60,9 +60,9 @@ namespace Datos
             get { return _Precio2; }
             set { _Precio2 = value; }
         }
-        private string _Plazo_Entrega;
+        private DateTime _Plazo_Entrega;
 
-        public string Plazo_Entrega
+        public DateTime Plazo_Entrega
         {
             get { return _Plazo_Entrega; }
             set { _Plazo_Entrega = value; }
@@ -110,7 +110,7 @@ namespace Datos
 
         }
 
-        public DExamen(int iD, string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, string plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
+        public DExamen(int iD, string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
         {
             ID = iD;
             Nombre = nombre;
@@ -203,8 +203,7 @@ namespace Datos
                 //parametro plazo de entrega
                 SqlParameter Parametro_Plazo_Entrega = new SqlParameter();
                 Parametro_Plazo_Entrega.ParameterName = "@PlazoEntrega";
-                Parametro_Plazo_Entrega.SqlDbType = SqlDbType.VarChar;
-                Parametro_Plazo_Entrega.Size = 10;
+                Parametro_Plazo_Entrega.SqlDbType = SqlDbType.DateTime;
                 Parametro_Plazo_Entrega.Value = Examen.Plazo_Entrega;
                 SqlComando.Parameters.Add(Parametro_Plazo_Entrega);
 
@@ -338,8 +337,7 @@ namespace Datos
                 //parametro plazo de entrega
                 SqlParameter Parametro_Plazo_Entrega = new SqlParameter();
                 Parametro_Plazo_Entrega.ParameterName = "@PlazoEntrega";
-                Parametro_Plazo_Entrega.SqlDbType = SqlDbType.VarChar;
-                Parametro_Plazo_Entrega.Size = 10;
+                Parametro_Plazo_Entrega.SqlDbType = SqlDbType.DateTime;
                 Parametro_Plazo_Entrega.Value = Examen.Plazo_Entrega;
                 SqlComando.Parameters.Add(Parametro_Plazo_Entrega);
 
@@ -480,7 +478,7 @@ namespace Datos
                         Valor_Mujer = LeerFilas.GetFloat(4),
                         Precio1 = LeerFilas.GetFloat(5),
                         Precio2 = LeerFilas.GetFloat(6),
-                        Plazo_Entrega = LeerFilas.GetString(7),
+                        Plazo_Entrega = LeerFilas.GetDateTime(7),
                         Observacion = LeerFilas.GetString(8),
                         ID_Grupo_Examen = LeerFilas.GetInt32(9),
                         Titulo = LeerFilas.GetInt32(10),

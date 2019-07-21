@@ -49,8 +49,11 @@
     <Compile Include="DExamen.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DGrupoExamen.cs" />
+    <Compile Include="DLabRef.cs" />
     <Compile Include="DMedico.cs" />
     <Compile Include="DPaciente.cs" />
+    <Compile Include="DTipoPaciente.cs" />
+    <Compile Include="DTurno.cs" />
     <Compile Include="DUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
