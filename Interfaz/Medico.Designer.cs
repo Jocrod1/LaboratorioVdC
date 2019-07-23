@@ -128,6 +128,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label6
             // 
@@ -543,6 +544,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Medico";
             this.Text = "Medico";
+            this.Load += new System.EventHandler(this.Medico_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

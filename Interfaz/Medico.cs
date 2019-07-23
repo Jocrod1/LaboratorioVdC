@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Metodos;
+
 namespace Interfaz
 {
     public partial class Medico : Form
@@ -17,6 +19,9 @@ namespace Interfaz
         {
             InitializeComponent();
         }
+
+       
+
 
         private bool validarr()
         {
@@ -78,34 +83,196 @@ namespace Interfaz
             } 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
 
+
+
+
+        //Para mostrar mensaje de confirmación
+        private void MensajeOK(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        //Para mostrar mensaje de error
+        private void MensajeError(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
+
+
+        //Variable que nos indica si vamos a insertar un nuevo trabajador
+        private bool IsNuevo = false;
+        //Variable que nos indica si vamos a modificar un trabajador
+        private bool IsEditar = false;
+
+
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            this.IsNuevo = true;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(true);
+            this.txtNombre.Focus();
         }
 
-        //Epa, limitación del campo de texto
-        private void txtCiMedico_KeyPress(object sender, KeyPressEventArgs e)
+
+
+
+        private void Limpiar()
         {
-            valid.soloNumeros(e);
-        }
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloLetras(e);
-        }
-        private void txtTelefono_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloNumeros(e);
+            this.txtCiMedico.Text = string.Empty;
+            this.txtNombre.Text = string.Empty;
+            this.richDireccion.Text = string.Empty;
+            this.txtContrasena.Text = string.Empty;
+            this.txtTelefono.Text = string.Empty;
+            this.txtCorreo.Text = string.Empty;
+
         }
 
-        private void txtCiMedico_TextChanged(object sender, EventArgs e)
+
+
+        //Habilita los controles de los formularios
+        private void Habilitar(bool Valor)
         {
+            this.txtCiMedico.ReadOnly = !Valor;
+            this.txtNombre.ReadOnly = !Valor;
+            this.richDireccion.ReadOnly = !Valor;
+            this.txtContrasena.ReadOnly = !Valor;
+            this.txtTelefono.ReadOnly = !Valor;
+            this.cbAcceso.Enabled = Valor;
+            this.txtCorreo.Enabled = Valor;
         }
+
+
+
+
+        //Habilita los botones
+        private void Botones()
+        {
+            if (this.IsNuevo || this.IsEditar)
+            {
+                this.Habilitar(true);
+                this.btnNuevo.Enabled = false;
+                this.btnGuardar.Enabled = true;
+                this.btnEditar.Enabled = false;
+                this.btnCancelar.Enabled = true;
+            }
+            else
+            {
+                this.Habilitar(false);
+                this.btnNuevo.Enabled = true;
+                this.btnGuardar.Enabled = false;
+                this.btnEditar.Enabled = true;
+                this.btnCancelar.Enabled = false;
+            }
+        }
+
+
+
+
+        void EliminarItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar los " + NumeroSeleccionado + " Registros de Trabajadores?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar el Registro del Trabajador?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MMedico.Eliminar(item.Cells[0].Value);
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se Eliminaron Correctamente los Registros de Trabajadores");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Eliminó Correctamente el Registro del Trabajador");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarItems();
+        }
+
+        private void Medico_Load(object sender, EventArgs e)
+        {
+            //Para ubicar al formulario en la parte superior del contenedor
+            this.Top = 0;
+            this.Left = 0;
+            //Le decimos al DataGridView que no auto genere las columnas
+            //this.datalistado.AutoGenerateColumns = false;
+            //Llenamos el DataGridView con la informacion
+            //de todos nuestros Trabajadores
+            this.Mostrar();
+            //Deshabilita los controles
+            this.Habilitar(false);
+            //Establece los botones
+            this.Botones();
+        }
+
+
+
+
+        private void Mostrar()
+        {
+            //MUsuario.Mostrar(txtBuscar.Text);
+
+            dataListado.DataSource = MMedico.Mostrar(txtBuscar.Text);
+            // this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }
