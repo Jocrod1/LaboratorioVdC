@@ -28,31 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medico));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.chkEliminar = new System.Windows.Forms.CheckBox();
             this.dataListado = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richDireccion = new System.Windows.Forms.RichTextBox();
-            this.cbAcceso = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.txtClinica = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -64,33 +54,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.err1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.err2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.err3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.err4 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.err5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.err6 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.err7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err7)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(10, 8);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(780, 472);
@@ -99,10 +75,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.cbBuscar);
             this.tabPage1.Controls.Add(this.btnEliminar);
-            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.lblTotal);
-            this.tabPage1.Controls.Add(this.chkEliminar);
             this.tabPage1.Controls.Add(this.dataListado);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.btnAnular);
@@ -114,6 +90,27 @@
             this.tabPage1.Size = new System.Drawing.Size(772, 446);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(35, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Buscar por:";
+            // 
+            // cbBuscar
+            // 
+            this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscar.FormattingEnabled = true;
+            this.cbBuscar.Items.AddRange(new object[] {
+            "Cedula",
+            "Nombre"});
+            this.cbBuscar.Location = new System.Drawing.Point(34, 52);
+            this.cbBuscar.Name = "cbBuscar";
+            this.cbBuscar.Size = new System.Drawing.Size(88, 21);
+            this.cbBuscar.TabIndex = 41;
             // 
             // btnEliminar
             // 
@@ -128,16 +125,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(102, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Buscar";
             // 
             // lblTotal
             // 
@@ -148,37 +135,19 @@
             this.lblTotal.TabIndex = 38;
             this.lblTotal.Text = "label5";
             // 
-            // chkEliminar
-            // 
-            this.chkEliminar.AutoSize = true;
-            this.chkEliminar.Location = new System.Drawing.Point(34, 84);
-            this.chkEliminar.Name = "chkEliminar";
-            this.chkEliminar.Size = new System.Drawing.Size(62, 17);
-            this.chkEliminar.TabIndex = 37;
-            this.chkEliminar.Text = "Eliminar";
-            this.chkEliminar.UseVisualStyleBackColor = true;
-            // 
             // dataListado
             // 
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
             this.dataListado.Location = new System.Drawing.Point(34, 116);
-            this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
+            this.dataListado.RowHeadersWidth = 51;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(698, 308);
             this.dataListado.TabIndex = 36;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
             // 
             // txtBuscar
             // 
@@ -215,7 +184,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnImprimir
             // 
@@ -245,15 +213,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.groupBox1.Controls.Add(this.richDireccion);
-            this.groupBox1.Controls.Add(this.cbAcceso);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtCorreo);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtContrasena);
+            this.groupBox1.Controls.Add(this.txtClinica);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.btnEditar);
@@ -271,102 +231,18 @@
             this.groupBox1.Size = new System.Drawing.Size(760, 495);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Medico";
+            this.groupBox1.Text = "Trabajador";
             // 
-            // richDireccion
+            // txtClinica
             // 
-            this.richDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.richDireccion.Location = new System.Drawing.Point(182, 209);
-            this.richDireccion.MaxLength = 1000;
-            this.richDireccion.Name = "richDireccion";
-            this.richDireccion.Size = new System.Drawing.Size(267, 33);
-            this.richDireccion.TabIndex = 68;
-            this.richDireccion.Text = "";
-            // 
-            // cbAcceso
-            // 
-            this.cbAcceso.FormattingEnabled = true;
-            this.cbAcceso.Items.AddRange(new object[] {
-            "Administrador",
-            "Area de Bacteriologia",
-            "Area de Examenes",
-            "Area de Bacteriologia/Examenes"});
-            this.cbAcceso.Location = new System.Drawing.Point(182, 339);
-            this.cbAcceso.Name = "cbAcceso";
-            this.cbAcceso.Size = new System.Drawing.Size(267, 21);
-            this.cbAcceso.TabIndex = 67;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(100, 335);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 23);
-            this.label7.TabIndex = 66;
-            this.label7.Text = "Acceso:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(99, 297);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 23);
-            this.label9.TabIndex = 63;
-            this.label9.Text = "Correo:";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCorreo.Location = new System.Drawing.Point(182, 301);
-            this.txtCorreo.MaxLength = 100;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(267, 20);
-            this.txtCorreo.TabIndex = 64;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Teal;
-            this.label10.Location = new System.Drawing.Point(83, 205);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 23);
-            this.label10.TabIndex = 62;
-            this.label10.Text = "Dirección:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTelefono.Location = new System.Drawing.Point(182, 264);
-            this.txtTelefono.MaxLength = 13;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(267, 20);
-            this.txtTelefono.TabIndex = 59;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(88, 261);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 23);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Teléfono:";
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtContrasena.Location = new System.Drawing.Point(182, 167);
-            this.txtContrasena.MaxLength = 100;
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(267, 20);
-            this.txtContrasena.TabIndex = 57;
+            this.txtClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClinica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtClinica.Location = new System.Drawing.Point(182, 195);
+            this.txtClinica.MaxLength = 50;
+            this.txtClinica.Multiline = true;
+            this.txtClinica.Name = "txtClinica";
+            this.txtClinica.Size = new System.Drawing.Size(267, 87);
+            this.txtClinica.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -406,39 +282,39 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(49, 78);
+            this.label2.Location = new System.Drawing.Point(77, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 23);
+            this.label2.Size = new System.Drawing.Size(72, 21);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Cédula médico:";
+            this.label2.Text = "Cédula:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(304, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 23);
+            this.label3.Size = new System.Drawing.Size(168, 21);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Registrar Médico";
+            this.label3.Text = "Registrar Trabajador";
             // 
             // txtCiMedico
             // 
+            this.txtCiMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCiMedico.Location = new System.Drawing.Point(182, 81);
             this.txtCiMedico.MaxLength = 9;
             this.txtCiMedico.Name = "txtCiMedico";
-            this.txtCiMedico.Size = new System.Drawing.Size(267, 20);
-            this.txtCiMedico.TabIndex = 30;
-            this.txtCiMedico.TextChanged += new System.EventHandler(this.txtCiMedico_TextChanged);
-            this.txtCiMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiMedico_KeyPress);
+            this.txtCiMedico.Size = new System.Drawing.Size(267, 31);
+            this.txtCiMedico.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -453,6 +329,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -472,79 +349,42 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(93, 124);
+            this.label4.Location = new System.Drawing.Point(77, 146);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 23);
+            this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
             // 
             // txtNombre
             // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNombre.Location = new System.Drawing.Point(182, 124);
-            this.txtNombre.MaxLength = 100;
+            this.txtNombre.Location = new System.Drawing.Point(182, 140);
+            this.txtNombre.MaxLength = 25;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(267, 20);
-            this.txtNombre.TabIndex = 33;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Size = new System.Drawing.Size(267, 31);
+            this.txtNombre.TabIndex = 2;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(77, 167);
+            this.label5.Location = new System.Drawing.Point(77, 195);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 23);
+            this.label5.Size = new System.Drawing.Size(77, 46);
             this.label5.TabIndex = 34;
-            this.label5.Text = "Contraseña:";
-            // 
-            // err1
-            // 
-            this.err1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.err1.ContainerControl = this;
-            // 
-            // err2
-            // 
-            this.err2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.err2.ContainerControl = this;
-            // 
-            // err3
-            // 
-            this.err3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.err3.ContainerControl = this;
-            // 
-            // err4
-            // 
-            this.err4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.err4.ContainerControl = this;
-            // 
-            // err5
-            // 
-            this.err5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.err5.ContainerControl = this;
-            // 
-            // err6
-            // 
-            this.err6.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.err6.ContainerControl = this;
-            // 
-            // err7
-            // 
-            this.err7.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.err7.ContainerControl = this;
+            this.label5.Text = "Clinica o Hospital";
             // 
             // Medico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 491);
+            this.ClientSize = new System.Drawing.Size(799, 491);
             this.Controls.Add(this.tabControl1);
             this.Name = "Medico";
-            this.Text = "Medico";
-            this.Load += new System.EventHandler(this.Medico_Load);
+            this.Text = "Medico2";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -553,13 +393,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -568,26 +401,18 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.CheckBox chkEliminar;
         private System.Windows.Forms.DataGridView dataListado;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbAcceso;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.TextBox txtClinica;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
@@ -599,13 +424,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richDireccion;
-        private System.Windows.Forms.ErrorProvider err1;
-        private System.Windows.Forms.ErrorProvider err2;
-        private System.Windows.Forms.ErrorProvider err3;
-        private System.Windows.Forms.ErrorProvider err4;
-        private System.Windows.Forms.ErrorProvider err5;
-        private System.Windows.Forms.ErrorProvider err6;
-        private System.Windows.Forms.ErrorProvider err7;
     }
 }

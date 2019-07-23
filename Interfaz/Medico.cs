@@ -7,85 +7,81 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using Metodos;
 
 namespace Interfaz
 {
     public partial class Medico : Form
     {
+        private int ID;
         LimitantesDeIngreso valid = new LimitantesDeIngreso();
+
         public Medico()
         {
             InitializeComponent();
         }
-
-       
-
-
-        private bool validarr()
-        {
-            bool error = true;
-            if (txtCiMedico.Text == "")
-            {
-                error = false;
-                err1.SetError(txtCiMedico, "Cédula del médico");
-            }
-            if (txtNombre.Text == "")
-            {
-                error = false;
-                err2.SetError(txtNombre, "No olvides el nombre del médico");
-            }
-            if (txtContrasena.Text == "")
-            {
-                error = false;
-                err3.SetError(txtContrasena, "Crea una contraseña que no puedas olvidar");
-            }
-            if (richDireccion.Text == "")
-            {
-                error = false;
-                err4.SetError(richDireccion, "Escribe una dirección");
-            }
-            if (txtTelefono.Text == "")
-            {
-                error = false;
-                err5.SetError(txtTelefono, "Inserta un número telefónico");
-            }
-            if (txtCorreo.Text == "")
-            {
-                error = false;
-                err6.SetError(txtCorreo, "Agrega un correo electrónico");
-            }
-            if (cbAcceso.Text == "")
-            {
-                error = false;
-                err7.SetError(cbAcceso, "Selecciona su nivel de acceso.");
-            }
-            return error;
-        }
-        //Eliminación de los errores 
-        private void ChaoErr()
-        {
-            err1.SetError(txtCiMedico, "");
-            err2.SetError(txtNombre, "");
-            err3.SetError(txtContrasena, "");
-            err4.SetError(richDireccion, "");
-            err5.SetError(txtTelefono, "");
-            err6.SetError(txtCorreo, "");
-            err7.SetError(cbAcceso, "");
-        } 
+ 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ChaoErr();
-            if (validarr())
+            try
             {
-                MessageBox.Show("¡Guardado en la base de datos!", "Almacenando...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            } 
+
+                //La variable que almacena si se insertó
+                //o se modificó la tabla
+                string Rpta = "";
+                if (this.txtNombre.Text == string.Empty || this.txtCiMedico.Text== string.Empty || this.txtClinica.Text==string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos, serán remarcados");
+                }
+                else
+                {
+                    if (this.IsNuevo)
+                    {
+                        //Vamos a insertar un Medico
+                        Rpta = MMedico.Insertar(ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+
+                    }
+                    else
+                    {
+                        //Vamos a modificar un Medico
+                        Rpta = MMedico.Insertar(ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+                    }
+                    //Si la respuesta fue OK, fue porque se modificó
+                    //o insertó el Trabajador
+                    //de forma correcta
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (this.IsNuevo)
+                        {
+                            this.MensajeOK("Se insertó de forma correcta el registro");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se actualizó de forma correcta el registro");
+                        }
+
+                    }
+                    else
+                    {
+                        //Mostramos el mensaje de error
+                        this.MensajeError(Rpta);
+                    }
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.Botones();
+                    this.Limpiar();
+                    this.Mostrar();
+                    this.txtCiMedico.Text = "";
+                    this.ID = 0;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
-
-
-
-
 
         //Para mostrar mensaje de confirmación
         private void MensajeOK(string Mensaje)
@@ -115,36 +111,25 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
-            this.Habilitar(true);
+            this.Habilitar();
             this.txtNombre.Focus();
         }
 
 
 
-
-        private void Limpiar()
+        private void Habilitar()
         {
-            this.txtCiMedico.Text = string.Empty;
-            this.txtNombre.Text = string.Empty;
-            this.richDireccion.Text = string.Empty;
-            this.txtContrasena.Text = string.Empty;
-            this.txtTelefono.Text = string.Empty;
-            this.txtCorreo.Text = string.Empty;
-
+            this.txtCiMedico.Enabled = true;
+            this.txtNombre.Enabled = true;
+            this.txtClinica.Enabled = true;
+            this.txtCiMedico.Focus();
         }
 
-
-
-        //Habilita los controles de los formularios
-        private void Habilitar(bool Valor)
+        private void Deshabilitar()
         {
-            this.txtCiMedico.ReadOnly = !Valor;
-            this.txtNombre.ReadOnly = !Valor;
-            this.richDireccion.ReadOnly = !Valor;
-            this.txtContrasena.ReadOnly = !Valor;
-            this.txtTelefono.ReadOnly = !Valor;
-            this.cbAcceso.Enabled = Valor;
-            this.txtCorreo.Enabled = Valor;
+            this.txtCiMedico.Enabled = false;
+            this.txtNombre.Enabled = false;
+            this.txtClinica.Enabled = false;
         }
 
 
@@ -155,7 +140,7 @@ namespace Interfaz
         {
             if (this.IsNuevo || this.IsEditar)
             {
-                this.Habilitar(true);
+                this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
                 this.btnEditar.Enabled = false;
@@ -163,7 +148,7 @@ namespace Interfaz
             }
             else
             {
-                this.Habilitar(false);
+                this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
                 this.btnEditar.Enabled = true;
@@ -171,8 +156,22 @@ namespace Interfaz
             }
         }
 
+        private void Limpiar()
+        {
+            //aca hace falta el id del medico para limpiarlo
+            this.txtCiMedico.Text = string.Empty;
+            this.txtNombre.Text = string.Empty;
+            this.txtClinica.Text = string.Empty;
+        }
 
+        private void Mostrar()
+        {
+            //MUsuario.Mostrar(txtBuscar.Text);
 
+            dataListado.DataSource = MMedico.Mostrar(txtBuscar.Text);
+            // this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
 
         void EliminarItems()
         {
@@ -200,7 +199,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MMedico.Eliminar(item.Cells[0].Value);
+                        Rpta = MMedico.Eliminar(Convert.ToInt32(item.Cells[0].Value));
                     }
 
                     if (Rpta.Equals("OK"))
@@ -247,31 +246,20 @@ namespace Interfaz
             //de todos nuestros Trabajadores
             this.Mostrar();
             //Deshabilita los controles
-            this.Habilitar(false);
+            this.Deshabilitar();
             //Establece los botones
             this.Botones();
         }
 
-
-
-
-        private void Mostrar()
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            //MUsuario.Mostrar(txtBuscar.Text);
 
-            dataListado.DataSource = MMedico.Mostrar(txtBuscar.Text);
-            // this.OcultarColumnas();
-            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
+        }
 
 
     }

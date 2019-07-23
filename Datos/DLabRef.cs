@@ -12,10 +12,20 @@ namespace Datos
     {
 
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private string _Nombre;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
+
 
         public DLabRef()
         {

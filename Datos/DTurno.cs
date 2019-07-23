@@ -12,14 +12,35 @@ namespace Datos
     {
 
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
         private DateTime _Comienzo;
+
+        public DateTime Comienzo
+        {
+            get { return _Comienzo; }
+            set { _Comienzo = value; }
+        }
         private DateTime _Final;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public DateTime Comienzo { get => _Comienzo; set => _Comienzo = value; }
-        public DateTime Final { get => _Final; set => _Final = value; }
+        public DateTime Final
+        {
+            get { return _Final; }
+            set { _Final = value; }
+        }
+
+
 
         public DTurno()
         {

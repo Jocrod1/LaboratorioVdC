@@ -50,13 +50,13 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MPaciente.Insertar(Convert.ToInt32(""),this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+                    //Rpta = MPaciente.Insertar(Convert.ToInt32(""),this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
 
                 }
                 else
                 {
                     //Vamos a modificar un Trabajador
-                    Rpta = MPaciente.Editar(Convert.ToInt32(this.txtID.Text), this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+                    //Rpta = MPaciente.Editar(Convert.ToInt32(this.txtID.Text), this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -318,6 +318,11 @@ namespace Interfaz
         private void txtNroHab_KeyPress(object sender, KeyPressEventArgs e)
         {
             vali.soloNumeros(e);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -13,20 +13,55 @@ namespace Datos
     {
 
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
         private string _Equivalencia;
+
+        public string Equivalencia
+        {
+            get { return _Equivalencia; }
+            set { _Equivalencia = value; }
+        }
         private int _TipoPrecio;
+
+        public int TipoPrecio
+        {
+            get { return _TipoPrecio; }
+            set { _TipoPrecio = value; }
+        }
         private float _Porcentaje;
+
+        public float Porcentaje
+        {
+            get { return _Porcentaje; }
+            set { _Porcentaje = value; }
+        }
         private string _TipoPago;
+
+        public string TipoPago
+        {
+            get { return _TipoPago; }
+            set { _TipoPago = value; }
+        }
         private int _NoCopia;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public string Equivalencia { get => _Equivalencia; set => _Equivalencia = value; }
-        public int TipoPrecio { get => _TipoPrecio; set => _TipoPrecio = value; }
-        public float Porcentaje { get => _Porcentaje; set => _Porcentaje = value; }
-        public string TipoPago { get => _TipoPago; set => _TipoPago = value; }
-        public int NoCopia { get => _NoCopia; set => _NoCopia = value; }
+        public int NoCopia
+        {
+            get { return _NoCopia; }
+            set { _NoCopia = value; }
+        }
+
 
         public DTipoPaciente()
         {

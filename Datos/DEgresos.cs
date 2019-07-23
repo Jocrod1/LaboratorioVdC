@@ -13,20 +13,55 @@ namespace Datos
     {
 
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private string _Nombre;
+
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { _Nombre = value; }
+        }
         private string _Equivalencia;
+
+        public string Equivalencia
+        {
+            get { return _Equivalencia; }
+            set { _Equivalencia = value; }
+        }
         private double _Precio;
+
+        public double Precio
+        {
+            get { return _Precio; }
+            set { _Precio = value; }
+        }
         private double _Precio_Empresa;
+
+        public double Precio_Empresa
+        {
+            get { return _Precio_Empresa; }
+            set { _Precio_Empresa = value; }
+        }
         private int _Tipo;
+
+        public int Tipo
+        {
+            get { return _Tipo; }
+            set { _Tipo = value; }
+        }
         private double _Cuenta_Contable;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public string Equivalencia { get => _Equivalencia; set => _Equivalencia = value; }
-        public double Precio { get => _Precio; set => _Precio = value; }
-        public double Precio_Empresa { get => _Precio_Empresa; set => _Precio_Empresa = value; }
-        public int Tipo { get => _Tipo; set => _Tipo = value; }
-        public double Cuenta_Contable { get => _Cuenta_Contable; set => _Cuenta_Contable = value; }
+        public double Cuenta_Contable
+        {
+            get { return _Cuenta_Contable; }
+            set { _Cuenta_Contable = value; }
+        }
+
 
         public DEgresos()
         {
