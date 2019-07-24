@@ -63,7 +63,6 @@
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtValNorHombres = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,12 +85,12 @@
             this.error10 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error11 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error12 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error3)).BeginInit();
@@ -104,16 +103,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.error10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 9);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(793, 605);
+            this.tabControl1.Size = new System.Drawing.Size(793, 615);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -131,7 +131,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(785, 579);
+            this.tabPage1.Size = new System.Drawing.Size(785, 464);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             // 
@@ -185,7 +185,7 @@
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(34, 116);
+            this.dataListado.Location = new System.Drawing.Point(34, 143);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
@@ -255,7 +255,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(785, 579);
+            this.tabPage2.Size = new System.Drawing.Size(785, 589);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -296,7 +296,7 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 567);
+            this.groupBox1.Size = new System.Drawing.Size(774, 587);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajador";
@@ -501,17 +501,8 @@
             this.txtValNorHombres.Name = "txtValNorHombres";
             this.txtValNorHombres.Size = new System.Drawing.Size(267, 20);
             this.txtValNorHombres.TabIndex = 57;
+            this.txtValNorHombres.TextChanged += new System.EventHandler(this.txtValNorHombres_TextChanged);
             this.txtValNorHombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValNorHombres_KeyPress);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(484, 137);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 239);
-            this.pictureBox1.TabIndex = 56;
-            this.pictureBox1.TabStop = false;
             // 
             // btnNuevo
             // 
@@ -585,6 +576,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -692,11 +684,21 @@
             this.error12.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
             this.error12.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(484, 137);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 239);
+            this.pictureBox1.TabIndex = 56;
+            this.pictureBox1.TabStop = false;
+            // 
             // Examenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 620);
+            this.ClientSize = new System.Drawing.Size(817, 628);
             this.Controls.Add(this.tabControl1);
             this.Name = "Examenes";
             this.Text = "Examenes";
@@ -708,7 +710,6 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error3)).EndInit();
@@ -721,6 +722,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.error10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -750,7 +752,6 @@
         private System.Windows.Forms.TextBox txtPrecio1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtValNorHombres;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label2;
@@ -783,5 +784,6 @@
         private System.Windows.Forms.ErrorProvider error10;
         private System.Windows.Forms.ErrorProvider error11;
         private System.Windows.Forms.ErrorProvider error12;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

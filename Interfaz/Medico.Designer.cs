@@ -105,7 +105,7 @@
             this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
-            "Cedula",
+            "Cédula",
             "Nombre"});
             this.cbBuscar.Location = new System.Drawing.Point(34, 52);
             this.cbBuscar.Name = "cbBuscar";
@@ -375,7 +375,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 46);
             this.label5.TabIndex = 34;
-            this.label5.Text = "Clinica o Hospital";
+            this.label5.Text = "Clinica u Hospital:";
             // 
             // Medico
             // 

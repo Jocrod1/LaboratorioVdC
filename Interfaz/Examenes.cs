@@ -149,5 +149,14 @@ namespace Interfaz
         {
             valid.soloLetras(e);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValNorHombres_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
