@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bancos.Designer.cs">
+      <DependentUpon>Bancos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Examenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="Trabajador.Designer.cs">
       <DependentUpon>Trabajador.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bancos.resx">
+      <DependentUpon>Bancos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Examenes.resx">
       <DependentUpon>Examenes.cs</DependentUpon>
     </EmbeddedResource>
