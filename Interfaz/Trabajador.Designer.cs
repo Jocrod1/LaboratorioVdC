@@ -43,7 +43,6 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richDireccion = new System.Windows.Forms.RichTextBox();
             this.cbAcceso = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,26 +62,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.Provider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Provider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Provider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Provider4 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Provider5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Provider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Provider5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Provider6)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -153,7 +147,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(697, 88);
+            this.lblTotal.Location = new System.Drawing.Point(35, 85);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 38;
@@ -182,6 +176,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(188, 20);
             this.txtBuscar.TabIndex = 35;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBuscar_KeyPress);
             // 
             // btnAnular
             // 
@@ -196,6 +191,7 @@
             this.btnAnular.Text = "Anular";
             this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.BtnAnular_Click);
             // 
             // btnBuscar
             // 
@@ -240,7 +236,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.groupBox1.Controls.Add(this.richDireccion);
+            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.cbAcceso);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
@@ -268,16 +264,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajador";
             // 
-            // richDireccion
-            // 
-            this.richDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.richDireccion.Location = new System.Drawing.Point(182, 207);
-            this.richDireccion.MaxLength = 1000;
-            this.richDireccion.Name = "richDireccion";
-            this.richDireccion.Size = new System.Drawing.Size(267, 40);
-            this.richDireccion.TabIndex = 67;
-            this.richDireccion.Text = "";
-            // 
             // cbAcceso
             // 
             this.cbAcceso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -300,7 +286,7 @@
             this.label7.ForeColor = System.Drawing.Color.Teal;
             this.label7.Location = new System.Drawing.Point(77, 339);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 21);
+            this.label7.Size = new System.Drawing.Size(85, 22);
             this.label7.TabIndex = 66;
             this.label7.Text = "Acceso:";
             // 
@@ -311,7 +297,7 @@
             this.label9.ForeColor = System.Drawing.Color.Teal;
             this.label9.Location = new System.Drawing.Point(77, 300);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 21);
+            this.label9.Size = new System.Drawing.Size(78, 22);
             this.label9.TabIndex = 63;
             this.label9.Text = "Correo:";
             // 
@@ -331,7 +317,7 @@
             this.label10.ForeColor = System.Drawing.Color.Teal;
             this.label10.Location = new System.Drawing.Point(77, 207);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 21);
+            this.label10.Size = new System.Drawing.Size(101, 22);
             this.label10.TabIndex = 62;
             this.label10.Text = "Dirección:";
             // 
@@ -352,7 +338,7 @@
             this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(77, 261);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 21);
+            this.label1.Size = new System.Drawing.Size(92, 22);
             this.label1.TabIndex = 58;
             this.label1.Text = "Teléfono:";
             // 
@@ -410,9 +396,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(77, 78);
+            this.label2.Location = new System.Drawing.Point(93, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 21);
+            this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 29;
             this.label2.Text = "Cédula:";
             // 
@@ -423,7 +409,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(304, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 21);
+            this.label3.Size = new System.Drawing.Size(194, 22);
             this.label3.TabIndex = 39;
             this.label3.Text = "Registrar Trabajador";
             // 
@@ -472,9 +458,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(77, 124);
+            this.label4.Location = new System.Drawing.Point(87, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 21);
+            this.label4.Size = new System.Drawing.Size(89, 22);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
             // 
@@ -493,16 +479,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(77, 167);
+            this.label5.Location = new System.Drawing.Point(52, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 21);
+            this.label5.Size = new System.Drawing.Size(124, 22);
             this.label5.TabIndex = 34;
             this.label5.Text = "Contraseña:";
-            // 
-            // errorIcono
-            // 
-            this.errorIcono.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorIcono.ContainerControl = this;
             // 
             // Provider1
             // 
@@ -524,15 +505,16 @@
             this.Provider4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.Provider4.ContainerControl = this;
             // 
-            // Provider5
+            // txtDireccion
             // 
-            this.Provider5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.Provider5.ContainerControl = this;
-            // 
-            // Provider6
-            // 
-            this.Provider6.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.Provider6.ContainerControl = this;
+            this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDireccion.Location = new System.Drawing.Point(184, 210);
+            this.txtDireccion.MaxLength = 150;
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(267, 40);
+            this.txtDireccion.TabIndex = 67;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDireccion_KeyPress);
             // 
             // Trabajador
             // 
@@ -551,13 +533,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Provider4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Provider5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Provider6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,13 +575,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbBuscar;
-        private System.Windows.Forms.ErrorProvider errorIcono;
         private System.Windows.Forms.ErrorProvider Provider1;
         private System.Windows.Forms.ErrorProvider Provider2;
         private System.Windows.Forms.ErrorProvider Provider3;
         private System.Windows.Forms.ErrorProvider Provider4;
-        private System.Windows.Forms.ErrorProvider Provider5;
-        private System.Windows.Forms.ErrorProvider Provider6;
-        private System.Windows.Forms.RichTextBox richDireccion;
+        private System.Windows.Forms.TextBox txtDireccion;
     }
 }

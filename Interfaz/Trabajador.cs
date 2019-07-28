@@ -70,38 +70,24 @@ namespace Interfaz
                 error = false;
                 Provider3.SetError(txtContrasena, "¡Crea una contraseña!");
             }
-            if (richDireccion.Text == "")
-            {
-                error = false;
-                Provider4.SetError(richDireccion, "Agrega la dirección del trabajdor");
-            }
-            if (txtTelefono.Text == "")
-            {
-                error = false;
-                Provider5.SetError(txtTelefono, "Inserta un número telefónico");
-            }
-            if (txtCorreo.Text == "")
-            {
-                error = false;
-                Provider6.SetError(txtCorreo, "No olvides el correo electrónico");
+            if (cbAcceso.Text == "") {
+                Provider4.SetError(cbAcceso, "Elige un tipo de acceso para este usuario");
             }
             return error;
         }
         //Cuando se llenen, se retira el error
         private void SinErrores()
         {
-            Provider1.SetError(txtCiTrabajador, "");
-            Provider2.SetError(txtNombre, "");
-            Provider3.SetError(txtContrasena,"");
-            Provider4.SetError(richDireccion,"");
-            Provider5.SetError(txtTelefono,"");
-            Provider6.SetError(txtCorreo,"");
+            Provider1.Clear();
+            Provider2.Clear();
+            Provider3.Clear();
+            Provider4.Clear();
         }
         private void Limpiar()
         {
             this.txtCiTrabajador.Text = string.Empty;
             this.txtNombre.Text = string.Empty;
-            this.richDireccion.Text = string.Empty;
+            this.txtDireccion.Text = string.Empty;
             this.txtContrasena.Text = string.Empty;
             this.txtTelefono.Text = string.Empty;
             this.txtCorreo.Text = string.Empty;
@@ -112,7 +98,7 @@ namespace Interfaz
         {
             this.txtCiTrabajador.ReadOnly = !Valor;
             this.txtNombre.ReadOnly = !Valor;
-            this.richDireccion.ReadOnly = !Valor;
+            this.txtDireccion.ReadOnly = !Valor;
             this.txtContrasena.ReadOnly = !Valor;
             this.txtTelefono.ReadOnly = !Valor;
             this.cbAcceso.Enabled = Valor;
@@ -145,6 +131,7 @@ namespace Interfaz
 
         private void Trabajador_Load(object sender, EventArgs e)
         {
+            cbBuscar.SelectedIndex = 0;
             //Para ubicar al formulario en la parte superior del contenedor
             this.Top = 0;
             this.Left = 0;
@@ -179,8 +166,7 @@ namespace Interfaz
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
+        void Buscar() {
             if (cbBuscar.SelectedIndex == 0)
             {
                 this.Mostrar();
@@ -189,6 +175,11 @@ namespace Interfaz
             {
                 this.Buscar_Nombre();
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
         }
 
         void EliminarItems() {
@@ -266,15 +257,13 @@ namespace Interfaz
         {
             try
             {
-
+                SinErrores();
                 //La variable que almacena si se insertó
                 //o se modificó la tabla
                 string Rpta = "";
-                if (this.txtNombre.Text == string.Empty || txtContrasena.Text == string.Empty)
+                if (!validar())
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
-                    errorIcono.SetError(txtNombre, "Ingrese un Valor");
-                    errorIcono.SetError(txtContrasena, "Ingrese un Valor");
                 }
                 else
                 {
@@ -282,13 +271,13 @@ namespace Interfaz
                     {
                         //Vamos a insertar un Trabajador 
 
-                        Rpta = MUsuario.Insertar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, richDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
+                        Rpta = MUsuario.Insertar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
 
                     }
                     else
                     {
                         //Vamos a modificar un Trabajador
-                        Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, richDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
+                        Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
                     }
                     //Si la respuesta fue OK, fue porque se modificó
                     //o insertó el Trabajador
@@ -345,6 +334,7 @@ namespace Interfaz
         {
             this.IsNuevo = false;
             this.IsEditar = false;
+            SinErrores();
             this.Botones();
             this.Limpiar();
             this.txtCiTrabajador.Text = string.Empty;
@@ -379,13 +369,85 @@ namespace Interfaz
         {
             this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            this.richDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
+            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
             this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
             this.txtContrasena.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contraseña"].Value);
             this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
             this.txtCorreo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Correo"].Value);
 
             this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
+        }
+
+        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbBuscar.Text == "Cedula") {
+                valid.soloNumeros(e);
+            }
+            if (cbBuscar.Text == "Nombre") {
+                valid.soloLetras(e);
+            }
+        }
+
+        void AnularItems() {
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Trabajadores?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro del Trabajador?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MUsuario.Editar(Convert.ToString(item.Cells["cedula"].Value), "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO");
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se Anularon Correctamente los Registros de Trabajadores");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Anuló Correctamente el Registro del Trabajador");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void BtnAnular_Click(object sender, EventArgs e)
+        {
+            AnularItems();
         }
     }
 }
