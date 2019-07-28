@@ -38,25 +38,26 @@ namespace Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            /*
             SinErrores();
             if (valid())
             {
                 MessageBox.Show("¡Paciente guardado satisfactoriamente!", "Almacenado...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-
+            */
             string Rpta = "";
             try
             {
                 if (this.IsNuevo)
                 {
 
-                    //Rpta = MPaciente.Insertar(Convert.ToInt32(""),this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+                    Rpta = MPaciente.Insertar(Convert.ToInt32(""),this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
 
                 }
                 else
                 {
-                    //Vamos a modificar un Trabajador
-                    //Rpta = MPaciente.Editar(Convert.ToInt32(this.txtID.Text), this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+                    //Vamos a modificar un Paciente
+                    Rpta = MPaciente.Editar(Convert.ToInt32(this.txtID.Text), this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -83,6 +84,7 @@ namespace Interfaz
                 this.Botones();
                 this.Limpiar();
                 this.Mostrar();
+                this.Deshabilitar();
             }
             catch (Exception ex)
             {
@@ -228,10 +230,6 @@ namespace Interfaz
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
         //Validacioneees
         private bool valid()
         {
@@ -320,6 +318,8 @@ namespace Interfaz
             vali.soloNumeros(e);
         }
 
+
+        //botones
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
