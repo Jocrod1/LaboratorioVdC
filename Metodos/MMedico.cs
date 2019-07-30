@@ -26,7 +26,7 @@ namespace Metodos
             Objeto.Cedula = Cedula;
             Objeto.Nombre = Nombre;
             Objeto.ClinicaOHospital = ClinicaOHospital;
-            return Objeto.Insertar(Objeto);
+            return Objeto.Editar(Objeto);
         }
 
         public static string Eliminar(int IDMedico)
@@ -35,6 +35,14 @@ namespace Metodos
             Objeto.IdMedico = IDMedico;
             return Objeto.Eliminar(Objeto);
         }
+
+
+        public new static List<DMedico> Buscar_Nombre(string TextoBuscar)
+        {
+            DMedico Objeto = new DMedico();
+            return Objeto.Buscar_Nombre(TextoBuscar);
+        }
+
 
         //probar esta nueva version, NUEVA VERSION
         public new static List<DMedico> Mostrar(string TextoBuscar)

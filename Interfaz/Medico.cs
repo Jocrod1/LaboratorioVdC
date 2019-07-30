@@ -20,6 +20,22 @@ namespace Interfaz
         {
             InitializeComponent();
         }
+
+        private void Medico_Load(object sender, EventArgs e)
+        {
+            //Para ubicar al formulario en la parte superior del contenedor
+            this.Top = 0;
+            this.Left = 0;
+            //Le decimos al DataGridView que no auto genere las columnas
+            //this.datalistado.AutoGenerateColumns = false;
+            //Llenamos el DataGridView con la informacion
+            //de todos nuestros Trabajadores
+            this.Mostrar();
+            //Deshabilita los controles
+            this.Deshabilitar();
+            //Establece los botones
+            this.Botones();
+        }
  
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -44,7 +60,9 @@ namespace Interfaz
                     else
                     {
                         //Vamos a modificar un Medico
-                        Rpta = MMedico.Insertar(ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+                        Rpta = MMedico.Editar(ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+                        ID = 0;
+                        MessageBox.Show("hola");
                     }
                     //Si la respuesta fue OK, fue porque se modificó
                     //o insertó el Trabajador
@@ -112,7 +130,7 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txtNombre.Focus();
+            this.txtCiMedico.Focus();
         }
 
 
@@ -235,32 +253,79 @@ namespace Interfaz
             EliminarItems();
         }
 
-        private void Medico_Load(object sender, EventArgs e)
-        {
-            //Para ubicar al formulario en la parte superior del contenedor
-            this.Top = 0;
-            this.Left = 0;
-            //Le decimos al DataGridView que no auto genere las columnas
-            //this.datalistado.AutoGenerateColumns = false;
-            //Llenamos el DataGridView con la informacion
-            //de todos nuestros Trabajadores
-            this.Mostrar();
-            //Deshabilita los controles
-            this.Deshabilitar();
-            //Establece los botones
-            this.Botones();
-        }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            if (!this.txtCiMedico.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.Botones();
+                this.Habilitar();
+                this.txtCiMedico.ReadOnly = true;
+            }
+            else
+            {
+                this.MensajeError("Debe de seleccionar primero el registro a editar");
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar();
         }
 
+
+        private void Buscar_Nombre()
+        {
+            //MUsuario.Buscar_Nombre(txtBuscar.Text);
+
+            dataListado.DataSource = MMedico.Buscar_Nombre(txtBuscar.Text);
+            // this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (cbBuscar.SelectedIndex == 0)
+            {
+                this.Mostrar();
+            }
+            else if (cbBuscar.SelectedIndex == 1)
+            {
+                this.Buscar_Nombre();
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (cbBuscar.SelectedIndex == 0)
+            {
+                this.Mostrar();
+            }
+            else if (cbBuscar.SelectedIndex == 1)
+            {
+                this.Buscar_Nombre();
+            }
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IDMedico"].Value);
+            this.txtCiMedico.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cedula"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            this.txtClinica.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClinicaOHospital"].Value);
+
+            this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
+        }
+
+
+    
 
     }
 }
