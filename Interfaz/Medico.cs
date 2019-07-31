@@ -65,7 +65,7 @@ namespace Interfaz
                         MessageBox.Show("hola");
                     }
                     //Si la respuesta fue OK, fue porque se modificó
-                    //o insertó el Trabajador
+                    //o insertó el medico
                     //de forma correcta
                     if (Rpta.Equals("OK"))
                     {
@@ -153,6 +153,62 @@ namespace Interfaz
 
 
 
+
+        void AnularItems()
+        {
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Medicos?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro del Medico?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MUsuario.Editar(Convert.ToString(item.Cells["cedula"].Value), "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO");
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se Anularon Correctamente los Registros de Trabajadores");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Anuló Correctamente el Registro del Trabajador");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+
         //Habilita los botones
         private void Botones()
         {
@@ -208,7 +264,7 @@ namespace Interfaz
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar el Registro del Trabajador?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar el Registro de Medico?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -224,11 +280,11 @@ namespace Interfaz
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se Eliminaron Correctamente los Registros de Trabajadores");
+                            this.MensajeOK("Se Eliminaron Correctamente los Registros de Medico");
                         }
                         else
                         {
-                            this.MensajeOK("Se Eliminó Correctamente el Registro del Trabajador");
+                            this.MensajeOK("Se Eliminó Correctamente el Registro del Medico");
                         }
                     }
                     else
@@ -322,6 +378,11 @@ namespace Interfaz
             this.txtClinica.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClinicaOHospital"].Value);
 
             this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            AnularItems();
         }
 
 

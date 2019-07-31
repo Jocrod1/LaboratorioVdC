@@ -53,5 +53,14 @@ namespace Metodos
             DEmpresaSeguro Objeto = new DEmpresaSeguro();
             return Objeto.Mostrar(TextoBuscar);
         }
+
+
+        public new static List<DMedico> Buscar_Nombre(string TextoBuscar)
+        {
+            DEmpresaSeguro Objeto = new DEmpresaSeguro();
+            return Objeto.Buscar_Nombre(TextoBuscar); //añadir esta wea en DEmpresaSeguro
+        }
+
+
     }
 }
