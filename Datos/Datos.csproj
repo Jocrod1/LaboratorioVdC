@@ -52,6 +52,7 @@
     <Compile Include="DLabRef.cs" />
     <Compile Include="DMedico.cs" />
     <Compile Include="DPaciente.cs" />
+    <Compile Include="DRegistroAcceso.cs" />
     <Compile Include="DTipoPaciente.cs" />
     <Compile Include="DTurno.cs" />
     <Compile Include="DUsuario.cs" />

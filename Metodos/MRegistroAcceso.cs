@@ -7,16 +7,16 @@ using Datos;
 
 namespace Metodos
 {
-    public class MRegistroAcceso:DRegistroAcceso
+    public class MRegistroAcceso: DRegistroAcceso
     {
 
-        public static string Insertar(int ID, string Cedula, int Turno, DateTime Fecha)
+        public static string Insertar(int ID, string cedula, int turno, DateTime fecha)
         {
             DRegistroAcceso Objeto = new DRegistroAcceso();
             Objeto.ID = ID;
-            Objeto.CedulaUsuario = Cedula;
-            Objeto.IDTurno = Turno;
-            Objeto.Fecha = Fecha;
+            Objeto.CedulaUsuario = cedula;
+            Objeto.IDTurno = turno;
+            Objeto.Fecha = fecha;
             return Objeto.Insertar(Objeto);
         }
 

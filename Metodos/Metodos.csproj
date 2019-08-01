@@ -51,6 +51,7 @@
     <Compile Include="MLabRef.cs" />
     <Compile Include="MMedico.cs" />
     <Compile Include="MPaciente.cs" />
+    <Compile Include="MRegistroAcceso.cs" />
     <Compile Include="MTipoPaciente.cs" />
     <Compile Include="MTurno.cs" />
     <Compile Include="MUsuario.cs" />
