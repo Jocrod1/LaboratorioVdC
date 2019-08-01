@@ -414,7 +414,10 @@
             // 
             // dateTimePickerFUR
             // 
+            this.dateTimePickerFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerFUR.Location = new System.Drawing.Point(170, 307);
+            this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
             this.dateTimePickerFUR.Size = new System.Drawing.Size(267, 20);
             this.dateTimePickerFUR.TabIndex = 6;

@@ -357,9 +357,9 @@ namespace Interfaz
             this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["porcentaje"].Value);
-            this.txtTipoPrecio.Text = 
+            //this.txtTipoPrecio.Text = 
 
-            this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
+            //this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
         }
 
 

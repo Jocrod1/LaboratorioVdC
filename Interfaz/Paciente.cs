@@ -62,16 +62,7 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //Si no ha seleccionado un producto no puede modificar
-            if (!ID.Equals(0))
-            {
-                this.IsEditar = true;
-                this.Botones();
-            }
-            else
-            {
-                this.MensajeError("Debe de buscar un registro para Modificar");
-            }
+            Editar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -97,14 +88,14 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
-            this.txtCiPaciente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"]);
-            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"]);
-            this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"]);
-            this.txtEdad.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Edad"]);
-            this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"]);
-            this.dateTimePickerFUR.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["FUR"]);
-            this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NroHab"]);
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdPaciente"].Value);
+            this.txtCiPaciente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"].Value);
+            this.txtEdad.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Edad"].Value);
+            this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
+            this.dateTimePickerFUR.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value);
+            this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
 
 
         }
@@ -167,19 +158,19 @@ namespace Interfaz
 
         private void Guardar()
         {
-            string Rpta = "";
             try
             {
+                string Rpta = "";
+
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MPaciente.Insertar(Convert.ToInt32(""), this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
-
+                    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, this.txtCiPaciente.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, this.txtCiPaciente.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -210,7 +201,21 @@ namespace Interfaz
             }
             catch (Exception ex)
             {
-                Rpta = ex.Message;
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Editar()
+        {
+            //Si no ha seleccionado un producto no puede modificar
+            if (!ID.Equals(0))
+            {
+                this.IsEditar = true;
+                this.Botones();
+            }
+            else
+            {
+                this.MensajeError("Debe de buscar un registro para Modificar");
             }
         }
 

@@ -336,6 +336,7 @@ namespace Interfaz
         }
 
 
+        /*
         private void Buscar_Nombre()
         {
             //MUsuario.Buscar_Nombre(txtBuscar.Text);
@@ -344,7 +345,7 @@ namespace Interfaz
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
-
+        */
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -354,7 +355,7 @@ namespace Interfaz
             }
             else if (cbBuscar.SelectedIndex == 1)
             {
-                this.Buscar_Nombre();
+                //this.Buscar_Nombre();
             }
         }
 
@@ -366,7 +367,7 @@ namespace Interfaz
             }
             else if (cbBuscar.SelectedIndex == 1)
             {
-                this.Buscar_Nombre();
+                //this.Buscar_Nombre();
             }
         }
 
