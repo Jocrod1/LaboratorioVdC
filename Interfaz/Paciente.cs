@@ -47,58 +47,7 @@ namespace Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            /*
-            SinErrores();
-            if (valid())
-            {
-                MessageBox.Show("¡Paciente guardado satisfactoriamente!", "Almacenado...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            */
-            string Rpta = "";
-            try
-            {
-                if (this.IsNuevo)
-                {
-
-                    Rpta = MPaciente.Insertar(Convert.ToInt32(""),this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
-
-                }
-                else
-                {
-                    //Vamos a modificar un Paciente
-                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
-                }
-                //Si la respuesta fue OK, fue porque se modificó
-                //o insertó el Trabajador
-                //de forma correcta
-                if (Rpta.Equals("OK"))
-                {
-                    if (this.IsNuevo)
-                    {
-                        this.MensajeOK("Se insertó de forma correcta el registro");
-                    }
-                    else
-                    {
-                        this.MensajeOK("Se actualizó de forma correcta el registro");
-                    }
-
-                }
-                else
-                {
-                    //Mostramos el mensaje de error
-                    this.MensajeError(Rpta);
-                }
-                this.IsNuevo = false;
-                this.IsEditar = false;
-                this.Botones();
-                this.Limpiar();
-                this.Mostrar();
-                this.Deshabilitar();
-            }
-            catch (Exception ex)
-            {
-                Rpta = ex.Message;
-            }
+            Guardar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -110,6 +59,41 @@ namespace Interfaz
         {
             Buscar();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //Si no ha seleccionado un producto no puede modificar
+            if (!ID.Equals(0))
+            {
+                this.IsEditar = true;
+                this.Botones();
+            }
+            else
+            {
+                this.MensajeError("Debe de buscar un registro para Modificar");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            ID = 0;
+        }
+
+
+        //estos 2 se dejan al final
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+        //
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -178,6 +162,55 @@ namespace Interfaz
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Guardar()
+        {
+            string Rpta = "";
+            try
+            {
+                if (this.IsNuevo)
+                {
+
+                    Rpta = MPaciente.Insertar(Convert.ToInt32(""), this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+
+                }
+                else
+                {
+                    //Vamos a modificar un Paciente
+                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+                }
+                //Si la respuesta fue OK, fue porque se modificó
+                //o insertó el Trabajador
+                //de forma correcta
+                if (Rpta.Equals("OK"))
+                {
+                    if (this.IsNuevo)
+                    {
+                        this.MensajeOK("Se insertó de forma correcta el registro");
+                    }
+                    else
+                    {
+                        this.MensajeOK("Se actualizó de forma correcta el registro");
+                    }
+
+                }
+                else
+                {
+                    //Mostramos el mensaje de error
+                    this.MensajeError(Rpta);
+                }
+                this.IsNuevo = false;
+                this.IsEditar = false;
+                this.Botones();
+                this.Limpiar();
+                this.Mostrar();
+                this.Deshabilitar();
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
             }
         }
 
@@ -272,59 +305,6 @@ namespace Interfaz
             }
         }     
 
-        private void Guardar()
-        {
-            try
-            {
-                string Rpta = "";
-                    if (this.IsNuevo)
-                    {
-                        //Vamos a insertar un Trabajador 
-
-                        Rpta = MUsuario.Insertar(Convert.ToInt32(""),Convert.ToInt32(this.txtCiPaciente.Text), this.txtNombre.Text, this.txtSexo.Text, Convert.ToInt32(this.txtEdad.Text), txtTelefono.Text, thi, cbAcceso.SelectedItem.ToString());
-
-                    }
-                    else
-                    {
-                        //Vamos a modificar un Trabajador
-                        Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
-                    }
-                    //Si la respuesta fue OK, fue porque se modificó
-                    //o insertó el Trabajador
-                    //de forma correcta
-                    if (Rpta.Equals("OK"))
-                    {
-                        if (this.IsNuevo)
-                        {
-                            this.MensajeOK("Se insertó de forma correcta el registro");
-                        }
-                        else
-                        {
-                            this.MensajeOK("Se actualizó de forma correcta el registro");
-                        }
-
-                    }
-                    else
-                    {
-                        //Mostramos el mensaje de error
-                        this.MensajeError(Rpta);
-                    }
-                    this.IsNuevo = false;
-                    this.IsEditar = false;
-                    this.Botones();
-                    this.Limpiar();
-                    this.Mostrar();
-                    this.txtCiTrabajador.Text = "";
-
-                }
-            }
-
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
 
         //validaciones
         private void txtCiPaciente_TextChanged(object sender, EventArgs e)
@@ -354,10 +334,6 @@ namespace Interfaz
         {
             vali.soloNumeros(e);
         }
-
-
-
-
 
 
 
