@@ -20,11 +20,21 @@ namespace Interfaz
         //Variable que nos indica si vamos a modificar un trabajador
         private bool IsEditar = false;
 
+        private int ID;
+
         public Paciente()
         {
             InitializeComponent();
         }
 
+        private void Paciente_Load(object sender, EventArgs e)
+        {
+            this.Mostrar();
+            this.Deshabilitar();
+            this.Botones();
+        }
+
+        //botones
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             this.IsNuevo = true;
@@ -34,7 +44,6 @@ namespace Interfaz
             this.Habilitar();
             this.txtCiPaciente.Focus();
         }
-
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -57,7 +66,7 @@ namespace Interfaz
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPaciente.Editar(Convert.ToInt32(this.txtID.Text), this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
+                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR), txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -95,6 +104,25 @@ namespace Interfaz
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EliminarItems();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
+            this.txtCiPaciente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"]);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"]);
+            this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"]);
+            this.txtEdad.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Edad"]);
+            this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"]);
+            this.dateTimePickerFUR.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["FUR"]);
+            this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NroHab"]);
+
+
         }
 
         //metodos
@@ -163,8 +191,6 @@ namespace Interfaz
             MessageBox.Show(Mensaje, "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-
-
         private void Habilitar()
         {
             this.txtCiPaciente.Enabled = true;
@@ -174,7 +200,6 @@ namespace Interfaz
             this.txtTelefono.Enabled = true;
             this.dateTimePickerFUR.Enabled = true;
             this.txtNroHab.Enabled = true;
-            this.txtIdMedico.Enabled = true;
         }
 
         private void Deshabilitar()
@@ -186,7 +211,6 @@ namespace Interfaz
             this.txtTelefono.Enabled = false;
             this.dateTimePickerFUR.Enabled = false;
             this.txtNroHab.Enabled = false;
-            this.txtIdMedico.Enabled = false;
         }
 
         private void Botones()
@@ -218,7 +242,6 @@ namespace Interfaz
             this.txtTelefono.Text = string.Empty;
             this.dateTimePickerFUR.Text = string.Empty;
             this.txtNroHab.Text = string.Empty;
-            this.txtIdMedico.Text = string.Empty;
         }
 
         private void Mostrar()
@@ -230,69 +253,83 @@ namespace Interfaz
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
-        //Validacioneees
-        private bool valid()
+        private void Buscar_Cedula()
         {
-            bool error = true;
-            if (txtCiPaciente.Text == "")
-            {
-                error = false;
-                error1.SetError(txtCiPaciente, "Ingresa la cédula del paciente");
-            }
-            if (txtNombre.Text == "")
-            {
-                error = false;
-                error2.SetError(txtNombre, "Nombre del paciente.");
-            }
-            if (txtSexo.Text == "")
-            {
-                error = false;
-                error3.SetError(txtSexo, "Asigna un género");
-            }
-            if (txtEdad.Text == "")
-            {
-                error = false;
-                error4.SetError(txtEdad, "Ingresa la edad del paciente.");
-            }
-            if (txtTelefono.Text == "")
-            {
-                error = false;
-                error5.SetError(txtTelefono, "Agrega un número teléfonico");
-            }
-            if (dateTimePickerFUR.Text == "")
-            {
-                error = false;
-                error6.SetError(dateTimePickerFUR, "Fecha de hoy");
-            }
-            if (txtNroHab.Text == "")
-            {
-                error = false;
-                error7.SetError(txtNroHab, "El número de habitación");
-            }
-            if (txtIdMedico.Text == "")
-            {
-                error = false;
-                error8.SetError(txtIdMedico, "Agrega el ID del médico");
-            }
-            return error;
-        }
-        //Eliminación de los errores 
-        private void SinErrores()
-        {
-            error1.SetError(txtCiPaciente, "");
-            error2.SetError(txtNombre, "");
-            error3.SetError(txtSexo, "");
-            error4.SetError(txtEdad,"");
-            error5.SetError(txtTelefono,"");
-            error6.SetError(dateTimePickerFUR,"");
-            error7.SetError(txtNroHab,"");
-            error8.SetError(txtIdMedico,"");
+            dataListado.DataSource = MPaciente.Buscar_Cedula(txtBuscar.Text);
+            // this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
+        private void Buscar()
+        {
+            if (cbBuscar.SelectedIndex == 1)
+            {
+                this.Mostrar();
+            }
+            else if (cbBuscar.SelectedIndex == 0)
+            {
+                this.Buscar_Cedula();
+            }
+        }     
+
+        private void Guardar()
+        {
+            try
+            {
+                string Rpta = "";
+                    if (this.IsNuevo)
+                    {
+                        //Vamos a insertar un Trabajador 
+
+                        Rpta = MUsuario.Insertar(Convert.ToInt32(""),Convert.ToInt32(this.txtCiPaciente.Text), this.txtNombre.Text, this.txtSexo.Text, Convert.ToInt32(this.txtEdad.Text), txtTelefono.Text, thi, cbAcceso.SelectedItem.ToString());
+
+                    }
+                    else
+                    {
+                        //Vamos a modificar un Trabajador
+                        Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
+                    }
+                    //Si la respuesta fue OK, fue porque se modificó
+                    //o insertó el Trabajador
+                    //de forma correcta
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (this.IsNuevo)
+                        {
+                            this.MensajeOK("Se insertó de forma correcta el registro");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se actualizó de forma correcta el registro");
+                        }
+
+                    }
+                    else
+                    {
+                        //Mostramos el mensaje de error
+                        this.MensajeError(Rpta);
+                    }
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.Botones();
+                    this.Limpiar();
+                    this.Mostrar();
+                    this.txtCiTrabajador.Text = "";
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        //validaciones
         private void txtCiPaciente_TextChanged(object sender, EventArgs e)
         {
         }
-
         private void txtCiPaciente_KeyPress(object sender, KeyPressEventArgs e)
         {
             vali.soloNumeros(e);
@@ -319,11 +356,9 @@ namespace Interfaz
         }
 
 
-        //botones
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
 
 
     }

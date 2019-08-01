@@ -250,7 +250,15 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
+            this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
+            this.txtContrasena.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contraseña"].Value);
+            this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
+            this.txtCorreo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Correo"].Value);
 
+            this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -367,15 +375,7 @@ namespace Interfaz
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
-            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
-            this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
-            this.txtContrasena.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contraseña"].Value);
-            this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
-            this.txtCorreo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Correo"].Value);
 
-            this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
         }
 
         private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
@@ -454,5 +454,6 @@ namespace Interfaz
         {
 
         }
+
     }
 }

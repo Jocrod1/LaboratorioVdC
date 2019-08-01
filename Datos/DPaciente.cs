@@ -395,9 +395,9 @@ namespace Datos
 
         }
 
-        /*
+        
         //Buscar
-        public List<DPaciente> Buscar_Cedula()
+        public List<DPaciente> Buscar_Cedula(string TextoBuscar)
         {
             DataTable DtResultado = new DataTable("Paciente");
             SqlConnection SqlConectar = new SqlConnection();
@@ -409,7 +409,7 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Buscar_Paciente_Cedula";
+                SqlComando.CommandText = "buscar_Paciente_Cedula";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
                 SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
@@ -430,7 +430,6 @@ namespace Datos
                         Telefono = LeerFilas.GetString(5),
                         FUR=LeerFilas.GetDateTime(6),
                         NumeroHabitacion=LeerFilas.GetString(7),
-                        IdMedico=LeerFilas.GetInt32(8),
                     });
                 }
                 LeerFilas.Close();
@@ -444,6 +443,6 @@ namespace Datos
             return ListaGenerica;
 
         }
-        */
+        
     }
 }

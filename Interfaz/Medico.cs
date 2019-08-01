@@ -62,7 +62,7 @@ namespace Interfaz
                         //Vamos a modificar un Medico
                         Rpta = MMedico.Editar(ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
                         ID = 0;
-                        MessageBox.Show("hola");
+                        
                     }
                     //Si la respuesta fue OK, fue porque se modificó
                     //o insertó el medico

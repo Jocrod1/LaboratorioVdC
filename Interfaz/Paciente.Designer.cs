@@ -28,140 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paciente));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.chkEliminar = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnAnular = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtID = new System.Windows.Forms.Label();
-            this.txtSexo = new System.Windows.Forms.ComboBox();
-            this.txtIdMedico = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtNroHab = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePickerFUR = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEdad = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCiPaciente = new System.Windows.Forms.TextBox();
+            this.txtSexo = new System.Windows.Forms.ComboBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error4 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error6 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error7 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error8 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNroHab = new System.Windows.Forms.TextBox();
+            this.txtCiPaciente = new System.Windows.Forms.TextBox();
+            this.dateTimePickerFUR = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbBuscar = new System.Windows.Forms.ComboBox();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error8)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // panel1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(780, 533);
-            this.tabControl1.TabIndex = 6;
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1020, 557);
+            this.panel1.TabIndex = 0;
             // 
-            // tabPage1
+            // panel3
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tabPage1.Controls.Add(this.btnEliminar);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.lblTotal);
-            this.tabPage1.Controls.Add(this.chkEliminar);
-            this.tabPage1.Controls.Add(this.dataListado);
-            this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Controls.Add(this.btnAnular);
-            this.tabPage1.Controls.Add(this.btnBuscar);
-            this.tabPage1.Controls.Add(this.btnImprimir);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(772, 507);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listado";
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(680, 557);
+            this.panel3.TabIndex = 1;
             // 
-            // btnEliminar
+            // panel5
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.MintCream;
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(441, 41);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(93, 40);
-            this.btnEliminar.TabIndex = 40;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(102, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Buscar";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(697, 88);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(35, 13);
-            this.lblTotal.TabIndex = 38;
-            this.lblTotal.Text = "label5";
-            // 
-            // chkEliminar
-            // 
-            this.chkEliminar.AutoSize = true;
-            this.chkEliminar.Location = new System.Drawing.Point(34, 84);
-            this.chkEliminar.Name = "chkEliminar";
-            this.chkEliminar.Size = new System.Drawing.Size(62, 17);
-            this.chkEliminar.TabIndex = 37;
-            this.chkEliminar.Text = "Eliminar";
-            this.chkEliminar.UseVisualStyleBackColor = true;
+            this.panel5.Controls.Add(this.dataListado);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 100);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(680, 457);
+            this.panel5.TabIndex = 38;
             // 
             // dataListado
             // 
@@ -171,13 +108,15 @@
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(34, 117);
+            this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(698, 360);
-            this.dataListado.TabIndex = 36;
+            this.dataListado.Size = new System.Drawing.Size(680, 457);
+            this.dataListado.TabIndex = 37;
+            this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
             // 
             // Eliminar
             // 
@@ -185,13 +124,45 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             // 
-            // txtBuscar
+            // panel4
             // 
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(148, 52);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(188, 20);
-            this.txtBuscar.TabIndex = 35;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.cbBuscar);
+            this.panel4.Controls.Add(this.btnEliminar);
+            this.panel4.Controls.Add(this.lblTotal);
+            this.panel4.Controls.Add(this.btnAnular);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.btnBuscar);
+            this.panel4.Controls.Add(this.btnImprimir);
+            this.panel4.Controls.Add(this.txtBuscar);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(680, 100);
+            this.panel4.TabIndex = 37;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.MintCream;
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(299, 10);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(93, 40);
+            this.btnEliminar.TabIndex = 47;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(555, 57);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(35, 13);
+            this.lblTotal.TabIndex = 45;
+            this.lblTotal.Text = "label5";
             // 
             // btnAnular
             // 
@@ -199,13 +170,22 @@
             this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(540, 41);
+            this.btnAnular.Location = new System.Drawing.Point(398, 10);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(93, 40);
-            this.btnAnular.TabIndex = 29;
+            this.btnAnular.TabIndex = 43;
             this.btnAnular.Text = "Anular";
             this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAnular.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(129, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Buscar";
             // 
             // btnBuscar
             // 
@@ -213,14 +193,13 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(342, 41);
+            this.btnBuscar.Location = new System.Drawing.Point(200, 10);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(93, 40);
-            this.btnBuscar.TabIndex = 28;
+            this.btnBuscar.TabIndex = 42;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnImprimir
             // 
@@ -228,70 +207,58 @@
             this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(639, 41);
+            this.btnImprimir.Location = new System.Drawing.Point(497, 10);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(93, 40);
-            this.btnImprimir.TabIndex = 26;
+            this.btnImprimir.TabIndex = 41;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 
-            // tabPage2
+            // txtBuscar
             // 
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(772, 507);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Mantenimiento";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscar.Location = new System.Drawing.Point(175, 70);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(188, 20);
+            this.txtBuscar.TabIndex = 44;
             // 
-            // groupBox1
+            // panel2
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Controls.Add(this.txtSexo);
-            this.groupBox1.Controls.Add(this.txtIdMedico);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtNroHab);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.dateTimePickerFUR);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtEdad);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.btnNuevo);
-            this.groupBox1.Controls.Add(this.btnEditar);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCiPaciente);
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 495);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Paciente";
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtSexo);
+            this.panel2.Controls.Add(this.btnNuevo);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.btnGuardar);
+            this.panel2.Controls.Add(this.txtNombre);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.txtNroHab);
+            this.panel2.Controls.Add(this.txtCiPaciente);
+            this.panel2.Controls.Add(this.dateTimePickerFUR);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtEdad);
+            this.panel2.Controls.Add(this.txtTelefono);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(680, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(340, 557);
+            this.panel2.TabIndex = 0;
             // 
-            // txtID
+            // label2
             // 
-            this.txtID.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.ForeColor = System.Drawing.Color.Teal;
-            this.txtID.Location = new System.Drawing.Point(620, 16);
-            this.txtID.Name = "txtID";
-            this.txtID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtID.Size = new System.Drawing.Size(119, 23);
-            this.txtID.TabIndex = 64;
-            this.txtID.Text = "ID";
-            this.txtID.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(35, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 23);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Cédula paciente:";
             // 
             // txtSexo
             // 
@@ -299,122 +266,10 @@
             this.txtSexo.Items.AddRange(new object[] {
             "Femenino",
             "Masculino"});
-            this.txtSexo.Location = new System.Drawing.Point(158, 151);
+            this.txtSexo.Location = new System.Drawing.Point(170, 175);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(267, 21);
             this.txtSexo.TabIndex = 3;
-            // 
-            // txtIdMedico
-            // 
-            this.txtIdMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtIdMedico.Location = new System.Drawing.Point(158, 369);
-            this.txtIdMedico.MaxLength = 10000;
-            this.txtIdMedico.Name = "txtIdMedico";
-            this.txtIdMedico.Size = new System.Drawing.Size(267, 20);
-            this.txtIdMedico.TabIndex = 8;
-            this.txtIdMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdMedico_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(25, 322);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 23);
-            this.label9.TabIndex = 63;
-            this.label9.Text = "Nro. Habitación:";
-            // 
-            // txtNroHab
-            // 
-            this.txtNroHab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNroHab.Location = new System.Drawing.Point(158, 326);
-            this.txtNroHab.MaxLength = 1000;
-            this.txtNroHab.Name = "txtNroHab";
-            this.txtNroHab.Size = new System.Drawing.Size(267, 20);
-            this.txtNroHab.TabIndex = 7;
-            this.txtNroHab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroHab_KeyPress);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Teal;
-            this.label10.Location = new System.Drawing.Point(62, 365);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 23);
-            this.label10.TabIndex = 62;
-            this.label10.Text = "Id Medico:";
-            // 
-            // dateTimePickerFUR
-            // 
-            this.dateTimePickerFUR.Location = new System.Drawing.Point(158, 283);
-            this.dateTimePickerFUR.Name = "dateTimePickerFUR";
-            this.dateTimePickerFUR.Size = new System.Drawing.Size(267, 20);
-            this.dateTimePickerFUR.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(90, 279);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 23);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "F.U.R:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTelefono.Location = new System.Drawing.Point(158, 240);
-            this.txtTelefono.MaxLength = 13;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(267, 20);
-            this.txtTelefono.TabIndex = 5;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(68, 236);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 23);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Telefono:";
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEdad.Location = new System.Drawing.Point(158, 197);
-            this.txtEdad.MaxLength = 3;
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(267, 20);
-            this.txtEdad.TabIndex = 4;
-            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(485, 106);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 239);
-            this.pictureBox1.TabIndex = 56;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(96, 150);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 23);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "Sexo:";
             // 
             // btnNuevo
             // 
@@ -422,14 +277,23 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(158, 449);
+            this.btnNuevo.Location = new System.Drawing.Point(141, 12);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(93, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 9;
-            this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Teal;
+            this.label5.Location = new System.Drawing.Point(108, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 23);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Edad:";
             // 
             // btnEditar
             // 
@@ -437,46 +301,12 @@
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(356, 449);
+            this.btnEditar.Location = new System.Drawing.Point(239, 12);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(93, 40);
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 11;
-            this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(23, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 23);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Cédula paciente:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(304, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 23);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Registrar Paciente";
-            // 
-            // txtCiPaciente
-            // 
-            this.txtCiPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCiPaciente.Location = new System.Drawing.Point(158, 71);
-            this.txtCiPaciente.MaxLength = 9;
-            this.txtCiPaciente.Name = "txtCiPaciente";
-            this.txtCiPaciente.Size = new System.Drawing.Size(267, 20);
-            this.txtCiPaciente.TabIndex = 1;
-            this.txtCiPaciente.TextChanged += new System.EventHandler(this.txtCiPaciente_TextChanged);
-            this.txtCiPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiPaciente_KeyPress);
             // 
             // btnCancelar
             // 
@@ -484,11 +314,10 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(455, 449);
+            this.btnCancelar.Location = new System.Drawing.Point(288, 12);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(93, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(40, 40);
             this.btnCancelar.TabIndex = 12;
-            this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -498,161 +327,198 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(257, 449);
+            this.btnGuardar.Location = new System.Drawing.Point(190, 12);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(93, 40);
+            this.btnGuardar.Size = new System.Drawing.Size(40, 40);
             this.btnGuardar.TabIndex = 10;
-            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNombre.Location = new System.Drawing.Point(170, 135);
+            this.txtNombre.MaxLength = 100;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(267, 20);
+            this.txtNombre.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Teal;
+            this.label9.Location = new System.Drawing.Point(37, 346);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 23);
+            this.label9.TabIndex = 63;
+            this.label9.Text = "Nro. Habitación:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(72, 107);
+            this.label4.Location = new System.Drawing.Point(84, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 23);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
             // 
-            // txtNombre
+            // txtNroHab
             // 
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNombre.Location = new System.Drawing.Point(158, 111);
-            this.txtNombre.MaxLength = 100;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(267, 20);
-            this.txtNombre.TabIndex = 2;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNroHab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNroHab.Location = new System.Drawing.Point(170, 350);
+            this.txtNroHab.MaxLength = 1000;
+            this.txtNroHab.Name = "txtNroHab";
+            this.txtNroHab.Size = new System.Drawing.Size(267, 20);
+            this.txtNroHab.TabIndex = 7;
             // 
-            // label5
+            // txtCiPaciente
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(96, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 23);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Edad:";
+            this.txtCiPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCiPaciente.Location = new System.Drawing.Point(170, 95);
+            this.txtCiPaciente.MaxLength = 9;
+            this.txtCiPaciente.Name = "txtCiPaciente";
+            this.txtCiPaciente.Size = new System.Drawing.Size(267, 20);
+            this.txtCiPaciente.TabIndex = 1;
             // 
-            // error1
+            // dateTimePickerFUR
             // 
-            this.error1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error1.ContainerControl = this;
+            this.dateTimePickerFUR.Location = new System.Drawing.Point(170, 307);
+            this.dateTimePickerFUR.Name = "dateTimePickerFUR";
+            this.dateTimePickerFUR.Size = new System.Drawing.Size(267, 20);
+            this.dateTimePickerFUR.TabIndex = 6;
             // 
-            // error2
+            // label8
             // 
-            this.error2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error2.ContainerControl = this;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Teal;
+            this.label8.Location = new System.Drawing.Point(108, 174);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 23);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "Sexo:";
             // 
-            // error3
+            // label7
             // 
-            this.error3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error3.ContainerControl = this;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Teal;
+            this.label7.Location = new System.Drawing.Point(102, 303);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 23);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "F.U.R:";
             // 
-            // error4
+            // txtEdad
             // 
-            this.error4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error4.ContainerControl = this;
+            this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtEdad.Location = new System.Drawing.Point(170, 221);
+            this.txtEdad.MaxLength = 3;
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(267, 20);
+            this.txtEdad.TabIndex = 4;
             // 
-            // error5
+            // txtTelefono
             // 
-            this.error5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error5.ContainerControl = this;
+            this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTelefono.Location = new System.Drawing.Point(170, 264);
+            this.txtTelefono.MaxLength = 13;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(267, 20);
+            this.txtTelefono.TabIndex = 5;
             // 
-            // error6
+            // label1
             // 
-            this.error6.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error6.ContainerControl = this;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(80, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 23);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Telefono:";
             // 
-            // error7
+            // label3
             // 
-            this.error7.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error7.ContainerControl = this;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Buscar por:";
             // 
-            // error8
+            // cbBuscar
             // 
-            this.error8.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error8.ContainerControl = this;
+            this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscar.FormattingEnabled = true;
+            this.cbBuscar.Items.AddRange(new object[] {
+            "Cedula",
+            "Nombre"});
+            this.cbBuscar.Location = new System.Drawing.Point(11, 55);
+            this.cbBuscar.Name = "cbBuscar";
+            this.cbBuscar.Size = new System.Drawing.Size(88, 21);
+            this.cbBuscar.TabIndex = 48;
             // 
             // Paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 557);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1020, 557);
+            this.Controls.Add(this.panel1);
             this.Name = "Paciente";
             this.Text = "Paciente";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.Load += new System.EventHandler(this.Paciente_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error8)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.CheckBox chkEliminar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
-        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCiPaciente;
+        private System.Windows.Forms.ComboBox txtSexo;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFUR;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtIdMedico;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNroHab;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox txtSexo;
-        private System.Windows.Forms.ErrorProvider error1;
-        private System.Windows.Forms.ErrorProvider error2;
-        private System.Windows.Forms.ErrorProvider error3;
-        private System.Windows.Forms.ErrorProvider error4;
-        private System.Windows.Forms.ErrorProvider error5;
-        private System.Windows.Forms.ErrorProvider error6;
-        private System.Windows.Forms.ErrorProvider error7;
-        private System.Windows.Forms.ErrorProvider error8;
-        private System.Windows.Forms.Label txtID;
+        private System.Windows.Forms.TextBox txtCiPaciente;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFUR;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbBuscar;
+
     }
 }

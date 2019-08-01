@@ -315,10 +315,10 @@
             // 
             this.txtCiMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCiMedico.Location = new System.Drawing.Point(182, 81);
+            this.txtCiMedico.Location = new System.Drawing.Point(248, 81);
             this.txtCiMedico.MaxLength = 9;
             this.txtCiMedico.Name = "txtCiMedico";
-            this.txtCiMedico.Size = new System.Drawing.Size(267, 31);
+            this.txtCiMedico.Size = new System.Drawing.Size(201, 31);
             this.txtCiMedico.TabIndex = 1;
             // 
             // btnCancelar
