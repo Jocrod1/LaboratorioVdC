@@ -10,10 +10,9 @@ namespace Metodos
     public class MBanco: DBanco
     {
 
-        public static string Insertar(int ID, string nombre)
+        public static string Insertar(string nombre)
         {
             DBanco Objeto = new DBanco();
-            Objeto.ID = ID;
             Objeto.Nombre = nombre;
             return Objeto.Insertar(Objeto);
         }
