@@ -14,7 +14,7 @@ namespace Interfaz
 {
     public partial class Paciente : Form
     {
-        LimitantesDeIngreso vali = new LimitantesDeIngreso();
+        LimitantesDeIngreso valid = new LimitantesDeIngreso();
         //Variable que nos indica si vamos a insertar un nuevo trabajador
         private bool IsNuevo = false;
         //Variable que nos indica si vamos a modificar un trabajador
@@ -74,7 +74,6 @@ namespace Interfaz
             ID = 0;
         }
 
-
         //estos 2 se dejan al final
         private void btnAnular_Click(object sender, EventArgs e)
         {
@@ -99,6 +98,14 @@ namespace Interfaz
 
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+
+
 
         //metodos
 
@@ -128,7 +135,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MPaciente.Eliminar(Convert.ToInt32(item.Cells["ID"].Value));
+                        Rpta = MPaciente.Eliminar(Convert.ToInt32(item.Cells["IdPaciente"].Value));
                     }
 
                     if (Rpta.Equals("OK"))
@@ -219,15 +226,16 @@ namespace Interfaz
             }
         }
 
+        //mensajes
         private void MensajeOK(string Mensaje)
         {
             MessageBox.Show(Mensaje, "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        //Para mostrar mensaje de error
         private void MensajeError(string Mensaje)
         {
             MessageBox.Show(Mensaje, "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        //
 
         private void Habilitar()
         {
@@ -317,30 +325,39 @@ namespace Interfaz
         }
         private void txtCiPaciente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            vali.soloNumeros(e);
+            valid.soloNumeros(e);
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            vali.soloLetras(e);
+            valid.soloLetras(e);
         }
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            vali.soloNumeros(e);
+            valid.soloNumeros(e);
         }
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            vali.soloNumeros(e);
+            valid.soloNumeros(e);
         }
         private void txtIdMedico_KeyPress(object sender, KeyPressEventArgs e)
         {
-            vali.soloNumeros(e);
+            valid.soloNumeros(e);
         }
         private void txtNroHab_KeyPress(object sender, KeyPressEventArgs e)
         {
-            vali.soloNumeros(e);
+            valid.soloNumeros(e);
         }
-
-
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbBuscar.Text == "Cedula")
+            {
+                valid.soloNumeros(e);
+            }
+            if (cbBuscar.Text == "Nombre")
+            {
+                valid.soloLetras(e);
+            }
+        }
 
     }
 }
