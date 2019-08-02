@@ -25,6 +25,7 @@ namespace Interfaz
         }
 
 
+        // funciones
 
 
         //Para mostrar mensaje de confirmación
@@ -154,7 +155,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MMedico.Eliminar(Convert.ToInt32(item.Cells[0].Value));
+                        Rpta = MEmpresaSeguro.Eliminar(Convert.ToInt32(item.Cells[0].Value));
                     }
 
                     if (Rpta.Equals("OK"))
