@@ -267,9 +267,9 @@ namespace Interfaz
             valid.soloNumeros(e);
         }
 
-
-
-
-
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            this.Mostrar();
+        }
     }
 }

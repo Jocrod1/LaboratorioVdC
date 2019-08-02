@@ -23,7 +23,7 @@ namespace Metodos
             DBanco Objeto = new DBanco();
             Objeto.ID = ID;
             Objeto.Nombre = nombre;
-            return Objeto.Insertar(Objeto);
+            return Objeto.Editar(Objeto);
         }
 
         public static string Eliminar(int ID)

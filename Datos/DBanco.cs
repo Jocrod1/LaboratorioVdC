@@ -167,7 +167,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "eliminar_banco";
+                SqlComando.CommandText = "eliminar_bancos";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros

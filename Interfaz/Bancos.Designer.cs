@@ -91,6 +91,8 @@
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
+            this.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(921, 521);
             this.dataListado.TabIndex = 1;
             this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
@@ -163,6 +165,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(150, 20);
             this.txtBuscar.TabIndex = 45;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnEliminar
             // 
