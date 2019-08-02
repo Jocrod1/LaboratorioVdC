@@ -35,8 +35,6 @@
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.btnAnular = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -44,12 +42,12 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -100,8 +98,6 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.lblTotal);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.cbBuscar);
             this.panel4.Controls.Add(this.btnAnular);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnImprimir);
@@ -122,26 +118,6 @@
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 52;
             this.lblTotal.Text = "label5";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Buscar por:";
-            // 
-            // cbBuscar
-            // 
-            this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBuscar.FormattingEnabled = true;
-            this.cbBuscar.Items.AddRange(new object[] {
-            "Nombre"});
-            this.cbBuscar.Location = new System.Drawing.Point(11, 73);
-            this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 21);
-            this.cbBuscar.TabIndex = 50;
             // 
             // btnAnular
             // 
@@ -232,6 +208,13 @@
             this.panel2.Size = new System.Drawing.Size(422, 657);
             this.panel2.TabIndex = 0;
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(151, 148);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(209, 20);
+            this.txtNombre.TabIndex = 50;
+            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.MintCream;
@@ -303,13 +286,6 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "Nombre:";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(151, 148);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(209, 20);
-            this.txtNombre.TabIndex = 50;
-            // 
             // Bancos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,8 +326,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtNombre;
     }

@@ -253,28 +253,10 @@ namespace Interfaz
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
-
-        /*private void Buscar_Cedula()
-        {
-            dataListado.DataSource = MBanco.Buscar_Cedula(txtBuscar.Text);
-            // this.OcultarColumnas();
-            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-        }*/
-
         private void Buscar()
         {
-            if (cbBuscar.SelectedIndex == 0)
-            {
-                this.Mostrar();
-            }
-            else if (cbBuscar.SelectedIndex == 0)
-            {
-                //this.Buscar_Cedula();
-            }
+            this.Mostrar();
         }
-
-
-
 
 
 

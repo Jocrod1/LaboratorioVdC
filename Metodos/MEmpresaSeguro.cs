@@ -55,13 +55,13 @@ namespace Metodos
         }
 
 
-        /*
-        public new static List<DMedico> Buscar_Nombre(string TextoBuscar)
+        
+        public new static List<DEmpresaSeguro> MostrarNombre(string TextoBuscar)
         {
             DEmpresaSeguro Objeto = new DEmpresaSeguro();
-            return Objeto.Buscar_Nombre(TextoBuscar); //añadir esta wea en DEmpresaSeguro
+            return Objeto.MostrarNombre(TextoBuscar); //añadir esta wea en DEmpresaSeguro
         }
-        */
+        
 
     }
 }

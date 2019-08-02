@@ -398,7 +398,55 @@ namespace Datos
                         Direccion=LeerFilas.GetString(5),
                         RIF=LeerFilas.GetString(6),
                         NIT=LeerFilas.GetString(7),
-                        Contacto=LeerFilas.GetString(8),
+                        Contacto=LeerFilas.GetString(8)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
+
+        public List<DEmpresaSeguro> MostrarNombre(string TextoBuscar)
+        {
+            DataTable DtResultado = new DataTable("EmpresasYSeg");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DEmpresaSeguro> ListaGenerica = new List<DEmpresaSeguro>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "mostrar_empresasyseg";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DEmpresaSeguro
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Nombre = LeerFilas.GetString(1),
+                        Porcentaje = LeerFilas.GetFloat(2),
+                        TipoPrecio = LeerFilas.GetInt32(3),
+                        Emision = LeerFilas.GetString(4),
+                        Direccion = LeerFilas.GetString(5),
+                        RIF = LeerFilas.GetString(6),
+                        NIT = LeerFilas.GetString(7),
+                        Contacto = LeerFilas.GetString(8)
                     });
                 }
                 LeerFilas.Close();
