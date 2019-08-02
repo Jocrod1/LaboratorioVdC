@@ -56,7 +56,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "insertar_banco";
+                SqlComando.CommandText = "insertar_bancos";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros

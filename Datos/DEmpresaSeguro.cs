@@ -367,7 +367,7 @@ namespace Datos
         //mostrar y buscar
         public List<DEmpresaSeguro> Mostrar(string TextoBuscar)
         {
-            DataTable DtResultado = new DataTable("Bioanalista");
+            DataTable DtResultado = new DataTable("EmpresasYSeg");
             SqlConnection SqlConectar = new SqlConnection();
             List<DEmpresaSeguro> ListaGenerica = new List<DEmpresaSeguro>();
 

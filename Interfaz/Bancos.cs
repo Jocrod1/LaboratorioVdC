@@ -41,7 +41,7 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txtIDBan.Focus();
+            this.txtNombre.Focus();
         }
         //Guardar
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -72,6 +72,12 @@ namespace Interfaz
             EliminarItems();
         }
 
+        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+        }
+
 
 
 
@@ -90,11 +96,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar los " + NumeroSeleccionado + " Registros de Bancos?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar los " + NumeroSeleccionado + " registros de bancos?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar el Registro del Banco?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro del banco?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -140,12 +146,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MBanco.Insertar(this.txtNombreBan.Text);
+                    Rpta = MBanco.Insertar(this.txtNombre.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MBanco.Editar(ID, this.txtNombreBan.Text);
+                    Rpta = MBanco.Editar(ID, this.txtNombre.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -207,14 +213,12 @@ namespace Interfaz
 
         private void Habilitar()
         {
-            this.txtIDBan.Enabled = true;
-            this.txtNombreBan.Enabled = true;
+            this.txtNombre.Enabled = true;
         }
 
         private void Deshabilitar()
         {
-            this.txtIDBan.Enabled = false;
-            this.txtNombreBan.Enabled = false;
+            this.txtNombre.Enabled = false;
         }
 
         private void Botones()
@@ -239,8 +243,8 @@ namespace Interfaz
 
         private void Limpiar()
         {
-            this.txtIDBan.Text = string.Empty;
-            this.txtNombreBan.Text = string.Empty;
+            ID = 0;
+            this.txtNombre.Text = string.Empty;
         }
 
         private void Mostrar()
@@ -280,6 +284,8 @@ namespace Interfaz
         {
             valid.soloNumeros(e);
         }
+
+
 
 
 

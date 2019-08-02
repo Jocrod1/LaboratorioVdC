@@ -55,7 +55,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEmisionRel = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -67,6 +66,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.rbEmisionSi = new System.Windows.Forms.RadioButton();
+            this.rbEmisionNo = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -119,8 +120,8 @@
             this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
-            "Cédula",
-            "Nombre"});
+            "Nombre",
+            "RIF"});
             this.cbBuscar.Location = new System.Drawing.Point(34, 52);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(88, 21);
@@ -250,6 +251,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox1.Controls.Add(this.rbEmisionNo);
+            this.groupBox1.Controls.Add(this.rbEmisionSi);
             this.groupBox1.Controls.Add(this.txtRIF);
             this.groupBox1.Controls.Add(this.txtPorcentaje);
             this.groupBox1.Controls.Add(this.txtID);
@@ -261,7 +264,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtEmisionRel);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnNuevo);
@@ -284,7 +286,7 @@
             // txtRIF
             // 
             this.txtRIF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRIF.Location = new System.Drawing.Point(158, 284);
+            this.txtRIF.Location = new System.Drawing.Point(158, 240);
             this.txtRIF.MaxLength = 1000;
             this.txtRIF.Name = "txtRIF";
             this.txtRIF.Size = new System.Drawing.Size(267, 20);
@@ -315,8 +317,8 @@
             // 
             this.txtTipoPrecio.FormattingEnabled = true;
             this.txtTipoPrecio.Items.AddRange(new object[] {
-            "Ejemplo1",
-            "Ejemplo2"});
+            "1",
+            "2"});
             this.txtTipoPrecio.Location = new System.Drawing.Point(158, 151);
             this.txtTipoPrecio.Name = "txtTipoPrecio";
             this.txtTipoPrecio.Size = new System.Drawing.Size(267, 21);
@@ -325,7 +327,7 @@
             // txtContacto
             // 
             this.txtContacto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtContacto.Location = new System.Drawing.Point(158, 369);
+            this.txtContacto.Location = new System.Drawing.Point(158, 325);
             this.txtContacto.MaxLength = 10000;
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(267, 20);
@@ -336,7 +338,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(100, 322);
+            this.label9.Location = new System.Drawing.Point(100, 278);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 23);
             this.label9.TabIndex = 63;
@@ -345,7 +347,7 @@
             // txtNIT
             // 
             this.txtNIT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNIT.Location = new System.Drawing.Point(158, 326);
+            this.txtNIT.Location = new System.Drawing.Point(158, 282);
             this.txtNIT.MaxLength = 1000;
             this.txtNIT.Name = "txtNIT";
             this.txtNIT.Size = new System.Drawing.Size(267, 20);
@@ -356,7 +358,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Teal;
-            this.label10.Location = new System.Drawing.Point(62, 365);
+            this.label10.Location = new System.Drawing.Point(72, 322);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 23);
             this.label10.TabIndex = 62;
@@ -367,7 +369,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(109, 280);
+            this.label7.Location = new System.Drawing.Point(109, 236);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 23);
             this.label7.TabIndex = 60;
@@ -376,7 +378,7 @@
             // txtDireccion
             // 
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDireccion.Location = new System.Drawing.Point(158, 240);
+            this.txtDireccion.Location = new System.Drawing.Point(158, 196);
             this.txtDireccion.MaxLength = 13;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(267, 20);
@@ -387,20 +389,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(68, 236);
+            this.label1.Location = new System.Drawing.Point(68, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 23);
             this.label1.TabIndex = 58;
             this.label1.Text = "Dirección:";
-            // 
-            // txtEmisionRel
-            // 
-            this.txtEmisionRel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEmisionRel.Location = new System.Drawing.Point(158, 197);
-            this.txtEmisionRel.MaxLength = 3;
-            this.txtEmisionRel.Name = "txtEmisionRel";
-            this.txtEmisionRel.Size = new System.Drawing.Size(267, 20);
-            this.txtEmisionRel.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -530,11 +523,33 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(55, 194);
+            this.label5.Location = new System.Drawing.Point(23, 365);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 23);
+            this.label5.Size = new System.Drawing.Size(122, 23);
             this.label5.TabIndex = 34;
-            this.label5.Text = "Emision Rel:";
+            this.label5.Text = "Emision Relacón:";
+            // 
+            // rbEmisionSi
+            // 
+            this.rbEmisionSi.AutoSize = true;
+            this.rbEmisionSi.Location = new System.Drawing.Point(159, 371);
+            this.rbEmisionSi.Name = "rbEmisionSi";
+            this.rbEmisionSi.Size = new System.Drawing.Size(36, 17);
+            this.rbEmisionSi.TabIndex = 67;
+            this.rbEmisionSi.TabStop = true;
+            this.rbEmisionSi.Text = "Sí";
+            this.rbEmisionSi.UseVisualStyleBackColor = true;
+            // 
+            // rbEmisionNo
+            // 
+            this.rbEmisionNo.AutoSize = true;
+            this.rbEmisionNo.Location = new System.Drawing.Point(201, 372);
+            this.rbEmisionNo.Name = "rbEmisionNo";
+            this.rbEmisionNo.Size = new System.Drawing.Size(39, 17);
+            this.rbEmisionNo.TabIndex = 68;
+            this.rbEmisionNo.TabStop = true;
+            this.rbEmisionNo.Text = "No";
+            this.rbEmisionNo.UseVisualStyleBackColor = true;
             // 
             // EmpresaSeguro
             // 
@@ -580,7 +595,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEmisionRel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnNuevo;
@@ -597,5 +611,7 @@
         private System.Windows.Forms.ComboBox txtTipoPrecio;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbBuscar;
+        private System.Windows.Forms.RadioButton rbEmisionNo;
+        private System.Windows.Forms.RadioButton rbEmisionSi;
     }
 }

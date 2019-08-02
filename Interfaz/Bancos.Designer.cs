@@ -34,6 +34,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.btnAnular = new System.Windows.Forms.Button();
@@ -45,13 +46,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.txtNombreBan = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtIDBan = new System.Windows.Forms.TextBox();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -97,6 +95,7 @@
             this.dataListado.Name = "dataListado";
             this.dataListado.Size = new System.Drawing.Size(921, 521);
             this.dataListado.TabIndex = 1;
+            this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
             // 
             // panel4
             // 
@@ -114,6 +113,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(921, 136);
             this.panel4.TabIndex = 44;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(670, 108);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(35, 13);
+            this.lblTotal.TabIndex = 52;
+            this.lblTotal.Text = "label5";
             // 
             // label3
             // 
@@ -212,14 +220,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.btnNuevo);
             this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Controls.Add(this.txtNombreBan);
             this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnGuardar);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtIDBan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(921, 0);
             this.panel2.Name = "panel2";
@@ -256,24 +262,6 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // txtNombreBan
-            // 
-            this.txtNombreBan.FormattingEnabled = true;
-            this.txtNombreBan.Items.AddRange(new object[] {
-            "MERCANTIL CA. Banco Universal",
-            "Banesco Banco Universal C.A.",
-            "Banco de Venezuela S.A.",
-            "Banco Nacional de Crédito BNC",
-            "Banco Venezolano de Crédito",
-            "BBVA Banco Provincial",
-            "Banco Occidental de Descuento",
-            "Banco Exterior, C.A. Banco Universal",
-            "Bancaribe"});
-            this.txtNombreBan.Location = new System.Drawing.Point(179, 229);
-            this.txtNombreBan.Name = "txtNombreBan";
-            this.txtNombreBan.Size = new System.Drawing.Size(213, 21);
-            this.txtNombreBan.TabIndex = 2;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.MintCream;
@@ -288,17 +276,6 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(41, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 21);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "N. de cuenta:";
             // 
             // btnGuardar
             // 
@@ -320,29 +297,18 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Teal;
-            this.label4.Location = new System.Drawing.Point(41, 226);
+            this.label4.Location = new System.Drawing.Point(45, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 21);
             this.label4.TabIndex = 42;
             this.label4.Text = "Nombre:";
             // 
-            // txtIDBan
+            // txtNombre
             // 
-            this.txtIDBan.Location = new System.Drawing.Point(179, 163);
-            this.txtIDBan.MaxLength = 20;
-            this.txtIDBan.Multiline = true;
-            this.txtIDBan.Name = "txtIDBan";
-            this.txtIDBan.Size = new System.Drawing.Size(213, 31);
-            this.txtIDBan.TabIndex = 1;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(670, 108);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(35, 13);
-            this.lblTotal.TabIndex = 52;
-            this.lblTotal.Text = "label5";
+            this.txtNombre.Location = new System.Drawing.Point(151, 148);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(209, 20);
+            this.txtNombre.TabIndex = 50;
             // 
             // Bancos
             // 
@@ -381,14 +347,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.ComboBox txtNombreBan;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtIDBan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }

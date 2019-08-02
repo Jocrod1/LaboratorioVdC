@@ -16,6 +16,9 @@ namespace Interfaz
 
 
         private int ID;
+
+        private string RespuestaEmision;
+
         LimitantesDeIngreso valid = new LimitantesDeIngreso();
 
 
@@ -79,7 +82,6 @@ namespace Interfaz
             this.txtNombre.Text = string.Empty;
             this.txtPorcentaje.Text = string.Empty;
             this.txtTipoPrecio.Text = string.Empty;
-            this.txtEmisionRel.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
             this.txtRIF.Text = string.Empty;
             this.txtNIT.Text = string.Empty;
@@ -105,7 +107,6 @@ namespace Interfaz
             this.txtNombre.Enabled = true;
             this.txtPorcentaje.Enabled = true;
             this.txtTipoPrecio.Enabled = true;
-            this.txtEmisionRel.Enabled = true;
             this.txtDireccion.Enabled = true;
             this.txtRIF.Enabled = true;
             this.txtNIT.Enabled = true;
@@ -120,7 +121,6 @@ namespace Interfaz
             this.txtNombre.Enabled = false;
             this.txtPorcentaje.Enabled = false;
             this.txtTipoPrecio.Enabled = false;
-            this.txtEmisionRel.Enabled = false;
             this.txtDireccion.Enabled = false;
             this.txtRIF.Enabled = false;
             this.txtNIT.Enabled = false;
@@ -146,7 +146,7 @@ namespace Interfaz
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar el Registro de las Empresas?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro de las empresas?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -162,11 +162,11 @@ namespace Interfaz
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se Eliminaron Correctamente los Registros de Empresas");
+                            this.MensajeOK("Se eliminaron correctamente los registros de empresas");
                         }
                         else
                         {
-                            this.MensajeOK("Se Eliminó Correctamente el Registro del Empresas");
+                            this.MensajeOK("Se eliminó correctamente el registro del empresas");
                         }
                     }
                     else
@@ -196,11 +196,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Empresas/Seguros?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " Registros de empresas/seguros?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro de la Empresas/Seguros?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro de la empresas/Seguros?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -216,11 +216,11 @@ namespace Interfaz
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se Anularon Correctamente los Registros de Trabajadores");
+                            this.MensajeOK("Se anularon correctamente los registros de trabajadores");
                         }
                         else
                         {
-                            this.MensajeOK("Se Anuló Correctamente el Registro del Trabajador");
+                            this.MensajeOK("Se anuló correctamente el registro del trabajador");
                         }
                     }
                     else
@@ -310,13 +310,13 @@ namespace Interfaz
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0)
-            {
-                this.Mostrar();
-            }
-            else if (cbBuscar.SelectedIndex == 1)
+            if (cbBuscar.SelectedIndex == 0) //Nombre
             {
                 //this.Buscar_Nombre();
+            }
+            else if (cbBuscar.SelectedIndex == 1)  //RIF
+            {
+                this.Mostrar();
             }
         }
 
@@ -344,18 +344,39 @@ namespace Interfaz
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
-
+            AnularItems();
         }
+
+
+
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
+            
+
             try
             {
+            
+
+
+            if (rbEmisionNo.Checked)
+            {
+                RespuestaEmision = "No";
+            }
+            else if (rbEmisionSi.Checked)
+            {
+                RespuestaEmision = "Sí";
+            }
+
+
 
                 //La variable que almacena si se insertó
                 //o se modificó la tabla
                 string Rpta = "";
-                if (this.txtNombre.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtEmisionRel.Text == string.Empty || this.txtDireccion.Text == string.Empty || this.txtRIF.Text == string.Empty || this.txtNIT.Text == string.Empty || this.txtContacto.Text == string.Empty)
+                if (this.txtNombre.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtDireccion.Text == string.Empty || this.txtRIF.Text == string.Empty || this.txtNIT.Text == string.Empty || this.txtContacto.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
                 }
@@ -364,16 +385,17 @@ namespace Interfaz
                     if (this.IsNuevo)
                     {
                         //Vamos a insertar una empresa
-                        Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), this.txtEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                        Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
 
                     }
                     else
-                    {
+                    { 
                         //Vamos a modificar una empresa
-                        Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), this.txtEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                        Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
                         ID = 0;
-                        MessageBox.Show("hola");
                     }
+
+
                     //Si la respuesta fue OK, fue porque se modificó
                     //o insertó la empresa
                     //de forma correcta

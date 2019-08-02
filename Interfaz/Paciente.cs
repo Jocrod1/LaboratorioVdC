@@ -122,11 +122,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar los " + NumeroSeleccionado + " Registros de Pacientes?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar los " + NumeroSeleccionado + " registros de pacientes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Eliminar el Registro del Paciente?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro del paciente?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -142,11 +142,11 @@ namespace Interfaz
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se Eliminaron Correctamente los Registros de Pacientes");
+                            this.MensajeOK("Se eliminaron correctamente los registros de pacientes");
                         }
                         else
                         {
-                            this.MensajeOK("Se Eliminó Correctamente el Registro del Paciente");
+                            this.MensajeOK("Se eliminó correctamente el registro del paciente");
                         }
                     }
                     else
