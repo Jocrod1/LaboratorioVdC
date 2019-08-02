@@ -99,7 +99,14 @@ namespace Interfaz
         }
 
 
+        private void MostrarNombre()
+        {
 
+            dataListado.DataSource = MEmpresaSeguro.MostrarNombre(txtBuscar.Text);
+            // this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+
+        }
 
 
         private void Habilitar()
@@ -310,25 +317,25 @@ namespace Interfaz
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0) //Nombre
-            {
-                //this.Buscar_Nombre();
-            }
-            else if (cbBuscar.SelectedIndex == 1)  //RIF
+            if (cbBuscar.SelectedIndex == 1)
             {
                 this.Mostrar();
+            }
+            else if (cbBuscar.SelectedIndex == 0)
+            {
+                this.MostrarNombre();
             }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0)
+            if (cbBuscar.SelectedIndex == 1)
             {
                 this.Mostrar();
             }
-            else if (cbBuscar.SelectedIndex == 1)
+            else if (cbBuscar.SelectedIndex == 0)
             {
-                //this.Buscar_Nombre();
+                this.MostrarNombre();
             }
         }
 
@@ -370,13 +377,17 @@ namespace Interfaz
             {
                 RespuestaEmision = "Sí";
             }
+            else
+            {
+                RespuestaEmision = "Sin Seleccionar";
+            }
 
 
 
                 //La variable que almacena si se insertó
                 //o se modificó la tabla
                 string Rpta = "";
-                if (this.txtNombre.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtDireccion.Text == string.Empty || this.txtRIF.Text == string.Empty || this.txtNIT.Text == string.Empty || this.txtContacto.Text == string.Empty)
+                if (this.txtNombre.Text == string.Empty || RespuestaEmision == "Sin Seleccionar" || this.txtPorcentaje.Text == string.Empty || this.txtDireccion.Text == string.Empty || this.txtRIF.Text == string.Empty || this.txtNIT.Text == string.Empty || this.txtContacto.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
                 }
