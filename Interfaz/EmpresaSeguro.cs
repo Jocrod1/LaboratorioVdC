@@ -183,16 +183,58 @@ namespace Interfaz
         }
 
 
-        //private void Buscar_Nombre()
-        //{
-        //    //MUsuario.Buscar_Nombre(txtBuscar.Text);
+        void AnularItems()
+        {
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Empresas/Seguros?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro de la Empresas/Seguros?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
 
-        //    dataListado.DataSource = MEmpresaSeguro.Buscar_Nombre(txtBuscar.Text);
-        //    // this.OcultarColumnas();
-        //    lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-        //}
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
 
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MEmpresaSeguro.Editar(Convert.ToInt32(item.Cells["ID"].Value), "ANULADO", 0, 0, "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO");
+                    }
 
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se Anularon Correctamente los Registros de Trabajadores");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Anuló Correctamente el Registro del Trabajador");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
 
 
         // Eventos
@@ -360,6 +402,11 @@ namespace Interfaz
             //this.txtTipoPrecio.Text = 
 
             //this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+
         }
 
 

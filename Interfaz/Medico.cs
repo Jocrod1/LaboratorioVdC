@@ -179,7 +179,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MUsuario.Editar(Convert.ToString(item.Cells["cedula"].Value), "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO");
+                        Rpta = MMedico.Editar(Convert.ToInt32(item.Cells["IDMedico"].Value), Convert.ToString(item.Cells["Cedula"].Value), "ANULADO", "ANULADO");
                     }
 
                     if (Rpta.Equals("OK"))

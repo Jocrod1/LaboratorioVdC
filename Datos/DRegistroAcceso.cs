@@ -12,13 +12,32 @@ namespace Datos
     {
         private int _ID;
         private string _CedulaUsuario;
-        private int _IDTurno;
-        private DateTime _Fecha;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string CedulaUsuario { get => _CedulaUsuario; set => _CedulaUsuario = value; }
-        public int IDTurno { get => _IDTurno; set => _IDTurno = value; }
-        public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
+public string CedulaUsuario
+{
+  get { return _CedulaUsuario; }
+  set { _CedulaUsuario = value; }
+}
+
+        private int _IDTurno;
+
+public int IDTurno
+{
+  get { return _IDTurno; }
+  set { _IDTurno = value; }
+}
+private DateTime _Fecha;
+
+public DateTime Fecha
+{
+    get { return _Fecha; }
+    set { _Fecha = value; }
+}
+
+        public int ID;
+
+        
+        
 
         public DRegistroAcceso()
         {
