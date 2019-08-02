@@ -271,69 +271,6 @@ namespace Interfaz
 
 
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                //La variable que almacena si se insertó
-                //o se modificó la tabla
-                string Rpta = "";
-                if (this.txtNombre.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtEmisionRel.Text == string.Empty || this.txtDireccion.Text == string.Empty || this.txtRIF.Text == string.Empty || this.txtNIT.Text == string.Empty || this.txtContacto.Text == string.Empty)
-                {
-                    MensajeError("Falta ingresar algunos datos, serán remarcados");
-                }
-                else
-                {
-                    if (this.IsNuevo)
-                    {
-                        //Vamos a insertar una empresa
-                        Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), this.txtEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
-
-                    }
-                    else
-                    {
-                        //Vamos a modificar una empresa
-                        Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), this.txtEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
-                        ID = 0;
-                        MessageBox.Show("hola");
-                    }
-                    //Si la respuesta fue OK, fue porque se modificó
-                    //o insertó la empresa
-                    //de forma correcta
-                    if (Rpta.Equals("OK"))
-                    {
-                        if (this.IsNuevo)
-                        {
-                            this.MensajeOK("Se insertó de forma correcta el registro");
-                        }
-                        else
-                        {
-                            this.MensajeOK("Se actualizó de forma correcta el registro");
-                        }
-
-                    }
-                    else
-                    {
-                        //Mostramos el mensaje de error
-                        this.MensajeError(Rpta);
-                    }
-                    this.IsNuevo = false;
-                    this.IsEditar = false;
-                    this.Botones();
-                    this.Limpiar();
-                    this.Mostrar();
-                    this.txtNombre.Text = ""; //aqui antes estaba "ci medico" y se ponia en blanco por alguna razon
-                    this.ID = 0;
-                }
-            }
-
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
 
 
 
@@ -409,6 +346,71 @@ namespace Interfaz
         {
 
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //La variable que almacena si se insertó
+                //o se modificó la tabla
+                string Rpta = "";
+                if (this.txtNombre.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtEmisionRel.Text == string.Empty || this.txtDireccion.Text == string.Empty || this.txtRIF.Text == string.Empty || this.txtNIT.Text == string.Empty || this.txtContacto.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos, serán remarcados");
+                }
+                else
+                {
+                    if (this.IsNuevo)
+                    {
+                        //Vamos a insertar una empresa
+                        Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), this.txtEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+
+                    }
+                    else
+                    {
+                        //Vamos a modificar una empresa
+                        Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), this.txtEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                        ID = 0;
+                        MessageBox.Show("hola");
+                    }
+                    //Si la respuesta fue OK, fue porque se modificó
+                    //o insertó la empresa
+                    //de forma correcta
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (this.IsNuevo)
+                        {
+                            this.MensajeOK("Se insertó de forma correcta el registro");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se actualizó de forma correcta el registro");
+                        }
+
+                    }
+                    else
+                    {
+                        //Mostramos el mensaje de error
+                        this.MensajeError(Rpta);
+                    }
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.Botones();
+                    this.Limpiar();
+                    this.Mostrar();
+                    this.txtNombre.Text = ""; 
+                    this.ID = 0;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
 
 
 
