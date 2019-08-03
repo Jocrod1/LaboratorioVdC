@@ -291,7 +291,7 @@ namespace Interfaz
         {
             errorProvider1.SetError(txtNombre, "");
             if (valid.soloLetras(e)) {
-                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letra");
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
             }
         }
 
@@ -300,7 +300,7 @@ namespace Interfaz
             errorProvider1.SetError(txtBuscar, "");
             if (valid.soloLetras(e))
             {
-                errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letra");
+                errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
             }
         }
     }
