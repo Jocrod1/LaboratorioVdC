@@ -47,7 +47,15 @@ namespace Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar();
+            SinErrores();
+            if (!validar())
+            {
+                MensajeError("Falta ingresar algunos datos, serán remarcados");
+            }
+            else
+            {
+                Guardar();
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -203,6 +211,22 @@ namespace Interfaz
             }
         }
 
+        private bool validar()
+        {
+            bool error = true;
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Agrega el CI del trabajador");
+            }
+            return error;
+        }
+        //Cuando se llenen, se retira el error
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
+        }
+
         //mensajes
         private void MensajeOK(string Mensaje)
         {
@@ -262,6 +286,22 @@ namespace Interfaz
             Mostrar();
         }
 
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
+        }
 
+        private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtBuscar, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
+            }
+        }
     }
 }

@@ -301,7 +301,7 @@ namespace Datos
                         Cedula= LeerFilas.GetString(1),
                         Nombre = LeerFilas.GetString(2),
                         Colegio_Bioanalista = LeerFilas.GetString(3),
-                        Colegio_Codigo = LeerFilas.GetString(4),
+                        Colegio_Codigo = LeerFilas.GetString(4)
                     });
                 }
                 LeerFilas.Close();
@@ -345,7 +345,7 @@ namespace Datos
                         Cedula = LeerFilas.GetString(1),
                         Nombre = LeerFilas.GetString(2),
                         Colegio_Bioanalista = LeerFilas.GetString(3),
-                        Colegio_Codigo = LeerFilas.GetString(4),
+                        Colegio_Codigo = LeerFilas.GetString(4)
                     });
                 }
                 LeerFilas.Close();

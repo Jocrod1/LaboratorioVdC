@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 using Metodos;
 
@@ -54,6 +55,7 @@ namespace Interfaz
         //Validar datos al ingresar
         private bool validar()
         {
+            
             bool error = true;
             if (txtCiTrabajador.Text == "")
             {
@@ -63,25 +65,25 @@ namespace Interfaz
             if (txtNombre.Text == "")
             {
                 error = false;
-                Provider2.SetError(txtNombre, "Inserta un nombre");
+                Provider1.SetError(txtNombre, "Inserta un nombre");
             }
             if (txtContrasena.Text == "")
             {
                 error = false;
-                Provider3.SetError(txtContrasena, "¡Crea una contraseña!");
+                Provider1.SetError(txtContrasena, "¡Crea una contraseña!");
             }
             if (cbAcceso.Text == "") {
-                Provider4.SetError(cbAcceso, "Elige un tipo de acceso para este usuario");
+                Provider1.SetError(cbAcceso, "Elige un tipo de acceso para este usuario");
             }
+            if (txtCorreo.Text != "" && !valid.IsValidEmail(txtCorreo.Text)){
+                Provider1.SetError(txtCorreo, "Ingrese un correo correcto");
+            } 
             return error;
         }
         //Cuando se llenen, se retira el error
         private void SinErrores()
         {
             Provider1.Clear();
-            Provider2.Clear();
-            Provider3.Clear();
-            Provider4.Clear();
         }
         private void Limpiar()
         {
@@ -360,15 +362,25 @@ namespace Interfaz
         //Entrada
         private void txtCiTrabajador_KeyPress(object sender, KeyPressEventArgs e)
         {
-            valid.soloNumeros(e);
+            Provider1.SetError(txtCiTrabajador, "");
+            if (valid.soloNumeros(e)) {
+                Provider1.SetError(txtCiTrabajador, "En este campo solo se pueden ingresar numeros");
+            }
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            valid.soloLetras(e);
+            Provider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e)) {
+                Provider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
         }
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            valid.soloNumeros(e);
+            Provider1.SetError(txtTelefono, "");
+            if (valid.soloNumeros(e))
+            {
+                Provider1.SetError(txtTelefono, "En este campo solo se pueden ingresar numeros");
+            }
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
@@ -376,18 +388,21 @@ namespace Interfaz
 
         }
 
-        private void TxtDireccion_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (cbBuscar.Text == "Cedula") {
-                valid.soloNumeros(e);
+                Provider1.SetError(txtBuscar, "");
+                if (valid.soloNumeros(e))
+                {
+                    Provider1.SetError(txtBuscar, "En este campo solo se pueden ingresar numeros");
+                }
             }
             if (cbBuscar.Text == "Nombre") {
-                valid.soloLetras(e);
+                Provider1.SetError(txtBuscar, "");
+                if (valid.soloLetras(e))
+                {
+                    Provider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
+                }
             }
         }
 
@@ -452,6 +467,5 @@ namespace Interfaz
         {
 
         }
-
     }
 }

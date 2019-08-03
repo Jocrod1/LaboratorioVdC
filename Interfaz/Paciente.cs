@@ -48,7 +48,15 @@ namespace Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar();
+            SinErrores();
+            if (!validar())
+            {
+                MensajeError("Falta ingresar algunos datos, serán remarcados");
+            }
+            else
+            {
+                Guardar();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -227,6 +235,37 @@ namespace Interfaz
             }
         }
 
+        private bool validar()
+        {
+
+            bool error = true;
+            if (txtCiPaciente.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtCiPaciente, "Agrega el CI del paciente");
+            }
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Ingresa el nombre del paciente");
+            }
+            if (txtSexo.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtSexo, "Ingresa el sexo del paciente");
+            }
+            if (txtTelefono.Text == "")
+            {
+                errorProvider1.SetError(txtTelefono, "ingresa un ");
+            }
+            return error;
+        }
+        //Cuando se llenen, se retira el error
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
+        }
+
         //mensajes
         private void MensajeOK(string Mensaje)
         {
@@ -326,19 +365,35 @@ namespace Interfaz
         }
         private void txtCiPaciente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            valid.soloNumeros(e);
+            errorProvider1.SetError(txtCiPaciente, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtCiPaciente, "En este campo solo se pueden ingresar numeros");
+            }
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            valid.soloLetras(e);
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
         }
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            valid.soloNumeros(e);
+            errorProvider1.SetError(txtEdad, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtEdad, "En este campo solo se pueden ingresar numeros");
+            }
         }
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            valid.soloNumeros(e);
+            errorProvider1.SetError(txtTelefono, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtTelefono, "En este campo solo se pueden ingresar numeros");
+            }
         }
         private void txtIdMedico_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -352,11 +407,19 @@ namespace Interfaz
         {
             if (cbBuscar.Text == "Cedula")
             {
-                valid.soloNumeros(e);
+                errorProvider1.SetError(txtBuscar, "");
+                if (valid.soloNumeros(e))
+                {
+                    errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar numeros");
+                }
             }
             if (cbBuscar.Text == "Nombre")
             {
-                valid.soloLetras(e);
+                errorProvider1.SetError(txtBuscar, "");
+                if (valid.soloLetras(e))
+                {
+                    errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
+                }
             }
         }
 
