@@ -10,10 +10,9 @@ namespace Metodos
     public class MEgresos:DEgresos
     {
 
-        public static string Insertar(int ID, string nombre, string equivalencia, float precio, float precio_empresa, int tipo, float cuenta_contable)
+        public static string Insertar(string nombre, string equivalencia, float precio, float precio_empresa, int tipo, float cuenta_contable)
         {
             DEgresos Objeto = new DEgresos();
-            Objeto.ID = ID;
             Objeto.Nombre = nombre;
             Objeto.Equivalencia = equivalencia;
             Objeto.Precio = precio;
@@ -34,7 +33,7 @@ namespace Metodos
             Objeto.Precio_Empresa = precio_empresa;
             Objeto.Tipo = tipo;
             Objeto.Cuenta_Contable = cuenta_contable;
-            return Objeto.Insertar(Objeto);
+            return Objeto.Editar(Objeto);
         }
 
         public static string Eliminar(int ID)

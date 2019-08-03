@@ -96,7 +96,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "insertar_egreso";
+                SqlComando.CommandText = "insertar_egresos";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -133,7 +133,7 @@ namespace Datos
 
                 //parametro precio empresa
                 SqlParameter Parametro_Precio_Empresa = new SqlParameter();
-                Parametro_Precio_Empresa.ParameterName = "@precio_empresa";
+                Parametro_Precio_Empresa.ParameterName = "@precioempresa";
                 Parametro_Precio_Empresa.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_Empresa.Value = Egresos.Precio_Empresa;
                 SqlComando.Parameters.Add(Parametro_Precio_Empresa);
@@ -147,7 +147,7 @@ namespace Datos
 
                 //parametro cuenta contable
                 SqlParameter Parametro_Cuenta_Contable = new SqlParameter();
-                Parametro_Cuenta_Contable.ParameterName = "@cuenta_contable";
+                Parametro_Cuenta_Contable.ParameterName = "@cuentacontable";
                 Parametro_Cuenta_Contable.SqlDbType = SqlDbType.Float;
                 Parametro_Cuenta_Contable.Value = Egresos.Cuenta_Contable;
                 SqlComando.Parameters.Add(Parametro_Cuenta_Contable);
@@ -224,7 +224,7 @@ namespace Datos
 
                 //parametro precio empresa
                 SqlParameter Parametro_Precio_Empresa = new SqlParameter();
-                Parametro_Precio_Empresa.ParameterName = "@precio_empresa";
+                Parametro_Precio_Empresa.ParameterName = "@precioempresa";
                 Parametro_Precio_Empresa.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_Empresa.Value = Egresos.Precio_Empresa;
                 SqlComando.Parameters.Add(Parametro_Precio_Empresa);
@@ -238,7 +238,7 @@ namespace Datos
 
                 //parametro cuenta contable
                 SqlParameter Parametro_Cuenta_Contable = new SqlParameter();
-                Parametro_Cuenta_Contable.ParameterName = "@cuenta_contable";
+                Parametro_Cuenta_Contable.ParameterName = "@cuentacontable";
                 Parametro_Cuenta_Contable.SqlDbType = SqlDbType.Float;
                 Parametro_Cuenta_Contable.Value = Egresos.Cuenta_Contable;
                 SqlComando.Parameters.Add(Parametro_Cuenta_Contable);
@@ -340,10 +340,10 @@ namespace Datos
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
                         Equivalencia = LeerFilas.GetString(2),
-                        Precio = LeerFilas.GetFloat(3),
-                        Precio_Empresa = LeerFilas.GetFloat(4),
+                        Precio = LeerFilas.GetDouble(3),
+                        Precio_Empresa = LeerFilas.GetDouble(4),
                         Tipo = LeerFilas.GetInt32(5),
-                        Cuenta_Contable = LeerFilas.GetFloat(6),
+                        Cuenta_Contable = LeerFilas.GetDouble(6),
                     });
                 }
                 LeerFilas.Close();
