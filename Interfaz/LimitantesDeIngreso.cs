@@ -10,8 +10,9 @@ namespace Interfaz
     class LimitantesDeIngreso
     {
         //método para ingresar únicamente letras
-        public void soloLetras(KeyPressEventArgs e)
+        public bool soloLetras(KeyPressEventArgs e)
         {
+            bool Correct = false;
             try
             {
                 if (Char.IsLetter(e.KeyChar))
@@ -29,15 +30,20 @@ namespace Interfaz
                 else
                 {
                     e.Handled = true;
+                    Correct = true;
+
                 }
+                
             }
             catch (Exception)
             {
             }
+            return Correct;
         }
         //Para el ingreso de sólo números
-        public void soloNumeros(KeyPressEventArgs e)
+        public bool soloNumeros(KeyPressEventArgs e)
         {
+            bool Correct = false;
             try
             {
                 if (Char.IsNumber(e.KeyChar))
@@ -55,11 +61,15 @@ namespace Interfaz
                 else
                 {
                     e.Handled = true;
+                    Correct = true;
+
                 }
+                
             }
             catch (Exception)
             {
             }
+            return Correct;
         }
     }
 }
