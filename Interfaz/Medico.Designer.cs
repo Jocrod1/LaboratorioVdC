@@ -306,6 +306,7 @@
             this.txtCiMedico.Name = "txtCiMedico";
             this.txtCiMedico.Size = new System.Drawing.Size(201, 31);
             this.txtCiMedico.TabIndex = 1;
+            this.txtCiMedico.Leave += new System.EventHandler(this.txtCiMedico_Leave);
             // 
             // btnCancelar
             // 

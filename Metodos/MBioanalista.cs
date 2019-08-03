@@ -50,5 +50,11 @@ namespace Metodos
             DBioanalista Objeto = new DBioanalista();
             return Objeto.MostrarCedula(TextoBuscar);
         }
+
+        public new static List<DBioanalista> CedulaUnica(string TextoBuscar)
+        {
+            DBioanalista Objeto = new DBioanalista();
+            return Objeto.CedulaUnica(TextoBuscar);
+        }
     }
 }

@@ -368,8 +368,18 @@ namespace Interfaz
             AnularItems();
         }
 
+        private void txtCiMedico_Leave(object sender, EventArgs e)
+        {
+            dataListado.DataSource = MMedico.CedulaUnica(this.txtCiMedico.Text);
 
-    
+            if (dataListado.Rows.Count != 0)
+            {
+                MessageBox.Show("Ya el Medico C.I: " + this.txtCiMedico.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtCiMedico.Text = string.Empty;
+                this.txtCiMedico.Focus();
+            }
 
+            Mostrar();
+        }
     }
 }

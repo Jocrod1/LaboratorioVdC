@@ -467,5 +467,19 @@ namespace Interfaz
         {
 
         }
+
+        private void txtCiTrabajador_Leave(object sender, EventArgs e)
+        {
+            dataListado.DataSource = MUsuario.CedulaUnica(this.txtCiTrabajador.Text);
+
+            if (dataListado.Rows.Count != 0)
+            {
+                MessageBox.Show("Ya el Trabajador C.I: " + this.txtCiTrabajador.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtCiTrabajador.Text = string.Empty;
+                this.txtCiTrabajador.Focus();
+            }
+
+            Mostrar();
+        }
     }
 }

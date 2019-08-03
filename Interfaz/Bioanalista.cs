@@ -291,5 +291,18 @@ namespace Interfaz
             }
         }
 
+        private void txtCedula_Leave(object sender, EventArgs e)
+        {
+            dataListado.DataSource = MBioanalista.CedulaUnica(this.txtCedula.Text);
+
+            if (dataListado.Rows.Count != 0)
+            {
+                MessageBox.Show("Ya el Bioanalista C.I: " + this.txtCedula.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtCedula.Text = string.Empty;
+                this.txtCedula.Focus();
+            }
+
+            Mostrar();
+        }
     }
 }

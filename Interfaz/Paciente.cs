@@ -423,5 +423,18 @@ namespace Interfaz
             }
         }
 
+        private void txtCiPaciente_Leave(object sender, EventArgs e)
+        {
+            dataListado.DataSource= MPaciente.CedulaUnica(this.txtCiPaciente.Text);
+
+            if(dataListado.Rows.Count!=0)
+            {
+                MessageBox.Show("Ya el Paciente C.I: " + this.txtCiPaciente.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtCiPaciente.Text = string.Empty;
+                this.txtCiPaciente.Focus();
+            }
+
+            Mostrar();
+        }
     }
 }

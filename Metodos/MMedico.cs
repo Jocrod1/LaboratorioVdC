@@ -43,5 +43,11 @@ namespace Metodos
             return Objeto.Mostrar(TextoBuscar);
         }
 
+        public new static List<DMedico> CedulaUnica(string TextoBuscar)
+        {
+            DMedico Objeto = new DMedico();
+            return Objeto.CedulaUnica(TextoBuscar);
+        }
+
     }
 }

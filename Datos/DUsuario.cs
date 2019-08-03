@@ -417,6 +417,52 @@ namespace Datos
 
         }
 
+        public List<DUsuario> CedulaUnica(string TextoBuscar)
+        {
+            DataTable DtResultado = new DataTable("Usuarios");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DUsuario> ListaGenerica = new List<DUsuario>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "cedulaunica_usuario";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DUsuario
+                    {
+                        Cedula = LeerFilas.GetString(0),
+                        Nombre = LeerFilas.GetString(1),
+                        Contraseña = LeerFilas.GetString(2),
+                        Direccion = LeerFilas.GetString(3),
+                        Telefono = LeerFilas.GetString(4),
+                        Correo = LeerFilas.GetString(5),
+                        Acceso = LeerFilas.GetString(6),
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
+
 
         public DataTable Login(DUsuario Usuario)
         {

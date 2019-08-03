@@ -56,5 +56,11 @@ namespace Metodos
             DPaciente Objeto = new DPaciente();
             return Objeto.Buscar_Cedula(TextoBuscar);
         }
+
+        public new static List<DPaciente> CedulaUnica(string TextoBuscar)
+        {
+            DPaciente Objeto = new DPaciente();
+            return Objeto.CedulaUnica(TextoBuscar);
+        }
     }
 }

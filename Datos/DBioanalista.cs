@@ -360,6 +360,52 @@ namespace Datos
 
         }
 
+
+
+        public List<DBioanalista> CedulaUnica(string TextoBuscar)
+        {
+            DataTable DtResultado = new DataTable("Bioanalista");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DBioanalista> ListaGenerica = new List<DBioanalista>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "cedulaunica_bioanalista";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DBioanalista
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Cedula = LeerFilas.GetString(1),
+                        Nombre = LeerFilas.GetString(2),
+                        Colegio_Bioanalista = LeerFilas.GetString(3),
+                        Colegio_Codigo = LeerFilas.GetString(4)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
+
     }
 }
 

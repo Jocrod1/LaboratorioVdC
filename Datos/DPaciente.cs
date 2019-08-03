@@ -380,7 +380,7 @@ namespace Datos
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
                         FUR = LeerFilas.GetDateTime(6),
-                        NumeroHabitacion = LeerFilas.GetString(7),
+                        NumeroHabitacion = LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();
@@ -429,7 +429,7 @@ namespace Datos
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
                         FUR=LeerFilas.GetDateTime(6),
-                        NumeroHabitacion=LeerFilas.GetString(7),
+                        NumeroHabitacion=LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();
@@ -443,6 +443,53 @@ namespace Datos
             return ListaGenerica;
 
         }
-        
+
+        public List<DPaciente> CedulaUnica(string TextoBuscar)
+        {
+            DataTable DtResultado = new DataTable("Paciente");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DPaciente> ListaGenerica = new List<DPaciente>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "cedulaunica_paciente";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@textobuscar", TextoBuscar);
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DPaciente
+                    {
+                        IdPaciente = LeerFilas.GetInt32(0),
+                        Nombre = LeerFilas.GetString(1),
+                        Edad = LeerFilas.GetInt32(2),
+                        Sexo = LeerFilas.GetString(3),
+                        Cedula = LeerFilas.GetString(4),
+                        Telefono = LeerFilas.GetString(5),
+                        FUR = LeerFilas.GetDateTime(6),
+                        NumeroHabitacion = LeerFilas.GetString(7)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
+
     }
 }

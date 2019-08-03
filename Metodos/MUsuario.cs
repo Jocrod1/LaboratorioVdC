@@ -57,6 +57,12 @@ namespace Metodos
             return Objeto.Buscar_Nombre(TextoBuscar);
         }
 
+        public new static List<DUsuario> CedulaUnica(string TextoBuscar)
+        {
+            DUsuario Objeto = new DUsuario();
+            return Objeto.CedulaUnica(TextoBuscar);
+        }
+
         public static DataTable Login(string usuario, string contraseña)
         {
             DUsuario Obj = new DUsuario();
