@@ -33,7 +33,7 @@ namespace Metodos
             Objeto.Porcentaje = porcentaje;
             Objeto.TipoPago = tipo_pago;
             Objeto.NoCopia = no_copia;
-            return Objeto.Insertar(Objeto);
+            return Objeto.Editar(Objeto);
         }
 
         public static string Eliminar(int ID)

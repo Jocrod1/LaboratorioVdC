@@ -220,7 +220,7 @@ namespace Datos
 
                 //parametro tipo precio
                 SqlParameter Parametro_Tipo_Precio = new SqlParameter();
-                Parametro_Tipo_Precio.ParameterName = "@tipo_precio";
+                Parametro_Tipo_Precio.ParameterName = "@tipoprecio";
                 Parametro_Tipo_Precio.SqlDbType = SqlDbType.Int;
                 Parametro_Tipo_Precio.Value = TipoPaciente.TipoPrecio;
                 SqlComando.Parameters.Add(Parametro_Tipo_Precio);
@@ -234,7 +234,7 @@ namespace Datos
 
                 //parametro tipo pago
                 SqlParameter Parametro_Tipo_Pago = new SqlParameter();
-                Parametro_Tipo_Pago.ParameterName = "@tipo_pago";
+                Parametro_Tipo_Pago.ParameterName = "@tipodepago";
                 Parametro_Tipo_Pago.SqlDbType = SqlDbType.VarChar;
                 Parametro_Tipo_Pago.Size = 10;
                 Parametro_Tipo_Pago.Value = TipoPaciente.TipoPago;
@@ -242,7 +242,7 @@ namespace Datos
 
                 //parametro N copias
                 SqlParameter Parametro_Copias = new SqlParameter();
-                Parametro_Copias.ParameterName = "@no_copias";
+                Parametro_Copias.ParameterName = "@nocopias";
                 Parametro_Copias.SqlDbType = SqlDbType.Int;
                 Parametro_Copias.Value = TipoPaciente.NoCopia;
                 SqlComando.Parameters.Add(Parametro_Copias);
