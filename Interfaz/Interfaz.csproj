@@ -77,6 +77,12 @@
     <Compile Include="Bancos.Designer.cs">
       <DependentUpon>Bancos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bioanalista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bioanalista.Designer.cs">
+      <DependentUpon>Bioanalista.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmpresaSeguro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="GrupoExamen.Designer.cs">
       <DependentUpon>GrupoExamen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabRef.Designer.cs">
+      <DependentUpon>LabRef.cs</DependentUpon>
     </Compile>
     <Compile Include="LimitantesDeIngreso.cs" />
     <Compile Include="Login.cs">
@@ -140,8 +152,17 @@
     <Compile Include="Trabajador.Designer.cs">
       <DependentUpon>Trabajador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Turno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Turno.Designer.cs">
+      <DependentUpon>Turno.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Bancos.resx">
       <DependentUpon>Bancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bioanalista.resx">
+      <DependentUpon>Bioanalista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmpresaSeguro.resx">
       <DependentUpon>EmpresaSeguro.cs</DependentUpon>
@@ -151,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GrupoExamen.resx">
       <DependentUpon>GrupoExamen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabRef.resx">
+      <DependentUpon>LabRef.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -182,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trabajador.resx">
       <DependentUpon>Trabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Turno.resx">
+      <DependentUpon>Turno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

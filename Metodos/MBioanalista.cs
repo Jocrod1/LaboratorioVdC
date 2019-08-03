@@ -9,10 +9,9 @@ namespace Metodos
 {
     public class MBioanalista: DBioanalista
     {
-        public static string Insertar(int ID,string cedula, string nombre, string colegio_bioanalista, string colegio_codigo)
+        public static string Insertar(string cedula, string nombre, string colegio_bioanalista, string colegio_codigo)
         {
             DBioanalista Objeto = new DBioanalista();
-            Objeto.ID = ID;
             Objeto.Cedula = cedula;
             Objeto.Nombre = nombre;
             Objeto.Colegio_Bioanalista = colegio_bioanalista;
@@ -44,6 +43,12 @@ namespace Metodos
         {
             DBioanalista Objeto = new DBioanalista();
             return Objeto.Mostrar(TextoBuscar);
+        }
+
+        public new static List<DBioanalista> MostrarCedula(string TextoBuscar)
+        {
+            DBioanalista Objeto = new DBioanalista();
+            return Objeto.MostrarCedula(TextoBuscar);
         }
     }
 }

@@ -25,16 +25,16 @@ namespace Datos
             get { return _Nombre; }
             set { _Nombre = value; }
         }
-        private DateTime _Comienzo;
+        private TimeSpan _Comienzo;
 
-        public DateTime Comienzo
+        public TimeSpan Comienzo
         {
             get { return _Comienzo; }
             set { _Comienzo = value; }
         }
-        private DateTime _Final;
+        private TimeSpan _Final;
 
-        public DateTime Final
+        public TimeSpan Final
         {
             get { return _Final; }
             set { _Final = value; }
@@ -47,7 +47,7 @@ namespace Datos
 
         }
 
-        public DTurno(int iD, string nombre, DateTime comienzo, DateTime final)
+        public DTurno(int iD, string nombre, TimeSpan comienzo, TimeSpan final)
         {
             ID = iD;
             Nombre = nombre;
@@ -95,14 +95,14 @@ namespace Datos
                 //parametro comienzo
                 SqlParameter Parametro_Comienzo = new SqlParameter();
                 Parametro_Comienzo.ParameterName = "@comienzo";
-                Parametro_Comienzo.SqlDbType = SqlDbType.DateTime;
+                Parametro_Comienzo.SqlDbType = SqlDbType.Time;
                 Parametro_Comienzo.Value = Turno.Comienzo;
                 SqlComando.Parameters.Add(Parametro_Comienzo);
 
                 //parametro nombre
                 SqlParameter Parametro_Final = new SqlParameter();
                 Parametro_Final.ParameterName = "@final";
-                Parametro_Final.SqlDbType = SqlDbType.DateTime;
+                Parametro_Final.SqlDbType = SqlDbType.Time;
                 Parametro_Final.Value = Turno.Final;
                 SqlComando.Parameters.Add(Parametro_Final);
 
@@ -164,14 +164,14 @@ namespace Datos
                 //parametro comienzo
                 SqlParameter Parametro_Comienzo = new SqlParameter();
                 Parametro_Comienzo.ParameterName = "@comienzo";
-                Parametro_Comienzo.SqlDbType = SqlDbType.DateTime;
+                Parametro_Comienzo.SqlDbType = SqlDbType.Time;
                 Parametro_Comienzo.Value = Turno.Comienzo;
                 SqlComando.Parameters.Add(Parametro_Comienzo);
 
                 //parametro nombre
                 SqlParameter Parametro_Final = new SqlParameter();
                 Parametro_Final.ParameterName = "@final";
-                Parametro_Final.SqlDbType = SqlDbType.DateTime;
+                Parametro_Final.SqlDbType = SqlDbType.Time;
                 Parametro_Final.Value = Turno.Final;
                 SqlComando.Parameters.Add(Parametro_Final);
 
@@ -271,8 +271,8 @@ namespace Datos
                     {
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
-                        Comienzo= LeerFilas.GetDateTime(2),
-                        Final=LeerFilas.GetDateTime(3),
+                        Comienzo= LeerFilas.GetTimeSpan(2),
+                        Final=LeerFilas.GetTimeSpan(3)
                     });
                 }
                 LeerFilas.Close();

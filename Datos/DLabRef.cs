@@ -55,7 +55,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "insertar_lab_ref";
+                SqlComando.CommandText = "insertar_labref";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -110,7 +110,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "editar_lab_ref";
+                SqlComando.CommandText = "editar_labref";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -165,7 +165,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "eliminar_lab_ref";
+                SqlComando.CommandText = "eliminar_labref";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -211,7 +211,7 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "mostrar_lab_ref";
+                SqlComando.CommandText = "mostrar_labref";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
                 SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);
@@ -225,7 +225,7 @@ namespace Datos
                     ListaGenerica.Add(new DLabRef
                     {
                         ID = LeerFilas.GetInt32(0),
-                        Nombre = LeerFilas.GetString(1),
+                        Nombre = LeerFilas.GetString(1)
                     });
                 }
                 LeerFilas.Close();

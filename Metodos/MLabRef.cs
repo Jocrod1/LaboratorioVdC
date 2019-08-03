@@ -10,10 +10,9 @@ namespace Metodos
     public class MLabRef:DLabRef
     {
 
-        public static string Insertar(int ID, string nombre)
+        public static string Insertar(string nombre)
         {
             DLabRef Objeto = new DLabRef();
-            Objeto.ID = ID;
             Objeto.Nombre = nombre;
             return Objeto.Insertar(Objeto);
         }
@@ -24,7 +23,7 @@ namespace Metodos
             DLabRef Objeto = new DLabRef();
             Objeto.ID = ID;
             Objeto.Nombre = nombre;
-            return Objeto.Insertar(Objeto);
+            return Objeto.Editar(Objeto);
         }
 
         public static string Eliminar(int ID)

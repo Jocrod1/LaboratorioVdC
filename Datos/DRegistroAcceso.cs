@@ -11,6 +11,14 @@ namespace Datos
     public class DRegistroAcceso : Conexion
     {
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
+
+
         private string _CedulaUsuario;
 
 public string CedulaUsuario
@@ -34,10 +42,7 @@ public DateTime Fecha
     set { _Fecha = value; }
 }
 
-        public int ID;
 
-        
-        
 
         public DRegistroAcceso()
         {

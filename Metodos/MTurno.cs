@@ -9,10 +9,9 @@ namespace Metodos
 {
     public class MTurno:DTurno
     {
-        public static string Insertar(int ID, string nombre, DateTime comienzo, DateTime final)
+        public static string Insertar(string nombre, TimeSpan comienzo, TimeSpan final)
         {
             DTurno Objeto = new DTurno();
-            Objeto.ID = ID;
             Objeto.Nombre = nombre;
             Objeto.Comienzo = comienzo;
             Objeto.Final = final;
@@ -20,14 +19,14 @@ namespace Metodos
         }
 
 
-        public static string Editar(int ID, string nombre, DateTime comienzo, DateTime final)
+        public static string Editar(int ID, string nombre, TimeSpan comienzo, TimeSpan final)
         {
             DTurno Objeto = new DTurno();
             Objeto.ID = ID;
             Objeto.Nombre = nombre;
             Objeto.Comienzo = comienzo;
             Objeto.Final = final;
-            return Objeto.Insertar(Objeto);
+            return Objeto.Editar(Objeto);
         }
 
         public static string Eliminar(int ID)
