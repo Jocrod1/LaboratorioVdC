@@ -43,6 +43,7 @@ namespace Interfaz
             this.Limpiar();
             this.Habilitar();
             this.txtCiPaciente.Focus();
+            ID = 0;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

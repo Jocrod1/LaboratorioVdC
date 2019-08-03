@@ -9,10 +9,9 @@ namespace Metodos
 {
     public class MGrupoExamen : DGrupoExamen
     {
-        public static string Insertar(int ID, string nombre)
+        public static string Insertar(string nombre)
         {
             DGrupoExamen Objeto = new DGrupoExamen();
-            Objeto.ID = ID;
             Objeto.Nombre = nombre;
             return Objeto.Insertar(Objeto);
         }
