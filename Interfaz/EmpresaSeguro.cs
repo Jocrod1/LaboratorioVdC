@@ -356,8 +356,9 @@ namespace Interfaz
             this.txtRIF.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["RIF"].Value);
             this.txtNIT.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value);
             this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["contacto"].Value);
+            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["direccion"].Value);
 
-            if (Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value) == "Sí" )
+            if (Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value) == "Si" )
             {
                 rbEmisionSi.Checked = true;
             }
@@ -368,7 +369,7 @@ namespace Interfaz
             
 
 
-            //this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
+            this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -465,7 +466,6 @@ namespace Interfaz
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
 
 
 
