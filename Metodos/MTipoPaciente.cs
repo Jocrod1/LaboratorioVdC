@@ -9,7 +9,7 @@ namespace Metodos
 {
     public class MTipoPaciente:DTipoPaciente
     {
-        public static string Insertar(int ID, string nombre, string equivalencia, int tipo_precio, float porcentaje, string tipo_pago, int no_copia)
+        public static string Insertar(int ID, string nombre, string equivalencia, int tipo_precio, double porcentaje, string tipo_pago, int no_copia)
         {
             DTipoPaciente Objeto = new DTipoPaciente();
             Objeto.ID = ID;
@@ -23,7 +23,7 @@ namespace Metodos
         }
 
 
-        public static string Editar(int ID, string nombre, string equivalencia, int tipo_precio, float porcentaje, string tipo_pago, int no_copia)
+        public static string Editar(int ID, string nombre, string equivalencia, int tipo_precio, double porcentaje, string tipo_pago, int no_copia)
         {
             DTipoPaciente Objeto = new DTipoPaciente();
             Objeto.ID = ID;

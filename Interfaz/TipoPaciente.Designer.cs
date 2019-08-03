@@ -41,6 +41,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTipoPrecio = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNoCopias = new System.Windows.Forms.TextBox();
@@ -59,7 +60,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.cbTipoPrecio = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -118,6 +118,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblTotal
             // 
@@ -235,6 +236,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Paciente";
+            // 
+            // cbTipoPrecio
+            // 
+            this.cbTipoPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoPrecio.FormattingEnabled = true;
+            this.cbTipoPrecio.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cbTipoPrecio.Location = new System.Drawing.Point(191, 181);
+            this.cbTipoPrecio.Name = "cbTipoPrecio";
+            this.cbTipoPrecio.Size = new System.Drawing.Size(267, 21);
+            this.cbTipoPrecio.TabIndex = 68;
             // 
             // txtID
             // 
@@ -381,6 +394,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // label3
             // 
@@ -406,6 +420,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -442,18 +457,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(267, 31);
             this.txtNombre.TabIndex = 2;
-            // 
-            // cbTipoPrecio
-            // 
-            this.cbTipoPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoPrecio.FormattingEnabled = true;
-            this.cbTipoPrecio.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cbTipoPrecio.Location = new System.Drawing.Point(191, 181);
-            this.cbTipoPrecio.Name = "cbTipoPrecio";
-            this.cbTipoPrecio.Size = new System.Drawing.Size(267, 21);
-            this.cbTipoPrecio.TabIndex = 68;
             // 
             // TipoPaciente
             // 
