@@ -337,39 +337,20 @@ namespace Interfaz
         }
 
 
-        /*
-        private void Buscar_Nombre()
-        {
-            //MUsuario.Buscar_Nombre(txtBuscar.Text);
-
-            dataListado.DataSource = MMedico.Buscar_Nombre(txtBuscar.Text);
-            // this.OcultarColumnas();
-            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-        }
-        */
+      
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 1)
-            {
+            
                 this.Mostrar();  //buscar por nombre
-            }
-            else if (cbBuscar.SelectedIndex == 0)
-            {
-                //buscar por ci
-            }
+           
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 1)
-            {
+           
                 this.Mostrar();  //buscar por nombre
-            }
-            else if (cbBuscar.SelectedIndex == 0)
-            {
-                //buscar por ci
-            }
+            
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)

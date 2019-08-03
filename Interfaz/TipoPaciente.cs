@@ -66,9 +66,10 @@ namespace Interfaz
 
         private void Habilitar()
         {
+            this.txtNombre.ReadOnly = false;
             this.txtNombre.Enabled = true;
             this.txtPorcentaje.Enabled = true;
-            this.txtTipoPrecio.Enabled = true;
+            this.cbTipoPrecio.Enabled = true;
             this.txtEquiv.Enabled = true;
             this.txtTipoPago.Enabled = true;
             this.txtNoCopias.Enabled = true;
@@ -81,7 +82,7 @@ namespace Interfaz
         {
             this.txtNombre.Enabled = false;
             this.txtPorcentaje.Enabled = false;
-            this.txtTipoPrecio.Enabled = false;
+            this.cbTipoPrecio.Enabled = false;
             this.txtEquiv.Enabled = false;
             this.txtTipoPago.Enabled = false;
             this.txtNoCopias.Enabled = false;
@@ -93,7 +94,7 @@ namespace Interfaz
             //aca hace falta el id de la empresa para limpiarlo
             this.txtNombre.Text = string.Empty;
             this.txtPorcentaje.Text = string.Empty;
-            this.txtTipoPrecio.Text = string.Empty;
+            this.cbTipoPrecio.SelectedIndex = -1;
             this.txtEquiv.Enabled = false;
             this.txtTipoPago.Enabled = false;
             this.txtNoCopias.Enabled = false;
@@ -192,7 +193,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MTipoPaciente.Editar(Convert.ToInt32(item.Cells["ID"].Value), "ANULADO", "ANULADO", 0, 0, "ANULADO", 0);
+                       // Rpta = MTipoPaciente.Editar(Convert.ToInt32(item.Cells["ID"].Value), "ANULADO", "ANULADO", 0, 0, "ANULADO", 0);
                     }
 
                     if (Rpta.Equals("OK"))
@@ -261,10 +262,14 @@ namespace Interfaz
             try
             {
 
+
+
+
+
                 //La variable que almacena si se insertó
                 //o se modificó la tabla
                 string Rpta = "";
-                if (this.txtNombre.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtEquiv.Text == string.Empty || this.txtTipoPrecio.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtTipoPago.Text == string.Empty || this.txtNoCopias.Text == string.Empty)
+                if (this.txtNombre.Text == string.Empty || this.txtPorcentaje.Text == string.Empty || this.txtEquiv.Text == string.Empty || this.cbTipoPrecio.SelectedIndex == -1 || this.txtPorcentaje.Text == string.Empty || this.txtTipoPago.Text == string.Empty || this.txtNoCopias.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
                 }
@@ -273,15 +278,15 @@ namespace Interfaz
                     if (this.IsNuevo)
                     {
                         //Vamos a insertar un tipo de pac
-                        //Rpta = MTipoPaciente.Insertar(ID, this.txtNombre.Text, this.txtEquiv.Text, Convert.ToInt32(this.txtTipoPrecio.Text), Convert.ToDouble(this.txtPorcentaje.Text), this.txtTipoPago.Text, Convert.ToInt32(this.txtNoCopias.Text));
+                        Rpta = MTipoPaciente.Insertar(ID, this.txtNombre.Text, this.txtEquiv.Text, Convert.ToInt32(cbTipoPrecio.SelectedItem), float.Parse(this.txtPorcentaje.Text), this.txtTipoPago.Text, Convert.ToInt32(this.txtNoCopias.Text));
 
                     }
                     else
                     {
                         //Vamos a modificar un tipo de pac
-                        Rpta = MTipoPaciente.Editar(ID, this.txtNombre.Text, this.txtEquiv.Text, Convert.ToInt32(this.txtTipoPrecio.Text), float.Parse(this.txtPorcentaje.Text), this.txtTipoPago.Text, Convert.ToInt32(this.txtNoCopias.Text));
+                        Rpta = MTipoPaciente.Editar(ID, this.txtNombre.Text, this.txtEquiv.Text, Convert.ToInt32(cbTipoPrecio.SelectedItem), float.Parse(this.txtPorcentaje.Text), this.txtTipoPago.Text, Convert.ToInt32(this.txtNoCopias.Text));
                         ID = 0;
-                        MessageBox.Show("hola");
+
                     }
                     //Si la respuesta fue OK, fue porque se modificó
                     //o insertó la empresa
@@ -324,11 +329,23 @@ namespace Interfaz
         {
             this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            this.txtEquiv.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["equivalencia"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["porcentaje"].Value);
-            //this.txtTipoPrecio.Text = 
+            this.cbTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_precio"].Value);
+            this.txtNoCopias.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["no_copia"].Value);
 
-            //this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
+            this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
        
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.Mostrar();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            this.Mostrar();
         }
 
 

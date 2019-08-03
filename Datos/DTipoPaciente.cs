@@ -96,7 +96,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "insertar_tipo_paciente";
+                SqlComando.CommandText = "insertar_tipopacientes";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -188,7 +188,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "editar_tipo_paciente";
+                SqlComando.CommandText = "editar_tipopacientes";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -280,7 +280,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "eliminar_tipo_paciente";
+                SqlComando.CommandText = "eliminar_tipopacientes";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -326,7 +326,7 @@ namespace Datos
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "mostrar_tipo_paciente";
+                SqlComando.CommandText = "mostrar_tipopacientes";
                 SqlComando.CommandType = CommandType.StoredProcedure;
                 //esto es cuando tiene alguna condicion
                 SqlComando.Parameters.AddWithValue("@TextoBuscar", TextoBuscar);

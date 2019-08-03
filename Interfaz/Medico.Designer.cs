@@ -32,7 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dataListado = new System.Windows.Forms.DataGridView();
@@ -76,7 +75,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.cbBuscar);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.lblTotal);
             this.tabPage1.Controls.Add(this.dataListado);
@@ -94,23 +92,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 36);
+            this.label8.Location = new System.Drawing.Point(31, 36);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.Size = new System.Drawing.Size(101, 13);
             this.label8.TabIndex = 42;
-            this.label8.Text = "Buscar por:";
-            // 
-            // cbBuscar
-            // 
-            this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBuscar.FormattingEnabled = true;
-            this.cbBuscar.Items.AddRange(new object[] {
-            "Cédula",
-            "Nombre"});
-            this.cbBuscar.Location = new System.Drawing.Point(34, 52);
-            this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 21);
-            this.cbBuscar.TabIndex = 41;
+            this.label8.Text = "Buscar por Nombre:";
             // 
             // btnEliminar
             // 
@@ -154,9 +140,9 @@
             // txtBuscar
             // 
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(148, 52);
+            this.txtBuscar.Location = new System.Drawing.Point(34, 52);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(188, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(302, 20);
             this.txtBuscar.TabIndex = 35;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -408,7 +394,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView dataListado;

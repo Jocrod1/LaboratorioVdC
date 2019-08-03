@@ -32,7 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dataListado = new System.Windows.Forms.DataGridView();
@@ -42,6 +41,16 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtID = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNoCopias = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTipoPago = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPorcentaje = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtEquiv = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -50,17 +59,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEquiv = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTipoPrecio = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNoCopias = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTipoPago = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPorcentaje = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.Label();
+            this.cbTipoPrecio = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -83,7 +82,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.cbBuscar);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.lblTotal);
             this.tabPage1.Controls.Add(this.dataListado);
@@ -101,23 +99,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 36);
+            this.label8.Location = new System.Drawing.Point(31, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 42;
-            this.label8.Text = "Buscar por:";
-            // 
-            // cbBuscar
-            // 
-            this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBuscar.FormattingEnabled = true;
-            this.cbBuscar.Items.AddRange(new object[] {
-            "Cédula",
-            "Nombre"});
-            this.cbBuscar.Location = new System.Drawing.Point(34, 52);
-            this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 21);
-            this.cbBuscar.TabIndex = 41;
+            this.label8.Text = "Buscar:";
             // 
             // btnEliminar
             // 
@@ -160,10 +146,11 @@
             // txtBuscar
             // 
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(148, 52);
+            this.txtBuscar.Location = new System.Drawing.Point(34, 52);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(188, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(302, 20);
             this.txtBuscar.TabIndex = 35;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnAnular
             // 
@@ -192,6 +179,7 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnImprimir
             // 
@@ -221,6 +209,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox1.Controls.Add(this.cbTipoPrecio);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNoCopias);
@@ -229,7 +218,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtPorcentaje);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtTipoPrecio);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtEquiv);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -247,6 +235,113 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Paciente";
+            // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.ForeColor = System.Drawing.Color.Teal;
+            this.txtID.Location = new System.Drawing.Point(622, 26);
+            this.txtID.Name = "txtID";
+            this.txtID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtID.Size = new System.Drawing.Size(119, 23);
+            this.txtID.TabIndex = 67;
+            this.txtID.Text = "ID";
+            this.txtID.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(94, 331);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 21);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "No copias:";
+            // 
+            // txtNoCopias
+            // 
+            this.txtNoCopias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoCopias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNoCopias.Location = new System.Drawing.Point(191, 331);
+            this.txtNoCopias.MaxLength = 25;
+            this.txtNoCopias.Name = "txtNoCopias";
+            this.txtNoCopias.Size = new System.Drawing.Size(267, 31);
+            this.txtNoCopias.TabIndex = 65;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Teal;
+            this.label5.Location = new System.Drawing.Point(69, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 21);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Tipo de Pago:";
+            // 
+            // txtTipoPago
+            // 
+            this.txtTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTipoPago.Location = new System.Drawing.Point(191, 279);
+            this.txtTipoPago.MaxLength = 25;
+            this.txtTipoPago.Name = "txtTipoPago";
+            this.txtTipoPago.Size = new System.Drawing.Size(267, 31);
+            this.txtTipoPago.TabIndex = 63;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Teal;
+            this.label7.Location = new System.Drawing.Point(86, 233);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 21);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "Porcentaje:";
+            // 
+            // txtPorcentaje
+            // 
+            this.txtPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPorcentaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPorcentaje.Location = new System.Drawing.Point(191, 227);
+            this.txtPorcentaje.MaxLength = 25;
+            this.txtPorcentaje.Name = "txtPorcentaje";
+            this.txtPorcentaje.Size = new System.Drawing.Size(267, 31);
+            this.txtPorcentaje.TabIndex = 61;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Teal;
+            this.label6.Location = new System.Drawing.Point(61, 181);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 21);
+            this.label6.TabIndex = 60;
+            this.label6.Text = "Tipo de precio:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(70, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 21);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Equivalencia:";
+            // 
+            // txtEquiv
+            // 
+            this.txtEquiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEquiv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtEquiv.Location = new System.Drawing.Point(191, 123);
+            this.txtEquiv.MaxLength = 25;
+            this.txtEquiv.Name = "txtEquiv";
+            this.txtEquiv.Size = new System.Drawing.Size(267, 31);
+            this.txtEquiv.TabIndex = 57;
             // 
             // pictureBox1
             // 
@@ -348,122 +443,17 @@
             this.txtNombre.Size = new System.Drawing.Size(267, 31);
             this.txtNombre.TabIndex = 2;
             // 
-            // label1
+            // cbTipoPrecio
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(70, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 21);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Equivalencia:";
-            // 
-            // txtEquiv
-            // 
-            this.txtEquiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquiv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEquiv.Location = new System.Drawing.Point(191, 123);
-            this.txtEquiv.MaxLength = 25;
-            this.txtEquiv.Name = "txtEquiv";
-            this.txtEquiv.Size = new System.Drawing.Size(267, 31);
-            this.txtEquiv.TabIndex = 57;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(61, 181);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 21);
-            this.label6.TabIndex = 60;
-            this.label6.Text = "Tipo de precio:";
-            // 
-            // txtTipoPrecio
-            // 
-            this.txtTipoPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoPrecio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTipoPrecio.Location = new System.Drawing.Point(191, 175);
-            this.txtTipoPrecio.MaxLength = 25;
-            this.txtTipoPrecio.Name = "txtTipoPrecio";
-            this.txtTipoPrecio.Size = new System.Drawing.Size(267, 31);
-            this.txtTipoPrecio.TabIndex = 59;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(94, 337);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 21);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "No copias:";
-            // 
-            // txtNoCopias
-            // 
-            this.txtNoCopias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoCopias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNoCopias.Location = new System.Drawing.Point(191, 331);
-            this.txtNoCopias.MaxLength = 25;
-            this.txtNoCopias.Name = "txtNoCopias";
-            this.txtNoCopias.Size = new System.Drawing.Size(267, 31);
-            this.txtNoCopias.TabIndex = 65;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Teal;
-            this.label5.Location = new System.Drawing.Point(69, 285);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 21);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "Tipo de Pago:";
-            // 
-            // txtTipoPago
-            // 
-            this.txtTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTipoPago.Location = new System.Drawing.Point(191, 279);
-            this.txtTipoPago.MaxLength = 25;
-            this.txtTipoPago.Name = "txtTipoPago";
-            this.txtTipoPago.Size = new System.Drawing.Size(267, 31);
-            this.txtTipoPago.TabIndex = 63;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(86, 233);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 21);
-            this.label7.TabIndex = 62;
-            this.label7.Text = "Porcentaje:";
-            // 
-            // txtPorcentaje
-            // 
-            this.txtPorcentaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPorcentaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPorcentaje.Location = new System.Drawing.Point(191, 227);
-            this.txtPorcentaje.MaxLength = 25;
-            this.txtPorcentaje.Name = "txtPorcentaje";
-            this.txtPorcentaje.Size = new System.Drawing.Size(267, 31);
-            this.txtPorcentaje.TabIndex = 61;
-            // 
-            // txtID
-            // 
-            this.txtID.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.ForeColor = System.Drawing.Color.Teal;
-            this.txtID.Location = new System.Drawing.Point(622, 26);
-            this.txtID.Name = "txtID";
-            this.txtID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtID.Size = new System.Drawing.Size(119, 23);
-            this.txtID.TabIndex = 67;
-            this.txtID.Text = "ID";
-            this.txtID.Visible = false;
+            this.cbTipoPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoPrecio.FormattingEnabled = true;
+            this.cbTipoPrecio.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cbTipoPrecio.Location = new System.Drawing.Point(191, 181);
+            this.cbTipoPrecio.Name = "cbTipoPrecio";
+            this.cbTipoPrecio.Size = new System.Drawing.Size(267, 21);
+            this.cbTipoPrecio.TabIndex = 68;
             // 
             // TipoPaciente
             // 
@@ -491,7 +481,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView dataListado;
@@ -508,7 +497,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPorcentaje;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTipoPrecio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEquiv;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -520,5 +508,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label txtID;
+        private System.Windows.Forms.ComboBox cbTipoPrecio;
     }
 }
