@@ -391,17 +391,17 @@ namespace Interfaz
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (cbBuscar.Text == "Cedula") {
-                Provider1.SetError(txtTelefono, "");
+                Provider1.SetError(txtBuscar, "");
                 if (valid.soloNumeros(e))
                 {
-                    Provider1.SetError(txtTelefono, "En este campo solo se pueden ingresar numeros");
+                    Provider1.SetError(txtBuscar, "En este campo solo se pueden ingresar numeros");
                 }
             }
             if (cbBuscar.Text == "Nombre") {
-                Provider1.SetError(txtNombre, "");
+                Provider1.SetError(txtBuscar, "");
                 if (valid.soloLetras(e))
                 {
-                    Provider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+                    Provider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
                 }
             }
         }
