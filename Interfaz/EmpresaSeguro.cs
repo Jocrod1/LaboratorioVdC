@@ -86,15 +86,19 @@ namespace Interfaz
             this.txtRIF.Text = string.Empty;
             this.txtNIT.Text = string.Empty;
             this.txtContacto.Text = string.Empty;
+            this.rbEmisionSi.Checked = false;
+            this.rbEmisionNo.Checked = false;
+
+
         }
 
 
         private void Mostrar()
         {
-            //MUsuario.Mostrar(txtBuscar.Text);
+            
 
             dataListado.DataSource = MEmpresaSeguro.Mostrar(txtBuscar.Text);
-            // this.OcultarColumnas();
+            //this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
@@ -118,6 +122,8 @@ namespace Interfaz
             this.txtRIF.Enabled = true;
             this.txtNIT.Enabled = true;
             this.txtContacto.Enabled = true;
+            this.rbEmisionNo.Enabled = true;
+            this.rbEmisionSi.Enabled = true;
 
             this.txtNombre.Focus();
 
@@ -132,6 +138,8 @@ namespace Interfaz
             this.txtRIF.Enabled = false;
             this.txtNIT.Enabled = false;
             this.txtContacto.Enabled = false;
+            this.rbEmisionNo.Enabled = false;
+            this.rbEmisionSi.Enabled = false;
         }
 
 
@@ -344,7 +352,21 @@ namespace Interfaz
             this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["porcentaje"].Value);
-            //this.txtTipoPrecio.Text = 
+            this.txtTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipoPrecio"].Value);
+            this.txtRIF.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["RIF"].Value);
+            this.txtNIT.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value);
+            this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["contacto"].Value);
+
+            if (Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value) == "Sí" )
+            {
+                rbEmisionSi.Checked = true;
+            }
+            else if (Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value) == "No")
+            {
+                rbEmisionNo.Checked = true;
+            }
+            
+
 
             //this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
         }
@@ -375,7 +397,7 @@ namespace Interfaz
             }
             else if (rbEmisionSi.Checked)
             {
-                RespuestaEmision = "Sí";
+                RespuestaEmision = "Si";
             }
             else
             {
