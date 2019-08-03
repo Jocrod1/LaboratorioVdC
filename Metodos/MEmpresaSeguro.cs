@@ -37,6 +37,7 @@ namespace Metodos
             Objeto.RIF = RIF;
             Objeto.NIT = NIT;
             Objeto.Contacto = contacto;
+
             return Objeto.Editar(Objeto);
         }
 

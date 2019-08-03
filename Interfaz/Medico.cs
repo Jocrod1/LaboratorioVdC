@@ -137,6 +137,7 @@ namespace Interfaz
 
         private void Habilitar()
         {
+            this.txtCiMedico.ReadOnly = false;
             this.txtCiMedico.Enabled = true;
             this.txtNombre.Enabled = true;
             this.txtClinica.Enabled = true;
@@ -349,25 +350,25 @@ namespace Interfaz
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0)
+            if (cbBuscar.SelectedIndex == 1)
             {
-                this.Mostrar();
+                this.Mostrar();  //buscar por nombre
             }
-            else if (cbBuscar.SelectedIndex == 1)
+            else if (cbBuscar.SelectedIndex == 0)
             {
-                //this.Buscar_Nombre();
+                //buscar por ci
             }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0)
+            if (cbBuscar.SelectedIndex == 1)
             {
-                this.Mostrar();
+                this.Mostrar();  //buscar por nombre
             }
-            else if (cbBuscar.SelectedIndex == 1)
+            else if (cbBuscar.SelectedIndex == 0)
             {
-                //this.Buscar_Nombre();
+                //buscar por ci
             }
         }
 

@@ -81,13 +81,14 @@ namespace Interfaz
             //aca hace falta el id de la empresa para limpiarlo
             this.txtNombre.Text = string.Empty;
             this.txtPorcentaje.Text = string.Empty;
-            this.txtTipoPrecio.Text = string.Empty;
+            this.cbTipoPrecio.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
             this.txtRIF.Text = string.Empty;
             this.txtNIT.Text = string.Empty;
             this.txtContacto.Text = string.Empty;
             this.rbEmisionSi.Checked = false;
             this.rbEmisionNo.Checked = false;
+            this.cbTipoPrecio.SelectedIndex = -1;
 
 
         }
@@ -115,9 +116,10 @@ namespace Interfaz
 
         private void Habilitar()
         {
+            this.txtNombre.ReadOnly = false;
             this.txtNombre.Enabled = true;
             this.txtPorcentaje.Enabled = true;
-            this.txtTipoPrecio.Enabled = true;
+            this.cbTipoPrecio.Enabled = true;
             this.txtDireccion.Enabled = true;
             this.txtRIF.Enabled = true;
             this.txtNIT.Enabled = true;
@@ -133,7 +135,7 @@ namespace Interfaz
         {
             this.txtNombre.Enabled = false;
             this.txtPorcentaje.Enabled = false;
-            this.txtTipoPrecio.Enabled = false;
+            this.cbTipoPrecio.Enabled = false;
             this.txtDireccion.Enabled = false;
             this.txtRIF.Enabled = false;
             this.txtNIT.Enabled = false;
@@ -224,7 +226,8 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MEmpresaSeguro.Editar(Convert.ToInt32(item.Cells["ID"].Value), "ANULADO", 0, 0, "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO");
+                        // usar un metodo para Anular en vez de usar el Editar
+                        //Rpta = MEmpresaSeguro.Editar(Convert.ToInt32(item.Cells["ID"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value), Convert.ToDouble(this.dataListado.CurrentRow.Cells["porcentaje"].Value), Convert.ToInt32(this.dataListado.CurrentRow.Cells["tipoPrecio"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["direccion"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["RIF"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["contacto"].Value), "ANULADO");
                     }
 
                     if (Rpta.Equals("OK"))
@@ -352,7 +355,7 @@ namespace Interfaz
             this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["porcentaje"].Value);
-            this.txtTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipoPrecio"].Value);
+            this.cbTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipoPrecio"].Value);
             this.txtRIF.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["RIF"].Value);
             this.txtNIT.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value);
             this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["contacto"].Value);
@@ -419,13 +422,13 @@ namespace Interfaz
                     if (this.IsNuevo)
                     {
                         //Vamos a insertar una empresa
-                        Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                        Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
 
                     }
                     else
                     { 
                         //Vamos a modificar una empresa
-                        Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.txtTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                        Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
                         ID = 0;
                     }
 

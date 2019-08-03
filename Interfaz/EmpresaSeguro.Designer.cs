@@ -48,7 +48,7 @@
             this.txtRIF = new System.Windows.Forms.TextBox();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.Label();
-            this.txtTipoPrecio = new System.Windows.Forms.ComboBox();
+            this.cbTipoPrecio = new System.Windows.Forms.ComboBox();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNIT = new System.Windows.Forms.TextBox();
@@ -247,7 +247,7 @@
             this.groupBox1.Controls.Add(this.txtRIF);
             this.groupBox1.Controls.Add(this.txtPorcentaje);
             this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Controls.Add(this.txtTipoPrecio);
+            this.groupBox1.Controls.Add(this.cbTipoPrecio);
             this.groupBox1.Controls.Add(this.txtContacto);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtNIT);
@@ -326,16 +326,17 @@
             this.txtID.Text = "ID";
             this.txtID.Visible = false;
             // 
-            // txtTipoPrecio
+            // cbTipoPrecio
             // 
-            this.txtTipoPrecio.FormattingEnabled = true;
-            this.txtTipoPrecio.Items.AddRange(new object[] {
+            this.cbTipoPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoPrecio.FormattingEnabled = true;
+            this.cbTipoPrecio.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.txtTipoPrecio.Location = new System.Drawing.Point(158, 151);
-            this.txtTipoPrecio.Name = "txtTipoPrecio";
-            this.txtTipoPrecio.Size = new System.Drawing.Size(267, 21);
-            this.txtTipoPrecio.TabIndex = 3;
+            this.cbTipoPrecio.Location = new System.Drawing.Point(158, 151);
+            this.cbTipoPrecio.Name = "cbTipoPrecio";
+            this.cbTipoPrecio.Size = new System.Drawing.Size(267, 21);
+            this.cbTipoPrecio.TabIndex = 3;
             // 
             // txtContacto
             // 
@@ -598,7 +599,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPorcentaje;
         private System.Windows.Forms.TextBox txtRIF;
-        private System.Windows.Forms.ComboBox txtTipoPrecio;
+        private System.Windows.Forms.ComboBox cbTipoPrecio;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.RadioButton rbEmisionNo;

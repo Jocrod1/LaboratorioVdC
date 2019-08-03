@@ -16,7 +16,11 @@ namespace Interfaz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new Bioanalista());
+=======
+            Application.Run(new Medico());
+>>>>>>> Stashed changes
         }
     }
 }
