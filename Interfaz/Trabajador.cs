@@ -470,6 +470,8 @@ namespace Interfaz
 
         private void txtCiTrabajador_Leave(object sender, EventArgs e)
         {
+            if (!IsNuevo)
+                return;
             dataListado.DataSource = MUsuario.CedulaUnica(this.txtCiTrabajador.Text);
 
             if (dataListado.Rows.Count != 0)

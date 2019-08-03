@@ -425,6 +425,8 @@ namespace Interfaz
 
         private void txtCiPaciente_Leave(object sender, EventArgs e)
         {
+            if (!IsNuevo)
+                return;
             dataListado.DataSource= MPaciente.CedulaUnica(this.txtCiPaciente.Text);
 
             if(dataListado.Rows.Count!=0)

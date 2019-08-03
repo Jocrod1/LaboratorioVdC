@@ -293,6 +293,8 @@ namespace Interfaz
 
         private void txtCedula_Leave(object sender, EventArgs e)
         {
+            if (!IsNuevo)
+                return;
             dataListado.DataSource = MBioanalista.CedulaUnica(this.txtCedula.Text);
 
             if (dataListado.Rows.Count != 0)

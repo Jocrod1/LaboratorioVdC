@@ -370,6 +370,8 @@ namespace Interfaz
 
         private void txtCiMedico_Leave(object sender, EventArgs e)
         {
+            if (!IsNuevo)
+                return;
             dataListado.DataSource = MMedico.CedulaUnica(this.txtCiMedico.Text);
 
             if (dataListado.Rows.Count != 0)
