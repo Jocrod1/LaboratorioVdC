@@ -36,14 +36,6 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
-
-        public new static List<DMedico> Buscar_Nombre(string TextoBuscar)
-        {
-            DMedico Objeto = new DMedico();
-            return Objeto.Buscar_Nombre(TextoBuscar);
-        }
-
-
         //probar esta nueva version, NUEVA VERSION
         public new static List<DMedico> Mostrar(string TextoBuscar)
         {
