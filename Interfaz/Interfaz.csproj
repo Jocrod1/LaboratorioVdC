@@ -89,6 +89,12 @@
     <Compile Include="Examenes.Designer.cs">
       <DependentUpon>Examenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GrupoExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrupoExamen.Designer.cs">
+      <DependentUpon>GrupoExamen.cs</DependentUpon>
+    </Compile>
     <Compile Include="LimitantesDeIngreso.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Examenes.resx">
       <DependentUpon>Examenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrupoExamen.resx">
+      <DependentUpon>GrupoExamen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

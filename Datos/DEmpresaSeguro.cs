@@ -392,7 +392,7 @@ namespace Datos
                     {
                         ID = LeerFilas.GetInt32(0),
                         Nombre= LeerFilas.GetString(1),
-                        Porcentaje=LeerFilas.GetFloat(2),
+                        Porcentaje=LeerFilas.GetDouble(2),
                         TipoPrecio=LeerFilas.GetInt32(3),
                         Emision=LeerFilas.GetString(4),
                         Direccion=LeerFilas.GetString(5),
@@ -440,7 +440,7 @@ namespace Datos
                     {
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
-                        Porcentaje = LeerFilas.GetFloat(2),
+                        Porcentaje = LeerFilas.GetDouble(2),
                         TipoPrecio = LeerFilas.GetInt32(3),
                         Emision = LeerFilas.GetString(4),
                         Direccion = LeerFilas.GetString(5),
