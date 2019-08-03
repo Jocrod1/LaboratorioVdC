@@ -52,19 +52,6 @@ namespace Interfaz
             this.txtNombre.Focus();
         }
 
-        bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         //Validar datos al ingresar
         private bool validar()
         {
@@ -88,7 +75,7 @@ namespace Interfaz
             if (cbAcceso.Text == "") {
                 Provider1.SetError(cbAcceso, "Elige un tipo de acceso para este usuario");
             }
-            if (txtCorreo.Text != "" && !IsValidEmail(txtCorreo.Text)){
+            if (txtCorreo.Text != "" && !valid.IsValidEmail(txtCorreo.Text)){
                 Provider1.SetError(txtCorreo, "Ingrese un correo correcto");
             } 
             return error;
