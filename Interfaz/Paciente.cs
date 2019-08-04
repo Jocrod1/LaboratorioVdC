@@ -32,6 +32,21 @@ namespace Interfaz
             this.Mostrar();
             this.Deshabilitar();
             this.Botones();
+
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(249, 246, 238);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(247, 196, 99);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(237, 144, 5);
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+
         }
 
         //botones
@@ -438,5 +453,6 @@ namespace Interfaz
 
             Mostrar();
         }
+
     }
 }
