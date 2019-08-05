@@ -34,7 +34,7 @@ namespace Metodos
             Objeto.Telefono = Telefono;
             Objeto.FUR = FUR;
             Objeto.NumeroHabitacion = NumeroHabitacion;
-            return Objeto.Insertar(Objeto);
+            return Objeto.Editar(Objeto);
         }
 
         public static string Eliminar(int ID)

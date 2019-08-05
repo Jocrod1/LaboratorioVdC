@@ -252,6 +252,7 @@ namespace Interfaz
             {
                 this.IsEditar = true;
                 this.Botones();
+                this.txtCiPaciente.ReadOnly = true;
             }
             else
             {

@@ -272,7 +272,7 @@ namespace Datos
 
                 //parametro numero habitacion
                 SqlParameter Parametro_NHabitacion_Paciente = new SqlParameter();
-                Parametro_NHabitacion_Paciente.ParameterName = "@NumeroHabitacion";
+                Parametro_NHabitacion_Paciente.ParameterName = "@nrohab";
                 Parametro_NHabitacion_Paciente.SqlDbType = SqlDbType.VarChar;
                 Parametro_NHabitacion_Paciente.Size = 10;
                 Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;

@@ -21,6 +21,7 @@ namespace Interfaz
         //Variable que nos indica si vamos a modificar un trabajador
         private bool IsEditar = false;
 
+        private int ID;
 
         public Trabajador()
         {
@@ -48,7 +49,7 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
-            this.Habilitar(true);
+            this.Habilitar();
             this.txtNombre.Focus();
         }
 
@@ -93,25 +94,42 @@ namespace Interfaz
             this.txtContrasena.Text = string.Empty;
             this.txtTelefono.Text = string.Empty;
             this.txtCorreo.Text = string.Empty;
+            this.cbAcceso.SelectedIndex = -1;
 
         }
-        //Habilita los controles de los formularios
-        private void Habilitar(bool Valor)
+
+
+        private void Habilitar()
         {
-            this.txtCiTrabajador.ReadOnly = !Valor;
-            this.txtNombre.ReadOnly = !Valor;
-            this.txtDireccion.ReadOnly = !Valor;
-            this.txtContrasena.ReadOnly = !Valor;
-            this.txtTelefono.ReadOnly = !Valor;
-            this.cbAcceso.Enabled = Valor;
-            this.txtCorreo.Enabled = Valor;
+            this.txtCiTrabajador.Enabled = true;
+            this.txtNombre.Enabled = true;
+            this.txtContrasena.Enabled = true;
+            this.txtTelefono.Enabled = true;
+            this.txtDireccion.Enabled = true;
+            this.txtCorreo.Enabled = true;
+            this.cbAcceso.Enabled = true;
         }
+
+        private void Deshabilitar()
+        {
+            this.txtCiTrabajador.Enabled = false;
+            this.txtNombre.Enabled = false;
+            this.txtContrasena.Enabled = false;
+            this.txtTelefono.Enabled = false;
+            this.txtDireccion.Enabled = false;
+            this.txtCorreo.Enabled = false;
+            this.cbAcceso.Enabled = false;
+        }
+
+
+
+
         //Habilita los botones
         private void Botones()
         {
             if (this.IsNuevo || this.IsEditar)
             {
-                this.Habilitar(true);
+                this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
                 this.btnEditar.Enabled = false;
@@ -119,7 +137,7 @@ namespace Interfaz
             }
             else
             {
-                this.Habilitar(false);
+                this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
                 this.btnEditar.Enabled = true;
@@ -131,8 +149,42 @@ namespace Interfaz
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void Trabajador_Load(object sender, EventArgs e)
         {
+
+            //todo esto es pa ponerle colorcitos al datagridview
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
+
+
             cbBuscar.SelectedIndex = 0;
             //Para ubicar al formulario en la parte superior del contenedor
             this.Top = 0;
@@ -143,10 +195,12 @@ namespace Interfaz
             //de todos nuestros Trabajadores
             this.Mostrar();
             //Deshabilita los controles
-            this.Habilitar(false);
+            this.Deshabilitar();
             //Establece los botones
             this.Botones();
         }
+
+
 
 
 
@@ -179,11 +233,7 @@ namespace Interfaz
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            Buscar();
-        }
-
+        
         void EliminarItems() {
 
             try
@@ -237,21 +287,14 @@ namespace Interfaz
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            EliminarItems();
-        }
 
 
-        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
 
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //no existe ID en trabajador OJO
             this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
@@ -260,6 +303,26 @@ namespace Interfaz
             this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
             this.txtCorreo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Correo"].Value);
         }
+
+
+
+
+        private void Editar()
+        {
+            //Si no ha seleccionado un trabajador no puede modificar
+            if (!txtCiTrabajador.Equals(""))
+            {
+                this.IsEditar = true;
+                this.Botones();
+                this.txtCiTrabajador.ReadOnly = true;
+            }
+            else
+            {
+                this.MensajeError("Debe de buscar un registro para Modificar");
+            }
+        }
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -326,16 +389,7 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //Si no ha seleccionado un producto no puede modificar
-            if (!this.txtCiTrabajador.Text.Equals(""))
-            {
-                this.IsEditar = true;
-                this.Botones();
-            }
-            else
-            {
-                this.MensajeError("Debe de buscar un registro para Modificar");
-            }
+            Editar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -385,6 +439,14 @@ namespace Interfaz
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdTrabajador"].Value);
+            this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtContrasena.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Password"].Value);
+            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
+            this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
+            this.txtCorreo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Correo"].Value);
+            this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
 
         }
 
@@ -458,15 +520,6 @@ namespace Interfaz
             }
         }
 
-        private void BtnAnular_Click(object sender, EventArgs e)
-        {
-            AnularItems();
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtCiTrabajador_Leave(object sender, EventArgs e)
         {
@@ -483,5 +536,32 @@ namespace Interfaz
 
             Mostrar();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarItems();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            AnularItems();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            //en construccion(?)
+        }
+
+
+
+
+        
+
+        
     }
 }
