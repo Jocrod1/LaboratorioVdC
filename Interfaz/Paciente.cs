@@ -27,25 +27,34 @@ namespace Interfaz
             InitializeComponent();
         }
 
+
+
+
+
         private void Paciente_Load(object sender, EventArgs e)
         {
             this.Mostrar();
             this.Deshabilitar();
             this.Botones();
 
+        
+
+
+            //todo esto es pa ponerle colorcitos al datagridview
 
             dataListado.BorderStyle = BorderStyle.None;
-            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(249, 246, 238);
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
             dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(247, 196, 99);
-            dataListado.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
             dataListado.BackgroundColor = Color.White;
 
             dataListado.EnableHeadersVisualStyles = false;
             dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(237, 144, 5);
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
             dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
 
         }
 
@@ -343,6 +352,7 @@ namespace Interfaz
             this.txtTelefono.Text = string.Empty;
             this.dateTimePickerFUR.Text = string.Empty;
             this.txtNroHab.Text = string.Empty;
+            this.txtSexo.SelectedIndex = -1;
         }
 
         private void Mostrar()
@@ -453,6 +463,8 @@ namespace Interfaz
 
             Mostrar();
         }
+
+        
 
     }
 }
