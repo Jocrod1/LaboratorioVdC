@@ -111,7 +111,7 @@ namespace Datos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "editar_banco";
+                SqlComando.CommandText = "editar_bancos";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
