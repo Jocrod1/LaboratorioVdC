@@ -32,6 +32,26 @@ namespace Interfaz
             this.Mostrar();
             this.Deshabilitar();
             this.Botones();
+
+
+            //todo esto es pa ponerle colorcitos al datagridview
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
         }
 
         //botones
@@ -42,7 +62,7 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txtNombre.Focus();
+            this.txt2.Focus();
             ID = 0;
         }
 
@@ -62,7 +82,7 @@ namespace Interfaz
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar();
-            this.txtNombre.Focus();
+            this.txt2.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -87,7 +107,7 @@ namespace Interfaz
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
-            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txt2.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
 
         }
 
@@ -157,12 +177,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MGrupoExamen.Insertar(this.txtNombre.Text);
+                    Rpta = MGrupoExamen.Insertar(this.txt2.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MGrupoExamen.Editar(ID, this.txtNombre.Text);
+                    Rpta = MGrupoExamen.Editar(ID, this.txt2.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -214,10 +234,10 @@ namespace Interfaz
         private bool validar()
         {
             bool error = true;
-            if (txtNombre.Text == "")
+            if (txt2.Text == "")
             {
                 error = false;
-                errorProvider1.SetError(txtNombre, "Agrega el CI del trabajador");
+                errorProvider1.SetError(txt2, "Agrega el CI del trabajador");
             }
             return error;
         }
@@ -240,12 +260,12 @@ namespace Interfaz
 
         private void Habilitar()
         {
-            this.txtNombre.Enabled = true;
+            this.txt2.Enabled = true;
         }
 
         private void Deshabilitar()
         {
-            this.txtNombre.Enabled = false;
+            this.txt2.Enabled = false;
         }
 
         private void Botones()
@@ -270,7 +290,7 @@ namespace Interfaz
 
         private void Limpiar()
         {
-            this.txtNombre.Text = string.Empty;
+            this.txt2.Text = string.Empty;
             ID = 0;
         }
 
@@ -290,10 +310,10 @@ namespace Interfaz
 
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txt2, "");
             if (valid.soloLetras(e))
             {
-                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+                errorProvider1.SetError(txt2, "En este campo solo se pueden ingresar letras");
             }
         }
 
@@ -305,5 +325,12 @@ namespace Interfaz
                 errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+       
     }
 }
