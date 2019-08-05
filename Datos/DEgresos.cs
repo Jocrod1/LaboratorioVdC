@@ -128,7 +128,7 @@ namespace Datos
                 SqlParameter Parametro_Precio = new SqlParameter();
                 Parametro_Precio.ParameterName = "@precio";
                 Parametro_Precio.SqlDbType = SqlDbType.Float;
-                Parametro_Precio.Value = Egresos.Equivalencia;
+                Parametro_Precio.Value = Egresos.Precio;
                 SqlComando.Parameters.Add(Parametro_Precio);
 
                 //parametro precio empresa

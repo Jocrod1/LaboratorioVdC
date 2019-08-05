@@ -36,6 +36,7 @@ namespace Interfaz
             this.Mostrar();
             this.Deshabilitar();
             this.Botones();
+            cbBuscar.SelectedIndex = 1;
 
         
 

@@ -31,6 +31,27 @@ namespace Interfaz
             this.Mostrar();
             this.Deshabilitar();
             this.Botones();
+
+
+            //todo esto es pa ponerle colorcitos al datagridview
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
+
         }
 
         //botones
@@ -79,7 +100,7 @@ namespace Interfaz
         {
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            this.txtEquivalencia.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Equivalencia"].Value);
+            this.cbEquivalencia.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Equivalencia"].Value);
             this.txtPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio"].Value);
             this.txtPrecioEmpresa.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio_Empresa"].Value);
             this.txtTipo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Tipo"].Value);
@@ -156,12 +177,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MEgresos.Insertar(this.txtNombre.Text, this.txtEquivalencia.Text, float.Parse(this.txtPrecio.Text), float.Parse(this.txtPrecioEmpresa.Text), Convert.ToInt32(this.txtTipo.Text), float.Parse(this.txtCuentaContable.Text));
+                    Rpta = MEgresos.Insertar(this.txtNombre.Text, this.cbEquivalencia.Text, float.Parse(this.txtPrecio.Text), float.Parse(this.txtPrecioEmpresa.Text), Convert.ToInt32(this.txtTipo.Text), float.Parse(this.txtCuentaContable.Text));
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MEgresos.Editar(ID, this.txtNombre.Text, this.txtEquivalencia.Text, float.Parse(this.txtPrecio.Text), float.Parse(this.txtPrecioEmpresa.Text), Convert.ToInt32(this.txtTipo.Text), float.Parse(this.txtCuentaContable.Text));
+                    Rpta = MEgresos.Editar(ID, this.txtNombre.Text, this.cbEquivalencia.Text, float.Parse(this.txtPrecio.Text), float.Parse(this.txtPrecioEmpresa.Text), Convert.ToInt32(this.txtTipo.Text), float.Parse(this.txtCuentaContable.Text));
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -224,7 +245,7 @@ namespace Interfaz
         private void Habilitar()
         {
             this.txtNombre.Enabled = true;
-            this.txtEquivalencia.Enabled = true;
+            this.cbEquivalencia.Enabled = true;
             this.txtPrecio.Enabled = true;
             this.txtPrecioEmpresa.Enabled = true;
             this.txtTipo.Enabled = true;
@@ -234,7 +255,7 @@ namespace Interfaz
         private void Deshabilitar()
         {
             this.txtNombre.Enabled = false;
-            this.txtEquivalencia.Enabled = false;
+            this.cbEquivalencia.Enabled = false;
             this.txtPrecio.Enabled = false;
             this.txtPrecioEmpresa.Enabled = false;
             this.txtTipo.Enabled = false;
@@ -265,7 +286,7 @@ namespace Interfaz
         {
             ID = 0;
             this.txtNombre.Text = string.Empty;
-            this.txtEquivalencia.Text = string.Empty;
+            this.cbEquivalencia.SelectedIndex = -1;
             this.txtPrecio.Text = string.Empty;
             this.txtPrecioEmpresa.Text = string.Empty;
             this.txtTipo.Text = string.Empty;
@@ -283,6 +304,8 @@ namespace Interfaz
         {
             Mostrar();
         }
+
+
 
 
     }
