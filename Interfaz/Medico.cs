@@ -370,18 +370,30 @@ namespace Interfaz
 
         private void txtCiMedico_Leave(object sender, EventArgs e)
         {
-            if (!IsNuevo)
-                return;
-            dataListado.DataSource = MMedico.CedulaUnica(this.txtCiMedico.Text);
+            CedulaUnica();
+        }
 
-            if (dataListado.Rows.Count != 0)
+        private void CedulaUnica()
+        {
+            try
             {
-                MessageBox.Show("Ya el Medico C.I: " + this.txtCiMedico.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtCiMedico.Text = string.Empty;
-                this.txtCiMedico.Focus();
-            }
+                if (!IsNuevo)
+                    return;
+                dataListado.DataSource = MMedico.CedulaUnica(this.txtCiMedico.Text);
 
-            Mostrar();
+                if (dataListado.Rows.Count != 0)
+                {
+                    MessageBox.Show("Ya el Medico C.I: " + this.txtCiMedico.Text + "está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtCiMedico.Text = string.Empty;
+                    this.txtCiMedico.Focus();
+                }
+
+                Mostrar();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la Conexion de la BD", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

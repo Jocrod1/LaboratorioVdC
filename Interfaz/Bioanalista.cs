@@ -311,20 +311,32 @@ namespace Interfaz
             }
         }
 
+        private void CedulaUnica()
+        {
+            try
+            {
+                if (!IsNuevo)
+                    return;
+                dataListado.DataSource = MBioanalista.CedulaUnica(this.txtCedula.Text);
+
+                if (dataListado.Rows.Count != 0)
+                {
+                    MessageBox.Show("Ya el Bioanalista C.I: " + this.txtCedula.Text + "está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtCedula.Text = string.Empty;
+                    this.txtCedula.Focus();
+                }
+
+                Mostrar();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la Conexion de la BD", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void txtCedula_Leave(object sender, EventArgs e)
         {
-            if (!IsNuevo)
-                return;
-            dataListado.DataSource = MBioanalista.CedulaUnica(this.txtCedula.Text);
-
-            if (dataListado.Rows.Count != 0)
-            {
-                MessageBox.Show("Ya el Bioanalista C.I: " + this.txtCedula.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtCedula.Text = string.Empty;
-                this.txtCedula.Focus();
-            }
-
-            Mostrar();
+            CedulaUnica();
         }
 
     }

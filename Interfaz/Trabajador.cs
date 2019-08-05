@@ -468,7 +468,7 @@ namespace Interfaz
             }
         }
 
-        void AnularItems() {
+        private void AnularItems() {
             try
             {
                 int NumeroSeleccionado = 0;
@@ -520,21 +520,33 @@ namespace Interfaz
             }
         }
 
+        private void CedulaUnica()
+        {
+            try
+            {
+                if (!IsNuevo)
+                    return;
+                dataListado.DataSource = MUsuario.CedulaUnica(this.txtCiTrabajador.Text);
+
+                if (dataListado.Rows.Count != 0)
+                {
+                    MessageBox.Show("Ya el Trabajador C.I: " + this.txtCiTrabajador.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtCiTrabajador.Text = string.Empty;
+                    this.txtCiTrabajador.Focus();
+                }
+
+                Mostrar();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la Conexion de la BD", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void txtCiTrabajador_Leave(object sender, EventArgs e)
         {
-            if (!IsNuevo)
-                return;
-            dataListado.DataSource = MUsuario.CedulaUnica(this.txtCiTrabajador.Text);
-
-            if (dataListado.Rows.Count != 0)
-            {
-                MessageBox.Show("Ya el Trabajador C.I: " + this.txtCiTrabajador.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtCiTrabajador.Text = string.Empty;
-                this.txtCiTrabajador.Focus();
-            }
-
-            Mostrar();
+            CedulaUnica();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
