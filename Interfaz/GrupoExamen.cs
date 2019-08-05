@@ -62,7 +62,7 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txt2.Focus();
+            this.txtNombre.Focus();
             ID = 0;
         }
 
@@ -82,7 +82,7 @@ namespace Interfaz
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar();
-            this.txt2.Focus();
+            this.txtNombre.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace Interfaz
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
-            this.txt2.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
 
         }
 
@@ -177,12 +177,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MGrupoExamen.Insertar(this.txt2.Text);
+                    Rpta = MGrupoExamen.Insertar(this.txtNombre.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MGrupoExamen.Editar(ID, this.txt2.Text);
+                    Rpta = MGrupoExamen.Editar(ID, this.txtNombre.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -234,10 +234,10 @@ namespace Interfaz
         private bool validar()
         {
             bool error = true;
-            if (txt2.Text == "")
+            if (txtNombre.Text == "")
             {
                 error = false;
-                errorProvider1.SetError(txt2, "Agrega el CI del trabajador");
+                errorProvider1.SetError(txtNombre, "Agrega el CI del trabajador");
             }
             return error;
         }
@@ -260,12 +260,12 @@ namespace Interfaz
 
         private void Habilitar()
         {
-            this.txt2.Enabled = true;
+            this.txtNombre.Enabled = true;
         }
 
         private void Deshabilitar()
         {
-            this.txt2.Enabled = false;
+            this.txtNombre.Enabled = false;
         }
 
         private void Botones()
@@ -290,7 +290,7 @@ namespace Interfaz
 
         private void Limpiar()
         {
-            this.txt2.Text = string.Empty;
+            this.txtNombre.Text = string.Empty;
             ID = 0;
         }
 
@@ -310,10 +310,10 @@ namespace Interfaz
 
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(txt2, "");
+            errorProvider1.SetError(txtNombre, "");
             if (valid.soloLetras(e))
             {
-                errorProvider1.SetError(txt2, "En este campo solo se pueden ingresar letras");
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
             }
         }
 

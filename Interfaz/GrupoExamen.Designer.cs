@@ -42,7 +42,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txt2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -207,7 +207,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.txt2);
+            this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnNuevo);
             this.panel2.Controls.Add(this.btnEditar);
@@ -219,17 +219,17 @@
             this.panel2.Size = new System.Drawing.Size(317, 609);
             this.panel2.TabIndex = 0;
             // 
-            // txt2
+            // txtNombre
             // 
-            this.txt2.BackColor = System.Drawing.SystemColors.Control;
-            this.txt2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt2.Location = new System.Drawing.Point(41, 124);
-            this.txt2.MaxLength = 100;
-            this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(257, 26);
-            this.txt2.TabIndex = 82;
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNombre.Location = new System.Drawing.Point(41, 124);
+            this.txtNombre.MaxLength = 100;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.TabIndex = 82;
             // 
             // label4
             // 
@@ -354,7 +354,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txt2;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
     }
 }
