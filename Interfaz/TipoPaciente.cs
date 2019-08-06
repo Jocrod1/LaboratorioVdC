@@ -333,7 +333,6 @@ namespace Interfaz
             this.txtNoCopias.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nocopia"].Value);
             this.txtTipoPago.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipopago"].Value);
 
-            this.tabControl1.SelectedIndex = 1; //Esto es para que al darle doble click, lleve a la tab de "Mantenimiento"
        
         }
 
