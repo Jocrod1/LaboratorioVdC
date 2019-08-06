@@ -231,7 +231,7 @@ namespace Datos
 
                 //parametro lab referencia
                 SqlParameter Parametro_Lab_Referencia = new SqlParameter();
-                Parametro_Lab_Referencia.ParameterName = "@LabRef";
+                Parametro_Lab_Referencia.ParameterName = "@IDLabRef";
                 Parametro_Lab_Referencia.SqlDbType = SqlDbType.Int;
                 Parametro_Lab_Referencia.Value = Examen.ID_Lab_Referencia;
                 SqlComando.Parameters.Add(Parametro_Lab_Referencia);

@@ -60,6 +60,8 @@ namespace Metodos
         {
             DExamen Objeto = new DExamen();
             return Objeto.Mostrar(TextoBuscar);
+
+
         }
 
 

@@ -176,6 +176,9 @@ namespace Interfaz
                 }
                 else
                 {
+
+                    
+
                     //Vamos a modificar un Paciente
                     Rpta = MTurno.Editar(ID, this.txtNombre.Text, TimeSpan.Parse(dtComienzo.Text), TimeSpan.Parse(dtFinal.Text));
                 }

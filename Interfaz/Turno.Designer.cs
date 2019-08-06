@@ -34,23 +34,23 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtFinal = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtComienzo = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtComienzo = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtFinal = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -119,25 +119,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(745, 107);
             this.panel3.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dtFinal);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dtComienzo);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.txtNombre);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btnNuevo);
-            this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.btnGuardar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(745, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(313, 604);
-            this.panel2.TabIndex = 0;
             // 
             // label3
             // 
@@ -222,6 +203,96 @@
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dtFinal);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dtComienzo);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtNombre);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnNuevo);
+            this.panel2.Controls.Add(this.btnEditar);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.btnGuardar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(745, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(313, 604);
+            this.panel2.TabIndex = 0;
+            // 
+            // dtFinal
+            // 
+            this.dtFinal.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dtFinal.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtFinal.Location = new System.Drawing.Point(35, 260);
+            this.dtFinal.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtFinal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtFinal.Name = "dtFinal";
+            this.dtFinal.ShowUpDown = true;
+            this.dtFinal.Size = new System.Drawing.Size(257, 33);
+            this.dtFinal.TabIndex = 77;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label2.Location = new System.Drawing.Point(32, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 25);
+            this.label2.TabIndex = 78;
+            this.label2.Text = "Final:";
+            // 
+            // dtComienzo
+            // 
+            this.dtComienzo.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dtComienzo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtComienzo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtComienzo.Location = new System.Drawing.Point(33, 188);
+            this.dtComienzo.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtComienzo.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtComienzo.Name = "dtComienzo";
+            this.dtComienzo.ShowUpDown = true;
+            this.dtComienzo.Size = new System.Drawing.Size(257, 33);
+            this.dtComienzo.TabIndex = 75;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label7.Location = new System.Drawing.Point(30, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 25);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "Comienzo:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNombre.Location = new System.Drawing.Point(32, 123);
+            this.txtNombre.MaxLength = 100;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.TabIndex = 73;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(28, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Nombre:";
+            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
@@ -289,75 +360,6 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNombre.Location = new System.Drawing.Point(32, 123);
-            this.txtNombre.MaxLength = 100;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 26);
-            this.txtNombre.TabIndex = 73;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(28, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Nombre:";
-            // 
-            // dtComienzo
-            // 
-            this.dtComienzo.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dtComienzo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtComienzo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtComienzo.Location = new System.Drawing.Point(33, 188);
-            this.dtComienzo.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtComienzo.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtComienzo.Name = "dtComienzo";
-            this.dtComienzo.Size = new System.Drawing.Size(257, 33);
-            this.dtComienzo.TabIndex = 75;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label7.Location = new System.Drawing.Point(30, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 25);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "Comienzo:";
-            // 
-            // dtFinal
-            // 
-            this.dtFinal.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dtFinal.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtFinal.Location = new System.Drawing.Point(35, 260);
-            this.dtFinal.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtFinal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtFinal.Name = "dtFinal";
-            this.dtFinal.Size = new System.Drawing.Size(257, 33);
-            this.dtFinal.TabIndex = 77;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label2.Location = new System.Drawing.Point(32, 232);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 25);
-            this.label2.TabIndex = 78;
-            this.label2.Text = "Final:";
             // 
             // Turno
             // 
