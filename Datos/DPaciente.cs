@@ -78,7 +78,7 @@ namespace Datos
 
         }
 
-        public DPaciente(int IdPaciente, string Nombre, int Edad, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion, string TextoBuscar)
+        public DPaciente(int IdPaciente, string Nombre, int Edad, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion)
         {
             this.IdPaciente = IdPaciente;
             this.Nombre = Nombre;

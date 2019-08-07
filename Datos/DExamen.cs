@@ -32,30 +32,30 @@ namespace Datos
             get { return _Unidades; }
             set { _Unidades = value; }
         }
-        private float _Valor_Hombre;
+        private double _Valor_Hombre;
 
-        public float Valor_Hombre
+        public double Valor_Hombre
         {
             get { return _Valor_Hombre; }
             set { _Valor_Hombre = value; }
         }
-        private float _Valor_Mujer;
+        private double _Valor_Mujer;
 
-        public float Valor_Mujer
+        public double Valor_Mujer
         {
             get { return _Valor_Mujer; }
             set { _Valor_Mujer = value; }
         }
-        private float _Precio1;
+        private double _Precio1;
 
-        public float Precio1
+        public double Precio1
         {
             get { return _Precio1; }
             set { _Precio1 = value; }
         }
-        private float _Precio2;
+        private double _Precio2;
 
-        public float Precio2
+        public double Precio2
         {
             get { return _Precio2; }
             set { _Precio2 = value; }
@@ -465,24 +465,39 @@ namespace Datos
 
                 LeerFilas = SqlComando.ExecuteReader();
 
+                int ID_ = LeerFilas.GetInt32(0);
+                string Nombre_ = LeerFilas.GetString(1);
+                string Unidades_ = LeerFilas.GetString(2);
+                double Valor_Hombre_ = LeerFilas.GetDouble(3);
+                double Valor_Mujer_ = LeerFilas.GetDouble(4);
+                double Precio1_ = LeerFilas.GetDouble(5);
+                double Precio2_ = LeerFilas.GetDouble(6);
+                DateTime Plazo_Entrega_ = LeerFilas.GetDateTime(7);
+                string Observacion_ = LeerFilas.GetString(8);
+                int ID_Grupo_Examen_ = LeerFilas.GetInt32(9);
+                int Titulo_ = LeerFilas.GetInt16(10);
+                int ID_Lab_Referencia_ = LeerFilas.GetInt32(11);
+                int Precio_Referencia_ = LeerFilas.GetInt32(12);
+
                 while (LeerFilas.Read())
                 {
                     ListaGenerica.Add(new DExamen
                     {
-                        ID = LeerFilas.GetInt32(0),
-                        Nombre = LeerFilas.GetString(1),
-                        Unidades = LeerFilas.GetString(2),
-                        Valor_Hombre = LeerFilas.GetFloat(3),
-                        Valor_Mujer = LeerFilas.GetFloat(4),
-                        Precio1 = LeerFilas.GetFloat(5),
-                        Precio2 = LeerFilas.GetFloat(6),
-                        Plazo_Entrega = LeerFilas.GetDateTime(7),
-                        Observacion = LeerFilas.GetString(8),
-                        ID_Grupo_Examen = LeerFilas.GetInt32(9),
-                        Titulo = LeerFilas.GetInt16(10),
-                        ID_Lab_Referencia = LeerFilas.GetInt32(11),
-                        Precio_Referencia = LeerFilas.GetInt32(12)
+                    ID = ID_,
+                    Nombre = Nombre_,
+                    Unidades = Unidades_,
+                    Valor_Hombre = Valor_Hombre_,
+                    Valor_Mujer = Valor_Mujer_,
+                    Precio1 = Precio1_,
+                    Precio2 = Precio2_,
+                    Plazo_Entrega = Plazo_Entrega_,
+                    Observacion = Observacion_,
+                    ID_Grupo_Examen = ID_Grupo_Examen_,
+                    Titulo = Titulo_,
+                    ID_Lab_Referencia = ID_Lab_Referencia_,
+                    Precio_Referencia = Precio_Referencia_
                     });
+
                 }
                 LeerFilas.Close();
                 SqlConectar.Close();
