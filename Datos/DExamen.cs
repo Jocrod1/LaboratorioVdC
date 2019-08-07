@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Datos
 {
@@ -32,30 +32,30 @@ namespace Datos
             get { return _Unidades; }
             set { _Unidades = value; }
         }
-        private double _Valor_Hombre;
+        private float _Valor_Hombre;
 
-        public double Valor_Hombre
+        public float Valor_Hombre
         {
             get { return _Valor_Hombre; }
             set { _Valor_Hombre = value; }
         }
-        private double _Valor_Mujer;
+        private float _Valor_Mujer;
 
-        public double Valor_Mujer
+        public float Valor_Mujer
         {
             get { return _Valor_Mujer; }
             set { _Valor_Mujer = value; }
         }
-        private double _Precio1;
+        private float _Precio1;
 
-        public double Precio1
+        public float Precio1
         {
             get { return _Precio1; }
             set { _Precio1 = value; }
         }
-        private double _Precio2;
+        private float _Precio2;
 
-        public double Precio2
+        public float Precio2
         {
             get { return _Precio2; }
             set { _Precio2 = value; }
@@ -103,14 +103,12 @@ namespace Datos
             set { _Precio_Referencia = value; }
         }
 
-
-
         public DExamen()
         {
 
         }
 
-        public DExamen(int iD, string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
+        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
         {
             ID = iD;
             Nombre = nombre;
@@ -481,9 +479,9 @@ namespace Datos
                         Plazo_Entrega = LeerFilas.GetDateTime(7),
                         Observacion = LeerFilas.GetString(8),
                         ID_Grupo_Examen = LeerFilas.GetInt32(9),
-                        Titulo = LeerFilas.GetInt32(10),
+                        Titulo = LeerFilas.GetInt16(10),
                         ID_Lab_Referencia = LeerFilas.GetInt32(11),
-                        Precio_Referencia = LeerFilas.GetInt32(12),
+                        Precio_Referencia = LeerFilas.GetInt32(12)
                     });
                 }
                 LeerFilas.Close();
@@ -498,5 +496,69 @@ namespace Datos
 
         }
 
+        //combobox
+        public string CaptarGrupoExamen(string nombre)
+        {
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_grupoexamen";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", nombre);
+
+                SqlConectar.Open();
+                LeerFilas = SqlComando.ExecuteReader();
+
+                string resultado = null;
+
+                while (LeerFilas.Read())
+                {
+                    resultado = LeerFilas[0].ToString();
+                };
+                SqlConectar.Close();
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public string CaptarLabRef(string nombre)
+        {
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_labref";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", nombre);
+
+                SqlConectar.Open();
+                LeerFilas = SqlComando.ExecuteReader();
+
+                string resultado = null;
+
+                while (LeerFilas.Read())
+                {
+                    resultado = LeerFilas[0].ToString();
+                };
+                SqlConectar.Close();
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

@@ -569,11 +569,5 @@ namespace Interfaz
             //en construccion(?)
         }
 
-
-
-
-        
-
-        
     }
 }

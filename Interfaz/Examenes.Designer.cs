@@ -29,21 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Examenes));
-            this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error2 = new System.Windows.Forms.ErrorProvider(this.components);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.error3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error4 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error5 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error7 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error8 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error9 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.error10 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error11 = new System.Windows.Forms.ErrorProvider(this.components);
             this.error12 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dataListado = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtPlazoEntrega = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
@@ -60,7 +52,6 @@
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtLabRef = new System.Windows.Forms.TextBox();
             this.txtPrecioRef = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbIDGrupoExamen = new System.Windows.Forms.ComboBox();
@@ -80,47 +71,24 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error2)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataListado = new System.Windows.Forms.DataGridView();
+            this.txtLabRef = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.error3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.SuspendLayout();
-            // 
-            // error1
-            // 
-            this.error1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error1.ContainerControl = this;
-            // 
-            // error2
-            // 
-            this.error2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error2.ContainerControl = this;
             // 
             // error3
             // 
             this.error3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
             this.error3.ContainerControl = this;
-            // 
-            // error4
-            // 
-            this.error4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error4.ContainerControl = this;
-            // 
-            // error5
-            // 
-            this.error5.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error5.ContainerControl = this;
             // 
             // error6
             // 
@@ -132,21 +100,6 @@
             this.error7.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
             this.error7.ContainerControl = this;
             // 
-            // error8
-            // 
-            this.error8.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error8.ContainerControl = this;
-            // 
-            // error9
-            // 
-            this.error9.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error9.ContainerControl = this;
-            // 
-            // error10
-            // 
-            this.error10.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.error10.ContainerControl = this;
-            // 
             // error11
             // 
             this.error11.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
@@ -157,38 +110,10 @@
             this.error12.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
             this.error12.ContainerControl = this;
             // 
-            // dataListado
-            // 
-            this.dataListado.AllowUserToAddRows = false;
-            this.dataListado.AllowUserToDeleteRows = false;
-            this.dataListado.AllowUserToOrderColumns = true;
-            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataListado.Location = new System.Drawing.Point(0, 0);
-            this.dataListado.Name = "dataListado";
-            this.dataListado.ReadOnly = true;
-            this.dataListado.RowHeadersWidth = 51;
-            this.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataListado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(652, 676);
-            this.dataListado.TabIndex = 39;
-            this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtLabRef);
             this.panel2.Controls.Add(this.dtPlazoEntrega);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.txtNombre);
@@ -204,7 +129,6 @@
             this.panel2.Controls.Add(this.txtTitulo);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtLabRef);
             this.panel2.Controls.Add(this.txtPrecioRef);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cbIDGrupoExamen);
@@ -276,7 +200,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(322, 512);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 25);
+            this.label13.Size = new System.Drawing.Size(133, 25);
             this.label13.TabIndex = 76;
             this.label13.Text = "Observaciones:";
             // 
@@ -287,7 +211,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(25, 348);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 25);
+            this.label5.Size = new System.Drawing.Size(174, 25);
             this.label5.TabIndex = 74;
             this.label5.Text = "Valores Normales M:";
             // 
@@ -332,7 +256,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(25, 266);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.Size = new System.Drawing.Size(171, 25);
             this.label1.TabIndex = 68;
             this.label1.Text = "Valores Normales H:";
             // 
@@ -343,7 +267,7 @@
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
             this.label9.Location = new System.Drawing.Point(25, 430);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 25);
+            this.label9.Size = new System.Drawing.Size(77, 25);
             this.label9.TabIndex = 65;
             this.label9.Text = "Precio 1:";
             // 
@@ -393,18 +317,6 @@
             this.label6.TabIndex = 61;
             this.label6.Text = "Lab. Referencia:";
             // 
-            // txtLabRef
-            // 
-            this.txtLabRef.BackColor = System.Drawing.SystemColors.Control;
-            this.txtLabRef.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLabRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLabRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLabRef.Location = new System.Drawing.Point(323, 376);
-            this.txtLabRef.MaxLength = 3;
-            this.txtLabRef.Name = "txtLabRef";
-            this.txtLabRef.Size = new System.Drawing.Size(257, 26);
-            this.txtLabRef.TabIndex = 59;
-            // 
             // txtPrecioRef
             // 
             this.txtPrecioRef.BackColor = System.Drawing.SystemColors.Control;
@@ -435,10 +347,6 @@
             this.cbIDGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbIDGrupoExamen.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIDGrupoExamen.FormattingEnabled = true;
-            this.cbIDGrupoExamen.Items.AddRange(new object[] {
-            "5",
-            "3",
-            "8"});
             this.cbIDGrupoExamen.Location = new System.Drawing.Point(323, 210);
             this.cbIDGrupoExamen.Name = "cbIDGrupoExamen";
             this.cbIDGrupoExamen.Size = new System.Drawing.Size(257, 33);
@@ -592,7 +500,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(67, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar:";
             // 
@@ -668,54 +576,88 @@
             this.txtBuscar.TabIndex = 44;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataListado);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 100);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(652, 576);
+            this.panel1.TabIndex = 41;
+            // 
+            // dataListado
+            // 
+            this.dataListado.AllowUserToAddRows = false;
+            this.dataListado.AllowUserToDeleteRows = false;
+            this.dataListado.AllowUserToOrderColumns = true;
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataListado.Location = new System.Drawing.Point(0, 0);
+            this.dataListado.Name = "dataListado";
+            this.dataListado.ReadOnly = true;
+            this.dataListado.RowHeadersWidth = 51;
+            this.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataListado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataListado.Size = new System.Drawing.Size(652, 576);
+            this.dataListado.TabIndex = 40;
+            // 
+            // txtLabRef
+            // 
+            this.txtLabRef.BackColor = System.Drawing.SystemColors.Control;
+            this.txtLabRef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtLabRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtLabRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLabRef.FormattingEnabled = true;
+            this.txtLabRef.Location = new System.Drawing.Point(323, 377);
+            this.txtLabRef.Name = "txtLabRef";
+            this.txtLabRef.Size = new System.Drawing.Size(257, 33);
+            this.txtLabRef.TabIndex = 81;
+            // 
             // Examenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 676);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.dataListado);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Examenes";
             this.Text = "Examenes";
             this.Load += new System.EventHandler(this.Examenes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ErrorProvider error1;
-        private System.Windows.Forms.ErrorProvider error2;
         private System.Windows.Forms.ErrorProvider error3;
-        private System.Windows.Forms.ErrorProvider error4;
-        private System.Windows.Forms.ErrorProvider error5;
         private System.Windows.Forms.ErrorProvider error6;
         private System.Windows.Forms.ErrorProvider error7;
-        private System.Windows.Forms.ErrorProvider error8;
-        private System.Windows.Forms.ErrorProvider error9;
-        private System.Windows.Forms.ErrorProvider error10;
         private System.Windows.Forms.ErrorProvider error11;
         private System.Windows.Forms.ErrorProvider error12;
-        private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbIDGrupoExamen;
         private System.Windows.Forms.Button btnNuevo;
@@ -733,7 +675,6 @@
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtLabRef;
         private System.Windows.Forms.TextBox txtPrecioRef;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
@@ -752,5 +693,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DateTimePicker dtPlazoEntrega;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataListado;
+        private System.Windows.Forms.ComboBox txtLabRef;
     }
 }

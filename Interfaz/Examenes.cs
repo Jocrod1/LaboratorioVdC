@@ -37,10 +37,21 @@ namespace Interfaz
             this.Botones();
 
 
+            //combobox
+            cbIDGrupoExamen.DataSource=  MGrupoExamen.Mostrar("");
+            cbIDGrupoExamen.DisplayMember = "Nombre";
+            cbIDGrupoExamen.ValueMember = "ID";
+            cbIDGrupoExamen.SelectedIndex = -1;
+
+            txtLabRef.DataSource = MLabRef.Mostrar("");
+            txtLabRef.DisplayMember = "Nombre";
+            txtLabRef.ValueMember = "ID";
+            txtLabRef.SelectedIndex = -1;
+            //
+
 
 
             //todo esto es pa ponerle colorcitos al datagridview
-
             dataListado.BorderStyle = BorderStyle.None;
             dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
             dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -236,15 +247,18 @@ namespace Interfaz
             {
                 string Rpta = "";
 
+                string IDGrupoExamen = MExamen.CaptarGrupoExamen(cbIDGrupoExamen.Text);
+                string IDLabRef = MExamen.CaptarLabRef(txtLabRef.Text);
+
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MExamen.Insertar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(cbIDGrupoExamen.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(txtLabRef.Text), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MExamen.Insertar(this.txtNombre.Text, this.txtUnidades.Text, float.Parse(this.txtValNorHombres.Text), float.Parse(this.txtValNorMujeres.Text), float.Parse(this.txtPrecio1.Text), float.Parse(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(cbIDGrupoExamen.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(txtLabRef.Text), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, float.Parse(this.txtValNorHombres.Text), float.Parse(this.txtValNorMujeres.Text), float.Parse(this.txtPrecio1.Text), float.Parse(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -310,83 +324,9 @@ namespace Interfaz
         {
 
         }
-        //Validación de campos
-        private bool verificacion()
-        {
-            bool error = true;
-            
-            if (txtUnidades.Text == "")
-            {
-                error = false;
-                error2.SetError(txtUnidades, "Llena este campo");
-            }
-            if (txtValNorHombres.Text == "")
-            {
-                error = false;
-                error3.SetError(txtValNorHombres, "Valores normales de hombres");
-            }
-            if (txtValNorMujeres.Text == "")
-            {
-                error = false;
-                error4.SetError(txtValNorMujeres, "Valores normales de mujeres");
-            }
-            if (txtPrecio1.Text == "")
-            {
-                error = false;
-                error5.SetError(txtPrecio1, "Agrega un valor");
-            }
-            if (txtPrecio2.Text == "")
-            {
-                error = false;
-                error6.SetError(txtPrecio2, "Segundo monto");
-            }
-            if (dtPlazoEntrega.Text == "")
-            {
-                error = false;
-                error7.SetError(dtPlazoEntrega, "Plazo de entrega");
-            }
-            if (richObservaciones.Text == "")
-            {
-                error = false;
-                error8.SetError(richObservaciones, "Escribe las observaciones pertinentes");
-            }
-            if (cbIDGrupoExamen.Text == "")
-            {
-                error = false;
-                error9.SetError(cbIDGrupoExamen, "Selecciona un grupo");
-            }
-            if (txtTitulo.Text == "")
-            {
-                error = false;
-                error10.SetError(txtTitulo, "Título");
-            }
-            if (txtLabRef.Text == "")
-            {
-                error = false;
-                error11.SetError(txtLabRef, "Agrega el laboratorio de referencia");
-            }
-            if (txtPrecioRef.Text == "")
-            {
-                error = false;
-                error12.SetError(txtPrecioRef, "Precio de referencia");
-            }
-            return error;
-        }
-        //Eliminación de los errores 
-        private void EliminarErrores()
-        {
-            error2.SetError(txtUnidades, "");
-            error3.SetError(txtValNorHombres, "");
-            error4.SetError(txtValNorMujeres, "");
-            error5.SetError(txtPrecio1, "");
-            error6.SetError(txtPrecio2, "");
-            error7.SetError(dtPlazoEntrega, "");
-            error8.SetError(richObservaciones, "");
-            error9.SetError(cbIDGrupoExamen, "");
-            error10.SetError(txtTitulo, "");
-            error11.SetError(txtLabRef, "");
-            error12.SetError(txtPrecioRef, "");
-        }
+
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 

@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using System.Windows.Forms;
 
 namespace Metodos
 {
     public class MExamen: DExamen
     {
-        public static string Insertar(int ID, string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
+        public static string Insertar(string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
         {
             DExamen Objeto = new DExamen();
-            Objeto.ID = ID;
             Objeto.Nombre = nombre;
             Objeto.Unidades = unidades;
             Objeto.Valor_Hombre = valor_Hombre;
@@ -29,7 +29,7 @@ namespace Metodos
         }
 
 
-        public static string Editar(int ID, string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
+        public static string Editar(int ID, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
         {
             DExamen Objeto = new DExamen();
             Objeto.ID = ID;
@@ -60,10 +60,21 @@ namespace Metodos
         {
             DExamen Objeto = new DExamen();
             return Objeto.Mostrar(TextoBuscar);
-
-
         }
 
 
+        //grupo examen
+        public new static string CaptarGrupoExamen(string nombre)
+        {
+            DExamen Objeto = new DExamen();
+            return Objeto.CaptarGrupoExamen(nombre);
+        }
+
+        //lab ref
+        public new static string CaptarLabRef(string nombre)
+        {
+            DExamen Objeto = new DExamen();
+            return Objeto.CaptarLabRef(nombre);
+        }
     }
 }
