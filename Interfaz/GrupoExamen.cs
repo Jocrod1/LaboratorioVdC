@@ -326,11 +326,13 @@ namespace Interfaz
             }
         }
 
+
+        //validaciones
+
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Buscar();
         }
 
-       
     }
 }
