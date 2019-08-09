@@ -76,7 +76,7 @@ namespace Interfaz
         //Editar
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
+
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -84,6 +84,7 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
+            this.Deshabilitar();
             ID = 0;
         }
 
@@ -99,8 +100,11 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.Habilitar();
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            Editar();
+            this.txtNombre.Focus();
         }
 
 
@@ -255,11 +259,15 @@ namespace Interfaz
         private void Habilitar()
         {
             this.txtNombre.Enabled = true;
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(317, PanelIngreso.Size.Height);
         }
 
         private void Deshabilitar()
         {
             this.txtNombre.Enabled = false;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
+            btnNuevo.Visible = true;
         }
 
         private void Botones()
