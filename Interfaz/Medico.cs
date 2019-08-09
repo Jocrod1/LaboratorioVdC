@@ -35,70 +35,36 @@ namespace Interfaz
             this.Deshabilitar();
             //Establece los botones
             this.Botones();
+
+
+
+            //todo esto es pa ponerle colorcitos al datagridview
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
+
+
         }
  
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                //La variable que almacena si se insertó
-                //o se modificó la tabla
-                string Rpta = "";
-                if (this.txtNombre.Text == string.Empty || this.txtCiMedico.Text== string.Empty || this.txtClinica.Text==string.Empty)
-                {
-                    MensajeError("Falta ingresar algunos datos, serán remarcados");
-                }
-                else
-                {
-                    if (this.IsNuevo)
-                    {
-                        //Vamos a insertar un Medico
-                        Rpta = MMedico.Insertar(ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
-
-                    }
-                    else
-                    {
-                        //Vamos a modificar un Medico
-                        Rpta = MMedico.Editar(ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
-                        ID = 0;
-                        
-                    }
-                    //Si la respuesta fue OK, fue porque se modificó
-                    //o insertó el medico
-                    //de forma correcta
-                    if (Rpta.Equals("OK"))
-                    {
-                        if (this.IsNuevo)
-                        {
-                            this.MensajeOK("Se insertó de forma correcta el registro");
-                        }
-                        else
-                        {
-                            this.MensajeOK("Se actualizó de forma correcta el registro");
-                        }
-
-                    }
-                    else
-                    {
-                        //Mostramos el mensaje de error
-                        this.MensajeError(Rpta);
-                    }
-                    this.IsNuevo = false;
-                    this.IsEditar = false;
-                    this.Botones();
-                    this.Limpiar();
-                    this.Mostrar();
-                    this.txtCiMedico.Text = "";
-                    this.ID = 0;
-                }
-            }
-
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
+            
+                Guardar();
+            
         }
 
         //Para mostrar mensaje de confirmación
@@ -141,7 +107,7 @@ namespace Interfaz
             this.txtCiMedico.Enabled = true;
             this.txtNombre.Enabled = true;
             this.txtClinica.Enabled = true;
-            this.txtCiMedico.Focus();
+            this.txtNombre.Focus();
         }
 
         private void Deshabilitar()
@@ -152,7 +118,70 @@ namespace Interfaz
         }
 
 
+        private void Guardar()
+        {
+            try
+            {
+                string Rpta = "";
 
+                if (this.IsNuevo)
+                {
+
+                    Rpta = MMedico.Insertar(this.ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+                }
+                else
+                {
+                    //Vamos a modificar un Paciente
+                    Rpta = MMedico.Editar(this.ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+                }
+                //Si la respuesta fue OK, fue porque se modificó
+                //o insertó el Trabajador
+                //de forma correcta
+                if (Rpta.Equals("OK"))
+                {
+                    if (this.IsNuevo)
+                    {
+                        this.MensajeOK("Se insertó de forma correcta el registro");
+                    }
+                    else
+                    {
+                        this.MensajeOK("Se actualizó de forma correcta el registro");
+                    }
+
+                }
+                else
+                {
+                    //Mostramos el mensaje de error
+                    this.MensajeError(Rpta);
+                }
+                this.IsNuevo = false;
+                this.IsEditar = false;
+                this.Botones();
+                this.Limpiar();
+                this.Mostrar();
+                this.Deshabilitar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+        private void Editar()
+        {
+            //Si no ha seleccionado un producto no puede modificar
+            if (!ID.Equals(0))
+            {
+                this.IsEditar = true;
+                this.Botones();
+                this.txtCiMedico.ReadOnly = true;
+            }
+            else
+            {
+                this.MensajeError("Debe de buscar un registro para Modificar");
+            }
+        }
 
 
         void AnularItems()
@@ -314,17 +343,7 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (!this.txtCiMedico.Text.Equals(""))
-            {
-                this.IsEditar = true;
-                this.Botones();
-                this.Habilitar();
-                this.txtCiMedico.ReadOnly = true;
-            }
-            else
-            {
-                this.MensajeError("Debe de seleccionar primero el registro a editar");
-            }
+            Editar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -394,5 +413,8 @@ namespace Interfaz
                 MessageBox.Show("Error en la Conexion de la BD", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+      
     }
 }
