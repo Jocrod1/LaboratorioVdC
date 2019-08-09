@@ -146,6 +146,100 @@ namespace Interfaz
 
 
 
+
+
+
+        private void Guardar()
+        {
+
+
+
+            string EmisionResp = "";
+
+            if (rbEmisionSi.Checked)
+            {
+                EmisionResp = "Si";
+            }
+            else if (rbEmisionNo.Checked)
+            {
+                EmisionResp = "No";
+            }
+
+
+
+            try
+            {
+
+
+
+                string Rpta = "";
+
+                if (this.IsNuevo)
+                {
+
+
+
+                Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                }
+                else
+                {
+                    //Vamos a modificar un Paciente
+                    Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                }
+                //Si la respuesta fue OK, fue porque se modificó
+                //o insertó el Trabajador
+                //de forma correcta
+                if (Rpta.Equals("OK"))
+                {
+                    if (this.IsNuevo)
+                    {
+                        this.MensajeOK("Se insertó de forma correcta el registro");
+                    }
+                    else
+                    {
+                        this.MensajeOK("Se actualizó de forma correcta el registro");
+                    }
+
+                }
+                else
+                {
+                    //Mostramos el mensaje de error
+                    this.MensajeError(Rpta);
+                }
+                this.IsNuevo = false;
+                this.IsEditar = false;
+                this.Botones();
+                this.Limpiar();
+                this.Mostrar();
+                this.Deshabilitar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+
+
+        private void Editar()
+        {
+            //Si no ha seleccionado un producto no puede modificar
+            if (!ID.Equals(0))
+            {
+                this.IsEditar = true;
+                this.Botones();
+                this.txtNombre.ReadOnly = true;
+            }
+            else
+            {
+                this.MensajeError("Debe de buscar un registro para Modificar");
+            }
+        }
+
+
+
+
         void EliminarItems()
         {
 
@@ -274,6 +368,27 @@ namespace Interfaz
             this.Deshabilitar();
             //Establece los botones
             this.Botones();
+
+
+
+            //todo esto es pa ponerle colorcitos al datagridview
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
         }
 
 
@@ -294,17 +409,7 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (!this.txtNombre.Text.Equals(""))
-            {
-                this.IsEditar = true;
-                this.Botones();
-                this.Habilitar();
-                this.txtNombre.ReadOnly = true;
-            }
-            else
-            {
-                this.MensajeError("Debe de seleccionar primero el registro a editar");
-            }
+            Editar();
         }
 
 
@@ -340,14 +445,7 @@ namespace Interfaz
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 1)
-            {
-                this.Mostrar();
-            }
-            else if (cbBuscar.SelectedIndex == 0)
-            {
-                this.MostrarNombre();
-            }
+
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
@@ -386,87 +484,32 @@ namespace Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            
+            Guardar();
+        }
 
-            try
+        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdPaciente"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Porcentaje"].Value);
+            this.cbTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoPrecio"].Value);
+            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
+            this.txtRIF.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["RIF"].Value);
+            this.txtNIT.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value);
+            this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contacto"].Value);
+
+
+            if ((Convert.ToString(this.dataListado.CurrentRow.Cells["EmisionRel"].Value)) == "Si")
             {
-            
-
-
-            if (rbEmisionNo.Checked)
-            {
-                RespuestaEmision = "No";
+                this.rbEmisionSi.Checked = true;
             }
-            else if (rbEmisionSi.Checked)
+            else if((Convert.ToString(this.dataListado.CurrentRow.Cells["EmisionRel"].Value)) == "No")
             {
-                RespuestaEmision = "Si";
-            }
-            else
-            {
-                RespuestaEmision = "Sin Seleccionar";
-            }
+                this.rbEmisionNo.Checked = true;
 
-
-
-                //La variable que almacena si se insertó
-                //o se modificó la tabla
-                string Rpta = "";
-                if (this.txtNombre.Text == string.Empty || RespuestaEmision == "Sin Seleccionar" || this.txtPorcentaje.Text == string.Empty || this.txtDireccion.Text == string.Empty || this.txtRIF.Text == string.Empty || this.txtNIT.Text == string.Empty || this.txtContacto.Text == string.Empty)
-                {
-                    MensajeError("Falta ingresar algunos datos, serán remarcados");
-                }
-                else
-                {
-                    if (this.IsNuevo)
-                    {
-                        //Vamos a insertar una empresa
-                        Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
-
-                    }
-                    else
-                    { 
-                        //Vamos a modificar una empresa
-                        Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
-                        ID = 0;
-                    }
-
-
-                    //Si la respuesta fue OK, fue porque se modificó
-                    //o insertó la empresa
-                    //de forma correcta
-                    if (Rpta.Equals("OK"))
-                    {
-                        if (this.IsNuevo)
-                        {
-                            this.MensajeOK("Se insertó de forma correcta el registro");
-                        }
-                        else
-                        {
-                            this.MensajeOK("Se actualizó de forma correcta el registro");
-                        }
-
-                    }
-                    else
-                    {
-                        //Mostramos el mensaje de error
-                        this.MensajeError(Rpta);
-                    }
-                    this.IsNuevo = false;
-                    this.IsEditar = false;
-                    this.Botones();
-                    this.Limpiar();
-                    this.Mostrar();
-                    this.txtNombre.Text = ""; 
-                    this.ID = 0;
-                }
             }
 
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
         }
 
 
