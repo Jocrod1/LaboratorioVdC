@@ -32,6 +32,7 @@ namespace Interfaz
             this.Mostrar();
             this.Deshabilitar();
             this.Botones();
+            cbBuscar.SelectedIndex = 0;
 
 
             //todo esto es pa ponerle colorcitos al datagridview
@@ -73,7 +74,7 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
+            this.Deshabilitar();
             ID = 0;
         }
 
@@ -97,11 +99,14 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.Habilitar();
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtCedula.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtColegio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Colegio_Bioanalista"].Value);
             this.txtCodigo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Colegio_Codigo"].Value);
+            Editar();
+            txtCedula.Focus();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -246,6 +251,8 @@ namespace Interfaz
             this.txtNombre.Enabled = true;
             this.txtColegio.Enabled = true;
             this.txtCodigo.Enabled = true;
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(317, PanelIngreso.Size.Height);
         }
 
         private void Deshabilitar()
@@ -254,6 +261,8 @@ namespace Interfaz
             this.txtNombre.Enabled = false;
             this.txtColegio.Enabled = false;
             this.txtCodigo.Enabled = false;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
+            btnNuevo.Visible = true;
         }
 
         private void Botones()
@@ -263,7 +272,6 @@ namespace Interfaz
                 this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
-                this.btnEditar.Enabled = false;
                 this.btnCancelar.Enabled = true;
             }
             else
@@ -271,7 +279,6 @@ namespace Interfaz
                 this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
-                this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
             }
         }
