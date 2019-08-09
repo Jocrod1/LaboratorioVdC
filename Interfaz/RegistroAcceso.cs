@@ -122,6 +122,7 @@ namespace Interfaz
         {
             MostrarTurno();
             txtCedulaTurno.Enabled = true;
+            txtCedulaTurno.Focus();
         }
 
         private void txtCedulaTurno_TextChanged(object sender, EventArgs e)
@@ -132,6 +133,7 @@ namespace Interfaz
         private void dtDesde_ValueChanged(object sender, EventArgs e)
         {
             MostrarFechas();
+            dtHasta.Focus();
         }
 
         private void dtHasta_ValueChanged(object sender, EventArgs e)
@@ -144,6 +146,22 @@ namespace Interfaz
             LimpiarTodo();
             Mostrar();
             cbBuscar.SelectedIndex = -1;
+        }
+
+        private void cbTop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbBuscar.SelectedIndex == 0)
+            {
+                Mostrar();
+            }
+            else if (cbBuscar.SelectedIndex == 1)
+            {
+                MostrarTurno();
+            }
+            else if (cbBuscar.SelectedIndex == 2)
+            {
+                MostrarFechas();
+            }
         }
     }
 }

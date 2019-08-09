@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroAcceso));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbBuscar = new System.Windows.Forms.ComboBox();
@@ -53,6 +53,7 @@
             this.panel_turno = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,8 +66,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel_fechas);
-            this.panel1.Controls.Add(this.panel_cedula);
             this.panel1.Controls.Add(this.panel_turno);
+            this.panel1.Controls.Add(this.panel_cedula);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.cbBuscar);
             this.panel1.Controls.Add(this.panel4);
@@ -121,6 +122,7 @@
             this.cbTop.Name = "cbTop";
             this.cbTop.Size = new System.Drawing.Size(122, 31);
             this.cbTop.TabIndex = 7;
+            this.cbTop.SelectedIndexChanged += new System.EventHandler(this.cbTop_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -187,7 +189,7 @@
             this.txtCedulaTurno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCedulaTurno.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedulaTurno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCedulaTurno.Location = new System.Drawing.Point(297, 4);
+            this.txtCedulaTurno.Location = new System.Drawing.Point(361, 3);
             this.txtCedulaTurno.Name = "txtCedulaTurno";
             this.txtCedulaTurno.Size = new System.Drawing.Size(269, 33);
             this.txtCedulaTurno.TabIndex = 4;
@@ -298,11 +300,12 @@
             // 
             // panel_turno
             // 
+            this.panel_turno.Controls.Add(this.label5);
             this.panel_turno.Controls.Add(this.cbTurno);
             this.panel_turno.Controls.Add(this.txtCedulaTurno);
-            this.panel_turno.Location = new System.Drawing.Point(143, 37);
+            this.panel_turno.Location = new System.Drawing.Point(144, 38);
             this.panel_turno.Name = "panel_turno";
-            this.panel_turno.Size = new System.Drawing.Size(583, 41);
+            this.panel_turno.Size = new System.Drawing.Size(643, 41);
             this.panel_turno.TabIndex = 3;
             this.panel_turno.Visible = false;
             // 
@@ -310,14 +313,14 @@
             // 
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -343,6 +346,17 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
+            this.label5.Location = new System.Drawing.Point(283, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 25);
+            this.label5.TabIndex = 69;
+            this.label5.Text = "Cedula:";
             // 
             // RegistroAcceso
             // 
@@ -398,5 +412,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label5;
     }
 }
