@@ -104,7 +104,8 @@ namespace Interfaz
             this.txtLabRef.Enabled = true;
             this.txtPrecioRef.Enabled = true;
             this.richObservaciones.Enabled = true;
-            
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(607, PanelIngreso.Size.Height);
         }
 
         private void Deshabilitar()
@@ -121,6 +122,8 @@ namespace Interfaz
             this.txtLabRef.Enabled = false;
             this.txtPrecioRef.Enabled = false;
             this.richObservaciones.Enabled = false;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
+            btnNuevo.Visible = true;
         }
 
 
@@ -131,7 +134,6 @@ namespace Interfaz
                 this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
-                this.btnEditar.Enabled = false;
                 this.btnCancelar.Enabled = true;
             }
             else
@@ -139,7 +141,6 @@ namespace Interfaz
                 this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
-                this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
             }
         }
@@ -377,6 +378,7 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
+            this.Deshabilitar();
             ID = 0;
         }
 
@@ -402,12 +404,12 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
+            
         }
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            this.Habilitar();
             //asignar los correspondientes :)
 
             //ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdPaciente"].Value);
@@ -418,7 +420,8 @@ namespace Interfaz
             //this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
             //this.dateTimePickerFUR.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value);
             //this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
-
+            Editar();
+            txtNombre.Focus()
 
         }
 

@@ -40,7 +40,7 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelIngreso = new System.Windows.Forms.Panel();
             this.txtCuentaContable = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,21 +54,20 @@
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.PanelIngreso.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.PanelIngreso);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -89,7 +88,7 @@
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
-            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -104,6 +103,8 @@
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
+            this.dataListado.RowHeadersVisible = false;
+            this.dataListado.RowHeadersWidth = 47;
             this.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataListado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -120,6 +121,7 @@
             this.panel3.Controls.Add(this.btnAnular);
             this.panel3.Controls.Add(this.btnImprimir);
             this.panel3.Controls.Add(this.txtBuscar);
+            this.panel3.Controls.Add(this.btnNuevo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -131,9 +133,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
-            this.label3.Location = new System.Drawing.Point(18, 14);
+            this.label3.Location = new System.Drawing.Point(18, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(80, 30);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar:";
             // 
@@ -160,9 +162,9 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
-            this.lblTotal.Location = new System.Drawing.Point(122, 68);
+            this.lblTotal.Location = new System.Drawing.Point(19, 73);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 20);
             this.lblTotal.TabIndex = 53;
             this.lblTotal.Text = "label5";
             // 
@@ -206,34 +208,32 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(23, 41);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(387, 29);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // panel2
+            // PanelIngreso
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.txtCuentaContable);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.cbEquivalencia);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtPrecio);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.txtNombre);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.txtPrecioEmpresa);
-            this.panel2.Controls.Add(this.txtTipo);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.btnNuevo);
-            this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.btnGuardar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(775, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(362, 660);
-            this.panel2.TabIndex = 0;
+            this.PanelIngreso.BackColor = System.Drawing.Color.White;
+            this.PanelIngreso.Controls.Add(this.txtCuentaContable);
+            this.PanelIngreso.Controls.Add(this.label13);
+            this.PanelIngreso.Controls.Add(this.label2);
+            this.PanelIngreso.Controls.Add(this.cbEquivalencia);
+            this.PanelIngreso.Controls.Add(this.label6);
+            this.PanelIngreso.Controls.Add(this.txtPrecio);
+            this.PanelIngreso.Controls.Add(this.label10);
+            this.PanelIngreso.Controls.Add(this.txtNombre);
+            this.PanelIngreso.Controls.Add(this.label11);
+            this.PanelIngreso.Controls.Add(this.txtPrecioEmpresa);
+            this.PanelIngreso.Controls.Add(this.txtTipo);
+            this.PanelIngreso.Controls.Add(this.label12);
+            this.PanelIngreso.Controls.Add(this.btnCancelar);
+            this.PanelIngreso.Controls.Add(this.btnGuardar);
+            this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelIngreso.Location = new System.Drawing.Point(775, 0);
+            this.PanelIngreso.Name = "PanelIngreso";
+            this.PanelIngreso.Size = new System.Drawing.Size(362, 660);
+            this.PanelIngreso.TabIndex = 0;
             // 
             // txtCuentaContable
             // 
@@ -244,7 +244,7 @@
             this.txtCuentaContable.Location = new System.Drawing.Point(58, 418);
             this.txtCuentaContable.MaxLength = 13;
             this.txtCuentaContable.Name = "txtCuentaContable";
-            this.txtCuentaContable.Size = new System.Drawing.Size(257, 26);
+            this.txtCuentaContable.Size = new System.Drawing.Size(257, 29);
             this.txtCuentaContable.TabIndex = 97;
             // 
             // label13
@@ -254,7 +254,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(58, 388);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(151, 25);
+            this.label13.Size = new System.Drawing.Size(175, 30);
             this.label13.TabIndex = 98;
             this.label13.Text = "Cuenta Contable:";
             // 
@@ -265,7 +265,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(58, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 25);
+            this.label2.Size = new System.Drawing.Size(94, 30);
             this.label2.TabIndex = 92;
             this.label2.Text = "Nombre:";
             // 
@@ -281,7 +281,7 @@
             "8"});
             this.cbEquivalencia.Location = new System.Drawing.Point(58, 167);
             this.cbEquivalencia.Name = "cbEquivalencia";
-            this.cbEquivalencia.Size = new System.Drawing.Size(257, 33);
+            this.cbEquivalencia.Size = new System.Drawing.Size(257, 38);
             this.cbEquivalencia.TabIndex = 89;
             // 
             // label6
@@ -291,7 +291,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(58, 266);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 25);
+            this.label6.Size = new System.Drawing.Size(160, 30);
             this.label6.TabIndex = 94;
             this.label6.Text = "Precio Empresa:";
             // 
@@ -304,7 +304,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(58, 235);
             this.txtPrecio.MaxLength = 100;
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(257, 26);
+            this.txtPrecio.Size = new System.Drawing.Size(257, 29);
             this.txtPrecio.TabIndex = 88;
             // 
             // label10
@@ -314,7 +314,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkOrange;
             this.label10.Location = new System.Drawing.Point(58, 205);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 25);
+            this.label10.Size = new System.Drawing.Size(75, 30);
             this.label10.TabIndex = 93;
             this.label10.Text = "Precio:";
             // 
@@ -327,7 +327,7 @@
             this.txtNombre.Location = new System.Drawing.Point(58, 106);
             this.txtNombre.MaxLength = 9;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.Size = new System.Drawing.Size(257, 29);
             this.txtNombre.TabIndex = 87;
             // 
             // label11
@@ -337,7 +337,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkOrange;
             this.label11.Location = new System.Drawing.Point(58, 137);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 25);
+            this.label11.Size = new System.Drawing.Size(133, 30);
             this.label11.TabIndex = 95;
             this.label11.Text = "Equivalencia:";
             // 
@@ -350,7 +350,7 @@
             this.txtPrecioEmpresa.Location = new System.Drawing.Point(58, 296);
             this.txtPrecioEmpresa.MaxLength = 3;
             this.txtPrecioEmpresa.Name = "txtPrecioEmpresa";
-            this.txtPrecioEmpresa.Size = new System.Drawing.Size(257, 26);
+            this.txtPrecioEmpresa.Size = new System.Drawing.Size(257, 29);
             this.txtPrecioEmpresa.TabIndex = 90;
             // 
             // txtTipo
@@ -362,7 +362,7 @@
             this.txtTipo.Location = new System.Drawing.Point(58, 357);
             this.txtTipo.MaxLength = 13;
             this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(257, 26);
+            this.txtTipo.Size = new System.Drawing.Size(257, 29);
             this.txtTipo.TabIndex = 91;
             // 
             // label12
@@ -372,12 +372,13 @@
             this.label12.ForeColor = System.Drawing.Color.DarkOrange;
             this.label12.Location = new System.Drawing.Point(58, 327);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 25);
+            this.label12.Size = new System.Drawing.Size(58, 30);
             this.label12.TabIndex = 96;
             this.label12.Text = "Tipo:";
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
             this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -385,30 +386,13 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(58, 41);
+            this.btnNuevo.Location = new System.Drawing.Point(734, 41);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(25, 25);
             this.btnNuevo.TabIndex = 83;
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(148, 41);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(25, 25);
-            this.btnEditar.TabIndex = 85;
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnCancelar
             // 
@@ -419,7 +403,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(193, 41);
+            this.btnCancelar.Location = new System.Drawing.Point(100, 40);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(25, 25);
             this.btnCancelar.TabIndex = 86;
@@ -436,7 +420,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(103, 40);
+            this.btnGuardar.Location = new System.Drawing.Point(58, 40);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(25, 25);
             this.btnGuardar.TabIndex = 84;
@@ -459,8 +443,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.PanelIngreso.ResumeLayout(false);
+            this.PanelIngreso.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -470,7 +454,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelIngreso;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEliminar;
@@ -479,7 +463,6 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtCuentaContable;
