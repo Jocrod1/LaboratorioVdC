@@ -19,6 +19,9 @@ namespace Interfaz
 
         private string RespuestaEmision;
 
+
+            
+
         LimitantesDeIngreso valid = new LimitantesDeIngreso();
 
 
@@ -114,6 +117,21 @@ namespace Interfaz
         }
 
 
+
+        private void Buscar()
+        {
+            if (cbBuscar.SelectedIndex == 0)
+            {
+                this.MostrarNombre();
+            }
+            else if (cbBuscar.SelectedIndex == 1)
+            {
+                this.Mostrar();
+            }
+        }     
+
+
+
         private void Habilitar()
         {
             this.txtNombre.ReadOnly = false;
@@ -153,17 +171,15 @@ namespace Interfaz
         {
 
 
-
-            string EmisionResp = "";
-
             if (rbEmisionSi.Checked)
             {
-                EmisionResp = "Si";
+                RespuestaEmision = "Si";
             }
             else if (rbEmisionNo.Checked)
             {
-                EmisionResp = "No";
+                RespuestaEmision = "No";
             }
+            
 
 
 
@@ -179,7 +195,7 @@ namespace Interfaz
 
 
 
-                Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                    Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
                 }
                 else
                 {
@@ -370,6 +386,7 @@ namespace Interfaz
             this.Botones();
 
 
+            this.cbBuscar.SelectedIndex = 0;
 
             //todo esto es pa ponerle colorcitos al datagridview
 
@@ -431,21 +448,11 @@ namespace Interfaz
             this.Habilitar();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (cbBuscar.SelectedIndex == 1)
-            {
-                this.Mostrar();
-            }
-            else if (cbBuscar.SelectedIndex == 0)
-            {
-                this.MostrarNombre();
-            }
-        }
+        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-
+            Buscar();
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
@@ -490,7 +497,7 @@ namespace Interfaz
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdPaciente"].Value);
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Porcentaje"].Value);
             this.cbTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoPrecio"].Value);
@@ -500,17 +507,17 @@ namespace Interfaz
             this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contacto"].Value);
 
 
-            if ((Convert.ToString(this.dataListado.CurrentRow.Cells["EmisionRel"].Value)) == "Si")
+            if ((Convert.ToString(this.dataListado.CurrentRow.Cells["Emision"].Value)) == "Si")
             {
                 this.rbEmisionSi.Checked = true;
             }
-            else if((Convert.ToString(this.dataListado.CurrentRow.Cells["EmisionRel"].Value)) == "No")
+            else if ((Convert.ToString(this.dataListado.CurrentRow.Cells["Emision"].Value)) == "No")
             {
                 this.rbEmisionNo.Checked = true;
-
             }
 
         }
+
 
 
 
