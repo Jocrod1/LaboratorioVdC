@@ -153,7 +153,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 25);
+            this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar por:";
             // 
@@ -471,7 +471,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(23, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 25);
+            this.label7.Size = new System.Drawing.Size(54, 25);
             this.label7.TabIndex = 60;
             this.label7.Text = "F.U.R:";
             // 
@@ -508,7 +508,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(22, 333);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.Size = new System.Drawing.Size(84, 25);
             this.label1.TabIndex = 58;
             this.label1.Text = "Telefono:";
             // 
