@@ -421,7 +421,7 @@ namespace Interfaz
             //this.dateTimePickerFUR.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value);
             //this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
             Editar();
-            txtNombre.Focus()
+            txtNombre.Focus();
 
         }
 

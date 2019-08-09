@@ -20,10 +20,20 @@ namespace Interfaz
 
         private void RegistroAcceso_Load(object sender, EventArgs e)
         {
+            cbBuscar.SelectedIndex = -1;
             cbTop.Text = "100";
             panel_cedula.Enabled = false;
             panel_turno.Enabled = false;
             panel_fechas.Enabled = false;
+
+            //combobox
+            cbTurno.DataSource = MTurno.Mostrar("");
+            cbTurno.DisplayMember = "Nombre";
+            cbTurno.ValueMember = "ID";
+            cbTurno.SelectedIndex = -1;
+            //
+
+            Mostrar();
         }
 
         //metodos
@@ -36,7 +46,16 @@ namespace Interfaz
 
         private void MostrarTurno()
         {
-            dataListado.DataSource = MRegistroAcceso.MostrarTurnos(Convert.ToInt32(cbTop.Text), txtCedulaTurno.Text, );
+            string IDTurno = MRegistroAcceso.CaptarTurno(cbTurno.Text);
+
+            dataListado.DataSource = MRegistroAcceso.MostrarTurnos(Convert.ToInt32(cbTop.Text), txtCedulaTurno.Text, Convert.ToInt32(IDTurno));
+            // this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+        private void MostrarFechas()
+        {
+            dataListado.DataSource = MRegistroAcceso.MostrarFechas(Convert.ToInt32(cbTop.Text), txtCedulaTurno.Text, Convert.ToDateTime(dtDesde.Text), Convert.ToDateTime(dtHasta.Text));
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -73,16 +92,17 @@ namespace Interfaz
             LimpiarTodo();
             Mostrar();
 
-            if (cbBuscar.SelectedIndex==0)
+            if (cbBuscar.SelectedIndex == 0)
             {
                 panel_cedula.Visible = true;
                 panel_cedula.Enabled = true;
                 txtCedula.Focus();
             }
-            else if(cbBuscar.SelectedIndex==1)
+            else if(cbBuscar.SelectedIndex == 1)
             {
                 panel_turno.Visible = true;
                 panel_turno.Enabled = true;
+                txtCedulaTurno.Enabled = false;
                 cbTurno.Focus();
             }
             else if (cbBuscar.SelectedIndex == 2)
@@ -100,24 +120,30 @@ namespace Interfaz
 
         private void cbTurno_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            MostrarTurno();
+            txtCedulaTurno.Enabled = true;
         }
 
         private void txtCedulaTurno_TextChanged(object sender, EventArgs e)
         {
-
+            MostrarTurno();
         }
 
         private void dtDesde_ValueChanged(object sender, EventArgs e)
         {
-
+            MostrarFechas();
         }
 
         private void dtHasta_ValueChanged(object sender, EventArgs e)
         {
-
+            MostrarFechas();
         }
 
-
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarTodo();
+            Mostrar();
+            cbBuscar.SelectedIndex = -1;
+        }
     }
 }

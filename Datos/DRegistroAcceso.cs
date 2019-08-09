@@ -265,5 +265,38 @@ public DateTime Fecha
 
         }
 
+        //combobox
+        public string CaptarTurno(string nombre)
+        {
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_turno";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                SqlComando.Parameters.AddWithValue("@TextoBuscar", nombre);
+
+                SqlConectar.Open();
+                LeerFilas = SqlComando.ExecuteReader();
+
+                string resultado = null;
+
+                while (LeerFilas.Read())
+                {
+                    resultado = LeerFilas[0].ToString();
+                };
+                SqlConectar.Close();
+                return resultado;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
     }
 }

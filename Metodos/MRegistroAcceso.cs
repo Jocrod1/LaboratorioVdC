@@ -37,5 +37,12 @@ namespace Metodos
             DRegistroAcceso Objeto = new DRegistroAcceso();
             return Objeto.MostrarTurnos(limite, cedula, turno);
         }
+
+        //turno
+        public new static string CaptarTurno(string nombre)
+        {
+            DRegistroAcceso Objeto = new DRegistroAcceso();
+            return Objeto.CaptarTurno(nombre);
+        }
     }
 }

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroAcceso));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbTop = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -46,11 +48,11 @@
             this.panel_cedula = new System.Windows.Forms.Panel();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.panel_fechas = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel_turno = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbTop = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,6 +64,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel_fechas);
+            this.panel1.Controls.Add(this.panel_cedula);
+            this.panel1.Controls.Add(this.panel_turno);
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.cbBuscar);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.label3);
@@ -97,6 +103,24 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(152, 122);
             this.panel4.TabIndex = 69;
+            // 
+            // cbTop
+            // 
+            this.cbTop.BackColor = System.Drawing.SystemColors.Control;
+            this.cbTop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTop.Font = new System.Drawing.Font("Segoe UI Light", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTop.FormattingEnabled = true;
+            this.cbTop.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "50",
+            "100",
+            "200",
+            "500"});
+            this.cbTop.Location = new System.Drawing.Point(18, 40);
+            this.cbTop.Name = "cbTop";
+            this.cbTop.Size = new System.Drawing.Size(122, 31);
+            this.cbTop.TabIndex = 7;
             // 
             // label1
             // 
@@ -136,7 +160,7 @@
             this.dtHasta.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtHasta.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtHasta.Location = new System.Drawing.Point(390, 11);
+            this.dtHasta.Location = new System.Drawing.Point(390, 4);
             this.dtHasta.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtHasta.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtHasta.Name = "dtHasta";
@@ -149,7 +173,7 @@
             this.dtDesde.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtDesde.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDesde.Location = new System.Drawing.Point(88, 11);
+            this.dtDesde.Location = new System.Drawing.Point(88, 4);
             this.dtDesde.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtDesde.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtDesde.Name = "dtDesde";
@@ -163,11 +187,10 @@
             this.txtCedulaTurno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCedulaTurno.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedulaTurno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCedulaTurno.Location = new System.Drawing.Point(297, 9);
+            this.txtCedulaTurno.Location = new System.Drawing.Point(297, 4);
             this.txtCedulaTurno.Name = "txtCedulaTurno";
             this.txtCedulaTurno.Size = new System.Drawing.Size(269, 33);
             this.txtCedulaTurno.TabIndex = 4;
-            this.txtCedulaTurno.Visible = false;
             this.txtCedulaTurno.TextChanged += new System.EventHandler(this.txtCedulaTurno_TextChanged);
             // 
             // cbTurno
@@ -179,11 +202,10 @@
             this.cbTurno.Items.AddRange(new object[] {
             "Cedula",
             "Nombre"});
-            this.cbTurno.Location = new System.Drawing.Point(17, 10);
+            this.cbTurno.Location = new System.Drawing.Point(17, 5);
             this.cbTurno.Name = "cbTurno";
             this.cbTurno.Size = new System.Drawing.Size(260, 31);
             this.cbTurno.TabIndex = 3;
-            this.cbTurno.Visible = false;
             this.cbTurno.SelectedIndexChanged += new System.EventHandler(this.cbTurno_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
@@ -212,9 +234,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel_cedula);
-            this.panel3.Controls.Add(this.panel_fechas);
-            this.panel3.Controls.Add(this.panel_turno);
             this.panel3.Controls.Add(this.dataListado);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(48, 122);
@@ -225,10 +244,11 @@
             // panel_cedula
             // 
             this.panel_cedula.Controls.Add(this.txtCedula);
-            this.panel_cedula.Location = new System.Drawing.Point(670, 21);
+            this.panel_cedula.Location = new System.Drawing.Point(143, 34);
             this.panel_cedula.Name = "panel_cedula";
-            this.panel_cedula.Size = new System.Drawing.Size(299, 53);
+            this.panel_cedula.Size = new System.Drawing.Size(299, 44);
             this.panel_cedula.TabIndex = 67;
+            this.panel_cedula.Visible = false;
             // 
             // txtCedula
             // 
@@ -236,11 +256,10 @@
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCedula.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCedula.Location = new System.Drawing.Point(13, 11);
+            this.txtCedula.Location = new System.Drawing.Point(13, 7);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(269, 33);
             this.txtCedula.TabIndex = 2;
-            this.txtCedula.Visible = false;
             this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // panel_fechas
@@ -249,32 +268,56 @@
             this.panel_fechas.Controls.Add(this.label2);
             this.panel_fechas.Controls.Add(this.dtDesde);
             this.panel_fechas.Controls.Add(this.dtHasta);
-            this.panel_fechas.Location = new System.Drawing.Point(324, 257);
+            this.panel_fechas.Location = new System.Drawing.Point(142, 36);
             this.panel_fechas.Name = "panel_fechas";
-            this.panel_fechas.Size = new System.Drawing.Size(645, 53);
+            this.panel_fechas.Size = new System.Drawing.Size(645, 41);
             this.panel_fechas.TabIndex = 66;
+            this.panel_fechas.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
+            this.label4.Location = new System.Drawing.Point(324, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 25);
+            this.label4.TabIndex = 71;
+            this.label4.Text = "Hasta:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
+            this.label2.Location = new System.Drawing.Point(15, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Desde:";
             // 
             // panel_turno
             // 
             this.panel_turno.Controls.Add(this.cbTurno);
             this.panel_turno.Controls.Add(this.txtCedulaTurno);
-            this.panel_turno.Location = new System.Drawing.Point(386, 141);
+            this.panel_turno.Location = new System.Drawing.Point(143, 37);
             this.panel_turno.Name = "panel_turno";
-            this.panel_turno.Size = new System.Drawing.Size(583, 49);
+            this.panel_turno.Size = new System.Drawing.Size(583, 41);
             this.panel_turno.TabIndex = 3;
+            this.panel_turno.Visible = false;
             // 
             // dataListado
             // 
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -284,45 +327,22 @@
             this.dataListado.Size = new System.Drawing.Size(1038, 389);
             this.dataListado.TabIndex = 2;
             // 
-            // label2
+            // btnCancelar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
-            this.label2.Location = new System.Drawing.Point(15, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
-            this.label2.TabIndex = 70;
-            this.label2.Text = "Desde:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
-            this.label4.Location = new System.Drawing.Point(324, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 25);
-            this.label4.TabIndex = 71;
-            this.label4.Text = "Hasta:";
-            // 
-            // cbTop
-            // 
-            this.cbTop.BackColor = System.Drawing.SystemColors.Control;
-            this.cbTop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTop.Font = new System.Drawing.Font("Segoe UI Light", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTop.FormattingEnabled = true;
-            this.cbTop.Items.AddRange(new object[] {
-            "10",
-            "20",
-            "50",
-            "100",
-            "200",
-            "500"});
-            this.cbTop.Location = new System.Drawing.Point(18, 40);
-            this.cbTop.Name = "cbTop";
-            this.cbTop.Size = new System.Drawing.Size(122, 31);
-            this.cbTop.TabIndex = 7;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(12, 91);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(25, 25);
+            this.btnCancelar.TabIndex = 44;
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // RegistroAcceso
             // 
@@ -377,5 +397,6 @@
         private System.Windows.Forms.ComboBox cbTop;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
