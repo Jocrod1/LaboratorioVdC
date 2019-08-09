@@ -449,9 +449,6 @@ namespace Datos
             DataTable DtResultado = new DataTable("Examen");
             SqlConnection SqlConectar = new SqlConnection();
             List<DExamen> ListaGenerica = new List<DExamen>();
-
-            try
-            {
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
                 SqlDataReader LeerFilas;
                 SqlCommand SqlComando = new SqlCommand();
@@ -465,6 +462,10 @@ namespace Datos
 
                 LeerFilas = SqlComando.ExecuteReader();
 
+               
+
+                while (LeerFilas.Read())
+                {
                 int ID_ = LeerFilas.GetInt32(0);
                 string Nombre_ = LeerFilas.GetString(1);
                 string Unidades_ = LeerFilas.GetString(2);
@@ -475,13 +476,10 @@ namespace Datos
                 DateTime Plazo_Entrega_ = LeerFilas.GetDateTime(7);
                 string Observacion_ = LeerFilas.GetString(8);
                 int ID_Grupo_Examen_ = LeerFilas.GetInt32(9);
-                int Titulo_ = LeerFilas.GetInt16(10);
+                int Titulo_ = LeerFilas.GetInt32(10);
                 int ID_Lab_Referencia_ = LeerFilas.GetInt32(11);
                 int Precio_Referencia_ = LeerFilas.GetInt32(12);
-
-                while (LeerFilas.Read())
-                {
-                    ListaGenerica.Add(new DExamen
+                ListaGenerica.Add(new DExamen
                     {
                     ID = ID_,
                     Nombre = Nombre_,
@@ -501,11 +499,7 @@ namespace Datos
                 }
                 LeerFilas.Close();
                 SqlConectar.Close();
-            }
-            catch (Exception)
-            {
-                ListaGenerica = null;
-            }
+           
 
             return ListaGenerica;
 
