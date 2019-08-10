@@ -101,6 +101,12 @@
     <Compile Include="Examenes.Designer.cs">
       <DependentUpon>Examenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="GrupoExamen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Examenes.resx">
       <DependentUpon>Examenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GrupoExamen.resx">
       <DependentUpon>GrupoExamen.cs</DependentUpon>
