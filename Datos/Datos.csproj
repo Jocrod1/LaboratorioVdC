@@ -53,6 +53,7 @@
     <Compile Include="DGrupoExamen.cs" />
     <Compile Include="DLabRef.cs" />
     <Compile Include="DMedico.cs" />
+    <Compile Include="DOrden.cs" />
     <Compile Include="DPaciente.cs" />
     <Compile Include="DRegistroAcceso.cs" />
     <Compile Include="DTipoPaciente.cs" />

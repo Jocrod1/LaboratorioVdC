@@ -103,12 +103,30 @@ namespace Datos
             set { _Precio_Referencia = value; }
         }
 
+
+        private string _GrupoExamen;
+
+        public string GrupoExamen
+        {
+            get { return _GrupoExamen; }
+            set { _GrupoExamen = value; }
+        }
+
+        private string _LabRef;
+
+        public string LabRef
+        {
+            get { return _LabRef; }
+            set { _LabRef = value; }
+        }
+
+
         public DExamen()
         {
 
         }
 
-        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia)
+        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia, string grupo_examen, string labref)
         {
             ID = iD;
             Nombre = nombre;
@@ -123,6 +141,8 @@ namespace Datos
             Titulo = titulo;
             ID_Lab_Referencia = lab_Referencia;
             Precio_Referencia = precio_Referencia;
+            GrupoExamen = grupo_examen;
+            LabRef = labref;
         }
 
         //Metodos
@@ -466,34 +486,20 @@ namespace Datos
 
                 while (LeerFilas.Read())
                 {
-                int ID_ = LeerFilas.GetInt32(0);
-                string Nombre_ = LeerFilas.GetString(1);
-                string Unidades_ = LeerFilas.GetString(2);
-                double Valor_Hombre_ = LeerFilas.GetDouble(3);
-                double Valor_Mujer_ = LeerFilas.GetDouble(4);
-                double Precio1_ = LeerFilas.GetDouble(5);
-                double Precio2_ = LeerFilas.GetDouble(6);
-                DateTime Plazo_Entrega_ = LeerFilas.GetDateTime(7);
-                string Observacion_ = LeerFilas.GetString(8);
-                int ID_Grupo_Examen_ = LeerFilas.GetInt32(9);
-                int Titulo_ = LeerFilas.GetInt32(10);
-                int ID_Lab_Referencia_ = LeerFilas.GetInt32(11);
-                int Precio_Referencia_ = LeerFilas.GetInt32(12);
+                string Nombre_ = LeerFilas.GetString(0);
+                string Unidades_ = LeerFilas.GetString(1);
+                double Precio1_ = LeerFilas.GetDouble(2);
+                double Precio2_ = LeerFilas.GetDouble(3);
+                string GrupoExamen_ = LeerFilas.GetString(4);
+                string LabRef_ = LeerFilas.GetString(5);
                 ListaGenerica.Add(new DExamen
                     {
-                    ID = ID_,
                     Nombre = Nombre_,
                     Unidades = Unidades_,
-                    Valor_Hombre = Valor_Hombre_,
-                    Valor_Mujer = Valor_Mujer_,
                     Precio1 = Precio1_,
                     Precio2 = Precio2_,
-                    Plazo_Entrega = Plazo_Entrega_,
-                    Observacion = Observacion_,
-                    ID_Grupo_Examen = ID_Grupo_Examen_,
-                    Titulo = Titulo_,
-                    ID_Lab_Referencia = ID_Lab_Referencia_,
-                    Precio_Referencia = Precio_Referencia_
+                    GrupoExamen = GrupoExamen_,
+                    LabRef = LabRef_
                     });
 
                 }
