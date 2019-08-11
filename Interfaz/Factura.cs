@@ -38,15 +38,10 @@ namespace Interfaz
             tabControl1.SizeMode = TabSizeMode.Fixed;
 
 
-
-
-
-
-
-
+            dgvExamenes.DataSource = MExamen.Mostrar("");
 
             //este es el evento load
-
+            /*
 
             string connectionString = "Data Source= MIRLU-PC\\SQLEXPRESS; Initial Catalog= LabVdC; Integrated Security= true";
 
@@ -90,7 +85,7 @@ namespace Interfaz
 
             } //fin del using
 
-
+    */
 
 
 
