@@ -366,6 +366,7 @@ namespace Interfaz
         private void Mostrar()
         {
             dataListado.DataSource = MBioanalista.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }

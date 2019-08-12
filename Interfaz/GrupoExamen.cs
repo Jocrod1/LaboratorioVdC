@@ -302,6 +302,7 @@ namespace Interfaz
             //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MGrupoExamen.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }

@@ -354,6 +354,7 @@ namespace Interfaz
         private void Mostrar()
         {
             dataListado.DataSource = MBanco.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }

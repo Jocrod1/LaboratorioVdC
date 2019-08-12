@@ -64,7 +64,6 @@ namespace Interfaz
                 this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
-                this.btnEditar.Enabled = false;
                 this.btnCancelar.Enabled = true;
             }
             else
@@ -72,7 +71,6 @@ namespace Interfaz
                 this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
-                this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
             }
         }
@@ -102,6 +100,7 @@ namespace Interfaz
             
 
             dataListado.DataSource = MEmpresaSeguro.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             //this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -144,6 +143,8 @@ namespace Interfaz
             this.txtContacto.Enabled = true;
             this.rbEmisionNo.Enabled = true;
             this.rbEmisionSi.Enabled = true;
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(350, PanelIngreso.Size.Height);
 
             this.txtNombre.Focus();
 
@@ -160,6 +161,8 @@ namespace Interfaz
             this.txtContacto.Enabled = false;
             this.rbEmisionNo.Enabled = false;
             this.rbEmisionSi.Enabled = false;
+            btnNuevo.Visible = true;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
 
 
@@ -425,7 +428,7 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
+            
         }
 
 
@@ -444,7 +447,7 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
-            this.Habilitar();
+            this.Deshabilitar();
         }
 
         
@@ -495,7 +498,7 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Habilitar();
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Porcentaje"].Value);
@@ -506,6 +509,7 @@ namespace Interfaz
             this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contacto"].Value);
 
 
+
             if ((Convert.ToString(this.dataListado.CurrentRow.Cells["Emision"].Value)) == "Si")
             {
                 this.rbEmisionSi.Checked = true;
@@ -514,7 +518,7 @@ namespace Interfaz
             {
                 this.rbEmisionNo.Checked = true;
             }
-
+            Editar();
         }
 
 
