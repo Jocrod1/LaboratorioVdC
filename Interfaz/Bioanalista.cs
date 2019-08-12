@@ -101,7 +101,13 @@ namespace Interfaz
         {
             this.Habilitar();
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
-            this.txtCedula.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+
+            //esto es la cedula
+            string Cedula = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+            this.cbCedula.Text = Cedula.Substring(0, 2);
+            this.txtCedula.Text = Cedula.Remove(0, 2);
+            //
+
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtColegio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Colegio_Bioanalista"].Value);
             this.txtCodigo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Colegio_Codigo"].Value);
@@ -179,12 +185,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MBioanalista.Insertar(this.txtCedula.Text,this.txtNombre.Text, this.txtColegio.Text,this.txtCodigo.Text);
+                    Rpta = MBioanalista.Insertar((this.cbCedula.Text+this.txtCedula.Text),this.txtNombre.Text, this.txtColegio.Text,this.txtCodigo.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MBioanalista.Editar(ID, this.txtCedula.Text, this.txtNombre.Text, this.txtColegio.Text, this.txtCodigo.Text);
+                    Rpta = MBioanalista.Editar(ID,(this.cbCedula.Text + this.txtCedula.Text), this.txtNombre.Text, this.txtColegio.Text, this.txtCodigo.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -226,7 +232,8 @@ namespace Interfaz
             {
                 this.IsEditar = true;
                 this.Botones();
-                this.txtCedula.ReadOnly = true;
+                this.txtCedula.Enabled = false;
+                this.cbCedula.Enabled = false;
             }
             else
             {
@@ -251,6 +258,7 @@ namespace Interfaz
             this.txtNombre.Enabled = true;
             this.txtColegio.Enabled = true;
             this.txtCodigo.Enabled = true;
+            this.cbCedula.Enabled = true;
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(317, PanelIngreso.Size.Height);
         }
@@ -261,6 +269,7 @@ namespace Interfaz
             this.txtNombre.Enabled = false;
             this.txtColegio.Enabled = false;
             this.txtCodigo.Enabled = false;
+            this.cbCedula.Enabled = false;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
             btnNuevo.Visible = true;
         }
@@ -290,6 +299,7 @@ namespace Interfaz
             this.txtNombre.Text = string.Empty;
             this.txtColegio.Text = string.Empty;
             this.txtCodigo.Text = string.Empty;
+            this.cbCedula.SelectedIndex = -1;
         }
 
         private void Mostrar()
@@ -346,5 +356,17 @@ namespace Interfaz
             CedulaUnica();
         }
 
+        private void cbCedula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbCedula.SelectedIndex != -1)
+            {
+                txtCedula.Enabled = true;
+            }
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
