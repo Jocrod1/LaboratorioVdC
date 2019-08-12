@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpresaSeguro));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -41,6 +41,7 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.PanelIngreso = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -99,14 +99,14 @@
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.MultiSelect = false;
@@ -143,7 +143,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(20, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 30);
+            this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar por:";
             // 
@@ -159,7 +159,7 @@
             "RIF"});
             this.cbBuscar.Location = new System.Drawing.Point(24, 49);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 33);
+            this.cbBuscar.Size = new System.Drawing.Size(88, 31);
             this.cbBuscar.TabIndex = 55;
             // 
             // btnEliminar
@@ -187,7 +187,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(124, 77);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(46, 20);
+            this.lblTotal.Size = new System.Drawing.Size(41, 17);
             this.lblTotal.TabIndex = 53;
             this.lblTotal.Text = "label5";
             // 
@@ -232,9 +232,27 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(127, 50);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(285, 29);
+            this.txtBuscar.Size = new System.Drawing.Size(285, 26);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(675, 49);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(25, 25);
+            this.btnNuevo.TabIndex = 70;
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // PanelIngreso
             // 
@@ -270,7 +288,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(33, 295);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(174, 30);
+            this.label8.Size = new System.Drawing.Size(150, 25);
             this.label8.TabIndex = 88;
             this.label8.Text = "Emisión Relación:";
             // 
@@ -283,7 +301,7 @@
             this.txtContacto.Location = new System.Drawing.Point(34, 527);
             this.txtContacto.MaxLength = 100;
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(257, 29);
+            this.txtContacto.Size = new System.Drawing.Size(257, 26);
             this.txtContacto.TabIndex = 86;
             // 
             // label7
@@ -293,7 +311,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(33, 497);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 30);
+            this.label7.Size = new System.Drawing.Size(89, 25);
             this.label7.TabIndex = 87;
             this.label7.Text = "Contacto:";
             // 
@@ -306,7 +324,7 @@
             this.txtNIT.Location = new System.Drawing.Point(36, 466);
             this.txtNIT.MaxLength = 100;
             this.txtNIT.Name = "txtNIT";
-            this.txtNIT.Size = new System.Drawing.Size(257, 29);
+            this.txtNIT.Size = new System.Drawing.Size(257, 26);
             this.txtNIT.TabIndex = 84;
             // 
             // label4
@@ -316,7 +334,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(33, 437);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 30);
+            this.label4.Size = new System.Drawing.Size(43, 25);
             this.label4.TabIndex = 85;
             this.label4.Text = "NIT:";
             // 
@@ -329,7 +347,7 @@
             this.txtRIF.Location = new System.Drawing.Point(38, 405);
             this.txtRIF.MaxLength = 100;
             this.txtRIF.Name = "txtRIF";
-            this.txtRIF.Size = new System.Drawing.Size(257, 29);
+            this.txtRIF.Size = new System.Drawing.Size(257, 26);
             this.txtRIF.TabIndex = 82;
             // 
             // label2
@@ -339,7 +357,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(31, 377);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 30);
+            this.label2.Size = new System.Drawing.Size(40, 25);
             this.label2.TabIndex = 83;
             this.label2.Text = "RIF:";
             // 
@@ -352,7 +370,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(38, 588);
             this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(257, 29);
+            this.txtDireccion.Size = new System.Drawing.Size(257, 26);
             this.txtDireccion.TabIndex = 80;
             // 
             // label1
@@ -362,7 +380,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(35, 560);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 30);
+            this.label1.Size = new System.Drawing.Size(90, 25);
             this.label1.TabIndex = 81;
             this.label1.Text = "Dirección:";
             // 
@@ -373,7 +391,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(33, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 30);
+            this.label6.Size = new System.Drawing.Size(83, 25);
             this.label6.TabIndex = 77;
             this.label6.Text = "Nombre:";
             // 
@@ -389,7 +407,7 @@
             "2"});
             this.cbTipoPrecio.Location = new System.Drawing.Point(36, 248);
             this.cbTipoPrecio.Name = "cbTipoPrecio";
-            this.cbTipoPrecio.Size = new System.Drawing.Size(257, 38);
+            this.cbTipoPrecio.Size = new System.Drawing.Size(257, 33);
             this.cbTipoPrecio.TabIndex = 76;
             // 
             // txtPorcentaje
@@ -401,7 +419,7 @@
             this.txtPorcentaje.Location = new System.Drawing.Point(36, 178);
             this.txtPorcentaje.MaxLength = 100;
             this.txtPorcentaje.Name = "txtPorcentaje";
-            this.txtPorcentaje.Size = new System.Drawing.Size(257, 29);
+            this.txtPorcentaje.Size = new System.Drawing.Size(257, 26);
             this.txtPorcentaje.TabIndex = 75;
             // 
             // label11
@@ -411,7 +429,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkOrange;
             this.label11.Location = new System.Drawing.Point(31, 150);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 30);
+            this.label11.Size = new System.Drawing.Size(100, 25);
             this.label11.TabIndex = 78;
             this.label11.Text = "Porcentaje:";
             // 
@@ -424,7 +442,7 @@
             this.txtNombre.Location = new System.Drawing.Point(36, 118);
             this.txtNombre.MaxLength = 9;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 29);
+            this.txtNombre.Size = new System.Drawing.Size(257, 26);
             this.txtNombre.TabIndex = 74;
             // 
             // label12
@@ -434,27 +452,9 @@
             this.label12.ForeColor = System.Drawing.Color.DarkOrange;
             this.label12.Location = new System.Drawing.Point(33, 220);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(121, 30);
+            this.label12.Size = new System.Drawing.Size(106, 25);
             this.label12.TabIndex = 79;
             this.label12.Text = "Tipo Precio:";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
-            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(675, 49);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(25, 25);
-            this.btnNuevo.TabIndex = 70;
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnCancelar
             // 
@@ -506,7 +506,7 @@
             this.rbEmisionSi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbEmisionSi.Location = new System.Drawing.Point(48, 19);
             this.rbEmisionSi.Name = "rbEmisionSi";
-            this.rbEmisionSi.Size = new System.Drawing.Size(36, 17);
+            this.rbEmisionSi.Size = new System.Drawing.Size(35, 17);
             this.rbEmisionSi.TabIndex = 67;
             this.rbEmisionSi.TabStop = true;
             this.rbEmisionSi.Text = "Sí";
@@ -518,7 +518,7 @@
             this.rbEmisionNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbEmisionNo.Location = new System.Drawing.Point(166, 19);
             this.rbEmisionNo.Name = "rbEmisionNo";
-            this.rbEmisionNo.Size = new System.Drawing.Size(39, 17);
+            this.rbEmisionNo.Size = new System.Drawing.Size(38, 17);
             this.rbEmisionNo.TabIndex = 68;
             this.rbEmisionNo.TabStop = true;
             this.rbEmisionNo.Text = "No";
