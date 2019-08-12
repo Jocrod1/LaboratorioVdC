@@ -486,23 +486,26 @@ namespace Datos
 
                 while (LeerFilas.Read())
                 {
-                string Nombre_ = LeerFilas.GetString(0);
-                string Unidades_ = LeerFilas.GetString(1);
-                double Precio1_ = LeerFilas.GetDouble(2);
-                double Precio2_ = LeerFilas.GetDouble(3);
-                string GrupoExamen_ = LeerFilas.GetString(4);
-                string LabRef_ = LeerFilas.GetString(5);
+                int ID_ = LeerFilas.GetInt32(0);
+                string Nombre_ = LeerFilas.GetString(1);
+                string Unidades_ = LeerFilas.GetString(2);
+                double Precio1_ = LeerFilas.GetDouble(3);
+                double Precio2_ = LeerFilas.GetDouble(4);
+                string Grupo_Examen_ = LeerFilas.GetString(5);
+                string Lab_Referencia_ = LeerFilas.GetString(6);
+
                 ListaGenerica.Add(new DExamen
-                    {
+                {
+                    ID = ID_,
                     Nombre = Nombre_,
                     Unidades = Unidades_,
                     Precio1 = Precio1_,
                     Precio2 = Precio2_,
-                    GrupoExamen = GrupoExamen_,
-                    LabRef = LabRef_
-                    });
+                    GrupoExamen = Grupo_Examen_,
+                    LabRef = Lab_Referencia_
+                });
 
-                }
+            }
                 LeerFilas.Close();
                 SqlConectar.Close();
            
