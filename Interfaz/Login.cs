@@ -23,6 +23,9 @@ namespace Interfaz
             txtusuario.Text = @"Numero de Cedula";
             txtcontraseña.Text = "Contraseña";
             txtcontraseña.UseSystemPasswordChar = false;
+
+            txtusuario.Enabled = false;
+            cbCedula.Focus();
         }
         // weas para que se vea bonito, para que se coloque la descripcion en el txtbox si no se ha rellenado
         private void txtUserEnter(object sender, EventArgs e)
@@ -102,7 +105,7 @@ namespace Interfaz
                 MessageBox.Show("¡Ingresando al sistema!", "Accediendo...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             } 
 
-            DataTable Datos = MUsuario.Login(this.txtusuario.Text, this.txtcontraseña.Text);
+            DataTable Datos = MUsuario.Login((this.cbCedula.Text+this.txtusuario.Text), this.txtcontraseña.Text);
 
             if (Datos.Rows.Count == 0)
             {
@@ -160,5 +163,13 @@ namespace Interfaz
             }
         }
 
+        private void cbCedula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbCedula.SelectedIndex!=-1)
+            {
+                txtusuario.Enabled = true;
+                txtusuario.Focus();
+            }
+        }
     }
 }

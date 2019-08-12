@@ -96,7 +96,8 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txtCiMedico.Focus();
+            this.txtCiMedico.Enabled = false;
+            this.cbCedula.Focus();
         }
 
 
@@ -127,12 +128,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MMedico.Insertar(this.ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+                    Rpta = MMedico.Insertar(this.ID, (this.cbCedula.Text + this.txtCiMedico.Text), this.txtNombre.Text, this.txtClinica.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MMedico.Editar(this.ID, this.txtCiMedico.Text, this.txtNombre.Text, this.txtClinica.Text);
+                    Rpta = MMedico.Editar(this.ID, (this.cbCedula.Text + this.txtCiMedico.Text), this.txtNombre.Text, this.txtClinica.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -375,7 +376,13 @@ namespace Interfaz
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IDMedico"].Value);
-            this.txtCiMedico.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["cedula"].Value);
+
+            //cedula
+            string Cedula = Convert.ToString(this.dataListado.CurrentRow.Cells["cedula"].Value);
+            this.cbCedula.Text = Cedula.Substring(0, 2);
+            this.txtCiMedico.Text = Cedula.Remove(0, 2);
+            //
+
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
             this.txtClinica.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClinicaOHospital"].Value);
 
@@ -397,11 +404,11 @@ namespace Interfaz
             {
                 if (!IsNuevo)
                     return;
-                dataListado.DataSource = MMedico.CedulaUnica(this.txtCiMedico.Text);
+                dataListado.DataSource = MMedico.CedulaUnica((this.cbCedula.Text+this.txtCiMedico.Text));
 
                 if (dataListado.Rows.Count != 0)
                 {
-                    MessageBox.Show("Ya el Medico C.I: " + this.txtCiMedico.Text + "está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya el Medico C.I: " + (this.cbCedula.Text + this.txtCiMedico.Text) + "está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.txtCiMedico.Text = string.Empty;
                     this.txtCiMedico.Focus();
                 }
@@ -414,7 +421,13 @@ namespace Interfaz
             }
         }
 
-
-      
+        private void cbCedula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbCedula.SelectedIndex!=-1)
+            {
+                txtCiMedico.Enabled = true;
+                txtCiMedico.Focus();
+            }
+        }
     }
 }

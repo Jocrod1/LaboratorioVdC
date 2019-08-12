@@ -51,6 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCiMedico = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbCedula = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -137,7 +138,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(23, 86);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(48, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 17);
             this.lblTotal.TabIndex = 43;
             this.lblTotal.Text = "lblTotal";
             // 
@@ -205,6 +206,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cbCedula);
             this.panel2.Controls.Add(this.btnNuevo);
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Controls.Add(this.btnCancelar);
@@ -340,12 +342,13 @@
             // 
             this.txtCiMedico.BackColor = System.Drawing.SystemColors.Control;
             this.txtCiMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCiMedico.Enabled = false;
             this.txtCiMedico.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtCiMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCiMedico.Location = new System.Drawing.Point(21, 139);
+            this.txtCiMedico.Location = new System.Drawing.Point(88, 139);
             this.txtCiMedico.MaxLength = 9;
             this.txtCiMedico.Name = "txtCiMedico";
-            this.txtCiMedico.Size = new System.Drawing.Size(287, 26);
+            this.txtCiMedico.Size = new System.Drawing.Size(220, 26);
             this.txtCiMedico.TabIndex = 1;
             // 
             // label2
@@ -358,6 +361,22 @@
             this.label2.Size = new System.Drawing.Size(72, 25);
             this.label2.TabIndex = 29;
             this.label2.Text = "Cédula:";
+            // 
+            // cbCedula
+            // 
+            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            this.cbCedula.FormattingEnabled = true;
+            this.cbCedula.Items.AddRange(new object[] {
+            "V-",
+            "E-"});
+            this.cbCedula.Location = new System.Drawing.Point(18, 140);
+            this.cbCedula.Name = "cbCedula";
+            this.cbCedula.Size = new System.Drawing.Size(64, 25);
+            this.cbCedula.TabIndex = 95;
+            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
             // Medico
             // 
@@ -403,5 +422,6 @@
         private System.Windows.Forms.TextBox txtClinica;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCiMedico;
+        private System.Windows.Forms.ComboBox cbCedula;
     }
 }

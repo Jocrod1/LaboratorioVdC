@@ -63,6 +63,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.cbCedula = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Provider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -251,6 +252,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cbCedula);
             this.panel2.Controls.Add(this.txtDireccion);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtCorreo);
@@ -390,10 +392,10 @@
             this.txtCiTrabajador.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCiTrabajador.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiTrabajador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCiTrabajador.Location = new System.Drawing.Point(42, 118);
+            this.txtCiTrabajador.Location = new System.Drawing.Point(113, 118);
             this.txtCiTrabajador.MaxLength = 9;
             this.txtCiTrabajador.Name = "txtCiTrabajador";
-            this.txtCiTrabajador.Size = new System.Drawing.Size(257, 26);
+            this.txtCiTrabajador.Size = new System.Drawing.Size(186, 26);
             this.txtCiTrabajador.TabIndex = 72;
             this.txtCiTrabajador.Leave += new System.EventHandler(this.txtCiTrabajador_Leave);
             // 
@@ -511,6 +513,22 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // cbCedula
+            // 
+            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            this.cbCedula.FormattingEnabled = true;
+            this.cbCedula.Items.AddRange(new object[] {
+            "V-",
+            "E-"});
+            this.cbCedula.Location = new System.Drawing.Point(43, 119);
+            this.cbCedula.Name = "cbCedula";
+            this.cbCedula.Size = new System.Drawing.Size(64, 25);
+            this.cbCedula.TabIndex = 95;
+            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
+            // 
             // Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,5 +585,6 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbCedula;
     }
 }

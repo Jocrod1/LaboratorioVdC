@@ -63,8 +63,9 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txtCedula.Focus();
+            this.cbCedula.Focus();
             ID = 0;
+            this.txtCedula.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -334,11 +335,11 @@ namespace Interfaz
             {
                 if (!IsNuevo)
                     return;
-                dataListado.DataSource = MBioanalista.CedulaUnica(this.txtCedula.Text);
+                dataListado.DataSource = MBioanalista.CedulaUnica((this.cbCedula.Text + this.txtCedula.Text));
 
                 if (dataListado.Rows.Count != 0)
                 {
-                    MessageBox.Show("Ya el Bioanalista C.I: " + this.txtCedula.Text + "está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya el Bioanalista C.I: " + (this.cbCedula.Text + this.txtCedula.Text) + "está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.txtCedula.Text = string.Empty;
                     this.txtCedula.Focus();
                 }
@@ -361,6 +362,7 @@ namespace Interfaz
             if(cbCedula.SelectedIndex != -1)
             {
                 txtCedula.Enabled = true;
+                txtCedula.Focus();
             }
         }
 

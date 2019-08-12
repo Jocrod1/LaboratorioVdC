@@ -67,7 +67,8 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txtCiPaciente.Focus();
+            this.cbCedula.Focus();
+            this.txtCiPaciente.Enabled = false;
             ID = 0;
         }
 
@@ -122,7 +123,13 @@ namespace Interfaz
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdPaciente"].Value);
-            this.txtCiPaciente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+
+            //cedula
+            string Cedula = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+            this.cbCedula.Text = Cedula.Substring(0, 2);
+            this.txtCiPaciente.Text = Cedula.Remove(0, 2);
+            //
+
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"].Value);
             this.txtEdad.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Edad"].Value);
@@ -206,12 +213,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, this.txtCiPaciente.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
+                    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, this.txtCiPaciente.Text, txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
+                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, (this.cbCedula.Text+this.txtCiPaciente.Text), txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -465,7 +472,7 @@ namespace Interfaz
 
                 if (dataListado.Rows.Count != 0)
                 {
-                    MessageBox.Show("Ya el Paciente C.I: " + this.txtCiPaciente.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya el Paciente C.I: " + (this.cbCedula.Text + this.txtCiPaciente.Text) + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.txtCiPaciente.Text = string.Empty;
                     this.txtCiPaciente.Focus();
                 }
@@ -478,8 +485,16 @@ namespace Interfaz
             }
         }
 
-
-
-
+        private void cbCedula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbCedula.SelectedIndex!=-1)
+            {
+                if(IsNuevo == true || IsEditar==true)
+                {
+                    txtCiPaciente.Enabled = true;
+                    txtCiPaciente.Focus();
+                }
+            }
+        }
     }
 }

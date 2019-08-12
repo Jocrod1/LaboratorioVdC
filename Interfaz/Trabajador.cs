@@ -50,7 +50,8 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
-            this.txtNombre.Focus();
+            this.cbCedula.Focus();
+            txtCiTrabajador.Enabled = false;
         }
 
         //Validar datos al ingresar
@@ -295,7 +296,13 @@ namespace Interfaz
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //no existe ID en trabajador OJO
-            this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+
+            //cedula
+            string Cedula = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
+            this.cbCedula.Text = Cedula.Substring(0, 2);
+            this.txtCiTrabajador.Text = Cedula.Remove(0, 2);
+            //
+
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
             this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
@@ -342,13 +349,13 @@ namespace Interfaz
                     {
                         //Vamos a insertar un Trabajador 
 
-                        Rpta = MUsuario.Insertar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
+                        Rpta = MUsuario.Insertar((this.cbCedula.Text + this.txtCiTrabajador.Text), this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
 
                     }
                     else
                     {
                         //Vamos a modificar un Trabajador
-                        Rpta = MUsuario.Editar(this.txtCiTrabajador.Text, this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
+                        Rpta = MUsuario.Editar((this.cbCedula.Text + this.txtCiTrabajador.Text), this.txtNombre.Text, this.txtContrasena.Text, txtDireccion.Text, txtTelefono.Text, txtCorreo.Text, cbAcceso.SelectedItem.ToString());
                     }
                     //Si la respuesta fue OK, fue porque se modificó
                     //o insertó el Trabajador
@@ -437,19 +444,6 @@ namespace Interfaz
             }
         }
 
-        private void dataListado_DoubleClick(object sender, EventArgs e)
-        {
-            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdTrabajador"].Value);
-            this.txtCiTrabajador.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
-            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            this.txtContrasena.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Password"].Value);
-            this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
-            this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
-            this.txtCorreo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Correo"].Value);
-            this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
-
-        }
-
         private void TxtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (cbBuscar.Text == "Cedula") {
@@ -530,7 +524,7 @@ namespace Interfaz
 
                 if (dataListado.Rows.Count != 0)
                 {
-                    MessageBox.Show("Ya el Trabajador C.I: " + this.txtCiTrabajador.Text + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya el Trabajador C.I: " + (this.cbCedula.Text+this.txtCiTrabajador.Text) + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.txtCiTrabajador.Text = string.Empty;
                     this.txtCiTrabajador.Focus();
                 }
@@ -569,5 +563,16 @@ namespace Interfaz
             //en construccion(?)
         }
 
+        private void cbCedula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbCedula.SelectedIndex!=-1)
+            {
+                if(IsNuevo==true || IsEditar==true)
+                {
+                    txtCiTrabajador.Enabled = true;
+                    txtCiTrabajador.Focus();
+                }
+            }
+        }
     }
 }

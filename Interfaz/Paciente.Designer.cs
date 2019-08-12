@@ -63,6 +63,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbCedula = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -153,7 +154,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 25);
+            this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar por:";
             // 
@@ -251,6 +252,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cbCedula);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtSexo);
             this.panel2.Controls.Add(this.btnNuevo);
@@ -433,10 +435,10 @@
             this.txtCiPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCiPaciente.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCiPaciente.Location = new System.Drawing.Point(26, 100);
+            this.txtCiPaciente.Location = new System.Drawing.Point(97, 100);
             this.txtCiPaciente.MaxLength = 9;
             this.txtCiPaciente.Name = "txtCiPaciente";
-            this.txtCiPaciente.Size = new System.Drawing.Size(257, 26);
+            this.txtCiPaciente.Size = new System.Drawing.Size(186, 26);
             this.txtCiPaciente.TabIndex = 1;
             this.txtCiPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiPaciente_KeyPress);
             this.txtCiPaciente.Leave += new System.EventHandler(this.txtCiPaciente_Leave);
@@ -471,7 +473,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(23, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 25);
+            this.label7.Size = new System.Drawing.Size(54, 25);
             this.label7.TabIndex = 60;
             this.label7.Text = "F.U.R:";
             // 
@@ -508,13 +510,29 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(22, 333);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.Size = new System.Drawing.Size(84, 25);
             this.label1.TabIndex = 58;
             this.label1.Text = "Telefono:";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // cbCedula
+            // 
+            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            this.cbCedula.FormattingEnabled = true;
+            this.cbCedula.Items.AddRange(new object[] {
+            "V-",
+            "E-"});
+            this.cbCedula.Location = new System.Drawing.Point(27, 101);
+            this.cbCedula.Name = "cbCedula";
+            this.cbCedula.Size = new System.Drawing.Size(64, 25);
+            this.cbCedula.TabIndex = 95;
+            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
             // Paciente
             // 
@@ -573,5 +591,6 @@
         private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.ComboBox cbCedula;
     }
 }
