@@ -115,7 +115,7 @@ namespace Interfaz
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
-
+            AnularItems();
         }
 
         //metodos

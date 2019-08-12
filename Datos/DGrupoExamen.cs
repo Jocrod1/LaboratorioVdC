@@ -200,6 +200,54 @@ namespace Datos
 
         }
 
+
+        public string Anular(DGrupoExamen GrupoExamen)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "anular_grupoexamen";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id_Grupo_Examen = new SqlParameter();
+                Parametro_Id_Grupo_Examen.ParameterName = "@ID";
+                Parametro_Id_Grupo_Examen.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Grupo_Examen.Value = GrupoExamen.ID;
+                SqlComando.Parameters.Add(Parametro_Id_Grupo_Examen);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el Registro del grupo de examenes";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+
+        }
+
         //mostrar y buscar
         public List<DGrupoExamen> Mostrar(string TextoBuscar)
         {

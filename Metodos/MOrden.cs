@@ -46,5 +46,12 @@ namespace Metodos
             DOrden Objeto = new DOrden();
             return Objeto.MostrarFechas(limite, cedulausuario, nombrebioanalista, fecha1, fecha2);
         }
+
+        public static string Anular(int ID)
+        {
+            DOrden Objeto = new DOrden();
+            Objeto.ID = ID;
+            return Objeto.Anular(Objeto);
+        }
     }
 }

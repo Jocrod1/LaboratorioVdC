@@ -44,6 +44,13 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
+        public static string Anular(string Cedula)
+        {
+            DUsuario Objeto = new DUsuario();
+            Objeto.Cedula = Cedula;
+            return Objeto.Anular(Objeto);
+        }
+
         //probar esta nueva version, NUEVA VERSION
         public new static List<DUsuario> Mostrar(string TextoBuscar)
         {

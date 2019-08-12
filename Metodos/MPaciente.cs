@@ -44,6 +44,13 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
+        public static string Anular(int ID)
+        {
+            DPaciente Objeto = new DPaciente();
+            Objeto.IdPaciente = ID;
+            return Objeto.Anular(Objeto);
+        }
+
         //probar esta nueva version, NUEVA VERSION
         public new static List<DPaciente> Mostrar(string TextoBuscar)
         {

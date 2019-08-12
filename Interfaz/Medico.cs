@@ -188,61 +188,6 @@ namespace Interfaz
         }
 
 
-        void AnularItems()
-        {
-            try
-            {
-                int NumeroSeleccionado = 0;
-                DialogResult Opcion;
-                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
-                {
-                    NumeroSeleccionado++;
-                }
-                if (NumeroSeleccionado > 1)
-                {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Medicos?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                }
-                else
-                {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro del Medico?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                }
-
-                if (Opcion == DialogResult.OK)
-                {
-                    string Rpta = "";
-
-                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
-                    {
-                        Rpta = MMedico.Editar(Convert.ToInt32(item.Cells["IDMedico"].Value), Convert.ToString(item.Cells["Cedula"].Value), "ANULADO", "ANULADO");
-                    }
-
-                    if (Rpta.Equals("OK"))
-                    {
-                        if (NumeroSeleccionado > 1)
-                        {
-                            this.MensajeOK("Se Anularon Correctamente los Registros de Trabajadores");
-                        }
-                        else
-                        {
-                            this.MensajeOK("Se Anuló Correctamente el Registro del Trabajador");
-                        }
-                    }
-                    else
-                    {
-                        this.MensajeError(Rpta);
-                    }
-
-                    this.Mostrar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
-
-
         //Habilita los botones
         private void Botones()
         {
@@ -285,7 +230,7 @@ namespace Interfaz
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
-        void EliminarItems()
+        private void EliminarItems()
         {
 
             try
@@ -323,6 +268,60 @@ namespace Interfaz
                         else
                         {
                             this.MensajeOK("Se Eliminó Correctamente el Registro del Medico");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void AnularItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Trabajadores?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro de Medico?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MMedico.Anular(Convert.ToInt32(item.Cells[0].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se Anularon Correctamente los Registros de Medico");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Anuló Correctamente el Registro del Medico");
                         }
                     }
                     else

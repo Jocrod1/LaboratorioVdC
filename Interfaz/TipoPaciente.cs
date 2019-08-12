@@ -189,7 +189,7 @@ namespace Interfaz
 
 
 
-        void EliminarItems()
+        private void EliminarItems()
         {
 
             try
@@ -245,8 +245,9 @@ namespace Interfaz
 
 
 
-        void AnularItems()
+        private void AnularItems()
         {
+
             try
             {
                 int NumeroSeleccionado = 0;
@@ -257,11 +258,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Tipo Paciente?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Tipo de Paciente?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro de la Tipo de Paciente?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro de los Tipo de Paciente?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -270,18 +271,18 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                       // Rpta = MTipoPaciente.Editar(Convert.ToInt32(item.Cells["ID"].Value), "ANULADO", "ANULADO", 0, 0, "ANULADO", 0);
+                        Rpta = MTipoPaciente.Anular(Convert.ToInt32(item.Cells[0].Value));
                     }
 
                     if (Rpta.Equals("OK"))
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se Anularon Correctamente los Registros de Tipo de paciente");
+                            this.MensajeOK("Se Anularon Correctamente los Registros de Tipos de Paciente");
                         }
                         else
                         {
-                            this.MensajeOK("Se Anuló Correctamente el Registro de Tipo de paciente");
+                            this.MensajeOK("Se Anuló Correctamente el Registro de Tipos de Paciente");
                         }
                     }
                     else
@@ -420,23 +421,10 @@ namespace Interfaz
             txtNombre.Focus();
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            AnularItems();
+        }
     }
 }
 

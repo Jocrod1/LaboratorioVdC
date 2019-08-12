@@ -40,6 +40,7 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.PanelIngreso = new System.Windows.Forms.Panel();
             this.dtFinal = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -129,7 +129,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(10, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 30);
+            this.label3.Size = new System.Drawing.Size(67, 25);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar:";
             // 
@@ -158,7 +158,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(12, 67);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(46, 20);
+            this.lblTotal.Size = new System.Drawing.Size(41, 17);
             this.lblTotal.TabIndex = 53;
             this.lblTotal.Text = "label5";
             // 
@@ -177,6 +177,7 @@
             this.btnAnular.TabIndex = 51;
             this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // btnImprimir
             // 
@@ -202,9 +203,27 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(15, 40);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 29);
+            this.txtBuscar.Size = new System.Drawing.Size(387, 26);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(704, 40);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(25, 25);
+            this.btnNuevo.TabIndex = 69;
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // PanelIngreso
             // 
@@ -233,7 +252,7 @@
             this.dtFinal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtFinal.Name = "dtFinal";
             this.dtFinal.ShowUpDown = true;
-            this.dtFinal.Size = new System.Drawing.Size(257, 36);
+            this.dtFinal.Size = new System.Drawing.Size(257, 33);
             this.dtFinal.TabIndex = 77;
             // 
             // label2
@@ -243,7 +262,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(32, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 30);
+            this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 78;
             this.label2.Text = "Final:";
             // 
@@ -257,7 +276,7 @@
             this.dtComienzo.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtComienzo.Name = "dtComienzo";
             this.dtComienzo.ShowUpDown = true;
-            this.dtComienzo.Size = new System.Drawing.Size(257, 36);
+            this.dtComienzo.Size = new System.Drawing.Size(257, 33);
             this.dtComienzo.TabIndex = 75;
             // 
             // label7
@@ -267,7 +286,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(30, 160);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 30);
+            this.label7.Size = new System.Drawing.Size(99, 25);
             this.label7.TabIndex = 76;
             this.label7.Text = "Comienzo:";
             // 
@@ -280,7 +299,7 @@
             this.txtNombre.Location = new System.Drawing.Point(32, 123);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 29);
+            this.txtNombre.Size = new System.Drawing.Size(257, 26);
             this.txtNombre.TabIndex = 73;
             // 
             // label1
@@ -290,27 +309,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(28, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 30);
+            this.label1.Size = new System.Drawing.Size(83, 25);
             this.label1.TabIndex = 74;
             this.label1.Text = "Nombre:";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
-            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(704, 40);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(25, 25);
-            this.btnNuevo.TabIndex = 69;
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnCancelar
             // 

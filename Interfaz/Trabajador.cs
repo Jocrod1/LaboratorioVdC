@@ -239,7 +239,7 @@ namespace Interfaz
         }
 
         
-        void EliminarItems() {
+        private void EliminarItems() {
 
             try
             {
@@ -276,6 +276,60 @@ namespace Interfaz
                         else
                         {
                             this.MensajeOK("Se Eliminó Correctamente el Registro del Trabajador");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void AnularItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Trabajadores?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro del Trabajador?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MUsuario.Anular(Convert.ToString(item.Cells["cedula"].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se Anularon Correctamente los Registros de Trabajadores");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Anuló Correctamente el Registro del Trabajador");
                         }
                     }
                     else
@@ -468,57 +522,7 @@ namespace Interfaz
             }
         }
 
-        private void AnularItems() {
-            try
-            {
-                int NumeroSeleccionado = 0;
-                DialogResult Opcion;
-                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
-                {
-                    NumeroSeleccionado++;
-                }
-                if (NumeroSeleccionado > 1)
-                {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Trabajadores?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                }
-                else
-                {
-                    Opcion = MessageBox.Show("¿Realmente Desea Anular el Registro del Trabajador?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                }
 
-                if (Opcion == DialogResult.OK)
-                {
-                    string Rpta = "";
-
-                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
-                    {
-                        Rpta = MUsuario.Editar(Convert.ToString(item.Cells["cedula"].Value), "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO", "ANULADO");
-                    }
-
-                    if (Rpta.Equals("OK"))
-                    {
-                        if (NumeroSeleccionado > 1)
-                        {
-                            this.MensajeOK("Se Anularon Correctamente los Registros de Trabajadores");
-                        }
-                        else
-                        {
-                            this.MensajeOK("Se Anuló Correctamente el Registro del Trabajador");
-                        }
-                    }
-                    else
-                    {
-                        this.MensajeError(Rpta);
-                    }
-
-                    this.Mostrar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
 
         private void CedulaUnica()
         {

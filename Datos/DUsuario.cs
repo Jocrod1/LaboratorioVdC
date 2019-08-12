@@ -324,6 +324,54 @@ namespace Datos
 
         }
 
+        public string Anular(DUsuario Trabajador)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "anular_usuario";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id_Trabajador = new SqlParameter();
+                Parametro_Id_Trabajador.ParameterName = "@cedula";
+                Parametro_Id_Trabajador.SqlDbType = SqlDbType.VarChar;
+                Parametro_Id_Trabajador.Size = 10;
+                Parametro_Id_Trabajador.Value = Trabajador.Cedula;
+                SqlComando.Parameters.Add(Parametro_Id_Trabajador);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el usuario";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+
+        }
+
         //Mostrar
         public List<DUsuario> Mostrar(string TextoBuscar)
         {

@@ -32,6 +32,13 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
+        public static string Anular(int ID)
+        {
+            DGrupoExamen Objeto = new DGrupoExamen();
+            Objeto.ID = ID;
+            return Objeto.Anular(Objeto);
+        }
+
         //probar esta nueva version, NUEVA VERSION
         public new static List<DGrupoExamen> Mostrar(string TextoBuscar)
         {

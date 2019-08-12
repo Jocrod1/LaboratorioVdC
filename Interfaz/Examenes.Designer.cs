@@ -209,7 +209,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(322, 507);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 25);
+            this.label13.Size = new System.Drawing.Size(133, 25);
             this.label13.TabIndex = 76;
             this.label13.Text = "Observaciones:";
             // 
@@ -220,7 +220,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(25, 344);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 25);
+            this.label5.Size = new System.Drawing.Size(174, 25);
             this.label5.TabIndex = 74;
             this.label5.Text = "Valores Normales M:";
             // 
@@ -265,7 +265,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(25, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.Size = new System.Drawing.Size(171, 25);
             this.label1.TabIndex = 68;
             this.label1.Text = "Valores Normales H:";
             // 
@@ -276,7 +276,7 @@
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
             this.label9.Location = new System.Drawing.Point(25, 428);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 25);
+            this.label9.Size = new System.Drawing.Size(77, 25);
             this.label9.TabIndex = 65;
             this.label9.Text = "Precio 1:";
             // 
@@ -494,7 +494,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(67, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar:";
             // 
@@ -541,6 +541,7 @@
             this.btnAnular.TabIndex = 43;
             this.btnAnular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // btnImprimir
             // 

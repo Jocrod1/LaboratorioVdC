@@ -347,6 +347,53 @@ namespace Datos
 
         }
 
+        public string Anular(DPaciente Paciente)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "anular_paciente";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id_Paciente = new SqlParameter();
+                Parametro_Id_Paciente.ParameterName = "@IDPaciente";
+                Parametro_Id_Paciente.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Paciente.Value = Paciente.IdPaciente;
+                SqlComando.Parameters.Add(Parametro_Id_Paciente);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el Registro del paciente";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+
+        }
+
         //mostrar y buscar
         public List<DPaciente> Mostrar(string TextoBuscar)
         {

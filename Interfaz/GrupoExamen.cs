@@ -112,6 +112,11 @@ namespace Interfaz
             this.txtNombre.Focus();
         }
 
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         //metodos
 
@@ -153,6 +158,60 @@ namespace Interfaz
                         else
                         {
                             this.MensajeOK("Se eliminó correctamente el registro del Grupos de Examenes");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        void AnularItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de Grupo de Examenes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del Grupo de Examenes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MGrupoExamen.Anular(Convert.ToInt32(item.Cells["ID"].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se anularon correctamente los registros de Grupos de Examenes");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se anuló correctamente el registro del Grupos de Examenes");
                         }
                     }
                     else
@@ -337,6 +396,7 @@ namespace Interfaz
         {
             Buscar();
         }
+
 
     }
 }

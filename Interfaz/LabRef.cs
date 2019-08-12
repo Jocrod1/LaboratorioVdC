@@ -115,9 +115,14 @@ namespace Interfaz
             Mostrar();
         }
 
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //metodos
 
-        void EliminarItems()
+        private void EliminarItems()
         {
 
             try
@@ -155,6 +160,60 @@ namespace Interfaz
                         else
                         {
                             this.MensajeOK("Se eliminó correctamente el registro del Laboratorio de Referencia");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void AnularItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de Laboratorios de Referencias?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del Laboratorio de Referencia?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MLabRef.Anular(Convert.ToInt32(item.Cells["ID"].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se anularon correctamente los Laboratorios de Referencias");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se anuló correctamente el registro del Laboratorio de Referencia");
                         }
                     }
                     else
@@ -328,6 +387,7 @@ namespace Interfaz
                 errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
             }
         }
+
 
     }
 }

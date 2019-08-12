@@ -36,6 +36,13 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
+        public static string Anular(int IDMedico)
+        {
+            DMedico Objeto = new DMedico();
+            Objeto.IdMedico = IDMedico;
+            return Objeto.Anular(Objeto);
+        }
+
         //probar esta nueva version, NUEVA VERSION
         public new static List<DMedico> Mostrar(string TextoBuscar)
         {

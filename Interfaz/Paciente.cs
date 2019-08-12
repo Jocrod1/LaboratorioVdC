@@ -112,7 +112,7 @@ namespace Interfaz
         //estos 2 se dejan al final
         private void btnAnular_Click(object sender, EventArgs e)
         {
-
+            AnularItems();
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -152,7 +152,7 @@ namespace Interfaz
 
         //metodos
 
-        void EliminarItems()
+        private void EliminarItems()
         {
 
             try
@@ -190,6 +190,60 @@ namespace Interfaz
                         else
                         {
                             this.MensajeOK("Se eliminó correctamente el registro del paciente");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void AnularItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de pacientes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del paciente?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MPaciente.Anular(Convert.ToInt32(item.Cells["IdPaciente"].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se anularon correctamente los registros de pacientes");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se anuló correctamente el registro del paciente");
                         }
                     }
                     else

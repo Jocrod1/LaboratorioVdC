@@ -249,6 +249,53 @@ namespace Datos
 
         }
 
+        public string Anular(DMedico Medico)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "anular_medico";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id_Medico = new SqlParameter();
+                Parametro_Id_Medico.ParameterName = "@ID";
+                Parametro_Id_Medico.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Medico.Value = Medico.IdMedico;
+                SqlComando.Parameters.Add(Parametro_Id_Medico);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el Registro del medico";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+
+        }
+
         //mostrar y buscar
         public List<DMedico> Mostrar(string TextoBuscar)
         {
