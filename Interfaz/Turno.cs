@@ -72,7 +72,6 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -81,6 +80,7 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
+            this.Deshabilitar();
             ID = 0;
         }
 
@@ -96,10 +96,13 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Habilitar();
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.dtComienzo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Comienzo"].Value);
             this.dtFinal.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Final"].Value);
+            Editar();
+            txtNombre.Focus();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -246,6 +249,8 @@ namespace Interfaz
             this.txtNombre.Enabled = true;
             this.dtComienzo.Enabled = true;
             this.dtFinal.Enabled = true;
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(313, PanelIngreso.Size.Height);
         }
 
         private void Deshabilitar()
@@ -253,6 +258,8 @@ namespace Interfaz
             this.txtNombre.Enabled = false;
             this.dtComienzo.Enabled = false;
             this.dtFinal.Enabled = false;
+            btnNuevo.Visible = true;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
 
         private void Botones()
@@ -262,7 +269,6 @@ namespace Interfaz
                 this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
-                this.btnEditar.Enabled = false;
                 this.btnCancelar.Enabled = true;
             }
             else
@@ -270,7 +276,6 @@ namespace Interfaz
                 this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
-                this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
             }
         }
@@ -286,6 +291,7 @@ namespace Interfaz
         private void Mostrar()
         {
             dataListado.DataSource = MTurno.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }

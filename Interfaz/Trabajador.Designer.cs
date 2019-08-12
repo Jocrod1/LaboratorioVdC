@@ -44,7 +44,8 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.cbCedula = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -60,17 +61,15 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cbCedula = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Provider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.PanelIngreso.SuspendLayout();
             this.SuspendLayout();
             // 
             // Provider1
@@ -81,7 +80,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.PanelIngreso);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -112,6 +111,7 @@
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -126,6 +126,7 @@
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
+            this.dataListado.RowHeadersVisible = false;
             this.dataListado.RowHeadersWidth = 51;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(717, 493);
@@ -142,6 +143,7 @@
             this.panel4.Controls.Add(this.btnAnular);
             this.panel4.Controls.Add(this.btnImprimir);
             this.panel4.Controls.Add(this.txtBuscar);
+            this.panel4.Controls.Add(this.btnNuevo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -155,7 +157,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(17, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 25);
+            this.label3.Size = new System.Drawing.Size(117, 30);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar por:";
             // 
@@ -171,7 +173,7 @@
             "Nombre"});
             this.cbBuscar.Location = new System.Drawing.Point(21, 37);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 31);
+            this.cbBuscar.Size = new System.Drawing.Size(88, 33);
             this.cbBuscar.TabIndex = 55;
             // 
             // btnEliminar
@@ -199,7 +201,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(121, 65);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 20);
             this.lblTotal.TabIndex = 53;
             this.lblTotal.Text = "label5";
             // 
@@ -245,37 +247,51 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(124, 38);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(285, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(285, 29);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // panel2
+            // PanelIngreso
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.cbCedula);
-            this.panel2.Controls.Add(this.txtDireccion);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtCorreo);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.cbAcceso);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.txtNombre);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.txtCiTrabajador);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.txtContrasena);
-            this.panel2.Controls.Add(this.txtTelefono);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.btnNuevo);
-            this.panel2.Controls.Add(this.btnEditar);
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.btnGuardar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(717, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(352, 589);
-            this.panel2.TabIndex = 0;
+            this.PanelIngreso.BackColor = System.Drawing.Color.White;
+            this.PanelIngreso.Controls.Add(this.cbCedula);
+            this.PanelIngreso.Controls.Add(this.txtDireccion);
+            this.PanelIngreso.Controls.Add(this.label4);
+            this.PanelIngreso.Controls.Add(this.txtCorreo);
+            this.PanelIngreso.Controls.Add(this.label1);
+            this.PanelIngreso.Controls.Add(this.label6);
+            this.PanelIngreso.Controls.Add(this.cbAcceso);
+            this.PanelIngreso.Controls.Add(this.label8);
+            this.PanelIngreso.Controls.Add(this.txtNombre);
+            this.PanelIngreso.Controls.Add(this.label11);
+            this.PanelIngreso.Controls.Add(this.txtCiTrabajador);
+            this.PanelIngreso.Controls.Add(this.label12);
+            this.PanelIngreso.Controls.Add(this.txtContrasena);
+            this.PanelIngreso.Controls.Add(this.txtTelefono);
+            this.PanelIngreso.Controls.Add(this.label13);
+            this.PanelIngreso.Controls.Add(this.btnCancelar);
+            this.PanelIngreso.Controls.Add(this.btnGuardar);
+            this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelIngreso.Location = new System.Drawing.Point(717, 0);
+            this.PanelIngreso.Name = "PanelIngreso";
+            this.PanelIngreso.Size = new System.Drawing.Size(352, 589);
+            this.PanelIngreso.TabIndex = 0;
+            // 
+            // cbCedula
+            // 
+            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            this.cbCedula.FormattingEnabled = true;
+            this.cbCedula.Items.AddRange(new object[] {
+            "V-",
+            "E-"});
+            this.cbCedula.Location = new System.Drawing.Point(43, 119);
+            this.cbCedula.Name = "cbCedula";
+            this.cbCedula.Size = new System.Drawing.Size(64, 28);
+            this.cbCedula.TabIndex = 95;
+            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
             // txtDireccion
             // 
@@ -297,7 +313,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(38, 281);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 25);
+            this.label4.Size = new System.Drawing.Size(105, 30);
             this.label4.TabIndex = 85;
             this.label4.Text = "Dirección:";
             // 
@@ -310,7 +326,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(44, 461);
             this.txtCorreo.MaxLength = 13;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(257, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(257, 29);
             this.txtCorreo.TabIndex = 82;
             // 
             // label1
@@ -320,7 +336,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(40, 428);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.Size = new System.Drawing.Size(81, 30);
             this.label1.TabIndex = 83;
             this.label1.Text = "Correo:";
             // 
@@ -331,7 +347,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(39, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 25);
+            this.label6.Size = new System.Drawing.Size(83, 30);
             this.label6.TabIndex = 77;
             this.label6.Text = "Cédula:";
             // 
@@ -349,7 +365,7 @@
             "Area de Bacteriologia/Examenes"});
             this.cbAcceso.Location = new System.Drawing.Point(42, 546);
             this.cbAcceso.Name = "cbAcceso";
-            this.cbAcceso.Size = new System.Drawing.Size(257, 33);
+            this.cbAcceso.Size = new System.Drawing.Size(257, 38);
             this.cbAcceso.TabIndex = 74;
             // 
             // label8
@@ -359,7 +375,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(39, 216);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 25);
+            this.label8.Size = new System.Drawing.Size(124, 30);
             this.label8.TabIndex = 79;
             this.label8.Text = "Contraseña:";
             // 
@@ -372,7 +388,7 @@
             this.txtNombre.Location = new System.Drawing.Point(42, 183);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.Size = new System.Drawing.Size(257, 29);
             this.txtNombre.TabIndex = 73;
             // 
             // label11
@@ -382,7 +398,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkOrange;
             this.label11.Location = new System.Drawing.Point(39, 151);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 25);
+            this.label11.Size = new System.Drawing.Size(94, 30);
             this.label11.TabIndex = 78;
             this.label11.Text = "Nombre:";
             // 
@@ -395,7 +411,7 @@
             this.txtCiTrabajador.Location = new System.Drawing.Point(113, 118);
             this.txtCiTrabajador.MaxLength = 9;
             this.txtCiTrabajador.Name = "txtCiTrabajador";
-            this.txtCiTrabajador.Size = new System.Drawing.Size(186, 26);
+            this.txtCiTrabajador.Size = new System.Drawing.Size(186, 29);
             this.txtCiTrabajador.TabIndex = 72;
             this.txtCiTrabajador.Leave += new System.EventHandler(this.txtCiTrabajador_Leave);
             // 
@@ -406,7 +422,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkOrange;
             this.label12.Location = new System.Drawing.Point(40, 503);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 25);
+            this.label12.Size = new System.Drawing.Size(84, 30);
             this.label12.TabIndex = 80;
             this.label12.Text = "Acceso:";
             // 
@@ -419,7 +435,7 @@
             this.txtContrasena.Location = new System.Drawing.Point(42, 248);
             this.txtContrasena.MaxLength = 3;
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(257, 26);
+            this.txtContrasena.Size = new System.Drawing.Size(257, 29);
             this.txtContrasena.TabIndex = 75;
             // 
             // txtTelefono
@@ -431,7 +447,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(42, 388);
             this.txtTelefono.MaxLength = 13;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(257, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(257, 29);
             this.txtTelefono.TabIndex = 76;
             // 
             // label13
@@ -441,12 +457,13 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(38, 356);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 25);
+            this.label13.Size = new System.Drawing.Size(95, 30);
             this.label13.TabIndex = 81;
             this.label13.Text = "Teléfono:";
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
             this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -454,30 +471,13 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(40, 42);
+            this.btnNuevo.Location = new System.Drawing.Point(676, 37);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(25, 25);
             this.btnNuevo.TabIndex = 68;
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(130, 42);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(25, 25);
-            this.btnEditar.TabIndex = 70;
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnCancelar
             // 
@@ -488,7 +488,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(175, 42);
+            this.btnCancelar.Location = new System.Drawing.Point(82, 38);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(25, 25);
             this.btnCancelar.TabIndex = 71;
@@ -505,29 +505,13 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(85, 41);
+            this.btnGuardar.Location = new System.Drawing.Point(42, 38);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(25, 25);
             this.btnGuardar.TabIndex = 69;
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // cbCedula
-            // 
-            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
-            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.cbCedula.FormattingEnabled = true;
-            this.cbCedula.Items.AddRange(new object[] {
-            "V-",
-            "E-"});
-            this.cbCedula.Location = new System.Drawing.Point(43, 119);
-            this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 25);
-            this.cbCedula.TabIndex = 95;
-            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
             // Trabajador
             // 
@@ -546,8 +530,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.PanelIngreso.ResumeLayout(false);
+            this.PanelIngreso.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -557,7 +541,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelIngreso;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.Label label3;
@@ -568,7 +552,6 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtDireccion;

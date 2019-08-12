@@ -50,8 +50,9 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
+            this.cbCedula.SelectedIndex = 0;
             this.cbCedula.Focus();
-            txtCiTrabajador.Enabled = false;
+            txtCiTrabajador.Enabled = true;
         }
 
         //Validar datos al ingresar
@@ -109,6 +110,8 @@ namespace Interfaz
             this.txtDireccion.Enabled = true;
             this.txtCorreo.Enabled = true;
             this.cbAcceso.Enabled = true;
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(352, PanelIngreso.Size.Height);
         }
 
         private void Deshabilitar()
@@ -120,6 +123,8 @@ namespace Interfaz
             this.txtDireccion.Enabled = false;
             this.txtCorreo.Enabled = false;
             this.cbAcceso.Enabled = false;
+            btnNuevo.Visible = true;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
 
 
@@ -133,7 +138,6 @@ namespace Interfaz
                 this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
-                this.btnEditar.Enabled = false;
                 this.btnCancelar.Enabled = true;
             }
             else
@@ -141,7 +145,6 @@ namespace Interfaz
                 this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
-                this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
             }
         }
@@ -210,6 +213,7 @@ namespace Interfaz
             //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MUsuario.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -296,7 +300,7 @@ namespace Interfaz
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //no existe ID en trabajador OJO
-
+            Habilitar();
             //cedula
             string Cedula = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
             this.cbCedula.Text = Cedula.Substring(0, 2);
@@ -309,6 +313,8 @@ namespace Interfaz
             this.txtContrasena.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contraseña"].Value);
             this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
             this.txtCorreo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Correo"].Value);
+            Editar();
+            txtNombre.Focus();
         }
 
 
@@ -396,7 +402,6 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -406,6 +411,7 @@ namespace Interfaz
             SinErrores();
             this.Botones();
             this.Limpiar();
+            this.Deshabilitar();
             this.txtCiTrabajador.Text = string.Empty;
         }
 

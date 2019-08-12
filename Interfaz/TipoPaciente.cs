@@ -50,7 +50,6 @@ namespace Interfaz
                 this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
-                this.btnEditar.Enabled = false;
                 this.btnCancelar.Enabled = true;
             }
             else
@@ -58,7 +57,6 @@ namespace Interfaz
                 this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
-                this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
             }
         }
@@ -74,6 +72,8 @@ namespace Interfaz
             this.txtTipoPago.Enabled = true;
             this.txtNoCopias.Enabled = true;
 
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(349, PanelIngreso.Size.Height);
             this.txtNombre.Focus();
 
         }
@@ -86,6 +86,8 @@ namespace Interfaz
             this.txtEquiv.Enabled = false;
             this.txtTipoPago.Enabled = false;
             this.txtNoCopias.Enabled = false;
+            btnNuevo.Visible = true;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
 
         
@@ -107,6 +109,7 @@ namespace Interfaz
             //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MTipoPaciente.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -388,12 +391,11 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
-            this.Habilitar();
+            this.Deshabilitar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
         }
 
 
@@ -406,6 +408,7 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Habilitar();
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtEquiv.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Equivalencia"].Value);
@@ -413,7 +416,8 @@ namespace Interfaz
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Porcentaje"].Value);
             this.txtTipoPago.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoPago"].Value);
             this.txtNoCopias.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NoCopia"].Value);
-
+            Editar();
+            txtNombre.Focus();
         }
 
 
