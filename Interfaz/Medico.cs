@@ -54,7 +54,7 @@ namespace Interfaz
 
             dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
 
-
+            Deshabilitar();
 
 
 
@@ -104,10 +104,11 @@ namespace Interfaz
 
         private void Habilitar()
         {
-            this.txtCiMedico.ReadOnly = false;
             this.txtCiMedico.Enabled = true;
             this.txtNombre.Enabled = true;
             this.txtClinica.Enabled = true;
+            btnNuevo.Visible = false;
+            PanelIngreso.Size = new Size(320, PanelIngreso.Size.Height);
             this.txtNombre.Focus();
         }
 
@@ -116,6 +117,8 @@ namespace Interfaz
             this.txtCiMedico.Enabled = false;
             this.txtNombre.Enabled = false;
             this.txtClinica.Enabled = false;
+            btnNuevo.Visible = true;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
 
 
@@ -248,16 +251,19 @@ namespace Interfaz
                 this.Habilitar();
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
-                this.btnEditar.Enabled = false;
+
                 this.btnCancelar.Enabled = true;
+                btnNuevo.Visible = false;
+                PanelIngreso.Size = new Size(320, PanelIngreso.Size.Height);
             }
             else
             {
                 this.Deshabilitar();
                 this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = false;
-                this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
+                btnNuevo.Visible = true;
+                PanelIngreso.Size = new Size(320, PanelIngreso.Size.Height);
             }
         }
 
@@ -274,6 +280,7 @@ namespace Interfaz
             //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MMedico.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -344,7 +351,6 @@ namespace Interfaz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -353,7 +359,7 @@ namespace Interfaz
             this.IsEditar = false;
             this.Botones();
             this.Limpiar();
-            this.Habilitar();
+            this.Deshabilitar();
         }
 
 
@@ -375,6 +381,7 @@ namespace Interfaz
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
+            Habilitar();
             this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IDMedico"].Value);
 
             //cedula
@@ -385,7 +392,8 @@ namespace Interfaz
 
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
             this.txtClinica.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["ClinicaOHospital"].Value);
-
+            Editar();
+            txtNombre.Focus();
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
