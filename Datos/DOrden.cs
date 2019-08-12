@@ -12,27 +12,79 @@ namespace Datos
     public class DOrden:Conexion
     {
         private int _ID;
+
+public int ID
+{
+  get { return _ID; }
+  set { _ID = value; }
+}
         private int _IDBioanalista;
+
+public int IDBioanalista
+{
+  get { return _IDBioanalista; }
+  set { _IDBioanalista = value; }
+}
         private string _IDUsuario;
+
+public string IDUsuario
+{
+  get { return _IDUsuario; }
+  set { _IDUsuario = value; }
+}
         private int _IDMedico;
+
+public int IDMedico
+{
+  get { return _IDMedico; }
+  set { _IDMedico = value; }
+}
         private int _IDTurno;
+
+public int IDTurno
+{
+  get { return _IDTurno; }
+  set { _IDTurno = value; }
+}
         private DateTime _Fecha;
 
-        private string NombreBioanalista;
-        private string NombreUsuario;
-        private string NombreMedico;
-        private string NombreTurno;
+public DateTime Fecha
+{
+  get { return _Fecha; }
+  set { _Fecha = value; }
+}
 
-        public int ID { get => _ID; set => _ID = value; }
-        public int IDBioanalista { get => _IDBioanalista; set => _IDBioanalista = value; }
-        public string IDUsuario { get => _IDUsuario; set => _IDUsuario = value; }
-        public int IDMedico { get => _IDMedico; set => _IDMedico = value; }
-        public int IDTurno { get => _IDTurno; set => _IDTurno = value; }
-        public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
-        public string NombreBioanalista1 { get => NombreBioanalista; set => NombreBioanalista = value; }
-        public string NombreUsuario1 { get => NombreUsuario; set => NombreUsuario = value; }
-        public string NombreMedico1 { get => NombreMedico; set => NombreMedico = value; }
-        public string NombreTurno1 { get => NombreTurno; set => NombreTurno = value; }
+        private string NombreBioanalista;
+
+public string NombreBioanalista1
+{
+  get { return NombreBioanalista; }
+  set { NombreBioanalista = value; }
+}
+        private string NombreUsuario;
+
+public string NombreUsuario1
+{
+  get { return NombreUsuario; }
+  set { NombreUsuario = value; }
+}
+        private string NombreMedico;
+
+public string NombreMedico1
+{
+  get { return NombreMedico; }
+  set { NombreMedico = value; }
+}
+private string NombreTurno;
+
+public string NombreTurno1
+{
+    get { return NombreTurno; }
+    set { NombreTurno = value; }
+}
+
+
+
 
         public DOrden()
         {

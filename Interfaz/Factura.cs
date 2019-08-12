@@ -25,6 +25,7 @@ namespace Interfaz
 
 
 
+
             //como comienza el tabcontrol: en examenes y con el btn regresar desactivado
             tabControl1.SelectedIndex = 0;
             this.btnRetroceder.Enabled = false;
@@ -38,58 +39,124 @@ namespace Interfaz
             tabControl1.SizeMode = TabSizeMode.Fixed;
 
 
-            dgvExamenes.DataSource = MExamen.Mostrar("");
 
-            //este es el evento load
-            /*
-
-            string connectionString = "Data Source= MIRLU-PC\\SQLEXPRESS; Initial Catalog= LabVdC; Integrated Security= true";
-
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Examen", sqlCon);
-                DataTable dtbl = new DataTable();
-                sqlDa.Fill(dtbl);
-
-                dgvExamenes.DataSource = dtbl;
+            CrearColumnasDgv(); //eso es para cargar los dgv con la bd y añadir las columnas
 
 
+            CargarResumenExamenesSeleccionados(); //esto es para cargar los examenes seleccionados al dgv de la parte Finalizar
 
 
-
-
-
-
-
-                //creando la columna check
-                DataGridViewCheckBoxColumn dgvcCheckBox = new DataGridViewCheckBoxColumn();
-                dgvcCheckBox.HeaderText = "Seleccionado";
-
-                dgvExamenes.Columns.Add(dgvcCheckBox);
-
-
-                foreach (DataGridViewColumn column in dgvExamenes.Columns)
-                {
-                    if (column.Index.Equals(dgvExamenes.Columns.Count - 1)) //aqui se pone que la columna de Seleccionar, se pueda editar
-                    {
-                        column.ReadOnly = false;
-                    }
-                    else
-                    {
-                        column.ReadOnly = true;  ///y las demas no
-                    }
-                }
-
-
-            } //fin del using
-
-    */
-
+                
 
 
         }
+
+
+
+
+        private void CrearColumnasDgv()
+        {
+
+            //aqui se carga dgvExamenes con la tabla Examenes
+            dgvExamenes.DataSource = MExamen.Mostrar("");
+
+
+            //// creando la columna check
+            // DataGridViewCheckBoxColumn dgvcCheckBox1 = new DataGridViewCheckBoxColumn();
+            // dgvcCheckBox1.HeaderText = "Seleccionado";
+
+            // dgvExamenes.Columns.Add(dgvcCheckBox1);
+
+            // foreach (DataGridViewColumn column in dgvExamenes.Columns)
+            // {
+            //     if (column.Index.Equals(dgvExamenes.Columns.Count - 1)) //aqui se pone que la columna de Seleccionar, se pueda editar
+            //     {
+            //         column.ReadOnly = false;
+            //     }
+            //     else
+            //     {
+            //         column.ReadOnly = true;  ///y las demas no
+            //     }
+            // }
+
+
+
+            // aqui añado las columnas al otro datagrid
+
+            DataGridViewTextBoxColumn columnaNombre = new DataGridViewTextBoxColumn();
+            columnaNombre.HeaderText = "Nombre";
+
+            dgvSeleccionados.Columns.Add(columnaNombre);
+
+            DataGridViewTextBoxColumn columnaPrecio1 = new DataGridViewTextBoxColumn();
+            columnaPrecio1.HeaderText = "Precio1";
+
+            dgvSeleccionados.Columns.Add(columnaPrecio1);
+
+            DataGridViewTextBoxColumn columnaPrecio2 = new DataGridViewTextBoxColumn();
+            columnaPrecio2.HeaderText = "Precio2";
+
+            dgvSeleccionados.Columns.Add(columnaPrecio2);
+
+
+
+            //aqui añado la columna del checkbox al otro datagrid
+
+
+            //DataGridViewCheckBoxColumn dgvcCheckBox2 = new DataGridViewCheckBoxColumn();
+            //dgvcCheckBox2.HeaderText = "Seleccionado";
+
+            //dgvSeleccionados.Columns.Add(dgvcCheckBox2);
+
+
+            //foreach (DataGridViewColumn column in dgvSeleccionados.Columns)
+            //{
+            //    if (column.Index.Equals(dgvSeleccionados.Columns.Count - 1)) //aqui se pone que la columna de Seleccionar, se pueda editar
+            //    {
+            //        column.ReadOnly = false;
+            //    }
+            //    else
+            //    {
+            //        column.ReadOnly = true;  ///y las demas no
+            //    }
+            //}
+
+        }
+
+
+
+
+
+
+
+
+        private void CargarResumenExamenesSeleccionados() 
+        {
+
+            //esto es para cargar el datagrid (dgvConclusionExamenes) con los datos del otro datagrid (dgvSeleccionados)
+
+            dgvResumenExamenes.Rows.Clear();
+
+            if (dgvSeleccionados.Rows.Count > 0)
+            {
+                for (int i = 0; i < dgvSeleccionados.Rows.Count; i++)
+                {
+                    if (dgvSeleccionados.Rows[i].Cells[0].Value != null)
+                    {
+                        this.dgvResumenExamenes.Rows.Add();
+                        this.dgvResumenExamenes.Rows[i].Cells[0].Value = dgvSeleccionados.Rows[i].Cells[0].Value.ToString();
+                        this.dgvResumenExamenes.Rows[i].Cells[1].Value = dgvSeleccionados.Rows[i].Cells[1].Value.ToString();
+                        this.dgvResumenExamenes.Rows[i].Cells[2].Value = dgvSeleccionados.Rows[i].Cells[2].Value.ToString();
+                    }
+                }
+            } 
+        
+        }
+
+
+
+
+
 
 
         private void CambiarTab(int ValorASumar)
@@ -153,6 +220,14 @@ namespace Interfaz
 
 
 
+        private void Mostrar(string buscartxt)
+        {
+            dgvExamenes.DataSource = MExamen.Mostrar(buscartxt);
+        }
+
+
+
+
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -169,13 +244,50 @@ namespace Interfaz
 
         }
 
+
+
+
         private void btnAnadir_Click(object sender, EventArgs e)
         {
 
-            //aqui va el codigo de pasar registros de un dgv a otro
-            //wait for it uwu
+            foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
+            {
+                dgvSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
+            }
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewRow item in this.dgvSeleccionados.SelectedRows)
+            {
+                dgvSeleccionados.Rows.RemoveAt(item.Index);
+            }
+
+        }
+
+
+       
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+        }
+
+        private void txtBuscarExamen_TextChanged(object sender, EventArgs e)
+        {
+            Mostrar(txtBuscarExamen.Text);
+        }
+
+        private void txtBuscarSeleccionados_TextChanged(object sender, EventArgs e)
+        {
+            Mostrar(txtBuscarSeleccionados.Text);
+        } 
                   
 
 

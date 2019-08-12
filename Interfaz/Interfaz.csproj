@@ -228,6 +228,8 @@
     <EmbeddedResource Include="Turno.resx">
       <DependentUpon>Turno.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Datos.DExamen.datasource" />
+    <None Include="Properties\DataSources\Examenes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
