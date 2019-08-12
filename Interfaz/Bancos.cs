@@ -107,7 +107,10 @@ namespace Interfaz
             this.txtNombre.Focus();
         }
 
-
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            AnularItems();
+        }
 
 
         //metodos
@@ -150,6 +153,60 @@ namespace Interfaz
                         else
                         {
                             this.MensajeOK("Se Eliminó Correctamente el Registro del Banco");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        void AnularItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de bancos?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del banco?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MBanco.Anular(Convert.ToInt32(item.Cells["ID"].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se Anularon Correctamente los Registros de Bancos");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se Anuló Correctamente el Registro del Banco");
                         }
                     }
                     else
@@ -327,5 +384,7 @@ namespace Interfaz
                 errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
             }
         }
+
+
     }
 }

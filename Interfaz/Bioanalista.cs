@@ -121,6 +121,11 @@ namespace Interfaz
             Buscar();
         }
 
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            AnularItems();
+        }
+
         //metodos
 
         void EliminarItems()
@@ -161,6 +166,61 @@ namespace Interfaz
                         else
                         {
                             this.MensajeOK("Se eliminó correctamente el registro del Bioanalista");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+        void AnularItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de Bioanalistas?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del Bioanalista?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+                        Rpta = MBioanalista.Anular(Convert.ToInt32(item.Cells["ID"].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se anularon correctamente los registros de Bioanalistas");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se anuló correctamente el registro del Bioanalista");
                         }
                     }
                     else
@@ -366,9 +426,6 @@ namespace Interfaz
             }
         }
 
-        private void btnAnular_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

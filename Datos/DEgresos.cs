@@ -311,6 +311,54 @@ namespace Datos
 
         }
 
+
+        public string Anular(DEgresos Egresos)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "anular_egresos";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id = new SqlParameter();
+                Parametro_Id.ParameterName = "@ID";
+                Parametro_Id.SqlDbType = SqlDbType.Int;
+                Parametro_Id.Value = Egresos.ID;
+                SqlComando.Parameters.Add(Parametro_Id);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el Registro del egreso";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+
+        }
+
         //mostrar y buscar
         public List<DEgresos> Mostrar(string TextoBuscar)
         {

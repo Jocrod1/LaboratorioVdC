@@ -364,6 +364,54 @@ namespace Datos
 
         }
 
+
+        public string Anular(DEmpresaSeguro EmpresaSeguro)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "anular_empresasyseg";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_ID = new SqlParameter();
+                Parametro_ID.ParameterName = "@ID";
+                Parametro_ID.SqlDbType = SqlDbType.Int;
+                Parametro_ID.Value = EmpresaSeguro.ID;
+                SqlComando.Parameters.Add(Parametro_ID);
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el Registro de la empresa/seguro";
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+
+        }
+
         //mostrar y buscar
         public List<DEmpresaSeguro> Mostrar(string TextoBuscar)
         {

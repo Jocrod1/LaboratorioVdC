@@ -48,6 +48,13 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
+        public static string Anular(int ID)
+        {
+            DEmpresaSeguro Objeto = new DEmpresaSeguro();
+            Objeto.ID = ID;
+            return Objeto.Anular(Objeto);
+        }
+
         //probar esta nueva version, NUEVA VERSION
         public new static List<DEmpresaSeguro> Mostrar(string TextoBuscar)
         {

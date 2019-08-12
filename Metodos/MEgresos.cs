@@ -43,6 +43,13 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
+        public static string Anular(int ID)
+        {
+            DEgresos Objeto = new DEgresos();
+            Objeto.ID = ID;
+            return Objeto.Anular(Objeto);
+        }
+
         //probar esta nueva version, NUEVA VERSION
         public new static List<DEgresos> Mostrar(string TextoBuscar)
         {

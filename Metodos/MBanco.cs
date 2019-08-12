@@ -33,6 +33,13 @@ namespace Metodos
             return Objeto.Eliminar(Objeto);
         }
 
+        public static string Anular(int ID)
+        {
+            DBanco Objeto = new DBanco();
+            Objeto.ID = ID;
+            return Objeto.Anular(Objeto);
+        }
+
         //probar esta nueva version, NUEVA VERSION
         public new static List<DBanco> Mostrar(string TextoBuscar)
         {

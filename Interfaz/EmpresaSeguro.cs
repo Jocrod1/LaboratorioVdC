@@ -323,11 +323,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " Registros de empresas/seguros?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente Desea Anular los " + NumeroSeleccionado + " Registros de Empresas?", "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea anular el registro de la empresas/Seguros?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro de las empresas?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -336,19 +336,18 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        // usar un metodo para Anular en vez de usar el Editar
-                        //Rpta = MEmpresaSeguro.Editar(Convert.ToInt32(item.Cells["ID"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value), Convert.ToDouble(this.dataListado.CurrentRow.Cells["porcentaje"].Value), Convert.ToInt32(this.dataListado.CurrentRow.Cells["tipoPrecio"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["direccion"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["RIF"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value), Convert.ToString(this.dataListado.CurrentRow.Cells["contacto"].Value), "ANULADO");
+                        Rpta = MEmpresaSeguro.Anular(Convert.ToInt32(item.Cells[0].Value));
                     }
 
                     if (Rpta.Equals("OK"))
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se anularon correctamente los registros de trabajadores");
+                            this.MensajeOK("Se anularon correctamente los registros de empresas");
                         }
                         else
                         {
-                            this.MensajeOK("Se anuló correctamente el registro del trabajador");
+                            this.MensajeOK("Se anuló correctamente el registro del empresas");
                         }
                     }
                     else
@@ -518,15 +517,6 @@ namespace Interfaz
 
         }
 
-
-
-
-
-
-
-
-
-        
 
     }
 }
