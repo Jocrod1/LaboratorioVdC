@@ -12,36 +12,112 @@ namespace Datos
     {
 
         private int _ID;
-        private int _IDPaciente;
-        private int _IDTipoPaciente;
-        private int _IDEmpresaSeguro;
-        private int _IDOrden;
-        private int _TipoPago;
-        private int _IDBanco;
-        private string _NumeroCHoT;
-        private string _Exonerado;
-        private string _Motivo;
-        private double _Descuento;
-        private double _Subtotal;
-        private double _RecargoEmergencia;
-        private double _Abonar;
-        private double _Total;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public int IDPaciente { get => _IDPaciente; set => _IDPaciente = value; }
-        public int IDTipoPaciente { get => _IDTipoPaciente; set => _IDTipoPaciente = value; }
-        public int IDEmpresaSeguro { get => _IDEmpresaSeguro; set => _IDEmpresaSeguro = value; }
-        public int IDOrden { get => _IDOrden; set => _IDOrden = value; }
-        public int TipoPago { get => _TipoPago; set => _TipoPago = value; }
-        public int IDBanco { get => _IDBanco; set => _IDBanco = value; }
-        public string NumeroCHoT { get => _NumeroCHoT; set => _NumeroCHoT = value; }
-        public string Exonerado { get => _Exonerado; set => _Exonerado = value; }
-        public string Motivo { get => _Motivo; set => _Motivo = value; }
-        public double Descuento { get => _Descuento; set => _Descuento = value; }
-        public double Subtotal { get => _Subtotal; set => _Subtotal = value; }
-        public double RecargoEmergencia { get => _RecargoEmergencia; set => _RecargoEmergencia = value; }
-        public double Abonar { get => _Abonar; set => _Abonar = value; }
-        public double Total { get => _Total; set => _Total = value; }
+public int ID
+{
+  get { return _ID; }
+  set { _ID = value; }
+}
+        private int _IDPaciente;
+
+public int IDPaciente
+{
+  get { return _IDPaciente; }
+  set { _IDPaciente = value; }
+}
+        private int _IDTipoPaciente;
+
+public int IDTipoPaciente
+{
+  get { return _IDTipoPaciente; }
+  set { _IDTipoPaciente = value; }
+}
+        private int _IDEmpresaSeguro;
+
+public int IDEmpresaSeguro
+{
+  get { return _IDEmpresaSeguro; }
+  set { _IDEmpresaSeguro = value; }
+}
+        private int _IDOrden;
+
+public int IDOrden
+{
+  get { return _IDOrden; }
+  set { _IDOrden = value; }
+}
+        private int _TipoPago;
+
+public int TipoPago
+{
+  get { return _TipoPago; }
+  set { _TipoPago = value; }
+}
+        private int _IDBanco;
+
+public int IDBanco
+{
+  get { return _IDBanco; }
+  set { _IDBanco = value; }
+}
+        private string _NumeroCHoT;
+
+public string NumeroCHoT
+{
+  get { return _NumeroCHoT; }
+  set { _NumeroCHoT = value; }
+}
+        private string _Exonerado;
+
+public string Exonerado
+{
+  get { return _Exonerado; }
+  set { _Exonerado = value; }
+}
+        private string _Motivo;
+
+public string Motivo
+{
+  get { return _Motivo; }
+  set { _Motivo = value; }
+}
+        private double _Descuento;
+
+public double Descuento
+{
+  get { return _Descuento; }
+  set { _Descuento = value; }
+}
+        private double _Subtotal;
+
+public double Subtotal
+{
+  get { return _Subtotal; }
+  set { _Subtotal = value; }
+}
+        private double _RecargoEmergencia;
+
+public double RecargoEmergencia
+{
+  get { return _RecargoEmergencia; }
+  set { _RecargoEmergencia = value; }
+}
+        private double _Abonar;
+
+public double Abonar
+{
+  get { return _Abonar; }
+  set { _Abonar = value; }
+}
+private double _Total;
+
+public double Total
+{
+    get { return _Total; }
+    set { _Total = value; }
+}
+
+        
 
         public DFactura()
         {

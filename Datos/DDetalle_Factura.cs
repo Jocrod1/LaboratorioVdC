@@ -12,18 +12,48 @@ namespace Datos
     {
 
         private int _ID;
-        private int _IDFactura;
-        private string _ExamenPerfil;
-        private int _IDExamen;
-        private int _IDPerfil;
-        private int _IDDetalleOrden;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public int IDFactura { get => _IDFactura; set => _IDFactura = value; }
-        public string ExamenPerfil { get => _ExamenPerfil; set => _ExamenPerfil = value; }
-        public int IDExamen { get => _IDExamen; set => _IDExamen = value; }
-        public int IDPerfil { get => _IDPerfil; set => _IDPerfil = value; }
-        public int IDDetalleOrden { get => _IDDetalleOrden; set => _IDDetalleOrden = value; }
+public int ID
+{
+  get { return _ID; }
+  set { _ID = value; }
+}
+        private int _IDFactura;
+
+public int IDFactura
+{
+  get { return _IDFactura; }
+  set { _IDFactura = value; }
+}
+        private string _ExamenPerfil;
+
+public string ExamenPerfil
+{
+  get { return _ExamenPerfil; }
+  set { _ExamenPerfil = value; }
+}
+        private int _IDExamen;
+
+public int IDExamen
+{
+  get { return _IDExamen; }
+  set { _IDExamen = value; }
+}
+        private int _IDPerfil;
+
+public int IDPerfil
+{
+  get { return _IDPerfil; }
+  set { _IDPerfil = value; }
+}
+private int _IDDetalleOrden;
+
+public int IDDetalleOrden
+{
+    get { return _IDDetalleOrden; }
+    set { _IDDetalleOrden = value; }
+}
+
 
         public DDetalle_Factura()
         {

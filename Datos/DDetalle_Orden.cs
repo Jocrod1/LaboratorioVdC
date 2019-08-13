@@ -12,12 +12,27 @@ namespace Datos
     {
 
         private int _ID;
-        private int _IDOrden;
-        private int _IDExamen;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public int IDOrden { get => _IDOrden; set => _IDOrden = value; }
-        public int IDExamen { get => _IDExamen; set => _IDExamen = value; }
+public int ID
+{
+  get { return _ID; }
+  set { _ID = value; }
+}
+        private int _IDOrden;
+
+public int IDOrden
+{
+  get { return _IDOrden; }
+  set { _IDOrden = value; }
+}
+private int _IDExamen;
+
+public int IDExamen
+{
+    get { return _IDExamen; }
+    set { _IDExamen = value; }
+}
+
 
         public DDetalle_Orden()
         {

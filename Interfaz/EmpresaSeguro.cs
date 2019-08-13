@@ -82,13 +82,11 @@ namespace Interfaz
             //aca hace falta el id de la empresa para limpiarlo
             this.txtNombre.Text = string.Empty;
             this.txtPorcentaje.Text = string.Empty;
-            this.cbTipoPrecio.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
             this.txtRIF.Text = string.Empty;
             this.txtNIT.Text = string.Empty;
             this.txtContacto.Text = string.Empty;
-            this.rbEmisionSi.Checked = false;
-            this.rbEmisionNo.Checked = false;
+            this.cbEmisionRel.SelectedIndex = -1;
             this.cbTipoPrecio.SelectedIndex = -1;
 
 
@@ -141,8 +139,7 @@ namespace Interfaz
             this.txtRIF.Enabled = true;
             this.txtNIT.Enabled = true;
             this.txtContacto.Enabled = true;
-            this.rbEmisionNo.Enabled = true;
-            this.rbEmisionSi.Enabled = true;
+            this.cbEmisionRel.Enabled = true;
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(350, PanelIngreso.Size.Height);
 
@@ -158,9 +155,8 @@ namespace Interfaz
             this.txtDireccion.Enabled = false;
             this.txtRIF.Enabled = false;
             this.txtNIT.Enabled = false;
+            this.cbEmisionRel.Enabled = false;
             this.txtContacto.Enabled = false;
-            this.rbEmisionNo.Enabled = false;
-            this.rbEmisionSi.Enabled = false;
             btnNuevo.Visible = true;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
@@ -174,15 +170,6 @@ namespace Interfaz
         {
 
 
-            if (rbEmisionSi.Checked)
-            {
-                RespuestaEmision = "Si";
-            }
-            else if (rbEmisionNo.Checked)
-            {
-                RespuestaEmision = "No";
-            }
-            
 
 
 
@@ -198,12 +185,12 @@ namespace Interfaz
 
 
 
-                    Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                    Rpta = MEmpresaSeguro.Insertar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.cbEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.RespuestaEmision, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
+                    Rpta = MEmpresaSeguro.Editar(ID, this.txtNombre.Text, Convert.ToDouble(txtPorcentaje.Text), Convert.ToInt32(this.cbTipoPrecio.Text), this.cbEmisionRel.Text, this.txtDireccion.Text, this.txtRIF.Text, this.txtNIT.Text, this.txtContacto.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -467,16 +454,8 @@ namespace Interfaz
             this.txtNIT.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value);
             this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["contacto"].Value);
             this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["direccion"].Value);
+            this.cbEmisionRel.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value);
 
-            if (Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value) == "Si" )
-            {
-                rbEmisionSi.Checked = true;
-            }
-            else if (Convert.ToString(this.dataListado.CurrentRow.Cells["emision"].Value) == "No")
-            {
-                rbEmisionNo.Checked = true;
-            }
-            
 
 
         }
@@ -503,21 +482,13 @@ namespace Interfaz
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Porcentaje"].Value);
             this.cbTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoPrecio"].Value);
+            this.cbEmisionRel.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Emision"].Value);
             this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Direccion"].Value);
             this.txtRIF.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["RIF"].Value);
             this.txtNIT.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NIT"].Value);
             this.txtContacto.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Contacto"].Value);
 
 
-
-            if ((Convert.ToString(this.dataListado.CurrentRow.Cells["Emision"].Value)) == "Si")
-            {
-                this.rbEmisionSi.Checked = true;
-            }
-            else if ((Convert.ToString(this.dataListado.CurrentRow.Cells["Emision"].Value)) == "No")
-            {
-                this.rbEmisionNo.Checked = true;
-            }
             Editar();
         }
 
