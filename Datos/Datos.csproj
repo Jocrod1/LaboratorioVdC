@@ -46,10 +46,13 @@
   <ItemGroup>
     <Compile Include="DBanco.cs" />
     <Compile Include="DBioanalista.cs" />
+    <Compile Include="DDetalle_Factura.cs" />
+    <Compile Include="DDetalle_Orden.cs" />
     <Compile Include="DEgresos.cs" />
     <Compile Include="DEmpresaSeguro.cs" />
     <Compile Include="DExamen.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DFactura.cs" />
     <Compile Include="DGrupoExamen.cs" />
     <Compile Include="DLabRef.cs" />
     <Compile Include="DMedico.cs" />

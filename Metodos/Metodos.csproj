@@ -48,6 +48,7 @@
     <Compile Include="MEgresos.cs" />
     <Compile Include="MEmpresaSeguro.cs" />
     <Compile Include="MExamen.cs" />
+    <Compile Include="MFactura.cs" />
     <Compile Include="MGrupoExamen.cs" />
     <Compile Include="MLabRef.cs" />
     <Compile Include="MMedico.cs" />

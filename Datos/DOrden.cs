@@ -111,7 +111,7 @@ public string NombreTurno1
         //metodos
 
         //insertar
-        public string Insertar(DOrden Orden)
+        public string Insertar(DOrden Orden, List<DDetalle_Orden> Detalle)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -121,6 +121,9 @@ public string NombreTurno1
                 //conexion con la Base de Datos
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
                 SqlConectar.Open();
+
+                //transaccion
+                SqlTransaction SqlTransaccion = SqlConectar.BeginTransaction();
 
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
@@ -175,6 +178,34 @@ public string NombreTurno1
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro de la orden";
+
+                if(respuesta.Equals("OK"))
+                {
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["ID"].Value);
+
+                    foreach(DDetalle_Orden det in Detalle)
+                    {
+                        det.ID = this.ID;
+
+                        //llamar al insertar
+                        respuesta = det.Insertar(det, ref SqlConectar, ref SqlTransaccion);
+
+                        if(!respuesta.Equals("OK"))
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if(respuesta.Equals("OK"))
+                {
+                    SqlTransaccion.Commit();
+                }
+                else
+                {
+                    //si recibe una respuesta contraria se niega la transaccion
+                    SqlTransaccion.Rollback();
+                }
 
             }
             catch (Exception excepcion)
