@@ -58,6 +58,7 @@
     <Compile Include="DMedico.cs" />
     <Compile Include="DOrden.cs" />
     <Compile Include="DPaciente.cs" />
+    <Compile Include="DPerfil.cs" />
     <Compile Include="DRegistroAcceso.cs" />
     <Compile Include="DTipoPaciente.cs" />
     <Compile Include="DTurno.cs" />

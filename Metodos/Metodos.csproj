@@ -54,6 +54,7 @@
     <Compile Include="MMedico.cs" />
     <Compile Include="MOrden.cs" />
     <Compile Include="MPaciente.cs" />
+    <Compile Include="MPerfil.cs" />
     <Compile Include="MRegistroAcceso.cs" />
     <Compile Include="MTipoPaciente.cs" />
     <Compile Include="MTurno.cs" />
