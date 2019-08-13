@@ -34,6 +34,11 @@ namespace Interfaz
         {
 
 
+            cbTipoPaciente.DataSource = MTipoPaciente.Mostrar("");
+            cbTipoPaciente.DisplayMember = "Nombre";
+            cbTipoPaciente.ValueMember = "ID";
+            cbTipoPaciente.SelectedIndex = -1;
+
 
 
 
@@ -170,6 +175,8 @@ namespace Interfaz
             this.TablaSeleccionados.Columns.Add("Precio1", System.Type.GetType("System.Double"));
             this.TablaSeleccionados.Columns.Add("Precio2", System.Type.GetType("System.Double"));
 
+            dgvSeleccionados.DataSource = this.TablaSeleccionados;
+
 
             //esto es para añadir las columnas a la otra TablaSeleccionados (esto es para buscar por letra en dgvSeleccionados
 
@@ -253,6 +260,8 @@ namespace Interfaz
             else if (tabControl1.SelectedIndex == 1)
             {
                 lblFaseActual.Text = "Paciente";
+
+                OcultarColumnasPrecio(Convert.ToInt32(cbTipoPaciente.SelectedValue));
             }
             else if (tabControl1.SelectedIndex == 2)
             {
@@ -266,7 +275,6 @@ namespace Interfaz
                 CargarResumenExamenesSeleccionados(); //esto es para cargar los examenes seleccionados al dgv de la parte Finalizar
 
 
-                //aqui debo llamar a la funcion OcultarColumnasPrecio
 
 
 
@@ -317,10 +325,26 @@ namespace Interfaz
 
 
 
-        private void OcultarColumnasPrecio()
+        private void OcultarColumnasPrecio(int tipo_precio)
         {
-
+                if (tipo_precio==1)
+                {
+                    //oculto columnas de precio2
+                    
+                    this.dgvExamenes.Columns[6].Visible = false;
+                    this.dgvSeleccionados.Columns[2].Visible = false; 
+                    
+                       
+                }
+                else if (tipo_precio==2)
+                {
+                    //oculta columnas de precio1
+                    this.dgvExamenes.Columns[5].Visible = false;
+                    this.dgvSeleccionados.Columns[1].Visible = false; 
+                }
             
+
+
             //extraer todos los registros de TipoPaciente (en un data table maybe?)
             //hacer un loop donde trate de coincidir el nombre que esta en la tabla con el nombre que esta seleccionado en el cb
             //y luego de eso se hace un if donde observa cual es el precio, y de una vez ocultara las columnas correspondientes
@@ -368,6 +392,9 @@ namespace Interfaz
                         }
                     }
                 }
+
+                //if tipo paciente va aqui y ocultamos las columnas
+               
             }
 
             if (txtBuscarSeleccionados.Text.Length == 0)
@@ -378,6 +405,8 @@ namespace Interfaz
             {
                 this.dgvSeleccionados.DataSource = this.TablaSeleccionados2;
             }
+
+            OcultarColumnasPrecio(Convert.ToInt32(this.cbTipoPaciente.SelectedValue));
         }
 
 
@@ -488,7 +517,7 @@ namespace Interfaz
 
                 if (cant_registros != 0)
                 {
-                    DialogResult respuesta = MessageBox.Show("Ya el Paciente C.I: " + (this.cbCedula.Text + this.txtCiPaciente.Text) + " está ingresado. \n ¿Desea cargar los datos del paciente existente? ", "Laboratorio Virgen de Coromoto", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    DialogResult respuesta = MessageBox.Show("Ya el Paciente C.I: " + (this.cbCedula.Text + this.txtCiPaciente.Text) + " está ingresado. \n ¿Desea cargar los datos del paciente existente? ", "Laboratorio Virgen de Coromoto", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                     if (respuesta == DialogResult.Yes)
                     {
@@ -498,8 +527,12 @@ namespace Interfaz
                         this.TablaResultadosCI.Columns.Add("Precio1", System.Type.GetType("System.Double"));
                         this.TablaResultadosCI.Columns.Add("Precio2", System.Type.GetType("System.Double"));
 
-                        // berwensa :(
-                        //TablaResultadosCI = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text);
+                        
+                        txtNombre.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Nombre;
+                        txtSexo.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Sexo;
+                        txtEdad.Text = Convert.ToString(MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Edad);
+                        txtTelefono.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Telefono;
+
 
                     }
                     else if (respuesta == DialogResult.No)
@@ -515,6 +548,7 @@ namespace Interfaz
 
         }
 
+        
                   
 
 

@@ -12,22 +12,62 @@ namespace Datos
     {
 
         private int _ID;
-        private string _Nombre;
-        private string _Equivalencia;
-        private double _Precio1;
-        private double _Precio2;
-        private int _Titulo;
-        private int _LabRef;
-        private int _PrecioRef;
 
-        public int ID { get => _ID; set => _ID = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public string Equivalencia { get => _Equivalencia; set => _Equivalencia = value; }
-        public double Precio1 { get => _Precio1; set => _Precio1 = value; }
-        public double Precio2 { get => _Precio2; set => _Precio2 = value; }
-        public int Titulo { get => _Titulo; set => _Titulo = value; }
-        public int LabRef { get => _LabRef; set => _LabRef = value; }
-        public int PrecioRef { get => _PrecioRef; set => _PrecioRef = value; }
+public int ID
+{
+  get { return _ID; }
+  set { _ID = value; }
+}
+private string _Nombre;
+
+public string Nombre
+{
+    get { return _Nombre; }
+    set { _Nombre = value; }
+}
+private string _Equivalencia;
+
+public string Equivalencia
+{
+    get { return _Equivalencia; }
+    set { _Equivalencia = value; }
+}
+private double _Precio1;
+
+public double Precio1
+{
+    get { return _Precio1; }
+    set { _Precio1 = value; }
+}
+private double _Precio2;
+
+public double Precio2
+{
+    get { return _Precio2; }
+    set { _Precio2 = value; }
+}
+private int _Titulo;
+
+public int Titulo
+{
+    get { return _Titulo; }
+    set { _Titulo = value; }
+}
+private int _LabRef;
+
+public int LabRef
+{
+    get { return _LabRef; }
+    set { _LabRef = value; }
+}
+private int _PrecioRef;
+
+public int PrecioRef
+{
+    get { return _PrecioRef; }
+    set { _PrecioRef = value; }
+}
+
 
         public DPerfil()
         {

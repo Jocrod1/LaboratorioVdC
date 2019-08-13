@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPaciente = new System.Windows.Forms.TabPage();
+            this.cbTipoPaciente = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtCiPaciente = new System.Windows.Forms.TextBox();
             this.cbCedula = new System.Windows.Forms.ComboBox();
@@ -100,8 +102,6 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
-            this.cbTipoPaciente = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -161,6 +161,29 @@
             this.tabPaciente.Size = new System.Drawing.Size(1057, 485);
             this.tabPaciente.TabIndex = 1;
             this.tabPaciente.Text = "Paciente";
+            // 
+            // cbTipoPaciente
+            // 
+            this.cbTipoPaciente.BackColor = System.Drawing.SystemColors.Control;
+            this.cbTipoPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoPaciente.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoPaciente.FormattingEnabled = true;
+            this.cbTipoPaciente.Location = new System.Drawing.Point(250, 306);
+            this.cbTipoPaciente.Name = "cbTipoPaciente";
+            this.cbTipoPaciente.Size = new System.Drawing.Size(257, 33);
+            this.cbTipoPaciente.TabIndex = 111;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(245, 278);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 25);
+            this.label1.TabIndex = 112;
+            this.label1.Text = "Tipo Paciente:";
             // 
             // btnCancelar
             // 
@@ -977,32 +1000,6 @@
             this.lblFaseActual.TabIndex = 51;
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbTipoPaciente
-            // 
-            this.cbTipoPaciente.BackColor = System.Drawing.SystemColors.Control;
-            this.cbTipoPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTipoPaciente.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoPaciente.FormattingEnabled = true;
-            this.cbTipoPaciente.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
-            this.cbTipoPaciente.Location = new System.Drawing.Point(250, 306);
-            this.cbTipoPaciente.Name = "cbTipoPaciente";
-            this.cbTipoPaciente.Size = new System.Drawing.Size(257, 33);
-            this.cbTipoPaciente.TabIndex = 111;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(245, 278);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 25);
-            this.label1.TabIndex = 112;
-            this.label1.Text = "Tipo Paciente:";
             // 
             // Factura
             // 
