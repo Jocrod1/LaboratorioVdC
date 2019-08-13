@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bioanalista));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -43,6 +44,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.cbCedula = new System.Windows.Forms.ComboBox();
             this.txtColegio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,12 +55,13 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cbCedula = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.panel3.SuspendLayout();
             this.PanelIngreso.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,16 +90,17 @@
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -134,7 +138,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 25);
+            this.label3.Size = new System.Drawing.Size(117, 30);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar por:";
             // 
@@ -150,7 +154,7 @@
             "Nombre"});
             this.cbBuscar.Location = new System.Drawing.Point(16, 38);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 31);
+            this.cbBuscar.Size = new System.Drawing.Size(88, 33);
             this.cbBuscar.TabIndex = 55;
             // 
             // btnEliminar
@@ -178,7 +182,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(116, 66);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 20);
             this.lblTotal.TabIndex = 53;
             this.lblTotal.Text = "label5";
             // 
@@ -223,7 +227,7 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(119, 39);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(285, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(285, 29);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -265,6 +269,22 @@
             this.PanelIngreso.Size = new System.Drawing.Size(317, 574);
             this.PanelIngreso.TabIndex = 0;
             // 
+            // cbCedula
+            // 
+            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            this.cbCedula.FormattingEnabled = true;
+            this.cbCedula.Items.AddRange(new object[] {
+            "V-",
+            "E-"});
+            this.cbCedula.Location = new System.Drawing.Point(35, 112);
+            this.cbCedula.Name = "cbCedula";
+            this.cbCedula.Size = new System.Drawing.Size(64, 28);
+            this.cbCedula.TabIndex = 94;
+            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
+            // 
             // txtColegio
             // 
             this.txtColegio.BackColor = System.Drawing.SystemColors.Control;
@@ -272,9 +292,9 @@
             this.txtColegio.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColegio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtColegio.Location = new System.Drawing.Point(33, 241);
-            this.txtColegio.MaxLength = 100;
+            this.txtColegio.MaxLength = 150;
             this.txtColegio.Name = "txtColegio";
-            this.txtColegio.Size = new System.Drawing.Size(257, 26);
+            this.txtColegio.Size = new System.Drawing.Size(257, 29);
             this.txtColegio.TabIndex = 93;
             // 
             // label1
@@ -284,7 +304,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(30, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.Size = new System.Drawing.Size(83, 30);
             this.label1.TabIndex = 88;
             this.label1.Text = "Cédula:";
             // 
@@ -295,7 +315,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(30, 277);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 25);
+            this.label6.Size = new System.Drawing.Size(162, 30);
             this.label6.TabIndex = 90;
             this.label6.Text = "Codigo Colegio:";
             // 
@@ -306,10 +326,11 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(33, 175);
-            this.txtNombre.MaxLength = 100;
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.Size = new System.Drawing.Size(257, 29);
             this.txtNombre.TabIndex = 84;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label7
             // 
@@ -318,7 +339,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(30, 144);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 25);
+            this.label7.Size = new System.Drawing.Size(94, 30);
             this.label7.TabIndex = 89;
             this.label7.Text = "Nombre:";
             // 
@@ -332,8 +353,9 @@
             this.txtCedula.Location = new System.Drawing.Point(105, 112);
             this.txtCedula.MaxLength = 9;
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(185, 26);
+            this.txtCedula.Size = new System.Drawing.Size(185, 29);
             this.txtCedula.TabIndex = 83;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // label9
             // 
@@ -342,7 +364,7 @@
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
             this.label9.Location = new System.Drawing.Point(29, 207);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 25);
+            this.label9.Size = new System.Drawing.Size(89, 30);
             this.label9.TabIndex = 91;
             this.label9.Text = "Colegio:";
             // 
@@ -353,9 +375,9 @@
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCodigo.Location = new System.Drawing.Point(33, 310);
-            this.txtCodigo.MaxLength = 3;
+            this.txtCodigo.MaxLength = 50;
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(257, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(257, 29);
             this.txtCodigo.TabIndex = 86;
             // 
             // btnCancelar
@@ -392,21 +414,9 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // cbCedula
+            // errorProvider1
             // 
-            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
-            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.cbCedula.FormattingEnabled = true;
-            this.cbCedula.Items.AddRange(new object[] {
-            "V-",
-            "E-"});
-            this.cbCedula.Location = new System.Drawing.Point(35, 112);
-            this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 25);
-            this.cbCedula.TabIndex = 94;
-            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
+            this.errorProvider1.ContainerControl = this;
             // 
             // Bioanalista
             // 
@@ -425,6 +435,7 @@
             this.panel3.PerformLayout();
             this.PanelIngreso.ResumeLayout(false);
             this.PanelIngreso.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,5 +466,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.ComboBox cbCedula;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

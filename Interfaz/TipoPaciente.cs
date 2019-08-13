@@ -115,6 +115,38 @@ namespace Interfaz
         }
 
 
+        //Validar datos al ingresar
+        private bool validar()
+        {
+
+            bool error = true;
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Inserta un nombre");
+            }
+            if (cbTipoPrecio.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(cbTipoPrecio, "Selecciona un tipo de precio");
+            }
+            if (txtPorcentaje.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtPorcentaje, "Inserta un porcentaje");
+            }
+            if (txtTipoPago.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtTipoPago, "Inserta un Tipo de Pago");
+            }
+            return error;
+        }
+        //Cuando se llenen, se retira el error
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
+        }
 
 
         private void Guardar()
@@ -360,7 +392,15 @@ namespace Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar();
+            SinErrores();
+            if (!validar())
+            {
+                MensajeError("Falta ingresar algunos datos, serán remarcados");
+            }
+            else
+            {
+                Guardar();
+            }
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
@@ -424,6 +464,24 @@ namespace Interfaz
         private void btnAnular_Click(object sender, EventArgs e)
         {
             AnularItems();
+        }
+
+        private void TxtPorcentaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtPorcentaje, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtPorcentaje, "En este campo solo se pueden ingresar Numeros");
+            }
+        }
+
+        private void TxtTipoPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtTipoPago, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtTipoPago, "En este campo solo se pueden ingresar letras");
+            }
         }
     }
 }

@@ -63,19 +63,28 @@ namespace Interfaz
             this.Botones();
             this.Limpiar();
             this.Habilitar();
+            this.cbCedula.SelectedIndex = 0;
             this.cbCedula.Focus();
             ID = 0;
-            this.txtCedula.Enabled = false;
+            this.txtCedula.Enabled = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar();
+            SinErrores();
+            if (!validar())
+            {
+                MensajeError("Falta ingresar algunos datos, serán remarcados");
+            }
+            else
+            {
+                Guardar();
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -246,12 +255,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MBioanalista.Insertar((this.cbCedula.Text+this.txtCedula.Text),this.txtNombre.Text, this.txtColegio.Text,this.txtCodigo.Text);
+                    Rpta = MBioanalista.Insertar((this.cbCedula.Text + this.txtCedula.Text), this.txtNombre.Text, this.txtColegio.Text, this.txtCodigo.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MBioanalista.Editar(ID,(this.cbCedula.Text + this.txtCedula.Text), this.txtNombre.Text, this.txtColegio.Text, this.txtCodigo.Text);
+                    Rpta = MBioanalista.Editar(ID, (this.cbCedula.Text + this.txtCedula.Text), this.txtNombre.Text, this.txtColegio.Text, this.txtCodigo.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -300,6 +309,37 @@ namespace Interfaz
             {
                 this.MensajeError("Debe de buscar un registro para Modificar");
             }
+        }
+
+        private bool validar()
+        {
+            bool error = true;
+            if (txtCedula.Text == "" || cbCedula.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtCedula, "Agrega el CI del bioanalista");
+            }
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Agrega el nombre del bioanalista");
+            }
+            if (txtColegio.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtColegio, "Agrega el colegio del bioanalista");
+            }
+            if (txtCodigo.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtCodigo, "Agrega el codigo de colegiatura del bioanalista");
+            }
+            return error;
+        }
+
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
         }
 
         //mensajes
@@ -374,6 +414,7 @@ namespace Interfaz
         private void Buscar_Cedula()
         {
             dataListado.DataSource = MBioanalista.MostrarCedula(txtBuscar.Text);
+            dataListado.ClearSelection();
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -420,13 +461,29 @@ namespace Interfaz
 
         private void cbCedula_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbCedula.SelectedIndex != -1)
+            if (cbCedula.SelectedIndex != -1)
             {
                 txtCedula.Enabled = true;
                 txtCedula.Focus();
             }
         }
 
+        private void TxtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtCedula, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtCedula, "En este campo solo se pueden ingresar numeros");
+            }
+        }
 
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
+        }
     }
 }

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Medico));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,11 +52,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCiMedico = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.panel3.SuspendLayout();
             this.PanelIngreso.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,14 +89,14 @@
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -301,7 +304,7 @@
             this.txtClinica.MaxLength = 50;
             this.txtClinica.Multiline = true;
             this.txtClinica.Name = "txtClinica";
-            this.txtClinica.Size = new System.Drawing.Size(287, 87);
+            this.txtClinica.Size = new System.Drawing.Size(262, 87);
             this.txtClinica.TabIndex = 3;
             // 
             // label5
@@ -322,10 +325,11 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(21, 218);
-            this.txtNombre.MaxLength = 25;
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(287, 29);
+            this.txtNombre.Size = new System.Drawing.Size(262, 29);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // label4
             // 
@@ -348,8 +352,9 @@
             this.txtCiMedico.Location = new System.Drawing.Point(88, 139);
             this.txtCiMedico.MaxLength = 9;
             this.txtCiMedico.Name = "txtCiMedico";
-            this.txtCiMedico.Size = new System.Drawing.Size(220, 29);
+            this.txtCiMedico.Size = new System.Drawing.Size(195, 29);
             this.txtCiMedico.TabIndex = 1;
+            this.txtCiMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCiMedico_KeyPress);
             // 
             // label2
             // 
@@ -361,6 +366,10 @@
             this.label2.Size = new System.Drawing.Size(83, 30);
             this.label2.TabIndex = 29;
             this.label2.Text = "Cédula:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Medico
             // 
@@ -379,6 +388,7 @@
             this.panel3.PerformLayout();
             this.PanelIngreso.ResumeLayout(false);
             this.PanelIngreso.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,5 +416,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCiMedico;
         private System.Windows.Forms.ComboBox cbCedula;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

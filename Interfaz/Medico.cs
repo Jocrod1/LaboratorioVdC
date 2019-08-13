@@ -62,9 +62,17 @@ namespace Interfaz
  
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
+
+            SinErrores();
+            if (!validar())
+            {
+                MensajeError("Falta ingresar algunos datos, serán remarcados");
+            }
+            else
+            {
                 Guardar();
-            
+            }
+
         }
 
         //Para mostrar mensaje de confirmación
@@ -121,7 +129,33 @@ namespace Interfaz
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
 
+        //Validar datos al ingresar
+        private bool validar()
+        {
 
+            bool error = true;
+            if (txtCiMedico.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtCiMedico, "Inserta una cedula");
+            }
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Inserta un nombre");
+            }
+            if (txtClinica.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtClinica, "Inserta la clinica y Hospital");
+            }
+            return error;
+        }
+        //Cuando se llenen, se retira el error
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
+        }
         private void Guardar()
         {
             try
@@ -434,6 +468,24 @@ namespace Interfaz
             {
                 txtCiMedico.Enabled = true;
                 txtCiMedico.Focus();
+            }
+        }
+
+        private void TxtCiMedico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros");
+            }
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
             }
         }
     }

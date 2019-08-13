@@ -165,7 +165,62 @@ namespace Interfaz
             
         }
 
+        //Validar datos al ingresar
+        private bool validar()
+        {
 
+            bool error = true;
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Inserta un nombre");
+            }
+            if (txtUnidades.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtUnidades, "Inserta Unidades");
+            }
+            if (txtValNorHombres.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtValNorHombres, "Inserta un valor");
+            }
+            if (txtValNorMujeres.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtValNorMujeres, "Inserta un valor");
+            }
+            if (txtPrecio1.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtPrecio1, "Inserta un precio");
+            }
+            if (txtPrecio2.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtPrecio2, "Inserta un precio");
+            }
+            if (cbIDGrupoExamen.Text == "") {
+                error = false;
+                errorProvider1.SetError(cbIDGrupoExamen, "Selecciona un grupo de examenes");
+            }
+            if (txtLabRef.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtLabRef, "Selecciona un Laboratorio de Referencia");
+            }
+            if (txtTitulo.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtTitulo, "Inserta un titulo");
+            }
+            return error;
+        }
+        //Cuando se llenen, se retira el error
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
+        }
 
 
 
@@ -386,7 +441,15 @@ namespace Interfaz
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            Guardar();
+            SinErrores();
+            if (!validar())
+            {
+                MensajeError("Falta ingresar algunos datos, serán remarcados");
+            }
+            else
+            {
+                Guardar();
+            }
 
             //EliminarErrores();
             //if (verificacion())
@@ -395,37 +458,6 @@ namespace Interfaz
             //}
         }
 
-        private void txtValNorHombres_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloNumeros(e);
-        }
-
-        private void txtValNorMujeres_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloNumeros(e);
-        }
-
-        private void txtPrecio1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloNumeros(e);
-        }
-
-        private void txtPrecio2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloNumeros(e);
-        }
-        private void txtTitulo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloLetras(e);
-        }
-        private void txtLabRef_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloLetras(e);
-        }
-        private void txtPrecioRef_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            valid.soloLetras(e);
-        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -483,6 +515,42 @@ namespace Interfaz
         private void btnAnular_Click(object sender, EventArgs e)
         {
             AnularItems();
+        }
+
+        private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
+        }
+
+        private void TxtPrecio1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloNumerosyPuntos(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
+            }
+        }
+
+        private void TxtPrecio2_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloNumerosyPuntos(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
+            }
+        }
+
+        private void TxtPrecioRef_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloNumerosyPuntos(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
+            }
         }
     }
 }

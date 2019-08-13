@@ -85,5 +85,32 @@ namespace Interfaz
             }
             return Correct;
         }
+
+        public bool soloNumerosyPuntos(KeyPressEventArgs e)
+        {
+            bool Correct = false;
+            try
+            {
+                if (Char.IsNumber(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                    Correct = true;
+
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+            return Correct;
+        }
     }
 }
