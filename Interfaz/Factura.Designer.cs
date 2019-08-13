@@ -38,7 +38,6 @@
             this.txtBuscarSeleccionados = new System.Windows.Forms.TextBox();
             this.txtBuscarExamen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvExamenes = new System.Windows.Forms.DataGridView();
@@ -95,6 +94,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtAbonar = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabExam = new System.Windows.Forms.TabPage();
+            this.tabPerf = new System.Windows.Forms.TabPage();
+            this.dgvPerfiles = new System.Windows.Forms.DataGridView();
+            this.txtBuscarPerfiles = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -109,6 +114,11 @@
             this.panel15.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabExam.SuspendLayout();
+            this.tabPerf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -162,15 +172,12 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.tabControl2);
             this.panel7.Controls.Add(this.pictureBox2);
-            this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Controls.Add(this.txtBuscarSeleccionados);
-            this.panel7.Controls.Add(this.txtBuscarExamen);
-            this.panel7.Controls.Add(this.label4);
-            this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.btnAnadir);
+            this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.btnEliminar);
-            this.panel7.Controls.Add(this.dgvExamenes);
             this.panel7.Controls.Add(this.dgvSeleccionados);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 3);
@@ -182,7 +189,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(789, 66);
+            this.pictureBox2.Location = new System.Drawing.Point(852, 68);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(36, 20);
             this.pictureBox2.TabIndex = 13;
@@ -192,7 +199,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(280, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(275, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 20);
             this.pictureBox1.TabIndex = 12;
@@ -200,7 +207,7 @@
             // 
             // txtBuscarSeleccionados
             // 
-            this.txtBuscarSeleccionados.Location = new System.Drawing.Point(535, 66);
+            this.txtBuscarSeleccionados.Location = new System.Drawing.Point(598, 68);
             this.txtBuscarSeleccionados.Name = "txtBuscarSeleccionados";
             this.txtBuscarSeleccionados.Size = new System.Drawing.Size(248, 20);
             this.txtBuscarSeleccionados.TabIndex = 11;
@@ -208,7 +215,7 @@
             // 
             // txtBuscarExamen
             // 
-            this.txtBuscarExamen.Location = new System.Drawing.Point(26, 66);
+            this.txtBuscarExamen.Location = new System.Drawing.Point(21, 18);
             this.txtBuscarExamen.Name = "txtBuscarExamen";
             this.txtBuscarExamen.Size = new System.Drawing.Size(248, 20);
             this.txtBuscarExamen.TabIndex = 10;
@@ -217,24 +224,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(532, 40);
+            this.label4.Location = new System.Drawing.Point(595, 42);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Examenes a realizar:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Todos los examenes:";
-            // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(380, 346);
+            this.btnAnadir.Location = new System.Drawing.Point(394, 354);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(50, 26);
             this.btnAnadir.TabIndex = 7;
@@ -244,7 +242,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(890, 346);
+            this.btnEliminar.Location = new System.Drawing.Point(953, 354);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(50, 26);
             this.btnEliminar.TabIndex = 6;
@@ -257,7 +255,7 @@
             this.dgvExamenes.AllowUserToAddRows = false;
             this.dgvExamenes.AllowUserToDeleteRows = false;
             this.dgvExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExamenes.Location = new System.Drawing.Point(26, 92);
+            this.dgvExamenes.Location = new System.Drawing.Point(21, 44);
             this.dgvExamenes.Name = "dgvExamenes";
             this.dgvExamenes.ReadOnly = true;
             this.dgvExamenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -269,11 +267,11 @@
             this.dgvSeleccionados.AllowUserToAddRows = false;
             this.dgvSeleccionados.AllowUserToDeleteRows = false;
             this.dgvSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSeleccionados.Location = new System.Drawing.Point(535, 92);
+            this.dgvSeleccionados.Location = new System.Drawing.Point(598, 94);
             this.dgvSeleccionados.Name = "dgvSeleccionados";
             this.dgvSeleccionados.ReadOnly = true;
             this.dgvSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeleccionados.Size = new System.Drawing.Size(405, 242);
+            this.dgvSeleccionados.Size = new System.Drawing.Size(405, 244);
             this.dgvSeleccionados.TabIndex = 4;
             // 
             // panel4
@@ -635,6 +633,7 @@
             this.txtCiPaciente.Name = "txtCiPaciente";
             this.txtCiPaciente.Size = new System.Drawing.Size(186, 26);
             this.txtCiPaciente.TabIndex = 108;
+            this.txtCiPaciente.Leave += new System.EventHandler(this.txtCiPaciente_Leave);
             // 
             // btnCancelar
             // 
@@ -910,6 +909,71 @@
             this.label21.TabIndex = 104;
             this.label21.Text = "Abonar:";
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabExam);
+            this.tabControl2.Controls.Add(this.tabPerf);
+            this.tabControl2.Location = new System.Drawing.Point(14, 28);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(437, 320);
+            this.tabControl2.TabIndex = 14;
+            // 
+            // tabExam
+            // 
+            this.tabExam.Controls.Add(this.dgvExamenes);
+            this.tabExam.Controls.Add(this.txtBuscarExamen);
+            this.tabExam.Controls.Add(this.pictureBox1);
+            this.tabExam.Location = new System.Drawing.Point(4, 22);
+            this.tabExam.Name = "tabExam";
+            this.tabExam.Padding = new System.Windows.Forms.Padding(3);
+            this.tabExam.Size = new System.Drawing.Size(429, 294);
+            this.tabExam.TabIndex = 0;
+            this.tabExam.Text = "Examenes";
+            this.tabExam.UseVisualStyleBackColor = true;
+            // 
+            // tabPerf
+            // 
+            this.tabPerf.Controls.Add(this.dgvPerfiles);
+            this.tabPerf.Controls.Add(this.txtBuscarPerfiles);
+            this.tabPerf.Controls.Add(this.pictureBox3);
+            this.tabPerf.Location = new System.Drawing.Point(4, 22);
+            this.tabPerf.Name = "tabPerf";
+            this.tabPerf.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPerf.Size = new System.Drawing.Size(429, 294);
+            this.tabPerf.TabIndex = 1;
+            this.tabPerf.Text = "Perfiles";
+            this.tabPerf.UseVisualStyleBackColor = true;
+            // 
+            // dgvPerfiles
+            // 
+            this.dgvPerfiles.AllowUserToAddRows = false;
+            this.dgvPerfiles.AllowUserToDeleteRows = false;
+            this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerfiles.Location = new System.Drawing.Point(21, 44);
+            this.dgvPerfiles.Name = "dgvPerfiles";
+            this.dgvPerfiles.ReadOnly = true;
+            this.dgvPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPerfiles.Size = new System.Drawing.Size(405, 242);
+            this.dgvPerfiles.TabIndex = 13;
+            // 
+            // txtBuscarPerfiles
+            // 
+            this.txtBuscarPerfiles.Location = new System.Drawing.Point(21, 18);
+            this.txtBuscarPerfiles.Name = "txtBuscarPerfiles";
+            this.txtBuscarPerfiles.Size = new System.Drawing.Size(248, 20);
+            this.txtBuscarPerfiles.TabIndex = 14;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(275, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(36, 20);
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -940,6 +1004,13 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabExam.ResumeLayout(false);
+            this.tabExam.PerformLayout();
+            this.tabPerf.ResumeLayout(false);
+            this.tabPerf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -962,7 +1033,6 @@
         private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Label lblFaseActual;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblCiPac;
@@ -1012,5 +1082,11 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtRecEmergencia;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabExam;
+        private System.Windows.Forms.TabPage tabPerf;
+        private System.Windows.Forms.DataGridView dgvPerfiles;
+        private System.Windows.Forms.TextBox txtBuscarPerfiles;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

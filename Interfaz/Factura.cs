@@ -16,6 +16,7 @@ namespace Interfaz
     {
 
 
+
         public Factura()
         {
             InitializeComponent();
@@ -23,8 +24,10 @@ namespace Interfaz
 
 
         private DataTable TablaSeleccionados;
+        private DataTable TablaSeleccionados2;
 
 
+        private DataTable TablaResultadosCI;
 
 
         private void Factura_Load(object sender, EventArgs e)
@@ -166,8 +169,14 @@ namespace Interfaz
             this.TablaSeleccionados.Columns.Add("Nombre", System.Type.GetType("System.String"));
             this.TablaSeleccionados.Columns.Add("Precio1", System.Type.GetType("System.Double"));
             this.TablaSeleccionados.Columns.Add("Precio2", System.Type.GetType("System.Double"));
-            
-            
+
+
+            //esto es para añadir las columnas a la otra TablaSeleccionados (esto es para buscar por letra en dgvSeleccionados
+
+            this.TablaSeleccionados2 = new DataTable("ExamenesSeleccionados2");
+            this.TablaSeleccionados2.Columns.Add("Nombre", System.Type.GetType("System.String"));
+            this.TablaSeleccionados2.Columns.Add("Precio1", System.Type.GetType("System.Double"));
+            this.TablaSeleccionados2.Columns.Add("Precio2", System.Type.GetType("System.Double"));
 
             
 
@@ -313,6 +322,54 @@ namespace Interfaz
 
 
 
+
+
+
+        private void BuscarTabla(string TextoBuscar)
+        {
+            dgvSeleccionados.DataSource = null;
+            TablaSeleccionados2.Clear();
+            foreach (DataRow item in TablaSeleccionados.Rows)
+            {
+                string Nombre = Convert.ToString(item[0]);
+                if (TextoBuscar.Length > 0)
+                {
+                    if (TextoBuscar.Length <= Nombre.Length)
+                    {
+                        string NombreCortado = Nombre.Substring(0, TextoBuscar.Length);
+                        if (NombreCortado == TextoBuscar)
+                        {
+                            TablaSeleccionados2.Rows.Add(item[0], item[1], item[2]);
+                        }
+                    }
+                }
+            }
+
+            if (txtBuscarSeleccionados.Text.Length == 0)
+            {
+                this.dgvSeleccionados.DataSource = this.TablaSeleccionados;
+            }
+            else
+            {
+                this.dgvSeleccionados.DataSource = this.TablaSeleccionados2;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -333,21 +390,24 @@ namespace Interfaz
         private void btnAnadir_Click(object sender, EventArgs e)
         {
 
+
+            //agrega los examenes
             foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
             {
                 TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
             }
 
 
+            //agrega los perfiles
+            foreach (DataGridViewRow item in this.dgvPerfiles.SelectedRows)
+            {
+                TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
+            }
 
             //Relacionar nuestro DataGRidView con nuestro DataTable
             this.dgvSeleccionados.DataSource = this.TablaSeleccionados;
 
 
-            //foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
-            //{
-            //    dgvSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
-            //}
 
         }
 
@@ -383,12 +443,51 @@ namespace Interfaz
 
         private void txtBuscarSeleccionados_TextChanged(object sender, EventArgs e)
         {
-            dgvSeleccionados.DataSource = MExamen.Mostrar(txtBuscarSeleccionados.Text);
+            BuscarTabla(txtBuscarSeleccionados.Text);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void txtCiPaciente_Leave(object sender, EventArgs e)
+        {
+            
+
+            //buscar en la DB si ya existe esta ci
+
+                int cant_registros;
+
+                cant_registros = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text).Count;
+
+                if (cant_registros != 0)
+                {
+                    DialogResult respuesta = MessageBox.Show("Ya el Paciente C.I: " + (this.cbCedula.Text + this.txtCiPaciente.Text) + " está ingresado. \n ¿Desea cargar los datos del paciente existente? ", "Laboratorio Virgen de Coromoto", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+
+                    if (respuesta == DialogResult.Yes)
+                    {
+
+                        this.TablaResultadosCI = new DataTable("ResultadoCI");
+                        this.TablaResultadosCI.Columns.Add("Nombre", System.Type.GetType("System.String"));
+                        this.TablaResultadosCI.Columns.Add("Precio1", System.Type.GetType("System.Double"));
+                        this.TablaResultadosCI.Columns.Add("Precio2", System.Type.GetType("System.Double"));
+
+                        // berwensa :(
+                        //TablaResultadosCI = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text);
+
+                    }
+                    else if (respuesta == DialogResult.No)
+                    {
+                        //...
+                    }
+
+
+                }
+
+        
+
+
         }
 
                   
