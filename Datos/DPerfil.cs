@@ -25,13 +25,6 @@ public string Nombre
     get { return _Nombre; }
     set { _Nombre = value; }
 }
-private string _Equivalencia;
-
-public string Equivalencia
-{
-    get { return _Equivalencia; }
-    set { _Equivalencia = value; }
-}
 private double _Precio1;
 
 public double Precio1
@@ -74,11 +67,10 @@ public int PrecioRef
 
         }
 
-        public DPerfil(int iD, string nombre, string equivalencia, double precio1, double precio2, int titulo, int labRef, int precioRef)
+        public DPerfil(int iD, string nombre, double precio1, double precio2, int titulo, int labRef, int precioRef)
         {
             ID = iD;
             Nombre = nombre;
-            Equivalencia = equivalencia;
             Precio1 = precio1;
             Precio2 = precio2;
             Titulo = titulo;
@@ -90,7 +82,7 @@ public int PrecioRef
 
         //parametros
         //insertar
-        public string Insertar(DPerfil Perfil)
+        public string Insertar(DPerfil Perfil, List<DDetalle_Perfil> Detalle)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -100,6 +92,9 @@ public int PrecioRef
                 //conexion con la Base de Datos
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
                 SqlConectar.Open();
+
+                //transaccion
+                SqlTransaction SqlTransaccion = SqlConectar.BeginTransaction();
 
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
@@ -123,14 +118,6 @@ public int PrecioRef
                 Parametro_Nombre.Size = 50;
                 Parametro_Nombre.Value = Perfil.Nombre;
                 SqlComando.Parameters.Add(Parametro_Nombre);
-
-                //parametro equivalencia
-                SqlParameter Parametro_Equivalencia = new SqlParameter();
-                Parametro_Equivalencia.ParameterName = "@Equivalencia";
-                Parametro_Equivalencia.SqlDbType = SqlDbType.VarChar;
-                Parametro_Equivalencia.Size = 50;
-                Parametro_Equivalencia.Value = Perfil.Equivalencia;
-                SqlComando.Parameters.Add(Parametro_Equivalencia);
 
                 //parametro precio 1
                 SqlParameter Parametro_Precio1 = new SqlParameter();
@@ -169,6 +156,34 @@ public int PrecioRef
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro del Perfil";
+
+                if (respuesta.Equals("OK"))
+                {
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["ID"].Value);
+
+                    foreach (DDetalle_Perfil det in Detalle)
+                    {
+                        det.ID = this.ID;
+
+                        //llamar al insertar
+                        respuesta = det.Insertar(det, ref SqlConectar, ref SqlTransaccion);
+
+                        if (!respuesta.Equals("OK"))
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if (respuesta.Equals("OK"))
+                {
+                    SqlTransaccion.Commit();
+                }
+                else
+                {
+                    //si recibe una respuesta contraria se niega la transaccion
+                    SqlTransaccion.Rollback();
+                }
 
             }
             catch (Exception excepcion)
@@ -219,15 +234,7 @@ public int PrecioRef
                 Parametro_Nombre.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre.Size = 50;
                 Parametro_Nombre.Value = Perfil.Nombre;
-                SqlComando.Parameters.Add(Parametro_Nombre);
-
-                //parametro equivalencia
-                SqlParameter Parametro_Equivalencia = new SqlParameter();
-                Parametro_Equivalencia.ParameterName = "@equivalencia";
-                Parametro_Equivalencia.SqlDbType = SqlDbType.VarChar;
-                Parametro_Equivalencia.Size = 50;
-                Parametro_Equivalencia.Value = Perfil.Equivalencia;
-                SqlComando.Parameters.Add(Parametro_Equivalencia);
+                SqlComando.Parameters.Add(Parametro_Nombre);;
 
                 //parametro precio 1
                 SqlParameter Parametro_Precio1 = new SqlParameter();
@@ -405,12 +412,11 @@ public int PrecioRef
                     {
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
-                        Equivalencia= LeerFilas.GetString(2),
-                        Precio1=LeerFilas.GetDouble(3),
-                        Precio2= LeerFilas.GetDouble(4),
-                        Titulo= LeerFilas.GetInt32(5),
-                        LabRef= LeerFilas.GetInt32(6),
-                        PrecioRef= LeerFilas.GetInt32(7)
+                        Precio1=LeerFilas.GetDouble(2),
+                        Precio2= LeerFilas.GetDouble(3),
+                        Titulo= LeerFilas.GetInt32(4),
+                        LabRef= LeerFilas.GetInt32(5),
+                        PrecioRef= LeerFilas.GetInt32(6)
                     });
                 }
                 LeerFilas.Close();

@@ -48,6 +48,7 @@
     <Compile Include="DBioanalista.cs" />
     <Compile Include="DDetalle_Factura.cs" />
     <Compile Include="DDetalle_Orden.cs" />
+    <Compile Include="DDetalle_Perfil.cs" />
     <Compile Include="DEgresos.cs" />
     <Compile Include="DEmpresaSeguro.cs" />
     <Compile Include="DExamen.cs" />
