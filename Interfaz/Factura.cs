@@ -266,7 +266,7 @@ namespace Interfaz
                 CargarResumenExamenesSeleccionados(); //esto es para cargar los examenes seleccionados al dgv de la parte Finalizar
 
 
-
+                //aqui debo llamar a la funcion OcultarColumnasPrecio
 
 
 
@@ -313,6 +313,37 @@ namespace Interfaz
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+
+
+
+        private void OcultarColumnasPrecio()
+        {
+
+            
+            //extraer todos los registros de TipoPaciente (en un data table maybe?)
+            //hacer un loop donde trate de coincidir el nombre que esta en la tabla con el nombre que esta seleccionado en el cb
+            //y luego de eso se hace un if donde observa cual es el precio, y de una vez ocultara las columnas correspondientes
+
+            //usar esto mismo para sumar los precios para sacar el total
+
+            //if (precio == 1)
+            //{
+
+            //    //ocultar columnas de precio 2
+
+            //}
+            //else if (precio == 2)
+            //{
+
+            //    //ocultar columnas de precio 1
+
+            //}
+
+        }
+
+
+
 
 
 
