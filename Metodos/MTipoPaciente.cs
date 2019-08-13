@@ -9,30 +9,26 @@ namespace Metodos
 {
     public class MTipoPaciente:DTipoPaciente
     {
-        public static string Insertar(int ID, string nombre, string equivalencia, int tipo_precio, double porcentaje, string tipo_pago, int no_copia)
+        public static string Insertar(int ID, string nombre, int tipo_precio, double porcentaje, string tipo_pago)
         {
             DTipoPaciente Objeto = new DTipoPaciente();
             Objeto.ID = ID;
             Objeto.Nombre = nombre;
-            Objeto.Equivalencia = equivalencia;
             Objeto.TipoPrecio = tipo_precio;
             Objeto.Porcentaje = porcentaje;
             Objeto.TipoPago = tipo_pago;
-            Objeto.NoCopia = no_copia;
             return Objeto.Insertar(Objeto);
         }
 
 
-        public static string Editar(int ID, string nombre, string equivalencia, int tipo_precio, double porcentaje, string tipo_pago, int no_copia)
+        public static string Editar(int ID, string nombre, int tipo_precio, double porcentaje, string tipo_pago)
         {
             DTipoPaciente Objeto = new DTipoPaciente();
             Objeto.ID = ID;
             Objeto.Nombre = nombre;
-            Objeto.Equivalencia = equivalencia;
             Objeto.TipoPrecio = tipo_precio;
             Objeto.Porcentaje = porcentaje;
             Objeto.TipoPago = tipo_pago;
-            Objeto.NoCopia = no_copia;
             return Objeto.Editar(Objeto);
         }
 

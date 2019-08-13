@@ -26,13 +26,6 @@ namespace Datos
             get { return _Nombre; }
             set { _Nombre = value; }
         }
-        private string _Equivalencia;
-
-        public string Equivalencia
-        {
-            get { return _Equivalencia; }
-            set { _Equivalencia = value; }
-        }
         private int _TipoPrecio;
 
         public int TipoPrecio
@@ -56,13 +49,6 @@ namespace Datos
             get { return _TipoPago; }
             set { _TipoPago = value; }
         }
-        private int _NoCopia;
-
-        public int NoCopia
-        {
-            get { return _NoCopia; }
-            set { _NoCopia = value; }
-        }
 
 
         public DTipoPaciente()
@@ -70,15 +56,13 @@ namespace Datos
 
         }
 
-        public DTipoPaciente(int iD, string nombre, string equivalencia, int tipoPrecio, float porcentaje, string tipoPago, int noCopia)
+        public DTipoPaciente(int iD, string nombre, int tipoPrecio, float porcentaje, string tipoPago)
         {
             ID = iD;
             Nombre = nombre;
-            Equivalencia = equivalencia;
             TipoPrecio = tipoPrecio;
             Porcentaje = porcentaje;
             TipoPago = tipoPago;
-            NoCopia = noCopia;
         }
 
         //Metodos
@@ -118,14 +102,6 @@ namespace Datos
                 Parametro_Nombre.Value = TipoPaciente.Nombre;
                 SqlComando.Parameters.Add(Parametro_Nombre);
 
-                //parametro equivalencia
-                SqlParameter Parametro_Equivalencia = new SqlParameter();
-                Parametro_Equivalencia.ParameterName = "@equivalencia";
-                Parametro_Equivalencia.SqlDbType = SqlDbType.VarChar;
-                Parametro_Equivalencia.Size = 10;
-                Parametro_Equivalencia.Value = TipoPaciente.Equivalencia;
-                SqlComando.Parameters.Add(Parametro_Equivalencia);
-
                 //parametro tipo precio
                 SqlParameter Parametro_Tipo_Precio = new SqlParameter();
                 Parametro_Tipo_Precio.ParameterName = "@tipoprecio";
@@ -147,13 +123,6 @@ namespace Datos
                 Parametro_Tipo_Pago.Size = 10;
                 Parametro_Tipo_Pago.Value = TipoPaciente.TipoPago;
                 SqlComando.Parameters.Add(Parametro_Tipo_Pago);
-
-                //parametro N copias
-                SqlParameter Parametro_Copias = new SqlParameter();
-                Parametro_Copias.ParameterName = "@nocopias";
-                Parametro_Copias.SqlDbType = SqlDbType.Int;
-                Parametro_Copias.Value = TipoPaciente.NoCopia;
-                SqlComando.Parameters.Add(Parametro_Copias);
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro del Tipo del Paciente";
@@ -210,14 +179,6 @@ namespace Datos
                 Parametro_Nombre.Value = TipoPaciente.Nombre;
                 SqlComando.Parameters.Add(Parametro_Nombre);
 
-                //parametro equivalencia
-                SqlParameter Parametro_Equivalencia = new SqlParameter();
-                Parametro_Equivalencia.ParameterName = "@equivalencia";
-                Parametro_Equivalencia.SqlDbType = SqlDbType.VarChar;
-                Parametro_Equivalencia.Size = 10;
-                Parametro_Equivalencia.Value = TipoPaciente.Equivalencia;
-                SqlComando.Parameters.Add(Parametro_Equivalencia);
-
                 //parametro tipo precio
                 SqlParameter Parametro_Tipo_Precio = new SqlParameter();
                 Parametro_Tipo_Precio.ParameterName = "@tipoprecio";
@@ -239,13 +200,6 @@ namespace Datos
                 Parametro_Tipo_Pago.Size = 10;
                 Parametro_Tipo_Pago.Value = TipoPaciente.TipoPago;
                 SqlComando.Parameters.Add(Parametro_Tipo_Pago);
-
-                //parametro N copias
-                SqlParameter Parametro_Copias = new SqlParameter();
-                Parametro_Copias.ParameterName = "@nocopias";
-                Parametro_Copias.SqlDbType = SqlDbType.Int;
-                Parametro_Copias.Value = TipoPaciente.NoCopia;
-                SqlComando.Parameters.Add(Parametro_Copias);
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el Registro del Tipo del Paciente";
@@ -390,11 +344,9 @@ namespace Datos
                     {
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
-                        Equivalencia = LeerFilas.GetString(2),
-                        TipoPrecio = LeerFilas.GetInt32(3),
-                        Porcentaje = LeerFilas.GetDouble(4), 
-                        TipoPago = LeerFilas.GetString(5),
-                        NoCopia = LeerFilas.GetInt32(6),
+                        TipoPrecio = LeerFilas.GetInt32(2),
+                        Porcentaje = LeerFilas.GetDouble(3), 
+                        TipoPago = LeerFilas.GetString(4)
                     });
                 }
                 LeerFilas.Close();
