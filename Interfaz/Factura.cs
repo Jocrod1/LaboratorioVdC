@@ -185,9 +185,6 @@ namespace Interfaz
 
 
 
-
-
-
         private void CargarResumenExamenesSeleccionados() 
         {
 
