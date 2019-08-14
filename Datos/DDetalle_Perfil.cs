@@ -12,14 +12,29 @@ namespace Datos
     {
 
         private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
         private int _IDPerfil;
+
+        public int IDPerfil
+        {
+            get { return _IDPerfil; }
+            set { _IDPerfil = value; }
+        }
         private int _IDExamen;
 
+        public int IDExamen
+        {
+            get { return _IDExamen; }
+            set { _IDExamen = value; }
+        }
 
 
-        public int ID { get => _ID; set => _ID = value; }
-        public int IDPerfil { get => _IDPerfil; set => _IDPerfil = value; }
-        public int IDExamen { get => _IDExamen; set => _IDExamen = value; }
+
 
         public DDetalle_Perfil()
         {

@@ -393,7 +393,6 @@ namespace Interfaz
                     }
                 }
 
-                //if tipo paciente va aqui y ocultamos las columnas
                
             }
 
