@@ -27,8 +27,6 @@ namespace Metodos
                 DDetalle_Perfil Detalle = new DDetalle_Perfil();
 
                 //voy a poner que se agregue el id mientras tanto
-                Detalle.ID = Convert.ToInt32(row["ID"].ToString());
-                Detalle.IDPerfil = Convert.ToInt32(row["IDPerfil"].ToString());
                 Detalle.IDExamen = Convert.ToInt32(row["IDExamen"].ToString());
             }
 

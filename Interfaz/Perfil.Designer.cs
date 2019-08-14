@@ -43,6 +43,20 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBuscarSeleccionados = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvSeleccionados = new System.Windows.Forms.DataGridView();
+            this.btnAnadir = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtBuscarExamen = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvExamenes = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPrecio2 = new System.Windows.Forms.TextBox();
+            this.txtPrecioRef = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.cbLabRef = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -53,30 +67,16 @@
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPrecio2 = new System.Windows.Forms.TextBox();
-            this.txtPrecioRef = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtBuscarExamenes = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dgvExamenes = new System.Windows.Forms.DataGridView();
-            this.btnAnadir = new System.Windows.Forms.Button();
-            this.btnQuitar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtBuscarSeleccionados = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dgvSeleccionados = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.panel4.SuspendLayout();
             this.PanelIngreso.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -191,12 +191,13 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(680, 46);
+            this.btnNuevo.Location = new System.Drawing.Point(678, 46);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(25, 25);
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblTotal
             // 
@@ -262,7 +263,7 @@
             this.PanelIngreso.Controls.Add(this.dgvSeleccionados);
             this.PanelIngreso.Controls.Add(this.btnAnadir);
             this.PanelIngreso.Controls.Add(this.pictureBox2);
-            this.PanelIngreso.Controls.Add(this.txtBuscarExamenes);
+            this.PanelIngreso.Controls.Add(this.txtBuscarExamen);
             this.PanelIngreso.Controls.Add(this.label7);
             this.PanelIngreso.Controls.Add(this.dgvExamenes);
             this.PanelIngreso.Controls.Add(this.label2);
@@ -285,6 +286,151 @@
             this.PanelIngreso.Size = new System.Drawing.Size(608, 613);
             this.PanelIngreso.TabIndex = 0;
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Location = new System.Drawing.Point(525, 453);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(50, 26);
+            this.btnQuitar.TabIndex = 73;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(538, 177);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 20);
+            this.pictureBox1.TabIndex = 72;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtBuscarSeleccionados
+            // 
+            this.txtBuscarSeleccionados.Location = new System.Drawing.Point(320, 177);
+            this.txtBuscarSeleccionados.Name = "txtBuscarSeleccionados";
+            this.txtBuscarSeleccionados.Size = new System.Drawing.Size(212, 20);
+            this.txtBuscarSeleccionados.TabIndex = 71;
+            this.txtBuscarSeleccionados.TextChanged += new System.EventHandler(this.txtBuscarSeleccionados_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(317, 161);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 13);
+            this.label9.TabIndex = 70;
+            this.label9.Text = "Examenes a realizar:";
+            // 
+            // dgvSeleccionados
+            // 
+            this.dgvSeleccionados.AllowUserToAddRows = false;
+            this.dgvSeleccionados.AllowUserToDeleteRows = false;
+            this.dgvSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSeleccionados.Location = new System.Drawing.Point(320, 203);
+            this.dgvSeleccionados.Name = "dgvSeleccionados";
+            this.dgvSeleccionados.ReadOnly = true;
+            this.dgvSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSeleccionados.Size = new System.Drawing.Size(255, 244);
+            this.dgvSeleccionados.TabIndex = 69;
+            // 
+            // btnAnadir
+            // 
+            this.btnAnadir.Location = new System.Drawing.Point(233, 453);
+            this.btnAnadir.Name = "btnAnadir";
+            this.btnAnadir.Size = new System.Drawing.Size(50, 26);
+            this.btnAnadir.TabIndex = 68;
+            this.btnAnadir.Text = "Añadir";
+            this.btnAnadir.UseVisualStyleBackColor = true;
+            this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(247, 177);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(36, 20);
+            this.pictureBox2.TabIndex = 67;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // txtBuscarExamen
+            // 
+            this.txtBuscarExamen.Location = new System.Drawing.Point(28, 177);
+            this.txtBuscarExamen.Name = "txtBuscarExamen";
+            this.txtBuscarExamen.Size = new System.Drawing.Size(213, 20);
+            this.txtBuscarExamen.TabIndex = 66;
+            this.txtBuscarExamen.TextChanged += new System.EventHandler(this.txtBuscarExamenes_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 13);
+            this.label7.TabIndex = 65;
+            this.label7.Text = "Todos los examenes:";
+            // 
+            // dgvExamenes
+            // 
+            this.dgvExamenes.AllowUserToAddRows = false;
+            this.dgvExamenes.AllowUserToDeleteRows = false;
+            this.dgvExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExamenes.Location = new System.Drawing.Point(28, 203);
+            this.dgvExamenes.Name = "dgvExamenes";
+            this.dgvExamenes.ReadOnly = true;
+            this.dgvExamenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvExamenes.Size = new System.Drawing.Size(255, 244);
+            this.dgvExamenes.TabIndex = 63;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label2.Location = new System.Drawing.Point(315, 475);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "Precio 2";
+            // 
+            // txtPrecio2
+            // 
+            this.txtPrecio2.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPrecio2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecio2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPrecio2.Location = new System.Drawing.Point(318, 501);
+            this.txtPrecio2.MaxLength = 3;
+            this.txtPrecio2.Name = "txtPrecio2";
+            this.txtPrecio2.Size = new System.Drawing.Size(257, 26);
+            this.txtPrecio2.TabIndex = 59;
+            // 
+            // txtPrecioRef
+            // 
+            this.txtPrecioRef.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPrecioRef.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecioRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPrecioRef.Location = new System.Drawing.Point(318, 564);
+            this.txtPrecioRef.MaxLength = 13;
+            this.txtPrecioRef.Name = "txtPrecioRef";
+            this.txtPrecioRef.Size = new System.Drawing.Size(257, 26);
+            this.txtPrecioRef.TabIndex = 60;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label6.Location = new System.Drawing.Point(314, 538);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 25);
+            this.label6.TabIndex = 62;
+            this.label6.Text = "PrecioReferencia";
+            // 
             // cbLabRef
             // 
             this.cbLabRef.BackColor = System.Drawing.SystemColors.Control;
@@ -292,9 +438,6 @@
             this.cbLabRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbLabRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLabRef.FormattingEnabled = true;
-            this.cbLabRef.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
             this.cbLabRef.Location = new System.Drawing.Point(317, 93);
             this.cbLabRef.Name = "cbLabRef";
             this.cbLabRef.Size = new System.Drawing.Size(257, 33);
@@ -326,6 +469,7 @@
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -342,6 +486,7 @@
             this.btnGuardar.TabIndex = 10;
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtNombre
             // 
@@ -412,147 +557,6 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Título:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label2.Location = new System.Drawing.Point(315, 475);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 25);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "Precio 2";
-            // 
-            // txtPrecio2
-            // 
-            this.txtPrecio2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPrecio2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrecio2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrecio2.Location = new System.Drawing.Point(318, 501);
-            this.txtPrecio2.MaxLength = 3;
-            this.txtPrecio2.Name = "txtPrecio2";
-            this.txtPrecio2.Size = new System.Drawing.Size(257, 26);
-            this.txtPrecio2.TabIndex = 59;
-            // 
-            // txtPrecioRef
-            // 
-            this.txtPrecioRef.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPrecioRef.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrecioRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrecioRef.Location = new System.Drawing.Point(318, 564);
-            this.txtPrecioRef.MaxLength = 13;
-            this.txtPrecioRef.Name = "txtPrecioRef";
-            this.txtPrecioRef.Size = new System.Drawing.Size(257, 26);
-            this.txtPrecioRef.TabIndex = 60;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label6.Location = new System.Drawing.Point(314, 538);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 25);
-            this.label6.TabIndex = 62;
-            this.label6.Text = "PrecioReferencia";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(247, 177);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 20);
-            this.pictureBox2.TabIndex = 67;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // txtBuscarExamenes
-            // 
-            this.txtBuscarExamenes.Location = new System.Drawing.Point(28, 177);
-            this.txtBuscarExamenes.Name = "txtBuscarExamenes";
-            this.txtBuscarExamenes.Size = new System.Drawing.Size(213, 20);
-            this.txtBuscarExamenes.TabIndex = 66;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 13);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "Todos los examenes:";
-            // 
-            // dgvExamenes
-            // 
-            this.dgvExamenes.AllowUserToAddRows = false;
-            this.dgvExamenes.AllowUserToDeleteRows = false;
-            this.dgvExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExamenes.Location = new System.Drawing.Point(28, 203);
-            this.dgvExamenes.Name = "dgvExamenes";
-            this.dgvExamenes.ReadOnly = true;
-            this.dgvExamenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExamenes.Size = new System.Drawing.Size(255, 244);
-            this.dgvExamenes.TabIndex = 63;
-            // 
-            // btnAnadir
-            // 
-            this.btnAnadir.Location = new System.Drawing.Point(233, 453);
-            this.btnAnadir.Name = "btnAnadir";
-            this.btnAnadir.Size = new System.Drawing.Size(50, 26);
-            this.btnAnadir.TabIndex = 68;
-            this.btnAnadir.Text = "Añadir";
-            this.btnAnadir.UseVisualStyleBackColor = true;
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Location = new System.Drawing.Point(525, 453);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(50, 26);
-            this.btnQuitar.TabIndex = 73;
-            this.btnQuitar.Text = "Quitar";
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(538, 177);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 20);
-            this.pictureBox1.TabIndex = 72;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtBuscarSeleccionados
-            // 
-            this.txtBuscarSeleccionados.Location = new System.Drawing.Point(320, 177);
-            this.txtBuscarSeleccionados.Name = "txtBuscarSeleccionados";
-            this.txtBuscarSeleccionados.Size = new System.Drawing.Size(212, 20);
-            this.txtBuscarSeleccionados.TabIndex = 71;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(317, 161);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 13);
-            this.label9.TabIndex = 70;
-            this.label9.Text = "Examenes a realizar:";
-            // 
-            // dgvSeleccionados
-            // 
-            this.dgvSeleccionados.AllowUserToAddRows = false;
-            this.dgvSeleccionados.AllowUserToDeleteRows = false;
-            this.dgvSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSeleccionados.Location = new System.Drawing.Point(320, 203);
-            this.dgvSeleccionados.Name = "dgvSeleccionados";
-            this.dgvSeleccionados.ReadOnly = true;
-            this.dgvSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSeleccionados.Size = new System.Drawing.Size(255, 244);
-            this.dgvSeleccionados.TabIndex = 69;
-            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,10 +575,10 @@
             this.panel4.PerformLayout();
             this.PanelIngreso.ResumeLayout(false);
             this.PanelIngreso.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -615,7 +619,7 @@
         private System.Windows.Forms.DataGridView dgvSeleccionados;
         private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtBuscarExamenes;
+        private System.Windows.Forms.TextBox txtBuscarExamen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvExamenes;
     }

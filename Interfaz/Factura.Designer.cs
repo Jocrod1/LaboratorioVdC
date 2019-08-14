@@ -62,7 +62,7 @@
             this.txtBuscarSeleccionados = new System.Windows.Forms.TextBox();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
             this.dgvSeleccionados = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabFinalizar = new System.Windows.Forms.TabPage();
@@ -378,7 +378,7 @@
             this.panel7.Controls.Add(this.txtBuscarSeleccionados);
             this.panel7.Controls.Add(this.btnAnadir);
             this.panel7.Controls.Add(this.label4);
-            this.panel7.Controls.Add(this.btnEliminar);
+            this.panel7.Controls.Add(this.btnQuitar);
             this.panel7.Controls.Add(this.dgvSeleccionados);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 3);
@@ -518,15 +518,15 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Examenes a realizar:";
             // 
-            // btnEliminar
+            // btnQuitar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(953, 354);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(50, 26);
-            this.btnEliminar.TabIndex = 6;
-            this.btnEliminar.Text = "Quitar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnQuitar.Location = new System.Drawing.Point(953, 354);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(50, 26);
+            this.btnQuitar.TabIndex = 6;
+            this.btnQuitar.Text = "Quitar";
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // dgvSeleccionados
             // 
@@ -1053,7 +1053,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnAnadir;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.DataGridView dgvExamenes;
         private System.Windows.Forms.DataGridView dgvSeleccionados;
         private System.Windows.Forms.Panel panel15;

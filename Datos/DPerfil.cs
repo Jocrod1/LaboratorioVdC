@@ -99,6 +99,7 @@ public int PrecioRef
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
+                SqlComando.Transaction=SqlTransaccion;
                 SqlComando.CommandText = "insertar_perfil";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
@@ -159,11 +160,11 @@ public int PrecioRef
 
                 if (respuesta.Equals("OK"))
                 {
-                    this.ID = Convert.ToInt32(SqlComando.Parameters["ID"].Value);
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["IDPerfil"].Value);
 
                     foreach (DDetalle_Perfil det in Detalle)
                     {
-                        det.ID = this.ID;
+                        det.IDPerfil = this.ID;
 
                         //llamar al insertar
                         respuesta = det.Insertar(det, ref SqlConectar, ref SqlTransaccion);

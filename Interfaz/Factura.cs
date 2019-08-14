@@ -444,6 +444,7 @@ namespace Interfaz
         {
 
 
+
             //agrega los examenes
             foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
             {
@@ -464,15 +465,7 @@ namespace Interfaz
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-            foreach (DataGridViewRow item in this.dgvSeleccionados.SelectedRows)
-            {
-                dgvSeleccionados.Rows.RemoveAt(item.Index);
-            }
-
-        }
+        
 
 
 
@@ -544,6 +537,16 @@ namespace Interfaz
 
         
 
+
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewRow item in this.dgvSeleccionados.SelectedRows)
+            {
+                dgvSeleccionados.Rows.RemoveAt(item.Index);
+            }
 
         }
 
