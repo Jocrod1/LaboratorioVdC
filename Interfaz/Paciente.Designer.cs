@@ -155,7 +155,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 30);
+            this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar por:";
             // 
@@ -171,7 +171,7 @@
             "Nombre"});
             this.cbBuscar.Location = new System.Drawing.Point(16, 46);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 33);
+            this.cbBuscar.Size = new System.Drawing.Size(88, 31);
             this.cbBuscar.TabIndex = 48;
             // 
             // btnEliminar
@@ -217,7 +217,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(116, 74);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(46, 20);
+            this.lblTotal.Size = new System.Drawing.Size(41, 17);
             this.lblTotal.TabIndex = 45;
             this.lblTotal.Text = "label5";
             // 
@@ -263,7 +263,7 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(119, 47);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(285, 29);
+            this.txtBuscar.Size = new System.Drawing.Size(285, 26);
             this.txtBuscar.TabIndex = 44;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
@@ -306,7 +306,7 @@
             "E-"});
             this.cbCedula.Location = new System.Drawing.Point(27, 101);
             this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 28);
+            this.cbCedula.Size = new System.Drawing.Size(64, 25);
             this.cbCedula.TabIndex = 95;
             this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
@@ -317,7 +317,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(23, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 30);
+            this.label2.Size = new System.Drawing.Size(145, 25);
             this.label2.TabIndex = 29;
             this.label2.Text = "Cédula paciente:";
             // 
@@ -333,7 +333,7 @@
             "Masculino"});
             this.txtSexo.Location = new System.Drawing.Point(26, 226);
             this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(257, 38);
+            this.txtSexo.Size = new System.Drawing.Size(257, 33);
             this.txtSexo.TabIndex = 3;
             // 
             // label5
@@ -343,7 +343,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(23, 270);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 30);
+            this.label5.Size = new System.Drawing.Size(57, 25);
             this.label5.TabIndex = 34;
             this.label5.Text = "Edad:";
             // 
@@ -390,7 +390,7 @@
             this.txtNombre.Location = new System.Drawing.Point(26, 163);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 29);
+            this.txtNombre.Size = new System.Drawing.Size(257, 26);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -401,7 +401,7 @@
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
             this.label9.Location = new System.Drawing.Point(22, 466);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 30);
+            this.label9.Size = new System.Drawing.Size(140, 25);
             this.label9.TabIndex = 63;
             this.label9.Text = "Nro. Habitación:";
             // 
@@ -412,7 +412,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(23, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 30);
+            this.label4.Size = new System.Drawing.Size(83, 25);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
             // 
@@ -425,7 +425,7 @@
             this.txtNroHab.Location = new System.Drawing.Point(26, 492);
             this.txtNroHab.MaxLength = 1000;
             this.txtNroHab.Name = "txtNroHab";
-            this.txtNroHab.Size = new System.Drawing.Size(257, 29);
+            this.txtNroHab.Size = new System.Drawing.Size(257, 26);
             this.txtNroHab.TabIndex = 7;
             // 
             // txtCiPaciente
@@ -437,7 +437,7 @@
             this.txtCiPaciente.Location = new System.Drawing.Point(97, 100);
             this.txtCiPaciente.MaxLength = 9;
             this.txtCiPaciente.Name = "txtCiPaciente";
-            this.txtCiPaciente.Size = new System.Drawing.Size(186, 29);
+            this.txtCiPaciente.Size = new System.Drawing.Size(186, 26);
             this.txtCiPaciente.TabIndex = 1;
             this.txtCiPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiPaciente_KeyPress);
             this.txtCiPaciente.Leave += new System.EventHandler(this.txtCiPaciente_Leave);
@@ -451,7 +451,7 @@
             this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
-            this.dateTimePickerFUR.Size = new System.Drawing.Size(257, 36);
+            this.dateTimePickerFUR.Size = new System.Drawing.Size(257, 33);
             this.dateTimePickerFUR.TabIndex = 6;
             // 
             // label8
@@ -461,7 +461,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(22, 200);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 30);
+            this.label8.Size = new System.Drawing.Size(54, 25);
             this.label8.TabIndex = 54;
             this.label8.Text = "Sexo:";
             // 
@@ -472,7 +472,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(23, 396);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 30);
+            this.label7.Size = new System.Drawing.Size(56, 25);
             this.label7.TabIndex = 60;
             this.label7.Text = "F.U.R:";
             // 
@@ -485,7 +485,7 @@
             this.txtEdad.Location = new System.Drawing.Point(26, 296);
             this.txtEdad.MaxLength = 3;
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(257, 29);
+            this.txtEdad.Size = new System.Drawing.Size(257, 26);
             this.txtEdad.TabIndex = 4;
             this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
@@ -498,7 +498,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(26, 359);
             this.txtTelefono.MaxLength = 13;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(257, 29);
+            this.txtTelefono.Size = new System.Drawing.Size(257, 26);
             this.txtTelefono.TabIndex = 5;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
@@ -509,7 +509,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(22, 333);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 30);
+            this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 58;
             this.label1.Text = "Telefono:";
             // 

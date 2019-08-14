@@ -23,6 +23,8 @@ namespace Interfaz
         private int ID;
 
 
+        DataTable tabla_seleccionados = new DataTable();
+
 
         public Perfil()
         {
@@ -176,7 +178,23 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MPerfil.Insertar(this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(cbLabRef.Text), Convert.ToInt32(txtPrecioRef.Text));
+
+                    //esto es para añadir las columnas a la TablaSeleccionados
+
+                    this.tabla_seleccionados = new DataTable("ExamenesSeleccionados");
+                    this.tabla_seleccionados.Columns.Add("Nombre", System.Type.GetType("System.String"));
+                    this.tabla_seleccionados.Columns.Add("Precio1", System.Type.GetType("System.Double"));
+                    this.tabla_seleccionados.Columns.Add("Precio2", System.Type.GetType("System.Double"));
+
+
+                    //agrega los examenes
+                    foreach (DataGridViewRow item in this.dgvSeleccionados.Rows)
+                    {
+                        tabla_seleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
+                    }
+
+
+                    Rpta = MPerfil.Insertar(this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(cbLabRef.Text), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
                 }
                 else
                 {

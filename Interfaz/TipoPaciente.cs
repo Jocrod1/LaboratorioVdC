@@ -158,12 +158,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MTipoPaciente.Insertar(ID, this.txtNombre.Text, this.txtEquiv.Text, Convert.ToInt32(cbTipoPrecio.Text), Convert.ToDouble(this.txtPorcentaje.Text), this.txtTipoPago.Text, Convert.ToInt32(txtNoCopias.Text));
+                    Rpta = MTipoPaciente.Insertar(ID, this.txtNombre.Text, Convert.ToInt32(cbTipoPrecio.Text), Convert.ToDouble(this.txtPorcentaje.Text), this.txtTipoPago.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MTipoPaciente.Editar(ID, this.txtNombre.Text, this.txtEquiv.Text, Convert.ToInt32(cbTipoPrecio.Text), Convert.ToDouble(this.txtPorcentaje.Text), this.txtTipoPago.Text, Convert.ToInt32(txtNoCopias.Text));
+                    Rpta = MTipoPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(cbTipoPrecio.Text), Convert.ToDouble(this.txtPorcentaje.Text), this.txtTipoPago.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador

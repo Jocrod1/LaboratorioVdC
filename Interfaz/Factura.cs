@@ -449,7 +449,7 @@ namespace Interfaz
             {
                 TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
             }
-
+            
 
             //agrega los perfiles
             foreach (DataGridViewRow item in this.dgvPerfiles.SelectedRows)
@@ -536,7 +536,7 @@ namespace Interfaz
                     }
                     else if (respuesta == DialogResult.No)
                     {
-                        //...
+                        txtCiPaciente.Focus();
                     }
 
 
