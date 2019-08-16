@@ -43,10 +43,10 @@ namespace Interfaz
 
 
             //por alguna razon funciona con los campos en este orden, pero no al reves
-            //cbMedico.ValueMember = "ID";
-            //cbMedico.DisplayMember = "Nombre";
-            //cbMedico.DataSource = MMedico.Mostrar("");
-            //cbMedico.SelectedIndex = -1;
+            cbMedico.DataSource = MMedico.Mostrar("");
+            cbMedico.DisplayMember = "Nombre";
+            cbMedico.ValueMember = "IdMedico";
+            cbMedico.SelectedIndex = -1;
 
 
 

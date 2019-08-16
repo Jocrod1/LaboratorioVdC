@@ -16,7 +16,7 @@ namespace Interfaz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Perfil());
+            Application.Run(new Factura());
         }
     }
 }
