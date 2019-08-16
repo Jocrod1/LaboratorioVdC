@@ -28,6 +28,8 @@ namespace Metodos
 
                 //voy a poner que se agregue el id mientras tanto
                 Detalle.IDExamen = Convert.ToInt32(row["IDExamen"].ToString());
+
+                Detalles.Add(Detalle);
             }
 
             return Objeto.Insertar(Objeto, Detalles);

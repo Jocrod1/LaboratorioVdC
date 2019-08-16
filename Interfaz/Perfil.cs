@@ -80,7 +80,7 @@ namespace Interfaz
 
             //esto es para añadir las columnas a la TablaSeleccionados
 
-            this.TablaSeleccionados = new DataTable("ExamenesSeleccionados");
+            this.TablaSeleccionados = new DataTable("Detalle");
             this.TablaSeleccionados.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
 
             dgvSeleccionados.DataSource = this.TablaSeleccionados;
@@ -88,7 +88,7 @@ namespace Interfaz
 
             //esto es para añadir las columnas a la otra TablaSeleccionados (esto es para buscar por letra en dgvSeleccionados
 
-            this.TablaSeleccionados2 = new DataTable("ExamenesSeleccionados2");
+            this.TablaSeleccionados2 = new DataTable("Detalle");
             this.TablaSeleccionados2.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
 
 
@@ -221,7 +221,7 @@ namespace Interfaz
 
                     //esto es para añadir las columnas a la TablaSeleccionados
 
-                    this.tabla_seleccionados = new DataTable("ExamenesSeleccionados");
+                    this.tabla_seleccionados = new DataTable("Detalle");
                     this.tabla_seleccionados.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
 
 
@@ -481,6 +481,9 @@ namespace Interfaz
 
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
