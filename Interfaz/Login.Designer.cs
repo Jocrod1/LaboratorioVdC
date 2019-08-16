@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtusuario = new System.Windows.Forms.TextBox();
+            this.cbCedula = new System.Windows.Forms.ComboBox();
             this.mostrar_contraseña = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,8 +45,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbCedula = new System.Windows.Forms.ComboBox();
-            this.txtusuario = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_contraseña)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -72,6 +72,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(451, 361);
             this.panel1.TabIndex = 0;
+            // 
+            // txtusuario
+            // 
+            this.txtusuario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtusuario.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusuario.Location = new System.Drawing.Point(174, 191);
+            this.txtusuario.MaxLength = 50;
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.Size = new System.Drawing.Size(180, 30);
+            this.txtusuario.TabIndex = 96;
+            // 
+            // cbCedula
+            // 
+            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.cbCedula.FormattingEnabled = true;
+            this.cbCedula.Items.AddRange(new object[] {
+            "V-",
+            "E-"});
+            this.cbCedula.Location = new System.Drawing.Point(102, 190);
+            this.cbCedula.Name = "cbCedula";
+            this.cbCedula.Size = new System.Drawing.Size(64, 29);
+            this.cbCedula.TabIndex = 95;
+            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
             // mostrar_contraseña
             // 
@@ -133,7 +160,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -166,7 +193,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLogin.BackColor = System.Drawing.Color.DarkOrange;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(76)))), ((int)(((byte)(162)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,39 +226,13 @@
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider2.ContainerControl = this;
             // 
-            // cbCedula
-            // 
-            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
-            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.cbCedula.FormattingEnabled = true;
-            this.cbCedula.Items.AddRange(new object[] {
-            "V-",
-            "E-"});
-            this.cbCedula.Location = new System.Drawing.Point(102, 190);
-            this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 29);
-            this.cbCedula.TabIndex = 95;
-            this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
-            // 
-            // txtusuario
-            // 
-            this.txtusuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtusuario.Font = new System.Drawing.Font("Century Gothic", 13.74545F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(174, 191);
-            this.txtusuario.MaxLength = 50;
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(180, 30);
-            this.txtusuario.TabIndex = 96;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 361);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

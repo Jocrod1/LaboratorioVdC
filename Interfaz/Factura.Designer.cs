@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPaciente = new System.Windows.Forms.TabPage();
+            this.cbMedico = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.cbTipoPaciente = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -139,6 +141,8 @@
             // tabPaciente
             // 
             this.tabPaciente.BackColor = System.Drawing.Color.LightGreen;
+            this.tabPaciente.Controls.Add(this.cbMedico);
+            this.tabPaciente.Controls.Add(this.label22);
             this.tabPaciente.Controls.Add(this.cbTipoPaciente);
             this.tabPaciente.Controls.Add(this.label1);
             this.tabPaciente.Controls.Add(this.btnCancelar);
@@ -161,6 +165,29 @@
             this.tabPaciente.Size = new System.Drawing.Size(1057, 485);
             this.tabPaciente.TabIndex = 1;
             this.tabPaciente.Text = "Paciente";
+            // 
+            // cbMedico
+            // 
+            this.cbMedico.BackColor = System.Drawing.SystemColors.Control;
+            this.cbMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMedico.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMedico.FormattingEnabled = true;
+            this.cbMedico.Location = new System.Drawing.Point(561, 306);
+            this.cbMedico.Name = "cbMedico";
+            this.cbMedico.Size = new System.Drawing.Size(257, 33);
+            this.cbMedico.TabIndex = 113;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label22.Location = new System.Drawing.Point(556, 278);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(76, 25);
+            this.label22.TabIndex = 114;
+            this.label22.Text = "Médico:";
             // 
             // cbTipoPaciente
             // 
@@ -295,7 +322,7 @@
             this.dateTimePickerFUR.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePickerFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFUR.Location = new System.Drawing.Point(559, 246);
+            this.dateTimePickerFUR.Location = new System.Drawing.Point(559, 238);
             this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
@@ -318,7 +345,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label12.Location = new System.Drawing.Point(556, 220);
+            this.label12.Location = new System.Drawing.Point(556, 213);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 25);
             this.label12.TabIndex = 106;
@@ -1115,7 +1142,9 @@
         private System.Windows.Forms.DataGridView dgvPerfiles;
         private System.Windows.Forms.TextBox txtBuscarPerfiles;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox cbTipoPaciente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbMedico;
+        private System.Windows.Forms.Label label22;
+        public System.Windows.Forms.ComboBox cbTipoPaciente;
     }
 }

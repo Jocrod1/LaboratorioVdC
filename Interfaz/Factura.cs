@@ -34,10 +34,19 @@ namespace Interfaz
         {
 
 
+            //ya no funciona :( berwensa
             cbTipoPaciente.DataSource = MTipoPaciente.Mostrar("");
             cbTipoPaciente.DisplayMember = "Nombre";
             cbTipoPaciente.ValueMember = "ID";
             cbTipoPaciente.SelectedIndex = -1;
+
+
+
+            //por alguna razon funciona con los campos en este orden, pero no al reves
+            //cbMedico.ValueMember = "ID";
+            //cbMedico.DisplayMember = "Nombre";
+            //cbMedico.DataSource = MMedico.Mostrar("");
+            //cbMedico.SelectedIndex = -1;
 
 
 
@@ -76,6 +85,9 @@ namespace Interfaz
 
             //aqui se carga dgvExamenes con la tabla Examenes
             dgvExamenes.DataSource = MExamen.Mostrar("");
+
+            dgvPerfiles.DataSource = MPerfil.Mostrar("");
+
 
 
             //// creando la columna check
