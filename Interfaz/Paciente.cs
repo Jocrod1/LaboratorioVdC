@@ -274,12 +274,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                //    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, txtSexo.SelectedIndex == 0 ? ValorFUR : Convert.ToDateTime(null) , txtNroHab.Text);
+                    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR , txtNroHab.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                //    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR, txtNroHab.Text);
+                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR, txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -504,12 +504,14 @@ namespace Interfaz
             }
             else if (txtSexo.Text == "Femenino" && Edad >= EdadMinima)  //si es una mujer
             {
+                ValorFUR = Convert.ToDateTime(dateTimePickerFUR.Text);
                 dateTimePickerFUR.Show();
                 dateTimePickerFUR.Enabled = true;
                 lblFUR.Text = "F.U.R";
             }
             else if (txtSexo.Text == "Masculino")  //si es un hombre
             {
+                ValorFUR = Convert.ToDateTime(null);
                 dateTimePickerFUR.Hide();
                 dateTimePickerFUR.Enabled = false;
                 lblFUR.Text = "Sin F.U.R";

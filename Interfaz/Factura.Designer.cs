@@ -40,13 +40,12 @@
             this.cbCedula = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSexo = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblnacimiento = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePickerFUR = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.lblFUR = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabExamenes = new System.Windows.Forms.TabPage();
@@ -104,6 +103,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
+            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -141,6 +141,7 @@
             // tabPaciente
             // 
             this.tabPaciente.BackColor = System.Drawing.Color.LightGreen;
+            this.tabPaciente.Controls.Add(this.dtNacimiento);
             this.tabPaciente.Controls.Add(this.cbMedico);
             this.tabPaciente.Controls.Add(this.label22);
             this.tabPaciente.Controls.Add(this.cbTipoPaciente);
@@ -150,13 +151,12 @@
             this.tabPaciente.Controls.Add(this.cbCedula);
             this.tabPaciente.Controls.Add(this.label2);
             this.tabPaciente.Controls.Add(this.txtSexo);
-            this.tabPaciente.Controls.Add(this.label9);
+            this.tabPaciente.Controls.Add(this.lblnacimiento);
             this.tabPaciente.Controls.Add(this.txtNombre);
             this.tabPaciente.Controls.Add(this.label10);
             this.tabPaciente.Controls.Add(this.dateTimePickerFUR);
             this.tabPaciente.Controls.Add(this.label11);
-            this.tabPaciente.Controls.Add(this.label12);
-            this.tabPaciente.Controls.Add(this.txtEdad);
+            this.tabPaciente.Controls.Add(this.lblFUR);
             this.tabPaciente.Controls.Add(this.txtTelefono);
             this.tabPaciente.Controls.Add(this.label13);
             this.tabPaciente.Location = new System.Drawing.Point(4, 25);
@@ -173,7 +173,7 @@
             this.cbMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMedico.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMedico.FormattingEnabled = true;
-            this.cbMedico.Location = new System.Drawing.Point(561, 306);
+            this.cbMedico.Location = new System.Drawing.Point(559, 241);
             this.cbMedico.Name = "cbMedico";
             this.cbMedico.Size = new System.Drawing.Size(257, 33);
             this.cbMedico.TabIndex = 113;
@@ -183,7 +183,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label22.Location = new System.Drawing.Point(556, 278);
+            this.label22.Location = new System.Drawing.Point(556, 213);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(76, 25);
             this.label22.TabIndex = 114;
@@ -282,17 +282,18 @@
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(257, 33);
             this.txtSexo.TabIndex = 97;
+            this.txtSexo.SelectedIndexChanged += new System.EventHandler(this.txtSexo_SelectedIndexChanged);
             // 
-            // label9
+            // lblnacimiento
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label9.Location = new System.Drawing.Point(556, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 25);
-            this.label9.TabIndex = 103;
-            this.label9.Text = "Edad:";
+            this.lblnacimiento.AutoSize = true;
+            this.lblnacimiento.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnacimiento.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblnacimiento.Location = new System.Drawing.Point(556, 96);
+            this.lblnacimiento.Name = "lblnacimiento";
+            this.lblnacimiento.Size = new System.Drawing.Size(181, 25);
+            this.lblnacimiento.TabIndex = 103;
+            this.lblnacimiento.Text = "Fecha de nacimiento:";
             // 
             // txtNombre
             // 
@@ -322,7 +323,7 @@
             this.dateTimePickerFUR.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePickerFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFUR.Location = new System.Drawing.Point(559, 238);
+            this.dateTimePickerFUR.Location = new System.Drawing.Point(559, 306);
             this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
@@ -340,28 +341,16 @@
             this.label11.TabIndex = 104;
             this.label11.Text = "Sexo:";
             // 
-            // label12
+            // lblFUR
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label12.Location = new System.Drawing.Point(556, 213);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 25);
-            this.label12.TabIndex = 106;
-            this.label12.Text = "F.U.R:";
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.BackColor = System.Drawing.SystemColors.Control;
-            this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEdad.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEdad.Location = new System.Drawing.Point(559, 122);
-            this.txtEdad.MaxLength = 3;
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(257, 26);
-            this.txtEdad.TabIndex = 98;
+            this.lblFUR.AutoSize = true;
+            this.lblFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblFUR.Location = new System.Drawing.Point(556, 281);
+            this.lblFUR.Name = "lblFUR";
+            this.lblFUR.Size = new System.Drawing.Size(56, 25);
+            this.lblFUR.TabIndex = 106;
+            this.lblFUR.Text = "F.U.R:";
             // 
             // txtTelefono
             // 
@@ -1028,6 +1017,19 @@
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dtNacimiento
+            // 
+            this.dtNacimiento.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dtNacimiento.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNacimiento.Location = new System.Drawing.Point(559, 121);
+            this.dtNacimiento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtNacimiento.Name = "dtNacimiento";
+            this.dtNacimiento.Size = new System.Drawing.Size(257, 33);
+            this.dtNacimiento.TabIndex = 115;
+            this.dtNacimiento.Leave += new System.EventHandler(this.dtNacimiento_Leave);
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1103,13 +1105,12 @@
         private System.Windows.Forms.ComboBox cbCedula;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox txtSexo;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblnacimiento;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePickerFUR;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.Label lblFUR;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCiPaciente;
@@ -1146,5 +1147,6 @@
         private System.Windows.Forms.ComboBox cbMedico;
         private System.Windows.Forms.Label label22;
         public System.Windows.Forms.ComboBox cbTipoPaciente;
+        private System.Windows.Forms.DateTimePicker dtNacimiento;
     }
 }

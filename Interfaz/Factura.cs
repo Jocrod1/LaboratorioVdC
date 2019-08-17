@@ -15,7 +15,9 @@ namespace Interfaz
     public partial class Factura : Form
     {
 
+        public DateTime ValorFUR;
 
+        public int Edad;
 
         public Factura()
         {
@@ -303,7 +305,7 @@ namespace Interfaz
             this.txtCiPaciente.Text = string.Empty;
             this.txtNombre.Text = string.Empty;
             this.txtSexo.Text = string.Empty;
-            this.txtEdad.Text = string.Empty;
+            this.dtNacimiento.Text = string.Empty;
             this.txtTelefono.Text = string.Empty;
             this.dateTimePickerFUR.Text = string.Empty;
             this.txtSexo.SelectedIndex = -1;
@@ -318,7 +320,7 @@ namespace Interfaz
                 string Rpta = "";
 
 
-                    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text),"");
+                Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR, "");
                 
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -378,7 +380,66 @@ namespace Interfaz
 
 
 
+        private void CalcularEdad()
+        {
+            DateTime FechaActual = DateTime.Now.Date;
+            MessageBox.Show("La fecha de hoy es: " + Convert.ToString(FechaActual) + "");
+            DateTime Nacimiento = DateTime.Parse(dtNacimiento.Text);
+            Edad = FechaActual.Year - Nacimiento.Year;
 
+            if (FechaActual.Month < Nacimiento.Month)
+            {
+                Edad--;
+            }
+            else if ((FechaActual.Month == Nacimiento.Month)
+                       && (FechaActual.Day < Nacimiento.Day))
+            {
+                Edad--;
+            }
+
+
+            MessageBox.Show("Su edad es: " + Edad + " :) ");
+
+
+
+        }
+
+
+
+
+        private void OcultarFUR()
+        {
+
+            CalcularEdad();  //se calcula la edad para ver si es niña menor de 10 años
+
+
+            // oculta el FUR segun el sexo
+
+            int EdadMinima = 10;
+
+            if (txtSexo.Text == "Femenino" && Edad < EdadMinima)  // si es una niñita
+            {
+                ValorFUR = Convert.ToDateTime(null);
+                dateTimePickerFUR.Hide();
+                dateTimePickerFUR.Enabled = false;
+                lblFUR.Text = "Sin F.U.R";
+            }
+            else if (txtSexo.Text == "Femenino" && Edad >= EdadMinima)  //si es una mujer
+            {
+                ValorFUR = Convert.ToDateTime(dateTimePickerFUR.Text);
+                dateTimePickerFUR.Show();
+                dateTimePickerFUR.Enabled = true;
+                lblFUR.Text = "F.U.R";
+            }
+            else if (txtSexo.Text == "Masculino")  //si es un hombre
+            {
+                ValorFUR = Convert.ToDateTime(null);
+                dateTimePickerFUR.Hide();
+                dateTimePickerFUR.Enabled = false;
+                lblFUR.Text = "Sin F.U.R";
+            }
+
+        }
 
 
 
@@ -532,7 +593,6 @@ namespace Interfaz
                         
                         txtNombre.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Nombre;
                         txtSexo.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Sexo;
-                        txtEdad.Text = Convert.ToString(MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].FechaNacimiento);
                         txtTelefono.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Telefono;
 
 
@@ -558,6 +618,16 @@ namespace Interfaz
                 dgvSeleccionados.Rows.RemoveAt(item.Index);
             }
 
+        }
+
+        private void txtSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OcultarFUR();
+        }
+
+        private void dtNacimiento_Leave(object sender, EventArgs e)
+        {
+            OcultarFUR();
         }
 
         
