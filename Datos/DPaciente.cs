@@ -166,13 +166,13 @@ namespace Datos
                 Parametro_FUR_Paciente.Value = Paciente.FUR;
                 SqlComando.Parameters.Add(Parametro_FUR_Paciente);
 
-                //parametro numero habitacion
-                SqlParameter Parametro_NHabitacion_Paciente = new SqlParameter();
-                Parametro_NHabitacion_Paciente.ParameterName = "@NumeroHabitacion";
-                Parametro_NHabitacion_Paciente.SqlDbType = SqlDbType.VarChar;
-                Parametro_NHabitacion_Paciente.Size = 10;
-                Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
-                SqlComando.Parameters.Add(Parametro_NHabitacion_Paciente);
+                ////parametro numero habitacion
+                //SqlParameter Parametro_NHabitacion_Paciente = new SqlParameter();
+                //Parametro_NHabitacion_Paciente.ParameterName = "@NumeroHabitacion";
+                //Parametro_NHabitacion_Paciente.SqlDbType = SqlDbType.VarChar;
+                //Parametro_NHabitacion_Paciente.Size = 10;
+                //Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
+                //SqlComando.Parameters.Add(Parametro_NHabitacion_Paciente);
 
 
 

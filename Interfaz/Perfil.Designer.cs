@@ -65,8 +65,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbTitulo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -160,7 +160,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.Size = new System.Drawing.Size(66, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar:";
             // 
@@ -257,6 +257,7 @@
             // PanelIngreso
             // 
             this.PanelIngreso.BackColor = System.Drawing.Color.White;
+            this.PanelIngreso.Controls.Add(this.cbTitulo);
             this.PanelIngreso.Controls.Add(this.btnQuitar);
             this.PanelIngreso.Controls.Add(this.pictureBox1);
             this.PanelIngreso.Controls.Add(this.txtBuscarSeleccionados);
@@ -279,7 +280,6 @@
             this.PanelIngreso.Controls.Add(this.label4);
             this.PanelIngreso.Controls.Add(this.label8);
             this.PanelIngreso.Controls.Add(this.txtPrecio1);
-            this.PanelIngreso.Controls.Add(this.txtTitulo);
             this.PanelIngreso.Controls.Add(this.label1);
             this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
             this.PanelIngreso.Location = new System.Drawing.Point(726, 0);
@@ -451,7 +451,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(23, 475);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 25);
+            this.label5.Size = new System.Drawing.Size(76, 25);
             this.label5.TabIndex = 34;
             this.label5.Text = "Precio 1";
             // 
@@ -535,18 +535,6 @@
             this.txtPrecio1.Size = new System.Drawing.Size(257, 26);
             this.txtPrecio1.TabIndex = 4;
             // 
-            // txtTitulo
-            // 
-            this.txtTitulo.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTitulo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTitulo.Location = new System.Drawing.Point(26, 564);
-            this.txtTitulo.MaxLength = 13;
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(257, 26);
-            this.txtTitulo.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -557,6 +545,18 @@
             this.label1.Size = new System.Drawing.Size(61, 25);
             this.label1.TabIndex = 58;
             this.label1.Text = "Título:";
+            // 
+            // cbTitulo
+            // 
+            this.cbTitulo.BackColor = System.Drawing.SystemColors.Control;
+            this.cbTitulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTitulo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTitulo.FormattingEnabled = true;
+            this.cbTitulo.Location = new System.Drawing.Point(28, 561);
+            this.cbTitulo.Name = "cbTitulo";
+            this.cbTitulo.Size = new System.Drawing.Size(257, 33);
+            this.cbTitulo.TabIndex = 74;
             // 
             // Perfil
             // 
@@ -607,7 +607,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPrecio1;
-        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPrecio2;
@@ -623,5 +622,6 @@
         private System.Windows.Forms.TextBox txtBuscarExamen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvExamenes;
+        private System.Windows.Forms.ComboBox cbTitulo;
     }
 }

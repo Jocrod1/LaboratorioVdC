@@ -9,7 +9,7 @@ namespace Metodos
 {
     public class MPaciente:DPaciente
     {
-        public static string Insertar(string Nombre, DateTime FechaNacimiento, string Sexo ,string Cedula, string Telefono, DateTime FUR,string NumeroHabitacion)
+        public static string Insertar(string Nombre, DateTime FechaNacimiento, string Sexo ,string Cedula, string Telefono, DateTime FUR)
         {
             DPaciente Objeto = new DPaciente();
             Objeto.Nombre = Nombre;
@@ -18,7 +18,7 @@ namespace Metodos
             Objeto.Cedula = Cedula;
             Objeto.Telefono = Telefono;
             Objeto.FUR=FUR;
-            Objeto.NumeroHabitacion=NumeroHabitacion;
+            //Objeto.NumeroHabitacion=NumeroHabitacion;
             return Objeto.Insertar(Objeto);
         }
 

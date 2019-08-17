@@ -68,9 +68,7 @@ namespace Interfaz
             this.txtNombre.Enabled = true;
             this.txtPorcentaje.Enabled = true;
             this.cbTipoPrecio.Enabled = true;
-            this.txtEquiv.Enabled = true;
             this.txtTipoPago.Enabled = true;
-            this.txtNoCopias.Enabled = true;
 
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(349, PanelIngreso.Size.Height);
@@ -83,9 +81,7 @@ namespace Interfaz
             this.txtNombre.Enabled = false;
             this.txtPorcentaje.Enabled = false;
             this.cbTipoPrecio.Enabled = false;
-            this.txtEquiv.Enabled = false;
             this.txtTipoPago.Enabled = false;
-            this.txtNoCopias.Enabled = false;
             btnNuevo.Visible = true;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
@@ -97,9 +93,7 @@ namespace Interfaz
             this.txtNombre.Text = string.Empty;
             this.txtPorcentaje.Text = string.Empty;
             this.cbTipoPrecio.SelectedIndex = -1;
-            this.txtEquiv.Text = string.Empty;
             this.txtTipoPago.Text = string.Empty;
-            this.txtNoCopias.Text = string.Empty;
         }
 
 
@@ -406,10 +400,8 @@ namespace Interfaz
         {
             this.ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
-            this.txtEquiv.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["equivalencia"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["porcentaje"].Value);
             this.cbTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipoprecio"].Value);
-            this.txtNoCopias.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nocopia"].Value);
             this.txtTipoPago.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipopago"].Value);
 
        
@@ -447,11 +439,9 @@ namespace Interfaz
             Habilitar();
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            this.txtEquiv.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Equivalencia"].Value);
             this.cbTipoPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoPrecio"].Value);
             this.txtPorcentaje.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Porcentaje"].Value);
             this.txtTipoPago.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["TipoPago"].Value);
-            this.txtNoCopias.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NoCopia"].Value);
             Editar();
             txtNombre.Focus();
         }

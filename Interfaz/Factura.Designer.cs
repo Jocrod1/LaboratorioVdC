@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPaciente = new System.Windows.Forms.TabPage();
+            this.chkFUR = new System.Windows.Forms.CheckBox();
             this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
             this.cbMedico = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -81,7 +82,7 @@
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblMotivo = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblExoSi = new System.Windows.Forms.RadioButton();
             this.lblExoNo = new System.Windows.Forms.RadioButton();
@@ -104,7 +105,6 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
-            this.chkFUR = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -167,6 +167,18 @@
             this.tabPaciente.Size = new System.Drawing.Size(1057, 485);
             this.tabPaciente.TabIndex = 1;
             this.tabPaciente.Text = "Paciente";
+            // 
+            // chkFUR
+            // 
+            this.chkFUR.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chkFUR.AutoSize = true;
+            this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chkFUR.Location = new System.Drawing.Point(618, 288);
+            this.chkFUR.Name = "chkFUR";
+            this.chkFUR.Size = new System.Drawing.Size(13, 12);
+            this.chkFUR.TabIndex = 116;
+            this.chkFUR.UseVisualStyleBackColor = true;
+            this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
             // 
             // dtNacimiento
             // 
@@ -596,7 +608,7 @@
             this.tabFinalizar.Controls.Add(this.txtDescuento);
             this.tabFinalizar.Controls.Add(this.label16);
             this.tabFinalizar.Controls.Add(this.txtMotivo);
-            this.tabFinalizar.Controls.Add(this.label15);
+            this.tabFinalizar.Controls.Add(this.lblMotivo);
             this.tabFinalizar.Controls.Add(this.groupBox2);
             this.tabFinalizar.Controls.Add(this.label14);
             this.tabFinalizar.Controls.Add(this.groupBox1);
@@ -645,7 +657,7 @@
             this.txtRecEmergencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRecEmergencia.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecEmergencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRecEmergencia.Location = new System.Drawing.Point(660, 156);
+            this.txtRecEmergencia.Location = new System.Drawing.Point(660, 204);
             this.txtRecEmergencia.MaxLength = 3;
             this.txtRecEmergencia.Name = "txtRecEmergencia";
             this.txtRecEmergencia.Size = new System.Drawing.Size(257, 26);
@@ -656,7 +668,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label20.Location = new System.Drawing.Point(655, 125);
+            this.label20.Location = new System.Drawing.Point(653, 176);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(181, 25);
             this.label20.TabIndex = 102;
@@ -707,9 +719,9 @@
             this.label18.ForeColor = System.Drawing.Color.DarkOrange;
             this.label18.Location = new System.Drawing.Point(387, 241);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 25);
+            this.label18.Size = new System.Drawing.Size(60, 25);
             this.label18.TabIndex = 98;
-            this.label18.Text = "ID Banco";
+            this.label18.Text = "Banco";
             // 
             // cbIdEmpresa
             // 
@@ -718,9 +730,6 @@
             this.cbIdEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbIdEmpresa.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIdEmpresa.FormattingEnabled = true;
-            this.cbIdEmpresa.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
             this.cbIdEmpresa.Location = new System.Drawing.Point(388, 56);
             this.cbIdEmpresa.Name = "cbIdEmpresa";
             this.cbIdEmpresa.Size = new System.Drawing.Size(257, 33);
@@ -733,9 +742,9 @@
             this.label17.ForeColor = System.Drawing.Color.DarkOrange;
             this.label17.Location = new System.Drawing.Point(387, 28);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(167, 25);
+            this.label17.Size = new System.Drawing.Size(145, 25);
             this.label17.TabIndex = 96;
-            this.label17.Text = "ID Empresa/Seguro";
+            this.label17.Text = "Empresa/Seguro";
             // 
             // txtDescuento
             // 
@@ -766,22 +775,22 @@
             this.txtMotivo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMotivo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMotivo.Location = new System.Drawing.Point(660, 216);
+            this.txtMotivo.Location = new System.Drawing.Point(660, 129);
             this.txtMotivo.MaxLength = 3;
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.Size = new System.Drawing.Size(257, 26);
             this.txtMotivo.TabIndex = 93;
             // 
-            // label15
+            // lblMotivo
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label15.Location = new System.Drawing.Point(657, 185);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 25);
-            this.label15.TabIndex = 92;
-            this.label15.Text = "Motivo:";
+            this.lblMotivo.AutoSize = true;
+            this.lblMotivo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMotivo.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblMotivo.Location = new System.Drawing.Point(657, 98);
+            this.lblMotivo.Name = "lblMotivo";
+            this.lblMotivo.Size = new System.Drawing.Size(73, 25);
+            this.lblMotivo.TabIndex = 92;
+            this.lblMotivo.Text = "Motivo:";
             // 
             // groupBox2
             // 
@@ -804,6 +813,7 @@
             this.lblExoSi.TabStop = true;
             this.lblExoSi.Text = "Sí";
             this.lblExoSi.UseVisualStyleBackColor = true;
+            this.lblExoSi.CheckedChanged += new System.EventHandler(this.lblExoSi_CheckedChanged);
             // 
             // lblExoNo
             // 
@@ -816,6 +826,7 @@
             this.lblExoNo.TabStop = true;
             this.lblExoNo.Text = "No";
             this.lblExoNo.UseVisualStyleBackColor = true;
+            this.lblExoNo.CheckedChanged += new System.EventHandler(this.lblExoNo_CheckedChanged);
             // 
             // label14
             // 
@@ -1033,18 +1044,6 @@
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chkFUR
-            // 
-            this.chkFUR.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.chkFUR.AutoSize = true;
-            this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkFUR.Location = new System.Drawing.Point(618, 288);
-            this.chkFUR.Name = "chkFUR";
-            this.chkFUR.Size = new System.Drawing.Size(13, 12);
-            this.chkFUR.TabIndex = 116;
-            this.chkFUR.UseVisualStyleBackColor = true;
-            this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
-            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1131,7 +1130,7 @@
         private System.Windows.Forms.TextBox txtCiPaciente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblMotivo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton lblExoSi;
         private System.Windows.Forms.RadioButton lblExoNo;

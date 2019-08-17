@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoPaciente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -43,16 +43,12 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.PanelIngreso = new System.Windows.Forms.Panel();
-            this.txtNoCopias = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtTipoPago = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cbTipoPrecio = new System.Windows.Forms.ComboBox();
-            this.txtEquiv = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -94,14 +90,14 @@
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -235,16 +231,12 @@
             // PanelIngreso
             // 
             this.PanelIngreso.BackColor = System.Drawing.Color.White;
-            this.PanelIngreso.Controls.Add(this.txtNoCopias);
-            this.PanelIngreso.Controls.Add(this.label2);
             this.PanelIngreso.Controls.Add(this.txtTipoPago);
             this.PanelIngreso.Controls.Add(this.label4);
             this.PanelIngreso.Controls.Add(this.txtPorcentaje);
             this.PanelIngreso.Controls.Add(this.label1);
             this.PanelIngreso.Controls.Add(this.label8);
             this.PanelIngreso.Controls.Add(this.cbTipoPrecio);
-            this.PanelIngreso.Controls.Add(this.txtEquiv);
-            this.PanelIngreso.Controls.Add(this.label9);
             this.PanelIngreso.Controls.Add(this.txtNombre);
             this.PanelIngreso.Controls.Add(this.label10);
             this.PanelIngreso.Controls.Add(this.btnCancelar);
@@ -255,36 +247,13 @@
             this.PanelIngreso.Size = new System.Drawing.Size(349, 557);
             this.PanelIngreso.TabIndex = 0;
             // 
-            // txtNoCopias
-            // 
-            this.txtNoCopias.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNoCopias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNoCopias.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoCopias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNoCopias.Location = new System.Drawing.Point(52, 472);
-            this.txtNoCopias.MaxLength = 100;
-            this.txtNoCopias.Name = "txtNoCopias";
-            this.txtNoCopias.Size = new System.Drawing.Size(257, 26);
-            this.txtNoCopias.TabIndex = 83;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label2.Location = new System.Drawing.Point(52, 444);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
-            this.label2.TabIndex = 84;
-            this.label2.Text = "No copias:";
-            // 
             // txtTipoPago
             // 
             this.txtTipoPago.BackColor = System.Drawing.SystemColors.Control;
             this.txtTipoPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipoPago.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTipoPago.Location = new System.Drawing.Point(50, 404);
+            this.txtTipoPago.Location = new System.Drawing.Point(50, 357);
             this.txtTipoPago.MaxLength = 10;
             this.txtTipoPago.Name = "txtTipoPago";
             this.txtTipoPago.Size = new System.Drawing.Size(257, 26);
@@ -296,7 +265,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label4.Location = new System.Drawing.Point(45, 376);
+            this.label4.Location = new System.Drawing.Point(45, 329);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 25);
             this.label4.TabIndex = 82;
@@ -308,7 +277,7 @@
             this.txtPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPorcentaje.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPorcentaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPorcentaje.Location = new System.Drawing.Point(50, 336);
+            this.txtPorcentaje.Location = new System.Drawing.Point(50, 282);
             this.txtPorcentaje.MaxLength = 4;
             this.txtPorcentaje.Name = "txtPorcentaje";
             this.txtPorcentaje.Size = new System.Drawing.Size(257, 26);
@@ -320,7 +289,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(47, 308);
+            this.label1.Location = new System.Drawing.Point(47, 254);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 80;
@@ -347,33 +316,10 @@
             this.cbTipoPrecio.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cbTipoPrecio.Location = new System.Drawing.Point(50, 261);
+            this.cbTipoPrecio.Location = new System.Drawing.Point(50, 200);
             this.cbTipoPrecio.Name = "cbTipoPrecio";
             this.cbTipoPrecio.Size = new System.Drawing.Size(257, 33);
             this.cbTipoPrecio.TabIndex = 75;
-            // 
-            // txtEquiv
-            // 
-            this.txtEquiv.BackColor = System.Drawing.SystemColors.Control;
-            this.txtEquiv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEquiv.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquiv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEquiv.Location = new System.Drawing.Point(50, 193);
-            this.txtEquiv.MaxLength = 10;
-            this.txtEquiv.Name = "txtEquiv";
-            this.txtEquiv.Size = new System.Drawing.Size(257, 26);
-            this.txtEquiv.TabIndex = 74;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label9.Location = new System.Drawing.Point(47, 165);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 25);
-            this.label9.TabIndex = 77;
-            this.label9.Text = "Equivalencia:";
             // 
             // txtNombre
             // 
@@ -392,7 +338,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label10.Location = new System.Drawing.Point(45, 233);
+            this.label10.Location = new System.Drawing.Point(45, 172);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(133, 25);
             this.label10.TabIndex = 78;
@@ -474,16 +420,12 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtNoCopias;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTipoPago;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPorcentaje;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbTipoPrecio;
-        private System.Windows.Forms.TextBox txtEquiv;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ErrorProvider errorProvider1;

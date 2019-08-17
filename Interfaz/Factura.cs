@@ -36,7 +36,6 @@ namespace Interfaz
         {
 
 
-            //ya no funciona :( berwensa
             cbTipoPaciente.DataSource = MTipoPaciente.Mostrar("");
             cbTipoPaciente.DisplayMember = "Nombre";
             cbTipoPaciente.ValueMember = "ID";
@@ -48,6 +47,20 @@ namespace Interfaz
             cbMedico.ValueMember = "IdMedico";
             cbMedico.SelectedIndex = -1;
 
+            cbIdEmpresa.DataSource = MEmpresaSeguro.Mostrar("");
+            cbIdEmpresa.DisplayMember = "Nombre";
+            cbIdEmpresa.ValueMember = "ID";
+            cbIdEmpresa.SelectedIndex = -1;
+
+            cbIdBanco.DataSource = MBanco.Mostrar("");
+            cbIdBanco.DisplayMember = "Nombre";
+            cbIdBanco.ValueMember = "ID";
+            cbIdBanco.SelectedIndex = -1;
+
+
+
+            lblMotivo.Hide();   //oculta el motivo, para luego que se seleccione el rb si/no
+            txtMotivo.Hide();
 
 
 
@@ -320,7 +333,7 @@ namespace Interfaz
                 string Rpta = "";
 
 
-                Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR, "");
+                Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR);
                 
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -648,6 +661,44 @@ namespace Interfaz
         private void dateTimePickerFUR_ValueChanged(object sender, EventArgs e)
         {
             OcultarFUR();
+        }
+
+        private void lblExoSi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lblExoSi.Checked == true)
+            {
+                lblMotivo.Show();
+                txtMotivo.Show();
+
+                rbContado.Enabled = false;
+                rbCredito.Enabled = false;
+
+                cbIdBanco.Enabled = false;
+                txtNumCHoT.Enabled = false;
+                txtRecEmergencia.Enabled = false;
+                txtDescuento.Enabled = false;
+                txtAbonar.Enabled = false;
+            }
+        }
+
+        private void lblExoNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lblExoNo.Checked == true)
+            {
+                txtMotivo.Clear();
+                lblMotivo.Hide();
+                txtMotivo.Hide();
+
+                rbContado.Enabled = true;
+                rbCredito.Enabled = true;
+
+                cbIdBanco.Enabled = true;
+                txtNumCHoT.Enabled = true;
+                txtRecEmergencia.Enabled = true;
+                txtDescuento.Enabled = true;
+                txtAbonar.Enabled = true;
+
+            }
         }
 
         

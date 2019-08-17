@@ -239,12 +239,12 @@ namespace Interfaz
                     }
 
 
-                    Rpta = MPerfil.Insertar( this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
+                    Rpta = MPerfil.Insertar( this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(cbTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(cbTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -312,7 +312,7 @@ namespace Interfaz
             this.cbLabRef.Enabled = true;
             this.txtPrecio1.Enabled = true;
             this.txtPrecio2.Enabled = true;
-            this.txtTitulo.Enabled = true;
+            this.cbTitulo.Enabled = true;
             this.txtPrecioRef.Enabled = true;
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(608, PanelIngreso.Size.Height);
@@ -324,7 +324,7 @@ namespace Interfaz
             this.cbLabRef.Enabled = false;
             this.txtPrecio1.Enabled = false;
             this.txtPrecio2.Enabled = false;
-            this.txtTitulo.Enabled = false;
+            this.cbTitulo.Enabled = false;
             this.txtPrecioRef.Enabled = false;
             btnNuevo.Visible = true;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
@@ -354,7 +354,7 @@ namespace Interfaz
             this.cbLabRef.SelectedIndex = -1;
             this.txtPrecio1.Text = string.Empty;
             this.txtPrecio2.Text = string.Empty;
-            this.txtTitulo.Text = string.Empty;
+            this.cbTitulo.Text = string.Empty;
             this.txtPrecioRef.Text = string.Empty;
         }
 
