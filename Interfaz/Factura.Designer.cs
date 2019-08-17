@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPaciente = new System.Windows.Forms.TabPage();
+            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
             this.cbMedico = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.cbTipoPaciente = new System.Windows.Forms.ComboBox();
@@ -103,7 +104,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
-            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.chkFUR = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -141,6 +142,7 @@
             // tabPaciente
             // 
             this.tabPaciente.BackColor = System.Drawing.Color.LightGreen;
+            this.tabPaciente.Controls.Add(this.chkFUR);
             this.tabPaciente.Controls.Add(this.dtNacimiento);
             this.tabPaciente.Controls.Add(this.cbMedico);
             this.tabPaciente.Controls.Add(this.label22);
@@ -165,6 +167,19 @@
             this.tabPaciente.Size = new System.Drawing.Size(1057, 485);
             this.tabPaciente.TabIndex = 1;
             this.tabPaciente.Text = "Paciente";
+            // 
+            // dtNacimiento
+            // 
+            this.dtNacimiento.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dtNacimiento.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNacimiento.Location = new System.Drawing.Point(559, 121);
+            this.dtNacimiento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtNacimiento.Name = "dtNacimiento";
+            this.dtNacimiento.Size = new System.Drawing.Size(257, 33);
+            this.dtNacimiento.TabIndex = 115;
+            this.dtNacimiento.Leave += new System.EventHandler(this.dtNacimiento_Leave);
             // 
             // cbMedico
             // 
@@ -329,6 +344,7 @@
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
             this.dateTimePickerFUR.Size = new System.Drawing.Size(257, 33);
             this.dateTimePickerFUR.TabIndex = 100;
+            this.dateTimePickerFUR.ValueChanged += new System.EventHandler(this.dateTimePickerFUR_ValueChanged);
             // 
             // label11
             // 
@@ -1017,18 +1033,17 @@
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtNacimiento
+            // chkFUR
             // 
-            this.dtNacimiento.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dtNacimiento.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNacimiento.Location = new System.Drawing.Point(559, 121);
-            this.dtNacimiento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtNacimiento.Name = "dtNacimiento";
-            this.dtNacimiento.Size = new System.Drawing.Size(257, 33);
-            this.dtNacimiento.TabIndex = 115;
-            this.dtNacimiento.Leave += new System.EventHandler(this.dtNacimiento_Leave);
+            this.chkFUR.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chkFUR.AutoSize = true;
+            this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chkFUR.Location = new System.Drawing.Point(618, 288);
+            this.chkFUR.Name = "chkFUR";
+            this.chkFUR.Size = new System.Drawing.Size(13, 12);
+            this.chkFUR.TabIndex = 116;
+            this.chkFUR.UseVisualStyleBackColor = true;
+            this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
             // 
             // Factura
             // 
@@ -1148,5 +1163,6 @@
         private System.Windows.Forms.Label label22;
         public System.Windows.Forms.ComboBox cbTipoPaciente;
         private System.Windows.Forms.DateTimePicker dtNacimiento;
+        private System.Windows.Forms.CheckBox chkFUR;
     }
 }

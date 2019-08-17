@@ -106,7 +106,6 @@ namespace Interfaz
 
         private void Mostrar()
         {
-            //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MTipoPaciente.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
@@ -435,10 +434,6 @@ namespace Interfaz
             this.Deshabilitar();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-        }
-
 
 
 
@@ -483,6 +478,7 @@ namespace Interfaz
                 errorProvider1.SetError(txtTipoPago, "En este campo solo se pueden ingresar letras");
             }
         }
+
     }
 }
 

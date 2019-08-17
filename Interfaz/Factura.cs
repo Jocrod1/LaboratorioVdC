@@ -401,48 +401,39 @@ namespace Interfaz
             MessageBox.Show("Su edad es: " + Edad + " :) ");
 
 
-
         }
-
-
 
 
         private void OcultarFUR()
         {
 
-            CalcularEdad();  //se calcula la edad para ver si es niña menor de 10 años
 
-
-            // oculta el FUR segun el sexo
-
-            int EdadMinima = 10;
-
-            if (txtSexo.Text == "Femenino" && Edad < EdadMinima)  // si es una niñita
+            if (txtSexo.Text == "Femenino" && !chkFUR.Checked)  // no tiene FUR
             {
                 ValorFUR = Convert.ToDateTime(null);
                 dateTimePickerFUR.Hide();
                 dateTimePickerFUR.Enabled = false;
-                lblFUR.Text = "Sin F.U.R";
+                chkFUR.Enabled = true;
             }
-            else if (txtSexo.Text == "Femenino" && Edad >= EdadMinima)  //si es una mujer
+            else if (txtSexo.Text == "Femenino" && chkFUR.Checked)  // si tiene FUR
             {
                 ValorFUR = Convert.ToDateTime(dateTimePickerFUR.Text);
                 dateTimePickerFUR.Show();
                 dateTimePickerFUR.Enabled = true;
-                lblFUR.Text = "F.U.R";
+                chkFUR.Enabled = true;
             }
-            else if (txtSexo.Text == "Masculino")  //si es un hombre
+
+
+            if (txtSexo.Text == "Masculino")  //si es un hombre
             {
                 ValorFUR = Convert.ToDateTime(null);
+                chkFUR.Checked = false;
+                chkFUR.Enabled = false;
                 dateTimePickerFUR.Hide();
-                dateTimePickerFUR.Enabled = false;
-                lblFUR.Text = "Sin F.U.R";
+
             }
 
         }
-
-
-
 
 
         private void BuscarTabla(string TextoBuscar)
@@ -595,6 +586,25 @@ namespace Interfaz
                         txtSexo.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Sexo;
                         txtTelefono.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Telefono;
 
+                        this.chkFUR.Enabled = true;
+                        this.dateTimePickerFUR.Enabled = true;
+
+
+                        if (Convert.ToDateTime(MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].FUR) == Convert.ToDateTime(null))  // si no hay FUR 
+                        {
+
+                            this.chkFUR.Checked = false;
+                            this.dateTimePickerFUR.Hide();
+
+                        }
+                        else   // si hay algun valor en FUR
+                        {
+                            this.chkFUR.Checked = true;
+                            this.dateTimePickerFUR.Show();
+                            this.dateTimePickerFUR.Text = Convert.ToString(Convert.ToDateTime(MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].FUR));
+                        }
+
+
 
                     }
                     else if (respuesta == DialogResult.No)
@@ -626,6 +636,16 @@ namespace Interfaz
         }
 
         private void dtNacimiento_Leave(object sender, EventArgs e)
+        {
+            CalcularEdad();
+        }
+
+        private void chkFUR_CheckedChanged(object sender, EventArgs e)
+        {
+            OcultarFUR();
+        }
+
+        private void dateTimePickerFUR_ValueChanged(object sender, EventArgs e)
         {
             OcultarFUR();
         }

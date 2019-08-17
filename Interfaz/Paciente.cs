@@ -507,8 +507,7 @@ namespace Interfaz
 
             MessageBox.Show("Su edad es: " + Edad + " :) ");
 
-
-
+           
         }
 
 

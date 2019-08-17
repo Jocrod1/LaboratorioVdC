@@ -82,14 +82,21 @@ namespace Interfaz
 
             this.TablaSeleccionados = new DataTable("Detalle");
             this.TablaSeleccionados.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
+            this.TablaSeleccionados.Columns.Add("Nombre", System.Type.GetType("System.String"));
+            this.TablaSeleccionados.Columns.Add("Precio1", System.Type.GetType("System.String"));
+            this.TablaSeleccionados.Columns.Add("Precio2", System.Type.GetType("System.String"));
+
 
             dgvSeleccionados.DataSource = this.TablaSeleccionados;
 
 
-            //esto es para añadir las columnas a la otra TablaSeleccionados (esto es para buscar por letra en dgvSeleccionados
+            //esto es para añadir las columnas a la otra TablaSeleccionados (esto es para buscar por letra en dgvSeleccionados)
 
             this.TablaSeleccionados2 = new DataTable("Detalle");
             this.TablaSeleccionados2.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
+            this.TablaSeleccionados2.Columns.Add("Nombre", System.Type.GetType("System.String"));
+            this.TablaSeleccionados2.Columns.Add("Precio1", System.Type.GetType("System.String"));
+            this.TablaSeleccionados2.Columns.Add("Precio2", System.Type.GetType("System.String"));
 
 
         }
@@ -232,7 +239,7 @@ namespace Interfaz
                     }
 
 
-                    Rpta = MPerfil.Insertar(this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
+                    Rpta = MPerfil.Insertar( this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
                 }
                 else
                 {
@@ -367,7 +374,8 @@ namespace Interfaz
             //agrega los examenes
             foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
             {
-                TablaSeleccionados.Rows.Add(item.Cells["ID"].Value);
+                TablaSeleccionados.Rows.Add(item.Cells["ID"].Value, item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
+
             }
 
 
