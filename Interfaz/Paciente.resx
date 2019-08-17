@@ -454,8 +454,8 @@
   </data>
   <data name="btnAnular.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlz///Y
-        AP//2AABirb03gAAGEpJREFUeF7t1juSJcexRVFoz5pjoEgJGDYlYBIYCEUO5BEFIBvV6PrcT+7MiMi1
+        iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlz///W
+        AP//1gAB0BeiiQAAGEpJREFUeF7t1juSJcexRVFoz5pjoEgJGDYlYBIYCEUO5BEFIBvV6PrcT+7MiMi1
         zI5SVtLN8OP+w0z+9e8v//zx5y+//vjL//3rzz8BwKledtLLbnrZUX/+iT29/LA//fLlPz/98o////Hn
         f/zXEQDA2f5Y/v/478tuetlRjoCdvV7+WxwBAJzp2+W/xRGwm7eW/xZHAABneHv5b3EEPO2j5b/FEQDA
         kT5e/lscAQ+7ZflvcQQAcITblv8WR8Dd7ln+WxwBAJTuW/5bHAE3e2T5b3EEAFB4bPlvcQR86pnlv8UR
@@ -716,7 +716,7 @@
   <data name="btnCancelar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAb+9JREFUeF7tnQmYHFXV/g8gqyKCyiYCCsKHEVkiGAFZFARFAdndFxQ3gqLCp3/F
+        vQAADr0BR/uQrQAAb+9JREFUeF7tnQmYHFXV/g8gqyKCyiYCCsKHEVkiGAFZFARFAdndFxQ3gqLCp3/F
         1sx0VXdCRFQEFAE/BSQEDPsmCTtCAoQdAiEmJJmZru6eycIawvzfc/tUpzPpJDOTWepWvb/neZ+qWTKp
         c5dzz+l7614hhCSbeTnZqDOU7bsC2asSyGeiQL5SDuTUckFyUUF+VynIxZVQropCubUcyr34/nToOXxv
         Hq6d+N5i/M4i3L+C33kT9909pT/DdZH+Ln6nE/fz8b2ZuH8C35sK3YWvb8L3J+LvXoSvx0O/rIbyg2pB

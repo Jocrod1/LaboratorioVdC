@@ -20,6 +20,11 @@ namespace Interfaz
         //Variable que nos indica si vamos a modificar un trabajador
         private bool IsEditar = false;
 
+        public DateTime ValorFUR;
+
+        int age = 0;
+
+
         private int ID;
 
         public Paciente()
@@ -133,7 +138,7 @@ namespace Interfaz
 
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"].Value);
-            this.txtEdad.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Edad"].Value);
+            this.dtNacimiento.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["FechaNacimiento"].Value);
             this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
             this.dateTimePickerFUR.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value);
             this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
@@ -269,12 +274,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
+                //    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, txtSexo.SelectedIndex == 0 ? ValorFUR : Convert.ToDateTime(null) , txtNroHab.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToInt32(txtEdad.Text), this.txtSexo.Text, (this.cbCedula.Text+this.txtCiPaciente.Text), txtTelefono.Text, Convert.ToDateTime(dateTimePickerFUR.Text), txtNroHab.Text);
+                //    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR, txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -371,9 +376,9 @@ namespace Interfaz
             this.txtCiPaciente.Enabled = true;
             this.txtNombre.Enabled = true;
             this.txtSexo.Enabled = true;
-            this.txtEdad.Enabled = true;
+            this.dtNacimiento.Enabled = true;
             this.txtTelefono.Enabled = true;
-            this.dateTimePickerFUR.Enabled = true;
+           // this.dateTimePickerFUR.Enabled = true;  esto es para que no se elija FUR hasta que no se seleccione sexo o edad
             this.txtNroHab.Enabled = true;
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(311, PanelIngreso.Size.Height);
@@ -384,7 +389,7 @@ namespace Interfaz
             this.txtCiPaciente.Enabled = false;
             this.txtNombre.Enabled = false;
             this.txtSexo.Enabled = false;
-            this.txtEdad.Enabled = false;
+            this.dtNacimiento.Enabled = false;
             this.txtTelefono.Enabled = false;
             this.dateTimePickerFUR.Enabled = false;
             this.txtNroHab.Enabled = false;
@@ -415,7 +420,7 @@ namespace Interfaz
             this.txtCiPaciente.Text = string.Empty;
             this.txtNombre.Text = string.Empty;
             this.txtSexo.Text = string.Empty;
-            this.txtEdad.Text = string.Empty;
+            this.dtNacimiento.Text = string.Empty;
             this.txtTelefono.Text = string.Empty;
             this.dateTimePickerFUR.Text = string.Empty;
             this.txtNroHab.Text = string.Empty;
@@ -472,14 +477,7 @@ namespace Interfaz
                 errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
             }
         }
-        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            errorProvider1.SetError(txtEdad, "");
-            if (valid.soloNumeros(e))
-            {
-                errorProvider1.SetError(txtEdad, "En este campo solo se pueden ingresar numeros");
-            }
-        }
+        
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorProvider1.SetError(txtTelefono, "");
@@ -555,5 +553,46 @@ namespace Interfaz
                 }
             }
         }
+
+        private void txtSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtSexo.SelectedIndex == 0) //femenino
+            {
+                dateTimePickerFUR.Enabled = true;
+
+                ValorFUR = Convert.ToDateTime(dateTimePickerFUR.Text);
+
+                //aqui se pone un if es menor de edad para ponerle null al FUR
+
+            }
+            else if(txtSexo.SelectedIndex == 1)  //masculino
+            {
+                dateTimePickerFUR.Enabled = false;
+            }
+        }
+
+        private void dtNacimiento_Leave(object sender, EventArgs e)
+        {
+            DateTime currentDate = DateTime.Now.Date;
+            MessageBox.Show("La fecha de hoy es: " + Convert.ToString(currentDate) + "");
+            DateTime birthdate = DateTime.Parse(dtNacimiento.Text);
+            age = currentDate.Year - birthdate.Year;
+
+            if (currentDate.Month < birthdate.Month)
+            {
+                age--;
+            }
+            else if ((currentDate.Month == birthdate.Month)
+                       && (currentDate.Day < birthdate.Day))
+            {
+                age--;
+            }
+
+
+            MessageBox.Show("Su edad es:" + age + " :) ");
+        }
+
+        
+
     }
 }

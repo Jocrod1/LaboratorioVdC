@@ -41,8 +41,6 @@ namespace Interfaz
             cbTipoPaciente.SelectedIndex = -1;
 
 
-
-            //por alguna razon funciona con los campos en este orden, pero no al reves
             cbMedico.DataSource = MMedico.Mostrar("");
             cbMedico.DisplayMember = "Nombre";
             cbMedico.ValueMember = "IdMedico";
