@@ -351,8 +351,12 @@ namespace Interfaz
         {
             dataListado.DataSource = MTurno.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+        void OcultarColumnas() {
+            dataListado.Columns[0].Visible = false;
         }
 
         private void Buscar()
