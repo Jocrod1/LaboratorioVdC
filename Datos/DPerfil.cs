@@ -160,7 +160,7 @@ public int PrecioRef
 
                 if (respuesta.Equals("OK"))
                 {
-                    this.ID = Convert.ToInt32(SqlComando.Parameters["ID"].Value);
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
 
                     foreach (DDetalle_Perfil det in Detalle)
                     {
