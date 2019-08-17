@@ -22,7 +22,7 @@ namespace Interfaz
 
         public DateTime ValorFUR;
 
-        int age = 0;
+        int Edad = 0;
 
 
         private int ID;
@@ -454,7 +454,70 @@ namespace Interfaz
             {
                 this.Buscar_Cedula();
             }
-        }     
+        }
+
+
+
+        private void CalcularEdad()
+        {
+            DateTime FechaActual = DateTime.Now.Date;
+            MessageBox.Show("La fecha de hoy es: " + Convert.ToString(FechaActual) + "");
+            DateTime Nacimiento = DateTime.Parse(dtNacimiento.Text);
+            Edad = FechaActual.Year - Nacimiento.Year;
+
+            if (FechaActual.Month < Nacimiento.Month)
+            {
+                Edad--;
+            }
+            else if ((FechaActual.Month == Nacimiento.Month)
+                       && (FechaActual.Day < Nacimiento.Day))
+            {
+                Edad--;
+            }
+
+
+            MessageBox.Show("Su edad es: " + Edad + " :) ");
+
+
+
+        }
+
+
+
+
+        private void OcultarFUR()
+        {
+
+            CalcularEdad();  //se calcula la edad para ver si es niña menor de 10 años
+
+
+            // oculta el FUR segun el sexo
+
+            int EdadMinima = 10;
+
+            if (txtSexo.Text == "Femenino" && Edad < EdadMinima)  // si es una niñita
+            {
+                ValorFUR = Convert.ToDateTime(null);
+                dateTimePickerFUR.Hide();
+                dateTimePickerFUR.Enabled = false;
+                lblFUR.Text = "Sin F.U.R";
+            }
+            else if (txtSexo.Text == "Femenino" && Edad >= EdadMinima)  //si es una mujer
+            {
+                dateTimePickerFUR.Show();
+                dateTimePickerFUR.Enabled = true;
+                lblFUR.Text = "F.U.R";
+            }
+            else if (txtSexo.Text == "Masculino")  //si es un hombre
+            {
+                dateTimePickerFUR.Hide();
+                dateTimePickerFUR.Enabled = false;
+                lblFUR.Text = "Sin F.U.R";
+            }
+
+        }
+
+
 
 
         //validaciones
@@ -556,40 +619,14 @@ namespace Interfaz
 
         private void txtSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtSexo.SelectedIndex == 0) //femenino
-            {
-                dateTimePickerFUR.Enabled = true;
-
-                ValorFUR = Convert.ToDateTime(dateTimePickerFUR.Text);
-
-                //aqui se pone un if es menor de edad para ponerle null al FUR
-
-            }
-            else if(txtSexo.SelectedIndex == 1)  //masculino
-            {
-                dateTimePickerFUR.Enabled = false;
-            }
+            OcultarFUR();
         }
 
         private void dtNacimiento_Leave(object sender, EventArgs e)
         {
-            DateTime currentDate = DateTime.Now.Date;
-            MessageBox.Show("La fecha de hoy es: " + Convert.ToString(currentDate) + "");
-            DateTime birthdate = DateTime.Parse(dtNacimiento.Text);
-            age = currentDate.Year - birthdate.Year;
 
-            if (currentDate.Month < birthdate.Month)
-            {
-                age--;
-            }
-            else if ((currentDate.Month == birthdate.Month)
-                       && (currentDate.Day < birthdate.Day))
-            {
-                age--;
-            }
+            OcultarFUR();
 
-
-            MessageBox.Show("Su edad es:" + age + " :) ");
         }
 
         

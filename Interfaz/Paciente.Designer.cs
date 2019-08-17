@@ -59,7 +59,7 @@
             this.txtCiPaciente = new System.Windows.Forms.TextBox();
             this.dateTimePickerFUR = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblFUR = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -285,7 +285,7 @@
             this.PanelIngreso.Controls.Add(this.txtCiPaciente);
             this.PanelIngreso.Controls.Add(this.dateTimePickerFUR);
             this.PanelIngreso.Controls.Add(this.label8);
-            this.PanelIngreso.Controls.Add(this.label7);
+            this.PanelIngreso.Controls.Add(this.lblFUR);
             this.PanelIngreso.Controls.Add(this.txtTelefono);
             this.PanelIngreso.Controls.Add(this.label1);
             this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
@@ -413,7 +413,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label9.Location = new System.Drawing.Point(23, 483);
+            this.label9.Location = new System.Drawing.Point(23, 417);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 25);
             this.label9.TabIndex = 63;
@@ -436,7 +436,7 @@
             this.txtNroHab.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNroHab.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNroHab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNroHab.Location = new System.Drawing.Point(27, 509);
+            this.txtNroHab.Location = new System.Drawing.Point(27, 443);
             this.txtNroHab.MaxLength = 1000;
             this.txtNroHab.Name = "txtNroHab";
             this.txtNroHab.Size = new System.Drawing.Size(257, 26);
@@ -461,7 +461,7 @@
             this.dateTimePickerFUR.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePickerFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFUR.Location = new System.Drawing.Point(27, 439);
+            this.dateTimePickerFUR.Location = new System.Drawing.Point(28, 498);
             this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
@@ -479,16 +479,16 @@
             this.label8.TabIndex = 54;
             this.label8.Text = "Sexo:";
             // 
-            // label7
+            // lblFUR
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label7.Location = new System.Drawing.Point(24, 413);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 25);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "F.U.R:";
+            this.lblFUR.AutoSize = true;
+            this.lblFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblFUR.Location = new System.Drawing.Point(25, 472);
+            this.lblFUR.Name = "lblFUR";
+            this.lblFUR.Size = new System.Drawing.Size(56, 25);
+            this.lblFUR.TabIndex = 60;
+            this.lblFUR.Text = "F.U.R:";
             // 
             // txtTelefono
             // 
@@ -566,7 +566,7 @@
         private System.Windows.Forms.TextBox txtCiPaciente;
         private System.Windows.Forms.DateTimePicker dateTimePickerFUR;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblFUR;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
