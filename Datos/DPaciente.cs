@@ -25,12 +25,12 @@ namespace Datos
             get { return _Nombre; }
             set { _Nombre = value; }
         }
-        private int _Edad;
+        private DateTime _FechaNacimiento;
 
-        public int Edad
+        public DateTime FechaNacimiento
         {
-            get { return _Edad; }
-            set { _Edad = value; }
+            get { return _FechaNacimiento; }
+            set { _FechaNacimiento = value; }
         }
         private string _Sexo;
 
@@ -78,11 +78,11 @@ namespace Datos
 
         }
 
-        public DPaciente(int IdPaciente, string Nombre, int Edad, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion)
+        public DPaciente(int IdPaciente, string Nombre, DateTime FechaNacimiento, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion)
         {
             this.IdPaciente = IdPaciente;
             this.Nombre = Nombre;
-            this.Edad = Edad;
+            this.FechaNacimiento = FechaNacimiento;
             this.Sexo = Sexo;
             this.Cedula= Cedula;
             this.Telefono = Telefono;
@@ -129,11 +129,11 @@ namespace Datos
                 SqlComando.Parameters.Add(Parametro_Nombre_Paciente);
 
                 //parametro edad
-                SqlParameter Parametro_Edad_Paciente = new SqlParameter();
-                Parametro_Edad_Paciente.ParameterName = "@edad";
-                Parametro_Edad_Paciente.SqlDbType = SqlDbType.Int;
-                Parametro_Edad_Paciente.Value = Paciente.Edad;
-                SqlComando.Parameters.Add(Parametro_Edad_Paciente);
+                SqlParameter Parametro_FechaNac_Paciente = new SqlParameter();
+                Parametro_FechaNac_Paciente.ParameterName = "@FechaNac";
+                Parametro_FechaNac_Paciente.SqlDbType = SqlDbType.Date;
+                Parametro_FechaNac_Paciente.Value = Paciente.FechaNacimiento;
+                SqlComando.Parameters.Add(Parametro_FechaNac_Paciente);
 
                 //parametro sexo
                 SqlParameter Parametro_Sexo_Paciente = new SqlParameter();
@@ -233,11 +233,11 @@ namespace Datos
                 SqlComando.Parameters.Add(Parametro_Nombre_Paciente);
 
                 //parametro edad
-                SqlParameter Parametro_Edad_Paciente = new SqlParameter();
-                Parametro_Edad_Paciente.ParameterName = "@edad";
-                Parametro_Edad_Paciente.SqlDbType = SqlDbType.Int;
-                Parametro_Edad_Paciente.Value = Paciente.Edad;
-                SqlComando.Parameters.Add(Parametro_Edad_Paciente);
+                SqlParameter Parametro_FechaNac_Paciente = new SqlParameter();
+                Parametro_FechaNac_Paciente.ParameterName = "@FechaNac";
+                Parametro_FechaNac_Paciente.SqlDbType = SqlDbType.Date;
+                Parametro_FechaNac_Paciente.Value = Paciente.FechaNacimiento;
+                SqlComando.Parameters.Add(Parametro_FechaNac_Paciente);
 
                 //parametro sexo
                 SqlParameter Parametro_Sexo_Paciente = new SqlParameter();
@@ -422,7 +422,7 @@ namespace Datos
                     {
                         IdPaciente = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
-                        Edad = LeerFilas.GetInt32(2),
+                        FechaNacimiento = LeerFilas.GetDateTime(2),
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
@@ -471,7 +471,7 @@ namespace Datos
                     {
                         IdPaciente=LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
-                        Edad = LeerFilas.GetInt32(2),
+                        FechaNacimiento = LeerFilas.GetDateTime(2),
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
@@ -518,7 +518,7 @@ namespace Datos
                     {
                         IdPaciente = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
-                        Edad = LeerFilas.GetInt32(2),
+                        FechaNacimiento = LeerFilas.GetDateTime(2),
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),

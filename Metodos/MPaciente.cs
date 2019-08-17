@@ -9,11 +9,11 @@ namespace Metodos
 {
     public class MPaciente:DPaciente
     {
-        public static string Insertar(string Nombre, int Edad, string Sexo ,string Cedula, string Telefono, DateTime FUR,string NumeroHabitacion)
+        public static string Insertar(string Nombre, DateTime FechaNacimiento, string Sexo ,string Cedula, string Telefono, DateTime FUR,string NumeroHabitacion)
         {
             DPaciente Objeto = new DPaciente();
             Objeto.Nombre = Nombre;
-            Objeto.Edad=Edad;
+            Objeto.FechaNacimiento=FechaNacimiento;
             Objeto.Sexo = Sexo;
             Objeto.Cedula = Cedula;
             Objeto.Telefono = Telefono;
@@ -23,12 +23,12 @@ namespace Metodos
         }
 
 
-        public static string Editar(int ID, string Nombre, int Edad, string Sexo, string Cedula, string Telefono, DateTime FUR, string NumeroHabitacion)
+        public static string Editar(int ID, string Nombre, DateTime FechaNacimiento, string Sexo, string Cedula, string Telefono, DateTime FUR, string NumeroHabitacion)
         {
             DPaciente Objeto = new DPaciente();
             Objeto.IdPaciente = ID;
             Objeto.Nombre = Nombre;
-            Objeto.Edad = Edad;
+            Objeto.FechaNacimiento = FechaNacimiento;
             Objeto.Sexo = Sexo;
             Objeto.Cedula = Cedula;
             Objeto.Telefono = Telefono;

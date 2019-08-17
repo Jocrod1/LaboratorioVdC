@@ -532,7 +532,7 @@ namespace Interfaz
                         
                         txtNombre.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Nombre;
                         txtSexo.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Sexo;
-                        txtEdad.Text = Convert.ToString(MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Edad);
+                        txtEdad.Text = Convert.ToString(MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].FechaNacimiento);
                         txtTelefono.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Telefono;
 
 
