@@ -43,6 +43,9 @@ namespace Interfaz
             this.Botones();
             cbBuscar.SelectedIndex = 1;
 
+
+            dateTimePickerFUR.Hide();
+            
         
 
 
@@ -136,12 +139,33 @@ namespace Interfaz
             this.txtCiPaciente.Text = Cedula.Remove(0, 2);
             //
 
+
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"].Value);
             this.dtNacimiento.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["FechaNacimiento"].Value);
             this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
-            this.dateTimePickerFUR.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value);
             this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
+
+            this.chkFUR.Enabled = true;
+            this.dateTimePickerFUR.Enabled = true;
+
+
+            if (Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value) == Convert.ToDateTime(null))  // si no hay FUR 
+            {
+
+                this.chkFUR.Checked = false;
+                this.dateTimePickerFUR.Hide();
+
+            }
+            else   // si hay algun valor en FUR
+            {
+                this.chkFUR.Checked = true;
+                this.dateTimePickerFUR.Show();
+                this.dateTimePickerFUR.Text = Convert.ToString(Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value));
+            }
+
+
+
             Editar();
             txtNombre.Focus();
 
@@ -378,7 +402,9 @@ namespace Interfaz
             this.txtSexo.Enabled = true;
             this.dtNacimiento.Enabled = true;
             this.txtTelefono.Enabled = true;
-           // this.dateTimePickerFUR.Enabled = true;  esto es para que no se elija FUR hasta que no se seleccione sexo o edad
+            //this.dateTimePickerFUR.Hide();        ojo no activar esto, despues no quiere cargar el chk de registros en el doubleclick
+            //this.dateTimePickerFUR.Enabled = false;
+            //this.chkFUR.Checked = false;
             this.txtNroHab.Enabled = true;
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(311, PanelIngreso.Size.Height);
@@ -392,6 +418,8 @@ namespace Interfaz
             this.dtNacimiento.Enabled = false;
             this.txtTelefono.Enabled = false;
             this.dateTimePickerFUR.Enabled = false;
+            this.dateTimePickerFUR.Hide();
+            this.chkFUR.Checked = false;
             this.txtNroHab.Enabled = false;
             btnNuevo.Visible = true;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
@@ -425,6 +453,7 @@ namespace Interfaz
             this.dateTimePickerFUR.Text = string.Empty;
             this.txtNroHab.Text = string.Empty;
             this.txtSexo.SelectedIndex = -1;
+            this.chkFUR.Checked = false;
         }
 
         private void Mostrar()
@@ -488,33 +517,30 @@ namespace Interfaz
         private void OcultarFUR()
         {
 
-            CalcularEdad();  //se calcula la edad para ver si es niña menor de 10 años
 
-
-            // oculta el FUR segun el sexo
-
-            int EdadMinima = 10;
-
-            if (txtSexo.Text == "Femenino" && Edad < EdadMinima)  // si es una niñita
+            if (txtSexo.Text == "Femenino" && !chkFUR.Checked)  // no tiene FUR
             {
                 ValorFUR = Convert.ToDateTime(null);
                 dateTimePickerFUR.Hide();
                 dateTimePickerFUR.Enabled = false;
-                lblFUR.Text = "Sin F.U.R";
+                chkFUR.Enabled = true;
             }
-            else if (txtSexo.Text == "Femenino" && Edad >= EdadMinima)  //si es una mujer
+            else if (txtSexo.Text == "Femenino" && chkFUR.Checked)  // si tiene FUR
             {
-                ValorFUR = Convert.ToDateTime(dateTimePickerFUR.Text);
+                ValorFUR = Convert.ToDateTime(dateTimePickerFUR.Text); 
                 dateTimePickerFUR.Show();
                 dateTimePickerFUR.Enabled = true;
-                lblFUR.Text = "F.U.R";
+                chkFUR.Enabled = true;
             }
-            else if (txtSexo.Text == "Masculino")  //si es un hombre
+            
+            
+            if (txtSexo.Text == "Masculino")  //si es un hombre
             {
                 ValorFUR = Convert.ToDateTime(null);
+                chkFUR.Checked = false;
+                chkFUR.Enabled = false;
                 dateTimePickerFUR.Hide();
-                dateTimePickerFUR.Enabled = false;
-                lblFUR.Text = "Sin F.U.R";
+                
             }
 
         }
@@ -626,9 +652,18 @@ namespace Interfaz
 
         private void dtNacimiento_Leave(object sender, EventArgs e)
         {
+            CalcularEdad();
 
+        }
+
+        private void chkFUR_CheckedChanged(object sender, EventArgs e)
+        {
             OcultarFUR();
+        }
 
+        private void dateTimePickerFUR_ValueChanged(object sender, EventArgs e)
+        {
+            OcultarFUR();
         }
 
         
