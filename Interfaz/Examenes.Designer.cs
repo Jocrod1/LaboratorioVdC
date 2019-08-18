@@ -35,7 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbTituloNo = new System.Windows.Forms.RadioButton();
             this.rbTituloSi = new System.Windows.Forms.RadioButton();
-            this.txtLabRef = new System.Windows.Forms.ComboBox();
+            this.cbLabRef = new System.Windows.Forms.ComboBox();
             this.dtPlazoEntrega = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -82,7 +82,7 @@
             // 
             this.PanelIngreso.BackColor = System.Drawing.Color.White;
             this.PanelIngreso.Controls.Add(this.groupBox1);
-            this.PanelIngreso.Controls.Add(this.txtLabRef);
+            this.PanelIngreso.Controls.Add(this.cbLabRef);
             this.PanelIngreso.Controls.Add(this.dtPlazoEntrega);
             this.PanelIngreso.Controls.Add(this.label14);
             this.PanelIngreso.Controls.Add(this.txtNombre);
@@ -147,17 +147,17 @@
             this.rbTituloSi.Text = "Si";
             this.rbTituloSi.UseVisualStyleBackColor = true;
             // 
-            // txtLabRef
+            // cbLabRef
             // 
-            this.txtLabRef.BackColor = System.Drawing.SystemColors.Control;
-            this.txtLabRef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtLabRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtLabRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLabRef.FormattingEnabled = true;
-            this.txtLabRef.Location = new System.Drawing.Point(323, 377);
-            this.txtLabRef.Name = "txtLabRef";
-            this.txtLabRef.Size = new System.Drawing.Size(257, 33);
-            this.txtLabRef.TabIndex = 81;
+            this.cbLabRef.BackColor = System.Drawing.SystemColors.Control;
+            this.cbLabRef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLabRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbLabRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLabRef.FormattingEnabled = true;
+            this.cbLabRef.Location = new System.Drawing.Point(323, 377);
+            this.cbLabRef.Name = "cbLabRef";
+            this.cbLabRef.Size = new System.Drawing.Size(257, 33);
+            this.cbLabRef.TabIndex = 81;
             // 
             // dtPlazoEntrega
             // 
@@ -660,7 +660,7 @@
         private System.Windows.Forms.DateTimePicker dtPlazoEntrega;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataListado;
-        private System.Windows.Forms.ComboBox txtLabRef;
+        private System.Windows.Forms.ComboBox cbLabRef;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbTituloNo;

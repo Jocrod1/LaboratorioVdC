@@ -44,10 +44,10 @@ namespace Interfaz
             cbIDGrupoExamen.ValueMember = "ID";
             cbIDGrupoExamen.SelectedIndex = -1;
 
-            txtLabRef.DataSource = MLabRef.Mostrar("");
-            txtLabRef.DisplayMember = "Nombre";
-            txtLabRef.ValueMember = "ID";
-            txtLabRef.SelectedIndex = -1;
+            cbLabRef.DataSource = MLabRef.Mostrar("");
+            cbLabRef.DisplayMember = "Nombre";
+            cbLabRef.ValueMember = "ID";
+            cbLabRef.SelectedIndex = -1;
             //
 
 
@@ -103,7 +103,7 @@ namespace Interfaz
             this.cbIDGrupoExamen.Enabled = true;
             this.rbTituloNo.Enabled = true;
             this.rbTituloSi.Enabled = true;
-            this.txtLabRef.Enabled = true;
+            this.cbLabRef.Enabled = true;
             this.txtPrecioRef.Enabled = true;
             this.richObservaciones.Enabled = true;
             btnNuevo.Visible = false;
@@ -122,7 +122,7 @@ namespace Interfaz
             this.rbTituloNo.Enabled = false;
             this.rbTituloSi.Enabled = false;
             this.cbIDGrupoExamen.Enabled = false;
-            this.txtLabRef.Enabled = false;
+            this.cbLabRef.Enabled = false;
             this.txtPrecioRef.Enabled = false;
             this.richObservaciones.Enabled = false;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
@@ -160,7 +160,7 @@ namespace Interfaz
             this.txtPrecio1.Text = string.Empty;
             this.dtPlazoEntrega.Text = string.Empty;
             this.cbIDGrupoExamen.SelectedIndex = -1;
-            this.txtLabRef.Text = string.Empty;
+            this.cbLabRef.Text = string.Empty;
             this.txtPrecioRef.Text = string.Empty;
             this.richObservaciones.Text = string.Empty;
 
@@ -206,10 +206,10 @@ namespace Interfaz
                 error = false;
                 errorProvider1.SetError(cbIDGrupoExamen, "Selecciona un grupo de examenes");
             }
-            if (txtLabRef.Text == "")
+            if (cbLabRef.Text == "")
             {
                 error = false;
-                errorProvider1.SetError(txtLabRef, "Selecciona un Laboratorio de Referencia");
+                errorProvider1.SetError(cbLabRef, "Selecciona un Laboratorio de Referencia");
             }
             return error;
         }
@@ -356,7 +356,7 @@ namespace Interfaz
                 string Rpta = "";
 
                 string IDGrupoExamen = MExamen.CaptarGrupoExamen(cbIDGrupoExamen.Text);
-                string IDLabRef = MExamen.CaptarLabRef(txtLabRef.Text);
+                string IDLabRef = MExamen.CaptarLabRef(cbLabRef.Text);
 
                 if (this.IsNuevo)
                 {
@@ -376,12 +376,12 @@ namespace Interfaz
                     }
 
 
-                    Rpta = MExamen.Insertar(this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Titulo, Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MExamen.Insertar(this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(cbIDGrupoExamen.SelectedValue), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Titulo, Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(cbIDGrupoExamen.SelectedValue), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
