@@ -364,12 +364,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MExamen.Insertar(this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MExamen.Insertar(this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Convert.ToBoolean(txtTitulo.Text), Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Convert.ToInt32(txtTitulo.Text), Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Convert.ToBoolean(txtTitulo.Text), Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador

@@ -81,9 +81,9 @@ namespace Datos
             get { return _ID_Grupo_Examen; }
             set { _ID_Grupo_Examen = value; }
         }
-        private int _Titulo;
+        private bool _Titulo;
 
-        public int Titulo
+        public bool Titulo
         {
             get { return _Titulo; }
             set { _Titulo = value; }
@@ -126,7 +126,7 @@ namespace Datos
 
         }
 
-        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, int titulo, int lab_Referencia, int precio_Referencia, string grupo_examen, string labref)
+        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, int precio_Referencia, string grupo_examen, string labref)
         {
             ID = iD;
             Nombre = nombre;
@@ -243,7 +243,7 @@ namespace Datos
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
                 Parametro_Titulo.ParameterName = "@Titulo";
-                Parametro_Titulo.SqlDbType = SqlDbType.Int;
+                Parametro_Titulo.SqlDbType = SqlDbType.Bit;
                 Parametro_Titulo.Value = Examen.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 
@@ -377,7 +377,7 @@ namespace Datos
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
                 Parametro_Titulo.ParameterName = "@Titulo";
-                Parametro_Titulo.SqlDbType = SqlDbType.Int;
+                Parametro_Titulo.SqlDbType = SqlDbType.Bit;
                 Parametro_Titulo.Value = Examen.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 

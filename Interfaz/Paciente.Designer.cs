@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paciente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,6 +45,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.chkFUR = new System.Windows.Forms.CheckBox();
             this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
             this.cbCedula = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,9 +54,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNroHab = new System.Windows.Forms.TextBox();
             this.txtCiPaciente = new System.Windows.Forms.TextBox();
             this.dateTimePickerFUR = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkFUR = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -111,14 +109,14 @@
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -156,7 +154,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(13, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 25);
+            this.label3.Size = new System.Drawing.Size(117, 30);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar por:";
             // 
@@ -172,7 +170,7 @@
             "Nombre"});
             this.cbBuscar.Location = new System.Drawing.Point(17, 36);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(88, 31);
+            this.cbBuscar.Size = new System.Drawing.Size(88, 33);
             this.cbBuscar.TabIndex = 48;
             // 
             // btnEliminar
@@ -218,7 +216,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(117, 64);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 20);
             this.lblTotal.TabIndex = 45;
             this.lblTotal.Text = "label5";
             // 
@@ -264,7 +262,7 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(120, 37);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(285, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(285, 29);
             this.txtBuscar.TabIndex = 44;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
@@ -281,9 +279,7 @@
             this.PanelIngreso.Controls.Add(this.btnCancelar);
             this.PanelIngreso.Controls.Add(this.btnGuardar);
             this.PanelIngreso.Controls.Add(this.txtNombre);
-            this.PanelIngreso.Controls.Add(this.label9);
             this.PanelIngreso.Controls.Add(this.label4);
-            this.PanelIngreso.Controls.Add(this.txtNroHab);
             this.PanelIngreso.Controls.Add(this.txtCiPaciente);
             this.PanelIngreso.Controls.Add(this.dateTimePickerFUR);
             this.PanelIngreso.Controls.Add(this.label8);
@@ -296,6 +292,18 @@
             this.PanelIngreso.Size = new System.Drawing.Size(311, 557);
             this.PanelIngreso.TabIndex = 0;
             // 
+            // chkFUR
+            // 
+            this.chkFUR.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chkFUR.AutoSize = true;
+            this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chkFUR.Location = new System.Drawing.Point(78, 427);
+            this.chkFUR.Name = "chkFUR";
+            this.chkFUR.Size = new System.Drawing.Size(14, 13);
+            this.chkFUR.TabIndex = 97;
+            this.chkFUR.UseVisualStyleBackColor = true;
+            this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
+            // 
             // dtNacimiento
             // 
             this.dtNacimiento.CalendarMonthBackground = System.Drawing.SystemColors.Control;
@@ -305,7 +313,7 @@
             this.dtNacimiento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtNacimiento.Name = "dtNacimiento";
-            this.dtNacimiento.Size = new System.Drawing.Size(257, 33);
+            this.dtNacimiento.Size = new System.Drawing.Size(257, 36);
             this.dtNacimiento.TabIndex = 96;
             this.dtNacimiento.Leave += new System.EventHandler(this.dtNacimiento_Leave);
             // 
@@ -321,7 +329,7 @@
             "E-"});
             this.cbCedula.Location = new System.Drawing.Point(28, 108);
             this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 25);
+            this.cbCedula.Size = new System.Drawing.Size(64, 28);
             this.cbCedula.TabIndex = 95;
             this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
@@ -332,7 +340,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(24, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 25);
+            this.label2.Size = new System.Drawing.Size(168, 30);
             this.label2.TabIndex = 29;
             this.label2.Text = "Cédula paciente:";
             // 
@@ -348,7 +356,7 @@
             "Masculino"});
             this.txtSexo.Location = new System.Drawing.Point(27, 233);
             this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(257, 33);
+            this.txtSexo.Size = new System.Drawing.Size(257, 38);
             this.txtSexo.TabIndex = 3;
             this.txtSexo.SelectedIndexChanged += new System.EventHandler(this.txtSexo_SelectedIndexChanged);
             // 
@@ -359,7 +367,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(24, 277);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(181, 25);
+            this.label5.Size = new System.Drawing.Size(210, 30);
             this.label5.TabIndex = 34;
             this.label5.Text = "Fecha de nacimiento:";
             // 
@@ -406,20 +414,9 @@
             this.txtNombre.Location = new System.Drawing.Point(27, 170);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.Size = new System.Drawing.Size(257, 29);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label9.Location = new System.Drawing.Point(23, 417);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 25);
-            this.label9.TabIndex = 63;
-            this.label9.Text = "Nro. Habitación:";
             // 
             // label4
             // 
@@ -428,21 +425,9 @@
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(24, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 25);
+            this.label4.Size = new System.Drawing.Size(94, 30);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
-            // 
-            // txtNroHab
-            // 
-            this.txtNroHab.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNroHab.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNroHab.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroHab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNroHab.Location = new System.Drawing.Point(27, 443);
-            this.txtNroHab.MaxLength = 1000;
-            this.txtNroHab.Name = "txtNroHab";
-            this.txtNroHab.Size = new System.Drawing.Size(257, 26);
-            this.txtNroHab.TabIndex = 7;
             // 
             // txtCiPaciente
             // 
@@ -453,7 +438,7 @@
             this.txtCiPaciente.Location = new System.Drawing.Point(98, 107);
             this.txtCiPaciente.MaxLength = 9;
             this.txtCiPaciente.Name = "txtCiPaciente";
-            this.txtCiPaciente.Size = new System.Drawing.Size(186, 26);
+            this.txtCiPaciente.Size = new System.Drawing.Size(186, 29);
             this.txtCiPaciente.TabIndex = 1;
             this.txtCiPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiPaciente_KeyPress);
             this.txtCiPaciente.Leave += new System.EventHandler(this.txtCiPaciente_Leave);
@@ -463,11 +448,11 @@
             this.dateTimePickerFUR.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePickerFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFUR.Location = new System.Drawing.Point(27, 512);
+            this.dateTimePickerFUR.Location = new System.Drawing.Point(27, 446);
             this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
-            this.dateTimePickerFUR.Size = new System.Drawing.Size(255, 33);
+            this.dateTimePickerFUR.Size = new System.Drawing.Size(255, 36);
             this.dateTimePickerFUR.TabIndex = 6;
             this.dateTimePickerFUR.ValueChanged += new System.EventHandler(this.dateTimePickerFUR_ValueChanged);
             // 
@@ -478,7 +463,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(23, 207);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 25);
+            this.label8.Size = new System.Drawing.Size(61, 30);
             this.label8.TabIndex = 54;
             this.label8.Text = "Sexo:";
             // 
@@ -487,9 +472,9 @@
             this.lblFUR.AutoSize = true;
             this.lblFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblFUR.Location = new System.Drawing.Point(23, 484);
+            this.lblFUR.Location = new System.Drawing.Point(23, 418);
             this.lblFUR.Name = "lblFUR";
-            this.lblFUR.Size = new System.Drawing.Size(56, 25);
+            this.lblFUR.Size = new System.Drawing.Size(61, 30);
             this.lblFUR.TabIndex = 60;
             this.lblFUR.Text = "F.U.R:";
             // 
@@ -502,7 +487,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(27, 376);
             this.txtTelefono.MaxLength = 13;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(257, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(257, 29);
             this.txtTelefono.TabIndex = 5;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
@@ -513,25 +498,13 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(23, 350);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.Size = new System.Drawing.Size(95, 30);
             this.label1.TabIndex = 58;
             this.label1.Text = "Telefono:";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // chkFUR
-            // 
-            this.chkFUR.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.chkFUR.AutoSize = true;
-            this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkFUR.Location = new System.Drawing.Point(78, 493);
-            this.chkFUR.Name = "chkFUR";
-            this.chkFUR.Size = new System.Drawing.Size(13, 12);
-            this.chkFUR.TabIndex = 97;
-            this.chkFUR.UseVisualStyleBackColor = true;
-            this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
             // 
             // Paciente
             // 
@@ -575,9 +548,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNroHab;
         private System.Windows.Forms.TextBox txtCiPaciente;
         private System.Windows.Forms.DateTimePicker dateTimePickerFUR;
         private System.Windows.Forms.Label label8;
