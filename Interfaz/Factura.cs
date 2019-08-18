@@ -220,10 +220,7 @@ namespace Interfaz
         private void CargarResumenExamenesSeleccionados() 
         {
 
-
             ////esto es para cargar el datagrid (dgvConclusionExamenes) con los datos del otro datagrid (dgvSeleccionados)
-
-            this.dgvResumenExamenes.Rows.Clear();
 
             this.dgvResumenExamenes.DataSource = this.TablaSeleccionados;
         
