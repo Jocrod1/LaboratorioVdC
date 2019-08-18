@@ -144,6 +144,7 @@ namespace Interfaz
             this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"].Value);
             this.dtNacimiento.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["FechaNacimiento"].Value);
             this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
+            this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
 
             this.chkFUR.Enabled = true;
             this.dateTimePickerFUR.Enabled = true;
@@ -302,7 +303,7 @@ namespace Interfaz
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR);
+                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR, txtNroHab.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -404,6 +405,7 @@ namespace Interfaz
             //this.dateTimePickerFUR.Hide();        ojo no activar esto, despues no quiere cargar el chk de registros en el doubleclick
             //this.dateTimePickerFUR.Enabled = false;
             //this.chkFUR.Checked = false;
+            this.txtNroHab.Enabled = true;
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(311, PanelIngreso.Size.Height);
         }
@@ -418,6 +420,7 @@ namespace Interfaz
             this.dateTimePickerFUR.Enabled = false;
             this.dateTimePickerFUR.Hide();
             this.chkFUR.Checked = false;
+            this.txtNroHab.Enabled = false;
             btnNuevo.Visible = true;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
         }
@@ -448,6 +451,7 @@ namespace Interfaz
             this.dtNacimiento.Text = string.Empty;
             this.txtTelefono.Text = string.Empty;
             this.dateTimePickerFUR.Text = string.Empty;
+            this.txtNroHab.Text = string.Empty;
             this.txtSexo.SelectedIndex = -1;
             this.chkFUR.Checked = false;
         }

@@ -43,6 +43,9 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbTituloNo = new System.Windows.Forms.RadioButton();
+            this.rbTituloSi = new System.Windows.Forms.RadioButton();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscarSeleccionados = new System.Windows.Forms.TextBox();
@@ -65,20 +68,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbTituloSi = new System.Windows.Forms.RadioButton();
-            this.rbTituloNo = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.panel4.SuspendLayout();
             this.PanelIngreso.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -288,6 +288,41 @@
             this.PanelIngreso.Name = "PanelIngreso";
             this.PanelIngreso.Size = new System.Drawing.Size(608, 613);
             this.PanelIngreso.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbTituloNo);
+            this.groupBox1.Controls.Add(this.rbTituloSi);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.groupBox1.Location = new System.Drawing.Point(28, 533);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(266, 57);
+            this.groupBox1.TabIndex = 74;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Titulo";
+            // 
+            // rbTituloNo
+            // 
+            this.rbTituloNo.AutoSize = true;
+            this.rbTituloNo.Location = new System.Drawing.Point(170, 22);
+            this.rbTituloNo.Name = "rbTituloNo";
+            this.rbTituloNo.Size = new System.Drawing.Size(54, 29);
+            this.rbTituloNo.TabIndex = 1;
+            this.rbTituloNo.TabStop = true;
+            this.rbTituloNo.Text = "No";
+            this.rbTituloNo.UseVisualStyleBackColor = true;
+            // 
+            // rbTituloSi
+            // 
+            this.rbTituloSi.AutoSize = true;
+            this.rbTituloSi.Location = new System.Drawing.Point(47, 22);
+            this.rbTituloSi.Name = "rbTituloSi";
+            this.rbTituloSi.Size = new System.Drawing.Size(43, 29);
+            this.rbTituloSi.TabIndex = 0;
+            this.rbTituloSi.TabStop = true;
+            this.rbTituloSi.Text = "Si";
+            this.rbTituloSi.UseVisualStyleBackColor = true;
             // 
             // btnQuitar
             // 
@@ -537,41 +572,6 @@
             this.txtPrecio1.Size = new System.Drawing.Size(257, 26);
             this.txtPrecio1.TabIndex = 4;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbTituloNo);
-            this.groupBox1.Controls.Add(this.rbTituloSi);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.groupBox1.Location = new System.Drawing.Point(28, 533);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(266, 57);
-            this.groupBox1.TabIndex = 74;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Titulo";
-            // 
-            // rbTituloSi
-            // 
-            this.rbTituloSi.AutoSize = true;
-            this.rbTituloSi.Location = new System.Drawing.Point(47, 22);
-            this.rbTituloSi.Name = "rbTituloSi";
-            this.rbTituloSi.Size = new System.Drawing.Size(43, 29);
-            this.rbTituloSi.TabIndex = 0;
-            this.rbTituloSi.TabStop = true;
-            this.rbTituloSi.Text = "Si";
-            this.rbTituloSi.UseVisualStyleBackColor = true;
-            // 
-            // rbTituloNo
-            // 
-            this.rbTituloNo.AutoSize = true;
-            this.rbTituloNo.Location = new System.Drawing.Point(170, 22);
-            this.rbTituloNo.Name = "rbTituloNo";
-            this.rbTituloNo.Size = new System.Drawing.Size(54, 29);
-            this.rbTituloNo.TabIndex = 1;
-            this.rbTituloNo.TabStop = true;
-            this.rbTituloNo.Text = "No";
-            this.rbTituloNo.UseVisualStyleBackColor = true;
-            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,12 +590,12 @@
             this.panel4.PerformLayout();
             this.PanelIngreso.ResumeLayout(false);
             this.PanelIngreso.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

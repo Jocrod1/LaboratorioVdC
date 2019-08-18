@@ -243,7 +243,7 @@ namespace Datos
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
                 Parametro_Titulo.ParameterName = "@Titulo";
-                Parametro_Titulo.SqlDbType = SqlDbType.Bit;
+                Parametro_Titulo.SqlDbType = SqlDbType.Int;
                 Parametro_Titulo.Value = Examen.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 
@@ -377,7 +377,7 @@ namespace Datos
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
                 Parametro_Titulo.ParameterName = "@Titulo";
-                Parametro_Titulo.SqlDbType = SqlDbType.Bit;
+                Parametro_Titulo.SqlDbType = SqlDbType.Int;
                 Parametro_Titulo.Value = Examen.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 

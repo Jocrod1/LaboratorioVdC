@@ -22,6 +22,7 @@ namespace Interfaz
 
         private int ID;
 
+        private bool Titulo;
 
         public Examenes()
         {
@@ -100,7 +101,8 @@ namespace Interfaz
             this.txtPrecio2.Enabled = true;
             this.dtPlazoEntrega.Enabled = true;
             this.cbIDGrupoExamen.Enabled = true;
-            this.txtTitulo.Enabled = true;
+            this.rbTituloNo.Enabled = true;
+            this.rbTituloSi.Enabled = true;
             this.txtLabRef.Enabled = true;
             this.txtPrecioRef.Enabled = true;
             this.richObservaciones.Enabled = true;
@@ -117,8 +119,9 @@ namespace Interfaz
             this.txtPrecio1.Enabled = false;
             this.txtPrecio2.Enabled = false;
             this.dtPlazoEntrega.Enabled = false;
+            this.rbTituloNo.Enabled = false;
+            this.rbTituloSi.Enabled = false;
             this.cbIDGrupoExamen.Enabled = false;
-            this.txtTitulo.Enabled = false;
             this.txtLabRef.Enabled = false;
             this.txtPrecioRef.Enabled = false;
             this.richObservaciones.Enabled = false;
@@ -157,7 +160,6 @@ namespace Interfaz
             this.txtPrecio1.Text = string.Empty;
             this.dtPlazoEntrega.Text = string.Empty;
             this.cbIDGrupoExamen.SelectedIndex = -1;
-            this.txtTitulo.Text = string.Empty;
             this.txtLabRef.Text = string.Empty;
             this.txtPrecioRef.Text = string.Empty;
             this.richObservaciones.Text = string.Empty;
@@ -208,11 +210,6 @@ namespace Interfaz
             {
                 error = false;
                 errorProvider1.SetError(txtLabRef, "Selecciona un Laboratorio de Referencia");
-            }
-            if (txtTitulo.Text == "")
-            {
-                error = false;
-                errorProvider1.SetError(txtTitulo, "Inserta un titulo");
             }
             return error;
         }
@@ -363,13 +360,28 @@ namespace Interfaz
 
                 if (this.IsNuevo)
                 {
-                    
-                    Rpta = MExamen.Insertar(this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(cbIDGrupoExamen.SelectedValue), Convert.ToBoolean(txtTitulo.Text), Convert.ToInt32(txtLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
+
+
+                    if (rbTituloSi.Checked == true)
+                    {
+                        Titulo = true;
+                    }
+                    else if (rbTituloNo.Checked == true)
+                    {
+                        Titulo = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione si lleva Titulo", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+                    Rpta = MExamen.Insertar(this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Titulo, Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(cbIDGrupoExamen.SelectedValue), Convert.ToBoolean(txtTitulo.Text), Convert.ToInt32(txtLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MExamen.Editar(ID, this.txtNombre.Text, this.txtUnidades.Text, Convert.ToDouble(this.txtValNorHombres.Text), Convert.ToDouble(this.txtValNorMujeres.Text), Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToDateTime(dtPlazoEntrega.Text), this.richObservaciones.Text, Convert.ToInt32(IDGrupoExamen), Titulo, Convert.ToInt32(IDLabRef), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -507,6 +519,18 @@ namespace Interfaz
             //this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
             //this.dateTimePickerFUR.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value);
             //this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
+
+            if (Convert.ToString(this.dataListado.CurrentRow.Cells["Titulo"].Value) == "True")
+            {
+                rbTituloSi.Checked = true;
+                rbTituloNo.Checked = false;
+            }
+            else if (Convert.ToString(this.dataListado.CurrentRow.Cells["Titulo"].Value) == "False")
+            {
+                rbTituloSi.Checked = false;
+                rbTituloNo.Checked = true;
+            }
+
             Editar();
             txtNombre.Focus();
 
@@ -552,5 +576,6 @@ namespace Interfaz
                 errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
             }
         }
+
     }
 }

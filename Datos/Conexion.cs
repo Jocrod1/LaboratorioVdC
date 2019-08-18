@@ -8,7 +8,7 @@ namespace Datos
 {
     public class Conexion
     {
-        protected static string CadenaConexion = "Data Source= DESKTOP-8BRANNO\\SQLEXPRESS; Initial Catalog= LabVdC; Integrated Security= true";
+        protected static string CadenaConexion = "Data Source= MIRLU-PC\\SQLEXPRESS; Initial Catalog= LabVdC; Integrated Security= true";
 
         //Direccion Raimon DESKTOP-8BRANNO\\SQLEXPRESS
         //Direccion Mirla MIRLU-PC\\SQLEXPRESS

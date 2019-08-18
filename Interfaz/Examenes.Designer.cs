@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Examenes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbTituloNo = new System.Windows.Forms.RadioButton();
+            this.rbTituloSi = new System.Windows.Forms.RadioButton();
             this.txtLabRef = new System.Windows.Forms.ComboBox();
             this.dtPlazoEntrega = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
@@ -45,8 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtValNorHombres = new System.Windows.Forms.TextBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrecioRef = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.PanelIngreso.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -79,6 +81,7 @@
             // PanelIngreso
             // 
             this.PanelIngreso.BackColor = System.Drawing.Color.White;
+            this.PanelIngreso.Controls.Add(this.groupBox1);
             this.PanelIngreso.Controls.Add(this.txtLabRef);
             this.PanelIngreso.Controls.Add(this.dtPlazoEntrega);
             this.PanelIngreso.Controls.Add(this.label14);
@@ -92,8 +95,6 @@
             this.PanelIngreso.Controls.Add(this.label1);
             this.PanelIngreso.Controls.Add(this.label9);
             this.PanelIngreso.Controls.Add(this.txtValNorHombres);
-            this.PanelIngreso.Controls.Add(this.txtTitulo);
-            this.PanelIngreso.Controls.Add(this.label10);
             this.PanelIngreso.Controls.Add(this.label6);
             this.PanelIngreso.Controls.Add(this.txtPrecioRef);
             this.PanelIngreso.Controls.Add(this.label7);
@@ -111,6 +112,41 @@
             this.PanelIngreso.Size = new System.Drawing.Size(607, 676);
             this.PanelIngreso.TabIndex = 38;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbTituloNo);
+            this.groupBox1.Controls.Add(this.rbTituloSi);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.groupBox1.Location = new System.Drawing.Point(323, 263);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(257, 57);
+            this.groupBox1.TabIndex = 82;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Titulo";
+            // 
+            // rbTituloNo
+            // 
+            this.rbTituloNo.AutoSize = true;
+            this.rbTituloNo.Location = new System.Drawing.Point(170, 22);
+            this.rbTituloNo.Name = "rbTituloNo";
+            this.rbTituloNo.Size = new System.Drawing.Size(54, 29);
+            this.rbTituloNo.TabIndex = 1;
+            this.rbTituloNo.TabStop = true;
+            this.rbTituloNo.Text = "No";
+            this.rbTituloNo.UseVisualStyleBackColor = true;
+            // 
+            // rbTituloSi
+            // 
+            this.rbTituloSi.AutoSize = true;
+            this.rbTituloSi.Location = new System.Drawing.Point(47, 22);
+            this.rbTituloSi.Name = "rbTituloSi";
+            this.rbTituloSi.Size = new System.Drawing.Size(43, 29);
+            this.rbTituloSi.TabIndex = 0;
+            this.rbTituloSi.TabStop = true;
+            this.rbTituloSi.Text = "Si";
+            this.rbTituloSi.UseVisualStyleBackColor = true;
+            // 
             // txtLabRef
             // 
             this.txtLabRef.BackColor = System.Drawing.SystemColors.Control;
@@ -120,7 +156,7 @@
             this.txtLabRef.FormattingEnabled = true;
             this.txtLabRef.Location = new System.Drawing.Point(323, 377);
             this.txtLabRef.Name = "txtLabRef";
-            this.txtLabRef.Size = new System.Drawing.Size(257, 38);
+            this.txtLabRef.Size = new System.Drawing.Size(257, 33);
             this.txtLabRef.TabIndex = 81;
             // 
             // dtPlazoEntrega
@@ -132,7 +168,7 @@
             this.dtPlazoEntrega.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtPlazoEntrega.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtPlazoEntrega.Name = "dtPlazoEntrega";
-            this.dtPlazoEntrega.Size = new System.Drawing.Size(257, 36);
+            this.dtPlazoEntrega.Size = new System.Drawing.Size(257, 33);
             this.dtPlazoEntrega.TabIndex = 80;
             // 
             // label14
@@ -142,7 +178,7 @@
             this.label14.ForeColor = System.Drawing.Color.DarkOrange;
             this.label14.Location = new System.Drawing.Point(23, 105);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 30);
+            this.label14.Size = new System.Drawing.Size(83, 25);
             this.label14.TabIndex = 79;
             this.label14.Text = "Nombre:";
             // 
@@ -155,7 +191,7 @@
             this.txtNombre.Location = new System.Drawing.Point(26, 136);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(268, 29);
+            this.txtNombre.Size = new System.Drawing.Size(268, 26);
             this.txtNombre.TabIndex = 78;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
@@ -178,7 +214,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(322, 507);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(155, 30);
+            this.label13.Size = new System.Drawing.Size(132, 25);
             this.label13.TabIndex = 76;
             this.label13.Text = "Observaciones:";
             // 
@@ -189,7 +225,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(25, 344);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 30);
+            this.label5.Size = new System.Drawing.Size(176, 25);
             this.label5.TabIndex = 74;
             this.label5.Text = "Valores Normales M:";
             // 
@@ -202,7 +238,7 @@
             this.txtValNorMujeres.Location = new System.Drawing.Point(28, 376);
             this.txtValNorMujeres.MaxLength = 20;
             this.txtValNorMujeres.Name = "txtValNorMujeres";
-            this.txtValNorMujeres.Size = new System.Drawing.Size(268, 29);
+            this.txtValNorMujeres.Size = new System.Drawing.Size(268, 26);
             this.txtValNorMujeres.TabIndex = 73;
             // 
             // label12
@@ -212,7 +248,7 @@
             this.label12.ForeColor = System.Drawing.Color.DarkOrange;
             this.label12.Location = new System.Drawing.Point(318, 102);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(174, 30);
+            this.label12.Size = new System.Drawing.Size(152, 25);
             this.label12.TabIndex = 72;
             this.label12.Text = "Plazo de entrega:";
             // 
@@ -223,7 +259,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkOrange;
             this.label11.Location = new System.Drawing.Point(25, 508);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 30);
+            this.label11.Size = new System.Drawing.Size(80, 25);
             this.label11.TabIndex = 70;
             this.label11.Text = "Precio 2:";
             // 
@@ -234,7 +270,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(25, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 30);
+            this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 68;
             this.label1.Text = "Valores Normales H:";
             // 
@@ -245,7 +281,7 @@
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
             this.label9.Location = new System.Drawing.Point(25, 428);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 30);
+            this.label9.Size = new System.Drawing.Size(80, 25);
             this.label9.TabIndex = 65;
             this.label9.Text = "Precio 1:";
             // 
@@ -258,31 +294,8 @@
             this.txtValNorHombres.Location = new System.Drawing.Point(26, 294);
             this.txtValNorHombres.MaxLength = 20;
             this.txtValNorHombres.Name = "txtValNorHombres";
-            this.txtValNorHombres.Size = new System.Drawing.Size(270, 29);
+            this.txtValNorHombres.Size = new System.Drawing.Size(270, 26);
             this.txtValNorHombres.TabIndex = 63;
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTitulo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTitulo.Location = new System.Drawing.Point(323, 294);
-            this.txtTitulo.MaxLength = 50;
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(257, 29);
-            this.txtTitulo.TabIndex = 64;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label10.Location = new System.Drawing.Point(318, 262);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 30);
-            this.label10.TabIndex = 66;
-            this.label10.Text = "Título:";
             // 
             // label6
             // 
@@ -291,7 +304,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(321, 345);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 30);
+            this.label6.Size = new System.Drawing.Size(137, 25);
             this.label6.TabIndex = 61;
             this.label6.Text = "Lab. Referencia:";
             // 
@@ -304,7 +317,7 @@
             this.txtPrecioRef.Location = new System.Drawing.Point(323, 458);
             this.txtPrecioRef.MaxLength = 13;
             this.txtPrecioRef.Name = "txtPrecioRef";
-            this.txtPrecioRef.Size = new System.Drawing.Size(257, 29);
+            this.txtPrecioRef.Size = new System.Drawing.Size(257, 26);
             this.txtPrecioRef.TabIndex = 60;
             this.txtPrecioRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioRef_KeyPress_1);
             // 
@@ -315,7 +328,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(322, 427);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(172, 30);
+            this.label7.Size = new System.Drawing.Size(148, 25);
             this.label7.TabIndex = 62;
             this.label7.Text = "Precio referencia:";
             // 
@@ -328,7 +341,7 @@
             this.cbIDGrupoExamen.FormattingEnabled = true;
             this.cbIDGrupoExamen.Location = new System.Drawing.Point(323, 210);
             this.cbIDGrupoExamen.Name = "cbIDGrupoExamen";
-            this.cbIDGrupoExamen.Size = new System.Drawing.Size(257, 38);
+            this.cbIDGrupoExamen.Size = new System.Drawing.Size(257, 33);
             this.cbIDGrupoExamen.TabIndex = 3;
             // 
             // btnCancelar
@@ -385,7 +398,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(25, 179);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 30);
+            this.label4.Size = new System.Drawing.Size(90, 25);
             this.label4.TabIndex = 32;
             this.label4.Text = "Unidades:";
             // 
@@ -396,7 +409,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(322, 180);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(229, 30);
+            this.label8.Size = new System.Drawing.Size(200, 25);
             this.label8.TabIndex = 54;
             this.label8.Text = "ID Grupo de examenes:";
             // 
@@ -409,7 +422,7 @@
             this.txtPrecio2.Location = new System.Drawing.Point(26, 540);
             this.txtPrecio2.MaxLength = 13;
             this.txtPrecio2.Name = "txtPrecio2";
-            this.txtPrecio2.Size = new System.Drawing.Size(274, 29);
+            this.txtPrecio2.Size = new System.Drawing.Size(274, 26);
             this.txtPrecio2.TabIndex = 4;
             this.txtPrecio2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio2_KeyPress_1);
             // 
@@ -422,7 +435,7 @@
             this.txtPrecio1.Location = new System.Drawing.Point(24, 458);
             this.txtPrecio1.MaxLength = 13;
             this.txtPrecio1.Name = "txtPrecio1";
-            this.txtPrecio1.Size = new System.Drawing.Size(274, 29);
+            this.txtPrecio1.Size = new System.Drawing.Size(274, 26);
             this.txtPrecio1.TabIndex = 5;
             this.txtPrecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio1_KeyPress_1);
             // 
@@ -467,7 +480,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 30);
+            this.label3.Size = new System.Drawing.Size(66, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar:";
             // 
@@ -495,7 +508,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(14, 76);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(46, 20);
+            this.lblTotal.Size = new System.Drawing.Size(41, 17);
             this.lblTotal.TabIndex = 45;
             this.lblTotal.Text = "label5";
             // 
@@ -540,7 +553,7 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(17, 47);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 29);
+            this.txtBuscar.Size = new System.Drawing.Size(387, 26);
             this.txtBuscar.TabIndex = 44;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -601,6 +614,8 @@
             this.Load += new System.EventHandler(this.Examenes_Load);
             this.PanelIngreso.ResumeLayout(false);
             this.PanelIngreso.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -624,8 +639,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtValNorHombres;
-        private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPrecioRef;
         private System.Windows.Forms.Label label7;
@@ -649,5 +662,8 @@
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.ComboBox txtLabRef;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbTituloNo;
+        private System.Windows.Forms.RadioButton rbTituloSi;
     }
 }
