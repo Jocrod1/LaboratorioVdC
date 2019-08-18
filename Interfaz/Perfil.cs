@@ -61,6 +61,25 @@ namespace Interfaz
             dgvExamenes.DataSource = MExamen.Mostrar("");
 
 
+
+
+            //todo esto es pa ponerle colorcitos al datagridview
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
         }
 
         //metodos

@@ -34,10 +34,20 @@ namespace Datos
         }
 
         private string _NombrePerfil;
-        private string _NombreExamen;
 
-        public string NombrePerfil { get => _NombrePerfil; set => _NombrePerfil = value; }
-        public string NombreExamen { get => _NombreExamen; set => _NombreExamen = value; }
+public string NombrePerfil
+{
+  get { return _NombrePerfil; }
+  set { _NombrePerfil = value; }
+}
+private string _NombreExamen;
+
+public string NombreExamen
+{
+    get { return _NombreExamen; }
+    set { _NombreExamen = value; }
+}
+
 
 
 
