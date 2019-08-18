@@ -204,9 +204,10 @@ public string NombreExamen
                 LeerFilas.Close();
                 SqlConectar.Close();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 ListaGenerica = null;
+                System.Windows.Forms.MessageBox.Show(e.Message);
             }
 
             return ListaGenerica;

@@ -103,6 +103,7 @@
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
+            this.dataListado.ReadOnly = true;
             this.dataListado.RowHeadersVisible = false;
             this.dataListado.RowHeadersWidth = 51;
             this.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;

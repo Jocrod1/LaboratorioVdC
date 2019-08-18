@@ -358,6 +358,10 @@ namespace Interfaz
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
+
+        
+
+
         private void Buscar()
         {
             this.Mostrar();

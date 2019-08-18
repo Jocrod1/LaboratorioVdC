@@ -528,7 +528,13 @@ namespace Interfaz
 
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             IDDetalle = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
-            dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
+            var standard = MPerfil.MostrarDetalle(IDDetalle);
+
+            foreach (var item in standard) {
+                TablaSeleccionados.Rows.Add(item.ID, item.NombreExamen);
+            }
+
+            //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
 
             this.cbLabRef.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["LabRef"].Value);
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
