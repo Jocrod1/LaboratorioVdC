@@ -60,14 +60,6 @@ namespace Datos
             get { return _FUR; }
             set { _FUR = value; }
         }
-        private string _NumeroHabitacion;
-
-        public string NumeroHabitacion
-        {
-            get { return _NumeroHabitacion; }
-            set { _NumeroHabitacion = value; }
-        }
-
 
 
 
@@ -78,7 +70,7 @@ namespace Datos
 
         }
 
-        public DPaciente(int IdPaciente, string Nombre, DateTime FechaNacimiento, string Sexo,string Cedula,string Telefono, DateTime FUR,string NumeroHabitacion)
+        public DPaciente(int IdPaciente, string Nombre, DateTime FechaNacimiento, string Sexo,string Cedula,string Telefono, DateTime FUR)
         {
             this.IdPaciente = IdPaciente;
             this.Nombre = Nombre;
@@ -87,7 +79,6 @@ namespace Datos
             this.Cedula= Cedula;
             this.Telefono = Telefono;
             this.FUR = FUR;
-            this.NumeroHabitacion = NumeroHabitacion;
         }
 
 
@@ -165,15 +156,6 @@ namespace Datos
                 Parametro_FUR_Paciente.SqlDbType = SqlDbType.Date;
                 Parametro_FUR_Paciente.Value = Paciente.FUR;
                 SqlComando.Parameters.Add(Parametro_FUR_Paciente);
-
-                ////parametro numero habitacion
-                //SqlParameter Parametro_NHabitacion_Paciente = new SqlParameter();
-                //Parametro_NHabitacion_Paciente.ParameterName = "@NumeroHabitacion";
-                //Parametro_NHabitacion_Paciente.SqlDbType = SqlDbType.VarChar;
-                //Parametro_NHabitacion_Paciente.Size = 10;
-                //Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
-                //SqlComando.Parameters.Add(Parametro_NHabitacion_Paciente);
-
 
 
                 //ejecuta y lo envia en comentario
@@ -269,14 +251,6 @@ namespace Datos
                 Parametro_FUR_Paciente.SqlDbType = SqlDbType.Date;
                 Parametro_FUR_Paciente.Value = Paciente.FUR;
                 SqlComando.Parameters.Add(Parametro_FUR_Paciente);
-
-                //parametro numero habitacion
-                SqlParameter Parametro_NHabitacion_Paciente = new SqlParameter();
-                Parametro_NHabitacion_Paciente.ParameterName = "@nrohab";
-                Parametro_NHabitacion_Paciente.SqlDbType = SqlDbType.VarChar;
-                Parametro_NHabitacion_Paciente.Size = 10;
-                Parametro_NHabitacion_Paciente.Value = Paciente.NumeroHabitacion;
-                SqlComando.Parameters.Add(Parametro_NHabitacion_Paciente);
 
 
                 //ejecuta y lo envia en comentario
@@ -426,8 +400,7 @@ namespace Datos
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
-                        FUR = LeerFilas.GetDateTime(6),
-                        NumeroHabitacion = LeerFilas.GetString(7)
+                        FUR = LeerFilas.GetDateTime(6)
                     });
                 }
                 LeerFilas.Close();
@@ -475,8 +448,7 @@ namespace Datos
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
-                        FUR=LeerFilas.GetDateTime(6),
-                        NumeroHabitacion=LeerFilas.GetString(7)
+                        FUR=LeerFilas.GetDateTime(6)
                     });
                 }
                 LeerFilas.Close();
@@ -522,8 +494,7 @@ namespace Datos
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
-                        FUR = LeerFilas.GetDateTime(6),
-                        NumeroHabitacion = LeerFilas.GetString(7)
+                        FUR = LeerFilas.GetDateTime(6)
                     });
                 }
                 LeerFilas.Close();

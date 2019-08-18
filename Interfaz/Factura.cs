@@ -19,6 +19,10 @@ namespace Interfaz
 
         public int Edad;
 
+        public int IDPacienteActual = 0;
+
+        public string CedulaCompleta;
+
         public Factura()
         {
             InitializeComponent();
@@ -325,13 +329,16 @@ namespace Interfaz
 
         private void Guardar()
         {
+
+            CedulaCompleta = this.cbCedula.Text + this.txtCiPaciente.Text;
+
             try
             {
                 string Rpta = "";
 
-
                 Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR);
-                
+
+
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
                 //de forma correcta
@@ -342,6 +349,32 @@ namespace Interfaz
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+
+
+
+            try
+            {
+                string Rpta2 = "";
+
+                IDPacienteActual = MPaciente.CedulaUnica(CedulaCompleta)[0].IdPaciente;
+
+                //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
+
+                //Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69,  );
+
+                //Si la respuesta fue OK, fue porque se modificó
+                //o insertó el Trabajador
+                //de forma correcta
+
+                this.Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+
+
         }
 
 
@@ -393,7 +426,7 @@ namespace Interfaz
         private void CalcularEdad()
         {
             DateTime FechaActual = DateTime.Now.Date;
-            MessageBox.Show("La fecha de hoy es: " + Convert.ToString(FechaActual) + "");
+            MessageBox.Show("La fecha de hoy es: " + FechaActual.ToString("dd/mm/yyyy") + "");
             DateTime Nacimiento = DateTime.Parse(dtNacimiento.Text);
             Edad = FechaActual.Year - Nacimiento.Year;
 

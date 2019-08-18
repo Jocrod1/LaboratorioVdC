@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Paciente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,6 +45,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.chkFUR = new System.Windows.Forms.CheckBox();
             this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
             this.cbCedula = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,9 +54,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNroHab = new System.Windows.Forms.TextBox();
             this.txtCiPaciente = new System.Windows.Forms.TextBox();
             this.dateTimePickerFUR = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkFUR = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -111,14 +109,14 @@
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -281,9 +279,7 @@
             this.PanelIngreso.Controls.Add(this.btnCancelar);
             this.PanelIngreso.Controls.Add(this.btnGuardar);
             this.PanelIngreso.Controls.Add(this.txtNombre);
-            this.PanelIngreso.Controls.Add(this.label9);
             this.PanelIngreso.Controls.Add(this.label4);
-            this.PanelIngreso.Controls.Add(this.txtNroHab);
             this.PanelIngreso.Controls.Add(this.txtCiPaciente);
             this.PanelIngreso.Controls.Add(this.dateTimePickerFUR);
             this.PanelIngreso.Controls.Add(this.label8);
@@ -295,6 +291,18 @@
             this.PanelIngreso.Name = "PanelIngreso";
             this.PanelIngreso.Size = new System.Drawing.Size(311, 557);
             this.PanelIngreso.TabIndex = 0;
+            // 
+            // chkFUR
+            // 
+            this.chkFUR.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chkFUR.AutoSize = true;
+            this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chkFUR.Location = new System.Drawing.Point(79, 426);
+            this.chkFUR.Name = "chkFUR";
+            this.chkFUR.Size = new System.Drawing.Size(13, 12);
+            this.chkFUR.TabIndex = 97;
+            this.chkFUR.UseVisualStyleBackColor = true;
+            this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
             // 
             // dtNacimiento
             // 
@@ -410,17 +418,6 @@
             this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label9.Location = new System.Drawing.Point(23, 417);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 25);
-            this.label9.TabIndex = 63;
-            this.label9.Text = "Nro. Habitación:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -431,18 +428,6 @@
             this.label4.Size = new System.Drawing.Size(83, 25);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
-            // 
-            // txtNroHab
-            // 
-            this.txtNroHab.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNroHab.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNroHab.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroHab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNroHab.Location = new System.Drawing.Point(27, 443);
-            this.txtNroHab.MaxLength = 1000;
-            this.txtNroHab.Name = "txtNroHab";
-            this.txtNroHab.Size = new System.Drawing.Size(257, 26);
-            this.txtNroHab.TabIndex = 7;
             // 
             // txtCiPaciente
             // 
@@ -463,7 +448,7 @@
             this.dateTimePickerFUR.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePickerFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFUR.Location = new System.Drawing.Point(27, 512);
+            this.dateTimePickerFUR.Location = new System.Drawing.Point(28, 445);
             this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
@@ -487,7 +472,7 @@
             this.lblFUR.AutoSize = true;
             this.lblFUR.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblFUR.Location = new System.Drawing.Point(23, 484);
+            this.lblFUR.Location = new System.Drawing.Point(24, 417);
             this.lblFUR.Name = "lblFUR";
             this.lblFUR.Size = new System.Drawing.Size(56, 25);
             this.lblFUR.TabIndex = 60;
@@ -520,18 +505,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // chkFUR
-            // 
-            this.chkFUR.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.chkFUR.AutoSize = true;
-            this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkFUR.Location = new System.Drawing.Point(78, 493);
-            this.chkFUR.Name = "chkFUR";
-            this.chkFUR.Size = new System.Drawing.Size(13, 12);
-            this.chkFUR.TabIndex = 97;
-            this.chkFUR.UseVisualStyleBackColor = true;
-            this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
             // 
             // Paciente
             // 
@@ -575,9 +548,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNroHab;
         private System.Windows.Forms.TextBox txtCiPaciente;
         private System.Windows.Forms.DateTimePicker dateTimePickerFUR;
         private System.Windows.Forms.Label label8;
