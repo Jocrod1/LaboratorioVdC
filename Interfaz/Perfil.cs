@@ -531,7 +531,7 @@ namespace Interfaz
             var standard = MPerfil.MostrarDetalle(IDDetalle);
 
             foreach (var item in standard) {
-                TablaSeleccionados.Rows.Add(item.ID, item.NombreExamen);
+                TablaSeleccionados.Rows.Add(item.IDExamen, item.NombreExamen);
             }
 
             //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);

@@ -198,7 +198,7 @@ public string NombreExamen
                     {
                         ID = LeerFilas.GetInt32(0),
                         IDExamen=LeerFilas.GetInt32(1),
-                        NombreExamen = LeerFilas.GetString(2)
+                        NombreExamen = LeerFilas.GetString(3)
                     });
                 }
                 LeerFilas.Close();
