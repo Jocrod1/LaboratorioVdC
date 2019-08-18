@@ -267,7 +267,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MExamen.Eliminar(Convert.ToInt32(item.Cells["IdExamen"].Value));
+                        Rpta = MExamen.Eliminar(Convert.ToInt32(item.Cells["ID"].Value));
                     }
 
                     if (Rpta.Equals("OK"))
@@ -321,7 +321,7 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MExamen.Anular(Convert.ToInt32(item.Cells["IdExamen"].Value));
+                        Rpta = MExamen.Anular(Convert.ToInt32(item.Cells["ID"].Value));
                     }
 
                     if (Rpta.Equals("OK"))
@@ -595,6 +595,11 @@ namespace Interfaz
             {
                 errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarItems();
         }
 
     }
