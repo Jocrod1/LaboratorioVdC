@@ -430,7 +430,7 @@ namespace Interfaz
                         string NombreCortado = Nombre.Substring(0, TextoBuscar.Length);
                         if (NombreCortado == TextoBuscar)
                         {
-                            TablaSeleccionados2.Rows.Add(item[0], item[1], item[2]);
+                            TablaSeleccionados2.Rows.Add(item[0], item[1]);
                         }
                     }
                 }

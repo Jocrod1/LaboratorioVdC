@@ -32,6 +32,7 @@ namespace Interfaz
             this.Deshabilitar();
             this.Botones();
 
+            this.OcultarColumnas();
 
             //todo esto es pa ponerle colorcitos al datagridview
 
@@ -120,7 +121,15 @@ namespace Interfaz
 
         //metodos
 
-        void EliminarItems()
+
+        private void OcultarColumnas()
+        {
+
+            this.dataListado.Columns[0].Visible = false; //ID
+
+        }
+
+        private void EliminarItems()
         {
 
             try
@@ -360,7 +369,7 @@ namespace Interfaz
         {
             dataListado.DataSource = MEgresos.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 

@@ -46,9 +46,9 @@ public int IDOrden
   get { return _IDOrden; }
   set { _IDOrden = value; }
 }
-        private int _TipoPago;
+        private string _TipoPago;
 
-public int TipoPago
+public string TipoPago
 {
   get { return _TipoPago; }
   set { _TipoPago = value; }
@@ -124,7 +124,7 @@ public double Total
 
         }
 
-        public DFactura(int iD, int iDPaciente, int iDTipoPaciente, int iDEmpresaSeguro, int iDOrden, int tipoPago, int iDBanco, string numeroCHoT, string exonerado, string motivo, double descuento, double subtotal, double recargoEmergencia, double abonar, double total)
+        public DFactura(int iD, int iDPaciente, int iDTipoPaciente, int iDEmpresaSeguro, int iDOrden, string tipoPago, int iDBanco, string numeroCHoT, string exonerado, string motivo, double descuento, double subtotal, double recargoEmergencia, double abonar, double total)
         {
             ID = iD;
             IDPaciente = iDPaciente;
@@ -206,7 +206,7 @@ public double Total
                 //parametro tipo pago
                 SqlParameter Parametro_Tipo_Pago = new SqlParameter();
                 Parametro_Tipo_Pago.ParameterName = "@TipoDePago";
-                Parametro_Tipo_Pago.SqlDbType = SqlDbType.Int;
+                Parametro_Tipo_Pago.SqlDbType = SqlDbType.VarChar;
                 Parametro_Tipo_Pago.Value = Factura.TipoPago;
                 SqlComando.Parameters.Add(Parametro_Tipo_Pago);
 

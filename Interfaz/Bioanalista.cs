@@ -34,6 +34,7 @@ namespace Interfaz
             this.Botones();
             cbBuscar.SelectedIndex = 0;
 
+            OcultarColumnas();
 
             //todo esto es pa ponerle colorcitos al datagridview
 
@@ -137,7 +138,17 @@ namespace Interfaz
 
         //metodos
 
-        void EliminarItems()
+
+        private void OcultarColumnas()
+        {
+
+            this.dataListado.Columns[0].Visible = false; //ID
+            this.dataListado.Columns[3].Visible = false; //val hombre
+            this.dataListado.Columns[4].Visible = false; //val mujer
+
+        }
+
+        private void EliminarItems()
         {
 
             try
@@ -407,7 +418,7 @@ namespace Interfaz
         {
             dataListado.DataSource = MBioanalista.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
@@ -415,7 +426,7 @@ namespace Interfaz
         {
             dataListado.DataSource = MBioanalista.MostrarCedula(txtBuscar.Text);
             dataListado.ClearSelection();
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
