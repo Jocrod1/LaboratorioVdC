@@ -267,8 +267,9 @@ namespace Interfaz
                 }
                 else
                 {
+                    Rpta = MPerfil.EliminarDetalle(ID);
                     //Vamos a modificar un Paciente
-                    Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -525,6 +526,7 @@ namespace Interfaz
         {
             Habilitar();
 
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             IDDetalle = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
 
@@ -548,6 +550,7 @@ namespace Interfaz
 
             //Editar();
             txtNombre.Focus();
+            Editar();
         }
 
         private void btnAnular_Click(object sender, EventArgs e)

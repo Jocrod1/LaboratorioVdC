@@ -35,7 +35,7 @@ namespace Metodos
             return Objeto.Insertar(Objeto, Detalles);
         }
 
-        public static string Editar(int id, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef)
+        public static string Editar(int id, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef, DataTable DtDetalles)
         {
             DPerfil Objeto = new DPerfil();
             Objeto.ID = id;
@@ -45,7 +45,18 @@ namespace Metodos
             Objeto.Titulo = titulo;
             Objeto.LabRef = labRef;
             Objeto.PrecioRef = precioRef;
-            return Objeto.Editar(Objeto);
+
+            List<DDetalle_Perfil> Detalles = new List<DDetalle_Perfil>();
+            foreach (DataRow row in DtDetalles.Rows)
+            {
+                DDetalle_Perfil Detalle = new DDetalle_Perfil();
+
+                //voy a poner que se agregue el id mientras tanto
+                Detalle.IDExamen = Convert.ToInt32(row["IDExamen"].ToString());
+
+                Detalles.Add(Detalle);
+            }
+            return Objeto.Editar(Objeto, Detalles);
         }
 
         public static string Eliminar(int id)
@@ -72,6 +83,13 @@ namespace Metodos
         {
             DDetalle_Perfil Objeto = new DDetalle_Perfil();
             return Objeto.MostrarDetalle(TextoBuscar);
+        }
+
+        public static string EliminarDetalle(int id)
+        {
+            DDetalle_Perfil Objeto = new DDetalle_Perfil();
+            Objeto.ID = id;
+            return Objeto.Eliminar(Objeto);
         }
     }
 }

@@ -204,7 +204,7 @@ public int PrecioRef
             return respuesta;
         }
 
-        public string Editar(DPerfil Perfil)
+        public string Editar(DPerfil Perfil, List<DDetalle_Perfil> Detalle)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -215,9 +215,13 @@ public int PrecioRef
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
                 SqlConectar.Open();
 
+                //transaccion
+                SqlTransaction SqlTransaccion = SqlConectar.BeginTransaction();
+
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
+                SqlComando.Transaction = SqlTransaccion;
                 SqlComando.CommandText = "editar_perfil";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
@@ -275,6 +279,34 @@ public int PrecioRef
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el Registro del Perfil";
+
+                if (respuesta.Equals("OK"))
+                {
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
+
+                    foreach (DDetalle_Perfil det in Detalle)
+                    {
+                        det.IDPerfil = this.ID;
+
+                        //llamar al insertar
+                        respuesta = det.Insertar(det, ref SqlConectar, ref SqlTransaccion);
+
+                        if (!respuesta.Equals("OK"))
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if (respuesta.Equals("OK"))
+                {
+                    SqlTransaccion.Commit();
+                }
+                else
+                {
+                    //si recibe una respuesta contraria se niega la transaccion
+                    SqlTransaccion.Rollback();
+                }
 
             }
             catch (Exception excepcion)
