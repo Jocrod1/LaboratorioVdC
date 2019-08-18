@@ -267,9 +267,20 @@ namespace Interfaz
                 }
                 else
                 {
+                    MessageBox.Show(Convert.ToString(ID));
                     Rpta = MPerfil.EliminarDetalle(ID);
-                    //Vamos a modificar un Paciente
-                    Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
+
+                    if(Rpta.Equals("OK"))
+                    {
+                        //Vamos a modificar un Paciente
+                        Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
