@@ -10,7 +10,7 @@ namespace Metodos
 {
     public class MExamen: DExamen
     {
-        public static string Insertar(string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, int precio_Referencia)
+        public static string Insertar(string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, double precio_Referencia)
         {
             DExamen Objeto = new DExamen();
             Objeto.Nombre = nombre;
@@ -29,7 +29,7 @@ namespace Metodos
         }
 
 
-        public static string Editar(int ID, string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, int precio_Referencia)
+        public static string Editar(int ID, string nombre, string unidades, double valor_Hombre, double valor_Mujer, double precio1, double precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, double precio_Referencia)
         {
             DExamen Objeto = new DExamen();
             Objeto.ID = ID;

@@ -95,9 +95,9 @@ namespace Datos
             get { return _ID_Lab_Referencia; }
             set { _ID_Lab_Referencia = value; }
         }
-        private int _Precio_Referencia;
+        private double _Precio_Referencia;
 
-        public int Precio_Referencia
+        public double Precio_Referencia
         {
             get { return _Precio_Referencia; }
             set { _Precio_Referencia = value; }
@@ -126,7 +126,7 @@ namespace Datos
 
         }
 
-        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, int precio_Referencia, string grupo_examen, string labref)
+        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, double precio_Referencia, string grupo_examen, string labref)
         {
             ID = iD;
             Nombre = nombre;
@@ -257,7 +257,7 @@ namespace Datos
                 //parametro precio referencia
                 SqlParameter Parametro_Precio_Referencia = new SqlParameter();
                 Parametro_Precio_Referencia.ParameterName = "@PrecioRef";
-                Parametro_Precio_Referencia.SqlDbType = SqlDbType.Int;
+                Parametro_Precio_Referencia.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_Referencia.Value = Examen.Precio_Referencia;
                 SqlComando.Parameters.Add(Parametro_Precio_Referencia);
 
@@ -391,7 +391,7 @@ namespace Datos
                 //parametro precio referencia
                 SqlParameter Parametro_Precio_Referencia = new SqlParameter();
                 Parametro_Precio_Referencia.ParameterName = "@PrecioRef";
-                Parametro_Precio_Referencia.SqlDbType = SqlDbType.Int;
+                Parametro_Precio_Referencia.SqlDbType = SqlDbType.Float;
                 Parametro_Precio_Referencia.Value = Examen.Precio_Referencia;
                 SqlComando.Parameters.Add(Parametro_Precio_Referencia);
 
@@ -537,20 +537,36 @@ namespace Datos
                 int ID_ = LeerFilas.GetInt32(0);
                 string Nombre_ = LeerFilas.GetString(1);
                 string Unidades_ = LeerFilas.GetString(2);
-                double Precio1_ = LeerFilas.GetDouble(3);
-                double Precio2_ = LeerFilas.GetDouble(4);
-                string Grupo_Examen_ = LeerFilas.GetString(5);
-                string Lab_Referencia_ = LeerFilas.GetString(6);
+                double ValorHombre_ = LeerFilas.GetDouble(3);
+                double ValorMujer_ = LeerFilas.GetDouble(4);
+                double Precio1_ = LeerFilas.GetDouble(5);
+                double Precio2_ = LeerFilas.GetDouble(6);
+                DateTime PlazoEntrega_ = LeerFilas.GetDateTime(7);
+                string Observacion_ = LeerFilas.GetString(8);
+                string Grupo_Examen_ = LeerFilas.GetString(9);
+                bool Titulo_ = LeerFilas.GetBoolean(10);
+                string Lab_Referencia_ = LeerFilas.GetString(11);
+                double PrecioRef_ = LeerFilas.GetDouble(12);
+                int IDGrupoExamen = LeerFilas.GetInt32(13);
+                int IDLabRef = LeerFilas.GetInt32(14);
 
                 ListaGenerica.Add(new DExamen
                 {
                     ID = ID_,
                     Nombre = Nombre_,
                     Unidades = Unidades_,
+                    Valor_Hombre = ValorHombre_,
+                    Valor_Mujer = ValorMujer_,
                     Precio1 = Precio1_,
                     Precio2 = Precio2_,
+                    Plazo_Entrega=PlazoEntrega_,
+                    Observacion=Observacion_,
                     GrupoExamen = Grupo_Examen_,
-                    LabRef = Lab_Referencia_
+                    Titulo=Titulo_,
+                    LabRef = Lab_Referencia_,
+                    Precio_Referencia=PrecioRef_,
+                    ID_Grupo_Examen=IDGrupoExamen,
+
                 });
 
             }

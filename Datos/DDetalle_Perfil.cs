@@ -149,6 +149,7 @@ public string NombreExamen
                     ListaGenerica.Add(new DDetalle_Perfil
                     {
                         ID = LeerFilas.GetInt32(0),
+                        IDExamen=LeerFilas.GetInt32(1),
                         NombreExamen = LeerFilas.GetString(2)
                     });
                 }

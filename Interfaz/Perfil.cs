@@ -129,11 +129,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea eliminar los " + NumeroSeleccionado + " registros de pacientes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar los " + NumeroSeleccionado + " registros de perfiles?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro del paciente?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro del perfil?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -149,11 +149,11 @@ namespace Interfaz
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se eliminaron correctamente los registros de pacientes");
+                            this.MensajeOK("Se eliminaron correctamente los registros de perfiles");
                         }
                         else
                         {
-                            this.MensajeOK("Se eliminó correctamente el registro del paciente");
+                            this.MensajeOK("Se eliminó correctamente el registro del perfil");
                         }
                     }
                     else
@@ -184,11 +184,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de pacientes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de perfiles?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del paciente?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del perfil?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -197,18 +197,18 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MPerfil.Anular(Convert.ToInt32(item.Cells["IdPaciente"].Value));
+                        Rpta = MPerfil.Anular(Convert.ToInt32(item.Cells["ID"].Value));
                     }
 
                     if (Rpta.Equals("OK"))
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se anularon correctamente los registros de pacientes");
+                            this.MensajeOK("Se anularon correctamente los registros de perfiles");
                         }
                         else
                         {
-                            this.MensajeOK("Se anuló correctamente el registro del paciente");
+                            this.MensajeOK("Se anuló correctamente el registro del perfil");
                         }
                     }
                     else
@@ -464,6 +464,8 @@ namespace Interfaz
 
 
 
+
+
         //eventos
         private void btnAnadir_Click(object sender, EventArgs e)
         {
@@ -516,7 +518,7 @@ namespace Interfaz
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            EliminarItems();
         }
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -546,6 +548,11 @@ namespace Interfaz
 
             //Editar();
             txtNombre.Focus();
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+            AnularItems();
         }
     }
 }
