@@ -534,7 +534,7 @@ namespace Interfaz
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             this.txtPrecio1.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio1"].Value);
             this.txtPrecio2.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio2"].Value);
-
+            this.cbLabRef.SelectedValue = Convert.ToInt32(this.dataListado.CurrentRow.Cells["LabRef"].Value);
             this.txtPrecioRef.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["PrecioRef"].Value);
 
             if(Convert.ToString(this.dataListado.CurrentRow.Cells["Titulo"].Value)=="True")

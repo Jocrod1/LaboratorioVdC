@@ -23,7 +23,7 @@ namespace Metodos
         }
 
 
-        public static string Editar(int ID, string Nombre, DateTime FechaNacimiento, string Sexo, string Cedula, string Telefono, DateTime FUR, string NumeroHabitacion)
+        public static string Editar(int ID, string Nombre, DateTime FechaNacimiento, string Sexo, string Cedula, string Telefono, DateTime FUR)
         {
             DPaciente Objeto = new DPaciente();
             Objeto.IdPaciente = ID;
@@ -33,7 +33,6 @@ namespace Metodos
             Objeto.Cedula = Cedula;
             Objeto.Telefono = Telefono;
             Objeto.FUR = FUR;
-            Objeto.NumeroHabitacion = NumeroHabitacion;
             return Objeto.Editar(Objeto);
         }
 

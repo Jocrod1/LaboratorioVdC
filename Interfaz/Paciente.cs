@@ -303,7 +303,7 @@ namespace Interfaz
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR, txtNroHab.Text);
+                    Rpta = MPaciente.Editar(ID, this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
