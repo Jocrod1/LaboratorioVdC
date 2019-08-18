@@ -33,6 +33,13 @@ namespace Datos
             set { _IDExamen = value; }
         }
 
+        private string _NombrePerfil;
+        private string _NombreExamen;
+
+        public string NombrePerfil { get => _NombrePerfil; set => _NombrePerfil = value; }
+        public string NombreExamen { get => _NombreExamen; set => _NombreExamen = value; }
+
+
 
 
 
@@ -41,11 +48,13 @@ namespace Datos
 
         }
 
-        public DDetalle_Perfil(int iD, int iDPerfil, int iDExamen)
+        public DDetalle_Perfil(int iD, int iDPerfil, int iDExamen, string nombreperfil, string nombreexamen)
         {
             ID = iD;
             IDPerfil = iDPerfil;
             IDExamen = iDExamen;
+            NombrePerfil = nombreperfil;
+            NombreExamen = nombreexamen;
         }
 
 
@@ -99,6 +108,49 @@ namespace Datos
             }
 
             return respuesta;
+
+        }
+
+        //mostrar detalle fecha
+        public List<DDetalle_Perfil> MostrarDetalle(int TextoBuscar)
+        {
+            DataTable DtResultado = new DataTable("DetallePerfil");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DDetalle_Perfil> ListaGenerica = new List<DDetalle_Perfil>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "mostrar_detalleperfil";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+                //esto es cuando tiene alguna condicion
+                SqlComando.Parameters.AddWithValue("@IDperfil", TextoBuscar);
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+
+                    ListaGenerica.Add(new DDetalle_Perfil
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        NombreExamen = LeerFilas.GetString(2)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
 
         }
 

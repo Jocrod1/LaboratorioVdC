@@ -39,9 +39,9 @@ public double Precio2
     get { return _Precio2; }
     set { _Precio2 = value; }
 }
-private int _Titulo;
+private bool _Titulo;
 
-public int Titulo
+public bool Titulo
 {
     get { return _Titulo; }
     set { _Titulo = value; }
@@ -62,12 +62,13 @@ public int PrecioRef
 }
 
 
+
         public DPerfil()
         {
 
         }
 
-        public DPerfil(int iD, string nombre, double precio1, double precio2, int titulo, int labRef, int precioRef)
+        public DPerfil(int iD, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef)
         {
             ID = iD;
             Nombre = nombre;
@@ -137,7 +138,7 @@ public int PrecioRef
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
                 Parametro_Titulo.ParameterName = "@titulo";
-                Parametro_Titulo.SqlDbType = SqlDbType.Int;
+                Parametro_Titulo.SqlDbType = SqlDbType.Bit;
                 Parametro_Titulo.Value = Perfil.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 
@@ -254,7 +255,7 @@ public int PrecioRef
                 //parametro titulo
                 SqlParameter Parametro_Titulo = new SqlParameter();
                 Parametro_Titulo.ParameterName = "@Titulo";
-                Parametro_Titulo.SqlDbType = SqlDbType.Int;
+                Parametro_Titulo.SqlDbType = SqlDbType.Bit;
                 Parametro_Titulo.Value = Perfil.Titulo;
                 SqlComando.Parameters.Add(Parametro_Titulo);
 
@@ -409,13 +410,14 @@ public int PrecioRef
 
                 while (LeerFilas.Read())
                 {
+
                     ListaGenerica.Add(new DPerfil
                     {
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
                         Precio1=LeerFilas.GetDouble(2),
                         Precio2= LeerFilas.GetDouble(3),
-                        Titulo= LeerFilas.GetInt32(4),
+                        Titulo= LeerFilas.GetBoolean(4),
                         LabRef= LeerFilas.GetInt32(5),
                         PrecioRef= LeerFilas.GetInt32(6)
                     });
@@ -431,5 +433,8 @@ public int PrecioRef
             return ListaGenerica;
 
         }
+
+
+        
     }
 }

@@ -18,7 +18,7 @@ namespace Interfaz
         private DataTable TablaSeleccionados;
         private DataTable TablaSeleccionados2;
 
-
+        private bool Titulo;
 
         //Variable que nos indica si vamos a insertar un nuevo trabajador
         private bool IsNuevo = false;
@@ -26,6 +26,7 @@ namespace Interfaz
         private bool IsEditar = false;
 
         private int ID;
+        private int IDDetalle;
 
 
         DataTable tabla_seleccionados = new DataTable();
@@ -62,16 +63,7 @@ namespace Interfaz
 
         }
 
-
-
-
-
-
-
-
-
         //metodos
-
 
         private void crearTabla()
         {
@@ -83,8 +75,8 @@ namespace Interfaz
             this.TablaSeleccionados = new DataTable("Detalle");
             this.TablaSeleccionados.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
             this.TablaSeleccionados.Columns.Add("Nombre", System.Type.GetType("System.String"));
-            this.TablaSeleccionados.Columns.Add("Precio1", System.Type.GetType("System.String"));
-            this.TablaSeleccionados.Columns.Add("Precio2", System.Type.GetType("System.String"));
+            //this.TablaSeleccionados.Columns.Add("Precio1", System.Type.GetType("System.String"));
+            //this.TablaSeleccionados.Columns.Add("Precio2", System.Type.GetType("System.String"));
 
 
             dgvSeleccionados.DataSource = this.TablaSeleccionados;
@@ -95,8 +87,8 @@ namespace Interfaz
             this.TablaSeleccionados2 = new DataTable("Detalle");
             this.TablaSeleccionados2.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
             this.TablaSeleccionados2.Columns.Add("Nombre", System.Type.GetType("System.String"));
-            this.TablaSeleccionados2.Columns.Add("Precio1", System.Type.GetType("System.String"));
-            this.TablaSeleccionados2.Columns.Add("Precio2", System.Type.GetType("System.String"));
+            //this.TablaSeleccionados2.Columns.Add("Precio1", System.Type.GetType("System.String"));
+            //this.TablaSeleccionados2.Columns.Add("Precio2", System.Type.GetType("System.String"));
 
 
         }
@@ -238,13 +230,26 @@ namespace Interfaz
                         tabla_seleccionados.Rows.Add(item.Cells["IDExamen"].Value);
                     }
 
+                    if(rbTituloSi.Checked==true)
+                    {
+                        Titulo = true;
+                    }
+                    else if(rbTituloNo.Checked==true)
+                    {
+                        Titulo = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione si lleva Titulo", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
-                    Rpta = MPerfil.Insertar( this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(cbTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
+
+                    Rpta = MPerfil.Insertar( this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Convert.ToInt32(cbTitulo.Text), Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
+                    Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text));
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -312,7 +317,6 @@ namespace Interfaz
             this.cbLabRef.Enabled = true;
             this.txtPrecio1.Enabled = true;
             this.txtPrecio2.Enabled = true;
-            this.cbTitulo.Enabled = true;
             this.txtPrecioRef.Enabled = true;
             btnNuevo.Visible = false;
             PanelIngreso.Size = new Size(608, PanelIngreso.Size.Height);
@@ -324,7 +328,6 @@ namespace Interfaz
             this.cbLabRef.Enabled = false;
             this.txtPrecio1.Enabled = false;
             this.txtPrecio2.Enabled = false;
-            this.cbTitulo.Enabled = false;
             this.txtPrecioRef.Enabled = false;
             btnNuevo.Visible = true;
             PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
@@ -354,7 +357,6 @@ namespace Interfaz
             this.cbLabRef.SelectedIndex = -1;
             this.txtPrecio1.Text = string.Empty;
             this.txtPrecio2.Text = string.Empty;
-            this.cbTitulo.Text = string.Empty;
             this.txtPrecioRef.Text = string.Empty;
         }
 
@@ -369,55 +371,7 @@ namespace Interfaz
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
-        private void btnAnadir_Click(object sender, EventArgs e)
-        {
-            //agrega los examenes
-            foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
-            {
-                TablaSeleccionados.Rows.Add(item.Cells["ID"].Value, item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
 
-            }
-
-
-            //Relacionar nuestro DataGRidView con nuestro DataTable
-            this.dgvSeleccionados.DataSource = this.TablaSeleccionados;
-
-
-        }
-
-        private void btnQuitar_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow item in this.dgvSeleccionados.SelectedRows)
-            {
-                dgvSeleccionados.Rows.RemoveAt(item.Index);
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.IsNuevo = false;
-            this.IsEditar = false;
-            this.Botones();
-            this.Limpiar();
-            this.Deshabilitar();
-            ID = 0; 
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            this.IsNuevo = true;
-            this.IsEditar = false;
-            this.Botones();
-            this.Limpiar();
-            this.Habilitar();
-            this.txtNombre.Focus();
-            ID = 0; 
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Guardar(); 
-        }
 
         private void txtBuscarExamenes_TextChanged(object sender, EventArgs e)
         {
@@ -489,9 +443,90 @@ namespace Interfaz
 
         }
 
+
+
+        //eventos
+        private void btnAnadir_Click(object sender, EventArgs e)
+        {
+            //agrega los examenes
+            foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
+            {
+                TablaSeleccionados.Rows.Add(item.Cells["ID"].Value, item.Cells["Nombre"].Value);
+            }
+
+
+            //Relacionar nuestro DataGRidView con nuestro DataTable
+            this.dgvSeleccionados.DataSource = this.TablaSeleccionados;
+
+
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dgvSeleccionados.SelectedRows)
+            {
+                dgvSeleccionados.Rows.RemoveAt(item.Index);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Deshabilitar();
+            ID = 0;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = true;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar();
+            this.txtNombre.Focus();
+            ID = 0;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Habilitar();
+
+            IDDetalle = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
+            dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
+
+            this.cbLabRef.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["LabRef"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtPrecio1.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio1"].Value);
+            this.txtPrecio2.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio2"].Value);
+
+            this.txtPrecioRef.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["PrecioRef"].Value);
+
+            if(Convert.ToString(this.dataListado.CurrentRow.Cells["Titulo"].Value)=="True")
+            {
+                rbTituloSi.Checked = true;
+                rbTituloNo.Checked = false;
+            }
+            else if (Convert.ToString(this.dataListado.CurrentRow.Cells["Titulo"].Value) == "False")
+            {
+                rbTituloSi.Checked = false;
+                rbTituloNo.Checked = true;
+            }
+
+            //Editar();
+            txtNombre.Focus();
         }
     }
 }

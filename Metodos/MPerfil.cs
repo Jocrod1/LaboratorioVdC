@@ -11,7 +11,7 @@ namespace Metodos
     public class MPerfil:DPerfil
     {
 
-        public static string Insertar(string nombre, double precio1, double precio2, int titulo, int labRef, int precioRef, DataTable DtDetalles)
+        public static string Insertar(string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef, DataTable DtDetalles)
         {
             DPerfil Objeto = new DPerfil();
             Objeto.Nombre = nombre;
@@ -35,7 +35,7 @@ namespace Metodos
             return Objeto.Insertar(Objeto, Detalles);
         }
 
-        public static string Editar(int id, string nombre, double precio1, double precio2, int titulo, int labRef, int precioRef)
+        public static string Editar(int id, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef)
         {
             DPerfil Objeto = new DPerfil();
             Objeto.ID = id;
@@ -66,6 +66,12 @@ namespace Metodos
         {
             DPerfil Objeto = new DPerfil();
             return Objeto.Mostrar(TextoBuscar);
+        }
+
+        public static List<DDetalle_Perfil> MostrarDetalle(int TextoBuscar)
+        {
+            DDetalle_Perfil Objeto = new DDetalle_Perfil();
+            return Objeto.MostrarDetalle(TextoBuscar);
         }
     }
 }

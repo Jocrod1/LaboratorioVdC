@@ -65,8 +65,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbTitulo = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbTituloSi = new System.Windows.Forms.RadioButton();
+            this.rbTituloNo = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,6 +138,7 @@
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataListado.Size = new System.Drawing.Size(726, 513);
             this.dataListado.TabIndex = 37;
+            this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
             // 
             // panel4
             // 
@@ -257,7 +260,7 @@
             // PanelIngreso
             // 
             this.PanelIngreso.BackColor = System.Drawing.Color.White;
-            this.PanelIngreso.Controls.Add(this.cbTitulo);
+            this.PanelIngreso.Controls.Add(this.groupBox1);
             this.PanelIngreso.Controls.Add(this.btnQuitar);
             this.PanelIngreso.Controls.Add(this.pictureBox1);
             this.PanelIngreso.Controls.Add(this.txtBuscarSeleccionados);
@@ -280,7 +283,6 @@
             this.PanelIngreso.Controls.Add(this.label4);
             this.PanelIngreso.Controls.Add(this.label8);
             this.PanelIngreso.Controls.Add(this.txtPrecio1);
-            this.PanelIngreso.Controls.Add(this.label1);
             this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
             this.PanelIngreso.Location = new System.Drawing.Point(726, 0);
             this.PanelIngreso.Name = "PanelIngreso";
@@ -535,28 +537,40 @@
             this.txtPrecio1.Size = new System.Drawing.Size(257, 26);
             this.txtPrecio1.TabIndex = 4;
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(22, 538);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 25);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "Título:";
+            this.groupBox1.Controls.Add(this.rbTituloNo);
+            this.groupBox1.Controls.Add(this.rbTituloSi);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.groupBox1.Location = new System.Drawing.Point(28, 533);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(266, 57);
+            this.groupBox1.TabIndex = 74;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Titulo";
             // 
-            // cbTitulo
+            // rbTituloSi
             // 
-            this.cbTitulo.BackColor = System.Drawing.SystemColors.Control;
-            this.cbTitulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTitulo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTitulo.FormattingEnabled = true;
-            this.cbTitulo.Location = new System.Drawing.Point(28, 561);
-            this.cbTitulo.Name = "cbTitulo";
-            this.cbTitulo.Size = new System.Drawing.Size(257, 33);
-            this.cbTitulo.TabIndex = 74;
+            this.rbTituloSi.AutoSize = true;
+            this.rbTituloSi.Location = new System.Drawing.Point(47, 22);
+            this.rbTituloSi.Name = "rbTituloSi";
+            this.rbTituloSi.Size = new System.Drawing.Size(43, 29);
+            this.rbTituloSi.TabIndex = 0;
+            this.rbTituloSi.TabStop = true;
+            this.rbTituloSi.Text = "Si";
+            this.rbTituloSi.UseVisualStyleBackColor = true;
+            // 
+            // rbTituloNo
+            // 
+            this.rbTituloNo.AutoSize = true;
+            this.rbTituloNo.Location = new System.Drawing.Point(170, 22);
+            this.rbTituloNo.Name = "rbTituloNo";
+            this.rbTituloNo.Size = new System.Drawing.Size(54, 29);
+            this.rbTituloNo.TabIndex = 1;
+            this.rbTituloNo.TabStop = true;
+            this.rbTituloNo.Text = "No";
+            this.rbTituloNo.UseVisualStyleBackColor = true;
             // 
             // Perfil
             // 
@@ -580,6 +594,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -607,7 +623,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPrecio1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPrecio2;
         private System.Windows.Forms.TextBox txtPrecioRef;
@@ -622,6 +637,8 @@
         private System.Windows.Forms.TextBox txtBuscarExamen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvExamenes;
-        private System.Windows.Forms.ComboBox cbTitulo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbTituloNo;
+        private System.Windows.Forms.RadioButton rbTituloSi;
     }
 }
