@@ -51,6 +51,8 @@ namespace Interfaz
             //
 
 
+            OcultarColumnas();
+
 
             //todo esto es pa ponerle colorcitos al datagridview
             dataListado.BorderStyle = BorderStyle.None;
@@ -429,6 +431,24 @@ namespace Interfaz
             {
                 this.MensajeError("Debe de buscar un registro para Modificar");
             }
+        }
+
+
+
+
+
+        private void OcultarColumnas()
+        {
+
+                this.dataListado.Columns[0].Visible = false; //ID
+                this.dataListado.Columns[3].Visible = false; //val hombre
+                this.dataListado.Columns[4].Visible = false; //val mujer
+                this.dataListado.Columns[7].Visible = false; //plazo entrega
+                this.dataListado.Columns[8].Visible = false; //observacion
+                this.dataListado.Columns[9].Visible = false; //id grupo
+                this.dataListado.Columns[10].Visible = false; //titulo
+                this.dataListado.Columns[11].Visible = false; //id lab ref
+                
         }
 
 
