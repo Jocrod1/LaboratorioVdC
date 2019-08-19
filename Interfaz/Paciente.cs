@@ -45,8 +45,8 @@ namespace Interfaz
 
 
             dateTimePickerFUR.Hide();
-            
-        
+
+            this.OcultarColumnas();
 
 
             //todo esto es pa ponerle colorcitos al datagridview
@@ -179,6 +179,17 @@ namespace Interfaz
 
 
         //metodos
+
+
+        private void OcultarColumnas()
+        {
+
+            this.dataListado.Columns[0].Visible = false; //ID
+            this.dataListado.Columns[4].Visible = false;
+            this.dataListado.Columns[5].Visible = false;
+            this.dataListado.Columns[6].Visible = false; 
+
+        }
 
         private void EliminarItems()
         {
@@ -458,14 +469,14 @@ namespace Interfaz
 
             dataListado.DataSource = MPaciente.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         private void Buscar_Cedula()
         {
             dataListado.DataSource = MPaciente.Buscar_Cedula(txtBuscar.Text);
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 

@@ -132,7 +132,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(16, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(67, 25);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar:";
             // 
@@ -159,7 +159,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
-            this.lblTotal.Location = new System.Drawing.Point(18, 79);
+            this.lblTotal.Location = new System.Drawing.Point(19, 85);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(41, 17);
             this.lblTotal.TabIndex = 53;
@@ -201,12 +201,12 @@
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(21, 50);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(387, 33);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -250,13 +250,13 @@
             // txtTipoPago
             // 
             this.txtTipoPago.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTipoPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipoPago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTipoPago.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTipoPago.Location = new System.Drawing.Point(50, 357);
             this.txtTipoPago.MaxLength = 10;
             this.txtTipoPago.Name = "txtTipoPago";
-            this.txtTipoPago.Size = new System.Drawing.Size(257, 26);
+            this.txtTipoPago.Size = new System.Drawing.Size(257, 33);
             this.txtTipoPago.TabIndex = 81;
             this.txtTipoPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTipoPago_KeyPress);
             // 
@@ -274,13 +274,13 @@
             // txtPorcentaje
             // 
             this.txtPorcentaje.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPorcentaje.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPorcentaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPorcentaje.Location = new System.Drawing.Point(50, 282);
             this.txtPorcentaje.MaxLength = 4;
             this.txtPorcentaje.Name = "txtPorcentaje";
-            this.txtPorcentaje.Size = new System.Drawing.Size(257, 26);
+            this.txtPorcentaje.Size = new System.Drawing.Size(257, 33);
             this.txtPorcentaje.TabIndex = 79;
             this.txtPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPorcentaje_KeyPress);
             // 
@@ -291,7 +291,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(47, 254);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(99, 25);
             this.label1.TabIndex = 80;
             this.label1.Text = "Porcentaje:";
             // 
@@ -310,7 +310,6 @@
             // 
             this.cbTipoPrecio.BackColor = System.Drawing.SystemColors.Control;
             this.cbTipoPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTipoPrecio.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoPrecio.FormattingEnabled = true;
             this.cbTipoPrecio.Items.AddRange(new object[] {
@@ -324,13 +323,13 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(50, 125);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.Size = new System.Drawing.Size(257, 33);
             this.txtNombre.TabIndex = 73;
             // 
             // label10

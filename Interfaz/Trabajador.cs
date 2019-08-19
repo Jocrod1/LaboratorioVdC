@@ -205,6 +205,14 @@ namespace Interfaz
         }
 
 
+        private void OcultarColumnas()
+        {
+            this.dataListado.Columns[2].Visible = false;
+            this.dataListado.Columns[3].Visible = false;
+            this.dataListado.Columns[4].Visible = false;
+
+        }
+
 
 
 
@@ -214,7 +222,7 @@ namespace Interfaz
 
             dataListado.DataSource = MUsuario.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
@@ -223,7 +231,7 @@ namespace Interfaz
             //MUsuario.Buscar_Nombre(txtBuscar.Text);
 
             dataListado.DataSource = MUsuario.Buscar_Nombre(txtBuscar.Text);
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 

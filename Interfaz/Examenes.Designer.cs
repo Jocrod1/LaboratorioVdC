@@ -54,7 +54,6 @@
             this.cbIDGrupoExamen = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtUnidades = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecio2 = new System.Windows.Forms.TextBox();
@@ -70,6 +69,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtUnidades = new System.Windows.Forms.TextBox();
             this.PanelIngreso.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -81,6 +81,7 @@
             // PanelIngreso
             // 
             this.PanelIngreso.BackColor = System.Drawing.Color.White;
+            this.PanelIngreso.Controls.Add(this.txtUnidades);
             this.PanelIngreso.Controls.Add(this.groupBox1);
             this.PanelIngreso.Controls.Add(this.cbLabRef);
             this.PanelIngreso.Controls.Add(this.dtPlazoEntrega);
@@ -101,7 +102,6 @@
             this.PanelIngreso.Controls.Add(this.cbIDGrupoExamen);
             this.PanelIngreso.Controls.Add(this.btnCancelar);
             this.PanelIngreso.Controls.Add(this.btnGuardar);
-            this.PanelIngreso.Controls.Add(this.txtUnidades);
             this.PanelIngreso.Controls.Add(this.label4);
             this.PanelIngreso.Controls.Add(this.label8);
             this.PanelIngreso.Controls.Add(this.txtPrecio2);
@@ -151,7 +151,6 @@
             // 
             this.cbLabRef.BackColor = System.Drawing.SystemColors.Control;
             this.cbLabRef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLabRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbLabRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLabRef.FormattingEnabled = true;
             this.cbLabRef.Location = new System.Drawing.Point(323, 377);
@@ -185,25 +184,25 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(26, 136);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(268, 26);
+            this.txtNombre.Size = new System.Drawing.Size(268, 33);
             this.txtNombre.TabIndex = 78;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // richObservaciones
             // 
             this.richObservaciones.BackColor = System.Drawing.SystemColors.Control;
-            this.richObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richObservaciones.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richObservaciones.Location = new System.Drawing.Point(327, 540);
+            this.richObservaciones.Location = new System.Drawing.Point(323, 539);
             this.richObservaciones.MaxLength = 150;
             this.richObservaciones.Name = "richObservaciones";
-            this.richObservaciones.Size = new System.Drawing.Size(255, 68);
+            this.richObservaciones.Size = new System.Drawing.Size(257, 68);
             this.richObservaciones.TabIndex = 77;
             this.richObservaciones.Text = "";
             // 
@@ -214,7 +213,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(322, 507);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 25);
+            this.label13.Size = new System.Drawing.Size(133, 25);
             this.label13.TabIndex = 76;
             this.label13.Text = "Observaciones:";
             // 
@@ -225,20 +224,20 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(25, 344);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 25);
+            this.label5.Size = new System.Drawing.Size(174, 25);
             this.label5.TabIndex = 74;
             this.label5.Text = "Valores Normales M:";
             // 
             // txtValNorMujeres
             // 
             this.txtValNorMujeres.BackColor = System.Drawing.SystemColors.Control;
-            this.txtValNorMujeres.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValNorMujeres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValNorMujeres.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValNorMujeres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtValNorMujeres.Location = new System.Drawing.Point(28, 376);
+            this.txtValNorMujeres.Location = new System.Drawing.Point(26, 376);
             this.txtValNorMujeres.MaxLength = 20;
             this.txtValNorMujeres.Name = "txtValNorMujeres";
-            this.txtValNorMujeres.Size = new System.Drawing.Size(268, 26);
+            this.txtValNorMujeres.Size = new System.Drawing.Size(268, 33);
             this.txtValNorMujeres.TabIndex = 73;
             // 
             // label12
@@ -270,7 +269,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(25, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.Size = new System.Drawing.Size(171, 25);
             this.label1.TabIndex = 68;
             this.label1.Text = "Valores Normales H:";
             // 
@@ -281,20 +280,20 @@
             this.label9.ForeColor = System.Drawing.Color.DarkOrange;
             this.label9.Location = new System.Drawing.Point(25, 428);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 25);
+            this.label9.Size = new System.Drawing.Size(77, 25);
             this.label9.TabIndex = 65;
             this.label9.Text = "Precio 1:";
             // 
             // txtValNorHombres
             // 
             this.txtValNorHombres.BackColor = System.Drawing.SystemColors.Control;
-            this.txtValNorHombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValNorHombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValNorHombres.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValNorHombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtValNorHombres.Location = new System.Drawing.Point(26, 294);
             this.txtValNorHombres.MaxLength = 20;
             this.txtValNorHombres.Name = "txtValNorHombres";
-            this.txtValNorHombres.Size = new System.Drawing.Size(270, 26);
+            this.txtValNorHombres.Size = new System.Drawing.Size(268, 33);
             this.txtValNorHombres.TabIndex = 63;
             // 
             // label6
@@ -311,13 +310,13 @@
             // txtPrecioRef
             // 
             this.txtPrecioRef.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPrecioRef.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecioRef.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecioRef.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPrecioRef.Location = new System.Drawing.Point(323, 458);
             this.txtPrecioRef.MaxLength = 13;
             this.txtPrecioRef.Name = "txtPrecioRef";
-            this.txtPrecioRef.Size = new System.Drawing.Size(257, 26);
+            this.txtPrecioRef.Size = new System.Drawing.Size(257, 33);
             this.txtPrecioRef.TabIndex = 60;
             this.txtPrecioRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioRef_KeyPress_1);
             // 
@@ -336,7 +335,6 @@
             // 
             this.cbIDGrupoExamen.BackColor = System.Drawing.SystemColors.Control;
             this.cbIDGrupoExamen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbIDGrupoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbIDGrupoExamen.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIDGrupoExamen.FormattingEnabled = true;
             this.cbIDGrupoExamen.Location = new System.Drawing.Point(323, 210);
@@ -353,7 +351,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(66, 47);
+            this.btnCancelar.Location = new System.Drawing.Point(66, 45);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(25, 25);
             this.btnCancelar.TabIndex = 12;
@@ -370,26 +368,13 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(26, 47);
+            this.btnGuardar.Location = new System.Drawing.Point(26, 45);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(25, 25);
             this.btnGuardar.TabIndex = 10;
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtUnidades
-            // 
-            this.txtUnidades.BackColor = System.Drawing.SystemColors.Control;
-            this.txtUnidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUnidades.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnidades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUnidades.Location = new System.Drawing.Point(28, 210);
-            this.txtUnidades.MaxLength = 10;
-            this.txtUnidades.Multiline = true;
-            this.txtUnidades.Name = "txtUnidades";
-            this.txtUnidades.Size = new System.Drawing.Size(270, 26);
-            this.txtUnidades.TabIndex = 2;
             // 
             // label4
             // 
@@ -416,26 +401,26 @@
             // txtPrecio2
             // 
             this.txtPrecio2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPrecio2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecio2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecio2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPrecio2.Location = new System.Drawing.Point(26, 540);
             this.txtPrecio2.MaxLength = 13;
             this.txtPrecio2.Name = "txtPrecio2";
-            this.txtPrecio2.Size = new System.Drawing.Size(274, 26);
+            this.txtPrecio2.Size = new System.Drawing.Size(268, 33);
             this.txtPrecio2.TabIndex = 4;
             this.txtPrecio2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio2_KeyPress_1);
             // 
             // txtPrecio1
             // 
             this.txtPrecio1.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPrecio1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecio1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecio1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrecio1.Location = new System.Drawing.Point(24, 458);
+            this.txtPrecio1.Location = new System.Drawing.Point(26, 458);
             this.txtPrecio1.MaxLength = 13;
             this.txtPrecio1.Name = "txtPrecio1";
-            this.txtPrecio1.Size = new System.Drawing.Size(274, 26);
+            this.txtPrecio1.Size = new System.Drawing.Size(268, 33);
             this.txtPrecio1.TabIndex = 5;
             this.txtPrecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio1_KeyPress_1);
             // 
@@ -449,7 +434,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(609, 47);
+            this.btnNuevo.Location = new System.Drawing.Point(609, 45);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(25, 25);
             this.btnNuevo.TabIndex = 9;
@@ -480,7 +465,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(67, 25);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar:";
             // 
@@ -493,7 +478,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(446, 46);
+            this.btnEliminar.Location = new System.Drawing.Point(446, 44);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(100);
             this.btnEliminar.Size = new System.Drawing.Size(25, 25);
@@ -522,7 +507,7 @@
             this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnular.Location = new System.Drawing.Point(496, 47);
+            this.btnAnular.Location = new System.Drawing.Point(496, 45);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(25, 25);
             this.btnAnular.TabIndex = 43;
@@ -539,7 +524,7 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(546, 46);
+            this.btnImprimir.Location = new System.Drawing.Point(546, 44);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(25, 25);
             this.btnImprimir.TabIndex = 41;
@@ -549,12 +534,12 @@
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(17, 47);
+            this.txtBuscar.Location = new System.Drawing.Point(17, 41);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(387, 33);
             this.txtBuscar.TabIndex = 44;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -601,6 +586,18 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtUnidades
+            // 
+            this.txtUnidades.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUnidades.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnidades.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtUnidades.Location = new System.Drawing.Point(26, 207);
+            this.txtUnidades.MaxLength = 50;
+            this.txtUnidades.Name = "txtUnidades";
+            this.txtUnidades.Size = new System.Drawing.Size(268, 33);
+            this.txtUnidades.TabIndex = 83;
+            // 
             // Examenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,7 +629,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtUnidades;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPrecio2;
@@ -666,5 +662,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbTituloNo;
         private System.Windows.Forms.RadioButton rbTituloSi;
+        private System.Windows.Forms.TextBox txtUnidades;
     }
 }

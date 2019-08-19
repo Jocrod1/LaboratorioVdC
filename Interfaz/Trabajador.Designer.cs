@@ -46,6 +46,8 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.cbCedula = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Provider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -159,7 +159,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(17, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 25);
+            this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar por:";
             // 
@@ -167,7 +167,6 @@
             // 
             this.cbBuscar.BackColor = System.Drawing.SystemColors.Control;
             this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbBuscar.Font = new System.Drawing.Font("Segoe UI Light", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
@@ -201,7 +200,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
-            this.lblTotal.Location = new System.Drawing.Point(121, 65);
+            this.lblTotal.Location = new System.Drawing.Point(121, 73);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(41, 17);
             this.lblTotal.TabIndex = 53;
@@ -244,12 +243,12 @@
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(124, 38);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(285, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(285, 33);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBuscar_KeyPress);
@@ -300,29 +299,51 @@
             this.PanelIngreso.Size = new System.Drawing.Size(352, 612);
             this.PanelIngreso.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label2.Location = new System.Drawing.Point(38, 285);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 25);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "Confirmar Contraseña:";
+            // 
+            // txtConfirmarContraseña
+            // 
+            this.txtConfirmarContraseña.BackColor = System.Drawing.SystemColors.Control;
+            this.txtConfirmarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtConfirmarContraseña.Location = new System.Drawing.Point(40, 313);
+            this.txtConfirmarContraseña.MaxLength = 3;
+            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            this.txtConfirmarContraseña.Size = new System.Drawing.Size(257, 33);
+            this.txtConfirmarContraseña.TabIndex = 96;
+            // 
             // cbCedula
             // 
             this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
             this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 10F);
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.cbCedula.FormattingEnabled = true;
             this.cbCedula.Items.AddRange(new object[] {
             "V-",
             "E-"});
-            this.cbCedula.Location = new System.Drawing.Point(43, 119);
+            this.cbCedula.Location = new System.Drawing.Point(43, 118);
             this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 25);
+            this.cbCedula.Size = new System.Drawing.Size(64, 33);
             this.cbCedula.TabIndex = 95;
             this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
             // txtDireccion
             // 
             this.txtDireccion.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDireccion.Location = new System.Drawing.Point(44, 368);
+            this.txtDireccion.Location = new System.Drawing.Point(44, 372);
             this.txtDireccion.MaxLength = 13;
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
@@ -334,7 +355,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label4.Location = new System.Drawing.Point(38, 336);
+            this.label4.Location = new System.Drawing.Point(38, 340);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 25);
             this.label4.TabIndex = 85;
@@ -343,13 +364,13 @@
             // txtCorreo
             // 
             this.txtCorreo.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCorreo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCorreo.Location = new System.Drawing.Point(44, 516);
+            this.txtCorreo.Location = new System.Drawing.Point(44, 520);
             this.txtCorreo.MaxLength = 13;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(257, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(257, 33);
             this.txtCorreo.TabIndex = 82;
             // 
             // label1
@@ -357,7 +378,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(40, 483);
+            this.label1.Location = new System.Drawing.Point(40, 487);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 25);
             this.label1.TabIndex = 83;
@@ -378,7 +399,6 @@
             // 
             this.cbAcceso.BackColor = System.Drawing.SystemColors.Control;
             this.cbAcceso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbAcceso.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAcceso.FormattingEnabled = true;
             this.cbAcceso.Items.AddRange(new object[] {
@@ -386,7 +406,7 @@
             "Area de Bacteriologia",
             "Area de Examenes",
             "Area de Bacteriologia/Examenes"});
-            this.cbAcceso.Location = new System.Drawing.Point(42, 601);
+            this.cbAcceso.Location = new System.Drawing.Point(42, 587);
             this.cbAcceso.Name = "cbAcceso";
             this.cbAcceso.Size = new System.Drawing.Size(257, 33);
             this.cbAcceso.TabIndex = 74;
@@ -396,7 +416,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label8.Location = new System.Drawing.Point(39, 216);
+            this.label8.Location = new System.Drawing.Point(39, 220);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 25);
             this.label8.TabIndex = 79;
@@ -405,13 +425,13 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(42, 183);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 26);
+            this.txtNombre.Size = new System.Drawing.Size(257, 33);
             this.txtNombre.TabIndex = 73;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -429,13 +449,13 @@
             // txtCiTrabajador
             // 
             this.txtCiTrabajador.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCiTrabajador.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCiTrabajador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCiTrabajador.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiTrabajador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCiTrabajador.Location = new System.Drawing.Point(113, 118);
             this.txtCiTrabajador.MaxLength = 9;
             this.txtCiTrabajador.Name = "txtCiTrabajador";
-            this.txtCiTrabajador.Size = new System.Drawing.Size(186, 26);
+            this.txtCiTrabajador.Size = new System.Drawing.Size(186, 33);
             this.txtCiTrabajador.TabIndex = 72;
             this.txtCiTrabajador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiTrabajador_KeyPress);
             this.txtCiTrabajador.Leave += new System.EventHandler(this.txtCiTrabajador_Leave);
@@ -445,7 +465,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label12.Location = new System.Drawing.Point(40, 558);
+            this.label12.Location = new System.Drawing.Point(40, 562);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 25);
             this.label12.TabIndex = 80;
@@ -454,25 +474,25 @@
             // txtContrasena
             // 
             this.txtContrasena.BackColor = System.Drawing.SystemColors.Control;
-            this.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContrasena.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtContrasena.Location = new System.Drawing.Point(42, 248);
+            this.txtContrasena.Location = new System.Drawing.Point(42, 252);
             this.txtContrasena.MaxLength = 3;
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(257, 26);
+            this.txtContrasena.Size = new System.Drawing.Size(257, 33);
             this.txtContrasena.TabIndex = 75;
             // 
             // txtTelefono
             // 
             this.txtTelefono.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTelefono.Location = new System.Drawing.Point(42, 443);
+            this.txtTelefono.Location = new System.Drawing.Point(42, 447);
             this.txtTelefono.MaxLength = 13;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(257, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(257, 33);
             this.txtTelefono.TabIndex = 76;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
@@ -481,9 +501,9 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label13.Location = new System.Drawing.Point(38, 411);
+            this.label13.Location = new System.Drawing.Point(38, 415);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 25);
+            this.label13.Size = new System.Drawing.Size(84, 25);
             this.label13.TabIndex = 81;
             this.label13.Text = "Teléfono:";
             // 
@@ -520,29 +540,6 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label2.Location = new System.Drawing.Point(38, 281);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 25);
-            this.label2.TabIndex = 97;
-            this.label2.Text = "Confirmar Contraseña:";
-            // 
-            // txtConfirmarContraseña
-            // 
-            this.txtConfirmarContraseña.BackColor = System.Drawing.SystemColors.Control;
-            this.txtConfirmarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtConfirmarContraseña.Location = new System.Drawing.Point(40, 309);
-            this.txtConfirmarContraseña.MaxLength = 3;
-            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
-            this.txtConfirmarContraseña.Size = new System.Drawing.Size(257, 26);
-            this.txtConfirmarContraseña.TabIndex = 96;
             // 
             // Trabajador
             // 
