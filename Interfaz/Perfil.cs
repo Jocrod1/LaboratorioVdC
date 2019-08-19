@@ -384,6 +384,10 @@ namespace Interfaz
 
         private void Limpiar()
         {
+            foreach (DataGridViewRow item in this.dgvSeleccionados.Rows)
+            {
+                dgvSeleccionados.Rows.RemoveAt(item.Index);
+            }
             this.txtNombre.Text= string.Empty;
             this.cbLabRef.SelectedIndex = -1;
             this.txtPrecio1.Text = string.Empty;
@@ -535,6 +539,7 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Limpiar();
             Habilitar();
 
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
