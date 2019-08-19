@@ -11,7 +11,7 @@ namespace Metodos
     public class MFactura:DFactura
     {
 
-        public static string Insertar(int idpaciente, int idtipopaciente, int idempresaseguro, int idorden, string tipopago, int idbanco, string numerochot, string exonerado, string motivo, double descuento, double subtotal, double recargoemergencia, double abonar, double total, DataTable DtDetalles)
+        public static string Insertar(int idpaciente, int idtipopaciente, int idempresaseguro, int idorden, string tipopago, int idbanco, string numerochot, bool exonerado, string motivo, double descuento, double subtotal, double recargoemergencia, double abonar, double total, DataTable DtDetalles)
         {
             DFactura Objeto = new DFactura();
             Objeto.IDPaciente = idpaciente;

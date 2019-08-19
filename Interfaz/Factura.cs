@@ -21,6 +21,8 @@ namespace Interfaz
 
         public int IDPacienteActual = 0;
 
+        public bool Exonerado;
+
         public string CedulaCompleta;
 
         public Factura()
@@ -360,7 +362,7 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
-                //Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69,  );
+                Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69, "C", 3, "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble(69), Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble(69), TablaSeleccionados);
 
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -708,6 +710,9 @@ namespace Interfaz
                 txtRecEmergencia.Enabled = false;
                 txtDescuento.Enabled = false;
                 txtAbonar.Enabled = false;
+
+                Exonerado = true;
+
             }
         }
 
@@ -727,6 +732,8 @@ namespace Interfaz
                 txtRecEmergencia.Enabled = true;
                 txtDescuento.Enabled = true;
                 txtAbonar.Enabled = true;
+
+                Exonerado = false;
 
             }
         }

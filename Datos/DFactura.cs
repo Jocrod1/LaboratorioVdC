@@ -67,9 +67,9 @@ public string NumeroCHoT
   get { return _NumeroCHoT; }
   set { _NumeroCHoT = value; }
 }
-        private string _Exonerado;
+        private bool _Exonerado;
 
-public string Exonerado
+public bool Exonerado
 {
   get { return _Exonerado; }
   set { _Exonerado = value; }
@@ -124,7 +124,7 @@ public double Total
 
         }
 
-        public DFactura(int iD, int iDPaciente, int iDTipoPaciente, int iDEmpresaSeguro, int iDOrden, string tipoPago, int iDBanco, string numeroCHoT, string exonerado, string motivo, double descuento, double subtotal, double recargoEmergencia, double abonar, double total)
+        public DFactura(int iD, int iDPaciente, int iDTipoPaciente, int iDEmpresaSeguro, int iDOrden, string tipoPago, int iDBanco, string numeroCHoT, bool exonerado, string motivo, double descuento, double subtotal, double recargoEmergencia, double abonar, double total)
         {
             ID = iD;
             IDPaciente = iDPaciente;
