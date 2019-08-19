@@ -19,6 +19,13 @@ namespace Interfaz
         public Medico()
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular acción");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar nuevo");
+           
         }
 
         private void Medico_Load(object sender, EventArgs e)
@@ -493,6 +500,11 @@ namespace Interfaz
             {
                 errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
             }
+        }
+
+        private void txtCiMedico_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

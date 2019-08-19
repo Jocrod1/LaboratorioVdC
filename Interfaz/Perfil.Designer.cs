@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perfil));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -68,6 +69,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -88,7 +90,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1334, 613);
+            this.panel1.Size = new System.Drawing.Size(1284, 613);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -98,7 +100,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(726, 613);
+            this.panel3.Size = new System.Drawing.Size(676, 613);
             this.panel3.TabIndex = 1;
             // 
             // panel5
@@ -107,7 +109,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 100);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(726, 513);
+            this.panel5.Size = new System.Drawing.Size(676, 513);
             this.panel5.TabIndex = 38;
             // 
             // dataListado
@@ -119,14 +121,14 @@
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -136,7 +138,7 @@
             this.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataListado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(726, 513);
+            this.dataListado.Size = new System.Drawing.Size(676, 513);
             this.dataListado.TabIndex = 37;
             this.dataListado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellDoubleClick);
             // 
@@ -153,7 +155,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(726, 100);
+            this.panel4.Size = new System.Drawing.Size(676, 100);
             this.panel4.TabIndex = 37;
             // 
             // label3
@@ -195,7 +197,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(678, 46);
+            this.btnNuevo.Location = new System.Drawing.Point(628, 46);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(25, 25);
             this.btnNuevo.TabIndex = 9;
@@ -285,7 +287,7 @@
             this.PanelIngreso.Controls.Add(this.label8);
             this.PanelIngreso.Controls.Add(this.txtPrecio1);
             this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelIngreso.Location = new System.Drawing.Point(726, 0);
+            this.PanelIngreso.Location = new System.Drawing.Point(676, 0);
             this.PanelIngreso.Name = "PanelIngreso";
             this.PanelIngreso.Size = new System.Drawing.Size(608, 613);
             this.PanelIngreso.TabIndex = 0;
@@ -324,6 +326,7 @@
             this.rbTituloSi.TabStop = true;
             this.rbTituloSi.Text = "Si";
             this.rbTituloSi.UseVisualStyleBackColor = true;
+            this.rbTituloSi.CheckedChanged += new System.EventHandler(this.rbTituloSi_CheckedChanged);
             // 
             // btnQuitar
             // 
@@ -577,7 +580,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 613);
+            this.ClientSize = new System.Drawing.Size(1284, 613);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Perfil";
@@ -641,5 +644,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbTituloNo;
         private System.Windows.Forms.RadioButton rbTituloSi;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -45,6 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_contraseña)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -153,9 +154,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(102, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 31);
+            this.label3.Size = new System.Drawing.Size(230, 31);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Ingreso al Sistema";
+            this.label3.Text = "Ingreso al sistema";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
@@ -237,6 +238,7 @@
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_contraseña)).EndInit();
@@ -267,5 +269,6 @@
         private System.Windows.Forms.PictureBox mostrar_contraseña;
         private System.Windows.Forms.ComboBox cbCedula;
         private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

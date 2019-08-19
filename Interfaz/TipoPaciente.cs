@@ -26,8 +26,8 @@ namespace Interfaz
             this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
             this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
-            this.toolTip1.SetToolTip(this.btnNuevo, "Ingresar trabajador");
-            this.toolTip1.SetToolTip(this.txtBuscar, "Ingresar trabajador");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Ingresar");
+            this.toolTip1.SetToolTip(this.txtBuscar, "Buscador");
 
         }
 

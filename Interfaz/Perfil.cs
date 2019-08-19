@@ -35,6 +35,13 @@ namespace Interfaz
         public Perfil()
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular acción");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar");
+            this.toolTip1.SetToolTip(this.label8, "Laboratorio de referencia");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -259,7 +266,7 @@ namespace Interfaz
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione si lleva Titulo", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione si lleva título", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
 
@@ -325,7 +332,7 @@ namespace Interfaz
             }
             else
             {
-                this.MensajeError("Debe de buscar un registro para Modificar");
+                this.MensajeError("Debe de buscar un registro para modificar");
             }
         }
 
@@ -334,11 +341,11 @@ namespace Interfaz
         //mensajes
         private void MensajeOK(string Mensaje)
         {
-            MessageBox.Show(Mensaje, "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Mensaje, "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void MensajeError(string Mensaje)
         {
-            MessageBox.Show(Mensaje, "Laboratorio Clinico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Mensaje, "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         
 
@@ -578,6 +585,11 @@ namespace Interfaz
         private void btnAnular_Click(object sender, EventArgs e)
         {
             AnularItems();
+        }
+
+        private void rbTituloSi_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

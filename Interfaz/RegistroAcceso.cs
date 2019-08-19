@@ -16,6 +16,10 @@ namespace Interfaz
         public RegistroAcceso()
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.dtDesde, "Fecha");
+            this.toolTip1.SetToolTip(this.dtHasta, "Fecha");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+
         }
 
         private void RegistroAcceso_Load(object sender, EventArgs e)
@@ -162,6 +166,11 @@ namespace Interfaz
             {
                 MostrarFechas();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

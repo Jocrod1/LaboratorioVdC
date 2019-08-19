@@ -28,6 +28,7 @@ namespace Interfaz
         public EmpresaSeguro()
         {
             InitializeComponent();
+            
         }
 
 
@@ -502,6 +503,11 @@ namespace Interfaz
 
 
             Editar();
+        }
+
+        private void PanelIngreso_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

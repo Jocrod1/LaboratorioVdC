@@ -70,12 +70,12 @@
             this.trabajadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.label_acceso = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label_nombre = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.label_cedula = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label_nombre = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label_acceso = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -191,7 +191,7 @@
             // registroToolStripMenuItem1
             // 
             this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
-            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.registroToolStripMenuItem1.Text = "Registro";
             // 
             // reporteToolStripMenuItem
@@ -200,7 +200,7 @@
             this.totalPacientesToolStripMenuItem,
             this.pacientesMensualToolStripMenuItem});
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.reporteToolStripMenuItem.Text = "Reporte";
             // 
             // totalPacientesToolStripMenuItem
@@ -372,6 +372,16 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // helpToolStripButton
+            // 
+            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
+            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
+            this.helpToolStripButton.Name = "helpToolStripButton";
+            this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.helpToolStripButton.Text = "Help";
+            this.helpToolStripButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -384,25 +394,12 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // helpToolStripButton
+            // label_cedula
             // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.helpToolStripButton.Text = "Help";
-            // 
-            // label_acceso
-            // 
-            this.label_acceso.AutoToolTip = true;
-            this.label_acceso.BackColor = System.Drawing.Color.Transparent;
-            this.label_acceso.Name = "label_acceso";
-            this.label_acceso.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_acceso.Size = new System.Drawing.Size(571, 17);
-            this.label_acceso.Spring = true;
-            this.label_acceso.Text = "acceso";
-            this.label_acceso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_cedula.BackColor = System.Drawing.Color.Transparent;
+            this.label_cedula.Name = "label_cedula";
+            this.label_cedula.Size = new System.Drawing.Size(42, 17);
+            this.label_cedula.Text = "cedula";
             // 
             // label_nombre
             // 
@@ -411,12 +408,16 @@
             this.label_nombre.Size = new System.Drawing.Size(49, 17);
             this.label_nombre.Text = "nombre";
             // 
-            // label_cedula
+            // label_acceso
             // 
-            this.label_cedula.BackColor = System.Drawing.Color.Transparent;
-            this.label_cedula.Name = "label_cedula";
-            this.label_cedula.Size = new System.Drawing.Size(42, 17);
-            this.label_cedula.Text = "cedula";
+            this.label_acceso.AutoToolTip = true;
+            this.label_acceso.BackColor = System.Drawing.Color.Transparent;
+            this.label_acceso.Name = "label_acceso";
+            this.label_acceso.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_acceso.Size = new System.Drawing.Size(602, 17);
+            this.label_acceso.Spring = true;
+            this.label_acceso.Text = "acceso";
+            this.label_acceso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MenuInicio
             // 
@@ -431,7 +432,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MenuInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Laboratorio Clinico Virgen de Coromoto";
+            this.Text = "Laboratorio Clínico Virgen de Coromoto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuInicio_Load);
             this.menuStrip.ResumeLayout(false);

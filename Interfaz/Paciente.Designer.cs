@@ -62,6 +62,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -497,7 +498,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 25);
             this.label1.TabIndex = 58;
-            this.label1.Text = "Telefono:";
+            this.label1.Text = "Teléfono:";
             // 
             // errorProvider1
             // 
@@ -559,5 +560,6 @@
         private System.Windows.Forms.ComboBox cbCedula;
         private System.Windows.Forms.DateTimePicker dtNacimiento;
         private System.Windows.Forms.CheckBox chkFUR;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -120,6 +120,11 @@ namespace Interfaz
 
         }
 
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }

@@ -276,6 +276,7 @@
             this.PanelIngreso.Name = "PanelIngreso";
             this.PanelIngreso.Size = new System.Drawing.Size(350, 626);
             this.PanelIngreso.TabIndex = 0;
+            this.PanelIngreso.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelIngreso_Paint);
             // 
             // cbEmisionRel
             // 

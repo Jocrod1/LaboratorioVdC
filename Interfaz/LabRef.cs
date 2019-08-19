@@ -24,6 +24,13 @@ namespace Interfaz
         public LabRef()
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular acción");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Nuevo paciente");
+            this.toolTip1.SetToolTip(this.txtNombre, "Nombre del laboratorio de referencia");
         }
 
         private void LabRef_Load(object sender, EventArgs e)
@@ -392,6 +399,11 @@ namespace Interfaz
             {
                 errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
             }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Examenes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.txtUnidades = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbTituloNo = new System.Windows.Forms.RadioButton();
             this.rbTituloSi = new System.Windows.Forms.RadioButton();
@@ -69,7 +70,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtUnidades = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.PanelIngreso.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -112,6 +113,18 @@
             this.PanelIngreso.Size = new System.Drawing.Size(607, 676);
             this.PanelIngreso.TabIndex = 38;
             // 
+            // txtUnidades
+            // 
+            this.txtUnidades.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUnidades.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnidades.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtUnidades.Location = new System.Drawing.Point(26, 207);
+            this.txtUnidades.MaxLength = 50;
+            this.txtUnidades.Name = "txtUnidades";
+            this.txtUnidades.Size = new System.Drawing.Size(268, 33);
+            this.txtUnidades.TabIndex = 83;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbTituloNo);
@@ -123,7 +136,7 @@
             this.groupBox1.Size = new System.Drawing.Size(257, 57);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Titulo";
+            this.groupBox1.Text = "Título";
             // 
             // rbTituloNo
             // 
@@ -224,9 +237,9 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(25, 344);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 25);
+            this.label5.Size = new System.Drawing.Size(171, 25);
             this.label5.TabIndex = 74;
-            this.label5.Text = "Valores Normales M:";
+            this.label5.Text = "Valores normales M:";
             // 
             // txtValNorMujeres
             // 
@@ -269,9 +282,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(25, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
+            this.label1.Size = new System.Drawing.Size(168, 25);
             this.label1.TabIndex = 68;
-            this.label1.Text = "Valores Normales H:";
+            this.label1.Text = "Valores normales H:";
             // 
             // label9
             // 
@@ -396,7 +409,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(200, 25);
             this.label8.TabIndex = 54;
-            this.label8.Text = "ID Grupo de examenes:";
+            this.label8.Text = "ID Grupo de exámenes:";
             // 
             // txtPrecio2
             // 
@@ -561,14 +574,14 @@
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -585,18 +598,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtUnidades
-            // 
-            this.txtUnidades.BackColor = System.Drawing.SystemColors.Control;
-            this.txtUnidades.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUnidades.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnidades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUnidades.Location = new System.Drawing.Point(26, 207);
-            this.txtUnidades.MaxLength = 50;
-            this.txtUnidades.Name = "txtUnidades";
-            this.txtUnidades.Size = new System.Drawing.Size(268, 33);
-            this.txtUnidades.TabIndex = 83;
             // 
             // Examenes
             // 
@@ -663,5 +664,6 @@
         private System.Windows.Forms.RadioButton rbTituloNo;
         private System.Windows.Forms.RadioButton rbTituloSi;
         private System.Windows.Forms.TextBox txtUnidades;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

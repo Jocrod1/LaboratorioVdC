@@ -27,6 +27,16 @@ namespace Interfaz
         public Examenes()
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.label6, "Laboratorio de referencia");
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar nuevo");
+            this.toolTip1.SetToolTip(this.label1, "Valores normales en mujeres");
+            this.toolTip1.SetToolTip(this.label5, "Valores normales en hombres");
+
         }
 
 

@@ -20,6 +20,12 @@ namespace Interfaz
         {
             InitializeComponent();
 
+            this.toolTip1.SetToolTip(this.pictureBox1, "Cédula");
+            this.toolTip1.SetToolTip(this.pictureBox2, "Contraseña");
+            this.toolTip1.SetToolTip(this.mostrar_contraseña, "Mostrar");
+            
+            
+
             txtusuario.Text = @"Numero de Cedula";
             txtcontraseña.Text = "Contraseña";
             txtcontraseña.UseSystemPasswordChar = false;
@@ -170,6 +176,11 @@ namespace Interfaz
                 txtusuario.Enabled = true;
                 txtusuario.Focus();
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

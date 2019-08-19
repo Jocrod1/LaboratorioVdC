@@ -28,6 +28,15 @@ namespace Interfaz
         public Factura()
         {
             InitializeComponent();
+
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.pictureBox1, "Buscar");
+            this.toolTip1.SetToolTip(this.pictureBox2, "Buscar");
+            this.toolTip1.SetToolTip(this.pictureBox3, "Buscar");
+            this.toolTip1.SetToolTip(this.lblFUR, "Fecha de última regla");
+            this.toolTip1.SetToolTip(this.btnAnadir, "Añadir a la lista");
+            this.toolTip1.SetToolTip(this.btnQuitar, "Quitar de la lista");
         }
 
 

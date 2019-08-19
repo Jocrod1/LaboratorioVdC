@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPaciente = new System.Windows.Forms.TabPage();
@@ -105,6 +106,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -235,9 +237,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(245, 278);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 25);
+            this.label1.Size = new System.Drawing.Size(125, 25);
             this.label1.TabIndex = 112;
-            this.label1.Text = "Tipo Paciente:";
+            this.label1.Text = "Tipo paciente:";
             // 
             // btnCancelar
             // 
@@ -376,7 +378,7 @@
             this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblFUR.Location = new System.Drawing.Point(556, 281);
             this.lblFUR.Name = "lblFUR";
-            this.lblFUR.Size = new System.Drawing.Size(56, 25);
+            this.lblFUR.Size = new System.Drawing.Size(54, 25);
             this.lblFUR.TabIndex = 106;
             this.lblFUR.Text = "F.U.R:";
             // 
@@ -399,9 +401,9 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(555, 157);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 25);
+            this.label13.Size = new System.Drawing.Size(84, 25);
             this.label13.TabIndex = 105;
-            this.label13.Text = "Telefono:";
+            this.label13.Text = "Teléfono:";
             // 
             // tabExamenes
             // 
@@ -648,7 +650,7 @@
             this.label21.ForeColor = System.Drawing.Color.DarkOrange;
             this.label21.Location = new System.Drawing.Point(657, 305);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(75, 25);
+            this.label21.Size = new System.Drawing.Size(76, 25);
             this.label21.TabIndex = 104;
             this.label21.Text = "Abonar:";
             // 
@@ -673,7 +675,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(181, 25);
             this.label20.TabIndex = 102;
-            this.label20.Text = "Recargo Emergencia:";
+            this.label20.Text = "Recargo emergencia:";
             // 
             // txtNumCHoT
             // 
@@ -694,7 +696,7 @@
             this.label19.ForeColor = System.Drawing.Color.DarkOrange;
             this.label19.Location = new System.Drawing.Point(383, 305);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(189, 25);
+            this.label19.Size = new System.Drawing.Size(186, 25);
             this.label19.TabIndex = 100;
             this.label19.Text = "Nro. Tarjeta / Cheque:";
             // 
@@ -881,9 +883,9 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(383, 166);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 25);
+            this.label5.Size = new System.Drawing.Size(125, 25);
             this.label5.TabIndex = 39;
-            this.label5.Text = "Tipo de Pago:";
+            this.label5.Text = "Tipo de pago:";
             // 
             // btnImprimir
             // 
@@ -913,7 +915,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(931, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 25);
+            this.label8.Size = new System.Drawing.Size(107, 25);
             this.label8.TabIndex = 36;
             this.label8.Text = "Precio Total:";
             // 
@@ -936,7 +938,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(13, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(172, 25);
+            this.label7.Size = new System.Drawing.Size(173, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Exámenes a realizar:";
             // 
@@ -1040,7 +1042,7 @@
             this.lblFaseActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblFaseActual.Location = new System.Drawing.Point(147, 37);
             this.lblFaseActual.Name = "lblFaseActual";
-            this.lblFaseActual.Size = new System.Drawing.Size(673, 39);
+            this.lblFaseActual.Size = new System.Drawing.Size(719, 39);
             this.lblFaseActual.TabIndex = 51;
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1164,5 +1166,6 @@
         public System.Windows.Forms.ComboBox cbTipoPaciente;
         private System.Windows.Forms.DateTimePicker dtNacimiento;
         private System.Windows.Forms.CheckBox chkFUR;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
