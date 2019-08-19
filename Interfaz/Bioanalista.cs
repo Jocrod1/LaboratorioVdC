@@ -25,6 +25,12 @@ namespace Interfaz
         public Bioanalista()
         {
             InitializeComponent();
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Nuevo bioanalista");
         }
 
         private void Bioanalista_Load(object sender, EventArgs e)

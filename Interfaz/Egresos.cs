@@ -24,6 +24,13 @@ namespace Interfaz
         public Egresos()
         {
             InitializeComponent();
+          
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar");
         }
 
         private void Egresos_Load(object sender, EventArgs e)

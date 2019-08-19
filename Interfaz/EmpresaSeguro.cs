@@ -28,7 +28,16 @@ namespace Interfaz
         public EmpresaSeguro()
         {
             InitializeComponent();
-            
+            //Detalles de campos
+
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar nuevo");
+            this.toolTip1.SetToolTip(this.txtRIF, "Registro único de información fiscal");
+            this.toolTip1.SetToolTip(this.txtNIT, "Número de identificación tributria");
         }
 
 

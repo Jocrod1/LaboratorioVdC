@@ -25,6 +25,14 @@ namespace Interfaz
         public Bancos()
         {
             InitializeComponent();
+            //Detalles de campos
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar banco");
+            this.toolTip1.SetToolTip(this.txtNombre, "Nombre del banco");
         }
 
         private void Bancos_Load(object sender, EventArgs e)
