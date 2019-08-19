@@ -20,6 +20,15 @@ namespace Interfaz
         public TipoPaciente()
         {
             InitializeComponent();
+            //Específicaciones de botones
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular acción");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Ingresar trabajador");
+            this.toolTip1.SetToolTip(this.txtBuscar, "Ingresar trabajador");
+
         }
 
         // funciones

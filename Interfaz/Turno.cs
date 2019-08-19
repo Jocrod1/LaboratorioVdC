@@ -25,6 +25,15 @@ namespace Interfaz
         public Turno()
         {
             InitializeComponent();
+            //Específicaciones de botones
+            this.toolTip1.SetToolTip(this.btnAnular, "Anular acción");
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
+            this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Ingresar trabajador");
+            this.toolTip1.SetToolTip(this.dtComienzo, "");
+            this.toolTip1.SetToolTip(this.dtFinal, "");
         }
 
         private void Turno_Load(object sender, EventArgs e)
