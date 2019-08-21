@@ -143,23 +143,66 @@ public double Total
             Total = total;
         }
 
+        public string Facturar(DFactura Factura, List<DDetalle_Factura> DetalleFactura, DOrden Orden, List<DDetalle_Orden> detalleorden) {
 
-        //metodos
-        //insertar
-        public string Insertar(DFactura Factura, List<DDetalle_Factura> Detalle)
-        {
             string respuesta = "";
-            SqlConnection SqlConectar = new SqlConnection();
+            SqlConnection sqlconectar = new SqlConnection();
 
             try
             {
-                //conexion con la Base de Datos
-                SqlConectar.ConnectionString = Conexion.CadenaConexion;
-                SqlConectar.Open();
+                //Conexion con la base de datos
+                sqlconectar.ConnectionString = Conexion.CadenaConexion;
+                sqlconectar.Open();
 
                 //transaccion
-                SqlTransaction SqlTransaccion = SqlConectar.BeginTransaction();
+                SqlTransaction SqlTransaccion = sqlconectar.BeginTransaction();
 
+                int Identidad = -1;
+
+                respuesta = Orden.Insertar(Orden, detalleorden, ref sqlconectar, ref SqlTransaccion, ref Identidad);
+
+                if (respuesta.Equals("OK"))
+                {
+                    Factura.IDOrden = Identidad;
+
+                    respuesta = Factura.Insertar(Factura, DetalleFactura, ref sqlconectar, ref SqlTransaccion);
+
+                }
+
+                if (respuesta.Equals("OK"))
+                {
+                    SqlTransaccion.Commit();
+                }
+                else
+                {
+                    //si recibe una respuesta contraria se niega la transaccion
+                    SqlTransaccion.Rollback();
+                }
+            }
+            catch (Exception e) {
+                respuesta = e.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (sqlconectar.State == ConnectionState.Open)
+                {
+                    sqlconectar.Close();
+                }
+            }
+            return respuesta;
+        }
+
+
+        //metodos
+        //insertar
+        public string Insertar(DFactura Factura, List<DDetalle_Factura> Detalle, ref SqlConnection SqlConectar, ref SqlTransaction SqlTransaccion)
+        {
+            string respuesta = "";
+
+            try
+            {
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
@@ -297,31 +340,12 @@ public double Total
                         }
                     }
                 }
-
-                if(respuesta.Equals("OK"))
-                {
-                    SqlTransaccion.Commit();
-                }
-                else
-                {
-                    //si recibe una respuesta contraria se niega la transaccion
-                    SqlTransaccion.Rollback();
-                }
-
             }
             catch (Exception excepcion)
             {
                 respuesta = excepcion.Message;
             }
 
-            //se cierra la conexion de la Base de Datos
-            finally
-            {
-                if (SqlConectar.State == ConnectionState.Open)
-                {
-                    SqlConectar.Close();
-                }
-            }
             return respuesta;
         }
 

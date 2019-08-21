@@ -111,19 +111,12 @@ public string NombreTurno1
         //metodos
 
         //insertar
-        public string Insertar(DOrden Orden, List<DDetalle_Orden> Detalle)
+        public string Insertar(DOrden Orden, List<DDetalle_Orden> Detalle, ref SqlConnection SqlConectar, ref SqlTransaction SqlTransaccion, ref int IDENTITY)
         {
             string respuesta = "";
-            SqlConnection SqlConectar = new SqlConnection();
 
             try
             {
-                //conexion con la Base de Datos
-                SqlConectar.ConnectionString = Conexion.CadenaConexion;
-                SqlConectar.Open();
-
-                //transaccion
-                SqlTransaction SqlTransaccion = SqlConectar.BeginTransaction();
 
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
@@ -181,11 +174,12 @@ public string NombreTurno1
 
                 if(respuesta.Equals("OK"))
                 {
-                    this.ID = Convert.ToInt32(SqlComando.Parameters["ID"].Value);
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
+                    IDENTITY = ID;
 
                     foreach(DDetalle_Orden det in Detalle)
                     {
-                        det.ID = this.ID;
+                        det.IDOrden = this.ID;
 
                         //llamar al insertar
                         respuesta = det.Insertar(det, ref SqlConectar, ref SqlTransaccion);
@@ -197,30 +191,12 @@ public string NombreTurno1
                     }
                 }
 
-                if(respuesta.Equals("OK"))
-                {
-                    SqlTransaccion.Commit();
-                }
-                else
-                {
-                    //si recibe una respuesta contraria se niega la transaccion
-                    SqlTransaccion.Rollback();
-                }
-
             }
             catch (Exception excepcion)
             {
                 respuesta = excepcion.Message;
             }
 
-            //se cierra la conexion de la Base de Datos
-            finally
-            {
-                if (SqlConectar.State == ConnectionState.Open)
-                {
-                    SqlConectar.Close();
-                }
-            }
             return respuesta;
 
         }
