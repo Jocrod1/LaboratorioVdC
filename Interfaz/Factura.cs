@@ -25,6 +25,13 @@ namespace Interfaz
 
         public string CedulaCompleta;
 
+        private int ID;
+
+        private int IDDetalle;
+
+        private DataTable ConjuntoDeIDExamenes;
+
+
         public Factura()
         {
             InitializeComponent();
@@ -241,7 +248,13 @@ namespace Interfaz
             this.ExamenesParaGuardar.Columns.Add("IDPerfil", System.Type.GetType("System.Int32")); //id del perfil o el numero 1 que es vacio
 
 
+            //esto es para añadir las columnas a la tabla ConjuntoDeIDExamenes
 
+            this.ConjuntoDeIDExamenes = new DataTable("ConjuntoDeIDExamenes");
+            this.ConjuntoDeIDExamenes.Columns.Add("IDExamen", System.Type.GetType("System.Int32")); //id de los examenes individualmente
+
+            
+            
         }
 
 
@@ -261,6 +274,33 @@ namespace Interfaz
 
         private void GuardarExamenesEnDt()
         {
+
+            foreach (DataGridViewRow item in this.dgvResumenExamenes.Rows)
+            {
+
+                ID = Convert.ToInt32(item.Cells["ID"].Value);
+                IDDetalle = Convert.ToInt32(item.Cells["ID"].Value);
+                var standard = MPerfil.MostrarDetalle(ID);
+
+                foreach (var wea in standard)
+                {
+                    ConjuntoDeIDExamenes.Rows.Add(wea.IDExamen);
+                }
+
+
+            }
+            
+                
+
+            
+
+                
+
+
+            
+            
+
+
 
             foreach (DataRow item in TablaSeleccionados.Rows)
             {
@@ -794,6 +834,25 @@ namespace Interfaz
 
                 dgvExamenes.ClearSelection();
             
+
+        }
+
+        private void btnIDExamenesTest_Click(object sender, EventArgs e)
+        {
+
+
+            string registrosID;
+
+
+            foreach (DataRow item in ConjuntoDeIDExamenes.Rows)
+            {
+
+                registrosID = Convert.ToString(item);
+
+
+            }
+
+
 
         }
 

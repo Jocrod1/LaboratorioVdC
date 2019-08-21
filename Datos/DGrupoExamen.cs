@@ -315,7 +315,7 @@ namespace Datos
                     ListaGenerica.Add(new DGrupoExamen
                     {
                         ID = LeerFilas.GetInt32(0),
-                        Nombre = LeerFilas.GetString(1),
+                        Nombre = LeerFilas.GetString(1)
                     });
                 }
                 LeerFilas.Close();

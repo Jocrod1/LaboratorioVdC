@@ -107,6 +107,7 @@
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnIDExamenesTest = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -378,7 +379,7 @@
             this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblFUR.Location = new System.Drawing.Point(556, 281);
             this.lblFUR.Name = "lblFUR";
-            this.lblFUR.Size = new System.Drawing.Size(54, 25);
+            this.lblFUR.Size = new System.Drawing.Size(56, 25);
             this.lblFUR.TabIndex = 106;
             this.lblFUR.Text = "F.U.R:";
             // 
@@ -401,7 +402,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(555, 157);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 25);
+            this.label13.Size = new System.Drawing.Size(87, 25);
             this.label13.TabIndex = 105;
             this.label13.Text = "Teléfono:";
             // 
@@ -598,6 +599,7 @@
             // tabFinalizar
             // 
             this.tabFinalizar.BackColor = System.Drawing.Color.LightGreen;
+            this.tabFinalizar.Controls.Add(this.btnIDExamenesTest);
             this.tabFinalizar.Controls.Add(this.txtAbonar);
             this.tabFinalizar.Controls.Add(this.label21);
             this.tabFinalizar.Controls.Add(this.txtRecEmergencia);
@@ -650,7 +652,7 @@
             this.label21.ForeColor = System.Drawing.Color.DarkOrange;
             this.label21.Location = new System.Drawing.Point(657, 305);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(76, 25);
+            this.label21.Size = new System.Drawing.Size(75, 25);
             this.label21.TabIndex = 104;
             this.label21.Text = "Abonar:";
             // 
@@ -696,7 +698,7 @@
             this.label19.ForeColor = System.Drawing.Color.DarkOrange;
             this.label19.Location = new System.Drawing.Point(383, 305);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(186, 25);
+            this.label19.Size = new System.Drawing.Size(189, 25);
             this.label19.TabIndex = 100;
             this.label19.Text = "Nro. Tarjeta / Cheque:";
             // 
@@ -915,7 +917,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(931, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 25);
+            this.label8.Size = new System.Drawing.Size(110, 25);
             this.label8.TabIndex = 36;
             this.label8.Text = "Precio Total:";
             // 
@@ -938,7 +940,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(13, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 25);
+            this.label7.Size = new System.Drawing.Size(172, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Exámenes a realizar:";
             // 
@@ -1046,6 +1048,16 @@
             this.lblFaseActual.TabIndex = 51;
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnIDExamenesTest
+            // 
+            this.btnIDExamenesTest.Location = new System.Drawing.Point(954, 173);
+            this.btnIDExamenesTest.Name = "btnIDExamenesTest";
+            this.btnIDExamenesTest.Size = new System.Drawing.Size(75, 57);
+            this.btnIDExamenesTest.TabIndex = 106;
+            this.btnIDExamenesTest.Text = "TEST IDEXAMEN";
+            this.btnIDExamenesTest.UseVisualStyleBackColor = true;
+            this.btnIDExamenesTest.Click += new System.EventHandler(this.btnIDExamenesTest_Click);
             // 
             // Factura
             // 
@@ -1167,5 +1179,6 @@
         private System.Windows.Forms.DateTimePicker dtNacimiento;
         private System.Windows.Forms.CheckBox chkFUR;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnIDExamenesTest;
     }
 }

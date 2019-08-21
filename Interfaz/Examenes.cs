@@ -119,7 +119,7 @@ namespace Interfaz
             this.txtPrecioRef.Enabled = true;
             this.richObservaciones.Enabled = true;
             btnNuevo.Visible = false;
-            PanelIngreso.Size = new Size(607, PanelIngreso.Size.Height);
+            PanelIngreso.Size = new Size(608, PanelIngreso.Size.Height);
         }
 
         private void Deshabilitar()
@@ -169,7 +169,7 @@ namespace Interfaz
             this.txtValNorHombres.Text = string.Empty;
             this.txtValNorMujeres.Text = string.Empty;
             this.txtPrecio1.Text = string.Empty;
-            this.txtPrecio1.Text = string.Empty;
+            this.txtPrecio2.Text = string.Empty;
             this.dtPlazoEntrega.Text = string.Empty;
             this.cbIDGrupoExamen.SelectedIndex = -1;
             this.cbLabRef.Text = string.Empty;
@@ -535,17 +535,22 @@ namespace Interfaz
 
         private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.Limpiar();
             this.Habilitar();
-            //asignar los correspondientes :)
 
-            //ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdPaciente"].Value);
-            //this.txtCiPaciente.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Cedula"].Value);
-            //this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            //this.txtSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Sexo"].Value);
-            //this.txtEdad.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Edad"].Value);
-            //this.txtTelefono.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Telefono"].Value);
-            //this.dateTimePickerFUR.Value = Convert.ToDateTime(this.dataListado.CurrentRow.Cells["FUR"].Value);
-            //this.txtNroHab.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NumeroHabitacion"].Value);
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
+
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtUnidades.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Unidades"].Value);
+            this.txtValNorHombres.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Valor_Hombre"].Value);
+            this.txtValNorMujeres.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Valor_Mujer"].Value);
+            this.txtPrecio1.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio1"].Value);
+            this.txtPrecio2.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio2"].Value);
+            this.txtPrecioRef.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Precio_Referencia"].Value);
+            this.richObservaciones.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Observacion"].Value);
+            this.cbIDGrupoExamen.SelectedValue = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID_Grupo_Examen"].Value);
+            this.cbLabRef.SelectedValue = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID_Lab_Referencia"].Value);
+
 
             if (Convert.ToString(this.dataListado.CurrentRow.Cells["Titulo"].Value) == "True")
             {
@@ -558,9 +563,9 @@ namespace Interfaz
                 rbTituloNo.Checked = true;
             }
 
-            Editar();
+            
             txtNombre.Focus();
-
+            Editar();
         }
 
         private void btnAnular_Click(object sender, EventArgs e)

@@ -566,6 +566,7 @@ namespace Datos
                     LabRef = Lab_Referencia_,
                     Precio_Referencia=PrecioRef_,
                     ID_Grupo_Examen=IDGrupoExamen,
+                    ID_Lab_Referencia=IDLabRef
 
                 });
 
