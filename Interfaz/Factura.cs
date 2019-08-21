@@ -47,6 +47,9 @@ namespace Interfaz
         private DataTable TablaResultadosCI;
 
 
+        private DataTable ExamenesParaGuardar;
+
+
         private void Factura_Load(object sender, EventArgs e)
         {
 
@@ -214,6 +217,8 @@ namespace Interfaz
             this.TablaSeleccionados.Columns.Add("Nombre", System.Type.GetType("System.String"));
             this.TablaSeleccionados.Columns.Add("Precio1", System.Type.GetType("System.Double"));
             this.TablaSeleccionados.Columns.Add("Precio2", System.Type.GetType("System.Double"));
+            this.TablaSeleccionados.Columns.Add("EsPerfil?", System.Type.GetType("System.Boolean"));
+            this.TablaSeleccionados.Columns.Add("ID", System.Type.GetType("System.Int32"));
 
             dgvSeleccionados.DataSource = this.TablaSeleccionados;
 
@@ -224,8 +229,18 @@ namespace Interfaz
             this.TablaSeleccionados2.Columns.Add("Nombre", System.Type.GetType("System.String"));
             this.TablaSeleccionados2.Columns.Add("Precio1", System.Type.GetType("System.Double"));
             this.TablaSeleccionados2.Columns.Add("Precio2", System.Type.GetType("System.Double"));
+            this.TablaSeleccionados2.Columns.Add("EsPerfil?", System.Type.GetType("System.Boolean"));
+            this.TablaSeleccionados2.Columns.Add("ID", System.Type.GetType("System.Int32"));
 
-            
+
+            //esto es para añadir las columnas a la tabla ExamenesParaGuardar
+
+            this.ExamenesParaGuardar = new DataTable("ExamenesParaGuardar");
+            this.ExamenesParaGuardar.Columns.Add("EXoPERF", System.Type.GetType("System.String")); //string "examen" o "perfil"
+            this.ExamenesParaGuardar.Columns.Add("IDExamen", System.Type.GetType("System.Int32")); //id del examen o el numero 1 que es vacio
+            this.ExamenesParaGuardar.Columns.Add("IDPerfil", System.Type.GetType("System.Int32")); //id del perfil o el numero 1 que es vacio
+
+
 
         }
 
@@ -242,6 +257,29 @@ namespace Interfaz
         }
 
 
+
+
+        private void GuardarExamenesEnDt()
+        {
+
+            foreach (DataRow item in TablaSeleccionados.Rows)
+            {
+
+                if (item[3].Equals( true )) //es perfil
+                {
+                            ExamenesParaGuardar.Rows.Add("Perfil", 1, item[4]); //aqui se guarda "Perfil", 1 q significa q no es examen, y el ID del perfil
+                    
+                }else if (item[3].Equals( false )) //es examen
+                {
+                            ExamenesParaGuardar.Rows.Add("Examen", item[4], 1); //aqui se guarda "Examen", y el ID del examen,  1 q significa q no es perfil
+                        
+                }
+
+
+            }
+
+
+        }
 
 
 
@@ -371,7 +409,7 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
-                Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69, "C", 3, "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble(69), Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble(69), TablaSeleccionados);
+                Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69, "C", 3, "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble(69), Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble(69), ExamenesParaGuardar);
 
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -564,14 +602,14 @@ namespace Interfaz
             //agrega los examenes
             foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
             {
-                TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
+                TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value, false, item.Cells["ID"].Value);
             }
             
 
             //agrega los perfiles
             foreach (DataGridViewRow item in this.dgvPerfiles.SelectedRows)
             {
-                TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value);
+                TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value, true, item.Cells["ID"].Value);
             }
 
             //Relacionar nuestro DataGRidView con nuestro DataTable
@@ -592,6 +630,7 @@ namespace Interfaz
         private void btnImprimir_Click(object sender, EventArgs e)   // Aqui esta la funcion de guardar pac e imprimir
         {
 
+            GuardarExamenesEnDt();
 
             Guardar(); //aqui esta guardar paciente 
 

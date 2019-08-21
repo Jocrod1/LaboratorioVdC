@@ -35,12 +35,12 @@ namespace Metodos
                 DDetalle_Factura Detalle = new DDetalle_Factura();
 
                 //voy a poner que se agregue el id mientras tanto
-                Detalle.ID = Convert.ToInt32(row["ID"].ToString());
-                Detalle.IDFactura = Convert.ToInt32(row["IDFactura"].ToString());
+                //Detalle.ID = Convert.ToInt32(row["ID"].ToString());
+                //Detalle.IDFactura = Convert.ToInt32(row["IDFactura"].ToString());
                 Detalle.ExamenPerfil = Convert.ToString(row["EXoPERF"].ToString());
                 Detalle.IDExamen = Convert.ToInt32(row["IDExamen"].ToString());
                 Detalle.IDPerfil = Convert.ToInt32(row["IDPerfil"].ToString());
-                Detalle.IDDetalleOrden = Convert.ToInt32(row["IDDetalleOrden"].ToString());
+                //Detalle.IDDetalleOrden = Convert.ToInt32(row["IDDetalleOrden"].ToString());
             }
 
             return Objeto.Insertar(Objeto, Detalles);
