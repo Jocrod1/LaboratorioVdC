@@ -391,10 +391,32 @@ namespace Interfaz
 
         private void Limpiar()
         {
-            foreach (DataGridViewRow item in this.dgvSeleccionados.Rows)
+            
+            if(dgvSeleccionados.Rows.Count!=0)
             {
-                dgvSeleccionados.Rows.RemoveAt(item.Index);
+                /*
+                foreach (DataGridViewRow item in this.dgvSeleccionados.Rows)
+                {
+                    dgvSeleccionados.Rows.RemoveAt(item.Index);
+                    MessageBox.Show(Convert.ToString(item.Index));
+                }
+                */
+                /*
+                for (int i = 0; i < (dgvSeleccionados.Rows.Count + 1); i++)
+                {
+                    dgvSeleccionados.Rows.RemoveAt(0);
+                }
+                */
+                while(dgvSeleccionados.Rows.Count!=0)
+                {
+                    dgvSeleccionados.Rows.RemoveAt(0);
+                }
+
             }
+            
+
+
+
             this.txtNombre.Text= string.Empty;
             this.cbLabRef.SelectedIndex = -1;
             this.txtPrecio1.Text = string.Empty;
@@ -492,16 +514,30 @@ namespace Interfaz
         //eventos
         private void btnAnadir_Click(object sender, EventArgs e)
         {
+
             //agrega los examenes
             foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
             {
-                TablaSeleccionados.Rows.Add(item.Cells["ID"].Value, item.Cells["Nombre"].Value);
+                int NoCopia = 0;
+                foreach (DataGridViewRow item2 in this.dgvSeleccionados.Rows)
+                {
+                    if(Convert.ToInt32(item2.Cells["IDExamen"].Value)== Convert.ToInt32(item.Cells["ID"].Value))
+                    {
+                        NoCopia++;
+                    }
+                }
+                if(NoCopia==0)
+                {
+                    TablaSeleccionados.Rows.Add(item.Cells["ID"].Value, item.Cells["Nombre"].Value);
+                }
+                else
+                {
+                    MessageBox.Show("El examen " + Convert.ToString(item.Cells["Nombre"].Value) + " ya está seleccionado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
 
             //Relacionar nuestro DataGRidView con nuestro DataTable
             this.dgvSeleccionados.DataSource = this.TablaSeleccionados;
-
 
         }
 
@@ -551,11 +587,9 @@ namespace Interfaz
 
             ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
             IDDetalle = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
-            var standard = MPerfil.MostrarDetalle(IDDetalle);
+            var standard = MPerfil.MostrarDetalle(ID);
 
-            foreach (var item in standard) {
-                TablaSeleccionados.Rows.Add(item.IDExamen, item.NombreExamen);
-            }
+
 
             //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
 
@@ -575,6 +609,11 @@ namespace Interfaz
             {
                 rbTituloSi.Checked = false;
                 rbTituloNo.Checked = true;
+            }
+
+            foreach (var item in standard)
+            {
+                TablaSeleccionados.Rows.Add(item.IDExamen, item.NombreExamen);
             }
 
             //Editar();
