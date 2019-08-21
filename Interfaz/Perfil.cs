@@ -632,5 +632,11 @@ namespace Interfaz
         {
 
         }
+
+        //buscar
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Mostrar();
+        }
     }
 }
