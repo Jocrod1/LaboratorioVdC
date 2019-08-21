@@ -31,7 +31,7 @@ namespace Interfaz
             panel_fechas.Enabled = false;
 
             //combobox
-            cbTurno.DataSource = MTurno.Mostrar("");
+            cbTurno.DataSource = MTurno.MostrarCombobox();
             cbTurno.DisplayMember = "Nombre";
             cbTurno.ValueMember = "ID";
             cbTurno.SelectedIndex = -1;

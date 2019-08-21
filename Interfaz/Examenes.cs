@@ -49,12 +49,12 @@ namespace Interfaz
 
 
             //combobox
-            cbIDGrupoExamen.DataSource=  MGrupoExamen.Mostrar("");
+            cbIDGrupoExamen.DataSource=  MGrupoExamen.MostrarCombobox();
             cbIDGrupoExamen.DisplayMember = "Nombre";
             cbIDGrupoExamen.ValueMember = "ID";
             cbIDGrupoExamen.SelectedIndex = -1;
 
-            cbLabRef.DataSource = MLabRef.Mostrar("");
+            cbLabRef.DataSource = MLabRef.MostrarCombobox();
             cbLabRef.DisplayMember = "Nombre";
             cbLabRef.ValueMember = "ID";
             cbLabRef.SelectedIndex = -1;
@@ -366,9 +366,6 @@ namespace Interfaz
             try
             {
                 string Rpta = "";
-
-                string IDGrupoExamen = MExamen.CaptarGrupoExamen(cbIDGrupoExamen.Text);
-                string IDLabRef = MExamen.CaptarLabRef(cbLabRef.Text);
 
                 if (this.IsNuevo)
                 {

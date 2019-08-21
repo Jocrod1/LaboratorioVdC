@@ -69,19 +69,5 @@ namespace Metodos
             return Objeto.Mostrar(TextoBuscar);
         }
 
-
-        //grupo examen
-        public new static string CaptarGrupoExamen(string nombre)
-        {
-            DExamen Objeto = new DExamen();
-            return Objeto.CaptarGrupoExamen(nombre);
-        }
-
-        //lab ref
-        public new static string CaptarLabRef(string nombre)
-        {
-            DExamen Objeto = new DExamen();
-            return Objeto.CaptarLabRef(nombre);
-        }
     }
 }

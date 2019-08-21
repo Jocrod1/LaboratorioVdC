@@ -333,5 +333,47 @@ namespace Datos
             return ListaGenerica;
 
         }
+
+        //combobox
+        public List<DTurno> MostrarCombobox()
+        {
+            DataTable DtResultado = new DataTable("Turno");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DTurno> ListaGenerica = new List<DTurno>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_turno";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DTurno
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Nombre = LeerFilas.GetString(1),
+                        Comienzo = LeerFilas.GetTimeSpan(2),
+                        Final = LeerFilas.GetTimeSpan(3)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
     }
 }

@@ -50,6 +50,12 @@ namespace Metodos
             return Objeto.Mostrar(TextoBuscar);
         }
 
+        public new static List<DMedico> MostrarCombobox()
+        {
+            DMedico Objeto = new DMedico();
+            return Objeto.MostrarCombobox();
+        }
+
         public new static List<DMedico> CedulaUnica(string TextoBuscar)
         {
             DMedico Objeto = new DMedico();

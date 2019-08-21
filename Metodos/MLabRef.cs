@@ -46,5 +46,11 @@ namespace Metodos
             DLabRef Objeto = new DLabRef();
             return Objeto.Mostrar(TextoBuscar);
         }
+
+        public new static List<DLabRef> MostrarCombobox()
+        {
+            DLabRef Objeto = new DLabRef();
+            return Objeto.MostrarCombobox();
+        }
     }
 }

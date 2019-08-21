@@ -47,5 +47,10 @@ namespace Metodos
         }
 
 
+        public new static List<DGrupoExamen> MostrarCombobox()
+        {
+            DGrupoExamen Objeto = new DGrupoExamen();
+            return Objeto.MostrarCombobox();
+        }
     }
 }

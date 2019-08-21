@@ -49,5 +49,12 @@ namespace Metodos
             DTurno Objeto = new DTurno();
             return Objeto.Mostrar(TextoBuscar);
         }
+
+        //combobox
+        public new static List<DTurno> MostrarCombobox()
+        {
+            DTurno Objeto = new DTurno();
+            return Objeto.MostrarCombobox();
+        }
     }
 }

@@ -286,5 +286,44 @@ namespace Datos
             return ListaGenerica;
 
         }
+
+        public List<DLabRef> MostrarCombobox()
+        {
+            DataTable DtResultado = new DataTable("LabRef");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DLabRef> ListaGenerica = new List<DLabRef>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_labref";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DLabRef
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Nombre = LeerFilas.GetString(1)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
     }
 }
