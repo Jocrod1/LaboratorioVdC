@@ -240,15 +240,13 @@ namespace Interfaz
             {
                 string Rpta = "";
 
+                //esto es para añadir las columnas a la TablaSeleccionados
+
+                this.tabla_seleccionados = new DataTable("Detalle");
+                this.tabla_seleccionados.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
+
                 if (this.IsNuevo)
                 {
-
-
-                    //esto es para añadir las columnas a la TablaSeleccionados
-
-                    this.tabla_seleccionados = new DataTable("Detalle");
-                    this.tabla_seleccionados.Columns.Add("IDExamen", System.Type.GetType("System.Int32"));
-
 
                     //agrega los examenes
                     foreach (DataGridViewRow item in this.dgvSeleccionados.Rows)
@@ -274,18 +272,22 @@ namespace Interfaz
                 }
                 else
                 {
-                    MessageBox.Show(Convert.ToString(ID));
                     Rpta = MPerfil.EliminarDetalle(ID);
 
-                    if(Rpta.Equals("OK"))
+                    //agrega los examenes
+                    foreach (DataGridViewRow item in this.dgvSeleccionados.Rows)
+                    {
+                        tabla_seleccionados.Rows.Add(item.Cells["IDExamen"].Value);
+                    }
+
+                    if (Rpta.Equals("OK"))
                     {
                         //Vamos a modificar un Paciente
                         Rpta = MPerfil.Editar(ID, this.txtNombre.Text, Convert.ToDouble(this.txtPrecio1.Text), Convert.ToDouble(this.txtPrecio2.Text), Titulo, Convert.ToInt32(cbLabRef.SelectedValue), Convert.ToInt32(txtPrecioRef.Text), tabla_seleccionados);
-
                     }
                     else
                     {
-                        MessageBox.Show("Error");
+                        Rpta = "NO";
                     }
 
                 }

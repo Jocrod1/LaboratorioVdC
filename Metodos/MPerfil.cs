@@ -87,9 +87,9 @@ namespace Metodos
 
         public static string EliminarDetalle(int id)
         {
-            DDetalle_Perfil Objeto = new DDetalle_Perfil();
+            DPerfil Objeto = new DPerfil();
             Objeto.ID = id;
-            return Objeto.Eliminar(Objeto);
+            return Objeto.EliminarDetalle(Objeto);
         }
     }
 }
