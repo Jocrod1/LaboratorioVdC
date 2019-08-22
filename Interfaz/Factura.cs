@@ -275,32 +275,6 @@ namespace Interfaz
         private void GuardarExamenesEnDt()
         {
 
-            foreach (DataGridViewRow item in this.dgvResumenExamenes.Rows)
-            {
-
-                ID = Convert.ToInt32(item.Cells["ID"].Value);
-                IDDetalle = Convert.ToInt32(item.Cells["ID"].Value);
-                var standard = MPerfil.MostrarDetalle(ID);
-
-                foreach (var wea in standard)
-                {
-                    ConjuntoDeIDExamenes.Rows.Add(wea.IDExamen);
-                }
-
-
-            }
-            
-                
-
-            
-
-                
-
-
-            
-            
-
-
 
             foreach (DataRow item in TablaSeleccionados.Rows)
             {
@@ -315,8 +289,41 @@ namespace Interfaz
                         
                 }
 
+            }//fin del foreach para separar cuales son los perfiles y cuales los examenes de la TablaSeleccionados
 
-            }
+
+
+
+
+            foreach (DataRow item in ExamenesParaGuardar.Rows)
+            {
+
+                string Tipo = Convert.ToString(item[0]);
+
+                if (Tipo.Equals("Examen"))
+                {
+
+                    ConjuntoDeIDExamenes.Rows.Add(item[1]); //ya que es un examen solo, se guarda el ID directamente
+
+                }
+                else if (Tipo.Equals("Perfil"))
+                {
+
+                    //item[2] este es el ID del perfil 
+
+                    ID = Convert.ToInt32(item[2]);
+                    IDDetalle = Convert.ToInt32(item[2]);
+                    var standard = MPerfil.MostrarDetalle(ID);
+
+                    foreach (var wea in standard)
+                    {
+                        ConjuntoDeIDExamenes.Rows.Add(wea.IDExamen);
+                    }
+
+
+                }
+
+            } //fin del foreach para guardar los ID en ConjuntoDeIDExamenes
 
 
         }
@@ -449,7 +456,7 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
-                Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69, "C", 3, "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble(69), Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble(69), ExamenesParaGuardar);
+                //Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69, "C", 3, "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble(69), Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble(69), ExamenesParaGuardar);
 
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -841,17 +848,40 @@ namespace Interfaz
         {
 
 
-            string registrosID;
+            GuardarExamenesEnDt(); //aqui guardo en la tabla ExamenesParaGuardar los examenes que se seleccionaron y tambien guardo las ID de los examenes en ConjuntoDeIDExamenes.
 
 
-            foreach (DataRow item in ConjuntoDeIDExamenes.Rows)
+            if (ExamenesParaGuardar.Rows.Count == 0)
+            {
+                MessageBox.Show("Uh, examenes pa guardar ta vacio tambien");
+            }
+            else
+            {
+                MessageBox.Show("Hey! ya no ta vacio :D");
+            }
+
+
+
+
+            if (ConjuntoDeIDExamenes.Rows.Count == 0)
             {
 
-                registrosID = Convert.ToString(item);
+                MessageBox.Show("La wea esta vacia hermano");
 
+            }
+            else
+            {
+
+                foreach (DataRow item in ConjuntoDeIDExamenes.Rows)
+                {
+
+                    MessageBox.Show("El ID del examen es: " + item[0] + "");
+
+                }
 
             }
 
+            
 
 
         }
