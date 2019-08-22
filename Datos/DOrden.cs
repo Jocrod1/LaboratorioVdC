@@ -287,6 +287,93 @@ public string NombreTurno1
             return respuesta;
         }
 
+        //cargar
+        public string Cargar(DOrden Orden, List<DDetalle_Orden> Detalle)
+        {
+            string respuesta = "";
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
+
+                //transaccion
+                SqlTransaction SqlTransaccion = SqlConectar.BeginTransaction();
+
+                //comandos
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.Transaction = SqlTransaccion;
+                SqlComando.CommandText = "cargar_orden";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametros
+
+                //parametro id
+                SqlParameter Parametro_Id = new SqlParameter();
+                Parametro_Id.ParameterName = "@ID";
+                Parametro_Id.SqlDbType = SqlDbType.Int;
+                Parametro_Id.Value = Orden.ID;
+                SqlComando.Parameters.Add(Parametro_Id);
+
+                //parametro id bioanalista
+                SqlParameter Parametro_ID_Bioanalista = new SqlParameter();
+                Parametro_ID_Bioanalista.ParameterName = "@IDBioanalista";
+                Parametro_ID_Bioanalista.SqlDbType = SqlDbType.Int;
+                Parametro_ID_Bioanalista.Value = Orden.IDBioanalista;
+                SqlComando.Parameters.Add(Parametro_ID_Bioanalista);
+
+
+                //ejecuta y lo envia en comentario
+                respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el registro de la carga de la orden";
+
+                if (respuesta.Equals("OK"))
+                {
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
+
+                    foreach (DDetalle_Orden det in Detalle)
+                    {
+                        det.IDOrden = this.ID;
+
+                        //llamar al insertar
+                        respuesta = det.InsertarCarga(det, ref SqlConectar, ref SqlTransaccion);
+
+                        if (!respuesta.Equals("OK"))
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if (respuesta.Equals("OK"))
+                {
+                    SqlTransaccion.Commit();
+                }
+                else
+                {
+                    //si recibe una respuesta contraria se niega la transaccion
+                    SqlTransaccion.Rollback();
+                }
+
+            }
+            catch (Exception excepcion)
+            {
+                respuesta = excepcion.Message;
+            }
+
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
+            return respuesta;
+        }
+
         //mostrar y buscar
         public List<DOrden> Mostrar(int limite, string TextoBuscar)
         {
@@ -437,6 +524,8 @@ public string NombreTurno1
             return respuesta;
 
         }
+
+
 
     }
 }
