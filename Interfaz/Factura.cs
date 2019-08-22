@@ -15,6 +15,8 @@ namespace Interfaz
     public partial class Factura : Form
     {
 
+        internal static string id_trabajador;
+
         public DateTime ValorFUR;
 
         public int Edad;
@@ -30,6 +32,8 @@ namespace Interfaz
         private int IDDetalle;
 
         private DataTable ConjuntoDeIDExamenes;
+
+        private string TipoPagoEoT;
 
 
         public Factura()
@@ -252,6 +256,8 @@ namespace Interfaz
 
             this.ConjuntoDeIDExamenes = new DataTable("ConjuntoDeIDExamenes");
             this.ConjuntoDeIDExamenes.Columns.Add("IDExamen", System.Type.GetType("System.Int32")); //id de los examenes individualmente
+            this.ConjuntoDeIDExamenes.Columns.Add("ID", System.Type.GetType("System.Int32")); //id 
+            this.ConjuntoDeIDExamenes.Columns.Add("IDOrden", System.Type.GetType("System.Int32")); //id de la orden
 
             
             
@@ -428,6 +434,8 @@ namespace Interfaz
 
             CedulaCompleta = this.cbCedula.Text + this.txtCiPaciente.Text;
 
+            
+
             try
             {
                 string Rpta = "";
@@ -456,7 +464,11 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
-                //Rpta2 = MFactura.Insertar(IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), Convert.ToInt32(cbIdEmpresa.SelectedValue), 69, "C", 3, "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble(69), Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble(69), ExamenesParaGuardar);
+                Rpta2 = MFactura.Facturar(1004, "123", Convert.ToInt32(this.cbMedico.SelectedValue), 1,
+                    DateTime.Now.Date, ConjuntoDeIDExamenes, IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), 
+                    Convert.ToInt32(cbIdEmpresa.SelectedValue), 2, TipoPagoEoT, Convert.ToInt32(this.cbIdBanco.SelectedValue), 
+                    "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble("69"), 
+                    Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble("69"), ExamenesParaGuardar);
 
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -797,8 +809,8 @@ namespace Interfaz
                 lblMotivo.Show();
                 txtMotivo.Show();
 
-                rbContado.Enabled = false;
-                rbCredito.Enabled = false;
+                rbEfectivo.Enabled = false;
+                rbTarjeta.Enabled = false;
 
                 cbIdBanco.Enabled = false;
                 txtNumCHoT.Enabled = false;
@@ -819,8 +831,8 @@ namespace Interfaz
                 lblMotivo.Hide();
                 txtMotivo.Hide();
 
-                rbContado.Enabled = true;
-                rbCredito.Enabled = true;
+                rbEfectivo.Enabled = true;
+                rbTarjeta.Enabled = true;
 
                 cbIdBanco.Enabled = true;
                 txtNumCHoT.Enabled = true;
@@ -843,6 +855,14 @@ namespace Interfaz
             
 
         }
+
+
+
+
+
+
+
+
 
         private void btnIDExamenesTest_Click(object sender, EventArgs e)
         {
@@ -885,6 +905,39 @@ namespace Interfaz
 
 
         }
+
+        private void rbTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbEfectivo.Checked)
+            {
+                TipoPagoEoT = "Efectivo";
+                cbIdBanco.Enabled = false;
+                txtNumCHoT.Enabled = false;
+            }
+            else if (rbTarjeta.Checked)
+            {
+                TipoPagoEoT = "Tarjeta";
+                cbIdBanco.Enabled = true;
+                txtNumCHoT.Enabled = true;
+            }
+        }
+
+        private void rbEfectivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbEfectivo.Checked)
+            {
+                TipoPagoEoT = "Efectivo";
+                cbIdBanco.Enabled = false;
+                txtNumCHoT.Enabled = false;
+            }
+            else if (rbTarjeta.Checked)
+            {
+                TipoPagoEoT = "Tarjeta";
+                cbIdBanco.Enabled = true;
+                txtNumCHoT.Enabled = true;
+            }
+        }
+
 
         
                   

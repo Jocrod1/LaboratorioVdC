@@ -70,6 +70,7 @@
             this.dgvSeleccionados = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabFinalizar = new System.Windows.Forms.TabPage();
+            this.btnIDExamenesTest = new System.Windows.Forms.Button();
             this.txtAbonar = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtRecEmergencia = new System.Windows.Forms.TextBox();
@@ -89,8 +90,8 @@
             this.lblExoNo = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbCredito = new System.Windows.Forms.RadioButton();
-            this.rbContado = new System.Windows.Forms.RadioButton();
+            this.rbTarjeta = new System.Windows.Forms.RadioButton();
+            this.rbEfectivo = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.lblPrecioTotal = new System.Windows.Forms.Label();
@@ -107,7 +108,6 @@
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnIDExamenesTest = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -633,6 +633,16 @@
             this.tabFinalizar.TabIndex = 2;
             this.tabFinalizar.Text = "Finalizar";
             // 
+            // btnIDExamenesTest
+            // 
+            this.btnIDExamenesTest.Location = new System.Drawing.Point(954, 173);
+            this.btnIDExamenesTest.Name = "btnIDExamenesTest";
+            this.btnIDExamenesTest.Size = new System.Drawing.Size(75, 57);
+            this.btnIDExamenesTest.TabIndex = 106;
+            this.btnIDExamenesTest.Text = "TEST IDEXAMEN";
+            this.btnIDExamenesTest.UseVisualStyleBackColor = true;
+            this.btnIDExamenesTest.Click += new System.EventHandler(this.btnIDExamenesTest_Click);
+            // 
             // txtAbonar
             // 
             this.txtAbonar.BackColor = System.Drawing.SystemColors.Control;
@@ -846,37 +856,39 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbCredito);
-            this.groupBox1.Controls.Add(this.rbContado);
+            this.groupBox1.Controls.Add(this.rbTarjeta);
+            this.groupBox1.Controls.Add(this.rbEfectivo);
             this.groupBox1.Location = new System.Drawing.Point(388, 194);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(255, 43);
             this.groupBox1.TabIndex = 89;
             this.groupBox1.TabStop = false;
             // 
-            // rbCredito
+            // rbTarjeta
             // 
-            this.rbCredito.AutoSize = true;
-            this.rbCredito.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbCredito.Location = new System.Drawing.Point(48, 19);
-            this.rbCredito.Name = "rbCredito";
-            this.rbCredito.Size = new System.Drawing.Size(57, 17);
-            this.rbCredito.TabIndex = 67;
-            this.rbCredito.TabStop = true;
-            this.rbCredito.Text = "Crédito";
-            this.rbCredito.UseVisualStyleBackColor = true;
+            this.rbTarjeta.AutoSize = true;
+            this.rbTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbTarjeta.Location = new System.Drawing.Point(48, 19);
+            this.rbTarjeta.Name = "rbTarjeta";
+            this.rbTarjeta.Size = new System.Drawing.Size(57, 17);
+            this.rbTarjeta.TabIndex = 67;
+            this.rbTarjeta.TabStop = true;
+            this.rbTarjeta.Text = "Tarjeta";
+            this.rbTarjeta.UseVisualStyleBackColor = true;
+            this.rbTarjeta.CheckedChanged += new System.EventHandler(this.rbTarjeta_CheckedChanged);
             // 
-            // rbContado
+            // rbEfectivo
             // 
-            this.rbContado.AutoSize = true;
-            this.rbContado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbContado.Location = new System.Drawing.Point(166, 19);
-            this.rbContado.Name = "rbContado";
-            this.rbContado.Size = new System.Drawing.Size(64, 17);
-            this.rbContado.TabIndex = 68;
-            this.rbContado.TabStop = true;
-            this.rbContado.Text = "Contado";
-            this.rbContado.UseVisualStyleBackColor = true;
+            this.rbEfectivo.AutoSize = true;
+            this.rbEfectivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbEfectivo.Location = new System.Drawing.Point(166, 19);
+            this.rbEfectivo.Name = "rbEfectivo";
+            this.rbEfectivo.Size = new System.Drawing.Size(63, 17);
+            this.rbEfectivo.TabIndex = 68;
+            this.rbEfectivo.TabStop = true;
+            this.rbEfectivo.Text = "Efectivo";
+            this.rbEfectivo.UseVisualStyleBackColor = true;
+            this.rbEfectivo.CheckedChanged += new System.EventHandler(this.rbEfectivo_CheckedChanged);
             // 
             // label5
             // 
@@ -1049,16 +1061,6 @@
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnIDExamenesTest
-            // 
-            this.btnIDExamenesTest.Location = new System.Drawing.Point(954, 173);
-            this.btnIDExamenesTest.Name = "btnIDExamenesTest";
-            this.btnIDExamenesTest.Size = new System.Drawing.Size(75, 57);
-            this.btnIDExamenesTest.TabIndex = 106;
-            this.btnIDExamenesTest.Text = "TEST IDEXAMEN";
-            this.btnIDExamenesTest.UseVisualStyleBackColor = true;
-            this.btnIDExamenesTest.Click += new System.EventHandler(this.btnIDExamenesTest_Click);
-            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1151,8 +1153,8 @@
         private System.Windows.Forms.RadioButton lblExoNo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbCredito;
-        private System.Windows.Forms.RadioButton rbContado;
+        private System.Windows.Forms.RadioButton rbTarjeta;
+        private System.Windows.Forms.RadioButton rbEfectivo;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.Label label16;

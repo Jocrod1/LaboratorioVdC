@@ -29,8 +29,8 @@ namespace Metodos
                 DDetalle_Orden Detalle = new DDetalle_Orden();
 
                 //voy a poner que se agregue el id mientras tanto
-                Detalle.ID = Convert.ToInt32(row["ID"].ToString());
-                Detalle.IDOrden = Convert.ToInt32(row["IDOrden"].ToString());
+                //Detalle.ID = Convert.ToInt32(row["ID"].ToString());
+                //Detalle.IDOrden = Convert.ToInt32(row["IDOrden"].ToString());
                 Detalle.IDExamen = Convert.ToInt32(row["IDExamen"].ToString());
 
                 DetalleOrden.Add(Detalle);
