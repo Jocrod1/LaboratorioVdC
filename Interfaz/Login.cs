@@ -125,6 +125,9 @@ namespace Interfaz
                 MenuInicio.nombre = Datos.Rows[0][1].ToString();
                 MenuInicio.acceso = Datos.Rows[0][2].ToString();
 
+                //esto es para ponerle valor en factura al id del trabajador
+                //Factura.id_trabajador= Datos.Rows[0][0].ToString();
+
                 MessageBox.Show("Bienvenido/a " + Datos.Rows[0][1].ToString(), "Laboratorio", MessageBoxButtons.OK);
 
                 MenuInicio Menu = new MenuInicio();

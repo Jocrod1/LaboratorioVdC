@@ -70,13 +70,21 @@ public int PrecioRef
         }
 
 
+        private string _Nombre_LabRef;
+
+        public string Nombre_LabRef
+        {
+            get { return _Nombre_LabRef; }
+            set { _Nombre_LabRef = value; }
+        }
+
 
         public DPerfil()
         {
 
         }
 
-        public DPerfil(int iD, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef, string estado)
+        public DPerfil(int iD, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef, string estado, string nombre_labref)
         {
             ID = iD;
             Nombre = nombre;
@@ -86,6 +94,7 @@ public int PrecioRef
             LabRef = labRef;
             PrecioRef = precioRef;
             Estado = estado;
+            Nombre_LabRef = nombre_labref;
         }
 
 
@@ -507,9 +516,10 @@ public int PrecioRef
                         Precio1=LeerFilas.GetDouble(2),
                         Precio2= LeerFilas.GetDouble(3),
                         Titulo= LeerFilas.GetBoolean(4),
-                        LabRef= LeerFilas.GetInt32(5),
+                        Nombre_LabRef=LeerFilas.GetString(5),
                         PrecioRef= LeerFilas.GetInt32(6),
-                        Estado=LeerFilas.GetString(7)
+                        LabRef = LeerFilas.GetInt32(7),
+                        Estado =LeerFilas.GetString(8)
                     });
                 }
                 LeerFilas.Close();
