@@ -14,6 +14,7 @@ namespace Interfaz
 {
     public partial class Factura : Form
     {
+        LimitantesDeIngreso lim = new LimitantesDeIngreso();
 
         internal static string id_trabajador;
 
@@ -948,6 +949,46 @@ namespace Interfaz
                 cbIdBanco.Enabled = true;
                 txtNumCHoT.Enabled = true;
             }
+        }
+
+        private void txtRecEmergencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloNumerosyPuntos(e);
+        }
+
+        private void txtNumCHoT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloNumerosyPuntos(e);
+        }
+
+        private void txtAbonar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloNumerosyPuntos(e);
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloNumerosyPuntos(e);
+        }
+
+        private void txtMotivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloLetras(e);
+        }
+
+        private void txtBuscarExamen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloLetras(e);
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloNumeros(e);
+        }
+
+        private void cbMedico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
 

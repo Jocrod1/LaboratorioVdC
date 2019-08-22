@@ -143,18 +143,18 @@ namespace Interfaz
             this.Mostrar();
         }
 
-        private void DobleClick()
-        {
-            Limpiar();
-            Habilitar();
-
-            //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
-
-            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreExamen"].Value);
-
-            //Editar();
-            txtNombre.Enabled = false;
-            txtResultado.Focus();
+        private void DobleClick()
+        {
+            Limpiar();
+            Habilitar();
+
+            //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
+
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreExamen"].Value);
+
+            //Editar();
+            txtNombre.Enabled = false;
+            txtResultado.Focus();
         }
 
 
@@ -172,16 +172,16 @@ namespace Interfaz
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             lim.soloLetras(e);
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            Mostrar();
-        }
-
-        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DobleClick();
-        }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Mostrar();
+        }
+
+        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DobleClick();
+        }
     }
 }

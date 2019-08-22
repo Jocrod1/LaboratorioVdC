@@ -38,7 +38,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.cbTipoPaciente = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtCiPaciente = new System.Windows.Forms.TextBox();
             this.cbCedula = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,12 +56,9 @@
             this.tabExam = new System.Windows.Forms.TabPage();
             this.dgvExamenes = new System.Windows.Forms.DataGridView();
             this.txtBuscarExamen = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPerf = new System.Windows.Forms.TabPage();
             this.dgvPerfiles = new System.Windows.Forms.DataGridView();
             this.txtBuscarPerfiles = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtBuscarSeleccionados = new System.Windows.Forms.TextBox();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -108,6 +104,10 @@
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblFaseActual = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPaciente.SuspendLayout();
             this.tabExamenes.SuspendLayout();
@@ -115,11 +115,8 @@
             this.tabControl2.SuspendLayout();
             this.tabExam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPerf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).BeginInit();
             this.tabFinalizar.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -127,6 +124,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenExamenes)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -207,6 +207,7 @@
             this.cbMedico.Name = "cbMedico";
             this.cbMedico.Size = new System.Drawing.Size(257, 33);
             this.cbMedico.TabIndex = 113;
+            this.cbMedico.SelectedIndexChanged += new System.EventHandler(this.cbMedico_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -241,23 +242,6 @@
             this.label1.Size = new System.Drawing.Size(125, 25);
             this.label1.TabIndex = 112;
             this.label1.Text = "Tipo paciente:";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(868, 121);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(25, 25);
-            this.btnCancelar.TabIndex = 110;
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtCiPaciente
             // 
@@ -394,6 +378,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(257, 26);
             this.txtTelefono.TabIndex = 99;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label13
             // 
@@ -476,16 +461,7 @@
             this.txtBuscarExamen.Size = new System.Drawing.Size(248, 20);
             this.txtBuscarExamen.TabIndex = 10;
             this.txtBuscarExamen.TextChanged += new System.EventHandler(this.txtBuscarExamen_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(275, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 20);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.txtBuscarExamen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarExamen_KeyPress);
             // 
             // tabPerf
             // 
@@ -519,26 +495,6 @@
             this.txtBuscarPerfiles.Size = new System.Drawing.Size(248, 20);
             this.txtBuscarPerfiles.TabIndex = 14;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(275, 18);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 20);
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(852, 68);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 20);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
             // txtBuscarSeleccionados
             // 
             this.txtBuscarSeleccionados.Location = new System.Drawing.Point(598, 68);
@@ -549,6 +505,7 @@
             // 
             // btnAnadir
             // 
+            this.btnAnadir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnadir.Location = new System.Drawing.Point(394, 354);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(50, 26);
@@ -568,6 +525,7 @@
             // 
             // btnQuitar
             // 
+            this.btnQuitar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitar.Location = new System.Drawing.Point(953, 354);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(50, 26);
@@ -635,6 +593,7 @@
             // 
             // btnIDExamenesTest
             // 
+            this.btnIDExamenesTest.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIDExamenesTest.Location = new System.Drawing.Point(954, 173);
             this.btnIDExamenesTest.Name = "btnIDExamenesTest";
             this.btnIDExamenesTest.Size = new System.Drawing.Size(75, 57);
@@ -654,6 +613,7 @@
             this.txtAbonar.Name = "txtAbonar";
             this.txtAbonar.Size = new System.Drawing.Size(257, 26);
             this.txtAbonar.TabIndex = 105;
+            this.txtAbonar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbonar_KeyPress);
             // 
             // label21
             // 
@@ -677,6 +637,7 @@
             this.txtRecEmergencia.Name = "txtRecEmergencia";
             this.txtRecEmergencia.Size = new System.Drawing.Size(257, 26);
             this.txtRecEmergencia.TabIndex = 103;
+            this.txtRecEmergencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecEmergencia_KeyPress);
             // 
             // label20
             // 
@@ -700,6 +661,7 @@
             this.txtNumCHoT.Name = "txtNumCHoT";
             this.txtNumCHoT.Size = new System.Drawing.Size(257, 26);
             this.txtNumCHoT.TabIndex = 101;
+            this.txtNumCHoT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCHoT_KeyPress);
             // 
             // label19
             // 
@@ -772,6 +734,7 @@
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(257, 26);
             this.txtDescuento.TabIndex = 95;
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
             // label16
             // 
@@ -795,6 +758,7 @@
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.Size = new System.Drawing.Size(257, 26);
             this.txtMotivo.TabIndex = 93;
+            this.txtMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMotivo_KeyPress);
             // 
             // lblMotivo
             // 
@@ -903,6 +867,7 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Location = new System.Drawing.Point(936, 343);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(113, 23);
@@ -1061,6 +1026,53 @@
             this.lblFaseActual.Text = "Fase Actual";
             this.lblFaseActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(868, 121);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(25, 25);
+            this.btnCancelar.TabIndex = 110;
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(275, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 20);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(275, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(36, 20);
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(852, 68);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(36, 20);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1082,12 +1094,9 @@
             this.tabExam.ResumeLayout(false);
             this.tabExam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPerf.ResumeLayout(false);
             this.tabPerf.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).EndInit();
             this.tabFinalizar.ResumeLayout(false);
             this.tabFinalizar.PerformLayout();
@@ -1098,6 +1107,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvResumenExamenes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
