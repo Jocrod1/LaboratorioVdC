@@ -121,6 +121,7 @@ public string NombreTurno1
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
+                SqlComando.Transaction = SqlTransaccion;
                 SqlComando.CommandText = "insertar_orden";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
@@ -195,6 +196,7 @@ public string NombreTurno1
             catch (Exception excepcion)
             {
                 respuesta = excepcion.Message;
+                System.Windows.Forms.MessageBox.Show(excepcion.Message);
             }
 
             return respuesta;

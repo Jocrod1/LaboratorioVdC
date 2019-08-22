@@ -35,6 +35,7 @@ namespace Interfaz
 
         private string TipoPagoEoT;
 
+        private bool NuevoPaciente=false;
 
         public Factura()
         {
@@ -440,7 +441,15 @@ namespace Interfaz
             {
                 string Rpta = "";
 
-                Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR);
+                if(NuevoPaciente==false)
+                {
+                    Rpta = MPaciente.Insertar(this.txtNombre.Text, Convert.ToDateTime(dtNacimiento.Text), this.txtSexo.Text, (this.cbCedula.Text + this.txtCiPaciente.Text), txtTelefono.Text, ValorFUR);
+                }
+                else
+                {
+                    NuevoPaciente = false;
+                }
+
 
 
                 //Si la respuesta fue OK, fue porque se modificó
@@ -464,7 +473,7 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
-                Rpta2 = MFactura.Facturar(1004, "123", Convert.ToInt32(this.cbMedico.SelectedValue), 1,
+                Rpta2 = MFactura.Facturar(1, "123", Convert.ToInt32(this.cbMedico.SelectedValue), 1,
                     DateTime.Now.Date, ConjuntoDeIDExamenes, IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), 
                     Convert.ToInt32(cbIdEmpresa.SelectedValue), 2, TipoPagoEoT, Convert.ToInt32(this.cbIdBanco.SelectedValue), 
                     "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble("69"), 
@@ -733,6 +742,7 @@ namespace Interfaz
                         this.TablaResultadosCI.Columns.Add("Precio1", System.Type.GetType("System.Double"));
                         this.TablaResultadosCI.Columns.Add("Precio2", System.Type.GetType("System.Double"));
 
+                        NuevoPaciente = true;
                         
                         txtNombre.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Nombre;
                         txtSexo.Text = MPaciente.CedulaUnica(this.cbCedula.Text + this.txtCiPaciente.Text)[0].Sexo;

@@ -46,13 +46,6 @@ public int IDPerfil
   get { return _IDPerfil; }
   set { _IDPerfil = value; }
 }
-private int _IDDetalleOrden;
-
-public int IDDetalleOrden
-{
-    get { return _IDDetalleOrden; }
-    set { _IDDetalleOrden = value; }
-}
 
 
         public DDetalle_Factura()
@@ -60,14 +53,13 @@ public int IDDetalleOrden
 
         }
 
-        public DDetalle_Factura(int iD, int iDFactura, string examenPerfil, int iDExamen, int iDPerfil, int iDDetalleOrden)
+        public DDetalle_Factura(int iD, int iDFactura, string examenPerfil, int iDExamen, int iDPerfil)
         {
             ID = iD;
             IDFactura = iDFactura;
             ExamenPerfil = examenPerfil;
             IDExamen = iDExamen;
             IDPerfil = iDPerfil;
-            IDDetalleOrden = iDDetalleOrden;
         }
 
 
@@ -124,13 +116,6 @@ public int IDDetalleOrden
                 Parametro_Id_Perfil.Value = Detalle_Factura.IDPerfil;
                 SqlComando.Parameters.Add(Parametro_Id_Perfil);
 
-                //parametro id detalle orden
-                SqlParameter Parametro_Id_Detalle_Orden = new SqlParameter();
-                Parametro_Id_Detalle_Orden.ParameterName = "@IDDetalleOrden";
-                Parametro_Id_Detalle_Orden.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Detalle_Orden.Value = Detalle_Factura.IDDetalleOrden;
-                SqlComando.Parameters.Add(Parametro_Id_Detalle_Orden);
-
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el detalle de factura";
 
@@ -138,6 +123,7 @@ public int IDDetalleOrden
             catch (Exception excepcion)
             {
                 respuesta = excepcion.Message;
+
             }
 
             return respuesta;
