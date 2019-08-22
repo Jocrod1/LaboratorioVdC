@@ -113,9 +113,17 @@ namespace Interfaz
             }
         }
 
+        private void RegistroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Paciente frmPaciente = new Paciente();
+            frmPaciente.MdiParent = this;
+            frmPaciente.Show();
+        }
+
         private void trabajadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Trabajador frmtrabajador = new Trabajador();
+            frmtrabajador.MdiParent = this;
             frmtrabajador.Show();
 
         }

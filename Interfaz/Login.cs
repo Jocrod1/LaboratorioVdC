@@ -15,6 +15,8 @@ namespace Interfaz
     public partial class Login : Form
     {
 
+        LimitantesDeIngreso valid = new LimitantesDeIngreso();
+
         private bool ojos = true;
         public Login()
         {
@@ -30,8 +32,7 @@ namespace Interfaz
             txtcontraseña.Text = "Contraseña";
             txtcontraseña.UseSystemPasswordChar = false;
 
-            txtusuario.Enabled = false;
-            cbCedula.Focus();
+            txtusuario.Focus();
         }
         // weas para que se vea bonito, para que se coloque la descripcion en el txtbox si no se ha rellenado
         private void txtUserEnter(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace Interfaz
         }
 
         //Validación de campos del login 
-        private bool valid()
+        private bool validar()
         {
             bool error = true;
             if (txtusuario.Text == "")
@@ -88,15 +89,14 @@ namespace Interfaz
             if (txtcontraseña.Text == "")
             {
                 error = false;
-                errorProvider2.SetError(txtcontraseña, "¡Escribe tu contraseña!");
+                errorProvider1.SetError(txtcontraseña, "¡Escribe tu contraseña!");
             }
             return error;
         }
         //Eliminación de los errores 
         private void SinErrores()
         {
-            errorProvider1.SetError(txtcontraseña, "");
-            errorProvider2.SetError(txtusuario, "");
+            errorProvider1.Clear();
         } 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -106,7 +106,7 @@ namespace Interfaz
         private void Acceso()
         {
             SinErrores();
-            if (valid())
+            if (validar())
             {
                 MessageBox.Show("¡Ingresando al sistema!", "Accediendo...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             } 
@@ -183,7 +183,16 @@ namespace Interfaz
 
         private void Login_Load(object sender, EventArgs e)
         {
+            txtusuario.Focus();
+        }
 
+        private void Txtusuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtusuario, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtusuario, "En este campo solo se pueden ingresar números");
+            }
         }
     }
 }

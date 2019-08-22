@@ -44,7 +44,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mostrar_contraseña)).BeginInit();
@@ -53,7 +52,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,8 +80,11 @@
             this.txtusuario.Location = new System.Drawing.Point(174, 191);
             this.txtusuario.MaxLength = 50;
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(180, 30);
+            this.txtusuario.Size = new System.Drawing.Size(180, 33);
             this.txtusuario.TabIndex = 96;
+            this.txtusuario.Enter += new System.EventHandler(this.txtUserEnter);
+            this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtusuario_KeyPress);
+            this.txtusuario.Leave += new System.EventHandler(this.txtUserLeave);
             // 
             // cbCedula
             // 
@@ -97,7 +98,7 @@
             "E-"});
             this.cbCedula.Location = new System.Drawing.Point(102, 190);
             this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 29);
+            this.cbCedula.Size = new System.Drawing.Size(64, 33);
             this.cbCedula.TabIndex = 95;
             this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
@@ -140,7 +141,7 @@
             this.txtcontraseña.Location = new System.Drawing.Point(99, 236);
             this.txtcontraseña.MaxLength = 50;
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(255, 30);
+            this.txtcontraseña.Size = new System.Drawing.Size(255, 33);
             this.txtcontraseña.TabIndex = 2;
             this.txtcontraseña.Enter += new System.EventHandler(this.txtPassEnter);
             this.txtcontraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcontraseña_KeyDown);
@@ -154,14 +155,14 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(102, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 31);
+            this.label3.Size = new System.Drawing.Size(255, 34);
             this.label3.TabIndex = 8;
             this.label3.Text = "Ingreso al sistema";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(191)))), ((int)(((byte)(33)))));
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -222,11 +223,6 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // errorProvider2
-            // 
-            this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider2.ContainerControl = this;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,7 +243,6 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,7 +260,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.PictureBox mostrar_contraseña;
         private System.Windows.Forms.ComboBox cbCedula;
         private System.Windows.Forms.TextBox txtusuario;
