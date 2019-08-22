@@ -19,7 +19,7 @@ namespace Interfaz
             this.toolTip1.SetToolTip(this.dtDesde, "Fecha");
             this.toolTip1.SetToolTip(this.dtHasta, "Fecha");
             this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
-
+            this.toolTip1.SetToolTip(this.label1, "Cantidad de elementos a buscar");
         }
 
         private void RegistroAcceso_Load(object sender, EventArgs e)
