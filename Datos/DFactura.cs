@@ -164,7 +164,6 @@ public double Total
                 if (respuesta.Equals("OK"))
                 {
                     Factura.IDOrden = Identidad;
-
                     respuesta = Factura.Insertar(Factura, DetalleFactura, ref sqlconectar, ref SqlTransaccion);
 
                 }
@@ -206,6 +205,7 @@ public double Total
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
+                SqlComando.Transaction = SqlTransaccion;
                 SqlComando.CommandText = "insertar_factura";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
@@ -325,11 +325,11 @@ public double Total
 
                 if(respuesta.Equals("OK"))
                 {
-                    this.ID = Convert.ToInt32(SqlComando.Parameters["ID"].Value);
+                    this.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
 
                     foreach(DDetalle_Factura det in Detalle)
                     {
-                        det.ID = this.ID;
+                        det.IDFactura = this.ID;
 
                         //llamar a insertar
                         respuesta = det.Insertar(det, ref SqlConectar, ref SqlTransaccion);
@@ -344,6 +344,7 @@ public double Total
             catch (Exception excepcion)
             {
                 respuesta = excepcion.Message;
+                System.Windows.Forms.MessageBox.Show(excepcion.Message);
             }
 
             return respuesta;
