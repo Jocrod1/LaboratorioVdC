@@ -479,6 +479,8 @@ namespace Interfaz
                     "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble("69"), 
                     Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble("69"), ExamenesParaGuardar);
 
+                MessageBox.Show("Factura Realizada Correctamente");
+
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
                 //de forma correcta

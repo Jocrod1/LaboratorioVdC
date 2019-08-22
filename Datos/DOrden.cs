@@ -288,7 +288,7 @@ public string NombreTurno1
         }
 
         //cargar
-        public string Cargar(DOrden Orden, List<DDetalle_Orden> Detalle)
+        public string Cargar(DOrden Orden)
         {
             string respuesta = "";
             SqlConnection SqlConectar = new SqlConnection();
@@ -299,13 +299,9 @@ public string NombreTurno1
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
                 SqlConectar.Open();
 
-                //transaccion
-                SqlTransaction SqlTransaccion = SqlConectar.BeginTransaction();
-
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.Transaction = SqlTransaccion;
                 SqlComando.CommandText = "cargar_orden";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
@@ -328,34 +324,6 @@ public string NombreTurno1
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el registro de la carga de la orden";
-
-                if (respuesta.Equals("OK"))
-                {
-                    this.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
-
-                    foreach (DDetalle_Orden det in Detalle)
-                    {
-                        det.IDOrden = this.ID;
-
-                        //llamar al insertar
-                        respuesta = det.InsertarCarga(det, ref SqlConectar, ref SqlTransaccion);
-
-                        if (!respuesta.Equals("OK"))
-                        {
-                            break;
-                        }
-                    }
-                }
-
-                if (respuesta.Equals("OK"))
-                {
-                    SqlTransaccion.Commit();
-                }
-                else
-                {
-                    //si recibe una respuesta contraria se niega la transaccion
-                    SqlTransaccion.Rollback();
-                }
 
             }
             catch (Exception excepcion)

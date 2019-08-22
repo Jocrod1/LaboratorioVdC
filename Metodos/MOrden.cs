@@ -11,22 +11,18 @@ namespace Metodos
     public class MOrden:DOrden
     {
 
-        public static string Cargar(int IDBioanalista, DataTable DtDetalles)
+        public static string Cargar(int IDBioanalista)
         {
             DOrden Objeto = new DOrden();
             Objeto.IDBioanalista = IDBioanalista;
+            return Objeto.Cargar(Objeto);
+        }
 
-            List<DDetalle_Orden> Detalles = new List<DDetalle_Orden>();
-            foreach (DataRow row in DtDetalles.Rows)
-            {
-                DDetalle_Orden Detalle = new DDetalle_Orden();
-
-                //voy a poner que se agregue el id mientras tanto
-                Detalle.Resultado = Convert.ToString(row["Resultado"].ToString());
-
-                Detalles.Add(Detalle);
-            }
-            return Objeto.Cargar(Objeto, Detalles);
+        public static string InsertarCarga(string resultado)
+        {
+            DDetalle_Orden Objeto = new DDetalle_Orden();
+            Objeto.Resultado = resultado;
+            return Objeto.InsertarCarga(Objeto);
         }
 
 
@@ -53,6 +49,12 @@ namespace Metodos
         {
             DOrden Objeto = new DOrden();
             return Objeto.MostrarFechas(limite, cedulausuario, nombrebioanalista, fecha1, fecha2);
+        }
+
+        public static List<DDetalle_Orden> MostrarDetalle(int TextoBuscar)
+        {
+            DDetalle_Orden Objeto = new DDetalle_Orden();
+            return Objeto.MostrarDetalle(TextoBuscar);
         }
 
         public static string Anular(int ID)

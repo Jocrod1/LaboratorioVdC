@@ -23,8 +23,7 @@ namespace Interfaz
         public CargarDatos()
         {
             InitializeComponent();
-            this.toolTip1.SetToolTip(this.btnAnular, "Anular");
-            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
+            this.toolTip1.SetToolTip(this.btnBuscar, "Eliminar");
             this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
             this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
@@ -112,7 +111,7 @@ namespace Interfaz
 
         private void Mostrar()
         {
-            dataListado.DataSource = MOrden.Mostrar(txtBuscar.Text, 100);
+            dataListado.DataSource = MOrden.MostrarDetalle(Convert.ToInt32(txtBuscar.Text));
             dataListado.ClearSelection();
    //         this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
@@ -137,17 +136,29 @@ namespace Interfaz
 
         private void Guardar()
         {
-
+            MOrden.InsertarCarga(txtResultado.Text);
         }
         private void Buscar()
         {
             this.Mostrar();
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void DobleClick()
         {
-            this.Mostrar();
+            Limpiar();
+            Habilitar();
+
+            //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
+
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreExamen"].Value);
+
+            //Editar();
+            txtNombre.Enabled = false;
+            txtResultado.Focus();
         }
+
+
+        //eventos
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
@@ -161,6 +172,16 @@ namespace Interfaz
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             lim.soloLetras(e);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Mostrar();
+        }
+
+        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DobleClick();
         }
     }
 }
