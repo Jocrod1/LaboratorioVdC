@@ -106,11 +106,37 @@ namespace Interfaz
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
-            this.dataListado.Columns[5].Visible = false; 
+            this.dataListado.Columns[5].Visible = false;
             this.dataListado.Columns[6].Visible = false;
-            this.dataListado.Columns[7].Visible = false; 
+            this.dataListado.Columns[7].Visible = false;
             this.dataListado.Columns[8].Visible = false;
+            this.dataListado.Columns[9].Visible = false;
 
+            this.dataListado.Columns[1].HeaderText = "Nombre Empresa/Seguro";
+            this.dataListado.Columns[2].HeaderText = "Porcentaje %";
+            this.dataListado.Columns[3].HeaderText = "Tipo de Precio";
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Porcentaje"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["TipoPrecio"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Emision"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Porcentaje"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["TipoPrecio"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Emision"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
         }
 
 
@@ -122,6 +148,7 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
 
@@ -131,6 +158,7 @@ namespace Interfaz
             dataListado.DataSource = MEmpresaSeguro.MostrarNombre(txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
 
         }
 

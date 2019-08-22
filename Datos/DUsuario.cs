@@ -61,13 +61,21 @@ namespace Datos
             set { _Acceso = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
         public DUsuario()
         {
 
         }
 
-        public DUsuario(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, string Acceso, string TextoBuscar)
+        public DUsuario(string Cedula, string Nombre, string Contraseña, string Direccion, string Telefono, string Correo, string Acceso, string TextoBuscar, string estado)
         {
             this.Cedula = Cedula;
             this.Nombre = Nombre;
@@ -76,6 +84,7 @@ namespace Datos
             this.Telefono = Telefono;
             this.Correo = Correo;
             this.Acceso = Acceso;
+            this.Estado = estado;
         }
 
         //Metodos
@@ -405,6 +414,7 @@ namespace Datos
                         Telefono = LeerFilas.GetString(4),
                         Correo=LeerFilas.GetString(5),
                         Acceso=LeerFilas.GetString(6),
+                        Estado=LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();
@@ -451,6 +461,7 @@ namespace Datos
                         Telefono = LeerFilas.GetString(4),
                         Correo = LeerFilas.GetString(5),
                         Acceso = LeerFilas.GetString(6),
+                        Estado=LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();

@@ -158,21 +158,6 @@ namespace Interfaz
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void Trabajador_Load(object sender, EventArgs e)
         {
 
@@ -217,8 +202,36 @@ namespace Interfaz
             this.dataListado.Columns[2].Visible = false;
             this.dataListado.Columns[3].Visible = false;
             this.dataListado.Columns[4].Visible = false;
+            this.dataListado.Columns[5].Visible = false;
+            this.dataListado.Columns[7].Visible = false;
 
+            //renombrar las otras 
+            this.dataListado.Columns[0].HeaderText = "Cedula";
+            this.dataListado.Columns[1].HeaderText = "Nombre";
+            this.dataListado.Columns[6].HeaderText = "Acceso";
         }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Cedula"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Acceso"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Cedula"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Acceso"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
+        }
+
+
 
 
 
@@ -231,6 +244,7 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
         private void Buscar_Nombre()
@@ -240,9 +254,10 @@ namespace Interfaz
             dataListado.DataSource = MUsuario.Buscar_Nombre(txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
-        void Buscar() {
+        private void Buscar() {
             if (cbBuscar.SelectedIndex == 0)
             {
                 this.Mostrar();

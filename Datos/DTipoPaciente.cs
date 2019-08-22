@@ -50,19 +50,28 @@ namespace Datos
             set { _TipoPago = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
         public DTipoPaciente()
         {
 
         }
 
-        public DTipoPaciente(int iD, string nombre, int tipoPrecio, float porcentaje, string tipoPago)
+        public DTipoPaciente(int iD, string nombre, int tipoPrecio, float porcentaje, string tipoPago, string estado)
         {
             ID = iD;
             Nombre = nombre;
             TipoPrecio = tipoPrecio;
             Porcentaje = porcentaje;
             TipoPago = tipoPago;
+            Estado = estado;
         }
 
         //Metodos
@@ -346,7 +355,8 @@ namespace Datos
                         Nombre = LeerFilas.GetString(1),
                         TipoPrecio = LeerFilas.GetInt32(2),
                         Porcentaje = LeerFilas.GetDouble(3), 
-                        TipoPago = LeerFilas.GetString(4)
+                        TipoPago = LeerFilas.GetString(4),
+                        Estado=LeerFilas.GetString(5)
                     });
                 }
                 LeerFilas.Close();

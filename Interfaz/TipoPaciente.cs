@@ -114,6 +114,7 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
 
@@ -225,9 +226,35 @@ namespace Interfaz
         private void OcultarColumnas()
         {
 
-            this.dataListado.Columns[0].Visible = false; //ID
-            this.dataListado.Columns[3].Visible = false; 
+            this.dataListado.Columns[0].Visible = false; //ID 
+            this.dataListado.Columns[3].Visible = false;
+            this.dataListado.Columns[5].Visible = false;
 
+            //renombrar las otras 
+            this.dataListado.Columns[1].HeaderText = "Nombre";
+            this.dataListado.Columns[2].HeaderText = "Tipo de Precio";
+            this.dataListado.Columns[4].HeaderText = "Tipo de Pago";
+
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["TipoPrecio"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["TipoPago"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["TipoPrecio"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["TipoPago"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
         }
 
 

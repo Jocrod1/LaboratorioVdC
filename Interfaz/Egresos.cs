@@ -132,8 +132,40 @@ namespace Interfaz
         private void OcultarColumnas()
         {
 
-            this.dataListado.Columns[0].Visible = false; //ID
+            this.dataListado.Columns[0].Visible = false; //ID 
+            this.dataListado.Columns[7].Visible = false;
 
+
+            //renombrar las otras 
+            this.dataListado.Columns[1].HeaderText = "Nombre Egreso";
+            this.dataListado.Columns[4].HeaderText = "Precio para Empresa";
+            this.dataListado.Columns[6].HeaderText = "Cuenta Contable";
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Equivalencia"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Precio"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Precio_Empresa"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Tipo"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Cuenta_Contable"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Equivalencia"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Precio"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Precio_Empresa"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Tipo"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Cuenta_Contable"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
         }
 
         private void EliminarItems()
@@ -378,6 +410,7 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
         private void Buscar()

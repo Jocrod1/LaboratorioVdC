@@ -43,17 +43,26 @@ namespace Datos
             set { _ClinicaOHospital = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
         public DMedico()
         {
 
         }
 
-        public DMedico(int IDMedico,string Cedula, string Nombre, string ClinicaOHospital)
+        public DMedico(int IDMedico,string Cedula, string Nombre, string ClinicaOHospital, string estado)
         {
             this.IdMedico = IDMedico;
             this.Cedula = Cedula;
             this.Nombre = Nombre;
             this.ClinicaOHospital = ClinicaOHospital;
+            this.Estado = estado;
         }
 
         public string Insertar(DMedico Medico)
@@ -326,6 +335,7 @@ namespace Datos
                         _Cedula= LeerFilas.GetString(1),
                         Nombre = LeerFilas.GetString(2),
                         ClinicaOHospital= LeerFilas.GetString(3),
+                        Estado=LeerFilas.GetString(4)
                     });
                 }
                 LeerFilas.Close();

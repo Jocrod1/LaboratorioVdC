@@ -47,18 +47,27 @@ namespace Datos
             set { _Colegio_Codigo = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
         public DBioanalista()
         {
 
         }
 
-        public DBioanalista(int iD, string cedula, string nombre, string colegio_Bioanalista, string colegio_Codigo)
+        public DBioanalista(int iD, string cedula, string nombre, string colegio_Bioanalista, string colegio_Codigo, string estado)
         {
             ID = iD;
             Cedula = cedula;
             Nombre = nombre;
             Colegio_Bioanalista = colegio_Bioanalista;
             Colegio_Codigo = colegio_Codigo;
+            Estado = estado;
         }
 
 
@@ -350,7 +359,8 @@ namespace Datos
                         Cedula= LeerFilas.GetString(1),
                         Nombre = LeerFilas.GetString(2),
                         Colegio_Bioanalista = LeerFilas.GetString(3),
-                        Colegio_Codigo = LeerFilas.GetString(4)
+                        Colegio_Codigo = LeerFilas.GetString(4),
+                        Estado=LeerFilas.GetString(5)
                     });
                 }
                 LeerFilas.Close();
@@ -394,7 +404,8 @@ namespace Datos
                         Cedula = LeerFilas.GetString(1),
                         Nombre = LeerFilas.GetString(2),
                         Colegio_Bioanalista = LeerFilas.GetString(3),
-                        Colegio_Codigo = LeerFilas.GetString(4)
+                        Colegio_Codigo = LeerFilas.GetString(4),
+                        Estado=LeerFilas.GetString(5)
                     });
                 }
                 LeerFilas.Close();

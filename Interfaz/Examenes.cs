@@ -241,12 +241,13 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
 
         private void Buscar()
         {
-                this.Mostrar();
+            this.Mostrar();
         }
 
 
@@ -447,16 +448,46 @@ namespace Interfaz
         private void OcultarColumnas()
         {
 
-                this.dataListado.Columns[0].Visible = false; //ID
-                this.dataListado.Columns[3].Visible = false; //val hombre
-                this.dataListado.Columns[4].Visible = false; //val mujer
-                this.dataListado.Columns[7].Visible = false; //plazo entrega
-                this.dataListado.Columns[8].Visible = false; //observacion
-                this.dataListado.Columns[9].Visible = false; //id grupo
-                this.dataListado.Columns[10].Visible = false; //titulo
-                this.dataListado.Columns[11].Visible = false; //id lab ref
-                
+            this.dataListado.Columns[0].Visible = false; //ID 
+            this.dataListado.Columns[3].Visible = false; //val hombre 
+            this.dataListado.Columns[4].Visible = false; //val mujer 
+            this.dataListado.Columns[7].Visible = false; //plazo entrega 
+            this.dataListado.Columns[8].Visible = false; //observacion 
+            this.dataListado.Columns[9].Visible = false; //id grupo 
+            this.dataListado.Columns[10].Visible = false; //titulo 
+            this.dataListado.Columns[11].Visible = false; //id lab ref 
+            this.dataListado.Columns[15].Visible = false;
+
         }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Unidades"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Precio1"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Precio2"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Precio_Referencia"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["GrupoExamen"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["LabRef"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Unidades"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Precio1"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Precio2"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Precio_Referencia"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["GrupoExamen"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["LabRef"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
+        }
+
 
 
 

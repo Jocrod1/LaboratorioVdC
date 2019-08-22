@@ -362,10 +362,33 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
-        void OcultarColumnas() {
+        private void OcultarColumnas()
+        {
             dataListado.Columns[0].Visible = false;
+            dataListado.Columns[4].Visible = false;
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Comienzo"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Final"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Comienzo"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Final"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
         }
 
         private void Buscar()

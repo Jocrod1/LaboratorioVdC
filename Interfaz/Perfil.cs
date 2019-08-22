@@ -67,7 +67,7 @@ namespace Interfaz
 
             dgvExamenes.DataSource = MExamen.Mostrar("");
 
-
+            this.OcultarColumnas();
 
 
             //todo esto es pa ponerle colorcitos al datagridview
@@ -90,6 +90,46 @@ namespace Interfaz
         }
 
         //metodos
+
+        private void OcultarColumnas()
+        {
+
+            this.dataListado.Columns[0].Visible = false; //ID 
+            this.dataListado.Columns[4].Visible = false;
+            this.dataListado.Columns[7].Visible = false;
+
+            //renombrar las otras 
+            this.dataListado.Columns[1].HeaderText = "Nombre Perfil";
+            this.dataListado.Columns[2].HeaderText = "Precio 1";
+            this.dataListado.Columns[3].HeaderText = "Precio 2";
+            this.dataListado.Columns[5].HeaderText = "Laboratorio de Referencia";
+            this.dataListado.Columns[6].HeaderText = "Precio de Referencia";
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["LabRef"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Precio1"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Precio2"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["PrecioRef"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["LabRef"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Precio1"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Precio2"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["PrecioRef"].Style.SelectionBackColor = Color.Brown;
+
+                }
+            }
+        }
 
         private void crearTabla()
         {
@@ -429,12 +469,12 @@ namespace Interfaz
 
         private void Mostrar()
         {
-            //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MPerfil.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
-            // this.OcultarColumnas();
+            this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
 

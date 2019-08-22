@@ -75,6 +75,14 @@ namespace Datos
             set { _Contacto = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
 
         public DEmpresaSeguro()
@@ -82,7 +90,7 @@ namespace Datos
 
         }
 
-        public DEmpresaSeguro(int iD, string nombre, double porcentaje, int tipoPrecio, string emision, string direccion, string rIF, string nIT, string contacto)
+        public DEmpresaSeguro(int iD, string nombre, double porcentaje, int tipoPrecio, string emision, string direccion, string rIF, string nIT, string contacto, string estado)
         {
             ID = iD;
             Nombre = nombre;
@@ -93,6 +101,7 @@ namespace Datos
             RIF = rIF;
             NIT = nIT;
             Contacto = contacto;
+            Estado = estado;
         }
 
         //Metodos
@@ -446,7 +455,8 @@ namespace Datos
                         Direccion=LeerFilas.GetString(5),
                         RIF=LeerFilas.GetString(6),
                         NIT=LeerFilas.GetString(7),
-                        Contacto=LeerFilas.GetString(8)
+                        Contacto=LeerFilas.GetString(8),
+                        Estado=LeerFilas.GetString(9)
                     });
                 }
                 LeerFilas.Close();
@@ -494,7 +504,8 @@ namespace Datos
                         Direccion = LeerFilas.GetString(5),
                         RIF = LeerFilas.GetString(6),
                         NIT = LeerFilas.GetString(7),
-                        Contacto = LeerFilas.GetString(8)
+                        Contacto = LeerFilas.GetString(8),
+                        Estado=LeerFilas.GetString(9)
                     });
                 }
                 LeerFilas.Close();

@@ -40,6 +40,14 @@ namespace Datos
             set { _Final = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
 
         public DTurno()
@@ -47,12 +55,13 @@ namespace Datos
 
         }
 
-        public DTurno(int iD, string nombre, TimeSpan comienzo, TimeSpan final)
+        public DTurno(int iD, string nombre, TimeSpan comienzo, TimeSpan final, string estado)
         {
             ID = iD;
             Nombre = nombre;
             Comienzo = comienzo;
             Final = final;
+            Estado = estado;
         }
 
         //Metodos
@@ -319,7 +328,8 @@ namespace Datos
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
                         Comienzo= LeerFilas.GetTimeSpan(2),
-                        Final=LeerFilas.GetTimeSpan(3)
+                        Final=LeerFilas.GetTimeSpan(3),
+                        Estado=LeerFilas.GetString(4)
                     });
                 }
                 LeerFilas.Close();

@@ -61,6 +61,14 @@ public int PrecioRef
     set { _PrecioRef = value; }
 }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
 
         public DPerfil()
@@ -68,7 +76,7 @@ public int PrecioRef
 
         }
 
-        public DPerfil(int iD, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef)
+        public DPerfil(int iD, string nombre, double precio1, double precio2, bool titulo, int labRef, int precioRef, string estado)
         {
             ID = iD;
             Nombre = nombre;
@@ -77,6 +85,7 @@ public int PrecioRef
             Titulo = titulo;
             LabRef = labRef;
             PrecioRef = precioRef;
+            Estado = estado;
         }
 
 
@@ -499,7 +508,8 @@ public int PrecioRef
                         Precio2= LeerFilas.GetDouble(3),
                         Titulo= LeerFilas.GetBoolean(4),
                         LabRef= LeerFilas.GetInt32(5),
-                        PrecioRef= LeerFilas.GetInt32(6)
+                        PrecioRef= LeerFilas.GetInt32(6),
+                        Estado=LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();

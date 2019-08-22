@@ -61,6 +61,14 @@ namespace Datos
             set { _FUR = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
 
 
@@ -70,7 +78,7 @@ namespace Datos
 
         }
 
-        public DPaciente(int IdPaciente, string Nombre, DateTime FechaNacimiento, string Sexo,string Cedula,string Telefono, DateTime FUR)
+        public DPaciente(int IdPaciente, string Nombre, DateTime FechaNacimiento, string Sexo,string Cedula,string Telefono, DateTime FUR, string estado)
         {
             this.IdPaciente = IdPaciente;
             this.Nombre = Nombre;
@@ -79,6 +87,7 @@ namespace Datos
             this.Cedula= Cedula;
             this.Telefono = Telefono;
             this.FUR = FUR;
+            this.Estado = estado;
         }
 
 
@@ -400,7 +409,8 @@ namespace Datos
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
-                        FUR = LeerFilas.GetDateTime(6)
+                        FUR = LeerFilas.GetDateTime(6),
+                        Estado=LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();
@@ -448,7 +458,8 @@ namespace Datos
                         Sexo = LeerFilas.GetString(3),
                         Cedula = LeerFilas.GetString(4),
                         Telefono = LeerFilas.GetString(5),
-                        FUR=LeerFilas.GetDateTime(6)
+                        FUR=LeerFilas.GetDateTime(6),
+                        Estado=LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();

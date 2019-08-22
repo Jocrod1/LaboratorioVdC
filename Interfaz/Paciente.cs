@@ -191,11 +191,39 @@ namespace Interfaz
         private void OcultarColumnas()
         {
 
-            this.dataListado.Columns[0].Visible = false; //ID
-            this.dataListado.Columns[4].Visible = false;
+            this.dataListado.Columns[0].Visible = false; //ID 
+            //this.dataListado.Columns[4].Visible = false; 
             this.dataListado.Columns[5].Visible = false;
-            this.dataListado.Columns[6].Visible = false; 
+            this.dataListado.Columns[6].Visible = false;
+            this.dataListado.Columns[7].Visible = false;
 
+            //renombrar las otras 
+            this.dataListado.Columns[1].HeaderText = "Nombre Paciente";
+            this.dataListado.Columns[2].HeaderText = "Fecha de Nacimiento";
+            this.dataListado.Columns[3].HeaderText = "Sexo";
+            this.dataListado.Columns[4].HeaderText = "Cedula";
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Cedula"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["FechaNacimiento"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Sexo"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Cedula"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["FechaNacimiento"].Style.SelectionBackColor = Color.Brown;
+                    dataListado.Rows[fila].Cells["Sexo"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
         }
 
         private void EliminarItems()
@@ -472,12 +500,11 @@ namespace Interfaz
 
         private void Mostrar()
         {
-            //MUsuario.Mostrar(txtBuscar.Text);
-
             dataListado.DataSource = MPaciente.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
         private void Buscar_Cedula()
@@ -485,6 +512,7 @@ namespace Interfaz
             dataListado.DataSource = MPaciente.Buscar_Cedula(txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
         private void Buscar()

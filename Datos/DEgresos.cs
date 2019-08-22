@@ -62,13 +62,21 @@ namespace Datos
             set { _Cuenta_Contable = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
         public DEgresos()
         {
 
         }
 
-        public DEgresos(int iD, string nombre, string equivalencia, double precio, double precio_Empresa, int tipo, double cuneta_Contable)
+        public DEgresos(int iD, string nombre, string equivalencia, double precio, double precio_Empresa, int tipo, double cuneta_Contable, string estado)
         {
             ID = iD;
             Nombre = nombre;
@@ -77,6 +85,7 @@ namespace Datos
             Precio_Empresa = precio_Empresa;
             Tipo = tipo;
             Cuenta_Contable = cuneta_Contable;
+            Estado = estado;
         }
 
         //Metodos
@@ -392,6 +401,7 @@ namespace Datos
                         Precio_Empresa = LeerFilas.GetDouble(4),
                         Tipo = LeerFilas.GetInt32(5),
                         Cuenta_Contable = LeerFilas.GetDouble(6),
+                        Estado=LeerFilas.GetString(7)
                     });
                 }
                 LeerFilas.Close();

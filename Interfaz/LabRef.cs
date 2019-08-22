@@ -132,7 +132,26 @@ namespace Interfaz
 
         private void OcultarColumnas()
         {
-            this.dataListado.Columns[0].Visible = false; //ID
+            this.dataListado.Columns[0].Visible = false; //ID 
+            this.dataListado.Columns[2].Visible = false;
+
+            this.dataListado.Columns[1].HeaderText = "Nombre del Laboratorio de Referencia";
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
         }
 
         private void EliminarItems()
@@ -376,6 +395,7 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
         }
 
         private void Buscar()

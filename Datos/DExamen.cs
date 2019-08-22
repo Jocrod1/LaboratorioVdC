@@ -120,13 +120,21 @@ namespace Datos
             set { _LabRef = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
         public DExamen()
         {
 
         }
 
-        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, double precio_Referencia, string grupo_examen, string labref)
+        public DExamen(int iD, string nombre, string unidades, float valor_Hombre, float valor_Mujer, float precio1, float precio2, DateTime plazo_entrega, string observacion, int iD_Grupo_Examen, bool titulo, int lab_Referencia, double precio_Referencia, string grupo_examen, string labref, string estado)
         {
             ID = iD;
             Nombre = nombre;
@@ -143,6 +151,7 @@ namespace Datos
             Precio_Referencia = precio_Referencia;
             GrupoExamen = grupo_examen;
             LabRef = labref;
+            Estado = estado;
         }
 
         //Metodos
@@ -566,8 +575,9 @@ namespace Datos
                     LabRef = Lab_Referencia_,
                     Precio_Referencia=PrecioRef_,
                     ID_Grupo_Examen=IDGrupoExamen,
-                    ID_Lab_Referencia=IDLabRef
-
+                    ID_Lab_Referencia=IDLabRef,
+                    Estado=LeerFilas.GetString(15)
+                    
                 });
 
             }

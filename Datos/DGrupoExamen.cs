@@ -26,6 +26,14 @@ namespace Datos
             set { _Nombre = value; }
         }
 
+        private string _Estado;
+
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
+
 
 
         public DGrupoExamen()
@@ -33,10 +41,11 @@ namespace Datos
 
         }
 
-        public DGrupoExamen(int iD, string nombre)
+        public DGrupoExamen(int iD, string nombre, string estado)
         {
             ID = iD;
             Nombre = nombre;
+            Estado = estado;
         }
 
         //Metodos
@@ -276,6 +285,7 @@ namespace Datos
                     {
                         ID = LeerFilas.GetInt32(0),
                         Nombre = LeerFilas.GetString(1),
+                        Estado=LeerFilas.GetString(2)
                     });
                 }
                 LeerFilas.Close();
