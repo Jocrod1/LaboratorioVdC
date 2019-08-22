@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Metodos;
 
 namespace Interfaz
 {
@@ -77,11 +78,57 @@ namespace Interfaz
             this.txtResultado.Enabled = true;
             PanelIngreso.Size = new Size(317, PanelIngreso.Size.Height);
         }
+        private void Mostrar()
+        {
+            dataListado.DataSource = MOrden.Mostrar(txtBuscar.Text, 100);
+            dataListado.ClearSelection();
+   //         this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+           Anulados();
+        }
+
+        private void Anulados()
+        {
+            string estadotabla;
+
+            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
+            {
+                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
+
+                if (estadotabla == "ANULADO")
+                {
+                    dataListado.Rows[fila].Cells["nombre"].Style.ForeColor = Color.Red;
+                    dataListado.Rows[fila].Cells["nombre"].Style.SelectionBackColor = Color.Brown;
+                }
+            }
+        }
+
         private void Guardar()
         {
 
+        }
+        private void Buscar()
+        {
+            this.Mostrar();
+        }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            this.Mostrar();
+        }
 
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloNumeros(e);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            lim.soloLetras(e);
         }
     }
 }

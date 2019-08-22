@@ -460,6 +460,7 @@
             this.txtCiTrabajador.Name = "txtCiTrabajador";
             this.txtCiTrabajador.Size = new System.Drawing.Size(186, 33);
             this.txtCiTrabajador.TabIndex = 72;
+            this.txtCiTrabajador.TextChanged += new System.EventHandler(this.txtCiTrabajador_TextChanged);
             this.txtCiTrabajador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiTrabajador_KeyPress);
             this.txtCiTrabajador.Leave += new System.EventHandler(this.txtCiTrabajador_Leave);
             // 

@@ -615,6 +615,11 @@ namespace Interfaz
             }
         }
 
+        private void txtCiTrabajador_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
