@@ -16,6 +16,10 @@ namespace Interfaz
         LimitantesDeIngreso lim = new LimitantesDeIngreso();
         private int ID;
 
+        private bool IsNuevo = false;
+        
+        private bool IsEditar = false;
+
         public CargarDatos()
         {
             InitializeComponent();
@@ -76,8 +80,36 @@ namespace Interfaz
         private void Habilitar()
         {
             this.txtResultado.Enabled = true;
+            this.txtNombre.Enabled = true;
             PanelIngreso.Size = new Size(317, PanelIngreso.Size.Height);
         }
+
+
+        private void Botones()
+        {
+            if (this.IsNuevo || this.IsEditar)
+            {
+                this.Habilitar();
+             
+                this.btnGuardar.Enabled = true;
+                this.btnCancelar.Enabled = true;
+            }
+            else
+            {
+                this.Deshabilitar();
+                this.btnGuardar.Enabled = false;
+                this.btnCancelar.Enabled = false;
+            }
+        }
+
+        private void Deshabilitar()
+        {
+            this.txtResultado.Enabled = false;
+            PanelIngreso.Size = new Size(0, PanelIngreso.Size.Height);
+ 
+        }
+
+
         private void Mostrar()
         {
             dataListado.DataSource = MOrden.Mostrar(txtBuscar.Text, 100);

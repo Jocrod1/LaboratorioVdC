@@ -379,7 +379,7 @@
             this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblFUR.Location = new System.Drawing.Point(556, 281);
             this.lblFUR.Name = "lblFUR";
-            this.lblFUR.Size = new System.Drawing.Size(56, 25);
+            this.lblFUR.Size = new System.Drawing.Size(54, 25);
             this.lblFUR.TabIndex = 106;
             this.lblFUR.Text = "F.U.R:";
             // 
@@ -402,7 +402,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(555, 157);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 25);
+            this.label13.Size = new System.Drawing.Size(84, 25);
             this.label13.TabIndex = 105;
             this.label13.Text = "Teléfono:";
             // 
@@ -650,7 +650,7 @@
             this.txtAbonar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAbonar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtAbonar.Location = new System.Drawing.Point(660, 336);
-            this.txtAbonar.MaxLength = 3;
+            this.txtAbonar.MaxLength = 15;
             this.txtAbonar.Name = "txtAbonar";
             this.txtAbonar.Size = new System.Drawing.Size(257, 26);
             this.txtAbonar.TabIndex = 105;
@@ -662,7 +662,7 @@
             this.label21.ForeColor = System.Drawing.Color.DarkOrange;
             this.label21.Location = new System.Drawing.Point(657, 305);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(75, 25);
+            this.label21.Size = new System.Drawing.Size(76, 25);
             this.label21.TabIndex = 104;
             this.label21.Text = "Abonar:";
             // 
@@ -673,7 +673,7 @@
             this.txtRecEmergencia.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecEmergencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtRecEmergencia.Location = new System.Drawing.Point(660, 204);
-            this.txtRecEmergencia.MaxLength = 3;
+            this.txtRecEmergencia.MaxLength = 10;
             this.txtRecEmergencia.Name = "txtRecEmergencia";
             this.txtRecEmergencia.Size = new System.Drawing.Size(257, 26);
             this.txtRecEmergencia.TabIndex = 103;
@@ -696,7 +696,7 @@
             this.txtNumCHoT.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumCHoT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNumCHoT.Location = new System.Drawing.Point(388, 336);
-            this.txtNumCHoT.MaxLength = 3;
+            this.txtNumCHoT.MaxLength = 20;
             this.txtNumCHoT.Name = "txtNumCHoT";
             this.txtNumCHoT.Size = new System.Drawing.Size(257, 26);
             this.txtNumCHoT.TabIndex = 101;
@@ -708,7 +708,7 @@
             this.label19.ForeColor = System.Drawing.Color.DarkOrange;
             this.label19.Location = new System.Drawing.Point(383, 305);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(189, 25);
+            this.label19.Size = new System.Drawing.Size(186, 25);
             this.label19.TabIndex = 100;
             this.label19.Text = "Nro. Tarjeta / Cheque:";
             // 
@@ -791,7 +791,7 @@
             this.txtMotivo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMotivo.Location = new System.Drawing.Point(660, 129);
-            this.txtMotivo.MaxLength = 3;
+            this.txtMotivo.MaxLength = 20;
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.Size = new System.Drawing.Size(257, 26);
             this.txtMotivo.TabIndex = 93;
@@ -929,7 +929,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(931, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 25);
+            this.label8.Size = new System.Drawing.Size(107, 25);
             this.label8.TabIndex = 36;
             this.label8.Text = "Precio Total:";
             // 
@@ -952,7 +952,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(13, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(172, 25);
+            this.label7.Size = new System.Drawing.Size(173, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Exámenes a realizar:";
             // 
