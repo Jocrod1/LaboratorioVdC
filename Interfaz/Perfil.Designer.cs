@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perfil));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -70,6 +70,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -81,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -123,14 +125,14 @@
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -167,7 +169,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.Size = new System.Drawing.Size(80, 30);
             this.label3.TabIndex = 49;
             this.label3.Text = "Buscar:";
             // 
@@ -214,7 +216,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(14, 78);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 20);
             this.lblTotal.TabIndex = 45;
             this.lblTotal.Text = "label5";
             // 
@@ -259,7 +261,7 @@
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(17, 42);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 33);
+            this.txtBuscar.Size = new System.Drawing.Size(387, 36);
             this.txtBuscar.TabIndex = 44;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -313,7 +315,7 @@
             this.rbTituloNo.AutoSize = true;
             this.rbTituloNo.Location = new System.Drawing.Point(170, 22);
             this.rbTituloNo.Name = "rbTituloNo";
-            this.rbTituloNo.Size = new System.Drawing.Size(54, 29);
+            this.rbTituloNo.Size = new System.Drawing.Size(59, 34);
             this.rbTituloNo.TabIndex = 1;
             this.rbTituloNo.TabStop = true;
             this.rbTituloNo.Text = "No";
@@ -324,7 +326,7 @@
             this.rbTituloSi.AutoSize = true;
             this.rbTituloSi.Location = new System.Drawing.Point(47, 22);
             this.rbTituloSi.Name = "rbTituloSi";
-            this.rbTituloSi.Size = new System.Drawing.Size(43, 29);
+            this.rbTituloSi.Size = new System.Drawing.Size(47, 34);
             this.rbTituloSi.TabIndex = 0;
             this.rbTituloSi.TabStop = true;
             this.rbTituloSi.Text = "Si";
@@ -376,6 +378,7 @@
             this.dgvSeleccionados.Location = new System.Drawing.Point(320, 203);
             this.dgvSeleccionados.Name = "dgvSeleccionados";
             this.dgvSeleccionados.ReadOnly = true;
+            this.dgvSeleccionados.RowHeadersWidth = 47;
             this.dgvSeleccionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSeleccionados.Size = new System.Drawing.Size(255, 244);
             this.dgvSeleccionados.TabIndex = 69;
@@ -426,6 +429,7 @@
             this.dgvExamenes.Location = new System.Drawing.Point(28, 203);
             this.dgvExamenes.Name = "dgvExamenes";
             this.dgvExamenes.ReadOnly = true;
+            this.dgvExamenes.RowHeadersWidth = 47;
             this.dgvExamenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExamenes.Size = new System.Drawing.Size(255, 244);
             this.dgvExamenes.TabIndex = 63;
@@ -437,7 +441,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(315, 475);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.Size = new System.Drawing.Size(87, 30);
             this.label2.TabIndex = 61;
             this.label2.Text = "Precio 2";
             // 
@@ -450,8 +454,9 @@
             this.txtPrecio2.Location = new System.Drawing.Point(318, 501);
             this.txtPrecio2.MaxLength = 3;
             this.txtPrecio2.Name = "txtPrecio2";
-            this.txtPrecio2.Size = new System.Drawing.Size(257, 33);
+            this.txtPrecio2.Size = new System.Drawing.Size(257, 36);
             this.txtPrecio2.TabIndex = 59;
+            this.txtPrecio2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio2_KeyPress);
             // 
             // txtPrecioRef
             // 
@@ -462,8 +467,9 @@
             this.txtPrecioRef.Location = new System.Drawing.Point(318, 564);
             this.txtPrecioRef.MaxLength = 13;
             this.txtPrecioRef.Name = "txtPrecioRef";
-            this.txtPrecioRef.Size = new System.Drawing.Size(257, 33);
+            this.txtPrecioRef.Size = new System.Drawing.Size(257, 36);
             this.txtPrecioRef.TabIndex = 60;
+            this.txtPrecioRef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioRef_KeyPress);
             // 
             // label6
             // 
@@ -472,7 +478,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(314, 538);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 25);
+            this.label6.Size = new System.Drawing.Size(166, 30);
             this.label6.TabIndex = 62;
             this.label6.Text = "PrecioReferencia";
             // 
@@ -484,7 +490,7 @@
             this.cbLabRef.FormattingEnabled = true;
             this.cbLabRef.Location = new System.Drawing.Point(317, 100);
             this.cbLabRef.Name = "cbLabRef";
-            this.cbLabRef.Size = new System.Drawing.Size(257, 33);
+            this.cbLabRef.Size = new System.Drawing.Size(257, 38);
             this.cbLabRef.TabIndex = 3;
             // 
             // label5
@@ -494,7 +500,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(23, 475);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 25);
+            this.label5.Size = new System.Drawing.Size(84, 30);
             this.label5.TabIndex = 34;
             this.label5.Text = "Precio 1";
             // 
@@ -541,7 +547,7 @@
             this.txtNombre.Location = new System.Drawing.Point(26, 100);
             this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 33);
+            this.txtNombre.Size = new System.Drawing.Size(257, 36);
             this.txtNombre.TabIndex = 2;
             // 
             // label4
@@ -551,7 +557,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkOrange;
             this.label4.Location = new System.Drawing.Point(23, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 25);
+            this.label4.Size = new System.Drawing.Size(94, 30);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nombre:";
             // 
@@ -562,7 +568,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(316, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 25);
+            this.label8.Size = new System.Drawing.Size(158, 30);
             this.label8.TabIndex = 54;
             this.label8.Text = "Lab. Referencia:";
             // 
@@ -575,8 +581,13 @@
             this.txtPrecio1.Location = new System.Drawing.Point(26, 501);
             this.txtPrecio1.MaxLength = 3;
             this.txtPrecio1.Name = "txtPrecio1";
-            this.txtPrecio1.Size = new System.Drawing.Size(257, 33);
+            this.txtPrecio1.Size = new System.Drawing.Size(257, 36);
             this.txtPrecio1.TabIndex = 4;
+            this.txtPrecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecio1_KeyPress);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Perfil
             // 
@@ -602,6 +613,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExamenes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -647,5 +659,6 @@
         private System.Windows.Forms.RadioButton rbTituloNo;
         private System.Windows.Forms.RadioButton rbTituloSi;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

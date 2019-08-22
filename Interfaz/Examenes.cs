@@ -615,28 +615,28 @@ namespace Interfaz
 
         private void TxtPrecio1_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtPrecio1, "");
             if (valid.soloNumerosyPuntos(e))
             {
-                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
+                errorProvider1.SetError(txtPrecio1, "En este campo solo se pueden ingresar Numeros y puntos");
             }
         }
 
         private void TxtPrecio2_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtPrecio2, "");
             if (valid.soloNumerosyPuntos(e))
             {
-                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
+                errorProvider1.SetError(txtPrecio2, "En este campo solo se pueden ingresar Numeros y puntos");
             }
         }
 
         private void TxtPrecioRef_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtPrecioRef, "");
             if (valid.soloNumerosyPuntos(e))
             {
-                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros y puntos");
+                errorProvider1.SetError(txtPrecioRef, "En este campo solo se pueden ingresar Numeros y puntos");
             }
         }
 

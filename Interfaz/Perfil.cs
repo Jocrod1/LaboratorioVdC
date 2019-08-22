@@ -14,6 +14,7 @@ namespace Interfaz
     public partial class Perfil : Form
     {
 
+        LimitantesDeIngreso valid = new LimitantesDeIngreso();
 
         private DataTable TablaSeleccionados;
         private DataTable TablaSeleccionados2;
@@ -67,7 +68,7 @@ namespace Interfaz
 
             dgvExamenes.DataSource = MExamen.Mostrar("");
 
-            this.OcultarColumnas();
+
 
 
             //todo esto es pa ponerle colorcitos al datagridview
@@ -90,46 +91,6 @@ namespace Interfaz
         }
 
         //metodos
-
-        private void OcultarColumnas()
-        {
-
-            this.dataListado.Columns[0].Visible = false; //ID 
-            this.dataListado.Columns[4].Visible = false;
-            this.dataListado.Columns[7].Visible = false;
-
-            //renombrar las otras 
-            this.dataListado.Columns[1].HeaderText = "Nombre Perfil";
-            this.dataListado.Columns[2].HeaderText = "Precio 1";
-            this.dataListado.Columns[3].HeaderText = "Precio 2";
-            this.dataListado.Columns[5].HeaderText = "Laboratorio de Referencia";
-            this.dataListado.Columns[6].HeaderText = "Precio de Referencia";
-        }
-
-        private void Anulados()
-        {
-            string estadotabla;
-
-            for (int fila = 0; fila <= dataListado.Rows.Count - 1; fila++)
-            {
-                estadotabla = Convert.ToString(this.dataListado.Rows[fila].Cells["Estado"].Value);
-
-                if (estadotabla == "ANULADO")
-                {
-                    dataListado.Rows[fila].Cells["Nombre"].Style.ForeColor = Color.Red;
-                    dataListado.Rows[fila].Cells["LabRef"].Style.ForeColor = Color.Red;
-                    dataListado.Rows[fila].Cells["Precio1"].Style.ForeColor = Color.Red;
-                    dataListado.Rows[fila].Cells["Precio2"].Style.ForeColor = Color.Red;
-                    dataListado.Rows[fila].Cells["PrecioRef"].Style.ForeColor = Color.Red;
-                    dataListado.Rows[fila].Cells["Nombre"].Style.SelectionBackColor = Color.Brown;
-                    dataListado.Rows[fila].Cells["LabRef"].Style.SelectionBackColor = Color.Brown;
-                    dataListado.Rows[fila].Cells["Precio1"].Style.SelectionBackColor = Color.Brown;
-                    dataListado.Rows[fila].Cells["Precio2"].Style.SelectionBackColor = Color.Brown;
-                    dataListado.Rows[fila].Cells["PrecioRef"].Style.SelectionBackColor = Color.Brown;
-
-                }
-            }
-        }
 
         private void crearTabla()
         {
@@ -466,15 +427,61 @@ namespace Interfaz
             this.txtPrecioRef.Text = string.Empty;
         }
 
+        private bool validar()
+        {
+
+            bool error = true;
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Inserta un nombre");
+            }
+            if (cbLabRef.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(cbLabRef, "selecciona un laboratorio");
+            }
+            if (txtPrecio1.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtPrecio1, "Inserta un precio");
+            }
+            if (txtPrecio2.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtPrecio2, "Inserta un precio");
+            }
+            if (txtPrecioRef.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtPrecioRef, "Inserta un precio");
+            }
+            if (!(rbTituloNo.Checked || rbTituloSi.Checked))
+            {
+                error = false;
+                errorProvider1.SetError(rbTituloNo, "selecciona una opcion");
+            }
+            if (dgvSeleccionados.Rows.Count == 0) {
+                error = false;
+                errorProvider1.SetError(label9, "selecciona una opcion");
+            }
+            return error;
+        }
+        //Cuando se llenen, se retira el error
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
+        }
+
 
         private void Mostrar()
         {
+            //MUsuario.Mostrar(txtBuscar.Text);
 
             dataListado.DataSource = MPerfil.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
-            this.OcultarColumnas();
+            // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-            Anulados();
         }
 
 
@@ -677,6 +684,33 @@ namespace Interfaz
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Mostrar();
+        }
+
+        private void TxtPrecio1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtPrecio1, "");
+            if (valid.soloNumerosyPuntos(e))
+            {
+                errorProvider1.SetError(txtPrecio1, "En este campo solo se pueden ingresar Numeros y puntos");
+            }
+        }
+
+        private void TxtPrecio2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtPrecio2, "");
+            if (valid.soloNumerosyPuntos(e))
+            {
+                errorProvider1.SetError(txtPrecio2, "En este campo solo se pueden ingresar Numeros y puntos");
+            }
+        }
+
+        private void TxtPrecioRef_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtPrecioRef, "");
+            if (valid.soloNumerosyPuntos(e))
+            {
+                errorProvider1.SetError(txtPrecioRef, "En este campo solo se pueden ingresar Numeros y puntos");
+            }
         }
     }
 }
