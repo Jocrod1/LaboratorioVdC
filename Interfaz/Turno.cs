@@ -396,6 +396,17 @@ namespace Interfaz
             Mostrar();
         }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
+
+
+        }
+
 
     }
 }

@@ -506,10 +506,10 @@ namespace Interfaz
 
         private void TxtCiMedico_KeyPress(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtCiMedico, "");
             if (valid.soloNumeros(e))
             {
-                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar Numeros");
+                errorProvider1.SetError(txtCiMedico, "En este campo solo se pueden ingresar Numeros");
             }
         }
 
@@ -525,6 +525,24 @@ namespace Interfaz
         private void txtCiMedico_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtBuscar, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
+            }
+        }
+
+        private void txtClinica_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtClinica, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtClinica, "En este campo solo se pueden ingresar letras");
+            }
         }
     }
 }

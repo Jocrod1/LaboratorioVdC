@@ -91,5 +91,13 @@ namespace Interfaz
                 errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //Botón guardar
+
+
+
+        }
     }
 }

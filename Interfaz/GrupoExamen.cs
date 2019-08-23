@@ -404,6 +404,7 @@ namespace Interfaz
         {
             Mostrar();
         }
+        //validaciones
 
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -424,8 +425,7 @@ namespace Interfaz
         }
 
 
-        //validaciones
-
+       
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Buscar();

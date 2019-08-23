@@ -394,7 +394,7 @@ namespace Interfaz
             }
             else
             {
-                this.MensajeError("Debe de buscar un registro para Modificar");
+                this.MensajeError("Debe de buscar un registro para modificar");
             }
         }
 
@@ -598,7 +598,7 @@ namespace Interfaz
             errorProvider1.SetError(txtCiPaciente, "");
             if (valid.soloNumeros(e))
             {
-                errorProvider1.SetError(txtCiPaciente, "En este campo solo se pueden ingresar numeros");
+                errorProvider1.SetError(txtCiPaciente, "En este campo solo se pueden ingresar números");
             }
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -615,7 +615,7 @@ namespace Interfaz
             errorProvider1.SetError(txtTelefono, "");
             if (valid.soloNumeros(e))
             {
-                errorProvider1.SetError(txtTelefono, "En este campo solo se pueden ingresar numeros");
+                errorProvider1.SetError(txtTelefono, "En este campo solo se pueden ingresar números");
             }
         }
         private void txtIdMedico_KeyPress(object sender, KeyPressEventArgs e)
@@ -633,7 +633,7 @@ namespace Interfaz
                 errorProvider1.SetError(txtBuscar, "");
                 if (valid.soloNumeros(e))
                 {
-                    errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar numeros");
+                    errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar números");
                 }
             }
             if (cbBuscar.Text == "Nombre")
@@ -661,7 +661,7 @@ namespace Interfaz
 
                 if (dataListado.Rows.Count != 0)
                 {
-                    MessageBox.Show("Ya el Paciente C.I: " + (this.cbCedula.Text + this.txtCiPaciente.Text) + " está ingresado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya el paciente C.I: " + (this.cbCedula.Text + this.txtCiPaciente.Text) + " está ingresado", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.txtCiPaciente.Text = string.Empty;
                     this.txtCiPaciente.Focus();
                 }
@@ -670,7 +670,7 @@ namespace Interfaz
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en la Conexion de la BD", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error en la conexion de la BD", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

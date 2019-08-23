@@ -515,7 +515,7 @@ namespace Interfaz
         {
             Provider1.SetError(txtCiTrabajador, "");
             if (valid.soloNumeros(e)) {
-                Provider1.SetError(txtCiTrabajador, "En este campo solo se pueden ingresar numeros");
+                Provider1.SetError(txtCiTrabajador, "En este campo solo se pueden ingresar números");
             }
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -530,7 +530,7 @@ namespace Interfaz
             Provider1.SetError(txtTelefono, "");
             if (valid.soloNumeros(e))
             {
-                Provider1.SetError(txtTelefono, "En este campo solo se pueden ingresar numeros");
+                Provider1.SetError(txtTelefono, "En este campo solo se pueden ingresar números");
             }
         }
 
@@ -540,7 +540,7 @@ namespace Interfaz
                 Provider1.SetError(txtBuscar, "");
                 if (valid.soloNumeros(e))
                 {
-                    Provider1.SetError(txtBuscar, "En este campo solo se pueden ingresar numeros");
+                    Provider1.SetError(txtBuscar, "En este campo solo se pueden ingresar números");
                 }
             }
             if (cbBuscar.Text == "Nombre") {
@@ -616,6 +616,15 @@ namespace Interfaz
         }
 
         private void txtCiTrabajador_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
