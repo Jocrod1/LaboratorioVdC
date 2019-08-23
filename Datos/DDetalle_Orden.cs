@@ -139,6 +139,9 @@ public int IDExamen
             SqlConnection SqlConectar = new SqlConnection();
             try
             {
+                //conexion con la Base de Datos
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlConectar.Open();
 
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
@@ -172,7 +175,14 @@ public int IDExamen
             {
                 respuesta = excepcion.Message;
             }
-
+            //se cierra la conexion de la Base de Datos
+            finally
+            {
+                if (SqlConectar.State == ConnectionState.Open)
+                {
+                    SqlConectar.Close();
+                }
+            }
             return respuesta;
 
         }

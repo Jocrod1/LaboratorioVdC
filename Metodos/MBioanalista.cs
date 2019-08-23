@@ -63,5 +63,11 @@ namespace Metodos
             DBioanalista Objeto = new DBioanalista();
             return Objeto.CedulaUnica(TextoBuscar);
         }
+
+        public new static List<DBioanalista> MostrarCombobox()
+        {
+            DBioanalista Objeto = new DBioanalista();
+            return Objeto.MostrarCombobox();
+        }
     }
 }

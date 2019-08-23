@@ -246,6 +246,7 @@
     <EmbeddedResource Include="RelacionesDeEmpresa.resx">
       <DependentUpon>RelacionesDeEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptFactura.rdlc" />
     <EmbeddedResource Include="TipoPaciente.resx">
       <DependentUpon>TipoPaciente.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,7 +14,8 @@ namespace Interfaz
     public partial class CargarDatos : Form
     {
         LimitantesDeIngreso lim = new LimitantesDeIngreso();
-        private int ID;
+        private int ID, IDOrden;
+        private string Rpta;
 
         private bool IsNuevo = false;
         
@@ -32,6 +33,12 @@ namespace Interfaz
 
         private void CargarDatos_Load(object sender, EventArgs e)
         {
+
+            cbIDBioanalista.DataSource = MBioanalista.MostrarCombobox();
+            cbIDBioanalista.DisplayMember = "Nombre";
+            cbIDBioanalista.ValueMember = "ID";
+            cbIDBioanalista.SelectedIndex = -1;
+
 
         }
         private void MensajeOK(string Mensaje)
@@ -111,6 +118,7 @@ namespace Interfaz
 
         private void Mostrar()
         {
+            IDOrden = Convert.ToInt32(txtBuscar.Text);
             dataListado.DataSource = MOrden.MostrarDetalle(Convert.ToInt32(txtBuscar.Text));
             dataListado.ClearSelection();
    //         this.OcultarColumnas();
@@ -136,25 +144,34 @@ namespace Interfaz
 
         private void Guardar()
         {
-            MOrden.InsertarCarga(txtResultado.Text);
+            Rpta= MOrden.InsertarCarga(ID,txtResultado.Text);
+
+            if(Rpta=="OK")
+            {
+                MessageBox.Show("Se cambió con éxito");
+            }
+
+            Mostrar();
         }
         private void Buscar()
         {
             this.Mostrar();
         }
 
-        private void DobleClick()
-        {
-            Limpiar();
-            Habilitar();
-
-            //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
-
-            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreExamen"].Value);
-
-            //Editar();
-            txtNombre.Enabled = false;
-            txtResultado.Focus();
+        private void DobleClick()
+        {
+            Limpiar();
+            Habilitar();
+
+            ID = Convert.ToInt32(this.dataListado.CurrentRow.Cells["ID"].Value);
+
+            //dgvSeleccionados.DataSource = MPerfil.MostrarDetalle(IDDetalle);
+
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreExamen"].Value);
+
+            //Editar();
+            txtNombre.Enabled = false;
+            txtResultado.Focus();
         }
 
 
@@ -172,16 +189,51 @@ namespace Interfaz
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             lim.soloLetras(e);
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            Mostrar();
-        }
-
-        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DobleClick();
-        }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Mostrar();
+        }
+
+        private void dataListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DobleClick();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            Imprimir();
+        }
+
+        private void Imprimir()
+        {
+            int NoCopia = 0;
+            foreach (DataGridViewRow item in this.dataListado.Rows)
+            {
+                if (Convert.ToString(item.Cells["Resultado"].Value) == string.Empty)
+                {
+                    NoCopia++;
+                }
+            }
+
+            if (NoCopia == 0)
+            {
+                Rpta= MOrden.Cargar(IDOrden, Convert.ToInt32(cbIDBioanalista.SelectedValue));
+
+                if(Rpta.Equals("OK"))
+                {
+                    MessageBox.Show("Se insertó correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Faltan examenes por completar", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

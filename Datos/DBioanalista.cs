@@ -375,6 +375,46 @@ namespace Datos
 
         }
 
+        public List<DBioanalista> MostrarCombobox()
+        {
+            DataTable DtResultado = new DataTable("Bioanalista");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DBioanalista> ListaGenerica = new List<DBioanalista>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_bioanalista";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DBioanalista
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Cedula = LeerFilas.GetString(1),
+                        Nombre = LeerFilas.GetString(2)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
+
         public List<DBioanalista> MostrarCedula(string TextoBuscar)
         {
             DataTable DtResultado = new DataTable("Bioanalista");

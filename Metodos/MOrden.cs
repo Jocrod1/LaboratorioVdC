@@ -11,16 +11,18 @@ namespace Metodos
     public class MOrden:DOrden
     {
 
-        public static string Cargar(int IDBioanalista)
+        public static string Cargar(int ID, int IDBioanalista)
         {
             DOrden Objeto = new DOrden();
+            Objeto.ID = ID;
             Objeto.IDBioanalista = IDBioanalista;
             return Objeto.Cargar(Objeto);
         }
 
-        public static string InsertarCarga(string resultado)
+        public static string InsertarCarga(int ID, string resultado)
         {
             DDetalle_Orden Objeto = new DDetalle_Orden();
+            Objeto.ID = ID;
             Objeto.Resultado = resultado;
             return Objeto.InsertarCarga(Objeto);
         }

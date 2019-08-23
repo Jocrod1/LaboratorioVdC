@@ -60,7 +60,7 @@ namespace Interfaz
             crearTabla();
 
 
-            cbLabRef.DataSource = MLabRef.Mostrar("");
+            cbLabRef.DataSource = MLabRef.MostrarCombobox();
             cbLabRef.DisplayMember = "Nombre";
             cbLabRef.ValueMember = "ID";
             cbLabRef.SelectedIndex = -1;
