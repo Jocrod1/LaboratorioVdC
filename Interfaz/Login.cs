@@ -138,7 +138,6 @@ namespace Interfaz
                 }
                 if (IDTurno == 0) {
                     IDTurno = 1;
-                    return;
                 }
 
                 MRegistroAcceso.Insertar(0, Datos.Rows[0][0].ToString(), IDTurno, DateTime.Now);

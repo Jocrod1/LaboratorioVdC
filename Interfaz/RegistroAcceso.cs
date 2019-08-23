@@ -37,20 +37,37 @@ namespace Interfaz
             cbTurno.SelectedIndex = -1;
             //
 
+            //todo esto es pa ponerle colorcitos al datagridview
+
+            dataListado.BorderStyle = BorderStyle.None;
+            dataListado.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dataListado.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataListado.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dataListado.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataListado.BackgroundColor = Color.White;
+
+            dataListado.EnableHeadersVisualStyles = false;
+            dataListado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataListado.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dataListado.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
             Mostrar();
         }
 
         //metodos
         private void Mostrar()
         {
-            dataListado.DataSource = MRegistroAcceso.Mostrar(Convert.ToInt32(cbTop.Text), txtCedula.Text);
+            dataListado.DataSource = MRegistroAcceso.Mostrar(Convert.ToInt32(cbTop.Text), (cbCedula.Text + txtCedula.Text));
             // this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         private void MostrarTurno()
         {
-            string IDTurno = MRegistroAcceso.CaptarTurno(cbTurno.Text);
+            string IDTurno = MRegistroAcceso.CaptarTurno();
 
             dataListado.DataSource = MRegistroAcceso.MostrarTurnos(Convert.ToInt32(cbTop.Text), txtCedulaTurno.Text, Convert.ToInt32(IDTurno));
             // this.OcultarColumnas();

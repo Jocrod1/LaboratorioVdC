@@ -50,12 +50,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbCedula = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel_fechas.SuspendLayout();
             this.panel_turno.SuspendLayout();
@@ -68,8 +66,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel_fechas);
-            this.panel1.Controls.Add(this.panel_turno);
             this.panel1.Controls.Add(this.panel_cedula);
+            this.panel1.Controls.Add(this.panel_turno);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.cbBuscar);
             this.panel1.Controls.Add(this.panel4);
@@ -100,7 +98,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label4.Location = new System.Drawing.Point(324, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 25);
+            this.label4.Size = new System.Drawing.Size(71, 30);
             this.label4.TabIndex = 71;
             this.label4.Text = "Hasta:";
             // 
@@ -111,7 +109,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label2.Location = new System.Drawing.Point(15, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.Size = new System.Drawing.Size(76, 30);
             this.label2.TabIndex = 70;
             this.label2.Text = "Desde:";
             // 
@@ -124,7 +122,7 @@
             this.dtDesde.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtDesde.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtDesde.Name = "dtDesde";
-            this.dtDesde.Size = new System.Drawing.Size(230, 33);
+            this.dtDesde.Size = new System.Drawing.Size(230, 36);
             this.dtDesde.TabIndex = 5;
             this.dtDesde.ValueChanged += new System.EventHandler(this.dtDesde_ValueChanged);
             // 
@@ -137,7 +135,7 @@
             this.dtHasta.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtHasta.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtHasta.Name = "dtHasta";
-            this.dtHasta.Size = new System.Drawing.Size(230, 33);
+            this.dtHasta.Size = new System.Drawing.Size(230, 36);
             this.dtHasta.TabIndex = 6;
             this.dtHasta.ValueChanged += new System.EventHandler(this.dtHasta_ValueChanged);
             // 
@@ -159,7 +157,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label5.Location = new System.Drawing.Point(283, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 25);
+            this.label5.Size = new System.Drawing.Size(83, 30);
             this.label5.TabIndex = 69;
             this.label5.Text = "Cedula:";
             // 
@@ -174,7 +172,7 @@
             "Nombre"});
             this.cbTurno.Location = new System.Drawing.Point(17, 5);
             this.cbTurno.Name = "cbTurno";
-            this.cbTurno.Size = new System.Drawing.Size(260, 31);
+            this.cbTurno.Size = new System.Drawing.Size(260, 33);
             this.cbTurno.TabIndex = 3;
             this.cbTurno.SelectedIndexChanged += new System.EventHandler(this.cbTurno_SelectedIndexChanged);
             // 
@@ -186,16 +184,17 @@
             this.txtCedulaTurno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCedulaTurno.Location = new System.Drawing.Point(361, 3);
             this.txtCedulaTurno.Name = "txtCedulaTurno";
-            this.txtCedulaTurno.Size = new System.Drawing.Size(269, 33);
+            this.txtCedulaTurno.Size = new System.Drawing.Size(269, 36);
             this.txtCedulaTurno.TabIndex = 4;
             this.txtCedulaTurno.TextChanged += new System.EventHandler(this.txtCedulaTurno_TextChanged);
             // 
             // panel_cedula
             // 
+            this.panel_cedula.Controls.Add(this.cbCedula);
             this.panel_cedula.Controls.Add(this.txtCedula);
-            this.panel_cedula.Location = new System.Drawing.Point(143, 34);
+            this.panel_cedula.Location = new System.Drawing.Point(142, 33);
             this.panel_cedula.Name = "panel_cedula";
-            this.panel_cedula.Size = new System.Drawing.Size(299, 44);
+            this.panel_cedula.Size = new System.Drawing.Size(374, 44);
             this.panel_cedula.TabIndex = 67;
             this.panel_cedula.Visible = false;
             // 
@@ -205,9 +204,9 @@
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCedula.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCedula.Location = new System.Drawing.Point(13, 7);
+            this.txtCedula.Location = new System.Drawing.Point(96, 6);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(269, 33);
+            this.txtCedula.Size = new System.Drawing.Size(269, 36);
             this.txtCedula.TabIndex = 2;
             this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
@@ -240,7 +239,7 @@
             "Fechas"});
             this.cbBuscar.Location = new System.Drawing.Point(17, 40);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(117, 31);
+            this.cbBuscar.Size = new System.Drawing.Size(117, 33);
             this.cbBuscar.TabIndex = 1;
             this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.cbBuscar_SelectedIndexChanged);
             // 
@@ -269,7 +268,7 @@
             "500"});
             this.cbTop.Location = new System.Drawing.Point(30, 48);
             this.cbTop.Name = "cbTop";
-            this.cbTop.Size = new System.Drawing.Size(122, 31);
+            this.cbTop.Size = new System.Drawing.Size(122, 33);
             this.cbTop.TabIndex = 7;
             this.cbTop.SelectedIndexChanged += new System.EventHandler(this.cbTop_SelectedIndexChanged);
             // 
@@ -280,7 +279,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 25);
+            this.label1.Size = new System.Drawing.Size(172, 30);
             this.label1.TabIndex = 68;
             this.label1.Text = "Cant. de registro:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -292,7 +291,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 25);
+            this.label3.Size = new System.Drawing.Size(117, 30);
             this.label3.TabIndex = 62;
             this.label3.Text = "Buscar por:";
             // 
@@ -303,47 +302,24 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(180, 77);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 20);
             this.lblTotal.TabIndex = 61;
             this.lblTotal.Text = "label5";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 511);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1140, 57);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 122);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(48, 389);
-            this.flowLayoutPanel2.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1086, 122);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(54, 389);
-            this.panel2.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dataListado);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(48, 122);
+            this.panel3.Location = new System.Drawing.Point(0, 122);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1038, 389);
+            this.panel3.Size = new System.Drawing.Size(1140, 446);
             this.panel3.TabIndex = 4;
             // 
             // dataListado
             // 
             this.dataListado.AllowUserToResizeColumns = false;
             this.dataListado.AllowUserToResizeRows = false;
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -357,11 +333,26 @@
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
+            this.dataListado.RowHeadersVisible = false;
             this.dataListado.RowHeadersWidth = 51;
             this.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(1038, 389);
+            this.dataListado.Size = new System.Drawing.Size(1140, 446);
             this.dataListado.TabIndex = 2;
+            // 
+            // cbCedula
+            // 
+            this.cbCedula.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCedula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCedula.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.cbCedula.FormattingEnabled = true;
+            this.cbCedula.Items.AddRange(new object[] {
+            "V-",
+            "E-"});
+            this.cbCedula.Location = new System.Drawing.Point(19, 5);
+            this.cbCedula.Name = "cbCedula";
+            this.cbCedula.Size = new System.Drawing.Size(64, 38);
+            this.cbCedula.TabIndex = 96;
             // 
             // RegistroAcceso
             // 
@@ -369,9 +360,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1140, 568);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroAcceso";
@@ -396,9 +384,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.Label label3;
@@ -420,5 +405,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ComboBox cbCedula;
     }
 }

@@ -520,7 +520,6 @@ namespace Interfaz
                 if (IDTurno == 0)
                 {
                     IDTurno = 1;
-                    return;
                 }
 
                 IDFactura = 0;
@@ -764,25 +763,58 @@ namespace Interfaz
         private void btnAnadir_Click(object sender, EventArgs e)
         {
 
-
-
             //agrega los examenes
             foreach (DataGridViewRow item in this.dgvExamenes.SelectedRows)
             {
-                TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value, false, item.Cells["ID"].Value);
+                int NoCopia = 0;
+                foreach (DataGridViewRow item2 in this.dgvSeleccionados.Rows)
+                {
+                    if (Convert.ToInt32(item2.Cells["ID"].Value) == Convert.ToInt32(item.Cells["ID"].Value))
+                    {
+                        if (Convert.ToBoolean(item2.Cells["EsPerfil?"].Value) == false)
+                        {
+                            NoCopia++;
+                        }
+                    }
+                }
+                if (NoCopia == 0)
+                {
+                    TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value, false, item.Cells["ID"].Value);
+                }
+                else
+                {
+                    MessageBox.Show("El examen " + Convert.ToString(item.Cells["Nombre"].Value) + " ya está seleccionado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            
 
-            //agrega los perfiles
+
+            //agrega los examenes
             foreach (DataGridViewRow item in this.dgvPerfiles.SelectedRows)
             {
-                TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value, true, item.Cells["ID"].Value);
+                int NoCopia = 0;
+                foreach (DataGridViewRow item2 in this.dgvSeleccionados.Rows)
+                {
+                    if (Convert.ToInt32(item2.Cells["ID"].Value) == Convert.ToInt32(item.Cells["ID"].Value))
+                    {
+                        if(Convert.ToBoolean(item2.Cells["EsPerfil?"].Value)==true)
+                        {
+                            NoCopia++;
+                        }
+
+                    }
+                }
+                if (NoCopia == 0)
+                {
+                    TablaSeleccionados.Rows.Add(item.Cells["Nombre"].Value, item.Cells["Precio1"].Value, item.Cells["Precio2"].Value, true, item.Cells["ID"].Value);
+                }
+                else
+                {
+                    MessageBox.Show("El perfil " + Convert.ToString(item.Cells["Nombre"].Value) + " ya está seleccionado", "Laboratorio Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             //Relacionar nuestro DataGRidView con nuestro DataTable
             this.dgvSeleccionados.DataSource = this.TablaSeleccionados;
-
-
 
         }
 

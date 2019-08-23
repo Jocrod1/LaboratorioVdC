@@ -27,6 +27,14 @@ public string CedulaUsuario
   set { _CedulaUsuario = value; }
 }
 
+        private string _Usuario;
+
+        public string Usuario
+        {
+            get { return _Usuario; }
+            set { _Usuario = value; }
+        }
+
         private int _IDTurno;
 
 public int IDTurno
@@ -42,19 +50,27 @@ public DateTime Fecha
     set { _Fecha = value; }
 }
 
+        private string _Turno;
 
+        public string Turno
+        {
+            get { return _Turno; }
+            set { _Turno = value; }
+        }
 
         public DRegistroAcceso()
         {
 
         }
 
-        public DRegistroAcceso(int iD, string cedulaUsuario, int iDTurno, DateTime fecha)
+        public DRegistroAcceso(int iD, string cedulaUsuario, int iDTurno, DateTime fecha, string turno, string usuario)
         {
             ID = iD;
             CedulaUsuario = cedulaUsuario;
             IDTurno = iDTurno;
             Fecha = fecha;
+            Turno = turno;
+            Usuario = usuario;
         }
 
         //Metodos 
@@ -131,7 +147,6 @@ public DateTime Fecha
 
         public List<DRegistroAcceso> Mostrar(int limite, string cedula)
         {
-            DataTable DtResultado = new DataTable("RegistroAcceso");
             SqlConnection SqlConectar = new SqlConnection();
             List<DRegistroAcceso> ListaGenerica = new List<DRegistroAcceso>();
 
@@ -148,6 +163,7 @@ public DateTime Fecha
                 SqlComando.Parameters.AddWithValue("@CedulaUsuario", cedula);
 
 
+
                 SqlConectar.Open();
 
                 LeerFilas = SqlComando.ExecuteReader();
@@ -158,16 +174,18 @@ public DateTime Fecha
                     {
                         ID = LeerFilas.GetInt32(0),
                         CedulaUsuario = LeerFilas.GetString(1),
-                        IDTurno = LeerFilas.GetInt32(2),
-                        Fecha = LeerFilas.GetDateTime(3)
+                        Usuario=LeerFilas.GetString(2),
+                        Turno = LeerFilas.GetString(3),
+                        Fecha = LeerFilas.GetDateTime(4)
                     });
                 }
                 LeerFilas.Close();
                 SqlConectar.Close();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 ListaGenerica = null;
+                System.Windows.Forms.MessageBox.Show(e.Message);
             }
 
             return ListaGenerica;
@@ -204,8 +222,9 @@ public DateTime Fecha
                     {
                         ID = LeerFilas.GetInt32(0),
                         CedulaUsuario = LeerFilas.GetString(1),
-                        IDTurno = LeerFilas.GetInt32(2),
-                        Fecha = LeerFilas.GetDateTime(3)
+                        Usuario = LeerFilas.GetString(2),
+                        Turno = LeerFilas.GetString(3),
+                        Fecha = LeerFilas.GetDateTime(4)
                     });
                 }
                 LeerFilas.Close();
@@ -249,8 +268,9 @@ public DateTime Fecha
                     {
                         ID = LeerFilas.GetInt32(0),
                         CedulaUsuario = LeerFilas.GetString(1),
-                        IDTurno = LeerFilas.GetInt32(2),
-                        Fecha = LeerFilas.GetDateTime(3)
+                        Usuario = LeerFilas.GetString(2),
+                        Turno = LeerFilas.GetString(3),
+                        Fecha = LeerFilas.GetDateTime(4)
                     });
                 }
                 LeerFilas.Close();
@@ -266,7 +286,7 @@ public DateTime Fecha
         }
 
         //combobox
-        public string CaptarTurno(string nombre)
+        public string CaptarTurno()
         {
             SqlConnection SqlConectar = new SqlConnection();
 
@@ -278,7 +298,6 @@ public DateTime Fecha
                 SqlComando.Connection = SqlConectar;
                 SqlComando.CommandText = "seleccionar_turno";
                 SqlComando.CommandType = CommandType.StoredProcedure;
-                SqlComando.Parameters.AddWithValue("@TextoBuscar", nombre);
 
                 SqlConectar.Open();
                 LeerFilas = SqlComando.ExecuteReader();

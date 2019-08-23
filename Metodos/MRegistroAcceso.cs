@@ -39,10 +39,10 @@ namespace Metodos
         }
 
         //turno
-        public new static string CaptarTurno(string nombre)
+        public new static string CaptarTurno()
         {
             DRegistroAcceso Objeto = new DRegistroAcceso();
-            return Objeto.CaptarTurno(nombre);
+            return Objeto.CaptarTurno();
         }
     }
 }
