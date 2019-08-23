@@ -898,11 +898,11 @@ namespace Interfaz
 
             if (ExamenesParaGuardar.Rows.Count == 0)
             {
-                MessageBox.Show("Uh, examenes pa guardar ta vacio tambien");
+                MessageBox.Show("Uh, examenes pa guardar ta vacio tambien ewe");
             }
             else
             {
-                MessageBox.Show("Hey! ya no ta vacio :D");
+                MessageBox.Show("¡Hey! ya no ta vacío :D");
             }
 
 
@@ -911,7 +911,7 @@ namespace Interfaz
             if (ConjuntoDeIDExamenes.Rows.Count == 0)
             {
 
-                MessageBox.Show("La wea esta vacia hermano");
+                MessageBox.Show("La wea esta vacía hermano, likeme");
 
             }
             else

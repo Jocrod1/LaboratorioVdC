@@ -178,7 +178,7 @@
             this.chkFUR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.chkFUR.Location = new System.Drawing.Point(618, 288);
             this.chkFUR.Name = "chkFUR";
-            this.chkFUR.Size = new System.Drawing.Size(14, 13);
+            this.chkFUR.Size = new System.Drawing.Size(13, 12);
             this.chkFUR.TabIndex = 116;
             this.chkFUR.UseVisualStyleBackColor = true;
             this.chkFUR.CheckedChanged += new System.EventHandler(this.chkFUR_CheckedChanged);
@@ -192,7 +192,7 @@
             this.dtNacimiento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtNacimiento.Name = "dtNacimiento";
-            this.dtNacimiento.Size = new System.Drawing.Size(257, 36);
+            this.dtNacimiento.Size = new System.Drawing.Size(257, 33);
             this.dtNacimiento.TabIndex = 115;
             this.dtNacimiento.Leave += new System.EventHandler(this.dtNacimiento_Leave);
             // 
@@ -205,7 +205,7 @@
             this.cbMedico.FormattingEnabled = true;
             this.cbMedico.Location = new System.Drawing.Point(559, 241);
             this.cbMedico.Name = "cbMedico";
-            this.cbMedico.Size = new System.Drawing.Size(257, 38);
+            this.cbMedico.Size = new System.Drawing.Size(257, 33);
             this.cbMedico.TabIndex = 113;
             this.cbMedico.SelectedIndexChanged += new System.EventHandler(this.cbMedico_SelectedIndexChanged);
             // 
@@ -216,7 +216,7 @@
             this.label22.ForeColor = System.Drawing.Color.DarkOrange;
             this.label22.Location = new System.Drawing.Point(556, 213);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 30);
+            this.label22.Size = new System.Drawing.Size(76, 25);
             this.label22.TabIndex = 114;
             this.label22.Text = "Médico:";
             // 
@@ -229,7 +229,7 @@
             this.cbTipoPaciente.FormattingEnabled = true;
             this.cbTipoPaciente.Location = new System.Drawing.Point(250, 306);
             this.cbTipoPaciente.Name = "cbTipoPaciente";
-            this.cbTipoPaciente.Size = new System.Drawing.Size(257, 38);
+            this.cbTipoPaciente.Size = new System.Drawing.Size(257, 33);
             this.cbTipoPaciente.TabIndex = 111;
             // 
             // label1
@@ -239,7 +239,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(245, 278);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 30);
+            this.label1.Size = new System.Drawing.Size(125, 25);
             this.label1.TabIndex = 112;
             this.label1.Text = "Tipo paciente:";
             // 
@@ -267,9 +267,9 @@
             this.txtCiPaciente.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCiPaciente.Location = new System.Drawing.Point(319, 122);
-            this.txtCiPaciente.MaxLength = 9;
+            this.txtCiPaciente.MaxLength = 8;
             this.txtCiPaciente.Name = "txtCiPaciente";
-            this.txtCiPaciente.Size = new System.Drawing.Size(186, 29);
+            this.txtCiPaciente.Size = new System.Drawing.Size(186, 26);
             this.txtCiPaciente.TabIndex = 108;
             this.txtCiPaciente.Leave += new System.EventHandler(this.txtCiPaciente_Leave);
             // 
@@ -285,7 +285,7 @@
             "E-"});
             this.cbCedula.Location = new System.Drawing.Point(249, 121);
             this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 28);
+            this.cbCedula.Size = new System.Drawing.Size(64, 25);
             this.cbCedula.TabIndex = 107;
             // 
             // label2
@@ -295,7 +295,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(245, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 30);
+            this.label2.Size = new System.Drawing.Size(145, 25);
             this.label2.TabIndex = 101;
             this.label2.Text = "Cédula paciente:";
             // 
@@ -311,7 +311,7 @@
             "Masculino"});
             this.txtSexo.Location = new System.Drawing.Point(248, 241);
             this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(257, 38);
+            this.txtSexo.Size = new System.Drawing.Size(257, 33);
             this.txtSexo.TabIndex = 97;
             this.txtSexo.SelectedIndexChanged += new System.EventHandler(this.txtSexo_SelectedIndexChanged);
             // 
@@ -322,7 +322,7 @@
             this.lblnacimiento.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblnacimiento.Location = new System.Drawing.Point(556, 96);
             this.lblnacimiento.Name = "lblnacimiento";
-            this.lblnacimiento.Size = new System.Drawing.Size(210, 30);
+            this.lblnacimiento.Size = new System.Drawing.Size(181, 25);
             this.lblnacimiento.TabIndex = 103;
             this.lblnacimiento.Text = "Fecha de nacimiento:";
             // 
@@ -333,9 +333,9 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(248, 183);
-            this.txtNombre.MaxLength = 100;
+            this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 29);
+            this.txtNombre.Size = new System.Drawing.Size(257, 26);
             this.txtNombre.TabIndex = 96;
             // 
             // label10
@@ -345,7 +345,7 @@
             this.label10.ForeColor = System.Drawing.Color.DarkOrange;
             this.label10.Location = new System.Drawing.Point(245, 157);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 30);
+            this.label10.Size = new System.Drawing.Size(83, 25);
             this.label10.TabIndex = 102;
             this.label10.Text = "Nombre:";
             // 
@@ -358,7 +358,7 @@
             this.dateTimePickerFUR.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerFUR.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerFUR.Name = "dateTimePickerFUR";
-            this.dateTimePickerFUR.Size = new System.Drawing.Size(257, 36);
+            this.dateTimePickerFUR.Size = new System.Drawing.Size(257, 33);
             this.dateTimePickerFUR.TabIndex = 100;
             this.dateTimePickerFUR.ValueChanged += new System.EventHandler(this.dateTimePickerFUR_ValueChanged);
             // 
@@ -369,7 +369,7 @@
             this.label11.ForeColor = System.Drawing.Color.DarkOrange;
             this.label11.Location = new System.Drawing.Point(244, 213);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 30);
+            this.label11.Size = new System.Drawing.Size(54, 25);
             this.label11.TabIndex = 104;
             this.label11.Text = "Sexo:";
             // 
@@ -380,7 +380,7 @@
             this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblFUR.Location = new System.Drawing.Point(556, 281);
             this.lblFUR.Name = "lblFUR";
-            this.lblFUR.Size = new System.Drawing.Size(61, 30);
+            this.lblFUR.Size = new System.Drawing.Size(54, 25);
             this.lblFUR.TabIndex = 106;
             this.lblFUR.Text = "F.U.R:";
             // 
@@ -393,7 +393,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(559, 183);
             this.txtTelefono.MaxLength = 13;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(257, 29);
+            this.txtTelefono.Size = new System.Drawing.Size(257, 26);
             this.txtTelefono.TabIndex = 99;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
@@ -404,7 +404,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(555, 157);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 30);
+            this.label13.Size = new System.Drawing.Size(84, 25);
             this.label13.TabIndex = 105;
             this.label13.Text = "Teléfono:";
             // 
@@ -475,6 +475,7 @@
             // txtBuscarExamen
             // 
             this.txtBuscarExamen.Location = new System.Drawing.Point(21, 18);
+            this.txtBuscarExamen.MaxLength = 50;
             this.txtBuscarExamen.Name = "txtBuscarExamen";
             this.txtBuscarExamen.Size = new System.Drawing.Size(248, 20);
             this.txtBuscarExamen.TabIndex = 10;
@@ -547,6 +548,7 @@
             // txtBuscarSeleccionados
             // 
             this.txtBuscarSeleccionados.Location = new System.Drawing.Point(598, 68);
+            this.txtBuscarSeleccionados.MaxLength = 50;
             this.txtBuscarSeleccionados.Name = "txtBuscarSeleccionados";
             this.txtBuscarSeleccionados.Size = new System.Drawing.Size(248, 20);
             this.txtBuscarSeleccionados.TabIndex = 11;
@@ -661,7 +663,7 @@
             this.txtAbonar.Location = new System.Drawing.Point(660, 336);
             this.txtAbonar.MaxLength = 15;
             this.txtAbonar.Name = "txtAbonar";
-            this.txtAbonar.Size = new System.Drawing.Size(257, 29);
+            this.txtAbonar.Size = new System.Drawing.Size(257, 26);
             this.txtAbonar.TabIndex = 105;
             this.txtAbonar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbonar_KeyPress);
             // 
@@ -672,7 +674,7 @@
             this.label21.ForeColor = System.Drawing.Color.DarkOrange;
             this.label21.Location = new System.Drawing.Point(657, 305);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(87, 30);
+            this.label21.Size = new System.Drawing.Size(76, 25);
             this.label21.TabIndex = 104;
             this.label21.Text = "Abonar:";
             // 
@@ -685,7 +687,7 @@
             this.txtRecEmergencia.Location = new System.Drawing.Point(660, 204);
             this.txtRecEmergencia.MaxLength = 10;
             this.txtRecEmergencia.Name = "txtRecEmergencia";
-            this.txtRecEmergencia.Size = new System.Drawing.Size(257, 29);
+            this.txtRecEmergencia.Size = new System.Drawing.Size(257, 26);
             this.txtRecEmergencia.TabIndex = 103;
             this.txtRecEmergencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecEmergencia_KeyPress);
             // 
@@ -696,7 +698,7 @@
             this.label20.ForeColor = System.Drawing.Color.DarkOrange;
             this.label20.Location = new System.Drawing.Point(653, 176);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(207, 30);
+            this.label20.Size = new System.Drawing.Size(181, 25);
             this.label20.TabIndex = 102;
             this.label20.Text = "Recargo emergencia:";
             // 
@@ -709,7 +711,7 @@
             this.txtNumCHoT.Location = new System.Drawing.Point(388, 336);
             this.txtNumCHoT.MaxLength = 20;
             this.txtNumCHoT.Name = "txtNumCHoT";
-            this.txtNumCHoT.Size = new System.Drawing.Size(257, 29);
+            this.txtNumCHoT.Size = new System.Drawing.Size(257, 26);
             this.txtNumCHoT.TabIndex = 101;
             this.txtNumCHoT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCHoT_KeyPress);
             // 
@@ -720,7 +722,7 @@
             this.label19.ForeColor = System.Drawing.Color.DarkOrange;
             this.label19.Location = new System.Drawing.Point(383, 305);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(215, 30);
+            this.label19.Size = new System.Drawing.Size(186, 25);
             this.label19.TabIndex = 100;
             this.label19.Text = "Nro. Tarjeta / Cheque:";
             // 
@@ -736,7 +738,7 @@
             "Masculino"});
             this.cbIdBanco.Location = new System.Drawing.Point(388, 269);
             this.cbIdBanco.Name = "cbIdBanco";
-            this.cbIdBanco.Size = new System.Drawing.Size(257, 38);
+            this.cbIdBanco.Size = new System.Drawing.Size(257, 33);
             this.cbIdBanco.TabIndex = 99;
             // 
             // label18
@@ -746,7 +748,7 @@
             this.label18.ForeColor = System.Drawing.Color.DarkOrange;
             this.label18.Location = new System.Drawing.Point(387, 241);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(70, 30);
+            this.label18.Size = new System.Drawing.Size(60, 25);
             this.label18.TabIndex = 98;
             this.label18.Text = "Banco";
             // 
@@ -759,7 +761,7 @@
             this.cbIdEmpresa.FormattingEnabled = true;
             this.cbIdEmpresa.Location = new System.Drawing.Point(388, 56);
             this.cbIdEmpresa.Name = "cbIdEmpresa";
-            this.cbIdEmpresa.Size = new System.Drawing.Size(257, 38);
+            this.cbIdEmpresa.Size = new System.Drawing.Size(257, 33);
             this.cbIdEmpresa.TabIndex = 97;
             // 
             // label17
@@ -769,7 +771,7 @@
             this.label17.ForeColor = System.Drawing.Color.DarkOrange;
             this.label17.Location = new System.Drawing.Point(387, 28);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(165, 30);
+            this.label17.Size = new System.Drawing.Size(145, 25);
             this.label17.TabIndex = 96;
             this.label17.Text = "Empresa/Seguro";
             // 
@@ -782,7 +784,7 @@
             this.txtDescuento.Location = new System.Drawing.Point(660, 276);
             this.txtDescuento.MaxLength = 3;
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(257, 29);
+            this.txtDescuento.Size = new System.Drawing.Size(257, 26);
             this.txtDescuento.TabIndex = 95;
             this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
@@ -793,7 +795,7 @@
             this.label16.ForeColor = System.Drawing.Color.DarkOrange;
             this.label16.Location = new System.Drawing.Point(657, 245);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(140, 30);
+            this.label16.Size = new System.Drawing.Size(121, 25);
             this.label16.TabIndex = 94;
             this.label16.Text = "% Descuento:";
             // 
@@ -804,9 +806,9 @@
             this.txtMotivo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMotivo.Location = new System.Drawing.Point(660, 129);
-            this.txtMotivo.MaxLength = 20;
+            this.txtMotivo.MaxLength = 30;
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(257, 29);
+            this.txtMotivo.Size = new System.Drawing.Size(257, 26);
             this.txtMotivo.TabIndex = 93;
             this.txtMotivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMotivo_KeyPress);
             // 
@@ -817,7 +819,7 @@
             this.lblMotivo.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblMotivo.Location = new System.Drawing.Point(657, 98);
             this.lblMotivo.Name = "lblMotivo";
-            this.lblMotivo.Size = new System.Drawing.Size(82, 30);
+            this.lblMotivo.Size = new System.Drawing.Size(73, 25);
             this.lblMotivo.TabIndex = 92;
             this.lblMotivo.Text = "Motivo:";
             // 
@@ -837,7 +839,7 @@
             this.lblExoSi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblExoSi.Location = new System.Drawing.Point(48, 19);
             this.lblExoSi.Name = "lblExoSi";
-            this.lblExoSi.Size = new System.Drawing.Size(36, 17);
+            this.lblExoSi.Size = new System.Drawing.Size(35, 17);
             this.lblExoSi.TabIndex = 67;
             this.lblExoSi.TabStop = true;
             this.lblExoSi.Text = "Sí";
@@ -850,7 +852,7 @@
             this.lblExoNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblExoNo.Location = new System.Drawing.Point(166, 19);
             this.lblExoNo.Name = "lblExoNo";
-            this.lblExoNo.Size = new System.Drawing.Size(39, 17);
+            this.lblExoNo.Size = new System.Drawing.Size(38, 17);
             this.lblExoNo.TabIndex = 68;
             this.lblExoNo.TabStop = true;
             this.lblExoNo.Text = "No";
@@ -864,7 +866,7 @@
             this.label14.ForeColor = System.Drawing.Color.DarkOrange;
             this.label14.Location = new System.Drawing.Point(383, 92);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(115, 30);
+            this.label14.Size = new System.Drawing.Size(102, 25);
             this.label14.TabIndex = 90;
             this.label14.Text = "Exonerado:";
             // 
@@ -884,7 +886,7 @@
             this.rbTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbTarjeta.Location = new System.Drawing.Point(48, 19);
             this.rbTarjeta.Name = "rbTarjeta";
-            this.rbTarjeta.Size = new System.Drawing.Size(58, 17);
+            this.rbTarjeta.Size = new System.Drawing.Size(57, 17);
             this.rbTarjeta.TabIndex = 67;
             this.rbTarjeta.TabStop = true;
             this.rbTarjeta.Text = "Tarjeta";
@@ -897,7 +899,7 @@
             this.rbEfectivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbEfectivo.Location = new System.Drawing.Point(166, 19);
             this.rbEfectivo.Name = "rbEfectivo";
-            this.rbEfectivo.Size = new System.Drawing.Size(64, 17);
+            this.rbEfectivo.Size = new System.Drawing.Size(63, 17);
             this.rbEfectivo.TabIndex = 68;
             this.rbEfectivo.TabStop = true;
             this.rbEfectivo.Text = "Efectivo";
@@ -911,7 +913,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(383, 166);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 30);
+            this.label5.Size = new System.Drawing.Size(125, 25);
             this.label5.TabIndex = 39;
             this.label5.Text = "Tipo de pago:";
             // 
@@ -933,7 +935,7 @@
             this.lblPrecioTotal.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblPrecioTotal.Location = new System.Drawing.Point(931, 295);
             this.lblPrecioTotal.Name = "lblPrecioTotal";
-            this.lblPrecioTotal.Size = new System.Drawing.Size(112, 30);
+            this.lblPrecioTotal.Size = new System.Drawing.Size(98, 25);
             this.lblPrecioTotal.TabIndex = 37;
             this.lblPrecioTotal.Text = "preciototal";
             // 
@@ -944,7 +946,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(931, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 30);
+            this.label8.Size = new System.Drawing.Size(107, 25);
             this.label8.TabIndex = 36;
             this.label8.Text = "Precio Total:";
             // 
@@ -968,7 +970,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(13, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(201, 30);
+            this.label7.Size = new System.Drawing.Size(173, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Exámenes a realizar:";
             // 
@@ -979,7 +981,7 @@
             this.lblNombre.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblNombre.Location = new System.Drawing.Point(103, 36);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(118, 30);
+            this.lblNombre.Size = new System.Drawing.Size(104, 25);
             this.lblNombre.TabIndex = 33;
             this.lblNombre.Text = "nombrepac";
             // 
@@ -990,7 +992,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
             this.label6.Location = new System.Drawing.Point(14, 36);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 30);
+            this.label6.Size = new System.Drawing.Size(83, 25);
             this.label6.TabIndex = 32;
             this.label6.Text = "Nombre:";
             // 
@@ -1001,7 +1003,7 @@
             this.lblCiPac.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblCiPac.Location = new System.Drawing.Point(103, 11);
             this.lblCiPac.Name = "lblCiPac";
-            this.lblCiPac.Size = new System.Drawing.Size(61, 30);
+            this.lblCiPac.Size = new System.Drawing.Size(52, 25);
             this.lblCiPac.TabIndex = 31;
             this.lblCiPac.Text = "cipac";
             // 
@@ -1012,7 +1014,7 @@
             this.label3.ForeColor = System.Drawing.Color.DarkOrange;
             this.label3.Location = new System.Drawing.Point(23, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 30);
+            this.label3.Size = new System.Drawing.Size(72, 25);
             this.label3.TabIndex = 30;
             this.label3.Text = "Cédula:";
             // 

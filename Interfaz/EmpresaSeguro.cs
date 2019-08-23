@@ -547,6 +547,60 @@ namespace Interfaz
 
         }
 
+        private void txtRIF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtRIF, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtRIF, "En este campo solo se pueden ingresar valores numéricos");
+            }
+        }
+
+        private void txtNIT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNIT, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtNIT, "En este campo solo se pueden ingresar valores numéricos");
+            }
+        }
+
+        private void txtPorcentaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtPorcentaje, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtPorcentaje, "En este campo solo se pueden ingresar valores numéricos");
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtDireccion, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtDireccion, "En este campo solo se pueden ingresar letras");
+            }
+        }
+
+        private void txtContacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtContacto, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtContacto, "En este campo solo se pueden ingresar un número de teléfono");
+            }
+        }
+
 
     }
 }

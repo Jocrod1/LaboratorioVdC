@@ -418,6 +418,42 @@ namespace Interfaz
             Mostrar();
         }
 
+        private void txtCuentaContable_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtCuentaContable, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtCuentaContable, "En este campo solo se pueden ingresar números");
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
+        }
+
+        private void txtTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtNombre, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar números");
+            }
+        }
+
+        private void txtPrecioEmpresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtPrecioEmpresa, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtPrecioEmpresa, "En este campo solo se pueden ingresar números");
+            }
+        }
+
 
     }
 }

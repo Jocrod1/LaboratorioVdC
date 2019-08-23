@@ -419,7 +419,7 @@ namespace Interfaz
             }
             if (txtTelefono.Text == "")
             {
-                errorProvider1.SetError(txtTelefono, "ingresa un ");
+                errorProvider1.SetError(txtTelefono, "ingresa un teléfono");
             }
             return error;
         }

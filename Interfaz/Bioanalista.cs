@@ -516,7 +516,7 @@ namespace Interfaz
             errorProvider1.SetError(txtCedula, "");
             if (valid.soloNumeros(e))
             {
-                errorProvider1.SetError(txtCedula, "En este campo solo se pueden ingresar numeros");
+                errorProvider1.SetError(txtCedula, "En este campo solo se pueden ingresar números");
             }
         }
 
@@ -526,6 +526,24 @@ namespace Interfaz
             if (valid.soloLetras(e))
             {
                 errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
+            }
+        }
+
+        private void txtColegio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtColegio, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtColegio, "En este campo solo se pueden ingresar letras");
+            }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtCodigo, "");
+            if (valid.soloNumeros(e))
+            {
+                errorProvider1.SetError(txtCodigo, "En este campo solo se pueden ingresar números");
             }
         }
     }
