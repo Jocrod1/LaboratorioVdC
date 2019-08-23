@@ -260,9 +260,9 @@ namespace Interfaz
             this.ConjuntoDeIDExamenes.Columns.Add("IDExamen", System.Type.GetType("System.Int32")); //id de los examenes individualmente
             this.ConjuntoDeIDExamenes.Columns.Add("ID", System.Type.GetType("System.Int32")); //id 
             this.ConjuntoDeIDExamenes.Columns.Add("IDOrden", System.Type.GetType("System.Int32")); //id de la orden
+            this.ConjuntoDeIDExamenes.Columns.Add("IDPerfil", System.Type.GetType("System.Int32"));// ID si pertenece a un perfil
 
-            
-            
+
         }
 
 
@@ -280,61 +280,7 @@ namespace Interfaz
 
 
 
-        private void GuardarExamenesEnDt()
-        {
-
-
-            foreach (DataRow item in TablaSeleccionados.Rows)
-            {
-
-                if (item[3].Equals( true )) //es perfil
-                {
-                            ExamenesParaGuardar.Rows.Add("Perfil", 1, item[4]); //aqui se guarda "Perfil", 1 q significa q no es examen, y el ID del perfil
-                    
-                }else if (item[3].Equals( false )) //es examen
-                {
-                            ExamenesParaGuardar.Rows.Add("Examen", item[4], 1); //aqui se guarda "Examen", y el ID del examen,  1 q significa q no es perfil
-                        
-                }
-
-            }//fin del foreach para separar cuales son los perfiles y cuales los examenes de la TablaSeleccionados
-
-
-
-
-
-            foreach (DataRow item in ExamenesParaGuardar.Rows)
-            {
-
-                string Tipo = Convert.ToString(item[0]);
-
-                if (Tipo.Equals("Examen"))
-                {
-
-                    ConjuntoDeIDExamenes.Rows.Add(item[1]); //ya que es un examen solo, se guarda el ID directamente
-
-                }
-                else if (Tipo.Equals("Perfil"))
-                {
-
-                    //item[2] este es el ID del perfil 
-
-                    ID = Convert.ToInt32(item[2]);
-                    IDDetalle = Convert.ToInt32(item[2]);
-                    var standard = MPerfil.MostrarDetalle(ID);
-
-                    foreach (var wea in standard)
-                    {
-                        ConjuntoDeIDExamenes.Rows.Add(wea.IDExamen);
-                    }
-
-
-                }
-
-            } //fin del foreach para guardar los ID en ConjuntoDeIDExamenes
-
-
-        }
+        
 
 
 
@@ -474,11 +420,13 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
+                int IDFactura = 0;
+
                 Rpta2 = MFactura.Facturar(1, "123", Convert.ToInt32(this.cbMedico.SelectedValue), 1,
                     DateTime.Now.Date, ConjuntoDeIDExamenes, IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), 
                     Convert.ToInt32(cbIdEmpresa.SelectedValue), 2, TipoPagoEoT, Convert.ToInt32(this.cbIdBanco.SelectedValue), 
                     "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble("69"), 
-                    Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble("69"), ExamenesParaGuardar);
+                    Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble("69"), ExamenesParaGuardar, ref IDFactura);
 
                 MessageBox.Show("Factura Realizada Correctamente");
 
@@ -690,13 +638,68 @@ namespace Interfaz
 
         }
 
-        
+
+
+        private void GuardarExamenesEnDt()
+        {
+
+
+            foreach (DataRow item in TablaSeleccionados.Rows)
+            {
+
+                if (item[3].Equals(true)) //es perfil
+                {
+                    ExamenesParaGuardar.Rows.Add("Perfil", 1, item[4]); //aqui se guarda "Perfil", 1 q significa q no es examen, y el ID del perfil
+
+                }
+                else if (item[3].Equals(false)) //es examen
+                {
+                    ExamenesParaGuardar.Rows.Add("Examen", item[4], 1); //aqui se guarda "Examen", y el ID del examen,  1 q significa q no es perfil
+
+                }
+
+            }//fin del foreach para separar cuales son los perfiles y cuales los examenes de la TablaSeleccionados
 
 
 
 
 
-       
+            foreach (DataRow item in ExamenesParaGuardar.Rows)
+            {
+
+                string Tipo = Convert.ToString(item[0]);
+
+                if (Tipo.Equals("Examen"))
+                {
+
+                    ConjuntoDeIDExamenes.Rows.Add(item[1]); //ya que es un examen solo, se guarda el ID directamente
+
+                }
+                else if (Tipo.Equals("Perfil"))
+                {
+
+                    //item[2] este es el ID del perfil 
+
+                    ID = Convert.ToInt32(item[2]);
+                    IDDetalle = Convert.ToInt32(item[2]);
+                    var standard = MPerfil.MostrarDetalle(ID);
+
+                    foreach (var wea in standard)
+                    {
+                        ConjuntoDeIDExamenes.Rows.Add(wea.IDExamen);
+                    }
+
+
+                }
+
+            } //fin del foreach para guardar los ID en ConjuntoDeIDExamenes
+
+
+        }
+
+
+
+
 
         private void btnImprimir_Click(object sender, EventArgs e)   // Aqui esta la funcion de guardar pac e imprimir
         {

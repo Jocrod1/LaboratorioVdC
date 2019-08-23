@@ -143,7 +143,7 @@ public double Total
             Total = total;
         }
 
-        public string Facturar(DFactura Factura, List<DDetalle_Factura> DetalleFactura, DOrden Orden, List<DDetalle_Orden> detalleorden) {
+        public string Facturar(ref DFactura Factura, List<DDetalle_Factura> DetalleFactura, DOrden Orden, List<DDetalle_Orden> detalleorden) {
 
             string respuesta = "";
             SqlConnection sqlconectar = new SqlConnection();
@@ -164,7 +164,7 @@ public double Total
                 if (respuesta.Equals("OK"))
                 {
                     Factura.IDOrden = Identidad;
-                    respuesta = Factura.Insertar(Factura, DetalleFactura, ref sqlconectar, ref SqlTransaccion);
+                    respuesta = Factura.Insertar(ref Factura, DetalleFactura, ref sqlconectar, ref SqlTransaccion);
 
                 }
 
@@ -196,7 +196,7 @@ public double Total
 
         //metodos
         //insertar
-        public string Insertar(DFactura Factura, List<DDetalle_Factura> Detalle, ref SqlConnection SqlConectar, ref SqlTransaction SqlTransaccion)
+        public string Insertar(ref DFactura Factura, List<DDetalle_Factura> Detalle, ref SqlConnection SqlConectar, ref SqlTransaction SqlTransaccion)
         {
             string respuesta = "";
 
@@ -325,7 +325,7 @@ public double Total
 
                 if(respuesta.Equals("OK"))
                 {
-                    this.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
+                    Factura.ID = Convert.ToInt32(SqlComando.Parameters["@ID"].Value);
 
                     foreach(DDetalle_Factura det in Detalle)
                     {
