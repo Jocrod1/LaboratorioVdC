@@ -77,7 +77,7 @@
             this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1370, 27);
+            this.menuStrip.Size = new System.Drawing.Size(1370, 29);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -91,14 +91,14 @@
             this.facturaciónToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.facturaciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("facturaciónToolStripMenuItem.Image")));
             this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(109, 23);
+            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(121, 25);
             this.facturaciónToolStripMenuItem.Text = "Facturación";
             // 
             // facturarToolStripMenuItem
             // 
             this.facturarToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.facturarToolStripMenuItem.Name = "facturarToolStripMenuItem";
-            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
+            this.facturarToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.facturarToolStripMenuItem.Text = "Facturar";
             this.facturarToolStripMenuItem.Click += new System.EventHandler(this.facturarToolStripMenuItem_Click);
             // 
@@ -106,7 +106,7 @@
             // 
             this.presupuestoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.presupuestoToolStripMenuItem.Name = "presupuestoToolStripMenuItem";
-            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
+            this.presupuestoToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.presupuestoToolStripMenuItem.Text = "Presupuesto";
             this.presupuestoToolStripMenuItem.Click += new System.EventHandler(this.presupuestoToolStripMenuItem_Click);
             // 
@@ -116,7 +116,7 @@
             this.pacientesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.pacientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pacientesToolStripMenuItem.Image")));
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(96, 23);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(106, 25);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
@@ -126,7 +126,7 @@
             this.resultadosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.resultadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("resultadosToolStripMenuItem.Image")));
             this.resultadosToolStripMenuItem.Name = "resultadosToolStripMenuItem";
-            this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(105, 23);
+            this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(118, 25);
             this.resultadosToolStripMenuItem.Text = "Resultados";
             this.resultadosToolStripMenuItem.Click += new System.EventHandler(this.resultadosToolStripMenuItem_Click);
             // 
@@ -152,14 +152,14 @@
             this.mantenimientoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.mantenimientoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mantenimientoToolStripMenuItem.Image")));
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(133, 23);
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(148, 25);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             // 
             // exámenesToolStripMenuItem
             // 
             this.exámenesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.exámenesToolStripMenuItem.Name = "exámenesToolStripMenuItem";
-            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.exámenesToolStripMenuItem.Text = "Exámenes";
             this.exámenesToolStripMenuItem.Click += new System.EventHandler(this.exámenesToolStripMenuItem_Click);
             // 
@@ -167,7 +167,7 @@
             // 
             this.perfilesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
@@ -175,28 +175,28 @@
             // 
             this.gérmenesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.gérmenesToolStripMenuItem.Name = "gérmenesToolStripMenuItem";
-            this.gérmenesToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.gérmenesToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.gérmenesToolStripMenuItem.Text = "Gérmenes";
             // 
             // antibióticosToolStripMenuItem
             // 
             this.antibióticosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.antibióticosToolStripMenuItem.Name = "antibióticosToolStripMenuItem";
-            this.antibióticosToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.antibióticosToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.antibióticosToolStripMenuItem.Text = "Antibióticos";
             // 
             // tablasBactereologiaYHecesToolStripMenuItem
             // 
             this.tablasBactereologiaYHecesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.tablasBactereologiaYHecesToolStripMenuItem.Name = "tablasBactereologiaYHecesToolStripMenuItem";
-            this.tablasBactereologiaYHecesToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.tablasBactereologiaYHecesToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.tablasBactereologiaYHecesToolStripMenuItem.Text = "Tablas bactereologia y heces";
             // 
             // empesasYSegurosToolStripMenuItem
             // 
             this.empesasYSegurosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.empesasYSegurosToolStripMenuItem.Name = "empesasYSegurosToolStripMenuItem";
-            this.empesasYSegurosToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.empesasYSegurosToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.empesasYSegurosToolStripMenuItem.Text = "Empesas y seguros";
             this.empesasYSegurosToolStripMenuItem.Click += new System.EventHandler(this.empesasYSegurosToolStripMenuItem_Click);
             // 
@@ -204,7 +204,7 @@
             // 
             this.médicosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.médicosToolStripMenuItem.Name = "médicosToolStripMenuItem";
-            this.médicosToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.médicosToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.médicosToolStripMenuItem.Text = "Médicos";
             this.médicosToolStripMenuItem.Click += new System.EventHandler(this.médicosToolStripMenuItem_Click);
             // 
@@ -212,7 +212,7 @@
             // 
             this.tiposDePacientesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.tiposDePacientesToolStripMenuItem.Name = "tiposDePacientesToolStripMenuItem";
-            this.tiposDePacientesToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.tiposDePacientesToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.tiposDePacientesToolStripMenuItem.Text = "Tipos de pacientes";
             this.tiposDePacientesToolStripMenuItem.Click += new System.EventHandler(this.tiposDePacientesToolStripMenuItem_Click);
             // 
@@ -220,7 +220,7 @@
             // 
             this.tablaDeBancosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.tablaDeBancosToolStripMenuItem.Name = "tablaDeBancosToolStripMenuItem";
-            this.tablaDeBancosToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.tablaDeBancosToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.tablaDeBancosToolStripMenuItem.Text = "Tabla de Bancos";
             this.tablaDeBancosToolStripMenuItem.Click += new System.EventHandler(this.tablaDeBancosToolStripMenuItem_Click);
             // 
@@ -228,7 +228,7 @@
             // 
             this.tablaDeGruposDeExámenesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.tablaDeGruposDeExámenesToolStripMenuItem.Name = "tablaDeGruposDeExámenesToolStripMenuItem";
-            this.tablaDeGruposDeExámenesToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.tablaDeGruposDeExámenesToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.tablaDeGruposDeExámenesToolStripMenuItem.Text = "Tabla de grupos de exámenes";
             this.tablaDeGruposDeExámenesToolStripMenuItem.Click += new System.EventHandler(this.tablaDeGruposDeExámenesToolStripMenuItem_Click);
             // 
@@ -236,7 +236,7 @@
             // 
             this.tablaDeLabReferenciasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.tablaDeLabReferenciasToolStripMenuItem.Name = "tablaDeLabReferenciasToolStripMenuItem";
-            this.tablaDeLabReferenciasToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.tablaDeLabReferenciasToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.tablaDeLabReferenciasToolStripMenuItem.Text = "Tabla de lab. referencias";
             this.tablaDeLabReferenciasToolStripMenuItem.Click += new System.EventHandler(this.tablaDeLabReferenciasToolStripMenuItem_Click);
             // 
@@ -244,7 +244,7 @@
             // 
             this.tablaDeEgresosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.tablaDeEgresosToolStripMenuItem.Name = "tablaDeEgresosToolStripMenuItem";
-            this.tablaDeEgresosToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.tablaDeEgresosToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.tablaDeEgresosToolStripMenuItem.Text = "Tabla de egresos";
             this.tablaDeEgresosToolStripMenuItem.Click += new System.EventHandler(this.tablaDeEgresosToolStripMenuItem_Click);
             // 
@@ -252,7 +252,7 @@
             // 
             this.tablaDeBioanalistasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.tablaDeBioanalistasToolStripMenuItem.Name = "tablaDeBioanalistasToolStripMenuItem";
-            this.tablaDeBioanalistasToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.tablaDeBioanalistasToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.tablaDeBioanalistasToolStripMenuItem.Text = "Tabla de bioanalistas";
             this.tablaDeBioanalistasToolStripMenuItem.Click += new System.EventHandler(this.tablaDeBioanalistasToolStripMenuItem_Click);
             // 
@@ -260,14 +260,14 @@
             // 
             this.aumentoAutomáticoDePreciosToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.aumentoAutomáticoDePreciosToolStripMenuItem.Name = "aumentoAutomáticoDePreciosToolStripMenuItem";
-            this.aumentoAutomáticoDePreciosToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.aumentoAutomáticoDePreciosToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.aumentoAutomáticoDePreciosToolStripMenuItem.Text = "Aumento automático de precios";
             // 
             // trabajadoresToolStripMenuItem
             // 
             this.trabajadoresToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.trabajadoresToolStripMenuItem.Name = "trabajadoresToolStripMenuItem";
-            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.trabajadoresToolStripMenuItem.Text = "Trabajadores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
             // 
@@ -280,21 +280,21 @@
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.reportesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportesToolStripMenuItem.Image")));
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(104, 25);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // pacientesToolStripMenuItem1
             // 
             this.pacientesToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.pacientesToolStripMenuItem1.Name = "pacientesToolStripMenuItem1";
-            this.pacientesToolStripMenuItem1.Size = new System.Drawing.Size(135, 24);
+            this.pacientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
             this.pacientesToolStripMenuItem1.Text = "Pacientes";
             // 
             // facturasToolStripMenuItem
             // 
             this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.facturasToolStripMenuItem.Text = "Facturas";
             // 
             // statusStrip
@@ -305,9 +305,9 @@
             this.label_nombre,
             this.label_acceso});
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.statusStrip.Location = new System.Drawing.Point(0, 728);
+            this.statusStrip.Location = new System.Drawing.Point(0, 726);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1370, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1370, 24);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -316,7 +316,7 @@
             this.label_cedula.BackColor = System.Drawing.Color.Transparent;
             this.label_cedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.label_cedula.Name = "label_cedula";
-            this.label_cedula.Size = new System.Drawing.Size(42, 17);
+            this.label_cedula.Size = new System.Drawing.Size(48, 19);
             this.label_cedula.Text = "cedula";
             // 
             // label_nombre
@@ -324,7 +324,7 @@
             this.label_nombre.BackColor = System.Drawing.Color.Transparent;
             this.label_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.label_nombre.Name = "label_nombre";
-            this.label_nombre.Size = new System.Drawing.Size(49, 17);
+            this.label_nombre.Size = new System.Drawing.Size(57, 19);
             this.label_nombre.Text = "nombre";
             // 
             // label_acceso
@@ -334,7 +334,7 @@
             this.label_acceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
             this.label_acceso.Name = "label_acceso";
             this.label_acceso.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_acceso.Size = new System.Drawing.Size(43, 17);
+            this.label_acceso.Size = new System.Drawing.Size(49, 19);
             this.label_acceso.Spring = true;
             this.label_acceso.Text = "acceso";
             this.label_acceso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -357,6 +357,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laboratorio Clínico Virgen de Coromoto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuInicio_FormClosing);
             this.Load += new System.EventHandler(this.MenuInicio_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();

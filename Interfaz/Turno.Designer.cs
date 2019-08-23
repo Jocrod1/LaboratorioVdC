@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Turno));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -91,14 +91,14 @@
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -135,7 +135,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(10, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
+            this.label3.Size = new System.Drawing.Size(80, 30);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar:";
             // 
@@ -164,7 +164,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(12, 75);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.Size = new System.Drawing.Size(46, 20);
             this.lblTotal.TabIndex = 53;
             this.lblTotal.Text = "label5";
             // 
@@ -210,7 +210,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(15, 40);
             this.txtBuscar.MaxLength = 15;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 33);
+            this.txtBuscar.Size = new System.Drawing.Size(387, 36);
             this.txtBuscar.TabIndex = 52;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -252,7 +252,7 @@
             // dtFinal
             // 
             this.dtFinal.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dtFinal.CustomFormat = "h:mm tt";
+            this.dtFinal.CustomFormat = "HH:mm ";
             this.dtFinal.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtFinal.Location = new System.Drawing.Point(35, 260);
@@ -260,7 +260,7 @@
             this.dtFinal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtFinal.Name = "dtFinal";
             this.dtFinal.ShowUpDown = true;
-            this.dtFinal.Size = new System.Drawing.Size(257, 33);
+            this.dtFinal.Size = new System.Drawing.Size(257, 36);
             this.dtFinal.TabIndex = 77;
             // 
             // label2
@@ -270,14 +270,14 @@
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(32, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 25);
+            this.label2.Size = new System.Drawing.Size(61, 30);
             this.label2.TabIndex = 78;
             this.label2.Text = "Final:";
             // 
             // dtComienzo
             // 
             this.dtComienzo.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dtComienzo.CustomFormat = "h:mm tt";
+            this.dtComienzo.CustomFormat = "HH:mm";
             this.dtComienzo.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtComienzo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtComienzo.Location = new System.Drawing.Point(33, 188);
@@ -285,7 +285,7 @@
             this.dtComienzo.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtComienzo.Name = "dtComienzo";
             this.dtComienzo.ShowUpDown = true;
-            this.dtComienzo.Size = new System.Drawing.Size(257, 33);
+            this.dtComienzo.Size = new System.Drawing.Size(257, 36);
             this.dtComienzo.TabIndex = 75;
             // 
             // label7
@@ -295,7 +295,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(30, 160);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 25);
+            this.label7.Size = new System.Drawing.Size(112, 30);
             this.label7.TabIndex = 76;
             this.label7.Text = "Comienzo:";
             // 
@@ -308,7 +308,7 @@
             this.txtNombre.Location = new System.Drawing.Point(32, 123);
             this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 33);
+            this.txtNombre.Size = new System.Drawing.Size(257, 36);
             this.txtNombre.TabIndex = 73;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -319,7 +319,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(28, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.Size = new System.Drawing.Size(94, 30);
             this.label1.TabIndex = 74;
             this.label1.Text = "Nombre:";
             // 

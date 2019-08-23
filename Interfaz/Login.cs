@@ -120,6 +120,28 @@ namespace Interfaz
             }
             else
             {
+                var lista = MTurno.Mostrar("");
+
+                TimeSpan hora = DateTime.Now.TimeOfDay;
+
+                bool isbetween;
+                int IDTurno = 0;
+
+                foreach (var item in lista)
+                {
+                    isbetween = item.Comienzo < hora && hora < item.Final;
+                    if (isbetween)
+                    {
+                        IDTurno = item.ID;
+                        break;
+                    }
+                }
+                if (IDTurno == 0) {
+                    IDTurno = 1;
+                    return;
+                }
+
+                MRegistroAcceso.Insertar(0, Datos.Rows[0][0].ToString(), IDTurno, DateTime.Now);
 
                 MenuInicio.cedula = Datos.Rows[0][0].ToString();
                 MenuInicio.nombre = Datos.Rows[0][1].ToString();
@@ -132,6 +154,7 @@ namespace Interfaz
 
                 MenuInicio Menu = new MenuInicio();
                 Menu.Show();
+                Menu.WindowState = FormWindowState.Maximized;
                 this.Hide();
 
             }

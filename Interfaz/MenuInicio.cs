@@ -227,6 +227,11 @@ namespace Interfaz
             //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
         }
 
+        private void MenuInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
         private void tablaDeEgresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Egresos frm = new Egresos(); //.GetInstancia();

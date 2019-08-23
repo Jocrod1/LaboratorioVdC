@@ -168,7 +168,7 @@ namespace Interfaz
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-            Anulados();
+            //Anulados();
         }
         //Falta el método anulados
 

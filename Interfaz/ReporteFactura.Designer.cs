@@ -47,8 +47,8 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Interfaz.Reportes.RptResultado.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(918, 603);
+            //this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1086, 667);
             this.reportViewer1.TabIndex = 0;
             // 
             // DataSet
