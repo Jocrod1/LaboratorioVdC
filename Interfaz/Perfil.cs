@@ -70,6 +70,11 @@ namespace Interfaz
 
 
 
+            OcultarColumnas();
+
+
+
+
 
             //todo esto es pa ponerle colorcitos al datagridview
 
@@ -88,6 +93,47 @@ namespace Interfaz
             dataListado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
 
 
+
+
+
+            //todo esto es pa ponerle colorcitos al datagridview de examenes 
+
+            dgvExamenes.BorderStyle = BorderStyle.None;
+            dgvExamenes.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 236, 201);
+            dgvExamenes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvExamenes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(242, 174, 78);
+            dgvExamenes.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvExamenes.BackgroundColor = Color.FromArgb(250, 242, 230);
+
+            dgvExamenes.EnableHeadersVisualStyles = false;
+            dgvExamenes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvExamenes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 154, 34);  
+            dgvExamenes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvExamenes.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
+
+            //todo esto es pa ponerle colorcitos al datagridview de seleccionados
+
+            dgvSeleccionados.BorderStyle = BorderStyle.None;
+            dgvSeleccionados.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 236, 201);
+            dgvSeleccionados.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvSeleccionados.DefaultCellStyle.SelectionBackColor = Color.FromArgb(242, 174, 78);
+            dgvSeleccionados.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvSeleccionados.BackgroundColor = Color.FromArgb(250, 242, 230);
+
+            dgvSeleccionados.EnableHeadersVisualStyles = false;
+            dgvSeleccionados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvSeleccionados.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 154, 34);
+            dgvSeleccionados.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvSeleccionados.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
+
         }
 
         //metodos
@@ -96,7 +142,7 @@ namespace Interfaz
         {
             
             this.dataListado.Columns[0].Visible = false; //ID 
-            this.dataListado.Columns[4].Visible = false;
+            this.dataListado.Columns[4].Visible = false; 
             this.dataListado.Columns[7].Visible = false;
             this.dataListado.Columns[5].Visible = false;
             
@@ -106,6 +152,31 @@ namespace Interfaz
             this.dataListado.Columns[3].HeaderText = "Precio 2";
             this.dataListado.Columns[6].HeaderText = "Precio de Referencia";
             this.dataListado.Columns[8].HeaderText = "Laboratorio de Referencia";
+
+
+
+            //para dgvExamenes
+            this.dgvExamenes.Columns[0].Visible = false; //ID 
+
+            for (int i = 2; i <= 15; i++)
+            {
+                this.dgvExamenes.Columns[i].Visible = false;
+            }
+
+
+            //renombrar 
+            this.dgvExamenes.Columns[1].HeaderText = "Nombre Examen";
+
+
+
+
+            //para dgvSeleccionados
+            this.dgvSeleccionados.Columns[0].Visible = false; //ID 
+
+
+            //renombrar 
+            this.dgvSeleccionados.Columns[1].HeaderText = "Nombre Examen";
+
         }
 
         private void Anulados()
@@ -504,7 +575,7 @@ namespace Interfaz
             }
             if (dgvSeleccionados.Rows.Count == 0) {
                 error = false;
-                errorProvider1.SetError(label9, "selecciona una opcion");
+                errorProvider1.SetError(label7, "selecciona una opcion");
             }
             return error;
         }
