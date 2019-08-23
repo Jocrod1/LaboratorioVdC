@@ -19,6 +19,8 @@ namespace Interfaz
         public MenuInicio()
         {
             InitializeComponent();
+
+
         }
 
         private void MenuInicio_Load(object sender, EventArgs e)

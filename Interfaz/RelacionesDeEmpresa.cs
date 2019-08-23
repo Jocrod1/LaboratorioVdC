@@ -99,5 +99,106 @@ namespace Interfaz
 
 
         }
+
+        private void RelacionesDeEmpresa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void EliminarItems()
+        {
+
+            try
+            {
+                int NumeroSeleccionado = 0;
+                DialogResult Opcion;
+                foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                {
+                    NumeroSeleccionado++;
+                }
+                if (NumeroSeleccionado > 1)
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar los " + NumeroSeleccionado + " registros?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                }
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string Rpta = "";
+
+                    foreach (DataGridViewRow item in this.dataListado.SelectedRows)
+                    {
+            //            Rpta = MMedico.Eliminar(Convert.ToInt32(item.Cells[0].Value));
+                    }
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        if (NumeroSeleccionado > 1)
+                        {
+                            this.MensajeOK("Se eliminaron correctamente los registros de médico");
+                        }
+                        else
+                        {
+                            this.MensajeOK("Se eliminó correctamente el registro del médico");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
+
+        private void Mostrar()
+        {
+            dataListado.DataSource = MEmpresaSeguro.Mostrar(txtBuscar.Text);
+            dataListado.ClearSelection();
+            this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+            Anulados();
+        }
+        //Falta el método anulados
+
+
+
+        //Método ocultar columnas
+
+        private void OcultarColumnas()
+        {
+            //this.dataListado.Columns[0].Visible = false; //ID 
+            //this.dataListado.Columns[4].Visible = false;
+        }
+
+
+        //Para mostrar mensaje de error
+        private void MensajeError(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        //Al clickear "ok"
+        private void MensajeOK(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarItems();
+        }
     }
 }
