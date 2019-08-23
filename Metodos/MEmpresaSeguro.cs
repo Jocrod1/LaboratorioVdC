@@ -69,7 +69,11 @@ namespace Metodos
             DEmpresaSeguro Objeto = new DEmpresaSeguro();
             return Objeto.MostrarNombre(TextoBuscar); //añadir esta wea en DEmpresaSeguro
         }
-        
 
+        public new static List<DEmpresaSeguro> MostrarCombobox()
+        {
+            DEmpresaSeguro Objeto = new DEmpresaSeguro();
+            return Objeto.MostrarCombobox();
+        }
     }
 }

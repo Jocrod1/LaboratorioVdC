@@ -302,6 +302,46 @@ namespace Datos
 
         }
 
+
+        public List<DBanco> MostrarCombobox()
+        {
+            DataTable DtResultado = new DataTable("Bancos");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DBanco> ListaGenerica = new List<DBanco>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_banco";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DBanco
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Nombre = LeerFilas.GetString(1)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
+
     }
 }
 

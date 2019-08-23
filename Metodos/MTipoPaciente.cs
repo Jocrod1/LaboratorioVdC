@@ -53,6 +53,10 @@ namespace Metodos
             return Objeto.Mostrar(TextoBuscar);
         }
 
-
+        public new static List<DTipoPaciente> MostrarCombobox()
+        {
+            DTipoPaciente Objeto = new DTipoPaciente();
+            return Objeto.MostrarCombobox();
+        }
     }
 }

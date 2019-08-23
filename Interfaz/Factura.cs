@@ -67,23 +67,23 @@ namespace Interfaz
         {
 
 
-            cbTipoPaciente.DataSource = MTipoPaciente.Mostrar("");
+            cbTipoPaciente.DataSource = MTipoPaciente.MostrarCombobox();
             cbTipoPaciente.DisplayMember = "Nombre";
             cbTipoPaciente.ValueMember = "ID";
             cbTipoPaciente.SelectedIndex = -1;
 
 
-            cbMedico.DataSource = MMedico.Mostrar("");
+            cbMedico.DataSource = MMedico.MostrarCombobox();
             cbMedico.DisplayMember = "Nombre";
             cbMedico.ValueMember = "IdMedico";
             cbMedico.SelectedIndex = -1;
 
-            cbIdEmpresa.DataSource = MEmpresaSeguro.Mostrar("");
+            cbIdEmpresa.DataSource = MEmpresaSeguro.MostrarCombobox();
             cbIdEmpresa.DisplayMember = "Nombre";
             cbIdEmpresa.ValueMember = "ID";
             cbIdEmpresa.SelectedIndex = -1;
 
-            cbIdBanco.DataSource = MBanco.Mostrar("");
+            cbIdBanco.DataSource = MBanco.MostrarCombobox();
             cbIdBanco.DisplayMember = "Nombre";
             cbIdBanco.ValueMember = "ID";
             cbIdBanco.SelectedIndex = -1;

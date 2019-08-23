@@ -519,5 +519,46 @@ namespace Datos
             return ListaGenerica;
 
         }
+
+
+
+        public List<DEmpresaSeguro> MostrarCombobox()
+        {
+            DataTable DtResultado = new DataTable("EmpresasYSeg");
+            SqlConnection SqlConectar = new SqlConnection();
+            List<DEmpresaSeguro> ListaGenerica = new List<DEmpresaSeguro>();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlDataReader LeerFilas;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "seleccionar_empresasyseg";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlConectar.Open();
+
+                LeerFilas = SqlComando.ExecuteReader();
+
+                while (LeerFilas.Read())
+                {
+                    ListaGenerica.Add(new DEmpresaSeguro
+                    {
+                        ID = LeerFilas.GetInt32(0),
+                        Nombre = LeerFilas.GetString(1)
+                    });
+                }
+                LeerFilas.Close();
+                SqlConectar.Close();
+            }
+            catch (Exception)
+            {
+                ListaGenerica = null;
+            }
+
+            return ListaGenerica;
+
+        }
     }
 }

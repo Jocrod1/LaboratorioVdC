@@ -46,5 +46,11 @@ namespace Metodos
             DBanco Objeto = new DBanco();
             return Objeto.Mostrar(TextoBuscar);
         }
+
+        public new static List<DBanco> MostrarCombobox()
+        {
+            DBanco Objeto = new DBanco();
+            return Objeto.MostrarCombobox();
+        }
     }
 }
