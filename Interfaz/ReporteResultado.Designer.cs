@@ -1,6 +1,6 @@
 ﻿namespace Interfaz
 {
-    partial class ReporteFactura
+    partial class ReporteResultado
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.DocumentMapWidth = 31;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.reporte_facturaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
@@ -65,15 +66,15 @@
             // 
             this.reporte_facturaTableAdapter.ClearBeforeFill = true;
             // 
-            // ReporteFactura
+            // ReporteResultado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 603);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReporteFactura";
-            this.Text = "ReporteFactura";
-            this.Load += new System.EventHandler(this.ReporteFactura_Load);
+            this.Name = "ReporteResultado";
+            this.Text = "ReporteResultado";
+            this.Load += new System.EventHandler(this.ReporteResultado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporte_facturaBindingSource)).EndInit();
             this.ResumeLayout(false);

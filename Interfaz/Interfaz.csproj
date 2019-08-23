@@ -199,6 +199,12 @@
     <Compile Include="ReporteFactura.Designer.cs">
       <DependentUpon>ReporteFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteResultado.Designer.cs">
+      <DependentUpon>ReporteResultado.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TipoPaciente.cs">
       <SubType>Form</SubType>
@@ -279,7 +285,11 @@
     <EmbeddedResource Include="ReporteFactura.resx">
       <DependentUpon>ReporteFactura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteResultado.resx">
+      <DependentUpon>ReporteResultado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\RptResultado.rdlc" />
     <EmbeddedResource Include="TipoPaciente.resx">
       <DependentUpon>TipoPaciente.cs</DependentUpon>
     </EmbeddedResource>

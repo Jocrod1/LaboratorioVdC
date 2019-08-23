@@ -224,6 +224,10 @@ namespace Interfaz
                 if(Rpta.Equals("OK"))
                 {
                     MessageBox.Show("Se insertó correctamente");
+
+                    ReporteResultado Reporte = new ReporteResultado();
+                    Reporte.ID = Convert.ToInt32(this.txtBuscar.Text);
+                    Reporte.ShowDialog();
                 }
                 else
                 {

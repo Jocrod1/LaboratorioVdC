@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace Interfaz
 {
-    public partial class ReporteFactura : Form
+    public partial class ReporteResultado : Form
     {
+
         private int _ID;
 
         public int ID
@@ -20,17 +21,15 @@ namespace Interfaz
             set { _ID = value; }
         }
 
-        public ReporteFactura()
+        public ReporteResultado()
         {
             InitializeComponent();
         }
 
-        private void ReporteFactura_Load(object sender, EventArgs e)
+        private void ReporteResultado_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DataSet.reporte_factura' Puede moverla o quitarla según sea necesario.
             this.reporte_facturaTableAdapter.Fill(this.DataSet.reporte_factura, ID);
 
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
     }
