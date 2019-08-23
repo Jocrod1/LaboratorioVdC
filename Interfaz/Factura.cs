@@ -92,9 +92,7 @@ namespace Interfaz
             cbIdBanco.SelectedIndex = -1;
 
 
-
-            lblMotivo.Hide();   //oculta el motivo, para luego que se seleccione el rb si/no
-            txtMotivo.Hide();
+            txtMotivo.Enabled = false;
 
 
 
@@ -118,7 +116,78 @@ namespace Interfaz
 
             crearTabla();
 
+            //todo esto es pa ponerle colorcitos al datagridview de examenes 
 
+            dgvExamenes.BorderStyle = BorderStyle.None;
+            dgvExamenes.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 236, 201);
+            dgvExamenes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvExamenes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(242, 174, 78);
+            dgvExamenes.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvExamenes.BackgroundColor = Color.FromArgb(250, 242, 230);
+
+            dgvExamenes.EnableHeadersVisualStyles = false;
+            dgvExamenes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvExamenes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 154, 34);
+            dgvExamenes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvExamenes.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+            //todo esto es pa ponerle colorcitos al datagridview de perfiles
+
+            dgvPerfiles.BorderStyle = BorderStyle.None;
+            dgvPerfiles.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 236, 201);
+            dgvPerfiles.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvPerfiles.DefaultCellStyle.SelectionBackColor = Color.FromArgb(242, 174, 78);
+            dgvPerfiles.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvPerfiles.BackgroundColor = Color.FromArgb(250, 242, 230);
+
+            dgvPerfiles.EnableHeadersVisualStyles = false;
+            dgvPerfiles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvPerfiles.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 154, 34);
+            dgvPerfiles.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvPerfiles.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+
+            //todo esto es pa ponerle colorcitos al datagridview de seleccionados
+
+            dgvSeleccionados.BorderStyle = BorderStyle.None;
+            dgvSeleccionados.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 236, 201);
+            dgvSeleccionados.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvSeleccionados.DefaultCellStyle.SelectionBackColor = Color.FromArgb(242, 174, 78);
+            dgvSeleccionados.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvSeleccionados.BackgroundColor = Color.FromArgb(250, 242, 230);
+
+            dgvSeleccionados.EnableHeadersVisualStyles = false;
+            dgvSeleccionados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvSeleccionados.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 154, 34);
+            dgvSeleccionados.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvSeleccionados.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+
+            //todo esto es pa ponerle colorcitos al datagridview ResumenExamenes
+
+            dgvResumenExamenes.BorderStyle = BorderStyle.None;
+            dgvResumenExamenes.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(209, 247, 195);
+            dgvResumenExamenes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvResumenExamenes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(127, 207, 74);
+            dgvResumenExamenes.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvResumenExamenes.BackgroundColor = Color.White;
+
+            dgvResumenExamenes.EnableHeadersVisualStyles = false;
+            dgvResumenExamenes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvResumenExamenes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(96, 191, 33);  //69, 204, 20
+            dgvResumenExamenes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dgvResumenExamenes.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            
+           
+
+            OcultarColumnas();
                 
 
 
@@ -315,9 +384,9 @@ namespace Interfaz
                 tabControl1.SelectedIndex = tabSiguiente;  //realiza el cambio de tab
                 this.btnRetroceder.Enabled = true;               //se activan los botones para que vuelvan a estar normal
                 this.btnContinuar.Enabled = true;
-                this.btnContinuar.BackColor = Color.PaleGreen;
+                this.btnContinuar.BackColor = Color.FromArgb(192, 255, 192);
                 this.btnContinuar.ForeColor = Color.DarkGreen;
-                this.btnRetroceder.BackColor = Color.PaleGreen;
+                this.btnRetroceder.BackColor = Color.FromArgb(192, 255, 192);
                 this.btnRetroceder.ForeColor = Color.DarkGreen;
                 
             }
@@ -334,11 +403,11 @@ namespace Interfaz
 
             if (tabControl1.SelectedIndex == 0)
             {
-                lblFaseActual.Text = "Exámenes";
+                lblFaseActual.Text = "Paciente";
             }
             else if (tabControl1.SelectedIndex == 1)
             {
-                lblFaseActual.Text = "Paciente";
+                lblFaseActual.Text = "Exámenes";
 
                 OcultarColumnasPrecio(Convert.ToInt32(cbTipoPaciente.SelectedValue));
             }
@@ -352,6 +421,19 @@ namespace Interfaz
                 //lblPrecioTotal.Text =;
 
                 CargarResumenExamenesSeleccionados(); //esto es para cargar los examenes seleccionados al dgv de la parte Finalizar
+
+
+                //para dgvResumenExamenes
+                this.dgvResumenExamenes.Columns[0].Visible = true; //nombre
+                this.dgvResumenExamenes.Columns[1].HeaderText = "Nombre Examen";
+
+                for (int i = 1; i <= 4; i++)
+                {
+                    this.dgvResumenExamenes.Columns[i].Visible = false;
+                }
+
+
+
 
 
             }
@@ -617,7 +699,42 @@ namespace Interfaz
 
 
 
+        private void OcultarColumnas()
+        {
+            //para dgvExamenes
+            this.dgvExamenes.Columns[0].Visible = false; //ID 
 
+            for (int i = 2; i <= 15; i++)
+            {
+                this.dgvExamenes.Columns[i].Visible = false;
+            }
+
+
+            //renombrar 
+            this.dgvExamenes.Columns[1].HeaderText = "Nombre Examen";
+
+
+            //para dgvPerfiles
+            this.dgvPerfiles.Columns[0].Visible = false; //ID 
+
+            for (int i = 2; i <= 8; i++)
+            {
+                this.dgvPerfiles.Columns[i].Visible = false;
+            }
+
+
+            //renombrar 
+            this.dgvPerfiles.Columns[1].HeaderText = "Nombre Perfil";
+
+
+
+            //para dgvSeleccionados
+            this.dgvSeleccionados.Columns[0].Visible = false; //ID 
+
+
+            //renombrar 
+            this.dgvSeleccionados.Columns[1].HeaderText = "Nombre Examen";
+        }
 
 
 
@@ -853,8 +970,7 @@ namespace Interfaz
         {
             if (lblExoSi.Checked == true)
             {
-                lblMotivo.Show();
-                txtMotivo.Show();
+                txtMotivo.Enabled = true;
 
                 rbEfectivo.Enabled = false;
                 rbTarjeta.Enabled = false;
@@ -875,8 +991,7 @@ namespace Interfaz
             if (lblExoNo.Checked == true)
             {
                 txtMotivo.Clear();
-                lblMotivo.Hide();
-                txtMotivo.Hide();
+                txtMotivo.Enabled = false;
 
                 rbEfectivo.Enabled = true;
                 rbTarjeta.Enabled = true;
