@@ -363,7 +363,7 @@
             this.lblFUR.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblFUR.Location = new System.Drawing.Point(556, 281);
             this.lblFUR.Name = "lblFUR";
-            this.lblFUR.Size = new System.Drawing.Size(54, 25);
+            this.lblFUR.Size = new System.Drawing.Size(56, 25);
             this.lblFUR.TabIndex = 106;
             this.lblFUR.Text = "F.U.R:";
             // 
@@ -387,7 +387,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkOrange;
             this.label13.Location = new System.Drawing.Point(555, 157);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 25);
+            this.label13.Size = new System.Drawing.Size(87, 25);
             this.label13.TabIndex = 105;
             this.label13.Text = "Teléfono:";
             // 
@@ -622,7 +622,7 @@
             this.label21.ForeColor = System.Drawing.Color.DarkOrange;
             this.label21.Location = new System.Drawing.Point(657, 305);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(76, 25);
+            this.label21.Size = new System.Drawing.Size(75, 25);
             this.label21.TabIndex = 104;
             this.label21.Text = "Abonar:";
             // 
@@ -670,7 +670,7 @@
             this.label19.ForeColor = System.Drawing.Color.DarkOrange;
             this.label19.Location = new System.Drawing.Point(383, 305);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(186, 25);
+            this.label19.Size = new System.Drawing.Size(189, 25);
             this.label19.TabIndex = 100;
             this.label19.Text = "Nro. Tarjeta / Cheque:";
             // 
@@ -894,7 +894,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(931, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 25);
+            this.label8.Size = new System.Drawing.Size(110, 25);
             this.label8.TabIndex = 36;
             this.label8.Text = "Precio Total:";
             // 
@@ -917,7 +917,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(13, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 25);
+            this.label7.Size = new System.Drawing.Size(172, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Exámenes a realizar:";
             // 

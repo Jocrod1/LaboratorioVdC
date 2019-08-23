@@ -129,6 +129,120 @@ namespace Interfaz
         }
 
 
+        private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Paciente frm = new Paciente(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void resultadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CargarDatos frm = new CargarDatos(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Factura frm = new Factura(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void presupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Presupuesto frm = new Presupuesto(); //.GetInstancia();
+            //frm.MdiParent = this;
+            //frm.Show();
+            ////frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void exámenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Examenes frm = new Examenes(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Perfil frm = new Perfil(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void empesasYSegurosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmpresaSeguro frm = new EmpresaSeguro(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void médicosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Medico frm = new Medico(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void tiposDePacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoPaciente frm = new TipoPaciente(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void tablaDeBancosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bancos frm = new Bancos(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void tablaDeGruposDeExámenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GrupoExamen frm = new GrupoExamen(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void tablaDeLabReferenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LabRef frm = new LabRef(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void tablaDeEgresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Egresos frm = new Egresos(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void tablaDeBioanalistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bioanalista frm = new Bioanalista(); //.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+
+
 
 
     }
