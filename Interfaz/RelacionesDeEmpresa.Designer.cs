@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelacionesDeEmpresa));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -37,18 +37,18 @@
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.PanelIngreso = new System.Windows.Forms.Panel();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.PanelIngreso = new System.Windows.Forms.Panel();
+            this.cbFormaDePago = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cbFormaDePago = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
@@ -96,14 +96,14 @@
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -141,80 +141,6 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Buscar:";
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
-            this.lblTotal.Location = new System.Drawing.Point(22, 73);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 17);
-            this.lblTotal.TabIndex = 56;
-            this.lblTotal.Text = "label5";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(25, 37);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(387, 33);
-            this.txtBuscar.TabIndex = 55;
-            // 
-            // PanelIngreso
-            // 
-            this.PanelIngreso.BackColor = System.Drawing.Color.White;
-            this.PanelIngreso.Controls.Add(this.cbFormaDePago);
-            this.PanelIngreso.Controls.Add(this.label1);
-            this.PanelIngreso.Controls.Add(this.txtMonto);
-            this.PanelIngreso.Controls.Add(this.label4);
-            this.PanelIngreso.Controls.Add(this.btnCancelar);
-            this.PanelIngreso.Controls.Add(this.btnGuardar);
-            this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelIngreso.Location = new System.Drawing.Point(748, 0);
-            this.PanelIngreso.Name = "PanelIngreso";
-            this.PanelIngreso.Size = new System.Drawing.Size(317, 514);
-            this.PanelIngreso.TabIndex = 0;
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.BackColor = System.Drawing.SystemColors.Control;
-            this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMonto.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMonto.Location = new System.Drawing.Point(37, 222);
-            this.txtMonto.MaxLength = 50;
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(257, 33);
-            this.txtMonto.TabIndex = 55;
-            this.txtMonto.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label4.Location = new System.Drawing.Point(32, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 27);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "Forma de pago:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(36, 185);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Monto:";
-            this.label1.Visible = false;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
@@ -231,6 +157,17 @@
             this.btnEliminar.TabIndex = 57;
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
+            this.lblTotal.Location = new System.Drawing.Point(22, 73);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(41, 17);
+            this.lblTotal.TabIndex = 56;
+            this.lblTotal.Text = "label5";
             // 
             // btnAnular
             // 
@@ -264,6 +201,86 @@
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscar.Location = new System.Drawing.Point(25, 37);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(387, 33);
+            this.txtBuscar.TabIndex = 55;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            // 
+            // PanelIngreso
+            // 
+            this.PanelIngreso.BackColor = System.Drawing.Color.White;
+            this.PanelIngreso.Controls.Add(this.cbFormaDePago);
+            this.PanelIngreso.Controls.Add(this.label1);
+            this.PanelIngreso.Controls.Add(this.txtMonto);
+            this.PanelIngreso.Controls.Add(this.label4);
+            this.PanelIngreso.Controls.Add(this.btnCancelar);
+            this.PanelIngreso.Controls.Add(this.btnGuardar);
+            this.PanelIngreso.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelIngreso.Location = new System.Drawing.Point(748, 0);
+            this.PanelIngreso.Name = "PanelIngreso";
+            this.PanelIngreso.Size = new System.Drawing.Size(317, 514);
+            this.PanelIngreso.TabIndex = 0;
+            // 
+            // cbFormaDePago
+            // 
+            this.cbFormaDePago.BackColor = System.Drawing.SystemColors.Control;
+            this.cbFormaDePago.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFormaDePago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbFormaDePago.FormattingEnabled = true;
+            this.cbFormaDePago.Items.AddRange(new object[] {
+            "Pagar completo",
+            "Pagar por parte"});
+            this.cbFormaDePago.Location = new System.Drawing.Point(37, 129);
+            this.cbFormaDePago.Name = "cbFormaDePago";
+            this.cbFormaDePago.Size = new System.Drawing.Size(248, 33);
+            this.cbFormaDePago.TabIndex = 58;
+            this.cbFormaDePago.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(36, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "Monto:";
+            this.label1.Visible = false;
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMonto.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMonto.Location = new System.Drawing.Point(37, 222);
+            this.txtMonto.MaxLength = 10;
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(257, 33);
+            this.txtMonto.TabIndex = 55;
+            this.txtMonto.Visible = false;
+            this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label4.Location = new System.Drawing.Point(32, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 25);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "Forma de pago:";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
@@ -279,6 +296,7 @@
             this.btnCancelar.TabIndex = 54;
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -295,21 +313,6 @@
             this.btnGuardar.TabIndex = 52;
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // cbFormaDePago
-            // 
-            this.cbFormaDePago.BackColor = System.Drawing.SystemColors.Control;
-            this.cbFormaDePago.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFormaDePago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbFormaDePago.FormattingEnabled = true;
-            this.cbFormaDePago.Items.AddRange(new object[] {
-            "Pagar completo",
-            "Pagar por parte"});
-            this.cbFormaDePago.Location = new System.Drawing.Point(37, 129);
-            this.cbFormaDePago.Name = "cbFormaDePago";
-            this.cbFormaDePago.Size = new System.Drawing.Size(248, 33);
-            this.cbFormaDePago.TabIndex = 58;
-            this.cbFormaDePago.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // errorProvider1
             // 
