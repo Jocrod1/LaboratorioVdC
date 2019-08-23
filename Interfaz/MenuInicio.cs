@@ -151,6 +151,7 @@ namespace Interfaz
         {
             Factura frm = new Factura(); //.GetInstancia();
             frm.MdiParent = this;
+            frm.id_trabajador = cedula;
             frm.Show();
             //frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
         }

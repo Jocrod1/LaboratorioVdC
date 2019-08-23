@@ -16,7 +16,7 @@ namespace Interfaz
     {
         LimitantesDeIngreso lim = new LimitantesDeIngreso();
 
-        internal static string id_trabajador;
+        public string id_trabajador;
 
         public DateTime ValorFUR;
 
@@ -419,9 +419,31 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
+                var lista = MTurno.Mostrar("");
+
+                TimeSpan hora = DateTime.Now.TimeOfDay;
+
+                bool isbetween;
+                int IDTurno = 0;
+
+                foreach (var item in lista)
+                {
+                    isbetween = item.Comienzo < hora && hora < item.Final;
+                    if (isbetween)
+                    {
+                        IDTurno = item.ID;
+                        break;
+                    }
+                }
+                if (IDTurno == 0)
+                {
+                    IDTurno = 1;
+                    return;
+                }
+
                 IDFactura = 0;
 
-                Rpta2 = MFactura.Facturar(1, "123", Convert.ToInt32(this.cbMedico.SelectedValue), 1,
+                Rpta2 = MFactura.Facturar(1, id_trabajador, Convert.ToInt32(this.cbMedico.SelectedValue), IDTurno,
                     DateTime.Now.Date, ConjuntoDeIDExamenes, IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), 
                     Convert.ToInt32(cbIdEmpresa.SelectedValue), 2, TipoPagoEoT, Convert.ToInt32(this.cbIdBanco.SelectedValue), 
                     "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble("69"), 
