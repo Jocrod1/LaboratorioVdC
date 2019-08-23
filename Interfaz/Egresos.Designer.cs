@@ -139,7 +139,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.label3.Location = new System.Drawing.Point(18, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.Size = new System.Drawing.Size(66, 25);
             this.label3.TabIndex = 56;
             this.label3.Text = "Buscar:";
             // 

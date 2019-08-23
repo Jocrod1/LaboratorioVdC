@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarDatos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbIDBioanalista = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbIDBioanalista = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -97,14 +97,14 @@
             this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListado.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListado.Location = new System.Drawing.Point(0, 0);
             this.dataListado.Name = "dataListado";
@@ -132,6 +132,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(946, 98);
             this.panel4.TabIndex = 44;
+            // 
+            // cbIDBioanalista
+            // 
+            this.cbIDBioanalista.BackColor = System.Drawing.SystemColors.Control;
+            this.cbIDBioanalista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIDBioanalista.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIDBioanalista.FormattingEnabled = true;
+            this.cbIDBioanalista.Location = new System.Drawing.Point(550, 41);
+            this.cbIDBioanalista.Name = "cbIDBioanalista";
+            this.cbIDBioanalista.Size = new System.Drawing.Size(257, 33);
+            this.cbIDBioanalista.TabIndex = 60;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label8.Location = new System.Drawing.Point(549, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 25);
+            this.label8.TabIndex = 61;
+            this.label8.Text = "Bioanalista";
             // 
             // label3
             // 
@@ -303,34 +325,13 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // cbIDBioanalista
-            // 
-            this.cbIDBioanalista.BackColor = System.Drawing.SystemColors.Control;
-            this.cbIDBioanalista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbIDBioanalista.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIDBioanalista.FormattingEnabled = true;
-            this.cbIDBioanalista.Location = new System.Drawing.Point(550, 41);
-            this.cbIDBioanalista.Name = "cbIDBioanalista";
-            this.cbIDBioanalista.Size = new System.Drawing.Size(257, 33);
-            this.cbIDBioanalista.TabIndex = 60;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label8.Location = new System.Drawing.Point(549, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 25);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "Bioanalista";
-            // 
             // CargarDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 705);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CargarDatos";
             this.Text = "CargarDatos";
             this.Load += new System.EventHandler(this.CargarDatos_Load);

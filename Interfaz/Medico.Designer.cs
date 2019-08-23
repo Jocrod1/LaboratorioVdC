@@ -164,7 +164,7 @@
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(184)))), ((int)(((byte)(7)))));
             this.lblTotal.Location = new System.Drawing.Point(23, 86);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(46, 17);
+            this.lblTotal.Size = new System.Drawing.Size(48, 17);
             this.lblTotal.TabIndex = 43;
             this.lblTotal.Text = "lblTotal";
             // 

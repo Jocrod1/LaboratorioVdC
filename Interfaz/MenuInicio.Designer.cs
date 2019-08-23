@@ -53,13 +53,13 @@
             this.aumentoAutomáticoDePreciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.label_cedula = new System.Windows.Forms.ToolStripStatusLabel();
             this.label_nombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.label_acceso = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pacientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -283,6 +283,20 @@
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // pacientesToolStripMenuItem1
+            // 
+            this.pacientesToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
+            this.pacientesToolStripMenuItem1.Name = "pacientesToolStripMenuItem1";
+            this.pacientesToolStripMenuItem1.Size = new System.Drawing.Size(135, 24);
+            this.pacientesToolStripMenuItem1.Text = "Pacientes";
+            // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(18, 18);
@@ -325,31 +339,17 @@
             this.label_acceso.Text = "acceso";
             this.label_acceso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pacientesToolStripMenuItem1
-            // 
-            this.pacientesToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
-            this.pacientesToolStripMenuItem1.Name = "pacientesToolStripMenuItem1";
-            this.pacientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
-            this.pacientesToolStripMenuItem1.Text = "Pacientes";
-            // 
-            // facturasToolStripMenuItem
-            // 
-            this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
-            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.facturasToolStripMenuItem.Text = "Facturas";
-            // 
             // MenuInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Moccasin;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(128)))), ((int)(((byte)(29)))));
+            this.ForeColor = System.Drawing.Color.DarkGreen;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;

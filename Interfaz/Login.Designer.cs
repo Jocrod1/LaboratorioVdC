@@ -80,7 +80,7 @@
             this.txtusuario.Location = new System.Drawing.Point(174, 191);
             this.txtusuario.MaxLength = 50;
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(180, 33);
+            this.txtusuario.Size = new System.Drawing.Size(180, 30);
             this.txtusuario.TabIndex = 96;
             this.txtusuario.Enter += new System.EventHandler(this.txtUserEnter);
             this.txtusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtusuario_KeyPress);
@@ -98,7 +98,7 @@
             "E-"});
             this.cbCedula.Location = new System.Drawing.Point(102, 190);
             this.cbCedula.Name = "cbCedula";
-            this.cbCedula.Size = new System.Drawing.Size(64, 33);
+            this.cbCedula.Size = new System.Drawing.Size(64, 29);
             this.cbCedula.TabIndex = 95;
             this.cbCedula.SelectedIndexChanged += new System.EventHandler(this.cbCedula_SelectedIndexChanged);
             // 
@@ -141,7 +141,7 @@
             this.txtcontraseña.Location = new System.Drawing.Point(99, 236);
             this.txtcontraseña.MaxLength = 50;
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(255, 33);
+            this.txtcontraseña.Size = new System.Drawing.Size(255, 30);
             this.txtcontraseña.TabIndex = 2;
             this.txtcontraseña.Enter += new System.EventHandler(this.txtPassEnter);
             this.txtcontraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcontraseña_KeyDown);
@@ -155,7 +155,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(102, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 34);
+            this.label3.Size = new System.Drawing.Size(230, 31);
             this.label3.TabIndex = 8;
             this.label3.Text = "Ingreso al sistema";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
