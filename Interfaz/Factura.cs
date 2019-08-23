@@ -38,6 +38,9 @@ namespace Interfaz
 
         private bool NuevoPaciente=false;
 
+        //esto es para el reporte
+        private int IDFactura;
+
         public Factura()
         {
             InitializeComponent();
@@ -351,10 +354,6 @@ namespace Interfaz
                 CargarResumenExamenesSeleccionados(); //esto es para cargar los examenes seleccionados al dgv de la parte Finalizar
 
 
-
-
-
-
             }
 
 
@@ -420,7 +419,7 @@ namespace Interfaz
 
                 //terminar lo siguiente, cuando ya tenga todo lo de orden listo. porque hay que ingresar orden antes, para tener la IdOrden
 
-                int IDFactura = 0;
+                IDFactura = 0;
 
                 Rpta2 = MFactura.Facturar(1, "123", Convert.ToInt32(this.cbMedico.SelectedValue), 1,
                     DateTime.Now.Date, ConjuntoDeIDExamenes, IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), 
@@ -428,8 +427,11 @@ namespace Interfaz
                     "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble("69"), 
                     Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble("69"), ExamenesParaGuardar, ref IDFactura);
 
+
+
                 MessageBox.Show("Factura Realizada Correctamente");
 
+                Imprimir();
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
                 //de forma correcta
@@ -443,6 +445,13 @@ namespace Interfaz
 
 
 
+        }
+
+        private void Imprimir()
+        {
+            ReporteFactura Reporte = new ReporteFactura();
+            Reporte.ID = IDFactura;
+            Reporte.ShowDialog();
         }
 
 
