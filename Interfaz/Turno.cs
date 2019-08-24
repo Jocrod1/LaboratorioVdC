@@ -76,6 +76,15 @@ namespace Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            SinErrores();
+            if (!validar())
+            {
+                MensajeError("Falta ingresar algunos datos, serán remarcados");
+            }
+            else
+            {
+                Guardar();
+            }
             Guardar();
         }
 
@@ -117,6 +126,24 @@ namespace Interfaz
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             Mostrar();
+        }
+        //Validaciones de campo vacío
+        private bool validar()
+        {
+            bool error = true;
+            
+            if (txtNombre.Text == "")
+            {
+                error = false;
+                errorProvider1.SetError(txtNombre, "Agrega un nombre");
+            }
+           
+            return error;
+        }
+
+        private void SinErrores()
+        {
+            errorProvider1.Clear();
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -422,6 +449,15 @@ namespace Interfaz
             }
 
 
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider1.SetError(txtBuscar, "");
+            if (valid.soloLetras(e))
+            {
+                errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
+            }
         }
 
 
