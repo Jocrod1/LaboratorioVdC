@@ -85,7 +85,7 @@ namespace Interfaz
             {
                 Guardar();
             }
-            Guardar();
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
