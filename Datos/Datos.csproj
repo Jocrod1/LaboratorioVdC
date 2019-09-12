@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAntibioticos.cs" />
     <Compile Include="DBanco.cs" />
     <Compile Include="DBioanalista.cs" />
+    <Compile Include="DColoracion.cs" />
     <Compile Include="DDetalle_Factura.cs" />
     <Compile Include="DDetalle_Orden.cs" />
     <Compile Include="DDetalle_Perfil.cs" />
@@ -54,6 +56,7 @@
     <Compile Include="DExamen.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DFactura.cs" />
+    <Compile Include="DGermenes.cs" />
     <Compile Include="DGrupoExamen.cs" />
     <Compile Include="DLabRef.cs" />
     <Compile Include="DMedico.cs" />
@@ -61,6 +64,8 @@
     <Compile Include="DPaciente.cs" />
     <Compile Include="DPerfil.cs" />
     <Compile Include="DRegistroAcceso.cs" />
+    <Compile Include="DResultado.cs" />
+    <Compile Include="DSedimentos.cs" />
     <Compile Include="DTipoPaciente.cs" />
     <Compile Include="DTurno.cs" />
     <Compile Include="DUsuario.cs" />

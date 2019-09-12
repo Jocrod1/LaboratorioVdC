@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MAntibioticos.cs" />
     <Compile Include="MBanco.cs" />
     <Compile Include="MBioanalista.cs" />
+    <Compile Include="MColoracion.cs" />
     <Compile Include="MEgresos.cs" />
     <Compile Include="MEmpresaSeguro.cs" />
     <Compile Include="MExamen.cs" />
     <Compile Include="MFactura.cs" />
+    <Compile Include="MGermenes.cs" />
     <Compile Include="MGrupoExamen.cs" />
     <Compile Include="MLabRef.cs" />
     <Compile Include="MMedico.cs" />
@@ -56,6 +59,8 @@
     <Compile Include="MPaciente.cs" />
     <Compile Include="MPerfil.cs" />
     <Compile Include="MRegistroAcceso.cs" />
+    <Compile Include="MResultado.cs" />
+    <Compile Include="MSedimentos.cs" />
     <Compile Include="MTipoPaciente.cs" />
     <Compile Include="MTurno.cs" />
     <Compile Include="MUsuario.cs" />
