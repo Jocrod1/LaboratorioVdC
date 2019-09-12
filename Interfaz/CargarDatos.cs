@@ -13,6 +13,7 @@ namespace Interfaz
 {
     public partial class CargarDatos : Form
     {
+        //Este Form es para la carga de resultados de los examenes
         LimitantesDeIngreso lim = new LimitantesDeIngreso();
         private int ID, IDOrden;
         private string Rpta;

@@ -577,7 +577,7 @@ namespace Interfaz
 
                 Rpta2 = MFactura.Facturar(1, id_trabajador, Convert.ToInt32(this.cbMedico.SelectedValue), IDTurno,
                     DateTime.Now.Date, ConjuntoDeIDExamenes, IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), 
-                    EmpresaSeguro, 2, TipoPagoEoT, IdBanco, 
+                    EmpresaSeguro, TipoPagoEoT, IdBanco, 
                     txtNumCHoT.Text, Exonerado, txtMotivo.Text, Descuento, Subtotal, 
                     RecargoEmergencia, Abonar, TotalParcial, ExamenesParaGuardar, ref IDFactura);
 

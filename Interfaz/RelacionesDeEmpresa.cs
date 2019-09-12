@@ -13,6 +13,9 @@ namespace Interfaz
 {
     public partial class RelacionesDeEmpresa : Form
     {
+        //Este form es para el pago de relaciones
+
+
         LimitantesDeIngreso valid = new LimitantesDeIngreso();
 
         public RelacionesDeEmpresa()

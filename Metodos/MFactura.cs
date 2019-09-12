@@ -11,7 +11,7 @@ namespace Metodos
     public class MFactura:DFactura
     {
 
-        public static string Facturar  (int IDBioanalista, string IDUsuario, int IDMedico, int IDTurno, DateTime Fecha, DataTable DtDetalleOrden, int idpaciente, int idtipopaciente, int idempresaseguro, int idorden, string tipopago, int idbanco, string numerochot,
+        public static string Facturar  (int IDBioanalista, string IDUsuario, int IDMedico, int IDTurno, DateTime Fecha, DataTable DtDetalleOrden, int idpaciente, int idtipopaciente, int idempresaseguro, string tipopago, int idbanco, string numerochot,
                                         bool exonerado, string motivo, double descuento, double subtotal, double recargoemergencia, double abonar, double total,
                                         DataTable DtDetalleFactura, ref int IDFactura)
         {
