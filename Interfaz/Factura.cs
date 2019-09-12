@@ -41,6 +41,10 @@ namespace Interfaz
         //esto es para el reporte
         private int IDFactura;
 
+        private double Subtotal, TotalParcial;
+
+        private double Descuento, RecargoEmergencia, Abonar;
+
         public Factura()
         {
             InitializeComponent();
@@ -425,20 +429,24 @@ namespace Interfaz
 
                 //para dgvResumenExamenes
                 this.dgvResumenExamenes.Columns[0].Visible = true; //nombre
-                this.dgvResumenExamenes.Columns[1].HeaderText = "Nombre Examen";
+                this.dgvResumenExamenes.Columns[1].HeaderText = "Precio";
 
-                for (int i = 1; i <= 4; i++)
+                for (int i = 2; i <= 4; i++)
                 {
                     this.dgvResumenExamenes.Columns[i].Visible = false;
                 }
 
+                Subtotal = 0;
+                //para ir sumando todos los precios
+                foreach (DataRow item in TablaSeleccionados.Rows)
+                {
+                    Subtotal += Convert.ToDouble(item[1]);
+                }
 
-
-
+                lblSubtotal.Text = Convert.ToString(Subtotal);
+                lblPrecioTotal.Text = Convert.ToString(Subtotal);
 
             }
-
-
 
         }
 
@@ -522,24 +530,74 @@ namespace Interfaz
                     IDTurno = 1;
                 }
 
+                if(txtDescuento.Text==string.Empty)
+                {
+                    Descuento = 0;
+                }
+                else
+                {
+                    Descuento = Convert.ToDouble(txtDescuento.Text);
+                }
+
+                if(txtRecEmergencia.Text==string.Empty)
+                {
+                    RecargoEmergencia = 0;
+                }
+                else
+                {
+                    RecargoEmergencia = Convert.ToDouble(txtRecEmergencia.Text);
+                }
+
+                if(txtAbonar.Text==string.Empty)
+                {
+                    Abonar = 0;
+                }
+                else
+                {
+                    Abonar = Convert.ToDouble(txtAbonar.Text);
+                }
+
+                int EmpresaSeguro, IdBanco;
+
+                EmpresaSeguro = Convert.ToInt32(cbIdEmpresa.SelectedValue);
+                IdBanco = Convert.ToInt32(this.cbIdBanco.SelectedValue);
+
+
+                if (lblExoSi.Checked)
+                {
+                    EmpresaSeguro = 4;
+                    IdBanco = 1;
+                    TipoPagoEoT = "Exonerado";
+
+                    TotalParcial = 0;
+                    lblPrecioTotal.Text = Convert.ToString(TotalParcial);
+                }
+
                 IDFactura = 0;
 
                 Rpta2 = MFactura.Facturar(1, id_trabajador, Convert.ToInt32(this.cbMedico.SelectedValue), IDTurno,
                     DateTime.Now.Date, ConjuntoDeIDExamenes, IDPacienteActual, Convert.ToInt32(this.cbTipoPaciente.SelectedValue), 
-                    Convert.ToInt32(cbIdEmpresa.SelectedValue), 2, TipoPagoEoT, Convert.ToInt32(this.cbIdBanco.SelectedValue), 
-                    "541562", Exonerado, txtMotivo.Text, Convert.ToDouble(txtDescuento.Text), Convert.ToDouble("69"), 
-                    Convert.ToDouble(txtRecEmergencia.Text), Convert.ToDouble(txtAbonar.Text), Convert.ToDouble("69"), ExamenesParaGuardar, ref IDFactura);
+                    EmpresaSeguro, 2, TipoPagoEoT, IdBanco, 
+                    txtNumCHoT.Text, Exonerado, txtMotivo.Text, Descuento, Subtotal, 
+                    RecargoEmergencia, Abonar, TotalParcial, ExamenesParaGuardar, ref IDFactura);
 
 
+                if(Rpta2.Equals("OK"))
+                {
+                    MessageBox.Show("Factura Realizada Correctamente");
 
-                MessageBox.Show("Factura Realizada Correctamente");
+                    Imprimir();
+                    //Si la respuesta fue OK, fue porque se modificó
+                    //o insertó el Trabajador
+                    //de forma correcta
 
-                Imprimir();
-                //Si la respuesta fue OK, fue porque se modificó
-                //o insertó el Trabajador
-                //de forma correcta
+                    this.Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo Realizar la Factura Correctamente");
+                }
 
-                this.Limpiar();
             }
             catch (Exception ex)
             {
@@ -883,11 +941,9 @@ namespace Interfaz
 
         private void btnImprimir_Click(object sender, EventArgs e)   // Aqui esta la funcion de guardar pac e imprimir
         {
-
             GuardarExamenesEnDt();
 
             Guardar(); //aqui esta guardar paciente 
-
 
         }
 
@@ -1167,17 +1223,89 @@ namespace Interfaz
             lim.soloNumeros(e);
         }
 
+
+
         private void cbMedico_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
 
-        
-                  
 
+        private void RestarTotal()
+        {
+            if(txtDescuento.Text==string.Empty)
+            {
+                Descuento = 0;
+            }
+            else
+            {
+                Descuento = Convert.ToDouble(txtDescuento.Text);
+            }
 
+            if(txtRecEmergencia.Text==string.Empty)
+            {
+                RecargoEmergencia = 0;
+            }
+            else
+            {
+                RecargoEmergencia = Convert.ToDouble(txtRecEmergencia.Text);
+            }
 
+            if (txtAbonar.Text==string.Empty)
+            {
+                Abonar = 0;
+            }
+            else
+            {
+                Abonar = Convert.ToDouble(txtAbonar.Text);
+            }
 
+            TotalParcial = Subtotal - Descuento - RecargoEmergencia - Abonar;
+
+            lblPrecioTotal.Text = Convert.ToString(TotalParcial);
+        }
+
+        private void txtAbonar_Leave(object sender, EventArgs e)
+        {
+            RestarTotal();
+
+            if(TotalParcial<0)
+            {
+                MessageBox.Show("No puede quedar el total menor a 0", "Laboratorio VdC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAbonar.Clear();
+                txtAbonar.Focus();
+
+                RestarTotal();
+            }
+        }
+
+        private void txtRecEmergencia_Leave(object sender, EventArgs e)
+        {
+            RestarTotal();
+
+            if (TotalParcial < 0)
+            {
+                MessageBox.Show("No puede quedar el total menor a 0", "Laboratorio VdC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRecEmergencia.Clear();
+                txtRecEmergencia.Focus();
+
+                RestarTotal();
+            }
+        }
+
+        private void txtDescuento_Leave(object sender, EventArgs e)
+        {
+            RestarTotal();
+
+            if (TotalParcial < 0)
+            {
+                MessageBox.Show("No puede quedar el total menor a 0", "Laboratorio VdC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtDescuento.Clear();
+                txtDescuento.Focus();
+
+                RestarTotal();
+            }
+        }
     }
 }

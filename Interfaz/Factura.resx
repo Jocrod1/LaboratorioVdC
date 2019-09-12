@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAXpJREFUOE+tU7lOw0AQde1ZCAKJowRRRPbagS8AfoQOGqChDQnhAzgVCmoqZ9cc
+        v4FAgjSAhIQAUdBQhJbr7WaTbGI7omCk551Zv3memfU6tuVPBkYCQZVAsn0u2J6NQLAD7Benj4cHDT1p
+        YZSbBPkFxJ80cEH3Xs0dN/SkKQF86VknCPbdBSUg6Y6f05ihN01tgLDEY1qD+gyIT1kCaO+2IMiH0HpY
+        cxcLp7khB8GZVhf0yCM217cFVOALmgfnjUv2iZwjBy++NEHQgxcxD+sK4g2gaANJJazLqkr4r/CV4LvT
+        Kk8F8LdbCZlQpyGoAR9V0UdTwO7zL+jMpPFPAghSWlBzsJHRQs8QIbQKv4Ipb9pQe+Alh4hH+xj1EUlW
+        B2EXa9kSgE+H4F36kha6jjGMaRRl6R8pFO4s/Ot0AVbFuwvwOcQ6P5JtgcxN4Ss3mQKooO9dUAIg1oEd
+        iJRMYtn4VaxX+didMPSkmeu8pfrVCW2oWM+g5zo7zi8ULlfVEA21RAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnCancelar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1467,18 +1479,6 @@
         ZmND/Pf8HQ/7AQDQIvoNge9Zi/c+xctUegNh7dAt1X8VAABom6nK3bGuilfHK/bvxuzVAUKhkvXpAb/a
         D56wbuhuoP9oAADQBRuH7ubpYb1QShV88fF4Nf+NupJfxcX9Qn2Qb3386/fj3//cjgW/WFGXcg/9ny8g
         5/4fPUATTizcqBQAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAXpJREFUOE+tU7lOw0AQde1ZCAKJowRRRPbagS8AfoQOGqChDQnhAzgVCmoqZ9cc
-        v4FAgjSAhIQAUdBQhJbr7WaTbGI7omCk551Zv3memfU6tuVPBkYCQZVAsn0u2J6NQLAD7Benj4cHDT1p
-        YZSbBPkFxJ80cEH3Xs0dN/SkKQF86VknCPbdBSUg6Y6f05ihN01tgLDEY1qD+gyIT1kCaO+2IMiH0HpY
-        cxcLp7khB8GZVhf0yCM217cFVOALmgfnjUv2iZwjBy++NEHQgxcxD+sK4g2gaANJJazLqkr4r/CV4LvT
-        Kk8F8LdbCZlQpyGoAR9V0UdTwO7zL+jMpPFPAghSWlBzsJHRQs8QIbQKv4Ipb9pQe+Alh4hH+xj1EUlW
-        B2EXa9kSgE+H4F36kha6jjGMaRRl6R8pFO4s/Ot0AVbFuwvwOcQ6P5JtgcxN4Ss3mQKooO9dUAIg1oEd
-        iJRMYtn4VaxX+didMPSkmeu8pfrVCW2oWM+g5zo7zi8ULlfVEA21RAAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
