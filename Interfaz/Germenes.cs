@@ -11,8 +11,9 @@ using Metodos;
 
 namespace Interfaz
 {
-    public partial class Bancos : Form
+    public partial class Germenes : Form
     {
+
         LimitantesDeIngreso valid = new LimitantesDeIngreso();
         //Variable que nos indica si vamos a insertar un nuevo trabajador
         private bool IsNuevo = false;
@@ -21,8 +22,7 @@ namespace Interfaz
 
         private int ID;
 
-
-        public Bancos()
+        public Germenes()
         {
             InitializeComponent();
             //Detalles de campos
@@ -31,11 +31,12 @@ namespace Interfaz
             this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
             this.toolTip1.SetToolTip(this.btnGuardar, "Guardar");
             this.toolTip1.SetToolTip(this.btnImprimir, "Imprimir");
-            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar banco");
-            this.toolTip1.SetToolTip(this.txtNombre, "Nombre del banco");
+            this.toolTip1.SetToolTip(this.btnNuevo, "Agregar germen");
+            this.toolTip1.SetToolTip(this.txtNombre, "Nombre del Germen");
         }
 
-        private void Bancos_Load(object sender, EventArgs e)
+
+        private void Germenes_Load(object sender, EventArgs e)
         {
             this.Mostrar();
             this.Deshabilitar();
@@ -75,17 +76,14 @@ namespace Interfaz
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             SinErrores();
-            if (!validar()){
+            if (!validar())
+            {
                 MensajeError("Falta ingresar algunos datos, serán remarcados");
             }
-            else{
+            else
+            {
                 Guardar();
             }
-        }
-        //Editar
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -131,7 +129,7 @@ namespace Interfaz
 
 
             //renombrar las otras 
-            this.dataListado.Columns[1].HeaderText = "Nombre Banco";
+            this.dataListado.Columns[1].HeaderText = "Nombre Germen";
 
         }
 
@@ -166,11 +164,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea eliminar los " + NumeroSeleccionado + " registros de bancos?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar los " + NumeroSeleccionado + " registros de germenes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro del banco?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea eliminar el registro del germene?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -179,18 +177,18 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MBanco.Eliminar(Convert.ToInt32(item.Cells["ID"].Value));
+                        Rpta = MGermenes.Eliminar(Convert.ToInt32(item.Cells["ID"].Value));
                     }
 
                     if (Rpta.Equals("OK"))
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se Eliminaron Correctamente los Registros de Bancos");
+                            this.MensajeOK("Se Eliminaron Correctamente los Registros de germenes");
                         }
                         else
                         {
-                            this.MensajeOK("Se Eliminó Correctamente el Registro del Banco");
+                            this.MensajeOK("Se Eliminó Correctamente el Registro del germen");
                         }
                     }
                     else
@@ -220,11 +218,11 @@ namespace Interfaz
                 }
                 if (NumeroSeleccionado > 1)
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de bancos?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea anular los " + NumeroSeleccionado + " registros de germenes?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del banco?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    Opcion = MessageBox.Show("¿Realmente desea anular el registro del germen?", "Laboratorio Clínico Virgen de Coromoto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
 
                 if (Opcion == DialogResult.OK)
@@ -233,18 +231,18 @@ namespace Interfaz
 
                     foreach (DataGridViewRow item in this.dataListado.SelectedRows)
                     {
-                        Rpta = MBanco.Anular(Convert.ToInt32(item.Cells["ID"].Value));
+                        Rpta = MGermenes.Anular(Convert.ToInt32(item.Cells["ID"].Value));
                     }
 
                     if (Rpta.Equals("OK"))
                     {
                         if (NumeroSeleccionado > 1)
                         {
-                            this.MensajeOK("Se Anularon Correctamente los Registros de Bancos");
+                            this.MensajeOK("Se Anularon Correctamente los Registros de germenes");
                         }
                         else
                         {
-                            this.MensajeOK("Se Anuló Correctamente el Registro del Banco");
+                            this.MensajeOK("Se Anuló Correctamente el Registro del germen");
                         }
                     }
                     else
@@ -270,12 +268,12 @@ namespace Interfaz
                 if (this.IsNuevo)
                 {
 
-                    Rpta = MBanco.Insertar(this.txtNombre.Text);
+                    Rpta = MGermenes.Insertar(this.txtNombre.Text);
                 }
                 else
                 {
                     //Vamos a modificar un Paciente
-                    Rpta = MBanco.Editar(ID, this.txtNombre.Text);
+                    Rpta = MGermenes.Editar(ID, this.txtNombre.Text);
                 }
                 //Si la respuesta fue OK, fue porque se modificó
                 //o insertó el Trabajador
@@ -391,14 +389,14 @@ namespace Interfaz
 
         private void Mostrar()
         {
-            dataListado.DataSource = MBanco.Mostrar(txtBuscar.Text);
+            dataListado.DataSource = MGermenes.Mostrar(txtBuscar.Text);
             dataListado.ClearSelection();
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
             Anulados();
         }
 
-        
+
 
 
         private void Buscar()
@@ -415,7 +413,8 @@ namespace Interfaz
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorProvider1.SetError(txtNombre, "");
-            if (valid.soloLetras(e)) {
+            if (valid.soloLetras(e))
+            {
                 errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
             }
         }
@@ -426,15 +425,6 @@ namespace Interfaz
             if (valid.soloLetras(e))
             {
                 errorProvider1.SetError(txtBuscar, "En este campo solo se pueden ingresar letras");
-            }
-        }
-
-        private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            errorProvider1.SetError(txtNombre, "");
-            if (valid.soloLetras(e))
-            {
-                errorProvider1.SetError(txtNombre, "En este campo solo se pueden ingresar letras");
             }
         }
 
