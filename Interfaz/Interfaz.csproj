@@ -114,6 +114,12 @@
     <Compile Include="CargarDatos.Designer.cs">
       <DependentUpon>CargarDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Coloracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coloracion.Designer.cs">
+      <DependentUpon>Coloracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +230,18 @@
     <Compile Include="ReporteResultado.Designer.cs">
       <DependentUpon>ReporteResultado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultado.Designer.cs">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sedimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sedimentos.Designer.cs">
+      <DependentUpon>Sedimentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TipoPaciente.cs">
       <SubType>Form</SubType>
@@ -254,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CargarDatos.resx">
       <DependentUpon>CargarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coloracion.resx">
+      <DependentUpon>Coloracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Egresos.resx">
       <DependentUpon>Egresos.cs</DependentUpon>
@@ -325,6 +346,12 @@
     <EmbeddedResource Include="Reportes\RptPaciente.rdlc" />
     <EmbeddedResource Include="Reportes\RptResultado.rdlc" />
     <EmbeddedResource Include="Reportes\RptTrabajador.rdlc" />
+	<EmbeddedResource Include="Resultado.resx">
+      <DependentUpon>Resultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sedimentos.resx">
+      <DependentUpon>Sedimentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TipoPaciente.resx">
       <DependentUpon>TipoPaciente.cs</DependentUpon>
     </EmbeddedResource>
